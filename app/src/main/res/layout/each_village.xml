@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/view_background"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/txtTehsilName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="Attock"
+        android:textColor="#96144C"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtUnionConcilName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingBottom="12dp"
+        android:text="Attock"
+        android:textColor="#4CAF50"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtVillage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:text="Attock"
+        android:textColor="#025288"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

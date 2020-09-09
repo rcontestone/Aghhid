@@ -1,0 +1,318 @@
+<resources>
+    <string name="app_name">A3g HHID </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="application_name">A3g HHID </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="q21_tv">What is your current religion, if any?</string>
+    <string name="connection_error_message_title">Connection Error</string>
+    <string name="connection_error_message">Please check your Internet Connection</string>
+    <string name="registration_screen_alert_box_btn">ok</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="Already_synced">No Data to Sync</string>
+    <string name="sdcard_exported_text">Sdcard exported : Syncing to server is commented</string>
+    <string name="conenctivity_issue">Internet Connectivity Issue</string>
+
+
+    <!-- TODO: Section A Strings -->
+    <string name="section_a_script_1">جواب دہندہ کو پڑھ کر سنائیں:</string>
+    <string name="section_a_script_2">السلام علیکم/میرا نام__________,ہے  ۔میں آپ کو  سکولوں کے  ریسرچ پروجیکٹ  کے متعلق  کال کر رہی  ہوں  جو حکومت پنجاب  کے سکول ایجوکیشن ڈیپارٹمنٹ کی جانب سے کیا جا رہا ہے۔   ہم نے  دو سال قبل گورنمنٹ کے ایک ریسرچ پراجیکٹ کے لئے  آپ کے بچے/بچی کا انٹرویو لیا تھا جب وہ چوتھی  جماعت میں تھا/تھی۔   اس پراجیکٹ کے تحت ہم جاننا چاہتے ہیں کہ آپ کے بچے   کیسے پڑھ رہے ہیں جبکہ  کرونا وبا کی وجہ سے سکول بند  ہیں ۔</string>
+    <string name="section_a_question_1">   1.شمار کنندہ  :   کیا آپ کی کال سنی گئی؟</string>
+    <string name="section_a_question_1_option_1">1~  ہاں </string>
+    <string name="section_a_question_1_option_0">0~  نہیں</string>
+    <string name="section_a_question_2">  آپ کی کال کیوں نہیں سنی گئی؟</string>
+    <string name="section_a_question_2_option_1"> 1~ کال نہیں اٹھائی گئی  </string>
+    <string name="section_a_question_2_option_2"> 2~  نمبر ایکٹیو نہیں/ نمبر درست  نہیں  </string>
+    <string name="section_a_question_2_option_3"> 3~ رابطہ نہیں ہو سکا (نیٹ ورک دستیاب نہیں، موبائل بند ہے)</string>
+    <string name="section_a_question_2_option_4"> 4~ نمبر کا مصروف ملنا </string>
+    <string name="section_a_question_2_option_5"> 5~ تین بار  کوشش کے باوجود کال نہیں  سنی گئی</string>
+    <string name="section_a_question_3">کیا میں ۔۔۔۔۔۔۔   کے  والد / والدہ  یا  سرپرست سے بات کر رہا ہوں؟</string>
+    <string name="section_a_question_3_option_1">1~ ہاں</string>
+    <string name="section_a_question_3_option_2">2~ نہیں</string>
+    <string name="section_a_question_4">کیا  آپ  ۔۔۔۔کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟</string>
+    <string name="section_a_question_4_reshedule">ری شیڈول  کا ٹائم اور تاریخ لکھیں</string>
+    <string name="section_a_question_4_option_1">1~ ہاں،   ابھی</string>
+    <string name="section_a_question_4_option_2">2~ ہاں،   کسی دوسرے وقت کال کریں </string>
+    <string name="section_a_question_4_option_3">3~ ہاں، نئے نمبر پر بات کریں</string>
+    <string name="section_a_question_4_option_4">4~ نہیں،  جواب دہندہ کو نہیں جانتا / غیر متعلقہ فرد کا نمبر </string>
+    <string name="section_a_question_4_option_5">5~ نہیں، جواب دہندہ  دستیاب نہیں ہے</string>
+    <string name="section_a_question_5_script_1">سکرپٹ جواب دہندہ کو پڑھ کر سنائیں:</string>
+    <string name="section_a_question_5_script_2">زیادہ تر   سوالات   جو آپ سے پوچھوں گی وہ  آپ کے بچے  کے تعلیمی معیار ،  گھرانے میں موجود تعلیمی  وسائل  اور  تعلیمی سرگرمیوں  کے حوالے سے ہیں ۔ آپ کے جوابات  مکمل طور پر صیغہ راز میں  رکھیں جائیں گے ۔   یہ معلومات  صرف ریسرچ ٹیم کے استعمال میں ہوں گے آپ کے جوابات کسی دوسرے فرد کو نہیں بتائیں جا ئیں گے۔   آپ کو ریسرچ ٹیم کی جانب سے سروے میں شامل ہونے پر  آپ کی حوصلہ افزائی کےلیے 100  روپے کا بیلنس دیا جائے گا۔</string>
+    <string name="section_a_question_5">کیا آپ اس سروے میں  شمو لیت کے لئے  رضا مند ہیں؟</string>
+    <string name="section_a_question_5_option_1">1~ ہاں</string>
+    <string name="section_a_question_5_option_0">0~ نہیں</string>
+    <string name="section_a_question_6">انکار کی وجہ؟</string>
+    <string name="section_a_question_6_reshedule">ری شیڈول  کا ٹائم اور تاریخ لکھیں</string>
+    <string name="section_a_question_6_option_1">1~ وقت نہیں</string>
+    <string name="section_a_question_6_option_2">2~ دل چسپی نہیں</string>
+    <string name="section_a_question_6_option_3">3~ رابطہ ہوا  مگر  زبان کی وجہ سے بات نہیں ہوئی</string>
+    <string name="section_a_question_6_option_4">4~ کسی دوسرے  وقت  دوبارہ  کال کریں </string>
+    <string name="section_a_question_6_option_99">99~ دیگر وضاحت کریں۔۔۔</string>
+    <string name="section_a_question_7">اگر مستقبل میں اس  فون نمبر پر رابطہ  نہیں ہو سکتا تو کیا آپ مجھےبراہ مہربانی کوئی دوسرا موبائل فون نمبردے سکتے ہیں؟</string>
+    <string name="section_a_question_7_instructions">اگر  والدین  کے پا س  کوئی دوسرا نمبر نہیں ہے تو 98- لکھیں۔</string>
+
+
+    <!-- TODO: Section C1 Strings -->
+    <string name="section_c1_question_1">آپ کے  گھر میں  کتنے  بالغ (18  یا 18 سال سے زیادہ عمر)  کے افراد  ہیں ؟</string>
+    <string name="section_c1_question_1_instructions">تعداد لکھیں</string>
+    <string name="section_c1_question_1_a"> مرد : </string>
+    <string name="section_c1_question_1_b">خواتین:</string>
+    <string name="section_c2_question_c2">برائے مہربانی اس گھر میں رہنے والے تمام بچوں جن کی عمر 0سے  17  سال  ہے ____   کے علاوہ کی لسٹ بنوائیں اور تعلیمی معلومات بتائیں۔</string>
+    <string name="section_c2_question_c2a">عمر</string>
+    <string name="section_c2_question_c2b">جنس</string>
+    <string name="section_c2_question_c2b_option_1">1~ لڑکی</string>
+    <string name="section_c2_question_c2b_option_2">2~ لڑکا</string>
+    <string name="section_c2_question_c2c"> کیا سکول کی بندش سے پہلے بچی / بچہ سکول میں داخل تھا؟</string>
+    <string name="section_c2_question_c2c_option_1">1~ ہاں</string>
+    <string name="section_c2_question_c2c_option_2">2~ بچہ کبھی سکول میں داخل نہیں ہوا</string>
+    <string name="section_c2_question_c2c_option_0">0~ نہیں</string>
+    <string name="section_c2_question_c2d">گریڈ/  جماعت</string>
+    <string name="section_c2_question_c2e">سکول کھلنے کے بعد کیا  بچی / بچہ سکول  جائے گا </string>
+    <string name="section_c2_question_c2e_option_1">1~ ہاں </string>
+    <string name="section_c2_question_c2e_option_0">0~ نہیں </string>
+
+    <!-- TODO: Section C3 Strings -->
+
+    <string name="section_c3_time">وقت </string>
+    <string name="section_c3_activity"> سرگرمی </string>
+    <string name="section_c3_activity_option_a"> نیند </string>
+    <string name="section_c3_activity_option_b">گھر کے دیگر کاموں جیسے کھانا پکانا یا صفائی   کرنےکے دوران چھوٹے بہن بھائیوں  کی دیکھ بھال  کرنا </string>
+    <string name="section_c3_activity_option_c">گھر کے اندر  کام کاج میں مدد  (صفائی ، کپڑے /برتن  دھونا, کھانا پکانا)</string>
+    <string name="section_c3_activity_option_d">گھر میں بزرگوں کی دیکھ بھال</string>
+    <string name="section_c3_activity_option_e"> گھر کے اندر   بغیر اجرت کے کاموں میں مدد کرنا  مثلاً کھانا بنانا، کھلونے  اور دیگر اشیاء تیار کرنا جنہیں گھر کے دوسرے افراد فروخت کرتے ہیں </string>
+    <string name="section_c3_activity_option_f"> گھر کے باہر  کام کاج میں مدد (مال مویشی ، کھیتوں میں کام ) </string>
+    <string name="section_c3_activity_option_g"> گھر سے باہر اجرت پر کام کرنے کے لئے جانا  </string>
+    <string name="section_c3_activity_option_h"> گھر پر سکول کی تعلیم   کے کسی پروگرام/فاصلاتی تعلیم   جو کہ ریڈیو  ٹیلی ویژن یا انٹرنیٹ پر  پڑھا رہے ہیں ( جیسے  ٹیلی سکول ، تعلیم گھر وغیرہ) میں  استعمال ہو ا  وقت؟ </string>
+    <string name="section_c3_activity_option_i"> گھر پر سکول کی تعلیم کے متعلق کام کرنا  یعنی ہوم  ورک کرنا  ، سکول کی کتابیں پڑھنا (فاصلاتی تعلیم اس میں شامل نہیں ) </string>
+    <string name="section_c3_activity_option_j"> ٹیو شن پڑھنا </string>
+    <string name="section_c3_activity_option_k"> گھرپر یا محلے کے دوستوں  /سہیلیوں کے ساتھ کوئی نیا  ہنر سیکھنا  جیسا کہ کمپیوٹر، سلائی کڑھائی،  کھانا پکانا یا بیوٹیشن کا کورس  کرنا </string>
+    <string name="section_c3_activity_option_l"> گھر پر خود سے یا کسی   بڑے کی مدد سے    کتابیں یا میگزین پڑھنا (فرصت کے لئے پڑھنا) </string>
+    <string name="section_c3_activity_option_m"> مذہبی سر گرمیاں  (نماز ، قران مجید  پڑھنا  ،وغیرہ ) </string>
+    <string name="section_c3_activity_option_n"> ٹی وی دیکھنا (بشمول یوٹیوب  وغیرہ) </string>
+    <string name="section_c3_activity_option_o"> کھیل کود ، دوستوں کے ساتھ گپ شپ اور دیگر   تفریح </string>
+    <string name="section_c3_activity_option_p"> گھر میں یا محلے کی دوستوں کے ساتھ کوئی نَیا ہنر سیکھنا مثلاً کمپیوٹر, سلائی ، کڑھائی  کھانا پکانا یا بیوٹیشن کورس       </string>
+    <string name="section_c3_activity_option_q"> گھر کے اندر بلا معاوضہ کام کاج میں مدد جیسے کھانا پکانا ، کھلونے یا دیگر سامان تیار کرنا جو گھر کے افراد بیچتے ہیں۔ </string>
+    <string name="section_c_question_c4"> C3 گھر کے کس فرد سے پوچھا گیا ؟  </string>
+    <string name="section_c_question_c4_option1">1~ ماں/سوتیلی ماں</string>
+    <string name="section_c_question_c4_option2">2~ باپ/سوتیلا باپ</string>
+    <string name="section_c_question_c4_option3">3~ خاتون سرپرست (پھوپھی / خالہ/ دادی/ نانی وغیرہ)</string>
+    <string name="section_c_question_c4_option4">4~ مرد سرپرست (چچا / ماموں/ دادا/ دادی وغیرہ )</string>
+    <string name="section_c_question_c4_option5">5~ بہن  ( 18 سال یا 18  سال سے زائد)</string>
+    <string name="section_c_question_c4_option6">6~ بھائی( 18 سال یا 18  سال سے زائد)</string>
+    <string name="section_c_question_c4_option99">99~ دیگر وضاحت کریں۔۔</string>
+
+    <string name="section_c3_script_1"> جواب دہندہ کو پڑھ کر سنائیں : </string>
+    <string name="section_c3_script_2"> پاکستان میں سکول کچھ مہینوں سے بند ہیں  ہم جاننا چاہتے ہیں کہ ۔۔۔۔  ایک عام دن میں  اپنا وقت کیسے گزارتی / گزارتا ہے  </string>
+    <string name="section_c3_instructions_1"> ۔۔۔۔ کتنے گھنٹے  یا منٹ  درج ذیل کام کرتی ہے؟ </string>
+    <string name="section_c3_instructions_2"> ہر آپشن  کے بارے علیحدہ علیحدہ پوچھیں</string>
+
+    <!-- TODO: Section D Strings -->
+    <string name="section_D_d1">سکول  بند ہونے سے پہلے  اور   سکو ل بند ہونے کے بعد کیا۔۔۔۔    سکول کے  اوقات  کے  بعد   ٹیوشن  پڑھتی تھی / تھا ؟ </string>
+    <string name="section_D_d1_instructions">لاگو ہونے والے تمام جوابات لکھیں</string>
+    <string name="section_D_d1_option_1">1~ ہاں، سکول بند  ہونے سے پہلے</string>
+    <string name="section_D_d1_option_2">2~ ہاں ،سکول بند  ہونے کے بعد</string>
+    <string name="section_D_d1_option_3">3~ ہاں، ہوم  سکولنگ گھرانے   کے کسی فرد  کے پاس</string>
+    <string name="section_D_d1_option_0">0~ نہیں</string>
+
+    <string name="section_D_d2">اگر ہاں،  تو  پرائیوٹ  ٹیوشن پڑھانے والے کو اوسطً    ماہانہ کتنی فیس  اداکرنا پڑھتی ہے؟</string>
+    <string name="section_D_d2_instructions">جواب 0 بھی ہو سکتا ہے </string>
+    <string name="section_D_d3">سکول کی بندش کے عرصہ میں آپ کو ہر ماہ   اوسطً  کتنی فیس ۔۔۔۔  ادا کرنا پڑی ؟</string>
+    <string name="section_D_d3_instructions">جواب 0 بھی ہو سکتا ہے</string>
+
+    <string name="section_D_d4">کیا سکول کی بندش کی وجہ  سے تعلیمی سرگرمیوں کے حوالے سے آپ کو  اضافی اخراجات  کرنا پڑے جو کہ  سکول بند ہونے سے پہلے  نہیں تھے؟</string>
+    <string name="section_D_d4_option_1">1~ ہاں</string>
+    <string name="section_D_d4_option_0">0~ نہیں</string>
+
+    <string name="section_D_d5">کیا آپ نے  گورنمنٹ یا کسی اور ادارے  کے ایسے کسی پروگرام کے بارے میں سُنا ہے جو  بچوں کو سکول میں داخل  کرانے میں مدد دیتاہے ؟  </string>
+    <string name="section_D_d5_instructions">  (لاگو ہونے  والے تمام آپشن  کا انتخاب کریں )</string>
+    <string name="section_D_d5_option_0">0~ نہیں </string>
+    <string name="section_D_d5_option_1">1~ وظیفے کا پروگرام (جیسا کہ زیورِ تعلیم پروگرام) </string>
+    <string name="section_D_d5_option_2">2~ انرولمنٹ ڈرائیو/  بچوں کو سکول میں داخل کرنے کی مہم </string>
+    <string name="section_D_d5_option_3">3~ سکول کی صفائی  مہم </string>
+    <string name="section_D_d5_option_4">4~ این جی او  /غیر سرکاری اداروں  کے پروگرامز</string>
+    <string name="section_D_d5_option_99">99~ دیگر (وضاحت کریں )۔۔۔۔</string>
+
+    <string name="section_D_d6">سکول بند ہونے سے پہلے   آپ کی  کیا  تواقعات(امید) تھی  کہ آپ کی بچی / بچہ کتنی جماعتیں پڑھے گی / گا؟</string>
+
+    <string name="section_D_d7">آپ کی بچی / بچہ کتنی جماعتیں پڑھے گی / گا اس بات میں کیا سکول بند  ہو جانے کی وجہ سے آپ کی توقعات  (امید)  میں کوئی تبدیلی آئی ہے ؟</string>
+    <string name="section_D_d7_option_1">1~ امید کم ہو گئی</string>
+    <string name="section_D_d7_option_2">2~ امید بڑھ گئی </string>
+    <string name="section_D_d7_option_3">3~ کوئی تبدیلی نہیں</string>
+
+    <string name="section_D_d8">آپ کی توقعات  (امید)  میں کیوں  تبدیلی آئی؟</string>
+    <string name="section_D_d8_instructions">(جوابات پڑھ کر نہ سنائیں  لاگو ہونے والے تمام جوابات نوٹ کریں)</string>
+    <string name="section_D_d8_option_1">1~ 1گھریلو آمدنی میں کمی </string>
+    <string name="section_D_d8_option_2">2~ بچی / بچہ   گھر کے کاموں میں مدد کرتا ہے</string>
+    <string name="section_D_d8_option_3">3~ بچی / بچہ گھرانے کےلیے آمدن  کا ذریعہ بنے گاا</string>
+    <string name="section_D_d8_option_4">4~ بچی/ بچہ پڑھائی میں پیچھے رہ ر گیا  ہے  اس لیے پڑھائی میں چل نہیں پائے گی/ گا</string>
+    <string name="section_D_d8_option_5">5~ بچوں کےلیے آمدن کے محدود (کم )  مواقع  ہیں </string>
+    <string name="section_D_d8_option_99">99~ دیگر وضاحت کریں ۔۔۔</string>
+
+    <string name="section_D_d9"> کیا کرونا وبا کے دوران  آپ کے گھرانے کو  درج ذیل میں سے کسی کا سامنا کرنا پڑا ؟</string>
+    <string name="section_D_d9_option_0">0~ کوئی مسئلہ نہیں ہوا </string>
+    <string name="section_D_d9_option_1">1~ گھرانے کا کوئی فرد  کرونا کی وجہ سے بیمار ہوا </string>
+    <string name="section_D_d9_option_2">2~  گھر انے کا کوئی فرد کرونا کی و جہ   وفات پا گیا </string>
+    <string name="section_D_d9_option_3">3~ گھرانے کو آمد ن  کے بڑے  حصہ کا نقصان  اُٹھانا پڑا </string>
+    <string name="section_D_d9_option_98">98~ معلوم نہیں  </string>
+    <string name="section_D_d9_option_97">97~ جواب دینے سے انکار </string>
+    <!-- TODO: Section E Strings -->
+
+    <string name="section_E_e1"> مندرجہ ذیل چیزوں میں کون کون سی چیز  یں آپ کے گھر میں ہیں؟</string>
+    <string name="section_E_e1_option_1">1~ ہاں</string>
+    <string name="section_E_e1_option_0">0~ نہیں</string>
+
+    <string name="section_E_e1_1">1~ UPS  /  جنریٹر </string>
+    <string name="section_E_e1_2">2~ کپڑے دھونے والی  مشین </string>
+    <string name="section_E_e1_3">3~ ائر کولر  </string>
+    <string name="section_E_e1_4">4~ ریفریجریٹر/ فری  </string>
+    <string name="section_E_e1_5">5~ ٹیلی ویژن  </string>
+    <string name="section_E_e1_6">6~ ریڈیو</string>
+    <string name="section_E_e1_7">7~ تار والا فون </string>
+    <string name="section_E_e1_8">8~ سمارٹ فون</string>
+    <string name="section_E_e1_9">9~ سادہ فون</string>
+    <string name="section_E_e1_10">10~ موبائل  انٹر نیٹ</string>
+    <string name="section_E_e1_11">11~ کیبل انٹرنیٹ </string>
+    <string name="section_E_e1_12">12~ وائی فائی </string>
+    <string name="section_E_e1_13">13~ موٹر سائیکل / سکوٹر</string>
+    <string name="section_E_e1_14">14~ سائیکل  </string>
+    <string name="section_E_e1_15">15~ کار/  دیگر گاڑی </string>
+    <string name="section_E_e1_16">16~ گائے / بھینس /بکری </string>
+
+    <string name="section_E_e2">آپ کا گھر   کس  قسم کے میڑیل سے بنا ہے ؟</string>
+    <string name="section_E_e2_option_1">1~ کچا  ( مٹی کا/ٹینٹ/ دیگر عارضی میٹریل ) </string>
+    <string name="section_E_e2_option_2">2~ پکا   ( اینٹ / کنکریٹ  )</string>
+    <string name="section_E_e2_option_3">3~ کچا / پکا   (کچا  پکا ملا جُلا )</string>
+
+    <string name="section_E_e3">آپ کے گھر کے کتنے  رہائشی کمرے ہیں؟</string>
+    <string name="section_E_e3_instructions"> تعداد 0 بھی ہو سکتی ہے</string>
+
+    <string name="section_E_e4"> آپ کے پینے کے  پانی ذریعہ کیا ہے؟</string>
+    <string name="section_E_e4_option_1">1~ ٹیوب ویل/ بور</string>
+    <string name="section_E_e4_option_2">2~ پائپ کے ذریعے پانی/ سرکاری</string>
+    <string name="section_E_e4_option_3">3~ فلٹریشن پلانٹ   </string>
+    <string name="section_E_e4_option_99">99~ دیگر وضاحت کریں</string>
+
+    <string name="section_E_e5">  آپ کے گھر  میں فلش والی ٹائیلٹ (بیت الخلا) ہے ؟</string>
+    <string name="section_E_e5_option_1">1~ ہاں</string>
+    <string name="section_E_e5_option_0">0~ نہیں</string>
+
+    <string name="section_E_e6_scrip6">اس حوالے سے میں جاننا چاہتی / چاہتا   ہوں  کیا آپ اردو میں لکھا میسج پڑھ  اور سمجھ سکتے ہیں؟</string>
+    <string name="section_E_e6">آنے والے چند ہفتوں میں پنجاب  گورنمنٹ  یا سکول  ہیڈ ٹیچر آپ کو سکول دوبارہ کھلنے کے حوالے  سے معلومات  پہچانے کےلیے کال کریں   گے یا  میسج بھیجیں گے  ۔</string>
+    <string name="section_E_e6_instructions_1">اس حوالے سے میں جاننا چاہتی / چاہتا   ہوں  کیا آپ اردو میں لکھا میسج پڑھ  اور سمجھ سکتے ہیں؟</string>
+    <string name="section_E_e6_instructions_2"> ٹیکسٹ میسج:  یہ  ایس ایم ایس  سروس کا ٹیسٹ میسج ہے۔  جو سکول کی پڑھائی کی معلومات مہیا  کرتا ہے۔ </string>
+    <string name="section_E_e6_option_0">0~جواب دہندہ   اردو میں لکھا میسج نہیں پڑھ سکتا  </string>
+    <string name="section_E_e6_option_1">1~ جواب دہندہ   اردو میں لکھا  پورا میسج   پڑھ سکتا</string>
+    <string name="section_E_e6_option_2">2~جواب دہندہ   اردو میں لکھا ادھورا میسج   پڑھ سکتا</string>
+    <string name="section_E_e6_option_3">3~  گھرانے کا کوئی دوسرا فرد میسج پڑھ سکتا ہے</string>
+    <string name="section_E_e6_option_4">4~ نہیں،  کسی دوسری  زبان میں میسج پڑھ سکتا ہے  ( دیگر وضاحت کریں۔۔۔) </string>
+    <string name="section_E_e6_option_5">5~جواب دہندہ میسج کی بجائے کال  سننے کو ترجیح دیتا ہے </string>
+    <string name="section_E_e6_option_97">97~ مجھے میسج نہ بھیجیں </string>
+
+    <string name="section_E_e6message_option_1">1~ ہاں رضا مند ہے</string>
+
+    <string name="section_E_e7">بچوں کےسکول کی پڑھائی کے حوالے سے میسج  آپ کو دن  کے کس وقت مل جائے تو بہتر ہے ؟</string>
+    <string name="section_E_e7_option_1">1~ صبح</string>
+    <string name="section_E_e7_option_2">2~ سہ پہر</string>
+    <string name="section_E_e7_option_3">3~ شام</string>
+    <string name="section_E_e7_option_4">4~ کسی بھی وقت/وقت کی کوئی ترجیح نہیں</string>
+
+    <string name="section_E_e8_script">آپ کو ریسرچ ٹیم کی جانب سے سروے میں شامل ہونے پر  آپ کی حوصلہ افزائی کےلیے 100  روپے کا بیلنس دیا جائے گا۔</string>
+    <string name="section_E_e8">100 روپے کا  موبائل بیلنس وصول کرنے کےلیے  کیا آپ مجھے بتائیں گے کہ    آپ کی سم کس نیٹ ورک پر ہے؟</string>
+    <string name="section_E_e8_option_1">1~ جاز/ وارد</string>
+    <string name="section_E_e8_option_2">2~ ٹیلی نار</string>
+    <string name="section_E_e8_option_3">3~ زونگ </string>
+    <string name="section_E_e8_option_4">4~ یو فون </string>
+    <string name="section_E_e8_option_99">99~ دیگر وضاحت۔۔۔</string>
+
+    <string name="section_E_e9"> سروے کو مکمل کرنے کے لیے زیادہ تر کس زبان  کا ستعمال کیا گیا؟</string>
+    <string name="section_E_e9_option_1">1~ اردو</string>
+    <string name="section_E_e9_option_2">2~ پنجابی</string>
+    <string name="section_E_e9_option_3">3~ سرائیکی  </string>
+    <string name="section_E_e9_option_4">4~ ہندکو </string>
+    <string name="section_E_e9_option_5">5~ پشتو</string>
+    <string name="section_E_e9_option_99">99~ دیگر وضاحت کریں</string>
+
+    <string name="section_E_e10">کال کی کوالٹی</string>
+    <string name="section_E_e10_option_1">1~ کوئی مسئلہ نہیں</string>
+    <string name="section_E_e10_option_2">2~ کنکشن کا کچھ مسئلہ</string>
+    <string name="section_E_e10_option_3">3~ کنکشن کا بہت مسئلہ</string>
+
+    <!-- TODO: Section b Strings -->
+
+    <string name="section_b_question_b0">کیا آپ اپنا نام بتانا پسند کریں گے/گی ؟ </string>
+    <string name="section_b_question_b0_instructions">نام </string>
+    <string name="section_b_question_b1">آپ کا اس بچی /بچے سے کیا رشتہ ہے؟</string>
+    <string name="section_b_question_b1_option1">1~ ماں/سوتیلی ماں</string>
+    <string name="section_b_question_b1_option2">2~ باپ/سوتیلا باپ</string>
+    <string name="section_b_question_b1_option3">3~ خاتون سرپرست (پھوپھی / خالہ/ دادی/ نانی وغیرہ)</string>
+    <string name="section_b_question_b1_option4">4~ مرد سرپرست (چچا / ماموں/ دادا/ دادی وغیرہ )</string>
+    <string name="section_b_question_b1_option5">5~ بہن  ( 18 سال یا 18  سال سے زائد)</string>
+    <string name="section_b_question_b1_option6">6~ بھائی( 18 سال یا 18  سال سے زائد)</string>
+    <string name="section_b_question_b1_option99">99~ دیگر وضاحت کریں۔۔</string>
+    <string name="section_b_question_b2">سکول بند ہونے سے پہلے کیا ۔۔۔۔ سکول میں داخل تھی / تھا ؟</string>
+    <string name="section_b_question_b2_option1">1~ ہاں</string>
+    <string name="section_b_question_b2_option0">0~ نہیں</string>
+    <string name="section_b_question_b3">کیا ۔۔۔ سکول ۔۔۔۔ میں داخل تھی / تھا ؟</string>
+    <string name="section_b_question_b3_option1">1~ ہاں</string>
+    <string name="section_b_question_b3_option0">0~ نہیں</string>
+    <string name="section_b_question_b4">برائے مہربانی بچی / بچہ جس سکول میں داخل تھی / تھا اس سکول کا نام اور ایڈریس بتائیں؟</string>
+    <string name="section_b_question_b4a">سکول کا نام :</string>
+    <string name="section_b_question_b4b">سکول کا ایڈریس :</string>
+    <string name="section_b_question_b5">.....کس جماعت میں داخل تھی/ تھا ؟</string>
+    <string name="section_b_question_b5_option_0">0~ کچی /ECE / نرسری  / کے جی/ پریپ  </string>
+    <string name="section_b_question_b5_option_1">1~ پہلی جماعت   </string>
+    <string name="section_b_question_b5_option_2">2~ دوسری جماعت </string>
+    <string name="section_b_question_b5_option_3">3~ تیسری جما عت </string>
+    <string name="section_b_question_b5_option_4">4~ چوتھی جما عت </string>
+    <string name="section_b_question_b5_option_5">5~ پانچویں جما عت </string>
+    <string name="section_b_question_b5_option_6">6~ چھٹی جما عت </string>
+    <string name="section_b_question_b5_option_7">7~ ساتویں جما عت </string>
+    <string name="section_b_question_b5_option_8">8~ آٹھویں جما عت </string>
+    <string name="section_b_question_b5_option_9">9~ نوویں جما عت </string>
+    <string name="section_b_question_b5_option_10">10~ دسویں جما عت </string>
+    <string name="section_b_question_b5_option_11">11~ گیارہویں جما عت </string>
+    <string name="section_b_question_b5_option_12">12~ بارہویں جما عت </string>
+    <string name="section_b_question_b5_option_13">13~ تیرہویں جما عت </string>
+    <string name="section_b_question_b5_option_14">14~ چودہویں جما عت </string>
+    <string name="section_b_question_b5_option_15">15~ پندرہویں جما عت </string>
+    <string name="section_b_question_b5_option_16">16~ سولہویں جما عت </string>
+    <string name="section_b_question_b6">جب دوبارہ سکول کھلیں گے تو کیا آپ ۔۔۔۔ کو دوبارہ سکول بھیجنے کا ارادہ (منصوبہ) رکھتے ہیں ؟</string>
+    <string name="section_b_question_b6_option1">1~ ہاں</string>
+    <string name="section_b_question_b6_option0">0~ نہیں</string>
+    <string name="section_b_question_b6_option98">98~ معلوم نہیں</string>
+    <string name="section_b_question_b7">سکول دوبارہ کھلنے کے حوالے سے آپ کے کیا خدشات ہیں</string>
+    <string name="section_b_question_b7_instructions">لاگو ہونے والے تمام جوابات لکھیں۔</string>
+    <string name="section_b_question_b7_option0">0~ کوئی خدشہ نہیں  </string>
+    <string name="section_b_question_b7_option1">1~ سکول کے زیادہ اخراجات</string>
+    <string name="section_b_question_b7_option2">2~ بچی / بچہ کی صحت</string>
+    <string name="section_b_question_b7_option3">3~ گھرانے کے افراد کی صحت</string>
+    <string name="section_b_question_b7_option4">4~ بچی/ بچہ پڑھائی میں پیچھے رہ ر گیا ہے اس لیے پڑھائی میں چل نہیں پائے گی/ گا</string>
+    <string name="section_b_question_b7_option5">5~ بچی / بچہ گھر کے کام کاج میں مدد کر رہا ہے</string>
+    <string name="section_b_question_b7_option6">6~ بچی / بچہ اجرت پر کام کر رہا ہے</string>
+    <string name="section_b_question_b7_option7">7~ کرونا کے حوالے سے فکر  / SOPs   کا نفاذ</string>
+    <string name="section_b_question_b8">کیا آپ کے علم میں ہے کہ دوبارہ سکول کب کھل رہے ہیں ؟</string>
+    <string name="section_b_question_b8_option1">1~ ہاں</string>
+    <string name="section_b_question_b8_option0">0~ نہیں</string>
+    <string name="section_b_question_b9">آپ کو سکول کھلنے کے حوالے سے معلومات کس ذریعہ سے ملی؟</string>
+    <string name="section_b_question_b9_instructions">لاگو ہونے والے تمام جوابات لکھیں۔</string>
+    <string name="section_b_question_b9_option1">1~ گورنمنٹ سے</string>
+    <string name="section_b_question_b9_option2">2~ سکول سے</string>
+    <string name="section_b_question_b9_option3">3~ دوسرے لوگوں سے</string>
+    <string name="section_b_question_b9_option4">4~ خبروں سے / اخبار</string>
+    <string name="section_b_question_b9_option5">5~ انٹر نیٹ</string>
+    <string name="section_b_question_b10">کیا آپ نے گھر پر سکول کی تعلیم کے حوالےسے درج ذیل پروگرام جو کہ ریڈیو / ٹیلی ویژن یا انٹر نیٹ پر فراہم کیے جا رہے ہیں کسی ایک کے بارے میں سنا ہے؟</string>
+    <string name="section_b_question_b10_option_1">1~ تعلیم گھر</string>
+    <string name="section_b_question_b10_option_2">2~ ٹیلی سکول</string>
+    <string name="section_b_question_b10_option_3">3~ یوٹیوب/ واٹس ایپ / زوم</string>
+    <string name="section_b_question_b10_option_4">4~ خان اکیڈمی</string>
+    <string name="section_b_question_b10_option_5">5~ ریڈیو ۔ My best friend (UNESCO) / Listen to learn</string>
+    <string name="section_b_question_b10_option_99">99~ دیگر وضاحت کریں۔۔۔۔</string>
+    <string name="section_b_question_b10_option_0">0~ نہیں</string>
+    <string name="import_now">Import Now</string>
+
+
+</resources>

@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Questionnaire.Q_sectionD">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/application_name"
+                android:textColor="@color/color_white"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="PERSONAL INFORMATION: Section D"
+                    android:textColor="@color/color_white"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/txt_emp_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Emp ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_order_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Order No"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_farmer_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Farmer ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caller_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <Button
+                    android:id="@+id/btn_RedialCall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Redial Call"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_AddReportQuestionnaire"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Add Report"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/qd1_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="22sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                           android:text="        پہلے میں آپ سے کچھ سوالات پوچھنا چاہوں گی۔ کیا آپ مجھے بتائیں گے کہ "
+                            android:textColor="#F44336"
+                            android:textSize="24sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 1"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtQuestionD1Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="  کیا وہ زمین جس پر آپ کاشت کرتے ہیں وہ ضلع [A3] میں گاؤں  [A7]  میں واقع  ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="28sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_qd1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d1_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="1- ہاں"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d1_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="2- نہیں"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd2_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 2"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/farmer_tehsil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="Farmer Tehsil"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" وہ زمین جس پر آپ کاشت کرتے ہیں وہ کس UC  اور کس موضع /دیہہ میں واقع  ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" موضع/ گاؤں کا نام اور کوڈ"
+                            android:textColor="#0E0308"
+                            android:textSize="30sp" />
+
+
+                        <Button
+                            android:id="@+id/btnSelectVillage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginRight="60dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/v_rounder_button_"
+                            android:drawableLeft="@drawable/ic_search_black_24dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="4dp"
+                            android:text="Please Select Village and UC Name"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                        <EditText
+                            android:id="@+id/txt_d2_villageName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:hint="Village Name"
+                            android:inputType="textCapCharacters"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <EditText
+                                android:id="@+id/txt_d2_villageCode"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_weight="1.5"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="Village Code"
+                                android:inputType="text"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/btnNoVillageFound"
+                                android:layout_width="0dp"
+                                android:layoutDirection="rtl"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_weight=".5"
+                                android:hint="Put -99"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/black_color"
+                                android:textStyle="bold"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="6dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="یوسی کا نام اور کوڈ"
+                            android:textColor="#0E0308"
+                            android:textSize="30sp" />
+
+
+                        <EditText
+                            android:id="@+id/txt_d2_ucName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:hint="UC name"
+                            android:inputType="textCapCharacters"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="20sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                            <EditText
+                                android:id="@+id/txt_d2_ucCode"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_weight="1.5"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="UC Code"
+                                android:inputType="text"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp" />
+
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:id="@+id/btnNoUCFound"
+                                android:layout_width="0dp"
+                                android:layoutDirection="rtl"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_weight=".5"
+                                android:hint="Put -99"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/black_color"
+                                android:textStyle="bold"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd3_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 3"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/txtQuestionD3Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" کیا تحصیل (A4) ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+
+                        <RadioGroup
+                            android:id="@+id/rg_qd3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d3_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="1- ہاں"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d3_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="2- نہیں"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="6dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" تحصیل کا نام اور کوڈ"
+                            android:textColor="#0E0308"
+                            android:textSize="30sp" />
+
+                        <Button
+                            android:id="@+id/btnSelectTehsil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginRight="60dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/v_rounder_button_"
+                            android:drawableLeft="@drawable/ic_search_black_24dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="4dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="4dp"
+                            android:text="Please Select Tehsil Name and Code"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/txt_d3_tehsilName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:drawableLeft="@drawable/ic_search_black_24dp"
+                            android:hint="Tehsil Name"
+                            android:inputType="textCapCharacters"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="20sp"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/txt_d3_tehsilCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:digits="-1234567890"
+                            android:hint="Tehsil Code"
+                            android:inputType="text"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="24sp"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd4_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 4"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Qd2VillageName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="Farmer Village"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/tv_d2VillageName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" آپ کی زمین  کس  گاؤں /بستی /ڈھوک /ڈیرہ  میں  ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="شمار کنندہ نوٹ:  بستی سے مراد چھوٹا گا ؤں اور بستی ہوتی ہے ۔ یہ موضع /دیہہ سے چھوٹی آبادی ہوتی ہے۔"
+                            android:textColor="#F44336"
+                            android:textSize="24sp" />
+
+                        <EditText
+                            android:id="@+id/txt_qd4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:hint="Abadi Name"
+                            android:inputType="textCapCharacters"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="20sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd5_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 5"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" آپ کی عمر کتنی ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+
+                        <EditText
+                            android:id="@+id/txt_qd5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:digits="-1234567890"
+                            android:hint="age"
+                            android:inputType="numberSigned"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="12dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd6_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 6"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="6dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="آپ کی جنس؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="12dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="12dp"
+                            android:paddingBottom="12dp"
+                            android:text="شمار کنندہ نوٹ:  صرف ضرورت پڑنے پر پوچھیں۔ جنس کا انتخاب  آواز کے فرق کی بنیاد پر خود کریں۔"
+                            android:textColor="#F44336"
+                            android:textSize="24sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_qd6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d6_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="1- مرد"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d6_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="2- عورت"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qd7_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. D 7"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="22sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                           android:text="شمار کنندہ  اس بات کی مکمل  احتیاط  کریں کی آپ کسی قسم کی کوئی رائے نہ دیں خواہ تعریفی کلمات  ہوں یا کسی اور قسم کی بات۔
+پرائمری کا مطلب  ہے کہ پانچ جماعتیں  پاس  کی ہیں
+مڈل کا مطلب  ہے کہ  آٹھ جماعتیں  پاس  کی ہیں۔
+صرف  پاس شدہ جماعتیں نوٹ کریں۔ مثلاً اگر کسی شخص نے BSc کا پہلا  سال  مکمل  کیا ہے تو آپ  10 کوڈ استعمال  کریں جس کا مطلب  ہے میٹرک  / ایف ایس سی
+"
+                            android:textColor="#F44336"
+                            android:textSize="24sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="15sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" آپ نے کتنی تعلیم حاصل کی ہے؟"
+                            android:textColor="@color/text_questions_dark_red"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_qd7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="0"
+                                android:text="0- ایک سال سے کم"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="1- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="2- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="3- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="4- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="5- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="6"
+                                android:text="6- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="7"
+                                android:text="7- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="8"
+                                android:text="8- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="9"
+                                android:text="9- کلاس "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="10"
+                                android:text="10- میٹرک / ایف اس سی"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_16"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="16"
+                                android:text="16- بی ایس سی ، ماسٹر "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_d7_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="15sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="88"
+                                android:text="88- معلوم نہیں "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Back"
+                android:textColor="@color/color_white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

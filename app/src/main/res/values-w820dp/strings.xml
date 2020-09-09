@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connection_error_message_title">Connection Error</string>
+    <string name="connection_error_message">Please check your Internet Connection</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="Already_synced">No Data to Sync</string>
+    <string name="sdcard_exported_text">Sdcard exported : Syncing to server is commented</string>
+
+    <string name="section_a_question_1">   1.شمار کنندہ  :   کیا آپ کی کال سنی گئی؟</string>
+    <string name="section_a_question_1_option_1">  ہاں </string>
+    <string name="section_a_question_1_option_0">  نہیں</string>
+
+    <string name="section_a_question_2"> ٓپ کی کال کیوں نہیں سنی گئی؟</string>
+    <string name="section_a_question_2_option_1">  کال نہیں اٹھائی گئی  </string>
+    <string name="section_a_question_2_option_2">   نمبر ایکٹیو نہیں/ نمبر درست  نہیں  </string>
+    <string name="section_a_question_2_option_3">  رابطہ نہیں ہو سکا (نیٹ ورک دستیاب نہیں، موبائل بند ہے)</string>
+    <string name="section_a_question_2_option_4">  نمبر کا مصروف ملنا </string>
+    <string name="section_a_question_2_option_5">  تین بار  کوشش کے باوجود کال نہیں  سنی گئی</string>
+    <string name="import_now">Import Now</string>
+
+</resources>

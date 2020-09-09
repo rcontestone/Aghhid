@@ -1,0 +1,2 @@
+include ':app', ':searchablespinnerlibrary', ':mubdateandtime-debug',  ':mubchathead'
+rootProject.name='FCallBackS'

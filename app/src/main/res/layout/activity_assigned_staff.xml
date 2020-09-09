@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".Main.AssignedStaffActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/application_name"
+                android:textColor="@color/color_white"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="Assigned Staff and Activity Performed"
+                    android:textColor="@color/color_white"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:weightSum="2"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/staff_code"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+
+                android:background="@drawable/view_background_2"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:layout_marginRight="4dp"
+                android:text="Staff Id = "
+                android:textColor="#030303"
+                android:textSize="17sp" />
+
+
+            <TextView
+                android:id="@+id/designation"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/view_background_2"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="Designation = "
+                android:textColor="#030303"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Agri Staff Name"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/staff_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Staff Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned AO:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ao_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Assigned AO"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned FA:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/fa_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Assigned FA"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned AI:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ai_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Assigned AI"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/v_rounder_button_"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:text="Q. No. E 10 and E 15"
+                        android:textColor="@color/color_white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Select Activity"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/ext_select_activity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Select Activity"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Village Name: A10"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/village_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/farmer_mobile"
+                            android:ems="10"
+                            android:hint="Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Activity Performed: A14"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/activity_performed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Select Activity"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Activity Date"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/activity_datetime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Activity Date"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:visibility="gone"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Details Of Activity"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/details_of_activity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:maxLines="100"
+                            android:ellipsize="end"
+                            android:hint="Details Of Activity"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

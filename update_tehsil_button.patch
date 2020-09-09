@@ -1,0 +1,123 @@
+Index: app/src/main/java/com/rcons/fcallbacks/Questionnaire/Q_sectionD.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/rcons/fcallbacks/Questionnaire/Q_sectionD.java	(revision 219e78520a7c30f02e768d02302ed1cd73bf8762)
++++ app/src/main/java/com/rcons/fcallbacks/Questionnaire/Q_sectionD.java	(date 1575212441358)
+@@ -41,7 +41,6 @@
+     String userName = "";
+     boolean isPendingCall = false;
+ 
+-
+     Cursor cursor;
+     String region = "";
+     String emp_id = "";
+@@ -71,7 +70,7 @@
+     Button NextButton, BackButton,btn_RedialCall, btn_AddReportQuestionnaire;;
+     TextView txtQuestionD1Text;
+     TextView txtQuestionD3Text;
+-    TextView txtFarmerID,txtEmpID,txtOrderID;
++    TextView txtFarmerID,txtEmpID,txtOrderID,farmer_tehsil;
+ 
+ 
+     String d1 ="";
+@@ -126,12 +125,17 @@
+         txtOrderID.setText("OrderID: " + order_id);
+ 
+ 
++        farmer_tehsil = findViewById(R.id.farmer_tehsil);
++        farmer_tehsil.setText("Farmer Tehsil: " + farmerTehsil);
++
++
+         btnSelectVillage = findViewById(R.id.btnSelectVillage);
+         btnSelectTehsil = findViewById(R.id.btnSelectTehsil);
+ 
+ 
+         txtQuestionD1Text = findViewById(R.id.txtQuestionD1Text);
+         txtQuestionD3Text = findViewById(R.id.txtQuestionD3Text);
++
+         String question1Text = txtQuestionD1Text.getText().toString();
+         String question3Text = txtQuestionD3Text.getText().toString();
+         if (!StringUtils.isEmpty(question1Text)) {
+Index: app/src/main/res/layout/q_section_d.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/q_section_d.xml	(revision 219e78520a7c30f02e768d02302ed1cd73bf8762)
++++ app/src/main/res/layout/q_section_d.xml	(date 1575212520533)
+@@ -316,6 +316,23 @@
+                             android:textSize="20sp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/farmer_tehsil"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_gravity="center"
++                            android:paddingLeft="10dp"
++                            android:paddingTop="12dp"
++                            android:paddingRight="10dp"
++                            android:paddingBottom="12dp"
++                            android:text="Farmer Tehsil"
++                            android:textAlignment="center"
++                            android:textColor="@color/colorPrimaryDark"
++                            android:textSize="20sp"
++                            android:textStyle="bold" />
++
++
++
+                         <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+Index: app/src/main/res/layout/q_section_e.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/q_section_e.xml	(revision 219e78520a7c30f02e768d02302ed1cd73bf8762)
++++ app/src/main/res/layout/q_section_e.xml	(date 1575212873529)
+@@ -231,7 +231,7 @@
+ 
+                         <TextView
+                             android:id="@+id/ao_name"
+-                            android:layout_width="279dp"
++                            android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:paddingLeft="10dp"
+@@ -726,7 +726,7 @@
+ 
+                         <TextView
+                             android:id="@+id/fa_name"
+-                            android:layout_width="279dp"
++                            android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:paddingLeft="10dp"
+Index: app/src/main/res/layout/fragment_section_e.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_section_e.xml	(revision 219e78520a7c30f02e768d02302ed1cd73bf8762)
++++ app/src/main/res/layout/fragment_section_e.xml	(date 1575212873173)
+@@ -39,7 +39,7 @@
+ 
+                 <TextView
+                     android:id="@+id/ao_name"
+-                    android:layout_width="279dp"
++                    android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:paddingLeft="10dp"
+@@ -534,7 +534,7 @@
+ 
+                 <TextView
+                     android:id="@+id/fa_name"
+-                    android:layout_width="279dp"
++                    android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:paddingLeft="10dp"

@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TRT.trt_Section_3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/app_name"
+                android:textColor="@color/color_white"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_RedialCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black_color"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="Call"
+                    android:src="@drawable/call_icon_foreground"
+                    android:tint="@color/white_color" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="Section 3"
+                    android:textColor="@color/color_white"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/txt_phone_number"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="Phone Number"
+                    android:textColor="@color/color_white"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/txt_emp_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Emp ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_order_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Order No"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Phone Number"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caller_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Redial Call"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_AddReportQuestionnaire"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Add Report"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:paddingBottom="50dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/q14_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 14"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" I am likely to go to cinemas to watch Turkish movies "
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q14"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q14_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q14_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q14_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q14_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q14_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/q15_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 15"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" I am likely to travel to Turkey for work, study and/or pleasure "
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q15"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q15_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q15_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q15_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q15_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q15_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/q16_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 16"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="I am likely to invest in Turkey"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q16"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q16_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q16_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q16_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q16_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q16_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/q17_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 17"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="I am likely to support Turkey's initiatives and programs in my country "
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q17"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q17_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q17_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q17_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q17_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q17_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/q18_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 18"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" I am likely to follow Turkish news"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q18"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q18_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q18_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q18_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q18_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q18_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/q19_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 19"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="I am likely to support Turkey's foreign policy decisions"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q19"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q19_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q19_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q19_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q19_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q19_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/q20_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. Q 20"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text=" I am likely to learn the Turkish language "
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_q20"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q20_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="Strongly disagree "
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q20_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="Disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q20_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="3"
+                                android:text="Neither agree nor disagree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q20_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="4"
+                                android:text="Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_q20_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="18sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="5"
+                                android:text="Strongly Agree"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="serif"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:text="Back"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:text="End"
+            android:fontFamily="serif"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:text="Next"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

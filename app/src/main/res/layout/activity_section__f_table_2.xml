@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Questionnaire.Q_sectionF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/application_name"
+                android:textColor="@color/color_white"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toRightOf="@+id/btnBack"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="TECHNOLOGY AND PRACTICES ADOPTION: Section F"
+                    android:textColor="@color/color_white"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/txt_emp_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Emp ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_order_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Order No"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_farmer_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Farmer ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/caller_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <Button
+                    android:id="@+id/btn_RedialCall"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Redial Call"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_AddReportQuestionnaire"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Add Report"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/qf1_f2a_f2b_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/qf1_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/view_background_3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/v_rounder_button_"
+                                android:gravity="center"
+                                android:text="Question No. F 1"
+                                android:textColor="@color/text_white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/totalarea_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"
+                               android:background="@drawable/rounder_edittext"
+                                android:gravity="center"
+                                android:text="Total Area = "
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/black_color"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/remainingarea_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:gravity="center"
+                                android:text="Remaining Area = "
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="@color/black_color"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="6dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text="شمار کنندہ نوٹ:  اگر خریف کا موسم ہو تو یہ سوال پوچھیں۔(یکم مئی سے 30نومبر)"
+                                android:textColor="#F44336"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="20dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text="اس خریف  کےسیزن میں آپ کون سی  فصلیں کاشت کر رہے(کاشت کرنے کا سوچ رہے ) ہیں؟"
+                                android:textColor="@color/text_questions_dark_red"
+                                android:textSize="30sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="6dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text="شمار کنندہ نوٹ: اگر ربیع کا موسم ہو تو یہ سوال پوچھیں۔(یکم دسمبر سے 30 اپریل)"
+                                android:textColor="#F44336"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="20dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text="اس ربیع  کےسیزن میں آپ کون سی  فصلیں کاشت کر رہے(کاشت کرنے کا سوچ رہے )ہیں؟"
+                                android:textColor="@color/text_questions_dark_red"
+                                android:textSize="30sp"
+                                android:visibility="gone" />
+
+
+                            <Spinner
+                                android:id="@+id/spinner_qf1_crop"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/tv_f1Crop_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:hint="Crop Code"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/txtf2aError"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Already Added"
+                                android:textColor="@color/share_color"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                            <EditText
+                                android:id="@+id/edt_qf1_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:hint="other"
+                                android:inputType="textCapCharacters"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/qf2a_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/view_background_3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/v_rounder_button_"
+                                android:gravity="center"
+                                android:text="Question No. F 2 a"
+                                android:textColor="@color/text_white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="20dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+
+                                android:text="۔۔۔۔۔۔فصل آپ نے کتنے رقبہ پر کاشت کی ہے؟"
+                                android:textColor="@color/text_questions_dark_red"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="6dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+
+                                android:text="فصل کا رقبہ ایکڑ میں نوٹ کریں"
+                                android:textColor="#F44336"
+                                android:textSize="24sp" />
+
+
+                            <EditText
+                                android:id="@+id/edt_qf2a_acre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="Acre"
+                                android:inputType="numberSigned"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/edt_qf2a_kanal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="Kanal"
+                                android:inputType="numberSigned"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/qf2b_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/view_background_3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/v_rounder_button_"
+                                android:gravity="center"
+                                android:text="Question No. F 2 b"
+                                android:textColor="@color/text_white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="20dp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text=" کیا آپ نے اسی رقبہ میں کوئی دوسری فصل بھی کاشت کی ہوئی ہے؟"
+                                android:textColor="@color/text_questions_dark_red"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="14sp"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:text="نوٹ برائے شمار کنندہ: اس سوال میں ان تمام چھوٹی فصلوں کو نوٹ کیا جائے گا جو بڑی فصلوں میں لگائی گئی ہوں گی جیسے کہ گندم میں سرسوں لگائی گئی ہو۔ رقبہ کے لئے کسان کو کہیں کہ تھوڑا اندازہ  لگا کے بتائے کہ کل رقبہ کہ کتنے حصہ پر یہ چھوٹی فصل لگائی گئی ہے۔
+اگر کوئی اور فصل کاشت نہیں کی گئی تو کوڈ (کوئی فصل کاشت نہیں کی گئی)کا لگائیں .
+"
+                                android:textColor="#F44336"
+                                android:textSize="24sp" />
+
+                            <Spinner
+                                android:id="@+id/spinner_qf2b_crop"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/tv_f2bCrop_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:hint="Crop"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/edt_qf2b_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:hint="other"
+                                android:inputType="textCapCharacters"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="gone" />
+
+
+                            <EditText
+                                android:id="@+id/edt_qf2b_acre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="Acre"
+                                android:inputType="numberSigned"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/edt_qf2b_kanal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/rounder_edittext"
+                                android:digits="-1234567890"
+                                android:hint="Kanal"
+                                android:inputType="numberSigned"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="12dp"
+                                android:textColor="#0E0308"
+                                android:textSize="20sp"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnAddMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="8dp"
+                            android:text="Save"
+                            android:textColor="@color/white_color" />
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="true">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvf2a_f2b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="16dp"
+                                android:paddingBottom="8dp"
+                                android:visibility="visible" />
+                        </HorizontalScrollView>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Back"
+                android:textColor="@color/color_white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

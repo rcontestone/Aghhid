@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main.CallMenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/application_name"
+                android:textColor="@color/color_white"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    fontPath="fonts/Montserrat-Regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:text="Welcome to Baseline Parental Questionnaire"
+                    android:textColor="@color/color_white"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/white_color"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/txt_school_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/white_color"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="School Code"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txt_Student_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/white_color"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Student Id"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtSearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounder_edittext"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:ems="10"
+                android:hint="Search School Code"
+                android:inputType="phone"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/txtEmployeeID"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Emp ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtOrderID"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Order No"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/idtextview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Farmer ID "
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <Button
+                    android:id="@+id/btnAddNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Add Number"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnEditForm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Edit Form"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+
+                <Button
+                    android:id="@+id/btn_questionnaire"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/rounder_button_bg"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="Questionnaire"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_color"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnAssignStaff"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/view_background_2"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Assigned Staff"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Original Farmer Name:"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtOriginalFarmerName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/idtextview"
+                                android:ems="10"
+                                android:fontFamily="@font/urdu"
+                                android:gravity="left"
+                                android:hint="Farmer Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/alternateNameLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            android:visibility="gone">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Alternate Farmer Name:"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtAlternateFarmerName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/idtextview"
+                                android:ems="10"
+                                android:fontFamily="@font/urdu"
+                                android:gravity="left"
+                                android:hint="Farmer Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/txtAlternateMobileLabel"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Farmer Mobile Number"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/farmer_cellphone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/farmer_name"
+                                android:autoLink="phone"
+                                android:ems="10"
+                                android:hint="Farmer Mobile"
+                                android:inputType="phone"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/txtRelationShipName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Father/Husband Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtRelationShip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/farmer_name"
+                                android:autoLink="phone"
+                                android:ellipsize="end"
+                                android:ems="10"
+                                android:fontFamily="@font/urdu"
+                                android:gravity="left"
+                                android:hint="Father/Husband Name"
+                                android:inputType="phone"
+                                android:maxLines="1"
+                                android:textColor="#030303"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Region"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/region"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/farmer_name"
+                                android:autoLink="phone"
+                                android:ems="10"
+
+                                android:hint="Region"
+                                android:inputType="phone"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="District Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/district_basedata"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/uc_name"
+                                android:ems="10"
+                                android:hint="District Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Village Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/village_muza_basedata"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/farmer_mobile"
+                                android:ems="10"
+                                android:hint="Village Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="UC Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/uc_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/village_name"
+                                android:ems="10"
+                                android:hint="UC Name"
+
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tehsil Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tehsil_basedata"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/village_name"
+                                android:ems="10"
+                                android:hint="Tehsil Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/view_background"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Markaz Name"
+                                android:textColor="#96144C"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/markaz_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/village_name"
+                                android:ems="10"
+                                android:hint="Markaz Name"
+                                android:inputType="textPersonName"
+                                android:textColor="#030303"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_marginLeft="16dp"-->
+                        <!--                        android:layout_marginTop="8dp"-->
+                        <!--                        android:layout_marginRight="16dp"-->
+                        <!--                        android:background="@drawable/view_background"-->
+                        <!--                        android:orientation="vertical"-->
+                        <!--                        android:padding="8dp">-->
+
+                        <!--                        <TextView-->
+
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="Agri Staff Name"-->
+                        <!--                            android:textColor="#96144C"-->
+                        <!--                            android:textSize="20sp" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/empost_designation"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_below="@+id/village_name"-->
+                        <!--                            android:ems="10"-->
+                        <!--                            android:hint="Designation"-->
+                        <!--                            android:inputType="textPersonName"-->
+                        <!--                            android:textColor="#3F51B5"-->
+                        <!--                            android:textSize="18sp"-->
+                        <!--                            android:textStyle="bold" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/emp_fullname"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_below="@+id/village_name"-->
+                        <!--                            android:ems="10"-->
+                        <!--                            android:hint="Agri Staff Name"-->
+                        <!--                            android:inputType="textPersonName"-->
+                        <!--                            android:textColor="#030303"-->
+                        <!--                            android:textSize="18sp" />-->
+
+
+                        <!--                    </LinearLayout>-->
+
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_marginLeft="16dp"-->
+                        <!--                        android:layout_marginTop="8dp"-->
+                        <!--                        android:layout_marginRight="16dp"-->
+                        <!--                        android:background="@drawable/view_background"-->
+                        <!--                        android:orientation="vertical"-->
+                        <!--                        android:padding="8dp">-->
+
+                        <!--                        <TextView-->
+
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="Assigned AO"-->
+                        <!--                            android:textColor="#96144C"-->
+                        <!--                            android:textSize="20sp" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/ao_assigned"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:ems="10"-->
+                        <!--                            android:hint="Assigned AO"-->
+                        <!--                            android:inputType="textPersonName"-->
+                        <!--                            android:textColor="#030303"-->
+                        <!--                            android:textSize="18sp" />-->
+                        <!--                    </LinearLayout>-->
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_marginLeft="16dp"-->
+                        <!--                        android:layout_marginTop="8dp"-->
+                        <!--                        android:layout_marginRight="16dp"-->
+                        <!--                        android:background="@drawable/view_background"-->
+                        <!--                        android:orientation="vertical"-->
+                        <!--                        android:padding="8dp">-->
+
+                        <!--                        <TextView-->
+
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="Assigned FA"-->
+                        <!--                            android:textColor="#96144C"-->
+                        <!--                            android:textSize="20sp" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/fa_assigned"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:ems="10"-->
+                        <!--                            android:hint="Assigned FA"-->
+                        <!--                            android:inputType="textPersonName"-->
+                        <!--                            android:textColor="#030303"-->
+                        <!--                            android:textSize="18sp" />-->
+                        <!--                    </LinearLayout>-->
+
+                        <!--                    <LinearLayout-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_marginLeft="16dp"-->
+                        <!--                        android:layout_marginTop="8dp"-->
+                        <!--                        android:layout_marginRight="16dp"-->
+                        <!--                        android:background="@drawable/view_background"-->
+                        <!--                        android:orientation="vertical"-->
+                        <!--                        android:padding="8dp">-->
+
+                        <!--                        <TextView-->
+
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:text="Assigned AI"-->
+                        <!--                            android:textColor="#96144C"-->
+                        <!--                            android:textSize="20sp" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/ai_assigned"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:ems="10"-->
+                        <!--                            android:hint="Assigned AI"-->
+                        <!--                            android:inputType="textPersonName"-->
+                        <!--                            android:textColor="#030303"-->
+                        <!--                            android:textSize="18sp" />-->
+                        <!--                    </LinearLayout>-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Student Name:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_student_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="Student Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="School Name:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_school_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="School Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_mobile_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="Mobile Number"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="School Code:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="School Code"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="School EMIS Code:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+
+                            android:id="@+id/txt_school_emis_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="School EMIS Code"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Private School Code:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_private_school_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="Private School Code"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="District:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_district"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="District"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tehsil:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txt_Tehsil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="District"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/triesLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+
+                            <TextView
+                                android:id="@+id/onorignal"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1.5"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="4dp"
+                                android:paddingRight="16dp"
+                                android:paddingBottom="4dp"
+                                android:textAllCaps="false"
+                                android:textColor="#030303"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/onalternative"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="4dp"
+                                android:paddingRight="16dp"
+                                android:paddingBottom="4dp"
+                                android:text="On Alternative"
+                                android:textAllCaps="false"
+                                android:textColor="#030303"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/reasonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Last Call Status"
+                            android:textColor="#0000ff"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/txtReason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/village_name"
+                            android:ems="10"
+                            android:hint="Reason"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/view_background"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Student ID:"
+                            android:textColor="#96144C"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/idtextview"
+                            android:ems="10"
+                            android:fontFamily="@font/urdu"
+                            android:gravity="left"
+                            android:hint="Student ID"
+                            android:inputType="textPersonName"
+                            android:textColor="#030303"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnCallNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Dial Call"
+                android:textColor="@color/color_white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/prevs_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Prevs Call"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/next_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_button_bg"
+                android:text="Next Call"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounder_disable_button_bg"
+                android:enabled="false"
+                android:text="Report"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,248 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Added from other app
+
+
+
+
+
+    -->
+
+    <dimen name="blocking_activity_margin_left">34.0dip</dimen>
+    <dimen name="blocking_activity_margin_right">34.0dip</dimen>
+    <dimen name="side_margin">10.0dip</dimen>
+    <dimen name="detail_btn_side_margin">10.0dip</dimen>
+    <dimen name="top_margin_big">10.0dip</dimen>
+    <dimen name="top_margin_small">5.0dip</dimen>
+    <dimen name="text_size_base">20.0sp</dimen>
+    <dimen name="text_size_base_by_locale">20.0sp</dimen>
+    <dimen name="text_size_small">17.0sp</dimen>
+    <dimen name="text_size_tiny">12.0sp</dimen>
+
+    <dimen name="text_size_title">35.0sp</dimen>
+    <dimen name="text_size_title_by_locale">35.0sp</dimen>
+    <dimen name="list_item_height">35.0dip</dimen>
+    <dimen name="kids_list_item_height">65.0dip</dimen>
+    <dimen name="editTextPadding">10.0dip</dimen>
+    <dimen name="bottom_bar_btn_padding">20.0dip</dimen>
+
+    <!-- Sign-in screen dimensions -->
+    <dimen name="screens_top_bar_height">70dp</dimen>
+    <dimen name="screens_top_bar_height_xhdpi">90dp</dimen>
+    <dimen name="screens_top_bar_height_xxhdpi">110dp</dimen>
+    <dimen name="settings_screens_top_bar_height_xhdpi">50dp</dimen>
+    <dimen name="screens_top_bar_height_mdpi">60dp</dimen>
+    <dimen name="screens_top_bar_height_ldpi">50dp</dimen>
+    <dimen name="back_btn_left_margin">5dp</dimen>
+    <dimen name="back_btn_left_margin_new_xhdpi">10dp</dimen>
+    <dimen name="help_btn_right_margin_new_xhdpi">10dp</dimen>
+    <dimen name="back_btn_text_view_left_margin">26dp</dimen>
+    <dimen name="back_btn_text_view_left_margin_xhdpi">38dp</dimen>
+    <dimen name="back_btn_text_view_left_margin_mdpi">33dp</dimen>
+    <dimen name="back_btn_text_view_left_margin_ldpi">22dp</dimen>
+    <dimen name="screens_top_bar_text_view_left_margin">5dp</dimen>
+    <dimen name="screens_top_bar_text_view_left_margin_xhdpi">7dp</dimen>
+    <dimen name="screens_top_bar_text_view_left_margin_mdpi">6dp</dimen>
+    <dimen name="sign_in_textfield_label_left_margin">40dp</dimen>
+    <dimen name="sign_in_textfield_label_left_margin_xhdpi">49dp</dimen>
+    <dimen name="sign_in_textfield_right_left_margin">30dp</dimen>
+    <dimen name="sign_in_textfield_right_left_margin_xhdpi">35dp</dimen>
+    <dimen name="sign_in_email_textfield_label_top_margin">17dp</dimen>
+    <dimen name="sign_in_email_textfield_label_top_margin_mdpi">60dp</dimen>
+    <dimen name="sign_in_email_textfield_label_top_margin_ldpi">40dp</dimen>
+    <dimen name="sign_in_email_textfield_left_margin">24dp</dimen>
+    <dimen name="sign_in_email_textfield_top_margin">92dp</dimen>
+    <dimen name="sign_in_email_textfield_top_margin_mdpi">85dp</dimen>
+    <dimen name="sign_in_email_textfield_top_margin_ldpi">65dp</dimen>
+    <dimen name="sign_in_password_textfield_label_top_margin">154dp</dimen>
+    <dimen name="sign_in_password_textfield_label_top_margin_mdpi">147dp</dimen>
+    <dimen name="sign_in_password_textfield_label_top_margin_ldpi">127dp</dimen>
+    <dimen name="sign_in_password_textfield_top_margin">176dp</dimen>
+    <dimen name="sign_in_password_textfield_top_margin_mdpi">169dp</dimen>
+    <dimen name="sign_in_password_textfield_top_margin_ldpi">149dp</dimen>
+    <dimen name="sign_in_forgot_password_label_left_margin">140dp</dimen>
+    <dimen name="sign_in_forgot_password_label_top_margin">231dp</dimen>
+    <dimen name="sign_in_forgot_password_label_top_margin_mdpi">234dp</dimen>
+    <dimen name="sign_in_forgot_password_label_top_margin_ldpi">214dp</dimen>
+    <dimen name="sign_in_forgot_password_label_left_margin_xhdpi">165dp</dimen>
+    <dimen name="sign_in_forgot_password_label_top_margin_xhdpi">240dp</dimen>
+    <dimen name="sign_in_forgot_password_btn_top_margin">222dp</dimen>
+    <dimen name="sign_in_forgot_password_btn_top_margin_ldpi">202dp</dimen>
+    <dimen name="sign_in_forgot_password_btn_top_margin_xhdpi">230dp</dimen>
+    <dimen name="sign_in_btn_top_margin">302dp</dimen>
+    <dimen name="sign_in_btn_top_margin_ldpi">282dp</dimen>
+    <dimen name="sign_in_btn_top_margin_xhdpi">317dp</dimen>
+    <dimen name="sign_in_btn_text_view_top_margin">309dp</dimen>
+    <dimen name="sign_in_btn_text_view_top_margin_xhdpi">326dp</dimen>
+    <dimen name="sign_in_btn_text_view_top_margin_mdpi">311dp</dimen>
+    <dimen name="sign_in_btn_text_view_top_margin_ldpi">291dp</dimen>
+
+    <!-- Select License screen dimensions -->
+    <dimen name="select_license_next_btn_layout_top_margin">45dp</dimen>
+    <dimen name="select_license_next_btn_layout_top_margin_xhdpi">282dp</dimen>
+    <dimen name="select_license_next_btn_layout_right_margin">15dp</dimen>
+    <dimen name="select_license_next_btn_layout_right_margin_xhdpi">282dp</dimen>
+    <dimen name="select_license_next_btn_layout_bottom_margin">10dp</dimen>
+    <dimen name="select_license_next_btn_layout_bottom_margin_xhdpi">10dp</dimen>
+
+    <dimen name="select_tip_item_text_view_right_margin">2dp</dimen>
+    <dimen name="select_license_item_text_view_left_margin">45dp</dimen>
+    <dimen name="select_license_item_text_view_right_margin">95dp</dimen>
+    <dimen name="select_license_item_text_view_left_margin_xhdpi">282dp</dimen>
+    <dimen name="select_license_detail_btn_top_margin">5dp</dimen>
+    <dimen name="select_license_detail_btn_top_margin_xhdpi">282dp</dimen>
+
+    <dimen name="select_license_list_view_layout_top_margin">10dp</dimen>
+    <dimen name="select_license_list_view_layout_top_margin_xhdpi">20dp</dimen>
+
+    <dimen name="select_license_list_view_top_margin">30dp</dimen>
+    <dimen name="select_license_list_view_bottom_margin">15dp</dimen>
+    <dimen name="select_license_list_view_left_margin">15dp</dimen>
+    <dimen name="select_license_list_view_right_margin">15dp</dimen>
+
+    <dimen name="select_license_list_view_top_margin_xhdpi">18dp</dimen>
+    <dimen name="select_license_list_view_bottom_margin_xhdpi">18dp</dimen>
+    <dimen name="select_license_list_view_left_margin_xhdpi">18dp</dimen>
+    <dimen name="select_license_list_view_right_margin_xhdpi">18dp</dimen>
+
+
+    <dimen name="select_license_detail_btn_text_view_bottom_margin">28dp</dimen>
+    <dimen name="select_license_detail_btn_text_view_bottom_margin_xhdpi">23dp</dimen>
+
+
+
+    <dimen name="select_license_detail_btn_text_view_right_margin">15dp</dimen>
+    <dimen name="select_license_detail_btn_text_view_right_margin_mdpi">18dp</dimen>
+    <dimen name="select_license_detail_btn_text_view_right_margin_xhdpi">19dp</dimen>
+
+    <dimen name="select_license_next_btn_text_view_top_margin">12dp</dimen>
+    <dimen name="select_license_next_btn_text_view_top_margin_xhdpi">282dp</dimen>
+    <dimen name="select_license_next_btn_text_view_right_margin">21dp</dimen>
+    <dimen name="select_license_next_btn_text_view_right_margin_mdpi">29dp</dimen>
+    <dimen name="select_license_next_btn_text_view_right_margin_xhdpi">32dp</dimen>
+
+
+
+
+    <!-- Link User screen dimensions -->
+    <dimen name="link_user_next_btn_layout_top_margin">35dp</dimen>
+    <dimen name="link_user_next_btn_layout_top_margin_xhdpi">282dp</dimen>
+    <dimen name="link_user_next_btn_layout_right_margin">15dp</dimen>
+    <dimen name="link_user_next_btn_layout_right_margin_xhdpi">282dp</dimen>
+    <dimen name="link_user_next_btn_layout_bottom_margin">5dp</dimen>
+    <dimen name="link_user_next_btn_layout_bottom_margin_xhdpi">10dp</dimen>
+
+
+    <dimen name="link_user_item_text_view_left_margin">37dp</dimen>
+    <dimen name="link_user_item_text_view_left_margin_xhdpi">282dp</dimen>
+    <dimen name="link_user_detail_btn_top_margin">5dp</dimen>
+    <dimen name="link_user_detail_btn_top_margin_xhdpi">282dp</dimen>
+
+    <dimen name="link_user_list_view_layout_top_margin">10dp</dimen>
+    <dimen name="link_user_list_view_layout_top_margin_xhdpi">20dp</dimen>
+
+    <dimen name="link_user_list_view_top_margin">30dp</dimen>
+    <dimen name="link_user_list_view_bottom_margin">15dp</dimen>
+    <dimen name="link_user_list_view_left_margin">15dp</dimen>
+    <dimen name="link_user_list_view_right_margin">15dp</dimen>
+
+    <dimen name="link_user_list_view_top_margin_xhdpi">18dp</dimen>
+    <dimen name="link_user_list_view_bottom_margin_xhdpi">18dp</dimen>
+    <dimen name="link_user_list_view_left_margin_xhdpi">18dp</dimen>
+    <dimen name="link_user_list_view_right_margin_xhdpi">18dp</dimen>
+
+
+    <dimen name="link_user_detail_btn_text_view_bottom_margin">18dp</dimen>
+    <dimen name="link_user_detail_btn_text_view_bottom_margin_xhdpi">282dp</dimen>
+
+
+
+    <dimen name="link_user_detail_btn_text_view_right_margin">15dp</dimen>
+    <dimen name="link_user_detail_btn_text_view_right_margin_xhdpi">282dp</dimen>
+
+
+
+
+    <dimen name="link_user_next_btn_text_view_top_margin">14dp</dimen>
+    <dimen name="link_user_next_btn_text_view_top_margin_xhdpi">282dp</dimen>
+    <dimen name="link_user_next_btn_text_view_right_margin">22dp</dimen>
+    <dimen name="link_user_next_btn_text_view_right_margin_xhdpi">30dp</dimen>
+
+
+
+    <dimen name="register_success_next_btn_text_view_right_margin">19dp</dimen>
+    <dimen name="register_success_next_btn_text_view_right_margin_xhdpi">19dp</dimen>
+    <dimen name="register_success_next_btn_text_view_right_margin_mdpi">19dp</dimen>
+    <dimen name="create_new_user_btn_text_view_right_margin">18dp</dimen>
+
+
+
+    <!-- Device Register screen  -->
+    <dimen name="device_name_textfield_label_left_margin">40dp</dimen>
+    <dimen name="device_name_textfield_label_left_margin_xhdpi">50dp</dimen>
+
+    <dimen name="device_name_textfield_label_top_margin">40dp</dimen>
+    <dimen name="device_name_textfield_label_top_margin_xhdpi">20dp</dimen>
+
+
+
+    <!-- Settings screen  -->
+    <dimen name="view_activity_left_margin">20dip</dimen>
+    <dimen name="view_activity_right_margin">20dip</dimen>
+    <dimen name="view_activity_height">50dip</dimen>
+    <dimen name="configure_device_option_top_margin">5dip</dimen>
+    <dimen name="enableDisable_device_option_top_margin">5dip</dimen>
+    <dimen name="setting_screen_active_inactive_image_top_margin">15dip</dimen>
+    <dimen name="uninstall_screen_textview_top_margin">15dip</dimen>
+    <dimen name="arrow_image_left_right_margin">35dip</dimen>
+    <dimen name="setting_screen_bottom_btn_bottom_margin">5dip</dimen>
+    <dimen name="view_set_device_rule_button_right_left_margin_xhdpi">50dp</dimen>
+    <dimen name="settings_activity_left_margin">35dip</dimen>
+    <dimen name="settings_activity_hdpi_left_margin">47dip</dimen>
+    <dimen name="settings_activity_mdpi_left_margin">32dip</dimen>
+    <dimen name="settings_activity_ldpi_left_margin">40dip</dimen>
+    <dimen name="settings_activity_icons_margin_xhdpi">50dip</dimen>
+    <dimen name="settings_activity_icons_margin_mhdpi">40dip</dimen>
+    <dimen name="settings_activity_icons_text_margin_xhdpi">30dip</dimen>
+    <dimen name="settings_activity_icons_text_margin_mhdpi">20dip</dimen>
+    <dimen name="settings_activity_icons_text_margin_hdpi">20dip</dimen>
+    <dimen name="settings_activity_icons_text_margin_mdpi">10dip</dimen>
+    <!-- Settings Time managment screen  -->
+    <dimen name="Disable_time_option_top_margin">8dip</dimen>
+    <dimen name="Disable_time_option_left_margin">10dip</dimen>
+    <dimen name="Disable_time_option_how_long_text_left_margin">10dip</dimen>
+
+
+
+
+    <dimen name="activity_horizontal_margin_old">30dp</dimen>
+    <dimen name="activity_vertical_margin_old">16dp</dimen>
+
+</resources>

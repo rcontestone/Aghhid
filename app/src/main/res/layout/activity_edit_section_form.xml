@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_background_3"
+    android:orientation="vertical"
+    tools:context=".VillageSearch.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/v_ic_app_name"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/application_name"
+            android:textColor="@color/color_white"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp">
+
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_arrow_left_white_24dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                fontPath="fonts/Montserrat-Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="Edit Form"
+                android:textColor="@color/color_white"
+                android:textStyle="normal"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/colorPrimary"
+        app:tabIndicatorHeight="2dp" />
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</androidx.viewpager.widget.ViewPager>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:weightSum="5">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_weight="1.5">
+
+
+
+            <TextView
+                android:id="@+id/txtSectionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Section B"
+                android:background="@drawable/view_background_selected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+
+
+
+
+
+            <TextView
+                android:id="@+id/txtSectionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section C"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+
+            <TextView
+                android:id="@+id/txtSectionD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section D"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+
+            <TextView
+                android:id="@+id/txtSectionE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section E"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF_table1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF_table2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF_table4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF_table5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionF_table6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section F"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+            <TextView
+                android:id="@+id/txtSectionG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Section G"
+                android:background="@drawable/view_background_unselected_section"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/color_white"
+                />
+
+
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="3.5">
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/callScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    tools:context=".Main.CallMenuActivity">
+
+    <LinearLayout
+        android:id="@+id/sync_out_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Sync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:fontFamily="serif"
+            android:text="Sync"
+            android:textAllCaps="false"
+            android:textColor="@color/black_color"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:fontFamily="serif"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@color/black_color"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_Exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:fontFamily="serif"
+            android:text="Exit"
+            android:textAllCaps="false"
+            android:textColor="@color/black_color"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:hint="City "
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/txt_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_city_name"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="Person # Mobile"
+        android:textColor="@color/black_color"
+        android:textColorHint="@color/black_color"
+        android:textSize="22sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCallNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_phone_number"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black_color"
+        android:contentDescription="Call"
+        android:src="@drawable/call_icon_foreground"
+        android:tint="@color/white_color"
+        app:fabCustomSize="112dp"
+        app:fabSize="auto"
+        app:maxImageSize="84dp" />
+
+</RelativeLayout>

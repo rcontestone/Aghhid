@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rcons.fcallbacks">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-sdk tools:overrideLibrary="com.mubashar.dateandtime,com.mubashar.mubchatheadservice"/>
+
+    <application
+        android:name=".Utilties.AppController"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon,android:roundIcon">
+        <activity android:name=".ParentalQuestionnaire.pq_Section_A"></activity>
+        <activity android:name=".ParentalQuestionnaire.pq_Section_C2" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_C1" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_C3" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_E2" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_E1" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_D" />
+        <activity android:name=".ParentalQuestionnaire.pq_Section_B" />
+        <activity android:name=".TRT.CallScreen" />
+        <activity android:name=".TRT.trt_Section_4" />
+        <activity android:name=".TRT.trt_Section_3" />
+        <activity android:name=".TRT.trt_Section_2" />
+        <activity android:name=".TRT.trt_Section_1" />
+        <activity android:name=".TRT.trt_Section_0" />
+        <activity android:name=".Questionnaire.Section_A" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".Questionnaire.Q_SectionG_b" />
+        <activity android:name=".EditForm.SectionsSelections" />
+        <activity android:name=".Questionnaire.Section_F_table5" />
+        <activity android:name=".Questionnaire.Section_F_table2" />
+        <activity android:name=".Questionnaire.Section_F_table6" />
+        <activity android:name=".Questionnaire.Section_F_table4" />
+        <activity android:name=".Questionnaire.Section_F_table1" />
+        <activity android:name=".Main.SelectEnterFarmer" />
+        <activity android:name=".Questionnaire.Q_section1" />
+        <activity android:name=".Questionnaire.Q_sectionH" />
+        <activity android:name=".Questionnaire.Q_sectionG" />
+        <activity android:name=".Summary.View_Summary" />
+        <activity
+            android:name=".Questionnaire.Q_sectionF"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Questionnaire.Q_sectionE"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".VillageSearch.SelectVillageActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".VillageSearch.SelectEnterFormActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".VillageSearch.SelectEnumNameActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".EditForm.EditFormActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".VillageSearch.CropActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Questionnaire.Q_sectionD" />
+        <activity android:name=".Questionnaire.Q_sectionC" />
+        <activity android:name=".Questionnaire.Q_sectionB_a_b" />
+        <activity android:name=".QST_Helper.KnowledgeTest" />
+        <activity android:name=".Main.CallMenuActivity" />
+        <activity android:name=".Main.AddReportActivity" />
+        <activity android:name=".VillageSearch.TehsilActivity" />
+        <activity android:name=".VillageSearch.MainActivity" />
+        <activity android:name=".VillageSearch.VillageActivity" />
+        <activity android:name=".QST_Helper.Questions" />
+        <activity android:name=".Main.AssignedStaffActivity" />
+        <activity android:name=".Main.MainMenuActivity" />
+        <activity android:name=".VillageSearch.SelectZaatActivity" />
+        <activity android:name=".VillageSearch.SelectTehsilActivity" />
+        <activity
+            android:name=".Main.LoginActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Main.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Utilties.StartUpMainActivity" />
+        <activity android:name=".Utilties.SyncMainActivity" />
+    </application>
+
+</manifest>
