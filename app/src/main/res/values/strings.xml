@@ -554,4 +554,22 @@
     <string name="import_now">Import Now</string>
 
 
+
+
+    <!--  Section C-->
+    <string name="aghhid_tv_c">سیکشن C: گھرانے میں سہولیات</string>
+    <string name="aghhid_tv_c_1">1. اگر ہمارا اس نمبر پر رابطہ ٹوٹ جائے تو کیا آپ کے پاس کوئی نمبر ہے جس پر رابطہ کیا جاسکے؟ </string>
+    <string name="aghhid_tv_c_2"> 2. کیا آپ کے گھرانے کے پاس ان میں سے کوئی اشیاء ہیں تمام آپشنز پڑھ کر سنائیں اور جوابدہندہ جو بھی اشیاءبتائے اسے نوٹ کر لیں </string>
+    <string name="aghhid_tv_c_2_op_1">1. انٹر نیٹ تک رسائی</string>
+    <string name="aghhid_tv_c_2_op_2">  2. بجلی کا کنیکشن</string>
+    <string name="aghhid_tv_c_2_op_3">  3. ریڈیو</string>
+    <string name="aghhid_tv_c_2_op_4"> 4. ٹی وی</string>
+    <string name="aghhid_tv_c_2_op_5"> 5. سمارٹ فون(ٹچ سکرین)</string>
+    <string name="aghhid_tv_c_2_op_6"> 6. بٹنوں والا فون</string>
+    <string name="aghhid_tv_c_2_op_7"> 7. لینڈ لائن فون(PTCL)</string>
+    <string name="aghhid_tv_c_2_op_8"> 8. کمپیوٹر/ٹیبلیٹ</string>
+    <string name="aghhid_tv_c_2_op_9"> 777. فون کاٹ دیا</string>
+
+
+
 </resources>
