@@ -201,13 +201,13 @@ public class pq_Section_A extends AppCompatActivity {
         SetEnumState();
 
         phone_number = getIntent().getStringExtra("m1b_parent_mobile");
-        emp_id = getIntent().getStringExtra("emp_id");
-        order_id = getIntent().getStringExtra("order_id");
-        farmer_id = getIntent().getStringExtra("farmerID");
+        emp_id =  "1";//getIntent().getStringExtra("emp_id");
+        order_id = getIntent().getStringExtra("phone_order");
+        farmer_id = "1";//getIntent().getStringExtra("farmerID");
         school_code = getIntent().getStringExtra("scode");
         student_id = getIntent().getStringExtra("studentid");
         student_name = getIntent().getStringExtra("m1b_student_name");
-        school_name = getIntent().getStringExtra("m2_school_name");
+        school_name = "";//getIntent().getStringExtra("m2_school_name");
         id = getIntent().getStringExtra("id");
         s1 = getIntent().getStringExtra("sc1");
         s2 = getIntent().getStringExtra("sc2");

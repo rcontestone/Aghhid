@@ -163,18 +163,19 @@ public class CallMenuActivity extends AppCompatActivity {
             edtSearchBar.setVisibility(View.VISIBLE);
             reasonLayout.setVisibility(View.GONE);
             triesLayout.setVisibility(View.VISIBLE);
-            cursor = databaseAccess.baseline_getPendingCallCursor(userName);
+            cursor = databaseAccess.aghhid_getPendingCallCursor(userName);
         } else {
             triesLayout.setVisibility(View.GONE);
             edtSearchBar.setVisibility(View.GONE);
             reasonLayout.setVisibility(View.GONE);
-            cursor = databaseAccess.baseline_getNewCallsCursor(userName);
+            cursor = databaseAccess.aghhid_getNewCallsCursor(userName);
         }
 
 
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             GetData();
+            Toast.makeText(this, "Fetch and show data enable code and line . 178", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "No data found.", Toast.LENGTH_SHORT).show();
             finish();
@@ -317,28 +318,29 @@ public class CallMenuActivity extends AppCompatActivity {
                 intent.putExtra("username", userName);
                 intent.putExtra("isFromEdit", isFromEdit);
 
-                intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
-                intent.putExtra("strata", cursor.getString(cursor.getColumnIndex("strata")));
-                intent.putExtra("scode", cursor.getString(cursor.getColumnIndex("scode")));
-                intent.putExtra("scode_original", cursor.getString(cursor.getColumnIndex("scode_original")));
-                intent.putExtra("m2_district", cursor.getString(cursor.getColumnIndex("m2_district")));
-                intent.putExtra("m2_tehsil", cursor.getString(cursor.getColumnIndex("m2_tehsil")));
-                intent.putExtra("m2_mauza", cursor.getString(cursor.getColumnIndex("m2_mauza")));
-                intent.putExtra("m2_school_name", cursor.getString(cursor.getColumnIndex("m2_school_name")));
-                intent.putExtra("studentnumber", cursor.getString(cursor.getColumnIndex("studentnumber")));
-                intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("studentid")));
-                intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
-                intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("m1b_student_name")));
-                intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("m1b_parent_mobile")));
-                intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
-                intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
+                //intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
+                //intent.putExtra("strata", cursor.getString(cursor.getColumnIndex("strata")));
+                intent.putExtra("scode", cursor.getString(cursor.getColumnIndex("village_id")));
+              //  intent.putExtra("scode_original", cursor.getString(cursor.getColumnIndex("scode_original")));
+              //  intent.putExtra("m2_district", cursor.getString(cursor.getColumnIndex("m2_district")));
+               // intent.putExtra("m2_tehsil", cursor.getString(cursor.getColumnIndex("m2_tehsil")));
+               // intent.putExtra("m2_mauza", cursor.getString(cursor.getColumnIndex("m2_mauza")));
+               // intent.putExtra("m2_school_name", cursor.getString(cursor.getColumnIndex("m2_school_name")));
+                //intent.putExtra("studentnumber", cursor.getString(cursor.getColumnIndex("studentnumber")));
+                intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("hhid")));
+              //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
+                intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
+                intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
+                intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
+               // intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
+               // intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
 
 
                 intent.putExtra("isFromEditActivity", false);
                 if (isAlternateFarmer) {
                     intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("alt_farmer_cellphone")));
                 } else {
-                    intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
+                    intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
                 }
 
                 intent.putExtra("isAlternateFarmer", isAlternateFarmer);
@@ -481,13 +483,12 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
             String given_number = cursor.getString(cursor.getColumnIndex("given_number"));
-            String m1b_parent_mobile = cursor.getString(cursor.getColumnIndex("m1b_parent_mobile"));
-            MubLog.cpnsoleLog("m1b_parent_mobile" + m1b_parent_mobile);
+            String hhid_phone_number = cursor.getString(cursor.getColumnIndex("hhid_phone_number"));
+            MubLog.cpnsoleLog("hhid_phone_number" + hhid_phone_number);
 
 
             String survey_status = cursor.getString(cursor.getColumnIndex("survey_status"));
             MubLog.cpnsoleLog("survey_status" + survey_status);
-
 
             String sc1 = cursor.getString(cursor.getColumnIndex("sc1"));
             String sc2 = cursor.getString(cursor.getColumnIndex("sc2"));
@@ -496,19 +497,22 @@ public class CallMenuActivity extends AppCompatActivity {
             String reason = cursor.getString(cursor.getColumnIndex("reason"));
 
             String farmer_cellphone = cursor.getString(cursor.getColumnIndex("farmer_cellphone"));
-            String strata = cursor.getString(cursor.getColumnIndex("strata"));
-            String scode = cursor.getString(cursor.getColumnIndex("scode"));
-            String scode_original = cursor.getString(cursor.getColumnIndex("scode_original"));
-            String m2_district = cursor.getString(cursor.getColumnIndex("m2_district"));
-            String m2_tehsil = cursor.getString(cursor.getColumnIndex("m2_tehsil"));
-            String m2_mauza = cursor.getString(cursor.getColumnIndex("m2_mauza"));
-            String m2_school_name = cursor.getString(cursor.getColumnIndex("m2_school_name"));
-            String studentnumber = cursor.getString(cursor.getColumnIndex("studentnumber"));
-            String studentid = cursor.getString(cursor.getColumnIndex("studentid"));
-            String m1b_student_sex = cursor.getString(cursor.getColumnIndex("m1b_student_sex"));
-            String m1b_student_name = cursor.getString(cursor.getColumnIndex("m1b_student_name"));
-            String m5_studentassessment = cursor.getString(cursor.getColumnIndex("m5_studentassessment"));
-            String order_to_contact = cursor.getString(cursor.getColumnIndex("order_to_contact"));
+
+            String strata = "";//cursor.getString(cursor.getColumnIndex("strata"));
+
+            String scode = cursor.getString(cursor.getColumnIndex("village_id"));
+
+            String scode_original = "";// cursor.getString(cursor.getColumnIndex("scode_original"));
+            String m2_district = "";//cursor.getString(cursor.getColumnIndex("m2_district"));
+            String m2_tehsil = "";//cursor.getString(cursor.getColumnIndex("m2_tehsil"));
+            String m2_mauza = "";//cursor.getString(cursor.getColumnIndex("m2_mauza"));
+            String m2_school_name = "";//cursor.getString(cursor.getColumnIndex("m2_school_name"));
+            String studentnumber = "";//cursor.getString(cursor.getColumnIndex("studentnumber"));
+            String studentid = cursor.getString(cursor.getColumnIndex("hhid"));
+            String m1b_student_sex = "";//cursor.getString(cursor.getColumnIndex("m1b_student_sex"));
+            String m1b_student_name = "";//cursor.getString(cursor.getColumnIndex("m1b_student_name"));
+            String m5_studentassessment = "";//cursor.getString(cursor.getColumnIndex("m5_studentassessment"));
+            String order_to_contact = "";//cursor.getString(cursor.getColumnIndex("order_to_contact"));
             String duration = cursor.getString(cursor.getColumnIndex("duration"));
 
             // String school_emis_code = cursor.getString(cursor.getColumnIndex("school_emis_code"));
@@ -545,7 +549,7 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
             if (!StringUtils.isEmpty(given_number)) {
-                m1b_parent_mobile = given_number;
+                hhid_phone_number = given_number;
             }
 //            Cursor cursor_number = databaseAccess.getpq_section_a_Data(school_code, student_id);
 //            if (cursor_number != null && cursor_number.getCount() > 0) {
@@ -554,7 +558,7 @@ public class CallMenuActivity extends AppCompatActivity {
 //                String a4_number = cursor_number.getString(cursor_number.getColumnIndex("a4_number"));
 //
 //                if (!StringUtils.isEmpty(a4_number)) {
-//                    m1b_parent_mobile = a4_number;
+//                    hhid_phone_number = a4_number;
 ////                    given_number
 //                }
 //
@@ -573,7 +577,7 @@ public class CallMenuActivity extends AppCompatActivity {
                     studentid,
                     m1b_student_sex,
                     m1b_student_name,
-                    m1b_parent_mobile,
+                    hhid_phone_number,
                     m5_studentassessment,
                     order_to_contact,
                     reason,

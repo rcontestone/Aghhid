@@ -45,12 +45,15 @@ import com.android.volley.toolbox.StringRequest;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
+import com.rcons.fcallbacks.Athreehhid.HH_Screen_One;
 import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.EditForm.EditFormActivity;
+import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_B;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
+import com.rcons.fcallbacks.Utilties.MpcUtil;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StartUpMainActivity;
@@ -250,8 +253,10 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ShowExitMessage(MainMenuActivity.this, "Alert", "Are you sure you want to exit ?", true);
-
+              //  ShowExitMessage(MainMenuActivity.this, "Alert", "Are you sure you want to exit ?", true);
+                Intent intent = MpcUtil.buildNewIntent(MainMenuActivity.this, HH_Screen_One.class);
+                intent.putExtra("launchActivity","signup");
+                startActivity(intent);
             }
         });
 
@@ -284,7 +289,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
                // adapter.CheckMissingColumnsList();
 
-                if (adapter.baseline_getBaseLineDataCount() > 0) {
+                if (adapter.aghhid_getSampleDataCount() > 0) {
                     ShowErrorMessage(MainMenuActivity.this, "Alert", "Data  already Imported.All data changes will be lost. Do you want to do it again?", true);
                 } else {
                     if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
@@ -447,12 +452,12 @@ public class MainMenuActivity extends AppCompatActivity {
     void FetchCallsCounters() {
 
 
-        newCallCounter = adapter.baseline_getNewCallsCount(userName);
-        pendingCallCounter = adapter.baseline_getPendingCall(userName);
+        newCallCounter = adapter.aghhid_getNewCallsCount(userName);
+        pendingCallCounter = adapter.aghhid_getPendingCall(userName);
         MubLog.cpnsoleLog("FetchCallsCounters pendingCallCounter" + pendingCallCounter);
-        SuccessfullCallCounter = adapter.baseline_getSuccessFullCallCounter(userName);
+        SuccessfullCallCounter = adapter.aghhid_getSuccessFullCallCounter(userName);
 
-        completedCallCounter = adapter.baseline_getCompletedCallCounter(userName);
+        completedCallCounter = adapter.aghhid_getCompletedCallCounter(userName);
         MubLog.cpnsoleLog("FetchCallsCounters completedCallCounter" + completedCallCounter);
 
 
@@ -535,7 +540,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 if (isExit) {
                     MubLog.cpnsoleLog("inside isExit " + isExit);
                     if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
-                        adapter.baseline_deleteAllData();
+                        adapter.aghhid_deleteAllData();
                     }
 //                    FetchData("Fetching Data...");
                     Intent intent = new Intent(MainMenuActivity.this, StartUpMainActivity.class);
@@ -1764,7 +1769,8 @@ public class MainMenuActivity extends AppCompatActivity {
             MubLog.cpnsoleLog("inside onStart");
            // databaseAccess.update_Question_table_q_no_37();
 
-
+            TextView tv_selectvillage_now = findViewById(R.id.tv_selectvillage_now);
+            tv_selectvillage_now.setText("Select Village Code: \r\n Current Selected Code : "+ HHIDConfigurations.getPeshawarCurrentPSU(MainMenuActivity.this));
 
             String  enum_code = "ALTER TABLE `"+DatabaseAdapter.FarmerCallBackTable+"` ADD `enum_code` TEXT DEFAULT '' ";
             //databaseAccess. createMissingColumn(enum_code);

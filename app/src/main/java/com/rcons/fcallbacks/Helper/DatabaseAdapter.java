@@ -31,6 +31,7 @@ import java.util.Iterator;
 
 public class DatabaseAdapter {
 
+    public static final String AGHHID_SampleTable = "aghhid_sample";
     public static final String BaseLineSampleTable = "baseline_sample";
     public static final String FarmerCallBackTable = "FarmerCallBackTable";
     public static final String KnowledgeTest = "Questions_Table";
@@ -72,6 +73,8 @@ public class DatabaseAdapter {
     public static final String pq_section_d_table = "pq_section_d";
     public static final String pq_section_e_table = "pq_section_e";
 
+
+    public static final String aghhid_section_c_table = "aghhid_section_c";
 
     private Context context;
     public DataHelper database;
@@ -5369,39 +5372,38 @@ public class DatabaseAdapter {
     }
 
 
-
     public Cursor savepq_Section_A2_Data(String emp_id,
-                                        String order_id,
-                                        String farmer_id,
-                                        String rcons_user,
-                                        String enum_code,
-                                        String enum_name,
-                                        String isComplete,
-                                        String isSynced,
-                                        String insert_or_updated_in_phone_at,
-                                        String deviceid,
-                                        String build_no,
-                                        String school_code,
-                                        String student_id,
-                                        String a1,
-                                        String a2,
-                                        String a3,
-                                        String a4,
-                                        String a4_day,
-                                        String a4_month,
-                                        String a4_year,
-                                        String a4_hh,
-                                        String a4_mm,
-                                        String a4_number,
-                                        String a5,
-                                        String a6,
-                                        String a6_other,
-                                        String a6_day,
-                                        String a6_month,
-                                        String a6_year,
-                                        String a6_hh,
-                                        String a6_mm,
-                                        String a7) {
+                                         String order_id,
+                                         String farmer_id,
+                                         String rcons_user,
+                                         String enum_code,
+                                         String enum_name,
+                                         String isComplete,
+                                         String isSynced,
+                                         String insert_or_updated_in_phone_at,
+                                         String deviceid,
+                                         String build_no,
+                                         String school_code,
+                                         String student_id,
+                                         String a1,
+                                         String a2,
+                                         String a3,
+                                         String a4,
+                                         String a4_day,
+                                         String a4_month,
+                                         String a4_year,
+                                         String a4_hh,
+                                         String a4_mm,
+                                         String a4_number,
+                                         String a5,
+                                         String a6,
+                                         String a6_other,
+                                         String a6_day,
+                                         String a6_month,
+                                         String a6_year,
+                                         String a6_hh,
+                                         String a6_mm,
+                                         String a7) {
 
         db = database.getReadableDatabase();
         String str = "";
@@ -5498,37 +5500,37 @@ public class DatabaseAdapter {
 
 
     public Cursor savepq_Section_A3_Data(String emp_id,
-                                        String order_id,
-                                        String farmer_id,
-                                        String rcons_user,
-                                        String enum_code,
-                                        String enum_name,
-                                        String isComplete,
-                                        String isSynced,
-                                        String insert_or_updated_in_phone_at,
-                                        String deviceid,
-                                        String build_no,
-                                        String school_code,
-                                        String student_id,
-                                        String a1,
-                                        String a2,
-                                        String a3,
-                                        String a4,
-                                        String a4_day,
-                                        String a4_month,
-                                        String a4_year,
-                                        String a4_hh,
-                                        String a4_mm,
-                                        String a4_number,
-                                        String a5,
-                                        String a6,
-                                        String a6_other,
-                                        String a6_day,
-                                        String a6_month,
-                                        String a6_year,
-                                        String a6_hh,
-                                        String a6_mm,
-                                        String a7) {
+                                         String order_id,
+                                         String farmer_id,
+                                         String rcons_user,
+                                         String enum_code,
+                                         String enum_name,
+                                         String isComplete,
+                                         String isSynced,
+                                         String insert_or_updated_in_phone_at,
+                                         String deviceid,
+                                         String build_no,
+                                         String school_code,
+                                         String student_id,
+                                         String a1,
+                                         String a2,
+                                         String a3,
+                                         String a4,
+                                         String a4_day,
+                                         String a4_month,
+                                         String a4_year,
+                                         String a4_hh,
+                                         String a4_mm,
+                                         String a4_number,
+                                         String a5,
+                                         String a6,
+                                         String a6_other,
+                                         String a6_day,
+                                         String a6_month,
+                                         String a6_year,
+                                         String a6_hh,
+                                         String a6_mm,
+                                         String a7) {
 
         db = database.getReadableDatabase();
         String str = "";
@@ -5624,37 +5626,37 @@ public class DatabaseAdapter {
     }
 
     public Cursor savepq_Section_A4_Data(String emp_id,
-                                        String order_id,
-                                        String farmer_id,
-                                        String rcons_user,
-                                        String enum_code,
-                                        String enum_name,
-                                        String isComplete,
-                                        String isSynced,
-                                        String insert_or_updated_in_phone_at,
-                                        String deviceid,
-                                        String build_no,
-                                        String school_code,
-                                        String student_id,
-                                        String a1,
-                                        String a2,
-                                        String a3,
-                                        String a4,
-                                        String a4_day,
-                                        String a4_month,
-                                        String a4_year,
-                                        String a4_hh,
-                                        String a4_mm,
-                                        String a4_number,
-                                        String a5,
-                                        String a6,
-                                        String a6_other,
-                                        String a6_day,
-                                        String a6_month,
-                                        String a6_year,
-                                        String a6_hh,
-                                        String a6_mm,
-                                        String a7) {
+                                         String order_id,
+                                         String farmer_id,
+                                         String rcons_user,
+                                         String enum_code,
+                                         String enum_name,
+                                         String isComplete,
+                                         String isSynced,
+                                         String insert_or_updated_in_phone_at,
+                                         String deviceid,
+                                         String build_no,
+                                         String school_code,
+                                         String student_id,
+                                         String a1,
+                                         String a2,
+                                         String a3,
+                                         String a4,
+                                         String a4_day,
+                                         String a4_month,
+                                         String a4_year,
+                                         String a4_hh,
+                                         String a4_mm,
+                                         String a4_number,
+                                         String a5,
+                                         String a6,
+                                         String a6_other,
+                                         String a6_day,
+                                         String a6_month,
+                                         String a6_year,
+                                         String a6_hh,
+                                         String a6_mm,
+                                         String a7) {
 
         db = database.getReadableDatabase();
         String str = "";
@@ -6857,7 +6859,9 @@ public class DatabaseAdapter {
         } else {
             return null;
         }
-    } public Cursor getpq_section_a_Data(String school_code, String student_id) {
+    }
+
+    public Cursor getpq_section_a_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
@@ -6866,6 +6870,7 @@ public class DatabaseAdapter {
             return null;
         }
     }
+
     public Cursor getpq_section_a2_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_a2_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
@@ -6875,6 +6880,7 @@ public class DatabaseAdapter {
             return null;
         }
     }
+
     public Cursor getpq_section_a3_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_a3_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
@@ -6884,6 +6890,7 @@ public class DatabaseAdapter {
             return null;
         }
     }
+
     public Cursor getpq_section_a4_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_a4_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
@@ -7085,6 +7092,7 @@ public class DatabaseAdapter {
         cursor.close();
         return cursor;
     }
+
     public Cursor savepq_interview_start_sc4(
             String scode,
             String studentid,
@@ -7559,7 +7567,7 @@ public class DatabaseAdapter {
                     updateQuery = "UPDATE " + BaseLineSampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc4 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc4_end_year = '" + current_year + "', sc4_end_month = '" + current_month + "' , sc4_end_day = '" + current_day + "', sc4_end_hh = '" + current_hh + "' , sc4_end_mm = '" + current_mm + "',sc4_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE scode = '" + scode + "' AND studentid = '" + studentid + "'";
 
 
-            }else {
+                } else {
                     updateQuery = "UPDATE " + BaseLineSampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc3 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc3_end_year = '" + current_year + "', sc3_end_month = '" + current_month + "' , sc3_end_day = '" + current_day + "', sc3_end_hh = '" + current_hh + "' , sc3_end_mm = '" + current_mm + "',sc3_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE scode = '" + scode + "' AND studentid = '" + studentid + "'";
                 }
 
@@ -7830,6 +7838,248 @@ public class DatabaseAdapter {
         }
 
     }
+
+
+    public boolean aghhid_insertImporteddata(Context appcontext, JSONArray data) {
+
+        boolean error = false;
+        try {
+
+            DebugLog.console("[DatabaseAdapter] inside aghhid_insertImporteddata() " + data.length());
+
+            if (!isOpen())
+                db = database.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            int k = 0;
+            while (k < data.length()) {
+                JSONObject json = data.getJSONObject(k);
+                contentValues = new ContentValues();
+                Iterator<String> iter = json.keys();
+                while (iter.hasNext()) {
+                    String key = iter.next();
+                    try {
+                        Object value = json.get(key);
+
+                        DebugLog.console("[DatabaseAdapter] inside aghhid_insertImporteddata() key" + key);
+                        DebugLog.console("[DatabaseAdapter] inside aghhid_insertImporteddata() value" + value);
+
+                        contentValues.put(key, value.toString());
+
+                    } catch (JSONException e) {
+                        // Something went wrong!
+                        DebugLog.console("[DatabaseAdapter] inside aghhid_insertImporteddata() " + e.toString());
+                        error = true;
+                    }
+                }
+
+                long isInserted = db.insert(DatabaseAdapter.AGHHID_SampleTable, null, contentValues);
+                DebugLog.console("[DatabaseAdapter] inside aghhid_insertImporteddata() " + isInserted);
+                if (isInserted == -1) {
+                    error = true;
+                }
+                k++;
+
+            }
+
+
+            db.close();
+            return error;
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appcontext).writeLog("[DatabaseAdapter] inside insertImporteddata() Exception is :" + e.toString());
+
+            return error;
+        }
+    }
+
+
+    public int aghhid_getSampleDataCount() {
+        int count = 0;
+        String query = "select id from " + AGHHID_SampleTable;
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            count = cursor.getCount();
+        } else {
+            count = 0;
+        }
+        return count;
+
+    }
+
+
+    public void aghhid_deleteAllData() {
+        MubLog.cpnsoleLog("inside delete All data");
+        String deleteQuery = "Delete from " + AGHHID_SampleTable;
+        db = database.getWritableDatabase();
+        db.execSQL(deleteQuery);
+        MubLog.cpnsoleLog("inside aghhid_deleteAllData  All data done");
+
+    }
+
+
+    public int aghhid_getNewCallsCount(String userName) {
+        //removed 8 when 4447 issue
+        try {
+
+
+            String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
+            // String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+            // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
+            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   )";
+
+            MubLog.cpnsoleLog("inside aghhid_getNewCallsCount " + querry);
+            Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+            if (cursor2 == null || cursor2.getCount() <= 0) {
+                return 0;
+            }
+            int count = cursor2.getCount();
+            if (cursor2 != null) {
+
+                if (!cursor2.isClosed()) {
+                    cursor2.close();
+                }
+            }
+            return count;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside aghhid_getNewCallsCount() Exception is :" + e.toString());
+
+            return 0;
+        }
+
+
+    }
+
+
+    public Cursor aghhid_getNewCallsCursor(String userName) {
+
+        //removed 8 when 4447 issue
+
+        try {
+
+
+
+        String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
+        //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+        // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   ) ORDER BY  village_id,hhid,phone_order ASC";
+
+        MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
+        Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+        MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
+        if (cursor2 == null || cursor2.getCount() <= 0) {
+            return null;
+        }
+        return cursor2;
+        } catch (Exception e) {
+            MubLog.cpnsoleLog("[DatabaseAdapter] inside aghhid_getNewCallsCursor() Exception is :"+e.toString());
+            return null;
+        }
+    }
+
+
+    public int aghhid_getPendingCall(String userName) {
+        //removed 8 when 4447 issue
+        try {
+
+
+            String baseline_ThreeTries_Done = getbaseline_ThreeTries_Done(userName);
+            String baseline_no_call_again_ids = getbaseline_no_call_again_ids(userName);
+            // String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+            // String getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid = getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid(userName);
+            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (2,4,8,9,10) AND (id  NOT IN " + baseline_ThreeTries_Done + " AND id NOT IN " + baseline_no_call_again_ids + "))   ";
+            MubLog.cpnsoleLog("inside aghhid_getPendingCall " + querry);
+            Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+            if (cursor2 == null || cursor2.getCount() <= 0) {
+                return 0;
+            }
+
+            int count = cursor2.getCount();
+            if (cursor2 != null) {
+
+                if (!cursor2.isClosed()) {
+                    cursor2.close();
+                }
+            }
+            return count;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside aghhid_getPendingCall() Exception is :" + e.toString());
+            return 0;
+        }
+
+    }
+
+
+    public Cursor aghhid_getPendingCallCursor(String userName) {
+
+
+        String baseline_ThreeTries_Done = getbaseline_ThreeTries_Done(userName);
+        String baseline_no_call_again_ids = getbaseline_no_call_again_ids(userName);
+
+        //String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+        //  String getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid = getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid(userName);
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (2,4,8,9,10) AND (id  NOT IN " + baseline_ThreeTries_Done + " AND id NOT IN " + baseline_no_call_again_ids + ")) ORDER BY  village_id,hhid,phone_order ASC  ";
+
+        MubLog.cpnsoleLog("inside aghhid_getPendingCallCursor " + querry);
+        Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+        if (cursor2 == null || cursor2.getCount() <= 0) {
+            return null;
+        }
+        return cursor2;
+    }
+
+    public int aghhid_getSuccessFullCallCounter(String userName) {
+
+
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND ( survey_status  IN (1) ) )";
+
+        Cursor cursor = db.rawQuery(querry, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            int count = cursor.getCount();
+
+            if (cursor != null) {
+
+                if (!cursor.isClosed()) {
+                    cursor.close();
+                }
+            }
+            return count;
+
+        } else {
+            if (cursor != null) {
+
+                if (!cursor.isClosed()) {
+                    cursor.close();
+                }
+            }
+            return 0;
+
+        }
+
+    }
+
+    public int aghhid_getCompletedCallCounter(String userName) {
+
+        String baseline_no_call_again_ids = getbaseline_no_call_again_ids(userName);
+        String baseline_ThreeTries_Done = getbaseline_ThreeTries_Done(userName);
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (1,3,5,6,7) OR ( id  IN " + baseline_ThreeTries_Done + " OR id  IN " + baseline_no_call_again_ids + "))   ";
+
+
+        MubLog.cpnsoleLog("inside aghhid_getCompletedCallCounter " + querry);
+        Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+        if (cursor2 == null || cursor2.getCount() <= 0) {
+            return 0;
+        }
+
+        int count = cursor2.getCount();
+
+        if (cursor2 != null) {
+
+            if (!cursor2.isClosed()) {
+                cursor2.close();
+            }
+        }
+        return count;
+    }
+
+
 }
-
-

@@ -92,13 +92,7 @@ public class StartUpMainActivity extends Activity {
 
 				String usernameParam = URLEncoder.encode(userName, "UTF-8");
 
-				String url = "http://rconsdb.org/devteam/general/services/ffbcsr/baseline_sample.php?" + "&pageSize=" + "100" + "&username=" + usernameParam + "&password=" + "fcb123!1"; // New Url
-
-
-
-
-
-
+				String url = "http://rconsdb.org/devteam/general/services/ffbcsr/aghhid_sample.php?" + "&pageSize=" + "100" + "&username=" + usernameParam + "&password=" + "fcb123!1"; // New Url
 
 
 				if (RConsUtils.isNetworkAvailable(StartUpMainActivity.this)) {
@@ -108,7 +102,7 @@ public class StartUpMainActivity extends Activity {
 
 					if(data.length()>0){
 
-                        adapter.baseline_insertImporteddata(appContext,data);
+                        adapter.aghhid_insertImporteddata(appContext,data);
 						return "Imported Successfully against username "+RConsUtils.getUserName();
 					}else{
 						return "Error in Importing. Please contact Admin ";
@@ -118,6 +112,7 @@ public class StartUpMainActivity extends Activity {
 				}else{
 
 					return StartUpMainActivity.this.getString(R.string.conenctivity_issue);
+//					return  "local database imported you can start work";
 
 				}
 

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <!-- Used in View/Spinner1.java -->
+    <string-array name="colors">
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>violet</item>
+    </string-array>
+    
+    
+       <!-- Used in View/Spinner1.java -->
+    <string-array name="week_days">
+        <item>SUNDAY</item>
+        <item>MONDAY</item>
+        <item>TUESDAY</item>
+        <item>WEDNESDAY</item>
+        <item>THURSDAY</item>
+        <item>FRIDAY</item>
+        <item>SATURDAY</item>
+    </string-array>
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Used in View/Spinner1.java -->
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluto</item>
+    </string-array>
+
+    <!-- Used in App/SearchInvoke.java -->
+    <string-array name="search_menuModes">
+        <item>Search Key</item>
+        <item>Menu Item</item>
+        <item>Type-To-Search</item>
+        <item>Disabled</item>
+    </string-array>
+    
+    <!-- Used in app/dialog examples -->
+    <string-array name="select_dialog_items">
+        <item>Command one</item>
+        <item>Command two</item>
+        <item>Command three</item>
+        <item>Command four</item>
+    </string-array>
+    
+    <string-array name="select_dialog_items2">
+        <item>Map</item>
+        <item>Satellite</item>
+        <item>Traffic</item>
+        <item>Street view</item>
+    </string-array>
+    
+    <string-array name="select_dialog_items3">
+        <item>Every Monday</item>
+        <item>Every Tuesday</item>
+        <item>Every Wednesday</item>
+        <item>Every Thursday</item>
+        <item>Every Friday</item>
+        <item>Every Saturday</item>
+        <item>Every Sunday</item>
+    </string-array>
+    
+    <!-- Used in app/menu examples -->
+    <string-array name="entries_list_preference">
+        <item>Alpha Option 01</item>
+        <item>Beta Option 02</item>
+        <item>Charlie Option 03</item>  
+    </string-array>
+
+    <!-- Used in app/menu examples -->
+    <string-array name="entryvalues_list_preference">
+        <item>alpha</item>
+        <item>beta</item>
+        <item>charlie</item>  
+    </string-array>
+    
+    <!-- Used in app/Sample Device Admin -->
+    <string-array name="password_qualities">
+        <item>Unspecified</item>
+        <item>Something</item>
+        <item>Numeric</item>
+        <item>Alphabetic</item>
+        <item>Alphanumeric</item>
+    </string-array>
+
+    
+    
+     <!-- Used in app/Sample Device Admin -->
+    <string-array name="years">
+        <item>1950</item>
+        <item>1951</item>
+        <item>1952</item>
+        <item>1953</item>
+        <item>1954</item>
+    </string-array>
+
+
+    <string-array name="array_name">
+        <item>Select District Name</item>
+        <item>Peshawar</item>
+
+
+    </string-array>
+
+
+
+    <string-array name="array_mins">
+        <item>Select Minutes</item>
+        <item>666</item>
+        <item>777</item>
+        <item>888</item>
+        <item>999</item>
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+
+        <item>10</item>
+
+        <item>15</item>
+
+        <item>20</item>
+
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>59</item>
+
+    </string-array>
+
+
+    <string-array name="array_hours">
+        <item>Select Hours</item>
+        <item>666</item>
+        <item>777</item>
+        <item>888</item>
+        <item>999</item>
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+
+    </string-array>
+
+
+
+
+
+    <string-array name="activity_array">
+        <item>Select Activity</item>
+        <item>سرگرمی</item>
+        <item>نیند</item>
+        <item>گھرسے باہر اجرت   پر کام</item>
+        <item>گھر کے کام کاج میں مدد۔ گھر کے اندر(صفائی \n، کپڑے /برتن  دھونا، چھوٹے بہن بھائیوں  کی دیکھ بھال )</item>
+        <item>گھر کے کام کاج میں مدد۔ گھر کے باہر (مال مویشی ، کھیتوں میں کام )</item>
+        <item>مذہبی سر گرمیاں  (نماز ، قران مجید  پڑھنا  ،وغیرہ )</item>
+        <item>گھر پر سکول کی تعلیم   کے کسی پروگرام  جو کہ ریڈیو  ٹیلی ویژن یا انٹرنیٹ پر  پڑھا رہے ہیں ( جیسے  ٹیلی سکول ، تعلیم گھر وغیرہ) میں  استعمال ہو ا  وقت؟</item>
+        <item>ہوم  ورک (تعلیمی)</item>
+        <item>گھر پر خود سے یا کسی   بڑے کی مدد سے پڑھنا</item>
+        <item>ٹیو شن پڑھنا</item>
+        <item>ٹی وی دیکھنا (بشمول یوٹیوب  وغیرہ)</item>
+        <item>گیم کھیلنا ، دوستوں کے ساتھ گپ شپ اور دیگر   تفریح</item>
+
+    </string-array>
+
+
+    <string-array name="array_name_enumerator">
+        <item>Select Enumerator Name</item>
+
+        <item>SALEEM AKBAR</item>
+        <item>JUNAID RAAJI</item>
+        <item>IMRAN KHALID</item>
+        <item>MUHAMMAD MUJAHID</item>
+        <item>HABIB ULLAH</item>
+        <item>M NAEEM SAFDAR</item>
+        <item>M KASHIF NAWAZ</item>
+        <item>MUHAMMAD IMRAN</item>
+        <item>DILAWAR ABBAS</item>
+        <item>MUHAMMAD RAMZAN</item>
+        <item>SAMINA IQBAL</item>
+        <item>SHAILA RANI</item>
+        <item>HINA QAISAR</item>
+        <item>ASIA ELAHI</item>
+        <item>IRUM NAZ</item>
+        <item>Humaira Abid</item>
+        <item>Tooba Bukhari</item>
+        <item>HUNZA QAISAR</item>
+        <item>SALMA SHABIER</item>
+        <item>UROOJ BABAR</item>
+        <item>SAIRA BUKHARI</item>
+        <item>NASREEN NAZAR</item>
+        <item>RIZWANA BIBI</item>
+        <item>KIRAN AYUB</item>
+        <item>MEHWISH NASIR</item>
+        <item>MUHAMMAD SHAKIL</item>
+        <item>MUHAMMAD NAEEM</item>
+
+
+    </string-array>
+
+
+    <string-array name="array_name_enumerator_passwords">
+        <item>""</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+        <item>rcons123</item>
+
+    </string-array>
+
+
+    <string-array name="array_psu_codes">
+        <item>"codes"</item>
+        <item>1006</item>
+        <item>1014</item>
+        <item>1025</item>
+        <item>1027</item>
+        <item>1028</item>
+        <item>1042</item>
+        <item>1044</item>
+        <item>1046</item>
+        <item>1054</item>
+        <item>1063</item>
+        <item>1075</item>
+        <item>1081</item>
+        <item>1082</item>
+        <item>1087</item>
+        <item>1095</item>
+        <item>1099</item>
+        <item>1116</item>
+        <item>1123</item>
+        <item>1124</item>
+        <item>1131</item>
+        <item>1146</item>
+        <item>1163</item>
+        <item>1166</item>
+        <item>1182</item>
+        <item>1203</item>
+        <item>1218</item>
+        <item>1220</item>
+        <item>1231</item>
+        <item>1246</item>
+        <item>1249</item>
+        <item>1264</item>
+        <item>1266</item>
+        <item>1277</item>
+        <item>1279</item>
+        <item>1294</item>
+        <item>1317</item>
+        <item>1335</item>
+        <item>1340</item>
+        <item>1342</item>
+        <item>1347</item>
+        <item>1361</item>
+        <item>1365</item>
+        <item>1372</item>
+        <item>1388</item>
+        <item>1397</item>
+        <item>1402</item>
+        <item>1410</item>
+        <item>1418</item>
+        <item>1444</item>
+        <item>1462</item>
+        <item>1465</item>
+        <item>1473</item>
+        <item>1475</item>
+        <item>1484</item>
+        <item>1492</item>
+        <item>1497</item>
+        <item>1512</item>
+        <item>1514</item>
+        <item>1523</item>
+        <item>1538</item>
+        <item>1548</item>
+        <item>1550</item>
+        <item>1553</item>
+        <item>1559</item>
+        <item>1568</item>
+        <item>1569</item>
+        <item>1579</item>
+        <item>1584</item>
+        <item>1596</item>
+        <item>1611</item>
+        <item>1615</item>
+        <item>797</item>
+        <item>798</item>
+        <item>800</item>
+        <item>803</item>
+        <item>804</item>
+        <item>807</item>
+        <item>809</item>
+        <item>818</item>
+        <item>827</item>
+        <item>830</item>
+        <item>846</item>
+        <item>847</item>
+        <item>850</item>
+        <item>856</item>
+        <item>857</item>
+        <item>858</item>
+        <item>865</item>
+        <item>866</item>
+        <item>871</item>
+        <item>876</item>
+        <item>878</item>
+        <item>879</item>
+        <item>882</item>
+        <item>887</item>
+        <item>891</item>
+        <item>893</item>
+        <item>907</item>
+        <item>934</item>
+        <item>943</item>
+        <item>945</item>
+        <item>950</item>
+        <item>952</item>
+        <item>954</item>
+        <item>955</item>
+        <item>965</item>
+        <item>975</item>
+        <item>984</item>
+        <item>991</item>
+        <item>993</item>
+
+    </string-array>
+
+    <string-array name="array_psu_code_names">
+        <item>"codes"</item>
+        <item>BAIT QAIM WALA</item>
+        <item>CHAK NO 610/T.D.A</item>
+        <item>KHAWAS WALA</item>
+        <item>CHAK NO 517/T.D.A</item>
+        <item>KHAEE DOUM GHAIR MUS</item>
+        <item>CHAK NO 525/T.D.A</item>
+        <item>CHAK NO 596/T.D.A</item>
+        <item>RAKH ISAN WALA</item>
+        <item>CHAK NO 620/T.D.A</item>
+        <item>RAHDHO</item>
+        <item>CHAK NO 527/T.D.A</item>
+        <item>ISAN WALA</item>
+        <item>PATTI DAYA CHOKHA AW</item>
+        <item>PATTI SULTAN MEHMUD S</item>
+        <item>CHAK NO 519/T.D.A</item>
+        <item>FAQIR WALI</item>
+        <item>PATTI GHULAM ALI GHAR</item>
+        <item>KHAR SHARQI</item>
+        <item>CHAK NO 137/M.L</item>
+        <item>CHAK KAMAR</item>
+        <item>PATTAL KOT ADDU MUST 1</item>
+        <item>DAYA CHOKHA SHARQI</item>
+        <item>MANSA RAM KHAS</item>
+        <item>RAAN</item>
+        <item>PIRHAR G.GHAIR MUSTAQ</item>
+        <item>SHAH RANGPUR</item>
+        <item>MALOOK CHAMARH</item>
+        <item>HAIDER DASTI</item>
+        <item>RAKH ALI PUR JANUBI</item>
+        <item>HAJI PUR JANUBI</item>
+        <item>GADAREWALA</item>
+        <item>CHAK ABUAL FATEH</item>
+        <item>SADIWAHAN</item>
+        <item>CHHATTA DHAB</item>
+        <item>RANA WAHIN</item>
+        <item>SANDILA</item>
+        <item>ISA BHABH</item>
+        <item>RAN</item>
+        <item>PONTA MULLANA</item>
+        <item>MATI SHAH</item>
+        <item>GOHAR JANGALA</item>
+        <item>MIR HAJI</item>
+        <item>BALUJA SIRANI</item>
+        <item>HASSANPUR TAROR</item>
+        <item>AHMAD SARANI</item>
+        <item>DADAN WALA</item>
+        <item>KHOKHAR KHAN GARH</item>
+        <item>RAKH KUNAL SANDILA</item>
+        <item>KALANJAR</item>
+        <item>JASAIL WAHAN</item>
+        <item>BET DABLI</item>
+        <item>GALO WALA</item>
+        <item>AMAN PUR</item>
+        <item>BET QAIM SHAH</item>
+        <item>CHAK GHAZANFAR GARH</item>
+        <item>GHAZANFAR GARH</item>
+        <item>NARAIN SAHGAL</item>
+        <item>KACHI JAI</item>
+        <item>PATTI DARGAH</item>
+        <item>HAJI MATAILA</item>
+        <item>CHAK NO 006/4 R.</item>
+        <item>BRAHAM WALI</item>
+        <item>AISAN WALI</item>
+        <item>GOPANG</item>
+        <item>DARMARI</item>
+        <item>KOT DADAN</item>
+        <item>CHAK NO 007/4-L</item>
+        <item>AHMAD MUHANA</item>
+        <item>BHARAT WAHI</item>
+        <item>MUHAMMAD DHA</item>
+        <item>SHUJARA</item>
+        <item>BELA WALA</item>
+        <item>JAHAN PUR</item>
+        <item>JHALARIN</item>
+        <item>KOTLA LAL SHAH</item>
+        <item>MIR WALA</item>
+        <item>BANDAH ISHAQ</item>
+        <item>KHANPUR BHANI</item>
+        <item>BIBI PUR DAMARI</item>
+        <item>DINGA KORAI</item>
+        <item>SHEIKH ALI</item>
+        <item>BET MIR HAZAR KHAN</item>
+        <item>BAKAENI-1</item>
+        <item>BET SIAL</item>
+        <item>KOTLA BANDA ALI KHAN</item>
+        <item>RAKH HAMZE WALI</item>
+        <item>BHINDE KORAI</item>
+        <item>HAMZE WALI</item>
+        <item>KOTLA RAHIM SHAH</item>
+        <item>CHAK RAO</item>
+        <item>FAIZ PUR</item>
+        <item>KHAR WALA</item>
+        <item>MOCHI WALA</item>
+        <item>CHAK NO 646/T.D.A</item>
+        <item>SOJHAL WALI</item>
+        <item>GURMANI GHARBI</item>
+        <item>SHADI KHAN SUNAWAN</item>
+        <item>CHAK NO 154/M.L</item>
+        <item>DOGAR KALASRA</item>
+        <item>CHAK NO 551/T.D.A</item>
+        <item>CHAK NO 628/T.D.A</item>
+        <item>TOMBER WALA</item>
+        <item>CHAK NO 536/T.D.A</item>
+        <item>KHAEE DOUM MUSTAQIL</item>
+        <item>NOON</item>
+        <item>CHAK NO 528/T.D.A</item>
+        <item>JANO GHAIR MUSTAQIL</item>
+        <item>PATTI SULTAN MEHMUD G</item>
+        <item>GURMANI SHARQI</item>
+        <item>BAIT HESAR</item>
+
+     </string-array>
+
+
+
+ </resources>
