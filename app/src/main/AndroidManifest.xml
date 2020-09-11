@@ -106,6 +106,8 @@
         <activity android:name=".Utilties.SyncMainActivity" />
         <activity android:name=".Athreehhid.HH_Screen_One" />
         <activity android:name=".Athreehhid.HH_Screen_two" />
+        <activity android:name=".Athreehhid.HH_Screen_C_two" />
+        <activity android:name=".Athreehhid.HH_Screen_three" />
     </application>
 
 </manifest>

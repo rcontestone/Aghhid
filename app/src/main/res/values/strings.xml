@@ -802,5 +802,16 @@
     <string name="section_e_question_q15_option1"> </string>
     <string name="section_e_question_q15_option2"> </string>
 
+    <string name="HH_Screen_C_two">HH_Screen_C_two</string>
+    <string name="tv_section_d_title">ہم گھرانے کے افراد کی لسٹنگ کر رہے ہیں، برائے مہربانی ان تمام افراد کے نام بتائیں جو اس گھرانے میں رہتے ہیں۔گھرانے سے مراد ایسے افراد کا مجموعہ ہے جو ایک ہی چولہے سے کھاتے پیتے ہوں۔ اپنے آپ سے شروع کرتے ہوئے بتائیں۔</string>
+    <string name="add_member_text">Add New Member</string>
+    <string name="hh_textview_d_2">گھرانے کے افراد کا مکمل نام</string>
+    <string name="hh_textview_d_3">۔جنس</string>
+    <string name="hh_textview_d_4">4 نام ۔۔۔۔کی عمر  (مکمل کردہ سال میں لکھیں۔ سال سے کم عمر ہو تب 0لکھیں</string>
+    <string name="hh_textview_d_5">نام ۔۔۔۔۔کا گھرانے کے سربراہ سے رشتہ</string>
+    <string name="hh_textview_d_6">کیا نام۔۔۔۔گھرانے سے باہر اجرت پر کام کرتا ہے</string>
+    <string name="hh_textview_d_7">کیا نام۔۔۔۔فروری 2020میں کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں داخل تھا/تھی؟</string>
+    <string name="hh_textview_d_8">اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
+
 
 </resources>
