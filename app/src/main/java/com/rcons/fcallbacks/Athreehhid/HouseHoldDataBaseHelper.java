@@ -19,6 +19,7 @@ import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.EmailDebugLog;
 
 import com.rcons.fcallbacks.HHIDConfigurations;
+import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Model.HouseMemberModel;
 import com.rcons.fcallbacks.StructureUtil;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -50,7 +51,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase db;
     private int dbOpenCounter = 0;
 
-    private static String DB_NAME = "houses.sqlite";
+    private static String DB_NAME = "PhoneQuestionnaire.db";
     private static String DB_PATH = "/data/data/" + BuildConfig.APPLICATION_ID + "/databases/";
 
     public HouseHoldDataBaseHelper(Context context) {
@@ -1293,12 +1294,12 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean hhid_isHHCovered(String PSU_code,String hhid) {
+    public synchronized boolean hhid_isHHCovered(String village_id,String hhid) {
         Cursor cursor = null;
         boolean  result = false;
         try {
             openDB();
-            String query = "Select * from "+ MpcUtil.HHID_Survey+" where HH_id = '"+hhid.toUpperCase()+ "' AND PSU_code = '"+PSU_code.toUpperCase()+"'";
+            String query = "Select * from "+ DatabaseAdapter.aghhid_section_c_table+" where hhid = '"+hhid.toUpperCase()+ "' AND village_id = '"+village_id.toUpperCase()+"'";
             DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_isHHCovered() "+query);
             cursor = db.rawQuery(query, null);
 
@@ -1720,12 +1721,12 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean hhid_insert_data(String District_Code, String District_Name , String Tehsil_code , String Tehsil_Name , String PSU_code , String PSU_name , String Structure_id , String HH_id , String hhid_q1, String hhid_q2, String hhid_q3, String hhid_q4,String hhid_q4_a, String q1_headname , String q2_headfathername , String q3_Hhmember, String q4_migration , String q5_Add_house , String q5_Add_street , String q5_Add_Neighborhood , String q5_Add_Landmark, String user_name , String start_date_time) {
+    public synchronized boolean hhid_insert_data(String village_id ,String hhid , String c1, String c1_given_number, String user_name , String start_date_time) {
         try {
 
 
 
-            boolean runUpdate_Querry = hhid_isHHCovered(PSU_code,HH_id);
+            boolean runUpdate_Querry = hhid_isHHCovered(village_id,hhid);
 
             DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
 
@@ -1734,39 +1735,35 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
             ContentValues cv = new ContentValues();
 
-            cv.put("hhid_q1", hhid_q1.toUpperCase());
-            cv.put("hhid_q2", hhid_q2.toUpperCase());
-            cv.put("hhid_q3", hhid_q3.toUpperCase());
-            cv.put("hhid_q4", hhid_q4.toUpperCase());
-            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
+            cv.put("c1", c1.toUpperCase());
+            cv.put("c1_given_number", c1_given_number.toUpperCase());
+//            cv.put("hhid_q3", hhid_q3.toUpperCase());
+//            cv.put("hhid_q4", hhid_q4.toUpperCase());
+//            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
 
-            if (!hhid_q3.equalsIgnoreCase("1")){
-
-                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
-
-            }
+//            if (!hhid_q3.equalsIgnoreCase("1")){
+//
+//                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
+//
+//            }
 
 
 
             long isInserted =0;
             if(!runUpdate_Querry){
-//                cv.put("District_Code", District_Code.toUpperCase());
-//                cv.put("District_Name", District_Name.toUpperCase());
-//                cv.put("Tehsil_code", Tehsil_code.toUpperCase());
-//                cv.put("Tehsil_Name", Tehsil_Name.toUpperCase());
-                cv.put("PSU_code", PSU_code.toUpperCase());
-                cv.put("PSU_name", PSU_name.toUpperCase());
-                cv.put("Structure_id", Structure_id.toUpperCase());
-                cv.put("HH_id", HH_id.toUpperCase());
-                cv.put("start_date_time", start_date_time.toUpperCase());
+
+                cv.put("village_id", village_id.toUpperCase());
+                cv.put("hhid", hhid.toUpperCase());
                 cv.put("build_no", BuildConfig.VERSION_NAME);
                 cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
-                cv.put("device_id", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
-                cv.put("user_name", HHIDConfigurations.getPeshawarCurrentLoggedInUser(mContext).toUpperCase());
-                isInserted = db.insert(MpcUtil.HHID_Survey, null, cv);
+                cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+                cv.put("rcons_user", user_name.toUpperCase());
+                isInserted = db.insert(DatabaseAdapter.aghhid_section_c_table, null, cv);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
 
             }else{
-                db.update(MpcUtil.HHID_Survey, cv, "HH_id=" + HH_id.toUpperCase()+ " AND PSU_code = '"+PSU_code.toUpperCase()+"'", null);
+                db.update(DatabaseAdapter.aghhid_section_c_table, cv, "hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"'", null);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
 
             }
 

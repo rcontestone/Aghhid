@@ -199,8 +199,8 @@
                             android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
                             android:background="@drawable/edittextbgwhitecolor"
-
-                            android:inputType="text"
+                            android:visibility="gone"
+                            android:inputType="phone"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
@@ -224,6 +224,7 @@
                             android:text="@string/aghhid_tv_c_2"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
+                            android:visibility="gone"
                             android:textStyle="bold"
 
 
@@ -269,7 +270,7 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_1"
+                                android:text="@string/aghhid_tv_c_1_op_1"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -293,7 +294,7 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_2"
+                                android:text="@string/aghhid_tv_c_1_op_2"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -318,7 +319,7 @@
                                 android:gravity="right"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
-                                android:text="@string/aghhid_tv_c_2_op_3"
+                                android:text="@string/aghhid_tv_c_1_op_3"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -341,7 +342,7 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_4"
+                                android:text="@string/aghhid_tv_c_1_op_4"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -364,14 +365,14 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_5"
+                                android:text="@string/aghhid_tv_c_1_op_5"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
                                 android:clickable="true"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
-                                android:onClick="setMigration4"
+                                android:onClick="setMigration5"
 
                                 />
 
@@ -387,89 +388,19 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_6"
+                                android:text="@string/aghhid_tv_c_1_op_6"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
                                 android:clickable="true"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
-                                android:onClick="setMigration4"
+                                android:onClick="setMigration6"
 
                                 />
 
 
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_7"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/migration1"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_7"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration4"
-
-                                />
-
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/migration1"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_8"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration4"
-
-                                />
-
-
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_9"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/migration1"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:text="@string/aghhid_tv_c_2_op_9"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration4"
-
-                                />
                         </RadioGroup>
-
-
-
-
 
 
 
@@ -490,7 +421,7 @@
                             android:layout_marginTop="40dp"
                             android:background="@drawable/option_one"
                             android:clickable="true"
-                            android:onClick="grabEnteredTextForscreenthreenextbtn"
+                            android:onClick="HandleNextButnClick"
                             android:scaleType="fitXY">
 
                             <ImageButton
@@ -499,7 +430,7 @@
                                 android:layout_height="@dimen/_50sdp"
                                 android:background="@drawable/option_one"
                                 android:clickable="true"
-                                android:onClick="grabEnteredTextForscreenthreenextbtn" />
+                                android:onClick="HandleNextButnClick" />
 
                             <TextView
                                 android:id="@+id/sign_up_btn_text_viewthreenextbtn"

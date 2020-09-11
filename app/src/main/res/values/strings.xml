@@ -557,8 +557,19 @@
 
 
     <!--  Section C-->
+
+
     <string name="aghhid_tv_c">سیکشن C: گھرانے میں سہولیات</string>
     <string name="aghhid_tv_c_1">1. اگر ہمارا اس نمبر پر رابطہ ٹوٹ جائے تو کیا آپ کے پاس کوئی نمبر ہے جس پر رابطہ کیا جاسکے؟ </string>
+    <string name="aghhid_tv_c_1_op_1">1. 1ہاں، نمبر نوٹ کریں</string>
+    <string name="aghhid_tv_c_1_op_2">  -111 کوئی اور نمبر نہیں ہے</string>
+    <string name="aghhid_tv_c_1_op_3">  88- جواب نہیں دیا</string>
+    <string name="aghhid_tv_c_1_op_4">98-  معلوم نہیں</string>
+    <string name="aghhid_tv_c_1_op_5"> 99- مزید بات سے انکار کر دیا</string>
+    <string name="aghhid_tv_c_1_op_6"> 777. فون کاٹ دیا</string>
+
+
+
     <string name="aghhid_tv_c_2"> 2. کیا آپ کے گھرانے کے پاس ان میں سے کوئی اشیاء ہیں تمام آپشنز پڑھ کر سنائیں اور جوابدہندہ جو بھی اشیاءبتائے اسے نوٹ کر لیں </string>
     <string name="aghhid_tv_c_2_op_1">1. انٹر نیٹ تک رسائی</string>
     <string name="aghhid_tv_c_2_op_2">  2. بجلی کا کنیکشن</string>
