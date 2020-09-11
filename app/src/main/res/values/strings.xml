@@ -41,7 +41,6 @@
     <string name="password">Password</string>
 
 
-
     <!-- Sign-up screen varaiables -->
 
     <string name="sign_up_screen_top_bar_text_view">Add New Record</string>
@@ -76,7 +75,6 @@
 
     <string name="sign_up_eula_textview_label_line_one">By signing up, you are agreeing to our</string>
     <string name="sign_up_eula_textview_label_line_two"><![CDATA[<font > <u><b>Terms of Use &</b></u></font> <font ><u> <b>Privacy Policy </b></u></font>]]></string>
-
 
 
     <string name="psu_area_name">PSU (Area) Name</string>
@@ -233,7 +231,6 @@
     <string name="sign_in_password_textfield_hint">Password</string>
 
 
-
     <!-- Sign-in screen varaiables -->
 
     <string name="screens_back_btn">Back</string>
@@ -251,10 +248,6 @@
     <string name="signup_activity_phone_field_invalid_message_body">Enter a valid Phone Number.</string>
 
     <!-- parent_select_device screen varaiables -->
-
-
-
-
 
 
     <!-- TODO: Section A Strings -->
@@ -554,8 +547,6 @@
     <string name="import_now">Import Now</string>
 
 
-
-
     <!--  Section C-->
 
 
@@ -569,7 +560,6 @@
     <string name="aghhid_tv_c_1_op_6"> 777. فون کاٹ دیا</string>
 
 
-
     <string name="aghhid_tv_c_2"> 2. کیا آپ کے گھرانے کے پاس ان میں سے کوئی اشیاء ہیں تمام آپشنز پڑھ کر سنائیں اور جوابدہندہ جو بھی اشیاءبتائے اسے نوٹ کر لیں </string>
     <string name="aghhid_tv_c_2_op_1">1. انٹر نیٹ تک رسائی</string>
     <string name="aghhid_tv_c_2_op_2">  2. بجلی کا کنیکشن</string>
@@ -581,6 +571,236 @@
     <string name="aghhid_tv_c_2_op_8"> 8. کمپیوٹر/ٹیبلیٹ</string>
     <string name="aghhid_tv_c_2_op_9"> 777. فون کاٹ دیا</string>
 
+
+    <!-- A3g hhid Strings -->
+
+    <string name="section_b_question_q1_script"> السلامُ علیکم، میرا نام۔۔۔۔۔۔۔ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں </string>
+    <string name="section_b_question_q1"> کیا میں ۔۔۔۔۔۔۔ (A06  میں موجود نام بولیں) سے بات کر رہی ہوں؟ </string>
+    <string name="section_b_question_q1_option1">1~ ہاں </string>
+    <string name="section_b_question_q1_option2"> 2~ نہیں، کسی اور نے فون اٹھایا </string>
+    <string name="section_b_question_q1_option3"> 3~ رانگ نمبر </string>
+    <string name="section_b_question_q1_option777"> 777~ فون کاٹ دیا </string>
+
+    <string name="section_b_question_q2"> کیا میں ۔۔۔۔۔۔۔ (A06  میں موجود نام بولیں) سے بات کر سکتی ہوں؟ </string>
+    <string name="section_b_question_q2_option1">1~ ہاں، ٹارگٹ پرسن کے آنے کا انتظار کریں، آنے پر سلام کریں پھر تصدیق کریں کہ کیا یہ A06والے فرد ہی ہیں  </string>
+    <string name="section_b_question_q2_option2">2~ نہیں، وہ ابھی یہاں نہیں ہیں </string>
+    <string name="section_b_question_q2_option3">3~ وہ کچھ دیر میں آئیں گے  </string>
+    <string name="section_b_question_q2_option88">88~ جواب نہیں دیا </string>
+    <string name="section_b_question_q2_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_b_question_q2_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_b_question_q3"> کیا آپ (A06  میں موجود نام بولیں)کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں </string>
+    <string name="section_b_question_q3_option1">1~ ہاں </string>
+    <string name="section_b_question_q3_option2"> 2~ نہیں </string>
+    <string name="section_b_question_q3_option88">88~ جواب نہیں دیا </string>
+    <string name="section_b_question_q3_option98">98~ معلوم نہیں </string>
+    <string name="section_b_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_b_question_q3_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_b_question_q4">آپ کا پورا نام کیا ہے </string>
+    <string name="section_b_question_q4_instructions"> مکمل نام لکھیں </string>
+
+    <string name="section_b_question_q5"> اگر میں آپ سے اردو میں بات کروں تو کیا یہ ٹھیک ہے؟ </string>
+    <string name="section_b_question_q5_option1">1~ ہاں </string>
+    <string name="section_b_question_q5_option2">2~ ہاں، مگر میں کسی اور زبان کو ترجیح دوں گا </string>
+    <string name="section_b_question_q5_option3">3~ نہیں، اردو نہیں سمجھتے </string>
+    <string name="section_b_question_q5_option88">88~ جواب نہیں دیا </string>
+    <string name="section_b_question_q5_option98">98~ معلوم نہیں </string>
+    <string name="section_b_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_b_question_q5_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_b_question_q6"> آپ کس زبان میں بات کرنا پسند کریں گے </string>
+    <string name="section_b_question_q6_option0"> کوئی ایسی زبان بتائی جس میں سروے ممکن نہیں </string>
+    <string name="section_b_question_q6_option1"> 1~ سرائیکی </string>
+    <string name="section_b_question_q6_option2"> 2 ~  پنجابی </string>
+    <string name="section_b_question_q6_option3">3~ اردو </string>
+    <string name="section_b_question_q6_option4"> 4~ انگریزی </string>
+    <string name="section_b_question_q6_option5"> 5~ دیگر(وضاحت۔۔۔۔۔۔) </string>
+    <string name="section_b_question_q6_option88">88~ جواب نہیں دیا </string>
+    <string name="section_b_question_q6_option98">98~ معلوم نہیں </string>
+    <string name="section_b_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_b_question_q6_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_b_question_q7"> آپ کے موبائل نمبر کا نیٹ ورک کون سا ہے؟ </string>
+    <string name="section_b_question_q7_option1">1~ جاز/وارد </string>
+    <string name="section_b_question_q7_option2"> 2~ یوفون </string>
+    <string name="section_b_question_q7_option3"> 3~ ٹیلی نار </string>
+    <string name="section_b_question_q7_option4"> 4~ زونگ </string>
+    <string name="section_b_question_q7_option5"> 5~ دیگر(وضاحت۔۔۔۔۔) </string>
+
+    <string name="section_b_question_q8"> کیا جوابدہندہ نے کوئی سوال پوچھا </string>
+    <string name="section_b_question_q8_option1"> ہاں(تمام سوالات کے جواب دئے) </string>
+    <string name="section_b_question_q8_option2"> نہیں </string>
+
+    <string name="section_b_question_q9"> کیا جوابدہندہ  نے سروے میں شمولیت کےلئے رضامندی کا اظہار کیا؟ </string>
+    <string name="section_b_question_q9_option1">1~  ہاں </string>
+    <string name="section_b_question_q9_option2">2~ نہیں  </string>
+    <string name="section_b_question_q9_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_c_question_q1"> اگر ہمارا اس نمبر پر رابطہ ٹوٹ جائے تو کیا آپ کے پاس کوئی نمبر ہے جس پر رابطہ کیا جاسکے؟ </string>
+    <string name="section_c_question_q1_option1">1~ ہاں، نمبر نوٹ کریں </string>
+    <string name="section_c_question_q1_option111">111~ کوئی اور نمبر نہیں ہے </string>
+    <string name="section_c_question_q1_option88">88~ جواب نہیں دیا </string>
+    <string name="section_c_question_q1_option98"> </string>
+    <string name="section_c_question_q1_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_c_question_q1_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="section_c_question_q2"> کیا آپ کے گھرانے کے پاس ان میں سے کوئی اشیاء ہیں </string>
+    <string name="section_c_question_q2_insrtuctions"> تمام آپشنز پڑھ کر سنائیں اور جوابدہندہ جو بھی اشیاءبتائے اسے نوٹ کر لیں </string>
+    <string name="section_c_question_q2_option1"> انٹر نیٹ تک رسائی </string>
+    <string name="section_c_question_q2_option2"> بجلی کا کنیکشن </string>
+    <string name="section_c_question_q2_option3"> ریڈیو </string>
+    <string name="section_c_question_q2_option4"> ٹی وی </string>
+    <string name="section_c_question_q2_option5"> سمارٹ فون(ٹچ سکرین) </string>
+    <string name="section_c_question_q2_option6"> بٹنوں والا فون </string>
+    <string name="section_c_question_q2_option7"> لینڈ لائن فون(PTCL) </string>
+    <string name="section_c_question_q2_option8"> کمپیوٹر/ٹیبلیٹ </string>
+    <string name="section_c_question_q2_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_d_script"> ہم گھرانے کے افراد کی لسٹنگ کر رہے ہیں، برائے مہربانی ان تمام افراد کے نام بتائیں جو اس گھرانے میں رہتے ہیں۔گھرانے سے مراد ایسے افراد کا مجموعہ ہے جو ایک ہی چولہے سے کھاتے پیتے ہوں۔ اپنے آپ سے شروع کرتے ہوئے بتائیں۔ </string>
+    <string name="section_d_question_q1"> گھرانے کا افراد کا ممبر ID </string>
+    <string name="section_d_question_q2"> گھرانے کے افراد کا مکمل نام </string>
+    <string name="section_d_question_q3"> نام۔۔۔۔۔کی جنس  </string>
+    <string name="section_d_question_q3_option1"> مرد </string>
+    <string name="section_d_question_q3_option2"> خاتون </string>
+
+    <string name="section_d_question_q4"> نام ۔۔۔۔کی عمر  </string>
+    <string name="section_d_question_q4_instructions"> (مکمل کردہ سال میں لکھیں۔ سال سے کم عمر ہو تب 0لکھیں) </string>
+
+    <string name="section_d_question_q5">  نام ۔۔۔۔۔کا گھرانے کے سربراہ سے رشتہ  </string>
+    <string name="section_d_question_q5_instructions"> سربراہ سے رشتہ کے کوڈز دیکھیں </string>
+
+    <string name="section_d_question_q5_option1">1~ گھرانے کا سربراہ </string>
+    <string name="section_d_question_q5_option2"> 2~ گھرانے کے سربراہ کی شریک حیات </string>
+    <string name="section_d_question_q5_option3">3~ اپنی اولاد </string>
+    <string name="section_d_question_q5_option4">4~ پوتا، پوتی، نواسہ، نواسی </string>
+    <string name="section_d_question_q5_option5">5~  لے پالک بچہ </string>
+    <string name="section_d_question_q5_option6">6~ بہن، بھائی </string>
+    <string name="section_d_question_q5_option7">7~ بھتیجا، بھتیجی، بھانجا، بھانجی </string>
+    <string name="section_d_question_q5_option8">8~ سالہ، سالی، بھابی، بہنوئی </string>
+    <string name="section_d_question_q5_option9">9~ بہو ، داماد  </string>
+    <string name="section_d_question_q5_option10">10~ انکل، آنٹی </string>
+    <string name="section_d_question_q5_option11">11~ والدین </string>
+    <string name="section_d_question_q5_option12">12~ ساس، سسر </string>
+    <string name="section_d_question_q5_option13">13~ دیگر رشتہ دار </string>
+    <string name="section_d_question_q5_option14">14~ ملازم، نوکر </string>
+    <string name="section_d_question_q5_option15">15~ دیگر(وضاحت۔۔۔۔۔) </string>
+
+    <string name="section_d_question_q6"> 5سے 19سال کے تمام افراد کےلئے پوچھیں کیا نام۔۔۔۔گھرانے سے باہر اجرت پر کام کرتا ہے</string>
+    <string name="section_d_question_q6_option1">1~ ہاں </string>
+    <string name="section_d_question_q6_option2">2~ نہیں </string>
+
+    <string name="section_d_question_q7"> 5سے 19سال کے تمام افراد کےلئے پوچھیں کیا نام۔۔۔۔فروری 2020میں کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں داخل تھا/تھی؟</string>
+    <string name="section_d_question_q7_option1">1~ گورنمنٹ سکول </string>
+    <string name="section_d_question_q7_option2">2~  پرائیویٹ سکول </string>
+    <string name="section_d_question_q7_option3">3~ فل ٹائم دینی مدرسہ </string>
+    <string name="section_d_question_q7_option4">4~ کسی میں بھی نہیں </string>
+
+    <string name="section_d_question_q8"> 5سے 19سال کے تمام افراد کےلئے پوچھیں اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
+    <string name="section_d_question_q8_option1">1~ گورنمنٹ سکول </string>
+    <string name="section_d_question_q8_option2">2~  پرائیویٹ سکول </string>
+    <string name="section_d_question_q8_option3">3~ فل ٹائم دینی مدرسہ </string>
+    <string name="section_d_question_q8_option4">4~ کسی میں بھی نہیں </string>
+
+
+    <string name="section_e_question_q1"> جوابدہندہ سے مت پوچھیں(روسٹر کے مطابق نوٹ کریں) روسٹر سے دیکھ کر 9سے19سال کے درمیان ایسی لڑکی کو منتخب کریں جو فروری 2020 میں سکول نہیں جاتی تھی اور /یا سکول کھلنے پر دوبارہ سکول نہیں جائے گی۔ اگر کوئی ایسی لڑکی نہ ہو تب کسی اور9سے 19سال کے درمیان والی  لڑکی کو منتخب کرلیں</string>
+    <string name="section_e_question_q2"> ہم آپ سے تعلیم کے مختلف مواقع کے بارے  میں  آپ کی رائے  جاننا چاہتے ہیں۔کیا آپ (E01والی لڑکی کا نام بولیں)کوخاص طور پر 9سے 19سال کی بچیوں  کےلئے پڑھنے کے پروگرام میں داخل کروا ئیں گے  اور یہ پیشکش آپ کے گاؤں ہی میں کی جائے اور پڑھانے کےلئے خاتون استاد ہوں؟ </string>
+    <string name="section_e_question_q2_option1">1~ ہاں </string>
+    <string name="section_e_question_q2_option2">2~ نہیں </string>
+    <string name="section_e_question_q2_option88">88~ جواب نہیں دیا </string>
+    <string name="section_e_question_q2_option98">98~ معلوم نہیں </string>
+    <string name="section_e_question_q2_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="section_e_question_q2_option777">777~ فون کاٹ دیا </string>
+
+    <string name="section_e_question_q3"> کیا آپ مجھے بتاسکتے ہیں کہ آپ اس پروگرام میں حصہ کیوں نہیں لیں گے؟ کوڈز پڑھ کر مت سنائیں</string>
+    <string name="section_e_question_q3_instructions"> لاگو ہونے والے تمام جوابات نوٹ کریں </string>
+    <string name="section_e_question_q3_option1"> اسے پڑھنے کی ضرورت نہیں </string>
+    <string name="section_e_question_q3_option2"> وہ پڑھنا نہیں چاہتی </string>
+    <string name="section_e_question_q3_option3"> کرونا وائرس کی وجہ سے سکول جانا محفوظ نہیں </string>
+    <string name="section_e_question_q3_option4"> علاقے میں جرائم کی وجہ سے سکول جانا محفوظ نہیں </string>
+    <string name="section_e_question_q3_option5"> ٹرانسپورٹ کی کمی کی وجہ سے سکول جانا محفوظ نہیں </string>
+    <string name="section_e_question_q3_option6"> اسے گھرانے کے کاموں میں مدد کرنا ہوتی ہے </string>
+    <string name="section_e_question_q3_option7"> اسے اجرت کے کام میں مدد کرنا ہوتی ہے </string>
+    <string name="section_e_question_q3_option8"> </string>
+    <string name="section_e_question_q3_option9"> </string>
+    <string name="section_e_question_q3_option10"> </string>
+    <string name="section_e_question_q3_option11"> </string>
+    <string name="section_e_question_q3_option12"> </string>
+    <string name="section_e_question_q3_option13"> </string>
+    <string name="section_e_question_q3_option14"> </string>
+    <string name="section_e_question_q3_option88"> </string>
+    <string name="section_e_question_q3_option98"> </string>
+    <string name="section_e_question_q3_option99"> </string>
+    <string name="section_e_question_q3_option77"> </string>
+
+    <string name="section_e_question_q4"> </string>
+    <string name="section_e_question_q4_option1"> </string>
+    <string name="section_e_question_q4_option2"> </string>
+    <string name="section_e_question_q4_option88"> </string>
+    <string name="section_e_question_q4_option98"> </string>
+    <string name="section_e_question_q4_option99"> </string>
+    <string name="section_e_question_q4_option77"> </string>
+
+    <string name="section_e_question_q5"> </string>
+    <string name="section_e_question_q5_option1"> </string>
+    <string name="section_e_question_q5_option2"> </string>
+    <string name="section_e_question_q5_option88"> </string>
+    <string name="section_e_question_q5_option98"> </string>
+    <string name="section_e_question_q5_option99"> </string>
+    <string name="section_e_question_q5_option77"> </string>
+
+    <string name="section_e_question_q6"> </string>
+    <string name="section_e_question_q6_option1"> </string>
+    <string name="section_e_question_q6_option2"> </string>
+    <string name="section_e_question_q6_option88"> </string>
+    <string name="section_e_question_q6_option98"> </string>
+    <string name="section_e_question_q6_option99"> </string>
+    <string name="section_e_question_q6_option777"> </string>
+
+    <string name="section_e_question_q7"> </string>
+    <string name="section_e_question_q7_option1"> </string>
+    <string name="section_e_question_q7_option2"> </string>
+    <string name="section_e_question_q7_option777"> </string>
+
+    <string name="section_e_question_q8"> </string>
+    <string name="section_e_question_q8_option1"> </string>
+    <string name="section_e_question_q8_option2"> </string>
+    <string name="section_e_question_q8_option3"> </string>
+    <string name="section_e_question_q8_option4"> </string>
+    <string name="section_e_question_q8_option88"> </string>
+    <string name="section_e_question_q8_option98"> </string>
+    <string name="section_e_question_q8_option99"> </string>
+    <string name="section_e_question_q8_option777"> </string>
+
+    <string name="section_e_question_q9"> </string>
+    <string name="section_e_question_q9_option1"> </string>
+    <string name="section_e_question_q9_option2"> </string>
+
+    <string name="section_e_question_q10"> </string>
+    <string name="section_e_question_q10_option1"> </string>
+    <string name="section_e_question_q10_option2"> </string>
+    <string name="section_e_question_q10_option99"> </string>
+    <string name="section_e_question_q10_option777"> </string>
+
+    <string name="section_e_question_q11"> </string>
+    <string name="section_e_question_q11_option1"> </string>
+    <string name="section_e_question_q11_option2"> </string>
+
+    <string name="section_e_question_q12"> </string>
+    <string name="section_e_question_q12_option1"> </string>
+    <string name="section_e_question_q12_option2"> </string>
+
+    <string name="section_e_question_q13"> </string>
+    <string name="section_e_question_q13_instructions"> </string>
+
+    <string name="section_e_question_q14"> </string>
+    <string name="section_e_question_q14_option1"> </string>
+    <string name="section_e_question_q14_option2"> </string>
+
+    <string name="section_e_question_q15"> </string>
+    <string name="section_e_question_q15_option1"> </string>
+    <string name="section_e_question_q15_option2"> </string>
 
 
 </resources>

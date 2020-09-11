@@ -83,7 +83,7 @@ public class CallMenuActivity extends AppCompatActivity {
     TextView onorignal;
     TextView onalternative;
 
-    TextView txt_school_name, txt_school_code, txt_school_emis_code, txt_private_school_code, txt_student_name, txt_Student_id, txt_district, txt_Tehsil, txt_mobile_number;
+    TextView txt_village_name, txt_school_code, txt_school_emis_code, txt_private_school_code, txt_hh_head_name, txt_Student_id, txt_district, txt_Tehsil, txt_mobile_number;
 
     String school_code, student_id;
 
@@ -136,11 +136,11 @@ public class CallMenuActivity extends AppCompatActivity {
 
         idtextview = findViewById(R.id.idtextview);
 
-        txt_school_name = findViewById(R.id.txt_school_name);
+        txt_village_name = findViewById(R.id.txt_village_name);
         txt_school_code = findViewById(R.id.txt_school_code);
         txt_school_emis_code = findViewById(R.id.txt_school_emis_code);
         txt_private_school_code = findViewById(R.id.txt_private_school_code);
-        txt_student_name = findViewById(R.id.txt_student_name);
+        txt_hh_head_name = findViewById(R.id.txt_hh_head_name);
         txt_Student_id = findViewById(R.id.txt_Student_id);
         txt_district = findViewById(R.id.txt_district);
         txt_Tehsil = findViewById(R.id.txt_Tehsil);
@@ -323,19 +323,19 @@ public class CallMenuActivity extends AppCompatActivity {
                 //intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
                 //intent.putExtra("strata", cursor.getString(cursor.getColumnIndex("strata")));
                 intent.putExtra("scode", cursor.getString(cursor.getColumnIndex("village_id")));
-              //  intent.putExtra("scode_original", cursor.getString(cursor.getColumnIndex("scode_original")));
-              //  intent.putExtra("m2_district", cursor.getString(cursor.getColumnIndex("m2_district")));
-               // intent.putExtra("m2_tehsil", cursor.getString(cursor.getColumnIndex("m2_tehsil")));
-               // intent.putExtra("m2_mauza", cursor.getString(cursor.getColumnIndex("m2_mauza")));
-               // intent.putExtra("m2_school_name", cursor.getString(cursor.getColumnIndex("m2_school_name")));
+                //  intent.putExtra("scode_original", cursor.getString(cursor.getColumnIndex("scode_original")));
+                //  intent.putExtra("m2_district", cursor.getString(cursor.getColumnIndex("m2_district")));
+                // intent.putExtra("m2_tehsil", cursor.getString(cursor.getColumnIndex("m2_tehsil")));
+                // intent.putExtra("m2_mauza", cursor.getString(cursor.getColumnIndex("m2_mauza")));
+                // intent.putExtra("m2_school_name", cursor.getString(cursor.getColumnIndex("m2_school_name")));
                 //intent.putExtra("studentnumber", cursor.getString(cursor.getColumnIndex("studentnumber")));
                 intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("hhid")));
-              //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
+                //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
                 intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
                 intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
                 intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
-               // intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
-               // intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
+                // intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
+                // intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
 
 
                 intent.putExtra("isFromEditActivity", false);
@@ -508,11 +508,11 @@ public class CallMenuActivity extends AppCompatActivity {
             String m2_district = "";//cursor.getString(cursor.getColumnIndex("m2_district"));
             String m2_tehsil = "";//cursor.getString(cursor.getColumnIndex("m2_tehsil"));
             String m2_mauza = "";//cursor.getString(cursor.getColumnIndex("m2_mauza"));
-            String m2_school_name = "";//cursor.getString(cursor.getColumnIndex("m2_school_name"));
+            String m2_school_name = cursor.getString(cursor.getColumnIndex("village_name"));
             String studentnumber = "";//cursor.getString(cursor.getColumnIndex("studentnumber"));
             String studentid = cursor.getString(cursor.getColumnIndex("hhid"));
             String m1b_student_sex = "";//cursor.getString(cursor.getColumnIndex("m1b_student_sex"));
-            String m1b_student_name = "";//cursor.getString(cursor.getColumnIndex("m1b_student_name"));
+            String m1b_student_name = cursor.getString(cursor.getColumnIndex("hhid_father_name"));
             String m5_studentassessment = "";//cursor.getString(cursor.getColumnIndex("m5_studentassessment"));
             String order_to_contact = "";//cursor.getString(cursor.getColumnIndex("order_to_contact"));
             String duration = cursor.getString(cursor.getColumnIndex("duration"));
@@ -627,12 +627,12 @@ public class CallMenuActivity extends AppCompatActivity {
                  String sc2,
                  String sc3) {
 
-        txt_school_name.setText(m2_school_name);
+        txt_village_name.setText(m2_school_name);
 //        txt_school_emis_code.setText(scode);
-        txt_school_code.setText("School Code : " + scode);
+        txt_school_code.setText("Village Code : " + scode);
         txt_private_school_code.setText(scode);
-        txt_student_name.setText(m1b_student_name);
-        txt_Student_id.setText("Student Id : " + studentid);
+        txt_hh_head_name.setText(m1b_student_name);
+        txt_Student_id.setText("HH Id : " + studentid);
         txt_district.setText(m2_district);
         txt_Tehsil.setText(m2_tehsil);
         txt_mobile_number.setText(m1b_parent_mobile);
@@ -709,7 +709,7 @@ public class CallMenuActivity extends AppCompatActivity {
         PreviousCall.setEnabled(false);
         PreviousCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_disable_button_bg));
 
-   //  startActivityForResult(callIntent, 99);
+        //  startActivityForResult(callIntent, 99);
     }
 
     private String getSimNetwork() {
@@ -744,7 +744,7 @@ public class CallMenuActivity extends AppCompatActivity {
 //            startActivityForResult(intent , 88);
 
 
-           // startService(new Intent(CallMenuActivity.this.getApplicationContext(), com.mubashar.mubchatheadservice.ChatHeadService.class));
+            // startService(new Intent(CallMenuActivity.this.getApplicationContext(), com.mubashar.mubchatheadservice.ChatHeadService.class));
             MubLog.cpnsoleLog("inside call dialed ");
 
         } else if (requestCode == 880) {

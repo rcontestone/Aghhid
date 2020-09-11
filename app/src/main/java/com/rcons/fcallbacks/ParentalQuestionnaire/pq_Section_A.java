@@ -201,7 +201,7 @@ public class pq_Section_A extends AppCompatActivity {
         SetEnumState();
 
         phone_number = getIntent().getStringExtra("m1b_parent_mobile");
-        emp_id =  "1";//getIntent().getStringExtra("emp_id");
+        emp_id = "1";//getIntent().getStringExtra("emp_id");
         order_id = getIntent().getStringExtra("phone_order");
         farmer_id = "1";//getIntent().getStringExtra("farmerID");
         school_code = getIntent().getStringExtra("scode");
@@ -214,13 +214,13 @@ public class pq_Section_A extends AppCompatActivity {
         s3 = getIntent().getStringExtra("sc3");
         s4 = getIntent().getStringExtra("sc4");
 
-        txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے  ۔ میں آپ کو  سکولوں کے  ریسرچ پروجیکٹ  کے متعلق  کال کر رہی  ہوں  جو حکومت پنجاب  کے سکول ایجوکیشن ڈیپارٹمنٹ کی جانب سے کیا جا رہا ہے۔   ہم نے  دو سال قبل گورنمنٹ کے ایک ریسرچ پراجیکٹ کے لئے  آپ کے بچے/بچی( " + student_name + ") کا انٹرویو لیا تھا جب وہ چوتھی  جماعت میں(  " + school_name + ") سکول میں تھا/تھی۔   اس پراجیکٹ کے تحت ہم جاننا چاہتے ہیں کہ آپ کے بچے   کیسے پڑھ رہے ہیں جبکہ  کرونا وبا کی وجہ سے سکول بند  ہیں ");
+        txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
 
         section_a_question_3.setText("کیا میں  " + student_name + "کے  والد / والدہ  یا  سرپرست سے بات کر رہا ہوں؟");
         section_a_question_4.setText("کیا  آپ    " + student_name + " کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟");
 
-        txt_School_Code.setText("School Code : " + school_code);
-        txt_Student_id.setText("Student Id : " + student_id);
+        txt_School_Code.setText("Village Code : " + school_code);
+        txt_Student_id.setText("HH Id : " + student_id);
 
 
         LoadPreviousData();
