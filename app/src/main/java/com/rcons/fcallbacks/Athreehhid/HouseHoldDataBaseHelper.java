@@ -1763,7 +1763,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
 
             }else{
-                db.update(DatabaseAdapter.aghhid_section_c_table, cv, "hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"'", null);
+                db.update(DatabaseAdapter.aghhid_section_c_table, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+"", null);
+
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
                 updated = true;
             }
@@ -2362,6 +2363,102 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside addUser() Exception is : " + e.toString());
             closeDB();
             return false;
+        }
+    }
+
+    public synchronized  ArrayList<String>  aghhid_getNumbersDataagainstvillageAndhhid(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Show Previous Numbers");
+        try {
+            openDB();
+           // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+           Cursor cursor = db.rawQuery("SELECT hhid_phone_number FROM  "+DatabaseAdapter.AGHHID_SampleTable +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'",null);
+          int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    String id = cursor.getString(cursor.getColumnIndex("hhid_phone_number"));
+                    spinnerArray.add( id );
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+id);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+         DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+spinnerArray.size());
+            return spinnerArray;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return spinnerArray;
+        }
+    }
+
+    public synchronized JSONObject aghhid_getDataFromtable(Context appContext,String tableName , String village_id,String hhid){
+        long rowId = 1;
+        try {
+            openDB();
+            JSONArray dataArray = new JSONArray();
+            JSONObject data =  new JSONObject();
+            Cursor curCSV = db.rawQuery("SELECT * FROM  "+ tableName +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable() village_id "+village_id);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable() hhid"+hhid);
+            if(curCSV.getCount()!=0) {
+
+                //file.createNewFile();
+//                String fileName = FileManager.createFileName(appContext, "csv" + "", HHIDConfigurations.getPeshawarCurrentLoggedInUser(appContext)+"_PSU_DATA");
+//                FileManager.createNewFile(appContext, fileName, "");
+
+
+//                CSVWriter csvWrite = new CSVWriter(new FileWriter(appContext.getFileStreamPath(fileName)));
+
+
+//                csvWrite.writeNext(curCSV.getColumnNames());
+                String columnNames[] = curCSV.getColumnNames();
+                DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable() columnNames"+columnNames.length);
+
+                int count = curCSV.getColumnCount();
+                String arrStr[] = new String[count];
+                //curCSV.moveToFirst();
+                while (curCSV.moveToNext()) {
+                    //Which column you want to exprort
+                    int index = 0;
+                    while (index < count) {
+                        //  arrStr[index] = curCSV.getString(index);
+                        DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable() "+columnNames[index]);
+
+                        data.put(columnNames[index],curCSV.getString(index)+"");
+//DebugLog.console("[HouseHoldDataBaseHelper] inside getDataFromtable() "+data.toString());
+                        index++;
+                    }
+                    //  arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2)};
+//                    csvWrite.writeNext(arrStr);
+
+
+                }
+//                csvWrite.close();
+
+            }
+            curCSV.close();
+            DebugLog.console(" executed successfully");
+            closeDB();
+            return data;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getDataFromtable");
+            closeDB();
+            return new JSONObject();
         }
     }
 

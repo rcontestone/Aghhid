@@ -157,11 +157,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/sign_up_first_name_textfield"
-                            android:layout_alignParentRight="true"
+
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="27dp"
                             android:layout_marginRight="30dp"
-                            android:gravity="right"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
                             android:text="@string/aghhid_tv_c"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
@@ -208,7 +209,19 @@
 
 
 
+                        <Spinner
 
+                            android:id="@+id/numbers_sp_q_2"
+                            android:layout_width="@dimen/_250sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_below="@id/hh_edtfield_q_2"
+                            android:background="#e6e6e6"
+                            android:entries="@array/array_relative_code_sp"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="gone"
+                            android:textSize="@dimen/_13sdp"></Spinner>
 
 
                         <TextView

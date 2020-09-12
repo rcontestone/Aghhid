@@ -25,12 +25,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ import com.rcons.fcallbacks.http.ResponceVerifier;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -187,8 +190,8 @@ public class HH_Screen_three extends Activity {
 
 
 
-					setContentView(R.layout.screen_three);
-					//AnalyticsUtil.updateScreen(this, getResources().getString(R.string.sign_up_screen_top_bar_text_view));
+			setContentView(R.layout.screen_three);
+			//AnalyticsUtil.updateScreen(this, getResources().getString(R.string.sign_up_screen_top_bar_text_view));
 
 			phone_number = getIntent().getStringExtra("m1b_parent_mobile");
 			school_code = getIntent().getStringExtra("scode");
@@ -198,8 +201,8 @@ public class HH_Screen_three extends Activity {
 			rcons_user = RConsUtils.getUserName();
 
 
-				// Get Refferences of Views
-				initializeReferenceOfViews();
+			// Get Refferences of Views
+			initializeReferenceOfViews();
 
 
 
@@ -218,238 +221,236 @@ public class HH_Screen_three extends Activity {
 
 
 
-				hh_textview_q_2 = (TextView)findViewById(R.id.hh_textview_q_2);
-				hh_textview_q_3 = (TextView)findViewById(R.id.hh_textview_q_3);
-				head_count = (TextView)findViewById(R.id.head_count);
-				migration = (TextView)findViewById(R.id.migration);
-				migration1 = (RadioButton)findViewById(R.id.migration1);
-				migration2 = (RadioButton)findViewById(R.id.migration2);
-				sign_up_confirm_password_textfield_rb = (RadioGroup) findViewById(R.id.sign_up_confirm_password_textfield_rb);
-				hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
-				main = (ViewGroup) findViewById(R.id.phone_number_ll);
-				house_address = (TextView)findViewById(R.id.house_address);
-				house_no= (TextView)findViewById(R.id.house_no);
-				block_no= (TextView)findViewById(R.id.block_no);
-				area_no= (TextView)findViewById(R.id.area_no);
-				landmark= (TextView)findViewById(R.id.landmark);
+			hh_textview_q_2 = (TextView)findViewById(R.id.hh_textview_q_2);
+			hh_textview_q_3 = (TextView)findViewById(R.id.hh_textview_q_3);
+			head_count = (TextView)findViewById(R.id.head_count);
+			migration = (TextView)findViewById(R.id.migration);
+			migration1 = (RadioButton)findViewById(R.id.migration1);
+			migration2 = (RadioButton)findViewById(R.id.migration2);
+			sign_up_confirm_password_textfield_rb = (RadioGroup) findViewById(R.id.sign_up_confirm_password_textfield_rb);
+			hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
+			main = (ViewGroup) findViewById(R.id.phone_number_ll);
+			house_address = (TextView)findViewById(R.id.house_address);
+			house_no= (TextView)findViewById(R.id.house_no);
+			block_no= (TextView)findViewById(R.id.block_no);
+			area_no= (TextView)findViewById(R.id.area_no);
+			landmark= (TextView)findViewById(R.id.landmark);
 
 
 
 
 
-				sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
-				screenthreeBackbtnonerl = (RelativeLayout) findViewById(R.id.screenthreeBackbtnonerl);
-				screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
-				relative_layout_sign_up_btn = (RelativeLayout) findViewById(R.id.relative_layout_sign_up_btn);
-				relative_layout_new_hh_in_same_stid_btn = (RelativeLayout) findViewById(R.id.relative_layout_new_hh_in_same_stid_btn);
+			sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
+			screenthreeBackbtnonerl = (RelativeLayout) findViewById(R.id.screenthreeBackbtnonerl);
+			screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
+			relative_layout_sign_up_btn = (RelativeLayout) findViewById(R.id.relative_layout_sign_up_btn);
+			relative_layout_new_hh_in_same_stid_btn = (RelativeLayout) findViewById(R.id.relative_layout_new_hh_in_same_stid_btn);
 
 
-				String stringToShow =getResources().getString(R.string.sign_up_eula_textview_label_line_two);
+			String stringToShow =getResources().getString(R.string.sign_up_eula_textview_label_line_two);
 
 
-				String stringToShowforSigninnavigation = getResources().getString(R.string.sign_up_eula_btn_label_below_btn_line_two);
+			String stringToShowforSigninnavigation = getResources().getString(R.string.sign_up_eula_btn_label_below_btn_line_two);
 
-				sign_up_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-				top_bar = (TextView)findViewById(R.id.sign_in_top_bar_text_view);
-				sign_up_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
-
-
-				sign_up_eula_textview_label_line_two = (TextView)findViewById(R.id.sign_up_eula_textview_label_line_two);
-				sign_up_eula_textview_label_line_two.setText(Html.fromHtml(stringToShow));
-
-				String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
-				DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode "+currentPSUCode);
-
-				String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext,currentPSUCode);
-
-				current_STID = Integer.parseInt(last_strict_id_against_psu)+1;
-
-				DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu "+last_strict_id_against_psu);
-
-				String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext,currentPSUCode+"_hhid");
-				CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
+			sign_up_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
+			top_bar = (TextView)findViewById(R.id.sign_in_top_bar_text_view);
+			sign_up_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
 
 
-				int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+			sign_up_eula_textview_label_line_two = (TextView)findViewById(R.id.sign_up_eula_textview_label_line_two);
+			sign_up_eula_textview_label_line_two.setText(Html.fromHtml(stringToShow));
+
+			String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
+			DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode "+currentPSUCode);
+
+			String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext,currentPSUCode);
+
+			current_STID = Integer.parseInt(last_strict_id_against_psu)+1;
+
+			DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu "+last_strict_id_against_psu);
+
+			String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext,currentPSUCode+"_hhid");
+			CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
 
 
-				String stringTopBar = getResources().getString(R.string.screen_two_top_bar,currentPSUCode,count+"",CURRENT_HHID+"", current_STID+"");
+		//	int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+			String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
 
-				top_bar.setText(stringTopBar);
+			top_bar.setText(stringTopBar);
 
-				//sign_up_eula_btn_label_below_btn_line_one.setVisibility(View.GONE);
-				//sign_up_eula_textview_label_line_two.setVisibility(View.GONE);
+			//sign_up_eula_btn_label_below_btn_line_one.setVisibility(View.GONE);
+			//sign_up_eula_textview_label_line_two.setVisibility(View.GONE);
 
-				editTextfirstName = (EditText)findViewById(R.id.sign_up_first_name_textfield);
-				editTextfirstName.setLines(1);
-				editTextfirstName.setInputType(InputType.TYPE_CLASS_TEXT);
+			editTextfirstName = (EditText)findViewById(R.id.sign_up_first_name_textfield);
+			editTextfirstName.setLines(1);
+			editTextfirstName.setInputType(InputType.TYPE_CLASS_TEXT);
 //				editTextfirstName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.user_icon, 0, 0, 0);
 //				editTextfirstName.setCompoundDrawablePadding(8);
 
 //				editTextfirstName.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_first_name_textfield_label) + "</font>" + "<small>"));
 
 
-				hh_edtfield_q_5 =  (EditText)findViewById(R.id.hh_edtfield_q_5);
-				hh_edtfield_q_4 =  (EditText)findViewById(R.id.hh_edtfield_q_4);
+			hh_edtfield_q_5 =  (EditText)findViewById(R.id.hh_edtfield_q_5);
+			hh_edtfield_q_4 =  (EditText)findViewById(R.id.hh_edtfield_q_4);
 //				hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //				hh_edtfield_q_5.setCompoundDrawablePadding(8);
-				hh_edtfield_q_5.requestFocus();
-				MpcUtil.restartInput(appContext,hh_edtfield_q_5);
+			hh_edtfield_q_5.requestFocus();
+			MpcUtil.restartInput(appContext,hh_edtfield_q_5);
 
-				//hh_edtfield_q_5.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
+			//hh_edtfield_q_5.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
 
-				editTextReTypeEmailID = (EditText)findViewById(R.id.sign_up_confirm_email_textfield);
+			editTextReTypeEmailID = (EditText)findViewById(R.id.sign_up_confirm_email_textfield);
 //				editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //				editTextReTypeEmailID.setCompoundDrawablePadding(8);
 //
 //				editTextReTypeEmailID.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_confirm_email_name_textfield_label) + "</font>" + "<small>"));
 
 
-				//edt_Question_5 = (EditText)findViewById(R.id.sign_up_first_name_textfield);
-				edt_Question_5_1 = (EditText)findViewById(R.id.house_no_textfield);
-				edt_Question_5_2 = (EditText)findViewById(R.id.block_no_textfield);
-				edt_Question_5_3 = (EditText)findViewById(R.id.area_no_textfield);
-				edt_Question_5_4 = (EditText)findViewById(R.id.landmark_textfield);
+			//edt_Question_5 = (EditText)findViewById(R.id.sign_up_first_name_textfield);
+			edt_Question_5_1 = (EditText)findViewById(R.id.house_no_textfield);
+			edt_Question_5_2 = (EditText)findViewById(R.id.block_no_textfield);
+			edt_Question_5_3 = (EditText)findViewById(R.id.area_no_textfield);
+			edt_Question_5_4 = (EditText)findViewById(R.id.landmark_textfield);
 //				edt_Question_5_5 = (EditText)findViewById(R.id.sign_up_first_name_textfield);
 
 
-				//Handling back-navigation from signup_part_two screen
-				if(!firstName.equalsIgnoreCase("")){
-					editTextfirstName.setText(firstName);
-					hh_edtfield_q_5.setText(hh_edtfield_q_5_edt_answer);
-					editTextReTypeEmailID.setText(reTypedEmailID);
-				}
+			//Handling back-navigation from signup_part_two screen
+			if(!firstName.equalsIgnoreCase("")){
+				editTextfirstName.setText(firstName);
+				hh_edtfield_q_5.setText(hh_edtfield_q_5_edt_answer);
+				editTextReTypeEmailID.setText(reTypedEmailID);
+			}
 
-				//manually filling firstName
-				editTextfirstName.setText("Parent");
+			//manually filling firstName
+			editTextfirstName.setText("Parent");
 
 
 
-				/**
-				 * Enabling TextChangedListener for  Email-ID field signup
-				 * */
-				hh_edtfield_q_5.addTextChangedListener(new TextWatcher() {
+			/**
+			 * Enabling TextChangedListener for  Email-ID field signup
+			 * */
+			hh_edtfield_q_5.addTextChangedListener(new TextWatcher() {
 
-					@Override
-					public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-						// When user changed the Text
-						DebugLog.console("inside onTextChanged:" );
+				@Override
+				public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+					// When user changed the Text
+					DebugLog.console("inside onTextChanged:" );
 
-						hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString().trim();
-						reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
+					hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString().trim();
+					reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
 
-						if (reTypedEmailID.length()==0){
+					if (reTypedEmailID.length()==0){
 //							hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //							editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //							hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //							editTextReTypeEmailID.setCompoundDrawablePadding(8);
 
-						}else{
-							if (hh_edtfield_q_5_edt_answer.length() < reTypedEmailID.length() || hh_edtfield_q_5_edt_answer.length() > reTypedEmailID.length()){
+					}else{
+						if (hh_edtfield_q_5_edt_answer.length() < reTypedEmailID.length() || hh_edtfield_q_5_edt_answer.length() > reTypedEmailID.length()){
 //								hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
 //								hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-							}else if (hh_edtfield_q_5_edt_answer.equalsIgnoreCase(reTypedEmailID)) {
+						}else if (hh_edtfield_q_5_edt_answer.equalsIgnoreCase(reTypedEmailID)) {
 //								hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-							}
 						}
 					}
+				}
 
-					@Override
-					public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-												  int arg3) {
-						// TODO Auto-generated method stub
-					}
+				@Override
+				public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+											  int arg3) {
+					// TODO Auto-generated method stub
+				}
 
-					@Override
-					public void afterTextChanged(Editable arg0) {
-						// TODO Auto-generated method stub							
-					}
-				});
+				@Override
+				public void afterTextChanged(Editable arg0) {
+					// TODO Auto-generated method stub
+				}
+			});
 
-				/**
-				 * Enabling TextChangedListener for re-typed email address field signup
-				 * */
-				editTextReTypeEmailID.addTextChangedListener(new TextWatcher() {
+			/**
+			 * Enabling TextChangedListener for re-typed email address field signup
+			 * */
+			editTextReTypeEmailID.addTextChangedListener(new TextWatcher() {
 
-					@Override
-					public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-						// When user changed the Text
-						DebugLog.console("inside onTextChanged:" );
+				@Override
+				public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+					// When user changed the Text
+					DebugLog.console("inside onTextChanged:" );
 
-						hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString().trim();
-						reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
-						if (reTypedEmailID.length()==0){
+					hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString().trim();
+					reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
+					if (reTypedEmailID.length()==0){
 //							hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //							editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //							hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //							editTextReTypeEmailID.setCompoundDrawablePadding(8);
-						}else {
-							if (hh_edtfield_q_5_edt_answer.length() < reTypedEmailID.length() || hh_edtfield_q_5_edt_answer.length() > reTypedEmailID.length()){
+					}else {
+						if (hh_edtfield_q_5_edt_answer.length() < reTypedEmailID.length() || hh_edtfield_q_5_edt_answer.length() > reTypedEmailID.length()){
 //								hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-							}else if (hh_edtfield_q_5_edt_answer.equalsIgnoreCase(reTypedEmailID)) {
+						}else if (hh_edtfield_q_5_edt_answer.equalsIgnoreCase(reTypedEmailID)) {
 //								hh_edtfield_q_5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								hh_edtfield_q_5.setCompoundDrawablePadding(8);
 //								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-							}
 						}
 					}
+				}
 
-					@Override
-					public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-												  int arg3) {
-						// TODO Auto-generated method stub
-					}
+				@Override
+				public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+											  int arg3) {
+					// TODO Auto-generated method stub
+				}
 
-					@Override
-					public void afterTextChanged(Editable arg0) {
-						// TODO Auto-generated method stub							
-					}
-				});
+				@Override
+				public void afterTextChanged(Editable arg0) {
+					// TODO Auto-generated method stub
+				}
+			});
 
 
 
-				editTextReTypeEmailID.setOnEditorActionListener(new OnEditorActionListener() {
-					@Override
-					public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-						if(actionId== EditorInfo.IME_ACTION_DONE){
-							//do something
-							if(ConnectionVerifier.isInternetOn(appContext)){
-								grabEnteredTextForSignUp(editTextReTypeEmailID);
-							}else{
+			editTextReTypeEmailID.setOnEditorActionListener(new OnEditorActionListener() {
+				@Override
+				public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+					if(actionId== EditorInfo.IME_ACTION_DONE){
+						//do something
+						if(ConnectionVerifier.isInternetOn(appContext)){
+							grabEnteredTextForSignUp(editTextReTypeEmailID);
+						}else{
 
-								showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
-							}
-
-							return true;
+							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
 						}
-						return false;
+
+						return true;
 					}
-				});
+					return false;
+				}
+			});
 
 //				editTextPhone = (EditText)findViewById(R.id.sign_up_phone_textfield);
 //				editTextPhone.setCompoundDrawablesWithIntrinsicBounds(R.drawable.signup_phone_icon, 0, 0, 0);
 //				editTextPhone.setCompoundDrawablePadding(8);
 
-				String number = "";//MpcUtil.getPhoneNumber(appContext);
-				if (number.equalsIgnoreCase("")) {
-					//	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
-				}else{
-					//	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
+			String number = "";//MpcUtil.getPhoneNumber(appContext);
+			if (number.equalsIgnoreCase("")) {
+				//	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
+			}else{
+				//	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
 
 //					editTextPhone.setText(number);
-				}
+			}
 
 
-				editTextPassword = (EditText)findViewById(R.id.sign_up_password_textfield);
+			editTextPassword = (EditText)findViewById(R.id.sign_up_password_textfield);
 
 //				editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
 //				editTextPassword.setCompoundDrawablePadding(8);
@@ -457,7 +458,7 @@ public class HH_Screen_three extends Activity {
 
 //				editTextPassword.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_password_textfield_label) + "</font>" + "<small>"));
 
-				editTextConfirmPassword = (EditText)findViewById(R.id.sign_up_confirm_password_textfield);
+			editTextConfirmPassword = (EditText)findViewById(R.id.sign_up_confirm_password_textfield);
 
 //				editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
 //				editTextConfirmPassword.setCompoundDrawablePadding(8);
@@ -465,162 +466,162 @@ public class HH_Screen_three extends Activity {
 //				editTextConfirmPassword.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_confirm_password_textfield_label) + "</font>" + "<small>"));
 
 
-				btnCreateAccount=(ImageButton)findViewById(R.id.sign_up_btn);
-				btnHHNew=(ImageButton)findViewById(R.id.hh_btn);
+			btnCreateAccount=(ImageButton)findViewById(R.id.sign_up_btn);
+			btnHHNew=(ImageButton)findViewById(R.id.hh_btn);
 
 
 
-				btnHHNew.setOnClickListener(new View.OnClickListener() {
+			btnHHNew.setOnClickListener(new View.OnClickListener() {
 
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
 
 //						if(ConnectionVerifier.isInternetOn(appContext)){
-						NEW_HH_IN_SAME_STRUCTURE = true;
-						//AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
-						grabEnteredTextForSignUpPartTwo();
+					NEW_HH_IN_SAME_STRUCTURE = true;
+					//AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
+					grabEnteredTextForSignUpPartTwo();
 //						}else{
 //
 //							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
 //						}
-					}
-				});
+				}
+			});
 
 
 
 
 
-				btnCreateAccount.setOnClickListener(new View.OnClickListener() {
+			btnCreateAccount.setOnClickListener(new View.OnClickListener() {
 
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						NEW_HH_IN_SAME_STRUCTURE = false;
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					NEW_HH_IN_SAME_STRUCTURE = false;
 //						if(ConnectionVerifier.isInternetOn(appContext)){
 
-						//AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
-						grabEnteredTextForSignUpPartTwo();
+					//AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
+					grabEnteredTextForSignUpPartTwo();
 //						}else{
 //
 //							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
 //						}
-					}
-				});
+				}
+			});
 
 
 
 
-				/**
-				 * Enabling TextChangedListener for  password field signup
-				 * */
-				editTextPassword.addTextChangedListener(new TextWatcher() {
+			/**
+			 * Enabling TextChangedListener for  password field signup
+			 * */
+			editTextPassword.addTextChangedListener(new TextWatcher() {
 
-					@Override
-					public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-						// When user changed the Text
-						DebugLog.console("inside onTextChanged:" );
+				@Override
+				public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+					// When user changed the Text
+					DebugLog.console("inside onTextChanged:" );
 
-						password = editTextPassword.getText().toString().trim();
-						hh_edtfield_q_3_edt_answer = "";//editTextConfirmPassword.getText().toString().trim();
+					password = editTextPassword.getText().toString().trim();
+					hh_edtfield_q_3_edt_answer = "";//editTextConfirmPassword.getText().toString().trim();
 
-						if (hh_edtfield_q_3_edt_answer.length()==0){
+					if (hh_edtfield_q_3_edt_answer.length()==0){
 //							editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
 //							editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
 //							editTextPassword.setCompoundDrawablePadding(8);
 //							editTextConfirmPassword.setCompoundDrawablePadding(8);
+					}else{
+						if (password.length() < hh_edtfield_q_3_edt_answer.length() || password.length() > hh_edtfield_q_3_edt_answer.length()){
+//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextPassword.setCompoundDrawablePadding(8);
+//								editTextConfirmPassword.setCompoundDrawablePadding(8);
+						}else if (password.equalsIgnoreCase(hh_edtfield_q_3_edt_answer)) {
+//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextPassword.setCompoundDrawablePadding(8);
+//								editTextConfirmPassword.setCompoundDrawablePadding(8);
+						}
+					}
+				}
+
+				@Override
+				public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+											  int arg3) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void afterTextChanged(Editable arg0) {
+					// TODO Auto-generated method stub
+				}
+			});
+
+			/**
+			 * Enabling TextChangedListener for confirm password field signup
+			 * */
+			editTextConfirmPassword.addTextChangedListener(new TextWatcher() {
+
+				@Override
+				public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+					// When user changed the Text
+					DebugLog.console("inside onTextChanged:" );
+
+					password = editTextPassword.getText().toString().trim();
+					//	hh_edtfield_q_3_edt_answer = editTextConfirmPassword.getText().toString().trim();
+					if (hh_edtfield_q_3_edt_answer.length()==0){
+//							editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//							editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//							editTextPassword.setCompoundDrawablePadding(8);
+//							editTextConfirmPassword.setCompoundDrawablePadding(8);
+
+					}else {
+						if (password.length() < hh_edtfield_q_3_edt_answer.length() || password.length() > hh_edtfield_q_3_edt_answer.length()){
+//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextPassword.setCompoundDrawablePadding(8);
+//								editTextConfirmPassword.setCompoundDrawablePadding(8);
+						}else if (password.equalsIgnoreCase(hh_edtfield_q_3_edt_answer)) {
+//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
+//								editTextPassword.setCompoundDrawablePadding(8);
+//								editTextConfirmPassword.setCompoundDrawablePadding(8);
+						}
+					}
+				}
+
+				@Override
+				public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+											  int arg3) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void afterTextChanged(Editable arg0) {
+					// TODO Auto-generated method stub
+				}
+			});
+
+
+			editTextConfirmPassword.setOnEditorActionListener(new OnEditorActionListener() {
+				@Override
+				public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+					if(actionId== EditorInfo.IME_ACTION_DONE){
+						//do something
+						if(ConnectionVerifier.isInternetOn(appContext)){
+							grabEnteredTextForSignUpPartTwo();
 						}else{
-							if (password.length() < hh_edtfield_q_3_edt_answer.length() || password.length() > hh_edtfield_q_3_edt_answer.length()){
-//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextPassword.setCompoundDrawablePadding(8);
-//								editTextConfirmPassword.setCompoundDrawablePadding(8);
-							}else if (password.equalsIgnoreCase(hh_edtfield_q_3_edt_answer)) {
-//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextPassword.setCompoundDrawablePadding(8);
-//								editTextConfirmPassword.setCompoundDrawablePadding(8);
-							}
+
+							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
 						}
+
+						return true;
 					}
-
-					@Override
-					public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-												  int arg3) {
-						// TODO Auto-generated method stub
-					}
-
-					@Override
-					public void afterTextChanged(Editable arg0) {
-						// TODO Auto-generated method stub							
-					}
-				});
-
-				/**
-				 * Enabling TextChangedListener for confirm password field signup
-				 * */
-				editTextConfirmPassword.addTextChangedListener(new TextWatcher() {
-
-					@Override
-					public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-						// When user changed the Text
-						DebugLog.console("inside onTextChanged:" );
-
-						password = editTextPassword.getText().toString().trim();
-						//	hh_edtfield_q_3_edt_answer = editTextConfirmPassword.getText().toString().trim();
-						if (hh_edtfield_q_3_edt_answer.length()==0){
-//							editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//							editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//							editTextPassword.setCompoundDrawablePadding(8);
-//							editTextConfirmPassword.setCompoundDrawablePadding(8);
-
-						}else {
-							if (password.length() < hh_edtfield_q_3_edt_answer.length() || password.length() > hh_edtfield_q_3_edt_answer.length()){
-//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextPassword.setCompoundDrawablePadding(8);
-//								editTextConfirmPassword.setCompoundDrawablePadding(8);
-							}else if (password.equalsIgnoreCase(hh_edtfield_q_3_edt_answer)) {
-//								editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-//								editTextPassword.setCompoundDrawablePadding(8);
-//								editTextConfirmPassword.setCompoundDrawablePadding(8);
-							}
-						}
-					}
-
-					@Override
-					public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-												  int arg3) {
-						// TODO Auto-generated method stub
-					}
-
-					@Override
-					public void afterTextChanged(Editable arg0) {
-						// TODO Auto-generated method stub							
-					}
-				});
-
-
-				editTextConfirmPassword.setOnEditorActionListener(new OnEditorActionListener() {
-					@Override
-					public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-						if(actionId== EditorInfo.IME_ACTION_DONE){
-							//do something
-							if(ConnectionVerifier.isInternetOn(appContext)){
-								grabEnteredTextForSignUpPartTwo();
-							}else{
-
-								showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
-							}
-
-							return true;
-						}
-						return false;
-					}
-				});
+					return false;
+				}
+			});
 
 
 
-				String time = MpcUtil.getcurrentTime(17);
+			String time = MpcUtil.getcurrentTime(17);
 //				hh_edtfield_q_5.setText(time+"@setech.com");
 //				editTextReTypeEmailID.setText(time+"@setech.com");
 //				editTextPassword.setText("test");
@@ -813,7 +814,7 @@ public class HH_Screen_three extends Activity {
 				for (int i = 0; i < main.getChildCount(); i++) {
 					JSONObject obj = new JSONObject();
 					View view = main.getChildAt(i);
-					EditText phoneNumber = view.findViewById(R.id.editTextPhone);
+					EditText phoneNumber = view.findViewById(R.id.editTextd_2);
 					EditText phoneStatus = view.findViewById(R.id.phone1_status);
 
 
@@ -1654,10 +1655,10 @@ public class HH_Screen_three extends Activity {
 					CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
 
 
-					int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+					//int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 
 
-					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,currentPSUCode,count+"",CURRENT_HHID+"", current_STID+"");
+					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
 
 					top_bar.setText(stringTopBar);
 
@@ -1699,10 +1700,10 @@ public class HH_Screen_three extends Activity {
 					CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
 
 
-					int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+					//int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 
 
-					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,currentPSUCode,count+"",CURRENT_HHID+"", current_STID+"");
+					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
 					top_bar.setText(stringTopBar);
 
 					//	showAlert("Struct ID : " + last_strict_id_against_psu, "\nSuccessfully saved");
@@ -1924,9 +1925,14 @@ public class HH_Screen_three extends Activity {
 			calledFromView="";
 			selfClose =  true;
 
-			Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
-			backIntent.putExtra("launchActivity", "signup");
-			startActivity(backIntent);
+
+			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
+			intent.putExtra("m1b_parent_mobile",phone_number);
+			intent.putExtra("scode",school_code);
+			intent.putExtra("studentid",student_id);
+			intent.putExtra("m1b_student_name",student_name);
+			intent.putExtra("rcons_user",RConsUtils.getUserName());
+			startActivity(intent);
 			finish();
 		}catch (Exception e) {
 			EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -1982,9 +1988,13 @@ public class HH_Screen_three extends Activity {
 			calledFromView="";
 			selfClose =  true;
 
-			Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
-			backIntent.putExtra("launchActivity", "signup");
-			startActivity(backIntent);
+			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
+			intent.putExtra("m1b_parent_mobile",phone_number);
+			intent.putExtra("scode",school_code);
+			intent.putExtra("studentid",student_id);
+			intent.putExtra("m1b_student_name",student_name);
+			intent.putExtra("rcons_user",RConsUtils.getUserName());
+			startActivity(intent);
 			finish();
 
 		}catch (Exception e) {
@@ -2072,7 +2082,7 @@ public class HH_Screen_three extends Activity {
 					LayoutInflater inflater = getLayoutInflater();
 					View view = inflater.inflate(R.layout.phone_number_layout, null);
 					main.addView(view, main.getChildCount(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-					EditText phoneNumber = view.findViewById(R.id.editTextPhone);
+					EditText phoneNumber = view.findViewById(R.id.editTextd_2);
 					JSONObject obj;
 					obj = phonedataarray.getJSONObject(k);
 					DebugLog.console("[HH_Screen_three] inside obj onStart() "+obj.toString());
@@ -2263,26 +2273,6 @@ public class HH_Screen_three extends Activity {
 
 		boolean error = false;
 
-		hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString().trim();
-
-		DebugLog.console("[HH_Screen_three] inside c05AddPhone() hh_edtfield_q_5_edt_answer"+hh_edtfield_q_5_edt_answer);
-
-
-		if(!hh_edtfield_q_5_edt_answer.equalsIgnoreCase("")){
-			if(hh_edtfield_q_5_edt_answer.equalsIgnoreCase("999") || hh_edtfield_q_5_edt_answer.equalsIgnoreCase("888")){
-				error = true;
-				DebugLog.console("[HH_Screen_three] inside c05AddPhone() 999 detected");
-
-				showAlert(appContext.getResources().getString(R.string.app_name),"Please remove value from text field s");
-				return;
-			}
-
-
-
-
-
-
-		}
 
 
 
@@ -2292,36 +2282,137 @@ public class HH_Screen_three extends Activity {
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < main.getChildCount(); i++) {
 				View view = main.getChildAt(i);
-				EditText phoneNumber = view.findViewById(R.id.editTextPhone);
-				EditText phoneStatus = view.findViewById(R.id.phone1_status);
-
-				RadioGroup vstatus = view.findViewById(R.id.hh_edtfield_q_5_rdg);
-
-				int checkedID = vstatus.getCheckedRadioButtonId();
 
 
+				EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
 
-				if (phoneNumber.getText().toString().trim().equalsIgnoreCase("")){
-					Toast.makeText(this, "Phone number invald "+phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+				RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
+				int q_3_rdg_checkedID = q_3_rdg.getCheckedRadioButtonId();
+
+				EditText editTextField4 = view.findViewById(R.id.editTextField4);
+
+				Spinner relative_code_sp_d_5 = (Spinner) findViewById(R.id.relative_code_sp_d_5);
+				int relative_code_sp_d_5_position = relative_code_sp_d_5.getSelectedItemPosition();
+
+
+				EditText editTextField5 = view.findViewById(R.id.editTextField5);
+
+				if (editTextd_2.getText().toString().trim().equalsIgnoreCase("")){
+					Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
 
 					error=true;
-				}else 		if (phoneNumber.getText().toString().trim().length()!=10){
-					Toast.makeText(this, "Phone number invalid "+phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+
+				}else if (editTextd_2.getText().toString().trim().length()==0){
+					Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
 
 					error=true;
-				}else
 
-					DebugLog.console("[HH_Screen_three] inside checkedID() "+checkedID);
-				if (checkedID==-1){
-					Toast.makeText(this, "Please add status against phone number "+phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+				}else if (q_3_rdg_checkedID==-1){
+					Toast.makeText(this, "Please select gender ", Toast.LENGTH_SHORT).show();
 					error = true;
+				}else if (editTextField4.getText().toString().trim().equalsIgnoreCase("")){
+					Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+					editTextField4.requestFocus();
+					editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+					error=true;
+
+				}else if (editTextField4.getText().toString().trim().length()==0){
+					Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+					editTextField4.requestFocus();
+					editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+					error=true;
+
+				}else if (relative_code_sp_d_5_position==0){
+					Toast.makeText(this, "Please select relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+
+					error=true;
+
+				}else if (relative_code_sp_d_5_position==15 && editTextField5.getText().toString().length()==0){
+					Toast.makeText(this, "Please enter relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+
+					error=true;
+
 				}
 
+
+
+				//fixses  executes in any case
+				if(relative_code_sp_d_5_position!=15){
+					editTextField5.setText("");
+				}
+
+
+				if(editTextField4.getText().toString().length()!=0) {
+
+					int age = Integer.parseInt(editTextField4.getText().toString());
+					if (age > 4 && age < 20) {
+
+
+
+						TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+
+						TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+
+						TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+
+						RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+						int q_6_rdg_checkedID = hh_textview_d_6_rgp.getCheckedRadioButtonId();
+
+						RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+						int q_7_rdg_checkedID = hh_textview_d_7_rgp.getCheckedRadioButtonId();
+
+						RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+						int q_8_rdg_checkedID = hh_textview_d_8_rgp.getCheckedRadioButtonId();
+
+						if (q_6_rdg_checkedID==-1){
+							Toast.makeText(this, "Please fill question 6", Toast.LENGTH_SHORT).show();
+							hh_textview_d_6.setVisibility(View.VISIBLE);
+							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_7.setVisibility(View.VISIBLE);
+							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_8.setVisibility(View.VISIBLE);
+							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+							error=true;
+						}else if (q_7_rdg_checkedID==-1){
+							Toast.makeText(this, "Please fill question 7", Toast.LENGTH_SHORT).show();
+							hh_textview_d_6.setVisibility(View.VISIBLE);
+							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_7.setVisibility(View.VISIBLE);
+							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_8.setVisibility(View.VISIBLE);
+							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+							error=true;
+						}else if (q_8_rdg_checkedID==-1){
+							Toast.makeText(this, "Please fill question 8", Toast.LENGTH_SHORT).show();
+							hh_textview_d_6.setVisibility(View.VISIBLE);
+							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_7.setVisibility(View.VISIBLE);
+							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_8.setVisibility(View.VISIBLE);
+							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+							error=true;
+						}
+
+
+					}
+				}
 
 			}
 
 
 		}
+
+
+
 
 
 
@@ -2333,8 +2424,12 @@ public class HH_Screen_three extends Activity {
 			View view = inflater.inflate(R.layout.phone_number_layout, null);
 			main.addView(view, main.getChildCount(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
+			TextView hh_textview_d_1 =view.findViewById(R.id.hh_textview_d_1);
+			hh_textview_d_1.setText(main.getChildCount()+"");
+
+
 			Button callbutton =view.findViewById(R.id.callbutton);
-			EditText phoneNumber = view.findViewById(R.id.editTextPhone);
+			EditText phoneNumber = view.findViewById(R.id.editTextd_2);
 			callbutton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -2365,6 +2460,87 @@ public class HH_Screen_three extends Activity {
 					main.removeView(view);
 				}
 			});
+
+			EditText editTextField4 = view.findViewById(R.id.editTextField4);
+
+			Spinner relative_code_sp_d_5 = (Spinner) findViewById(R.id.relative_code_sp_d_5);
+			EditText editTextField5 = view.findViewById(R.id.editTextField5);
+
+			TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+			RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+
+			TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+			RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+
+			TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+			RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+
+
+			relative_code_sp_d_5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+				@Override
+				public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
+					DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() "+i);
+					if (i==15){
+						editTextField5.setVisibility(View.VISIBLE);
+					}else{
+						editTextField5.setVisibility(View.INVISIBLE);
+						editTextField5.setText("");
+					}
+
+
+					if(editTextField4.getText().toString().length()!=0){
+
+                      int age = Integer.parseInt(editTextField4.getText().toString());
+                      if(age>4 && age <20){
+						  hh_textview_d_6.setVisibility(View.VISIBLE);
+						  hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+						  hh_textview_d_7.setVisibility(View.VISIBLE);
+						  hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+						  hh_textview_d_8.setVisibility(View.VISIBLE);
+						  hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+					  }else{
+
+						  hh_textview_d_6.setVisibility(View.GONE);
+						  hh_textview_d_6_rgp.setVisibility(View.GONE);
+						  hh_textview_d_6_rgp.clearCheck();
+
+						  hh_textview_d_7.setVisibility(View.GONE);
+						  hh_textview_d_7_rgp.setVisibility(View.GONE);
+						  hh_textview_d_7_rgp.clearCheck();
+
+						  hh_textview_d_8.setVisibility(View.GONE);
+						  hh_textview_d_8_rgp.setVisibility(View.GONE);
+						  hh_textview_d_8_rgp.clearCheck();
+
+
+					  }
+					}else {
+
+						if (i != 0) {
+							parent.setSelection(0);
+							Toast.makeText(HH_Screen_three.this, "Please enter age first ", Toast.LENGTH_SHORT).show();
+							editTextField4.requestFocus();
+							editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						}
+					}
+
+
+				}
+
+
+				@Override
+				public void onNothingSelected(AdapterView<?> parent) {
+
+				}
+			});
+
+
+
 
 		}
 	}

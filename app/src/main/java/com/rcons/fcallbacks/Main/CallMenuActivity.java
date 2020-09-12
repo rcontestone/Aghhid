@@ -176,7 +176,7 @@ public class CallMenuActivity extends AppCompatActivity {
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             GetData();
-            Toast.makeText(this, "Fetch and show data enable code and line . 178", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Fetch and show data enable code and line . 178", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "No data found.", Toast.LENGTH_SHORT).show();
             finish();
@@ -313,8 +313,8 @@ public class CallMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stopChatHeadService();
-                Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
-//                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
+//                Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
+                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
 
                 intent.putExtra("isPendingCall", isPendingCall);
                 intent.putExtra("username", userName);

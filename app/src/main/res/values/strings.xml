@@ -46,7 +46,7 @@
     <string name="sign_up_screen_top_bar_text_view">Add New Record</string>
     <string name="sign_up_screen_top_bar_text_view_sign_in">Sign In</string>
     <string name="screen_three_top_bar"> Village_id: %1$s  \t HHID:\u0020  %2$s \n\tHHID :\u0020 %3$s</string>
-    <string name="screen_two_top_bar"> Village_id: %1$s  \t Eligible House :\u0020  %2$s \n\tHHID :\u0020 %3$s  \t Struct ID :\u0020  %4$s</string>
+    <string name="screen_two_top_bar">Head Name: %1$s   \nHHID :\u0020 %2$s  \t HHID  :\u0020  %3$s</string>
     <string name="sign_up_first_name_textfield_label">Full Name</string>
     <string name="hhid_hours_hint">Hours ( 0 se 24 )</string>
     <string name="hhid_mins_hint">Minutes ( 0 se 59 )</string>
@@ -809,11 +809,11 @@
     <string name="add_member_text">Add New Member</string>
     <string name="hh_textview_d_2">گھرانے کے افراد کا مکمل نام</string>
     <string name="hh_textview_d_3">۔جنس</string>
-    <string name="hh_textview_d_4">4 نام ۔۔۔۔کی عمر  (مکمل کردہ سال میں لکھیں۔ سال سے کم عمر ہو تب 0لکھیں</string>
-    <string name="hh_textview_d_5">نام ۔۔۔۔۔کا گھرانے کے سربراہ سے رشتہ</string>
-    <string name="hh_textview_d_6">کیا نام۔۔۔۔گھرانے سے باہر اجرت پر کام کرتا ہے</string>
-    <string name="hh_textview_d_7">کیا نام۔۔۔۔فروری 2020میں کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں داخل تھا/تھی؟</string>
-    <string name="hh_textview_d_8">اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
+    <string name="hh_textview_d_4">4  عمر  (مکمل کردہ سال میں لکھیں۔ سال سے کم عمر ہو تب 0لکھیں</string>
+    <string name="hh_textview_d_5">5. گھرانے کے سربراہ سے رشتہ</string>
+    <string name="hh_textview_d_6">6. گھرانے سے باہر اجرت پر کام کرتا ہے</string>
+    <string name="hh_textview_d_7">6. ۔فروری 2020میں کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں داخل تھا/تھی؟</string>
+    <string name="hh_textview_d_8">7. اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
 
 
 </resources>

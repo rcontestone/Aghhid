@@ -6,13 +6,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/sepbtn"
+        android:layout_height="@dimen/_15sdp"
+        android:background="@color/blue_color"
+        android:layout_below="@+id/callbutton"
+        ></Button>
+    <TextView
+        android:id="@+id/hh_textview_d_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/sepbtn"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text=""
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
 
     <TextView
         android:id="@+id/hh_textview_d_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/callbutton"
+        android:layout_below="@+id/hh_textview_d_1"
         android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
         android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
         android:layout_marginTop="@dimen/_25sdp"
@@ -26,7 +50,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/editTextd_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -43,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/editTextPhone"
+        android:layout_below="@+id/editTextd_2"
         android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
         android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
         android:layout_marginTop="@dimen/_25sdp"
@@ -59,15 +83,15 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextPhone"
+        android:layout_below="@+id/editTextd_2"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/_8sdp"
-        android:id="@+id/hh_edtfield_q_5_rdg"
+        android:id="@+id/q_3_rdg"
 
         >
 
         <RadioButton
-            android:id="@+id/hh_edtfield_q_5_rdg_op_1"
+            android:id="@+id/q_3_rdg_op_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -89,7 +113,7 @@
             />
 
         <RadioButton
-            android:id="@+id/hh_edtfield_q_5_rdg_op_2"
+            android:id="@+id/q_3_rdg_op_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -144,7 +168,7 @@
 
         android:ems="10"
 
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:layout_below="@id/hh_textview_d_4"
         />
 
@@ -169,6 +193,18 @@
         />
 
 
+    <Spinner
+
+        android:id="@+id/relative_code_sp_d_5"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/hh_textview_d_5"
+        android:background="#e6e6e6"
+        android:entries="@array/array_relative_code_sp"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_13sdp"></Spinner>
 
     <EditText
         android:id="@+id/editTextField5"
@@ -177,11 +213,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-
+        android:visibility="invisible"
         android:ems="10"
 
         android:inputType="textPersonName"
-        android:layout_below="@id/hh_textview_d_5"
+        android:layout_below="@id/relative_code_sp_d_5"
         />
 
 
@@ -200,6 +236,7 @@
         android:textColor="@color/OrangeRed"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
+        android:visibility="gone"
 
 
         />
@@ -210,6 +247,8 @@
         android:layout_below="@+id/hh_textview_d_6"
         android:orientation="horizontal"
         android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+
         android:id="@+id/hh_textview_d_6_rgp"
 
         >
@@ -278,6 +317,7 @@
         android:textColor="@color/OrangeRed"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
+        android:visibility="gone"
 
 
         />
@@ -290,6 +330,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:id="@+id/hh_textview_d_7_rgp"
 
+        android:visibility="gone"
         >
 
         <RadioButton
@@ -394,7 +435,7 @@
         android:textColor="@color/OrangeRed"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
-
+        android:visibility="gone"
 
         />
 
@@ -406,6 +447,7 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:id="@+id/hh_textview_d_8_rgp"
 
+        android:visibility="gone"
         >
 
         <RadioButton
@@ -515,13 +557,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dial Call"
-android:visibility="invisible"
+        android:visibility="invisible"
         android:textColor="@color/blue_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextPhone"
-
-        app:layout_constraintTop_toTopOf="@+id/editTextPhone" />
+       />
 
 
     <Button
@@ -532,8 +572,7 @@ android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         android:layout_marginTop="@dimen/_20sdp"
-
+android:layout_below="@id/callbutton"
         android:textColor="@color/OrangeRed"
-        app:layout_constraintStart_toEndOf="@+id/callbutton"
-        app:layout_constraintTop_toBottomOf="@id/callbutton"  />
+     />
 </RelativeLayout>
