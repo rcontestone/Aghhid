@@ -74,6 +74,30 @@ public class pq_Section_A extends AppCompatActivity {
     @BindView(R.id.qa7_layout)
     LinearLayout qa7_layout;
 
+    @BindView(R.id.qa4a_layout)
+    LinearLayout qa4a_layout;
+
+    @BindView(R.id.qa4b_layout)
+    LinearLayout qa4b_layout;
+
+    @BindView(R.id.qa4c_layout)
+    LinearLayout qa4c_layout;
+
+    @BindView(R.id.qa4d_layout)
+    LinearLayout qa4d_layout;
+
+    @BindView(R.id.edt_a4a)
+    EditText edt_a4a;
+
+    @BindView(R.id.rg_a4b)
+    RadioGroup rg_a4b;
+
+    @BindView(R.id.rg_a4c)
+    RadioGroup rg_a4c;
+
+    @BindView(R.id.rg_a4d)
+    RadioGroup rg_a4d;
+
     @BindView(R.id.rg_a1)
     RadioGroup rg_a1;
     @BindView(R.id.rg_a2)
@@ -86,6 +110,9 @@ public class pq_Section_A extends AppCompatActivity {
     RadioGroup rg_a5;
     @BindView(R.id.rg_a6)
     RadioGroup rg_a6;
+
+    @BindView(R.id.rg_a5a)
+    RadioGroup rg_a5a;
 
     @BindView(R.id.edt_a6_other)
     EditText edt_a6_other;
@@ -125,6 +152,12 @@ public class pq_Section_A extends AppCompatActivity {
     @BindView(R.id.edt_a4_alt_number)
     EditText edt_a4_alt_number;
 
+    @BindView(R.id.edt_a4d_other)
+    EditText edt_a4d_other;
+
+    @BindView(R.id.edt_a4c_other)
+    EditText edt_a4c_other;
+
     @BindView(R.id.btn_back)
     Button btn_back;
     @BindView(R.id.btn_next)
@@ -156,6 +189,14 @@ public class pq_Section_A extends AppCompatActivity {
     String a2 = "";
     String a3 = "";
     String a4 = "";
+
+    String a4_a = "";
+    String a4_b = "";
+    String a4_c = "";
+    String a4_c_other = "";
+    String a4_d = "";
+    String a4_d_other = "";
+
     String a4_day = "";
     String a4_month = "";
     String a4_year = "";
@@ -163,6 +204,7 @@ public class pq_Section_A extends AppCompatActivity {
     String a4_mm = "";
     String a4_number = "";
     String a5 = "";
+    String a5_a = "";
     String a6 = "";
     String a6_other = "";
     String a6_day = "";
@@ -216,7 +258,7 @@ public class pq_Section_A extends AppCompatActivity {
 
         txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
 
-        section_a_question_3.setText("کیا میں  " + student_name + "کے  والد / والدہ  یا  سرپرست سے بات کر رہا ہوں؟");
+        section_a_question_3.setText("کیا آپ   " + student_name + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");
         section_a_question_4.setText("کیا  آپ    " + student_name + " کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟");
 
         txt_School_Code.setText("Village Code : " + school_code);
@@ -451,6 +493,36 @@ public class pq_Section_A extends AppCompatActivity {
             }
         });
 
+        rg_a4c.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int RGroup_ID = rg_a4c.getCheckedRadioButtonId();
+                if (RGroup_ID == R.id.rbtn_a4c_5) {
+                    edt_a4c_other.setVisibility(View.VISIBLE);
+                    edt_a4c_other.requestFocus();
+                } else {
+                    edt_a4c_other.setVisibility(View.GONE);
+                    hideKeyboard(pq_Section_A.this);
+                    edt_a4c_other.setText("");
+                    a4_c_other = "";
+                }
+            }
+        });
+        rg_a4d.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int RGroup_ID = rg_a4d.getCheckedRadioButtonId();
+                if (RGroup_ID == R.id.rbtn_a4d_5) {
+                    edt_a4d_other.setVisibility(View.VISIBLE);
+                    edt_a4d_other.requestFocus();
+                } else {
+                    edt_a4d_other.setVisibility(View.GONE);
+                    hideKeyboard(pq_Section_A.this);
+                    edt_a4d_other.setText("");
+                    a4_d_other = "";
+                }
+            }
+        });
 
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -461,6 +533,11 @@ public class pq_Section_A extends AppCompatActivity {
                 int rg_a4_ID = rg_a4.getCheckedRadioButtonId();
                 int rg_a5_ID = rg_a5.getCheckedRadioButtonId();
                 int rg_a6_ID = rg_a6.getCheckedRadioButtonId();
+
+                int rg_a4b_ID = rg_a4b.getCheckedRadioButtonId();
+                int rg_a4c_ID = rg_a4c.getCheckedRadioButtonId();
+                int rg_a4d_ID = rg_a4d.getCheckedRadioButtonId();
+                int rg_a5a_ID = rg_a5a.getCheckedRadioButtonId();
 
                 RConsUtils.hideKeyboard(pq_Section_A.this);
                 SaveData();
@@ -508,7 +585,7 @@ public class pq_Section_A extends AppCompatActivity {
                             a4_number = "";
                             rg_a4.clearCheck();
 
-                            RConsUtils.hideView(qa3_layout, qa5_layout);
+                            RConsUtils.hideView(qa3_layout, qa4a_layout);
                         } else {
                             RConsUtils.hideView(qa3_layout, qa4_layout);
                         }
@@ -519,7 +596,7 @@ public class pq_Section_A extends AppCompatActivity {
                     if (rg_a4_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a4_ID);
                         a4 = radioButton.getTag().toString();
-                        if (a4.equalsIgnoreCase("1")) {
+                        if (a4.equalsIgnoreCase("1") || (a4.equalsIgnoreCase("5"))) {
 
 
                             txt_a4_date.setText("");
@@ -532,7 +609,7 @@ public class pq_Section_A extends AppCompatActivity {
                             a4_hh = "";
                             a4_mm = "";
 
-                            RConsUtils.hideView(qa4_layout, qa5_layout);
+                            RConsUtils.hideView(qa4_layout, qa4a_layout);
                         } else if (a4.equalsIgnoreCase("2")) {
 
                             edt_a4_alt_number.setText("");
@@ -651,25 +728,89 @@ public class pq_Section_A extends AppCompatActivity {
                     } else {
                         toastMessage("Please Select Option");
                     }
-                } else if (qa5_layout.getVisibility() == View.VISIBLE) {
-                    if (rg_a5_ID > 0) {
-                        RadioButton radioButton = findViewById(rg_a5_ID);
-                        a5 = radioButton.getTag().toString();
-                        if (a5.equalsIgnoreCase("1")) {
-                            a6 = "";
-                            a6_other = "";
-                            a6_day = "";
-                            a6_month = "";
-                            a6_year = "";
-                            a6_hh = "";
-                            a6_mm = "";
-                            edt_a6_other.setText("");
-                            RConsUtils.hideView(qa5_layout, qa7_layout);
-                            if (StringUtils.isEmpty(edt_a7.getText().toString())) {
-                                edt_a7.setText("-98");
+                } else if (qa4a_layout.getVisibility() == View.VISIBLE) {
+                    a4_a = edt_a4a.getText().toString();
+                    if (!StringUtils.isEmpty(a4_a)) {
+                        RConsUtils.hideView(qa4a_layout, qa4b_layout);
+                    } else {
+                        toastMessage("Please Enter Name");
+                    }
+                } else if (qa4b_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_a4b_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_a4b_ID);
+                        a4_b = radioButton.getTag().toString();
+                        RConsUtils.hideView(qa4b_layout, qa4c_layout);
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qa4c_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_a4c_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_a4c_ID);
+                        a4_c = radioButton.getTag().toString();
+                        if (a4_c.equalsIgnoreCase("5")) {
+                            a4_c_other = edt_a4c_other.getText().toString();
+                            if (!StringUtils.isEmpty(a4_c_other)) {
+                                RConsUtils.hideView(qa4c_layout, qa4d_layout);
+                            } else {
+                                toastMessage("Please specify other");
                             }
                         } else {
-                            RConsUtils.hideView(qa5_layout, qa6_layout);
+                            a4_d_other = "";
+                            RConsUtils.hideView(qa4c_layout, qa4d_layout);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qa4d_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_a4d_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_a4d_ID);
+                        a4_d = radioButton.getTag().toString();
+                        if (a4_d.equalsIgnoreCase("5")) {
+                            a4_d_other = edt_a4d_other.getText().toString();
+                            if (!StringUtils.isEmpty(a4_d_other)) {
+                                RConsUtils.hideView(qa4d_layout, qa5_layout);
+                            } else {
+                                toastMessage("Please specify other");
+                            }
+                        } else {
+                            a4_d_other = "";
+                            RConsUtils.hideView(qa4d_layout, qa5_layout);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qa5_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_a5_ID > 0) {
+                        if (rg_a5a_ID > 0) {
+                            RadioButton radioButton = findViewById(rg_a5_ID);
+                            a5 = radioButton.getTag().toString();
+                            RadioButton radioButton_a5a = findViewById(rg_a5a_ID);
+                            a5_a = radioButton_a5a.getTag().toString();
+                            if (a5.equalsIgnoreCase("0")) {
+                                SaveData();
+                                Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                                intent.putExtra("emp_id", emp_id);
+                                intent.putExtra("order_id", order_id);
+                                intent.putExtra("id", id);
+                                intent.putExtra("farmer_cellphone", phone_number);
+                                intent.putExtra("school_code", school_code);
+                                intent.putExtra("student_id", student_id);
+                                startActivityForResult(intent, 88);
+                            } else {
+                                SaveData();
+                                Intent intent = new Intent(pq_Section_A.this, pq_Section_B.class);
+                                intent.putExtra("emp_id", emp_id);
+                                intent.putExtra("order_id", order_id);
+                                intent.putExtra("id", id);
+                                intent.putExtra("farmer_cellphone", phone_number);
+                                intent.putExtra("school_code", school_code);
+                                intent.putExtra("student_id", student_id);
+                                intent.putExtra("student_name", student_name);
+                                intent.putExtra("school_name", school_name);
+                                startActivityForResult(intent, 88);
+                            }
+                        } else {
+                            toastMessage("Please Select 5a Option");
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -818,10 +959,18 @@ public class pq_Section_A extends AppCompatActivity {
         } else if (qa6_layout.getVisibility() == View.VISIBLE) {
             hideView(qa6_layout, qa5_layout);
         } else if (qa5_layout.getVisibility() == View.VISIBLE) {
+            hideView(qa5_layout, qa4d_layout);
+        } else if (qa4d_layout.getVisibility() == View.VISIBLE) {
+            hideView(qa4d_layout, qa4c_layout);
+        } else if (qa4c_layout.getVisibility() == View.VISIBLE) {
+            hideView(qa4c_layout, qa4b_layout);
+        } else if (qa4b_layout.getVisibility() == View.VISIBLE) {
+            hideView(qa4b_layout, qa4a_layout);
+        } else if (qa4a_layout.getVisibility() == View.VISIBLE) {
             if (a3.equalsIgnoreCase("1")) {
-                hideView(qa5_layout, qa3_layout);
+                hideView(qa4a_layout, qa3_layout);
             } else {
-                hideView(qa5_layout, qa4_layout);
+                hideView(qa4a_layout, qa4_layout);
             }
         } else if (qa4_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4_layout, qa3_layout);
@@ -964,6 +1113,12 @@ public class pq_Section_A extends AppCompatActivity {
                         a2,
                         a3,
                         a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
                         a4_day,
                         a4_month,
                         a4_year,
@@ -971,6 +1126,7 @@ public class pq_Section_A extends AppCompatActivity {
                         a4_mm,
                         a4_number,
                         a5,
+                        a5_a,
                         a6,
                         a6_other,
                         a6_day,
@@ -998,6 +1154,12 @@ public class pq_Section_A extends AppCompatActivity {
                         a2,
                         a3,
                         a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
                         a4_day,
                         a4_month,
                         a4_year,
@@ -1005,6 +1167,7 @@ public class pq_Section_A extends AppCompatActivity {
                         a4_mm,
                         a4_number,
                         a5,
+                        a5_a,
                         a6,
                         a6_other,
                         a6_day,
@@ -1032,6 +1195,12 @@ public class pq_Section_A extends AppCompatActivity {
                         a2,
                         a3,
                         a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
                         a4_day,
                         a4_month,
                         a4_year,
@@ -1039,6 +1208,7 @@ public class pq_Section_A extends AppCompatActivity {
                         a4_mm,
                         a4_number,
                         a5,
+                        a5_a,
                         a6,
                         a6_other,
                         a6_day,
@@ -1066,6 +1236,12 @@ public class pq_Section_A extends AppCompatActivity {
                         a2,
                         a3,
                         a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
                         a4_day,
                         a4_month,
                         a4_year,
@@ -1073,6 +1249,7 @@ public class pq_Section_A extends AppCompatActivity {
                         a4_mm,
                         a4_number,
                         a5,
+                        a5_a,
                         a6,
                         a6_other,
                         a6_day,
@@ -1193,6 +1370,12 @@ public class pq_Section_A extends AppCompatActivity {
                 a2 = cursor.getString(cursor.getColumnIndex("a2"));
                 a3 = cursor.getString(cursor.getColumnIndex("a3"));
                 a4 = cursor.getString(cursor.getColumnIndex("a4"));
+                a4_a = cursor.getString(cursor.getColumnIndex("a4_a"));
+                a4_b = cursor.getString(cursor.getColumnIndex("a4_b"));
+                a4_c = cursor.getString(cursor.getColumnIndex("a4_c"));
+                a4_c_other = cursor.getString(cursor.getColumnIndex("a4_c_other"));
+                a4_d = cursor.getString(cursor.getColumnIndex("a4_d"));
+                a4_d_other = cursor.getString(cursor.getColumnIndex("a4_d_other"));
                 a4_day = cursor.getString(cursor.getColumnIndex("a4_day"));
                 a4_month = cursor.getString(cursor.getColumnIndex("a4_month"));
                 a4_year = cursor.getString(cursor.getColumnIndex("a4_year"));
@@ -1200,6 +1383,7 @@ public class pq_Section_A extends AppCompatActivity {
                 a4_mm = cursor.getString(cursor.getColumnIndex("a4_mm"));
                 a4_number = cursor.getString(cursor.getColumnIndex("a4_number"));
                 a5 = cursor.getString(cursor.getColumnIndex("a5"));
+                a5_a = cursor.getString(cursor.getColumnIndex("a5_a"));
                 a6 = cursor.getString(cursor.getColumnIndex("a6"));
                 a6_other = cursor.getString(cursor.getColumnIndex("a6_other"));
                 a6_day = cursor.getString(cursor.getColumnIndex("a6_day"));
@@ -1225,11 +1409,19 @@ public class pq_Section_A extends AppCompatActivity {
             RConsUtils.setradiogroup(a2, rg_a2);
             RConsUtils.setradiogroup(a3, rg_a3);
             RConsUtils.setradiogroup(a4, rg_a4);
+            RConsUtils.setradiogroup(a4_b, rg_a4b);
+            RConsUtils.setradiogroup(a4_c, rg_a4c);
+            RConsUtils.setradiogroup(a4_d, rg_a4d);
             RConsUtils.setradiogroup(a5, rg_a5);
+            RConsUtils.setradiogroup(a5_a, rg_a5a);
             RConsUtils.setradiogroup(a6, rg_a6);
             RConsUtils.setotherEditText(edt_a6_other, a6_other);
             RConsUtils.setotherEditText(edt_a4_alt_number, a4_number);
             RConsUtils.setEditText(edt_a7, a7);
+            RConsUtils.setEditText(edt_a4a, a4_a);
+
+            RConsUtils.setotherEditText(edt_a4c_other, a4_c_other);
+            RConsUtils.setotherEditText(edt_a4d_other, a4_d_other);
 
             if (!StringUtils.isEmpty(a6_hh) && !StringUtils.isEmpty(a6_mm)) {
                 txt_a6_time.setText(a6_hh + ":" + a6_mm);

@@ -5264,6 +5264,12 @@ public class DatabaseAdapter {
                                         String a2,
                                         String a3,
                                         String a4,
+                                        String a4_a,
+                                        String a4_b,
+                                        String a4_c,
+                                        String a4_c_other,
+                                        String a4_d,
+                                        String a4_d_other,
                                         String a4_day,
                                         String a4_month,
                                         String a4_year,
@@ -5271,6 +5277,7 @@ public class DatabaseAdapter {
                                         String a4_mm,
                                         String a4_number,
                                         String a5,
+                                        String a5_a,
                                         String a6,
                                         String a6_other,
                                         String a6_day,
@@ -5309,6 +5316,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5316,6 +5329,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5349,6 +5363,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5356,6 +5376,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5391,6 +5412,12 @@ public class DatabaseAdapter {
                                          String a2,
                                          String a3,
                                          String a4,
+                                         String a4_a,
+                                         String a4_b,
+                                         String a4_c,
+                                         String a4_c_other,
+                                         String a4_d,
+                                         String a4_d_other,
                                          String a4_day,
                                          String a4_month,
                                          String a4_year,
@@ -5398,6 +5425,7 @@ public class DatabaseAdapter {
                                          String a4_mm,
                                          String a4_number,
                                          String a5,
+                                         String a5_a,
                                          String a6,
                                          String a6_other,
                                          String a6_day,
@@ -5436,6 +5464,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5443,6 +5477,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5476,6 +5511,13 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
+                contentValues.put("a4_d", a4_d);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5483,6 +5525,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5518,6 +5561,12 @@ public class DatabaseAdapter {
                                          String a2,
                                          String a3,
                                          String a4,
+                                         String a4_a,
+                                         String a4_b,
+                                         String a4_c,
+                                         String a4_c_other,
+                                         String a4_d,
+                                         String a4_d_other,
                                          String a4_day,
                                          String a4_month,
                                          String a4_year,
@@ -5525,6 +5574,7 @@ public class DatabaseAdapter {
                                          String a4_mm,
                                          String a4_number,
                                          String a5,
+                                         String a5_a,
                                          String a6,
                                          String a6_other,
                                          String a6_day,
@@ -5563,6 +5613,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5570,6 +5626,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5603,6 +5660,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5610,6 +5673,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5644,6 +5708,12 @@ public class DatabaseAdapter {
                                          String a2,
                                          String a3,
                                          String a4,
+                                         String a4_a,
+                                         String a4_b,
+                                         String a4_c,
+                                         String a4_c_other,
+                                         String a4_d,
+                                         String a4_d_other,
                                          String a4_day,
                                          String a4_month,
                                          String a4_year,
@@ -5651,6 +5721,7 @@ public class DatabaseAdapter {
                                          String a4_mm,
                                          String a4_number,
                                          String a5,
+                                         String a5_a,
                                          String a6,
                                          String a6_other,
                                          String a6_day,
@@ -5689,6 +5760,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5696,6 +5773,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -5729,6 +5807,12 @@ public class DatabaseAdapter {
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
                 contentValues.put("a4_day", a4_day);
                 contentValues.put("a4_month", a4_month);
                 contentValues.put("a4_year", a4_year);
@@ -5736,6 +5820,7 @@ public class DatabaseAdapter {
                 contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
                 contentValues.put("a6", a6);
                 contentValues.put("a6_other", a6_other);
                 contentValues.put("a6_day", a6_day);
@@ -7959,21 +8044,20 @@ public class DatabaseAdapter {
         try {
 
 
+            String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
+            //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+            // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
+            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   ) ORDER BY  village_id,hhid,phone_order ASC";
 
-        String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
-        //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
-        // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
-        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   ) ORDER BY  village_id,hhid,phone_order ASC";
-
-        MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
-        Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
-        MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
-        if (cursor2 == null || cursor2.getCount() <= 0) {
-            return null;
-        }
-        return cursor2;
+            MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
+            Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+            MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
+            if (cursor2 == null || cursor2.getCount() <= 0) {
+                return null;
+            }
+            return cursor2;
         } catch (Exception e) {
-            MubLog.cpnsoleLog("[DatabaseAdapter] inside aghhid_getNewCallsCursor() Exception is :"+e.toString());
+            MubLog.cpnsoleLog("[DatabaseAdapter] inside aghhid_getNewCallsCursor() Exception is :" + e.toString());
             return null;
         }
     }
