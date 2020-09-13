@@ -816,4 +816,248 @@
     <string name="hh_textview_d_8">7. اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
 
 
+
+    <!--  Adolscent Section B Strings -->
+
+
+    <string name="ad_section_b_question_q1">کیا آپ  ۔۔۔۔۔۔۔ (A 20میں موجود نام بولیں) بات کر رہی ہیں؟ </string>
+    <string name="ad_section_b_question_q1_option1">1~ ہاں </string>
+    <string name="ad_section_b_question_q1_option2">2~ نہیں</string>
+
+    <string name="ad_section_b_question_q2"> آپ کی عمر کتنی ہے؟</string>
+    <string name="ad_section_b_question_q2_instructions"> شمار کنندہ:اگر جوابدہندہ گھرانے کے سربراہ سے مختلف عمر بتائے تب بھی وہ عمر نوٹ کرلیں </string>
+
+    <string name="ad_section_b_question_q3">اگر ہمارا اس نمبر پر رابطہ ٹوٹ جائے تو کیا آپ کے پاس کوئی نمبر ہے جس پر رابطہ کیا جاسکے؟</string>
+    <string name="ad_section_b_question_q3_option1">1~ ہاں، نمبر نوٹ کریں</string>
+    <string name="ad_section_b_question_q3_option2">2~ کوئی اور نمبر نہیں ہے </string>
+
+
+    <string name="ad_section_b_question_q4">کیا جوابدہندہ نے کوئی سوال پوچھا </string>
+    <string name="ad_section_b_question_q4_option1">1~ ہاں(تمام سوالات کے جواب دئے) </string>
+    <string name="ad_section_b_question_q4_option2">2~ نہیں</string>
+
+    <string name="ad_section_b_question_q5"> کیا جوابدہندہ  نے سروے میں شمولیت کےلئے رضامندی کا اظہار کیا؟ </string>
+    <string name="ad_section_b_question_q5_option1">1~ ہاں </string>
+    <string name="ad_section_b_question_q5_option2">2~ نہیں</string>
+    <string name="ad_section_b_question_q5_option777">777~ فون کاٹ دیا </string>
+
+    <!--  Adolscent Section C Strings -->
+
+    <string name="ad_section_c_question_q1"> کیا آپ فروری 2020میں  کسی پرائیویٹ یا سرکاری سکول میں داخل تھیں</string>
+    <string name="ad_section_c_question_q1_option1">1~ ہاں </string>
+    <string name="ad_section_c_question_q1_option2">2~ نہیں</string>
+    <string name="ad_section_c_question_q1_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q1_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_c_question_q1_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q1_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_c_question_q2"> آپ فروری 2020 میں سکول میں کیوں داخل نہیں تھیں؟ جواب پڑھ کر مت سنائیں</string>
+    <string name="ad_section_c_question_q2_instructions"> لاگو ہونے والے تمام جوابات نوٹ کریں</string>
+    <string name="ad_section_c_question_q2_option1">1~  میں سکول نہیں جانا چاہتی </string>
+    <string name="ad_section_c_question_q2_option2">2~ میرے والدین/سربراہ سکول نہیں جانے دینا چاہتے </string>
+    <string name="ad_section_c_question_q2_option3">3~ ارد گرد سفر کےلئے جتنا محفوظ علاقہ ہے اس میں کوئی سکول نہیں ہے </string>
+    <string name="ad_section_c_question_q2_option4">4~ سکول کی فیس بہت زیادہ ہے </string>
+    <string name="ad_section_c_question_q2_option5">5~ گھر کے کام کاج کرنے ہوتے ہیں </string>
+    <string name="ad_section_c_question_q2_option6">6~ گھر سے باہر اجرت پر کام کرنا ہوتا ہے </string>
+    <string name="ad_section_c_question_q2_option7">7~ سکول میں رہنا یا جانا محفوظ نہیں </string>
+    <string name="ad_section_c_question_q2_option8">8~ شادی ہوگئی/ہونے والی ہے </string>
+    <string name="ad_section_c_question_q2_option9">9~ حاملہ ہوں </string>
+    <string name="ad_section_c_question_q2_option10">10~ صحت کی خرابی </string>
+    <string name="ad_section_c_question_q2_option11">11~ جنس کامسئلہ(سکول میں خاتون استاد نہیں/صرف لڑکوں کا سکول ہے) </string>
+    <string name="ad_section_c_question_q2_option12">12~ کرونا وبا سے متعلق مسائل  </string>
+    <string name="ad_section_c_question_q2_option13">13~ سکول میں کوئی لیٹرین یا چار دیواری نہ ہونا </string>
+    <string name="ad_section_c_question_q2_option14">14~ سکول جانے کا کوئی فائدہ </string>
+    <string name="ad_section_c_question_q2_option15">15~ دیگر(وضاحت۔۔۔۔۔۔) </string>
+    <string name="ad_section_c_question_q2_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q2_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_c_question_q2_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q2_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="ad_section_c_question_q3"> آپ کی آخری مکمل کردہ جماعت کون سی تھی۔ یا اگر آپ فروری 2020میں سکول میں داخل تھیں تب آپ کس جماعت میں تھیں </string>
+    <string name="ad_section_c_question_q3_option0">0~ کچی پکی </string>
+    <string name="ad_section_c_question_q3_option1">1~ پہلی جماعت </string>
+    <string name="ad_section_c_question_q3_option2">2~ دوسری جماعت </string>
+    <string name="ad_section_c_question_q3_option3">3~ تیسری جماعت </string>
+    <string name="ad_section_c_question_q3_option4">4~ چوتھی جماعت  </string>
+    <string name="ad_section_c_question_q3_option5">5~ پانچ جماعت </string>
+    <string name="ad_section_c_question_q3_option6">6~ چھ جماعت </string>
+    <string name="ad_section_c_question_q3_option7">7~ سات جماعت </string>
+    <string name="ad_section_c_question_q3_option8">8~ آٹھ جماعت </string>
+    <string name="ad_section_c_question_q3_option9">9~ نو جماعت </string>
+    <string name="ad_section_c_question_q3_option10">10~ دس جماعت </string>
+    <string name="ad_section_c_question_q3_option11">11~ گیارہ جماعت </string>
+    <string name="ad_section_c_question_q3_option12">12~ بارہ جماعت </string>
+    <string name="ad_section_c_question_q3_option13">13~ بی اے،بی ایس سی آنرز </string>
+    <string name="ad_section_c_question_q3_option14">14~ ماسٹرز، ایم فل، پی ایچ ڈی </string>
+    <string name="ad_section_c_question_q3_option18">18~ ڈپلومہ ہولڈر </string>
+    <string name="ad_section_c_question_q3_option19">19~ خواندگی پروگرام </string>
+    <string name="ad_section_c_question_q3_option20">20~ دینی مدرسہ  </string>
+    <string name="ad_section_c_question_q3_option21">21~ کبھی سکول نہیں گئے  </string>
+    <string name="ad_section_c_question_q3_option22">22~ پہلی جماعت مکمل کرنے سے پہلے ہی چھوڑ دیا </string>
+    <string name="ad_section_c_question_q3_option23">23~ دیگر(وضاحت۔۔۔۔۔) </string>
+    <string name="ad_section_c_question_q3_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q3_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_c_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q3_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="ad_section_c_question_q4"> کیا آپ فروری 2020میں  کسی دینی سکول77777777778 یا مدرسہ میں داخل تھیں </string>
+    <string name="ad_section_c_question_q4_option1">1~ ہاں </string>
+    <string name="ad_section_c_question_q4_option2">2~ نہیں</string>
+    <string name="ad_section_c_question_q4_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q4_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_c_question_q5"> کیا آپ کی منگنی ہو چکی ہے یا آپ شادی شدہ ہیں </string>
+    <string name="ad_section_c_question_q5_option1">1~ منگنی </string>
+    <string name="ad_section_c_question_q5_option2">2~ شادی </string>
+    <string name="ad_section_c_question_q5_option3">3~ بیوہ/مطلقہ </string>
+    <string name="ad_section_c_question_q5_option4">2~ نہ منگنی ، نہ شادی </string>
+    <string name="ad_section_c_question_q5_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q5_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="ad_section_c_question_q6"> کیا آپ اپنے گاؤں کے اندر یا قریب کسی مارکیٹ یا بازار میں اکیلے یا اپنی سہیلیوں کے ساتھ(اپنے والدین، بڑوں یا سربراہ کے بغیر) خریداری کےلئے کبھی گئی ہیں </string>
+    <string name="ad_section_c_question_q6_option1">1~ ہاں </string>
+    <string name="ad_section_c_question_q6_option2">2~ نہیں</string>
+    <string name="ad_section_c_question_q6_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_c_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_c_question_q6_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_c_question_q6a"> کیا آپ اپنے گاؤں کے اندر یا قریب کسی مارکیٹ یا بازار میں اکیلے یا اپنی سہیلیوں کے ساتھ(اپنے والدین، بڑوں یا سربراہ کے بغیر) خریداری کےلئے کبھی گئی ہیں </string>
+    <string name="ad_section_c_question_q6a_option1">1~ ہاں </string>
+    <string name="ad_section_c_question_q6a_option2">2~ نہیں</string>
+    <string name="ad_section_c_question_q6a_option777">777~ فون کاٹ دیا </string>
+
+    <!--  Adolscent Section D Strings -->
+
+    <string name="ad_section_d_question_q1"> 7جمع 5کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q1_option1">1~ درست جواب دیا(12) </string>
+    <string name="ad_section_d_question_q1_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q1_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q1_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q1_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q1_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="ad_section_d_question_q2"> 9منفی 4کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q2_option1">1~ درست جواب دیا(5) </string>
+    <string name="ad_section_d_question_q2_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q2_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q2_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q2_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q2_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q3"> 3ضرب 6کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q3_option1">1~درست جواب دیا(18) </string>
+    <string name="ad_section_d_question_q3_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q3_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q3_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q3_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q4"> 56کو 8پر تقسیم کریں تو کیا جواب آتا ہے </string>
+    <string name="ad_section_d_question_q4_option1">1~ درست جواب دیا(7) </string>
+    <string name="ad_section_d_question_q4_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q4_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q4_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q4_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q5"> 39جمع 16کتنے ہوتے ہیں</string>
+    <string name="ad_section_d_question_q5_option1">1~ درست جواب دیا(55) </string>
+    <string name="ad_section_d_question_q5_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q5_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q5_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q5_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q6"> اب میں آپ کو3عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 3،1،8تو آپ نے بتانا ہے کہ یہ (تین سو اٹھارہ)318بنتا ہے۔آپ کا سوال یہ ہے 1،4،9</string>
+    <string name="ad_section_d_question_q6_option1">1~ درست جواب دیا(55) </string>
+    <string name="ad_section_d_question_q6_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q6_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q6_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q6_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q7"> اب میں آپ کو2عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 7, 2تو آپ نے بتانا ہے کہ یہ (بہتر )72بنتا ہے۔آپ کا سوال یہ ہے 5,3</string>
+    <string name="ad_section_d_question_q7_option1">1~ درست جواب دیا(53) </string>
+    <string name="ad_section_d_question_q7_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q7_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q7_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q7_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q7_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q8">برائے مہربانی 1سے لے کر دس تک گنتی سنائیں</string>
+    <string name="ad_section_d_question_q8_option1">1~ درست جواب دیا(1سے 10تک مکمل گنتی سنادی) </string>
+    <string name="ad_section_d_question_q8_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q8_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q8_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q8_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q8_option777">777~ فون کاٹ دیا </string>
+
+    <!--  Adolscent Section E Strings -->
+
+    <string name="ad_section_e_question_q1"> آپ لفظ  (رنگ ) کے کیا ہجے کریں گی</string>
+    <string name="ad_section_e_question_q1_option1">1~ درست جواب دیا </string>
+    <string name="ad_section_e_question_q1_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q1_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q1_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q1_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q1_option777">777~ فون کاٹ دیا </string>
+
+
+    <string name="ad_section_e_question_q2a"> میں آپ کے سامنے کچھ حروف پڑھوں گی ۔ آپ نے مجھے بتانا ہے کہ یہ کس لفظ  کے ہجے ہیں۔ مثال کے طور پر گ، ر ، م ، چھوٹی ی۔ یہ لفظ بنا “گرمی” آپ کا سوال یہ ہے۔ ش، ر ، م، ن،د،ہ۔ </string>
+    <string name="ad_section_e_question_q2a_option1">1~ درست جواب دیا (درست لفظ”شرمندہ”بتا دیا) </string>
+    <string name="ad_section_e_question_q2a_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q2a_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q2a_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q2a_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q2a_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_e_question_q2b"> یہ سوال صرف اس صورت میں پوچھیں جب  سوال نمبر 2-aکا جواب درست ہو کیا آپ بتاسکتی ہیں کہ جو لفظ آپ نے ابھی ہجے جوڑ کر ہمیں بتایا یعنی شرمندہ اس کے معنی کیا ہوتے ہیں</string>
+    <string name="ad_section_e_question_q2b_option1">1~ درست جواب دیا(درست معنی بتایا جیسے، شرم محسوس کرنا، غلطی کا احساس ہونا وغیرہ) </string>
+    <string name="ad_section_e_question_q2b_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q2b_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q2b_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q2b_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q2b_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_e_question_q3"> برائے مہربانی (ث) سے پیچھے کی طرف حروف تہجی پڑھ کر سنائیں </string>
+    <string name="ad_section_e_question_q3_option1">1~ درست جواب دیا </string>
+    <string name="ad_section_e_question_q3_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q3_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q3_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q3_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_e_question_q4">برائے مہربانی شروع سے  آخر تک ا، ب سنائیں</string>
+    <string name="ad_section_e_question_q4_option1">1~ درست جواب دیا </string>
+    <string name="ad_section_e_question_q4_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q4_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q4_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q4_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_e_script"> آپ کا بہت شکریہ، میں ایک بار پھر (گھرانے کے سربراہ کا نام بولیں) کاان کے وقت کےلئے  بھی شکریہ ادا کرنا چاہتی ہوں ۔اگر (گھرانے کے سربراہ کا نام بولیں)قریب ہیں تو فون انہیں دے دیں۔ اگر وہ موجود نہیں ہیں تو کوئی بات نہیں۔
+اگر (گھرانے کے سربراہ )سے بات ہوجائے:آپ کے گھرانے نے ہمارے ساتھ جو وقت گزارہ ہم اس کی بھرپور قدر کرتے ہیں۔  آپ کے نمبر پر اس فون کال کے48-24گھنٹے  کے اندر  100روپے کا بیلنس ٹرانسفر کر دیا جائے گا
+اگر (گھرانے کے سربراہ )سے بات نہ ہو:برائے مہربانی گھرانے کے سربراہ کو بتادیں کہ  آپ دونوں نے  ہمارے ساتھ جو وقت گزارہ ہم اس کی بھرپور قدر کرتے ہیں۔ گھرانے کے سربراہ  کے نمبر پر اس فون کال کے48-24گھنٹے  کے اندر  100روپے کا بیلنس ٹرانسفر کر دیا جائے گا۔ شکریہ
+ </string>
+
+    <!--  Adolscent Section F Strings -->
+
+    <string name="ad_section_f_script"> برائے مہربانی درج ذیل کےلئے اپنا مشاہدہ بیان کریں کہ بچی کے انٹرویو کے دوران آپ کے خیال میں کس حد تک یہ پوائنٹ ٹھیک ہیں </string>
+
+    <string name="ad_section_f_question_q1"> کیا آپ کو ایسا لگا کہ کوئی بھی فرد بچی کو اس سے پوچھے گئے  کچھ سوالات کے جوابات میں مدد کر رہا ہے </string>
+    <string name="ad_section_f_question_q1_option1">1~ ہاں ، حساب میں</string>
+    <string name="ad_section_f_question_q1_option2">2~ ہاں، اردو میں </string>
+    <string name="ad_section_f_question_q1_option3">3~ کسی میں بھی نہیں</string>
+
+    <string name="ad_section_f_question_q2"> بچی کے انٹرویو کے دوران کیا سپیکر فون آن رہا  </string>
+    <string name="ad_section_f_question_q2_option1">1~ ہاں سارا وقت </string>
+    <string name="ad_section_f_question_q2_option2">2~ ہاں کچھ وقت </string>
+    <string name="ad_section_f_question_q2_option3">3~ نہیں </string>
+
 </resources>
