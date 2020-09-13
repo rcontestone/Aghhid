@@ -62,10 +62,10 @@ public class DatabaseAdapter {
     public static final String trt_section_4_table = "trt_section_4";
 
 
-    public static final String pq_section_a_table = "pq_section_a";
-    public static final String pq_section_a2_table = "pq_section_a2";
-    public static final String pq_section_a3_table = "pq_section_a3";
-    public static final String pq_section_a4_table = "pq_section_a4";
+    public static final String pq_section_a_table = "aghhid_section_a";
+    public static final String pq_section_a2_table = "aghhid_section_a2";
+    public static final String pq_section_a3_table = "aghhid_section_a3";
+    public static final String pq_section_a4_table = "aghhid_section_a4";
     public static final String pq_section_b_table = "pq_section_b";
     public static final String pq_section_c1_table = "pq_section_c1";
     public static final String pq_section_c2_table = "pq_section_c2";
