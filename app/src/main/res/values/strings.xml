@@ -1000,6 +1000,7 @@
 
     <!--  Adolscent Section E Strings -->
 
+    <string name="section_E">Section E</string>
     <string name="ad_section_e_question_q1"> آپ لفظ  (رنگ ) کے کیا ہجے کریں گی</string>
     <string name="ad_section_e_question_q1_option1">1~ درست جواب دیا </string>
     <string name="ad_section_e_question_q1_option2">2~ غلط جواب دیا </string>
