@@ -273,7 +273,7 @@ public class HH_Screen_three extends Activity {
 			CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
 
 
-		//	int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+			//	int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 			String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
 
 			top_bar.setText(stringTopBar);
@@ -796,86 +796,6 @@ public class HH_Screen_three extends Activity {
 	}
 
 
-
-
-	public boolean  c05Next(View v){
-
-
-		try {
-
-			if (main.getChildCount() == 0) {
-				//TODO store
-				Toast.makeText(this, "Please add at least one phone number", Toast.LENGTH_SHORT).show();
-				return false;
-			} else {
-
-				numberList = new ArrayList<JSONObject>();
-				StringBuilder sb = new StringBuilder();
-				for (int i = 0; i < main.getChildCount(); i++) {
-					JSONObject obj = new JSONObject();
-					View view = main.getChildAt(i);
-					EditText phoneNumber = view.findViewById(R.id.editTextd_2);
-					EditText phoneStatus = view.findViewById(R.id.phone1_status);
-
-
-					if (phoneNumber.getText().toString().trim().equalsIgnoreCase("")) {
-						Toast.makeText(this, "Phone number invald " + phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
-
-						return false;
-					} else if (phoneNumber.getText().toString().trim().length() != 10) {
-						Toast.makeText(this, "Phone number invalid " + phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
-
-						return false;
-
-					} else {
-
-
-						RadioGroup vstatus = view.findViewById(R.id.hh_edtfield_q_5_rdg);
-
-						int checkedID = vstatus.getCheckedRadioButtonId();
-						DebugLog.console("[HH_Screen_three] inside checkedID() " + checkedID);
-						if (checkedID == -1) {
-							Toast.makeText(this, "Please add status", Toast.LENGTH_SHORT).show();
-
-							return false;
-						}
-
-
-
-						obj.put("number", phoneNumber.getText().toString());
-
-
-						if (vstatus.getChildAt(0).getId()==checkedID){
-							obj.put("status", "1");
-						}if (vstatus.getChildAt(1).getId()==checkedID){
-							obj.put("status", "2");
-						}if (vstatus.getChildAt(2).getId()==checkedID){
-							obj.put("status", "3");
-						}if (vstatus.getChildAt(3).getId()==checkedID){
-							obj.put("status", "4");
-						}
-
-						DebugLog.console("[HH_Screen_three] inside c05Next() "+obj.toString());
-						numberList.add(obj);
-
-						DebugLog.console("[HH_Screen_three] inside c05Next: phoneNumber : " + phoneNumber.getText().toString() + "phoneStatus : " + phoneStatus.getText().toString());
-//						sb.append(phoneNumber.getText().toString());
-//						sb.append("|");
-//						sb.append(phoneStatus.getText().toString());
-//						sb.append(",");
-
-
-					}
-				}
-//				sb.deleteCharAt(sb.length() - 1);
-
-
-				return true;
-			}
-		}catch(Exception ex) {
-			return false;
-		}
-	}
 
 
 
@@ -1480,69 +1400,38 @@ public class HH_Screen_three extends Activity {
 
 	};
 
-	private boolean saveDatainDataBase(String District_Code , String District_Name , String Tehsil_code , String Tehsil_Name , String PSU_code , String PSU_name , String Structure_id , String HH_id , String q1_headname) {
+	private boolean saveDatainDataBase() {
 		boolean dataSaved = false;
 		try {
 
 
-			if(PSU_code.equalsIgnoreCase("1001")||PSU_code.equalsIgnoreCase("1002")||PSU_code.equalsIgnoreCase("1003")){
-
-				Tehsil_code = "10";
-				Tehsil_Name = "Peshawar";
-				District_Name = "Peshawar";
-				District_Code = "1";
-			}else if(PSU_code.equalsIgnoreCase("1004")||PSU_code.equalsIgnoreCase("1005")) {
-				Tehsil_code = "11";
-				Tehsil_Name = "Peshawar cantt";
-				District_Name = "Peshawar";
-				District_Code = "1";
-			}else if(PSU_code.equalsIgnoreCase("2021")||PSU_code.equalsIgnoreCase("2022")||PSU_code.equalsIgnoreCase("2023")){
-				Tehsil_code = "19";
-				Tehsil_Name = "Rawalpindi";
-				District_Name = "Rawalpindi";
-				District_Code = "2";
-			}else if(PSU_code.equalsIgnoreCase("2024")){
-				Tehsil_code = "20";
-				Tehsil_Name = "Gujjar khan";
-				District_Name = "Rawalpindi";
-				District_Code = "2";
-			}
 
 
-			Tehsil_code = "1";
-			Tehsil_Name = "Peshawar";
-			District_Name = "Peshawar";
-			District_Code = "1";
-
-
-			String hhid_q1 = HH_id;
-			String hhid_q5 = hh_edtfield_q_5_edt_answer;
-
-			dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_screen_three(District_Code ,  District_Name , Tehsil_code , Tehsil_Name , PSU_code , PSU_name , Structure_id , HH_id ,hhid_q5);
+			dataSaved = true;//HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_screen_three(District_Code ,  District_Name , Tehsil_code , Tehsil_Name , PSU_code , PSU_name , Structure_id , HH_id ,hhid_q5);
 
 
 			if (dataSaved){
 
-				if(hhid_q5.equalsIgnoreCase("999") || hhid_q5.equalsIgnoreCase("888")){
-					//Todo delete code from phone tab;e
+//				if(hhid_q5.equalsIgnoreCase("999") || hhid_q5.equalsIgnoreCase("888")){
+//					//Todo delete code from phone tab;e
+//
+//
+//
+				dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_delete_hhid(school_code,student_id);
+//					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() datadeleted "+dataSaved);
+//				}else{
 
 
+				for (int k=0; k<numberList.size(); k++){
+					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() number"+numberList.get(k).toString(0));
+					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase()=================================== ");
 
-					dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_delete_number_list(District_Code ,  District_Name , Tehsil_code , Tehsil_Name , PSU_code , PSU_name , Structure_id , HH_id ,"","");
-					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() datadeleted "+dataSaved);
-				}else{
+					dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_insert_member_list(school_code,student_id,numberList.get(k));
 
-
-					for (int k=0; k<numberList.size(); k++){
-						DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() number"+numberList.get(k).getString("number"));
-						DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() status "+numberList.get(k).getString("status"));
-
-						dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_number_list(District_Code ,  District_Name , Tehsil_code , Tehsil_Name , PSU_code , PSU_name , Structure_id , HH_id ,numberList.get(k).getString("number"),numberList.get(k).getString("status"));
-
-
-					}
 
 				}
+
+//				}
 
 			}else{
 
@@ -1582,7 +1471,7 @@ public class HH_Screen_three extends Activity {
 
 
 
-	private void saveDataNow() {
+	private void saveDataNowAndNext() {
 
 
 
@@ -1590,7 +1479,7 @@ public class HH_Screen_three extends Activity {
 
 
 
-			boolean dataSaved = saveDatainDataBase("", "", "", "", HHIDConfigurations.getPeshawarCurrentPSU(appContext), HHIDConfigurations.getPeshawarCurrentPSUName(appContext), current_STID + "", CURRENT_HHID + "", hh_edtfield_q_5_edt_answer);
+			boolean dataSaved = saveDatainDataBase();
 
 
 
@@ -1608,15 +1497,175 @@ public class HH_Screen_three extends Activity {
 
 				if (screen_three ) {
 
-					Intent intent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
-					intent.putExtra("launchActivity", "signup");
-					intent.putExtra("backon", "HH_Screen_two");
-//                        intent.putExtra("q10", aghhid_c_2);
-//                        startActivity(intent);
-					Intent returnIntent = new Intent();
-					returnIntent.putExtra("isDataUpdated", false);
-					setResult(Activity.RESULT_OK, returnIntent);
-					finish();
+				 Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
+
+            intent.putExtra("m1b_parent_mobile",phone_number);
+            intent.putExtra("scode",school_code);
+            intent.putExtra("studentid",student_id);
+            intent.putExtra("m1b_student_name",student_name);
+            intent.putExtra("rcons_user",RConsUtils.getUserName());
+            startActivity(intent);
+            finish();
+					return;
+				}
+
+
+				if (NEW_HH_IN_SAME_STRUCTURE) {
+
+
+					//HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext,HHIDConfigurations.getPeshawarCurrentPSU(appContext))
+
+					//	HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext) + "_" + current_STID, CURRENT_HHID + "");
+					HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext)+"_hhid" , CURRENT_HHID + "");
+					hh_edtfield_q_5.setText("");
+					editTextReTypeEmailID.setText("");
+					editTextReTypeEmailID.setText("");
+					editTextPassword.setText("");
+//					editTextConfirmPassword.setText("");
+					sign_up_confirm_password_textfield_rb.clearCheck();
+					hh_edtfield_q_3_edt_answer = "-1";
+					migration1.setChecked(false);
+					migration2.setChecked(false);
+//							edt_Question_5_1.setText("");
+//							edt_Question_5_2.setText("");
+//							edt_Question_5_3.setText("");
+//							edt_Question_5_4.setText("");
+
+					String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
+					DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode " + currentPSUCode);
+
+					String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext, currentPSUCode);
+
+					current_STID = Integer.parseInt(last_strict_id_against_psu) + 1;
+
+					DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu " + last_strict_id_against_psu);
+
+					String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext, currentPSUCode+"_hhid" );
+					CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
+
+
+					//int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+
+
+					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
+
+					top_bar.setText(stringTopBar);
+
+					//showAlert("Struct ID : " + last_strict_id_against_psu, "\nSuccessfully saved");
+
+
+				} else {
+
+					HHIDConfigurations.setPeshawarLastStructerIDagainstPSU(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext), current_STID + "");
+					HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext) +"_hhid", CURRENT_HHID + "");
+
+
+					hh_edtfield_q_5.setText("");
+					editTextReTypeEmailID.setText("");
+					editTextReTypeEmailID.setText("");
+					editTextPassword.setText("");
+					//editTextConfirmPassword.setText("");
+					hh_edtfield_q_3_edt_answer = "-1";
+					migration1.setChecked(false);
+					migration2.setChecked(false);
+					sign_up_confirm_password_textfield_rb.clearCheck();
+					edt_Question_5_1.setText("");
+					edt_Question_5_2.setText("");
+					edt_Question_5_3.setText("");
+					edt_Question_5_4.setText("");
+
+					String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
+					DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode " + currentPSUCode);
+
+					String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext, currentPSUCode);
+
+					current_STID = Integer.parseInt(last_strict_id_against_psu) + 1;
+
+					DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu " + last_strict_id_against_psu);
+
+					//String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext, currentPSUCode + "_" + current_STID);
+					String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext, currentPSUCode+"_hhid" );
+
+					CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
+
+
+					//int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
+
+
+					String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
+					top_bar.setText(stringTopBar);
+
+					//	showAlert("Struct ID : " + last_strict_id_against_psu, "\nSuccessfully saved");
+
+				}
+
+
+				grabEnteredTextForscreenthreeBackbtn(screenthreeBackbtnonerl);
+
+
+			}else{
+				showAlert("Erro" , "\nPlease Contact Admin");
+
+			}
+
+
+
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDataNow() Exception is :"+e.toString());
+		}
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+	private void saveDataNow() {
+
+
+
+		try {
+
+
+
+			boolean dataSaved = saveDatainDataBase();
+
+
+
+
+
+			if (dataSaved){
+
+				boolean screen_three = true;
+
+
+
+
+				//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
+
+
+				if (screen_three ) {
+
+//					Intent intent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
+//					intent.putExtra("launchActivity", "signup");
+//					intent.putExtra("backon", "HH_Screen_two");
+//
+//					Intent returnIntent = new Intent();
+//					returnIntent.putExtra("isDataUpdated", false);
+//					setResult(Activity.RESULT_OK, returnIntent);
+//					finish();
 					return;
 				}
 
@@ -2054,95 +2103,200 @@ public class HH_Screen_three extends Activity {
 
 		try {
 
-			JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).getDataFromtable(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext),CURRENT_HHID+"");
-			DebugLog.console("[HH_Screen_three] inside onStart() "+data.toString());
 
-			if (data.length()>0){
 
-				if(data.getString("hhid_q5").equalsIgnoreCase("null"))
-					data.put("hhid_q5","");
+			JSONArray phonedataarray = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).agghhid_getDataFromMemberTable(appContext, school_code,student_id);
+			DebugLog.console("[HH_Screen_three] inside memberarray onStart() "+phonedataarray.toString());
 
-				hh_edtfield_q_5.setText(data.getString("hhid_q5"));
 
-				DebugLog.console("[HH_Screen_three] inside onStart() update views "+"hhid_q5");
-
+			if(numberList==null){
+				numberList = new ArrayList<JSONObject>();}else{
+				numberList.clear();
 			}
 
-			JSONArray phonedataarray = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).getDataFromPhoneTable(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext),CURRENT_HHID+"");
-			DebugLog.console("[HH_Screen_three] inside phonedataarray onStart() "+phonedataarray.toString());
-
-
-
-			if(phonedataarray.length()>0){
-
-				int k =0;
-				for (k=0;k<phonedataarray.length();k++){
-					DebugLog.console("[HH_Screen_three] inside onStart() inside loop");
-
-					LayoutInflater inflater = getLayoutInflater();
-					View view = inflater.inflate(R.layout.phone_number_layout, null);
-					main.addView(view, main.getChildCount(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-					EditText phoneNumber = view.findViewById(R.id.editTextd_2);
-					JSONObject obj;
-					obj = phonedataarray.getJSONObject(k);
-					DebugLog.console("[HH_Screen_three] inside obj onStart() "+obj.toString());
-					phoneNumber.setText(obj.getString("hhid_phone_number"));
-
-					RadioGroup vstatus = view.findViewById(R.id.hh_edtfield_q_5_rdg);
-
-					vstatus.check(vstatus.getChildAt(Integer.parseInt(obj.getString("status"))-1).getId());
-
-					Button callbutton =view.findViewById(R.id.callbutton);
-
-					callbutton.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-
-							if(phoneNumber.getText().toString().equalsIgnoreCase("")){
-								Toast.makeText(HH_Screen_three.this, "Please add phone number", Toast.LENGTH_SHORT).show();
-							}
-							else if (phoneNumber.getText().toString().trim().length() != 10) {
-								Toast.makeText(HH_Screen_three.this, "Phone number invalid " + phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
-
-							}else {
-
-								if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-									requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 0);
-								}else {
-									DialUserNumber(phoneNumber.getText().toString());
-								}
-
-
-							}
-						}
-					});
-
-
-					Button removebutton =view.findViewById(R.id.removebutton);
-					removebutton.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							main.removeView(view);
-						}
-					});
-
-
-
-
+			if (phonedataarray != null) {
+				int len = phonedataarray.length();
+				for (int i=0;i<len;i++){
+					numberList.add(phonedataarray.getJSONObject(i));
 				}
-
-
-
-
 			}
 
 
+			DebugLog.console("[HH_Screen_three] inside onStart() numberList "+numberList.size());
 
+
+
+//			if(numberList.size()>0)
+//				showMemberat(0);
 
 		} catch (Exception e) {
 			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside onStart() Exception is :"+e.toString());
 		}
 
+	}
+
+	private void showMemberat(int k) {
+
+		try {
+
+
+
+
+			DebugLog.console("[HH_Screen_three] inside onStart() inside loop");
+
+			LayoutInflater inflater = getLayoutInflater();
+			View view = inflater.inflate(R.layout.phone_number_layout, null);
+			main.addView(view, main.getChildCount(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+
+
+			JSONObject obj;
+			obj = numberList.get(k);
+			DebugLog.console("[HH_Screen_three] inside obj onStart() "+obj.toString());
+
+			EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
+			editTextd_2.setText(obj.getString("d_2"));
+
+			TextView hh_textview_d_1 =view.findViewById(R.id.hh_textview_d_1);
+			hh_textview_d_1.setText(obj.getString("d_1"));
+
+
+			RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
+			q_3_rdg.check(q_3_rdg.getChildAt(Integer.parseInt(obj.getString("d_3"))-1).getId());
+
+
+			EditText editTextField4 = view.findViewById(R.id.editTextField4);
+			editTextField4.setText(obj.getString("d_4"));
+
+			Spinner relative_code_sp_d_5 = (Spinner) findViewById(R.id.relative_code_sp_d_5);
+			relative_code_sp_d_5.setSelection(Integer.parseInt(obj.getString("d_5")));
+
+			EditText editTextField5 = view.findViewById(R.id.editTextField5);
+			RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+			RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+			RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+			TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+			TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+			TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+
+			if(obj.getString("d_5").equalsIgnoreCase("15")) {
+
+				editTextField5.setText(obj.getString("d_5_other"));
+				editTextField5.setVisibility(View.VISIBLE);
+			}
+
+
+			if(!obj.getString("d_4").equalsIgnoreCase("") && !obj.getString("d_4").equalsIgnoreCase("null")) {
+
+
+
+
+				int age = Integer.parseInt(obj.getString("d_4").toString());
+				if(age>4 && age <20){
+					hh_textview_d_6.setVisibility(View.VISIBLE);
+					hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+					hh_textview_d_7.setVisibility(View.VISIBLE);
+					hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+					hh_textview_d_8.setVisibility(View.VISIBLE);
+					hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+					hh_textview_d_6_rgp.check(hh_textview_d_6_rgp.getChildAt(Integer.parseInt(obj.getString("d_6")) - 1).getId());
+
+
+					hh_textview_d_7_rgp.check(hh_textview_d_7_rgp.getChildAt(Integer.parseInt(obj.getString("d_7")) - 1).getId());
+
+
+
+					hh_textview_d_8_rgp.check(hh_textview_d_8_rgp.getChildAt(Integer.parseInt(obj.getString("d_8")) - 1).getId());
+
+				}
+
+
+
+			}
+			Button removebutton =view.findViewById(R.id.removebutton);
+			removebutton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					main.removeView(view);
+				}
+			});
+
+			relative_code_sp_d_5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+				@Override
+				public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
+					DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() "+i);
+					if (i==15){
+						editTextField5.setVisibility(View.VISIBLE);
+					}else{
+						editTextField5.setVisibility(View.INVISIBLE);
+						editTextField5.setText("");
+					}
+
+
+					if(editTextField4.getText().toString().length()!=0){
+
+						int age = Integer.parseInt(editTextField4.getText().toString());
+						if(age>4 && age <20){
+							hh_textview_d_6.setVisibility(View.VISIBLE);
+							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_7.setVisibility(View.VISIBLE);
+							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+							hh_textview_d_8.setVisibility(View.VISIBLE);
+							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+						}else{
+
+							hh_textview_d_6.setVisibility(View.GONE);
+							hh_textview_d_6_rgp.setVisibility(View.GONE);
+							hh_textview_d_6_rgp.clearCheck();
+
+							hh_textview_d_7.setVisibility(View.GONE);
+							hh_textview_d_7_rgp.setVisibility(View.GONE);
+							hh_textview_d_7_rgp.clearCheck();
+
+							hh_textview_d_8.setVisibility(View.GONE);
+							hh_textview_d_8_rgp.setVisibility(View.GONE);
+							hh_textview_d_8_rgp.clearCheck();
+
+
+						}
+					}else {
+
+						if (i != 0) {
+							parent.setSelection(0);
+							Toast.makeText(HH_Screen_three.this, "Please enter age first ", Toast.LENGTH_SHORT).show();
+							editTextField4.requestFocus();
+							editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						}
+					}
+
+
+				}
+
+
+				@Override
+				public void onNothingSelected(AdapterView<?> parent) {
+
+				}
+			});
+
+
+
+
+
+
+
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside showMemberat() Exception is :"+e.toString());
+		}
 	}
 
 	public void onTermsPolicyClick(View arg0) {
@@ -2272,162 +2426,214 @@ public class HH_Screen_three extends Activity {
 
 
 		boolean error = false;
+		View view = null;
+		TextView hh_textview_d_1 =null;
+		try {
 
 
 
+			if(main.getChildCount()==0){
 
-		if(main.getChildCount()==0){
+			}else{
+				StringBuilder sb = new StringBuilder();
 
-		}else{
-			StringBuilder sb = new StringBuilder();
-			for (int i = 0; i < main.getChildCount(); i++) {
-				View view = main.getChildAt(i);
+				for (int i = 0; i < main.getChildCount(); i++) {
+					view = main.getChildAt(i);
 
+					hh_textview_d_1 =view.findViewById(R.id.hh_textview_d_1);
 
-				EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
+					EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
 
-				RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
-				int q_3_rdg_checkedID = q_3_rdg.getCheckedRadioButtonId();
+					RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
+					int q_3_rdg_checkedID = q_3_rdg.getCheckedRadioButtonId();
 
-				EditText editTextField4 = view.findViewById(R.id.editTextField4);
+					EditText editTextField4 = view.findViewById(R.id.editTextField4);
 
-				Spinner relative_code_sp_d_5 = (Spinner) findViewById(R.id.relative_code_sp_d_5);
-				int relative_code_sp_d_5_position = relative_code_sp_d_5.getSelectedItemPosition();
-
-
-				EditText editTextField5 = view.findViewById(R.id.editTextField5);
-
-				if (editTextd_2.getText().toString().trim().equalsIgnoreCase("")){
-					Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
-
-					error=true;
-
-				}else if (editTextd_2.getText().toString().trim().length()==0){
-					Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
-
-					error=true;
-
-				}else if (q_3_rdg_checkedID==-1){
-					Toast.makeText(this, "Please select gender ", Toast.LENGTH_SHORT).show();
-					error = true;
-				}else if (editTextField4.getText().toString().trim().equalsIgnoreCase("")){
-					Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
-					editTextField4.requestFocus();
-					editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
-					error=true;
-
-				}else if (editTextField4.getText().toString().trim().length()==0){
-					Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
-					editTextField4.requestFocus();
-					editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
-					error=true;
-
-				}else if (relative_code_sp_d_5_position==0){
-					Toast.makeText(this, "Please select relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
-
-					error=true;
-
-				}else if (relative_code_sp_d_5_position==15 && editTextField5.getText().toString().length()==0){
-					Toast.makeText(this, "Please enter relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
-
-					error=true;
-
-				}
+					Spinner relative_code_sp_d_5 =  findViewById(R.id.relative_code_sp_d_5);
+					int relative_code_sp_d_5_position = relative_code_sp_d_5.getSelectedItemPosition();
 
 
+					EditText editTextField5 = view.findViewById(R.id.editTextField5);
 
-				//fixses  executes in any case
-				if(relative_code_sp_d_5_position!=15){
-					editTextField5.setText("");
-				}
+					if (editTextd_2.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
 
+						error=true;
 
-				if(editTextField4.getText().toString().length()!=0) {
+					}else if (editTextd_2.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
 
-					int age = Integer.parseInt(editTextField4.getText().toString());
-					if (age > 4 && age < 20) {
+						error=true;
 
+					}else if (q_3_rdg_checkedID==-1){
+						Toast.makeText(this, "Please select gender ", Toast.LENGTH_SHORT).show();
+						error = true;
+					}else if (editTextField4.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
 
+					}else if (editTextField4.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
 
-						TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+					}else if (relative_code_sp_d_5_position==0){
+						Toast.makeText(this, "Please select relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
 
-						TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+						error=true;
 
-						TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+					}else if (relative_code_sp_d_5_position==15 && editTextField5.getText().toString().length()==0){
+						Toast.makeText(this, "Please enter relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
 
-						RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
-						int q_6_rdg_checkedID = hh_textview_d_6_rgp.getCheckedRadioButtonId();
-
-						RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
-						int q_7_rdg_checkedID = hh_textview_d_7_rgp.getCheckedRadioButtonId();
-
-						RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
-						int q_8_rdg_checkedID = hh_textview_d_8_rgp.getCheckedRadioButtonId();
-
-						if (q_6_rdg_checkedID==-1){
-							Toast.makeText(this, "Please fill question 6", Toast.LENGTH_SHORT).show();
-							hh_textview_d_6.setVisibility(View.VISIBLE);
-							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_7.setVisibility(View.VISIBLE);
-							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_8.setVisibility(View.VISIBLE);
-							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
-
-							error=true;
-						}else if (q_7_rdg_checkedID==-1){
-							Toast.makeText(this, "Please fill question 7", Toast.LENGTH_SHORT).show();
-							hh_textview_d_6.setVisibility(View.VISIBLE);
-							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_7.setVisibility(View.VISIBLE);
-							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_8.setVisibility(View.VISIBLE);
-							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
-
-							error=true;
-						}else if (q_8_rdg_checkedID==-1){
-							Toast.makeText(this, "Please fill question 8", Toast.LENGTH_SHORT).show();
-							hh_textview_d_6.setVisibility(View.VISIBLE);
-							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_7.setVisibility(View.VISIBLE);
-							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
-
-							hh_textview_d_8.setVisibility(View.VISIBLE);
-							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
-
-							error=true;
-						}
-
+						error=true;
 
 					}
+
+
+
+					//fixses  executes in any case
+					if(relative_code_sp_d_5_position!=15){
+						editTextField5.setText("");
+					}
+
+
+					if(editTextField4.getText().toString().length()!=0) {
+
+						int age = Integer.parseInt(editTextField4.getText().toString());
+						if (age > 4 && age < 20) {
+
+
+
+							TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+
+							TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+
+							TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+
+							RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+							int q_6_rdg_checkedID = hh_textview_d_6_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+							int q_7_rdg_checkedID = hh_textview_d_7_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+							int q_8_rdg_checkedID = hh_textview_d_8_rgp.getCheckedRadioButtonId();
+
+							if (q_6_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 6", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_7_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 7", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_8_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 8", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}
+
+
+						}
+					}
+					//view.setVisibility(View.GONE);
 				}
+
 
 			}
 
 
+
+
+
+
+
+
+			if(!error) {
+
+
+				if(!c05Nextmem(null)){
+					main.removeView(view);
+				}else{
+					main.removeView(view);
+				}
+
+//				if (numberList !=null && numberList.size()==0){
+//
+//					LayoutInflater inflater = getLayoutInflater();
+//					View view1 = inflater.inflate(R.layout.phone_number_layout, null);
+//					getnow(view1);
+//				}else
+//
+//				if(Integer.parseInt(hh_textview_d_1.getText()+"") < numberList.size()){
+//					showMemberat(Integer.parseInt(hh_textview_d_1.getText()+"")+1);
+//				}else{
+//					LayoutInflater inflater = getLayoutInflater();
+//					View view1 = inflater.inflate(R.layout.phone_number_layout, null);
+//					getnow(view1);
+//				}
+
+				LayoutInflater inflater = getLayoutInflater();
+				View view1 = inflater.inflate(R.layout.phone_number_layout, null);
+				getnow(view1);
+
+			}
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside c05AddPhone() Exception is :"+e.toString());
 		}
+	}
+
+	private void getnow(View view) {
+		try {
 
 
 
+			view.setClickable(false);
 
+			view.setDuplicateParentStateEnabled(false);
 
-
-
-
-		if(!error) {
-
-			LayoutInflater inflater = getLayoutInflater();
-			View view = inflater.inflate(R.layout.phone_number_layout, null);
 			main.addView(view, main.getChildCount(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
 			TextView hh_textview_d_1 =view.findViewById(R.id.hh_textview_d_1);
-			hh_textview_d_1.setText(main.getChildCount()+"");
 
-
+//			if(numberList==null || numberList.size()==0){
+//				hh_textview_d_1.setText(main.getChildCount()+"");
+//			}else{
+//
+//				hh_textview_d_1.setText(numberList.size()+"");
+//			}
+int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
+			count = count+1;
+			hh_textview_d_1.setText(count+"");
 			Button callbutton =view.findViewById(R.id.callbutton);
 			EditText phoneNumber = view.findViewById(R.id.editTextd_2);
 			callbutton.setOnClickListener(new View.OnClickListener() {
@@ -2463,7 +2669,9 @@ public class HH_Screen_three extends Activity {
 
 			EditText editTextField4 = view.findViewById(R.id.editTextField4);
 
-			Spinner relative_code_sp_d_5 = (Spinner) findViewById(R.id.relative_code_sp_d_5);
+			Spinner relative_code_sp_d_5 =  findViewById(R.id.relative_code_sp_d_5);
+			relative_code_sp_d_5.setTag(main.getChildCount());
+			//	relative_code_sp_d_5.setId(main.getChildCount());
 			EditText editTextField5 = view.findViewById(R.id.editTextField5);
 
 			TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
@@ -2475,7 +2683,6 @@ public class HH_Screen_three extends Activity {
 			TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
 			RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
 
-
 			relative_code_sp_d_5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
@@ -2484,41 +2691,43 @@ public class HH_Screen_three extends Activity {
 					DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() "+i);
 					if (i==15){
 						editTextField5.setVisibility(View.VISIBLE);
+						view.invalidate();
 					}else{
 						editTextField5.setVisibility(View.INVISIBLE);
 						editTextField5.setText("");
+						view.invalidate();
 					}
 
 
 					if(editTextField4.getText().toString().length()!=0){
 
-                      int age = Integer.parseInt(editTextField4.getText().toString());
-                      if(age>4 && age <20){
-						  hh_textview_d_6.setVisibility(View.VISIBLE);
-						  hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+						int age = Integer.parseInt(editTextField4.getText().toString());
+						if(age>4 && age <20){
+							hh_textview_d_6.setVisibility(View.VISIBLE);
+							hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
 
-						  hh_textview_d_7.setVisibility(View.VISIBLE);
-						  hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+							hh_textview_d_7.setVisibility(View.VISIBLE);
+							hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
 
-						  hh_textview_d_8.setVisibility(View.VISIBLE);
-						  hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+							hh_textview_d_8.setVisibility(View.VISIBLE);
+							hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
 
-					  }else{
+						}else{
 
-						  hh_textview_d_6.setVisibility(View.GONE);
-						  hh_textview_d_6_rgp.setVisibility(View.GONE);
-						  hh_textview_d_6_rgp.clearCheck();
+							hh_textview_d_6.setVisibility(View.GONE);
+							hh_textview_d_6_rgp.setVisibility(View.GONE);
+							hh_textview_d_6_rgp.clearCheck();
 
-						  hh_textview_d_7.setVisibility(View.GONE);
-						  hh_textview_d_7_rgp.setVisibility(View.GONE);
-						  hh_textview_d_7_rgp.clearCheck();
+							hh_textview_d_7.setVisibility(View.GONE);
+							hh_textview_d_7_rgp.setVisibility(View.GONE);
+							hh_textview_d_7_rgp.clearCheck();
 
-						  hh_textview_d_8.setVisibility(View.GONE);
-						  hh_textview_d_8_rgp.setVisibility(View.GONE);
-						  hh_textview_d_8_rgp.clearCheck();
+							hh_textview_d_8.setVisibility(View.GONE);
+							hh_textview_d_8_rgp.setVisibility(View.GONE);
+							hh_textview_d_8_rgp.clearCheck();
 
 
-					  }
+						}
 					}else {
 
 						if (i != 0) {
@@ -2529,7 +2738,7 @@ public class HH_Screen_three extends Activity {
 						}
 					}
 
-
+					view.invalidate();
 				}
 
 
@@ -2541,9 +2750,629 @@ public class HH_Screen_three extends Activity {
 
 
 
+			DebugLog.console("[HH_Screen_three] inside c05AddPhone() view added");
 
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside getnow() Exception is :"+e.toString());
 		}
 	}
+
+	private void addnow(View view) {
+
+		try {
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside addnow() Exception is :"+e.toString());
+		}
+	}
+
+
+	public void  c05NextOld(View v){
+
+
+//		try {
+//
+//			if (main.getChildCount() == 0) {
+//				//TODO store
+//				Toast.makeText(this, "Please add at least one phone number", Toast.LENGTH_SHORT).show();
+//				return false;
+//			} else {
+//
+//				numberList = new ArrayList<JSONObject>();
+//				StringBuilder sb = new StringBuilder();
+//				for (int i = 0; i < main.getChildCount(); i++) {
+//					JSONObject obj = new JSONObject();
+//					View view = main.getChildAt(i);
+//					EditText phoneNumber = view.findViewById(R.id.editTextd_2);
+//					EditText phoneStatus = view.findViewById(R.id.phone1_status);
+//
+//
+//					if (phoneNumber.getText().toString().trim().equalsIgnoreCase("")) {
+//						Toast.makeText(this, "Phone number invald " + phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+//
+//						return false;
+//					} else if (phoneNumber.getText().toString().trim().length() != 10) {
+//						Toast.makeText(this, "Phone number invalid " + phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+//
+//						return false;
+//
+//					} else {
+//
+//
+//						RadioGroup vstatus = view.findViewById(R.id.hh_edtfield_q_5_rdg);
+//
+//						int checkedID = vstatus.getCheckedRadioButtonId();
+//						DebugLog.console("[HH_Screen_three] inside checkedID() " + checkedID);
+//						if (checkedID == -1) {
+//							Toast.makeText(this, "Please add status", Toast.LENGTH_SHORT).show();
+//
+//							return false;
+//						}
+//
+//
+//
+//						obj.put("number", phoneNumber.getText().toString());
+//
+//
+//						if (vstatus.getChildAt(0).getId()==checkedID){
+//							obj.put("status", "1");
+//						}if (vstatus.getChildAt(1).getId()==checkedID){
+//							obj.put("status", "2");
+//						}if (vstatus.getChildAt(2).getId()==checkedID){
+//							obj.put("status", "3");
+//						}if (vstatus.getChildAt(3).getId()==checkedID){
+//							obj.put("status", "4");
+//						}
+//
+//						DebugLog.console("[HH_Screen_three] inside c05Next() "+obj.toString());
+//						numberList.add(obj);
+//
+//						DebugLog.console("[HH_Screen_three] inside c05Next: phoneNumber : " + phoneNumber.getText().toString() + "phoneStatus : " + phoneStatus.getText().toString());
+////						sb.append(phoneNumber.getText().toString());
+////						sb.append("|");
+////						sb.append(phoneStatus.getText().toString());
+////						sb.append(",");
+//
+//
+//					}
+//				}
+////				sb.deleteCharAt(sb.length() - 1);
+//
+//
+//				return true;
+//			}
+//		}catch(Exception ex) {
+//			return false;
+//		}
+	}
+
+
+
+	public boolean c05Next(View v){
+
+
+		boolean error = false;
+
+
+		if(numberList==null)
+			numberList = new ArrayList<JSONObject>();
+
+
+		try {
+			if(main.getChildCount()==0){
+				//TODO store
+				//Toast.makeText(this, "Please add at least one r", Toast.LENGTH_SHORT).show();
+				return true;
+			}else{
+
+
+				StringBuilder sb = new StringBuilder();
+
+				for (int i = 0; i < main.getChildCount(); i++) {
+					View view = main.getChildAt(i);
+					JSONObject obj = new JSONObject();
+
+					EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
+
+					RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
+					int q_3_rdg_checkedID = q_3_rdg.getCheckedRadioButtonId();
+
+					EditText editTextField4 = view.findViewById(R.id.editTextField4);
+
+					Spinner relative_code_sp_d_5 =  findViewById(R.id.relative_code_sp_d_5);
+					int relative_code_sp_d_5_position = relative_code_sp_d_5.getSelectedItemPosition();
+
+
+					EditText editTextField5 = view.findViewById(R.id.editTextField5);
+
+					if (editTextd_2.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (editTextd_2.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (q_3_rdg_checkedID==-1){
+						Toast.makeText(this, "Please select gender ", Toast.LENGTH_SHORT).show();
+						error = true;
+					}else if (editTextField4.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
+
+					}else if (editTextField4.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
+
+					}else if (relative_code_sp_d_5_position==0){
+						Toast.makeText(this, "Please select relation "+editTextField5.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (relative_code_sp_d_5_position==15 && editTextField5.getText().toString().length()==0){
+						Toast.makeText(this, "Please enter relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}
+
+
+
+					int q_6_rdg_checkedID = -1;
+					int q_7_rdg_checkedID = -1;
+					int q_8_rdg_checkedID = -1;
+
+					//fixses  executes in any case
+					if(relative_code_sp_d_5_position!=15){
+						editTextField5.setText("");
+					}
+
+
+					if(editTextField4.getText().toString().length()!=0) {
+
+						int age = Integer.parseInt(editTextField4.getText().toString());
+						if (age > 4 && age < 20) {
+
+
+
+							TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+
+							TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+
+							TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+
+							RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+							q_6_rdg_checkedID = hh_textview_d_6_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+							q_7_rdg_checkedID = hh_textview_d_7_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+							q_8_rdg_checkedID = hh_textview_d_8_rgp.getCheckedRadioButtonId();
+
+							if (q_6_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 6", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_7_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 7", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_8_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 8", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}
+
+
+						}
+					}
+
+
+					if(numberList.size()==0) {
+						obj.put("d_1", i + 1);
+					}else{
+						obj.put("d_1", numberList.size());
+					}
+
+					obj.put("d_2",editTextd_2.getText().toString().trim());
+
+					String d_3 = "";
+					if(q_3_rdg_checkedID==R.id.q_3_rdg_op_1){
+						d_3="1";
+					}else if  (q_3_rdg_checkedID==R.id.q_3_rdg_op_2){
+						d_3="2";
+					}else{
+						error = true;
+					}
+
+
+					obj.put("d_3",d_3);
+					obj.put("d_4",Integer.parseInt(editTextField4.getText().toString().trim()));
+					obj.put("d_5",relative_code_sp_d_5_position+"".trim());
+					obj.put("d_5_other",editTextField5.getText());
+
+					String d_6 = "";
+					if(q_6_rdg_checkedID==R.id.hh_textview_d_6_rgp_op_1){
+						d_6="1";
+					}else if  (q_6_rdg_checkedID==R.id.hh_textview_d_6_rgp_op_2){
+						d_6="2";
+					}else{
+						//error = true;
+					}
+
+
+					obj.put("d_6",d_6);
+
+
+					String d_7 = "";
+					if(q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_1){
+						d_7="1";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_2){
+						d_7="2";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_3){
+						d_7="3";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_4){
+						d_7="4";
+					}else{
+						//	error = true;
+					}
+
+
+					obj.put("d_7",d_7);
+
+
+
+					String d_8 = "";
+					if(q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_1){
+						d_8="1";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_2){
+						d_8="2";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_3){
+						d_8="3";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_4){
+						d_8="4";
+					}else{
+						//	error = true;
+					}
+
+
+					obj.put("d_8",d_8);
+					numberList.add(obj);
+
+				}
+
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+			if(!error) {
+
+				saveDataNowAndNext();
+				return true;
+
+			}
+
+
+
+			return false;
+
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside c05NextClick() Exception is :"+e.toString());
+			return false;
+		}
+
+
+
+	}
+
+
+
+
+	public boolean c05Nextmem(View v){
+
+
+		boolean error = false;
+
+
+		if(numberList==null)
+			numberList = new ArrayList<JSONObject>();
+
+
+		try {
+			if(main.getChildCount()==0){
+				//TODO store
+				//Toast.makeText(this, "Please add at least one r", Toast.LENGTH_SHORT).show();
+				return true;
+			}else{
+
+
+				StringBuilder sb = new StringBuilder();
+
+				for (int i = 0; i < main.getChildCount(); i++) {
+					View view = main.getChildAt(i);
+					JSONObject obj = new JSONObject();
+
+					EditText editTextd_2 = view.findViewById(R.id.editTextd_2);
+
+					RadioGroup q_3_rdg = view.findViewById(R.id.q_3_rdg);
+					int q_3_rdg_checkedID = q_3_rdg.getCheckedRadioButtonId();
+
+					EditText editTextField4 = view.findViewById(R.id.editTextField4);
+
+					Spinner relative_code_sp_d_5 =  findViewById(R.id.relative_code_sp_d_5);
+					int relative_code_sp_d_5_position = relative_code_sp_d_5.getSelectedItemPosition();
+
+
+					EditText editTextField5 = view.findViewById(R.id.editTextField5);
+
+					if (editTextd_2.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (editTextd_2.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Name"+editTextd_2.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (q_3_rdg_checkedID==-1){
+						Toast.makeText(this, "Please select gender ", Toast.LENGTH_SHORT).show();
+						error = true;
+					}else if (editTextField4.getText().toString().trim().equalsIgnoreCase("")){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
+
+					}else if (editTextField4.getText().toString().trim().length()==0){
+						Toast.makeText(this, "Invalid Age"+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+						editTextField4.requestFocus();
+						editTextField4.scrollTo(editTextField4.getScrollX(), editTextField4.getScrollY());
+						error=true;
+
+					}else if (relative_code_sp_d_5_position==0){
+						Toast.makeText(this, "Please select relation "+editTextField5.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}else if (relative_code_sp_d_5_position==15 && editTextField5.getText().toString().length()==0){
+						Toast.makeText(this, "Please enter relation "+editTextField4.getText().toString(), Toast.LENGTH_SHORT).show();
+
+						error=true;
+
+					}
+
+
+
+					int q_6_rdg_checkedID = -1;
+					int q_7_rdg_checkedID = -1;
+					int q_8_rdg_checkedID = -1;
+
+					//fixses  executes in any case
+					if(relative_code_sp_d_5_position!=15){
+						editTextField5.setText("");
+					}
+
+
+					if(editTextField4.getText().toString().length()!=0) {
+
+						int age = Integer.parseInt(editTextField4.getText().toString());
+						if (age > 4 && age < 20) {
+
+
+
+							TextView hh_textview_d_6 =view.findViewById(R.id.hh_textview_d_6);
+
+							TextView hh_textview_d_7 =view.findViewById(R.id.hh_textview_d_7);
+
+							TextView hh_textview_d_8 =view.findViewById(R.id.hh_textview_d_8);
+
+							RadioGroup hh_textview_d_6_rgp = view.findViewById(R.id.hh_textview_d_6_rgp);
+							q_6_rdg_checkedID = hh_textview_d_6_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_7_rgp = view.findViewById(R.id.hh_textview_d_7_rgp);
+							q_7_rdg_checkedID = hh_textview_d_7_rgp.getCheckedRadioButtonId();
+
+							RadioGroup hh_textview_d_8_rgp = view.findViewById(R.id.hh_textview_d_8_rgp);
+							q_8_rdg_checkedID = hh_textview_d_8_rgp.getCheckedRadioButtonId();
+
+							if (q_6_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 6", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_7_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 7", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}else if (q_8_rdg_checkedID==-1){
+								Toast.makeText(this, "Please fill question 8", Toast.LENGTH_SHORT).show();
+								hh_textview_d_6.setVisibility(View.VISIBLE);
+								hh_textview_d_6_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_7.setVisibility(View.VISIBLE);
+								hh_textview_d_7_rgp.setVisibility(View.VISIBLE);
+
+								hh_textview_d_8.setVisibility(View.VISIBLE);
+								hh_textview_d_8_rgp.setVisibility(View.VISIBLE);
+
+								error=true;
+							}
+
+
+						}
+					}
+
+					int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
+					count = count+1;
+//					if(numberList.size()==0) {
+						obj.put("d_1", count);
+//					}else{
+//						obj.put("d_1", count);
+//					}
+
+					obj.put("d_2",editTextd_2.getText().toString().trim());
+
+					String d_3 = "";
+					if(q_3_rdg_checkedID==R.id.q_3_rdg_op_1){
+						d_3="1";
+					}else if  (q_3_rdg_checkedID==R.id.q_3_rdg_op_2){
+						d_3="2";
+					}else{
+						error = true;
+					}
+
+
+					obj.put("d_3",d_3);
+					obj.put("d_4",Integer.parseInt(editTextField4.getText().toString().trim()));
+					obj.put("d_5",relative_code_sp_d_5_position+"".trim());
+					obj.put("d_5_other",editTextField5.getText());
+
+					String d_6 = "";
+					if(q_6_rdg_checkedID==R.id.hh_textview_d_6_rgp_op_1){
+						d_6="1";
+					}else if  (q_6_rdg_checkedID==R.id.hh_textview_d_6_rgp_op_2){
+						d_6="2";
+					}else{
+						//error = true;
+					}
+
+
+					obj.put("d_6",d_6);
+
+
+					String d_7 = "";
+					if(q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_1){
+						d_7="1";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_2){
+						d_7="2";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_3){
+						d_7="3";
+					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_4){
+						d_7="4";
+					}else{
+					//	error = true;
+					}
+
+
+					obj.put("d_7",d_7);
+
+
+
+					String d_8 = "";
+					if(q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_1){
+						d_8="1";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_2){
+						d_8="2";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_3){
+						d_8="3";
+					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_4){
+						d_8="4";
+					}else{
+					//	error = true;
+					}
+
+
+					obj.put("d_8",d_8);
+					numberList.add(obj);
+
+				}
+
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+			if(!error) {
+
+				saveDataNow();
+				return true;
+
+			}
+
+
+
+			return false;
+
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside c05NextClick() Exception is :"+e.toString());
+			return false;
+		}
+
+
+
+	}
+
+
+
+
 
 	void DialUserNumber(String number) {
 		if (ActivityCompat.checkSelfPermission(HH_Screen_three.this,
@@ -2581,18 +3410,18 @@ public class HH_Screen_three extends Activity {
 	}
 	public void setMigration1(View view) {
 
-		hh_edtfield_q_3_edt_answer = "1";
+//		hh_edtfield_q_3_edt_answer = "1";
 	}
 
 	public void setMigration2(View view) {
-		hh_edtfield_q_3_edt_answer = "2";
+//		hh_edtfield_q_3_edt_answer = "2";
 	}
 	public void setMigration3(View view) {
-		hh_edtfield_q_3_edt_answer = "3";
+//		hh_edtfield_q_3_edt_answer = "3";
 	}
 
 	public void setMigration4(View view) {
-		hh_edtfield_q_3_edt_answer = "4";
+//		hh_edtfield_q_3_edt_answer = "4";
 	}
 
 }

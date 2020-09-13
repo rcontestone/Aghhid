@@ -1321,6 +1321,33 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public synchronized boolean hhid_isHHCovered_for_e(String village_id,String hhid) {
+        Cursor cursor = null;
+        boolean  result = false;
+        try {
+            openDB();
+            String query = "Select * from "+ DatabaseAdapter.aghhid_section_e_table+" where hhid = '"+hhid.toUpperCase()+ "' AND village_id = '"+village_id.toUpperCase()+"'";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_isHHCovered() "+query);
+            cursor = db.rawQuery(query, null);
+
+            if (cursor.getCount() !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_isHHCovered() yes");
+                result = true;
+
+            } else {
+                DebugLog.console("[DataBaseProcessor] inside hhid_isHHCovered() new hhid");
+
+                result =  false;
+            }
+            closeDB(cursor);
+            return result;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_isHHCovered() Exception is : " + e.toString());
+            closeDB(cursor);
+            return result;
+        }
+    }
+
 
 
     public synchronized boolean hhid_delete_number_list(String District_Code, String District_Name , String Tehsil_code , String Tehsil_Name , String PSU_code , String PSU_name , String Structure_id , String HH_id ,String number,String status) {
@@ -1369,7 +1396,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
 
 
-            boolean runUpdate_Querry = hhid_isHHCovered(PSU_code,HH_id);
+            boolean runUpdate_Querry = true;//hhid_isHHCovered(PSU_code,HH_id);
 
             DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_number_list() runUpdate_Querry"+runUpdate_Querry);
 
@@ -2462,6 +2489,545 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    public synchronized boolean aghhid_delete_hhid(String village_id,String hhid) {
+        try {
+
+
+
+            boolean runUpdate_Querry = true;//hhid_isHHCovered(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_delete_hhid() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+//            ContentValues cv = new ContentValues();
+//            cv.put("PSU_code", PSU_code.toUpperCase());
+//            cv.put("HH_id", HH_id.toUpperCase());
+//            cv.put("hhid_phone_number", number.toUpperCase());
+//            cv.put("status", status.toUpperCase());
+//            cv.put("build_no", BuildConfig.VERSION_NAME);
+//            cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14));
+//            cv.put("user_name", HHIDConfigurations.getPeshawarCurrentLoggedInUser(mContext).toUpperCase());
+//            cv.put("device_id", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+
+            int id =  db.delete(DatabaseAdapter.aghhid_section_d_table,  "hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"'",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] HHID_Survey_PHONE_LIST aghhid_delete_hhid aghhid_delete_hhid  delete() "+id);
+
+
+
+
+            closeDB();
+            return  true;
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside aghhid_delete_hhid() Exception is : " + e.toString());
+            closeDB();
+            return false;
+        }
+    }
+
+
+
+    public synchronized boolean aghhid_insert_member_list(String village_id,String hhid, JSONObject member) {
+        try {
+
+
+
+            boolean runUpdate_Querry = true;//hhid_isHHCovered(PSU_code,HH_id);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_insert_member_list() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+
+            ContentValues cv = new ContentValues();
+            cv.put("village_id", village_id.toUpperCase());
+            cv.put("hhid", hhid.toUpperCase());
+            cv.put("d_1", member.getInt("d_1")+"".toUpperCase());
+            cv.put("d_2", member.getString("d_2").toUpperCase());
+            cv.put("d_3", member.getString("d_3").toUpperCase());
+            cv.put("d_4", member.getInt("d_4")+"".toUpperCase());
+            cv.put("d_5", member.getString("d_5").toUpperCase());
+            cv.put("d_5_other",member.getString("d_5_other").toUpperCase());
+            cv.put("d_6",member.getString("d_6").toUpperCase());
+            cv.put("d_7", member.getString("d_7").toUpperCase());
+            cv.put("d_8", member.getString("d_8").toUpperCase());
+            cv.put("build_no", BuildConfig.VERSION_NAME);
+            cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14));
+            cv.put("rcons_user", HHIDConfigurations.getPeshawarCurrentLoggedInUser(mContext).toUpperCase());
+            cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+
+            long  isInserted = db.insert(DatabaseAdapter.aghhid_section_d_table, null, cv);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_insert_member_list isInserted() "+isInserted);
+
+
+
+            closeDB();
+            if (isInserted != -1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data_screen_six() Exception is : " + e.toString());
+            closeDB();
+            return false;
+        }
+    }
+
+
+
+    public synchronized JSONArray agghhid_getDataFromMemberTable(Context appContext,String village_id,String hhid){
+        long rowId = 1;
+        try {
+            openDB();
+            JSONArray dataArray = new JSONArray();
+            JSONObject data =  new JSONObject();
+            Cursor curCSV = db.rawQuery("SELECT * FROM  "+ DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() village_id "+village_id);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() hhid"+hhid);
+            if(curCSV.getCount()!=0) {
+
+                //file.createNewFile();
+//                String fileName = FileManager.createFileName(appContext, "csv" + "", HHIDConfigurations.getPeshawarCurrentLoggedInUser(appContext)+"_PSU_DATA");
+//                FileManager.createNewFile(appContext, fileName, "");
+
+
+//                CSVWriter csvWrite = new CSVWriter(new FileWriter(appContext.getFileStreamPath(fileName)));
+
+
+//                csvWrite.writeNext(curCSV.getColumnNames());
+                String columnNames[] = curCSV.getColumnNames();
+                DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() columnNames"+columnNames.length);
+
+                int count = curCSV.getColumnCount();
+                String arrStr[] = new String[count];
+                //curCSV.moveToFirst();
+                while (curCSV.moveToNext()) {
+                    //Which column you want to exprort
+                    int index = 0;
+                    while (index < count) {
+                        //  arrStr[index] = curCSV.getString(index);
+                        DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() "+columnNames[index]);
+
+                        data.put(columnNames[index],curCSV.getString(index)+"");
+//DebugLog.console("[HouseHoldDataBaseHelper] inside getDataFromtable() "+data.toString());
+                        index++;
+                    }
+                    //  arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2)};
+//                    csvWrite.writeNext(arrStr);
+                    dataArray.put(data);
+
+                }
+//                csvWrite.close();
+
+            }
+            curCSV.close();
+            DebugLog.console(" created successfully");
+            closeDB();
+            return dataArray;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside agghhid_getDataFromMemberTable");
+            closeDB();
+            return new JSONArray();
+        }
+    }
+
+
+
+    public synchronized  int  aghhid_getmaxmemberindhhid(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Show Previous Numbers");
+        int id =0;
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+            Cursor cursor = db.rawQuery("SELECT MAX(d_1) as max FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'",null);
+            int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                     id = cursor.getInt(cursor.getColumnIndex("max"));
+                   DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() hhid "+id);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+spinnerArray.size());
+            return id;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return 0;
+        }
+    }
+
+    public synchronized  ArrayList<String>  aghhid_getgirlsgainstvillageAndhhid(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Select child not went to school");
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+
+            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (10,11,12,13,14,15,16,17,18) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
+            Cursor cursor = db.rawQuery(query,null);
+
+
+
+          int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    String id = cursor.getString(cursor.getColumnIndex("d_2"));
+                    spinnerArray.add( id );
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+id);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+spinnerArray.size());
+            return spinnerArray;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return spinnerArray;
+        }
+    }
+
+
+
+    public synchronized  ArrayList<String>  aghhid_getgirlsgainstvillageAndhhid_second_op(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Select any child between 9 to 19");
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+
+            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (10,11,12,13,14,15,16,17,18)";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
+            Cursor cursor = db.rawQuery(query,null);
+
+
+
+            int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    String id = cursor.getString(cursor.getColumnIndex("d_2"));
+                    spinnerArray.add( id );
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+id);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+spinnerArray.size());
+            return spinnerArray;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return spinnerArray;
+        }
+    }
+
+
+
+    public synchronized  int  aghhid_memberid_against_name(Context appContext, String village_id,String hhid, String name){
+        long rowId = 1;
+        boolean result =false;
+      //  ArrayList<String> spinnerArray = new ArrayList<String>();
+       // spinnerArray.add("Show Previous Numbers");
+        int id =0;
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+
+            String querry = "SELECT d_1  FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"' AND d_2 =  '"+name+"'";
+           DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_memberid_against_name() querry "+querry);
+            Cursor cursor = db.rawQuery(querry,null);
+            int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    id = cursor.getInt(cursor.getColumnIndex("d_1"));
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() hhid "+id);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+count);
+            return id;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return 0;
+        }
+    }
+
+    public synchronized boolean hhid_insert_data_e1(String village_id ,String hhid , String e_1,String e_1_other, String user_name , String start_date_time) {
+        boolean updated =false;
+        try {
+
+
+
+            boolean runUpdate_Querry = hhid_isHHCovered_for_e(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+            ContentValues cv = new ContentValues();
+
+            cv.put("e_1", e_1.toUpperCase());
+            cv.put("e_1_other", e_1_other.toUpperCase());
+//            cv.put("c1_given_number", c1_given_number.toUpperCase());
+//            cv.put("hhid_q3", hhid_q3.toUpperCase());
+//            cv.put("hhid_q4", hhid_q4.toUpperCase());
+//            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
+
+//            if (!hhid_q3.equalsIgnoreCase("1")){
+//
+//                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
+//
+//            }
+
+
+
+            long isInserted =0;
+            if(!runUpdate_Querry){
+
+                cv.put("village_id", village_id.toUpperCase());
+                cv.put("hhid", hhid.toUpperCase());
+                cv.put("build_no", BuildConfig.VERSION_NAME);
+                cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
+                cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+                cv.put("rcons_user", user_name.toUpperCase());
+                isInserted = db.insert(DatabaseAdapter.aghhid_section_e_table, null, cv);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
+
+            }else{
+                db.update(DatabaseAdapter.aghhid_section_e_table, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+" ", null);
+
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
+                updated = true;
+            }
+
+            closeDB();
+
+
+            if (isInserted != -1) {
+                updated =  true;
+            }
+
+            return  updated;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data() Exception is : " + e.toString());
+            closeDB();
+            return  updated;
+        }
+    }
+
+
+    public synchronized boolean hhid_insert_data_e2(String village_id ,String hhid , String e_2, String user_name , String start_date_time) {
+        boolean updated =false;
+        try {
+
+
+
+            boolean runUpdate_Querry = hhid_isHHCovered_for_e(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+            ContentValues cv = new ContentValues();
+
+            cv.put("e_2", e_2.toUpperCase());
+           // cv.put("e_1_other", e_1_other.toUpperCase());
+//            cv.put("c1_given_number", c1_given_number.toUpperCase());
+//            cv.put("hhid_q3", hhid_q3.toUpperCase());
+//            cv.put("hhid_q4", hhid_q4.toUpperCase());
+//            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
+
+//            if (!hhid_q3.equalsIgnoreCase("1")){
+//
+//                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
+//
+//            }
+
+
+
+            long isInserted =0;
+            if(!runUpdate_Querry){
+
+                cv.put("village_id", village_id.toUpperCase());
+                cv.put("hhid", hhid.toUpperCase());
+                cv.put("build_no", BuildConfig.VERSION_NAME);
+                cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
+                cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+                cv.put("rcons_user", user_name.toUpperCase());
+                isInserted = db.insert(DatabaseAdapter.aghhid_section_e_table, null, cv);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
+
+            }else{
+                db.update(DatabaseAdapter.aghhid_section_e_table, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+" ", null);
+
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
+                updated = true;
+            }
+
+            closeDB();
+
+
+            if (isInserted != -1) {
+                updated =  true;
+            }
+
+            return  updated;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data() Exception is : " + e.toString());
+            closeDB();
+            return  updated;
+        }
+    }
+
+    public synchronized boolean hhid_insert_data_e3(String village_id ,String hhid , String aghhid_e_3,  String aghhid_e_3_2,  String aghhid_e_3_3,  String aghhid_e_3_4,  String aghhid_e_3_5,  String aghhid_e_3_6,  String aghhid_e_3_7,  String aghhid_e_3_8,  String aghhid_e_3_9,  String aghhid_e_3_10,  String aghhid_e_3_11,  String aghhid_e_3_12, String aghhid_e_3_13, String aghhid_e_3_14, String aghhid_e_3_14_other,  String aghhid_e_3_15, String aghhid_e_3_16,  String aghhid_e_3_17, String  aghhid_e_3_18, String user_name , String start_date_time) {
+        boolean updated =false;
+        try {
+
+
+
+            boolean runUpdate_Querry = hhid_isHHCovered_for_e(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+            ContentValues cv = new ContentValues();
+
+            cv.put("e_3",aghhid_e_3);
+            cv.put("e_3_2",aghhid_e_3_2);
+            cv.put("e_3_3",aghhid_e_3_3);
+            cv.put("e_3_4",aghhid_e_3_4);
+            cv.put("e_3_5",aghhid_e_3_5);
+            cv.put("e_3_6",aghhid_e_3_6);
+            cv.put("e_3_7",aghhid_e_3_7);
+            cv.put("e_3_8",aghhid_e_3_8);
+            cv.put("e_3_9",aghhid_e_3_9);
+            cv.put("e_3_10",aghhid_e_3_10);
+            cv.put("e_3_11",aghhid_e_3_11);
+            cv.put("e_3_12",aghhid_e_3_12);
+            cv.put("e_3_13",aghhid_e_3_13);
+            cv.put("e_3_14",aghhid_e_3_14);
+            cv.put("e_3_14_other",aghhid_e_3_14_other);
+            cv.put("e_3_15",aghhid_e_3_15);
+            cv.put("e_3_16",aghhid_e_3_16);
+            cv.put("e_3_17",aghhid_e_3_17);
+            cv.put("e_3_18",aghhid_e_3_18);
+            // cv.put("e_1_other", e_1_other.toUpperCase());
+//            cv.put("c1_given_number", c1_given_number.toUpperCase());
+//            cv.put("hhid_q3", hhid_q3.toUpperCase());
+//            cv.put("hhid_q4", hhid_q4.toUpperCase());
+//            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
+
+//            if (!hhid_q3.equalsIgnoreCase("1")){
+//
+//                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
+//
+//            }
+
+
+
+            long isInserted =0;
+            if(!runUpdate_Querry){
+
+                cv.put("village_id", village_id.toUpperCase());
+                cv.put("hhid", hhid.toUpperCase());
+                cv.put("build_no", BuildConfig.VERSION_NAME);
+                cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
+                cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+                cv.put("rcons_user", user_name.toUpperCase());
+                isInserted = db.insert(DatabaseAdapter.aghhid_section_e_table, null, cv);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
+
+            }else{
+                db.update(DatabaseAdapter.aghhid_section_e_table, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+" ", null);
+
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
+                updated = true;
+            }
+
+            closeDB();
+
+
+            if (isInserted != -1) {
+                updated =  true;
+            }
+
+            return  updated;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data() Exception is : " + e.toString());
+            closeDB();
+            return  updated;
+        }
+    }
 
 
 }

@@ -7,6 +7,7 @@ import android.telephony.TelephonyManager;
 
 import com.mubashar.dateandtime.DebugLog;
 import com.rcons.fcallbacks.Utilties.MpcUtil;
+import com.rcons.fcallbacks.Utilties.RConsUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -1785,6 +1786,10 @@ public class HHIDConfigurations {
 		try{
 			SharedPreferences pref = ctx.getSharedPreferences(APP_CONFIGURATION, Context.MODE_PRIVATE);
 			key = pref.getString("CurrentLoggedInUser", "0");
+			if(key.equalsIgnoreCase("0")){
+				key = RConsUtils.getUserName();
+			}
+
 			return key;
 		}catch(Exception ex){
 			EmailDebugLog.getInstance(ctx).writeLog("[HHIDConfigurations]:exception occured in CurrentLoggedInUser");

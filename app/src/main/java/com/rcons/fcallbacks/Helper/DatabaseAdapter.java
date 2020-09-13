@@ -75,6 +75,8 @@ public class DatabaseAdapter {
 
 
     public static final String aghhid_section_c_table = "aghhid_section_c";
+    public static final String aghhid_section_d_table = "aghhid_section_d";
+    public static final String aghhid_section_e_table = "aghhid_section_e";
 
     private Context context;
     public DataHelper database;

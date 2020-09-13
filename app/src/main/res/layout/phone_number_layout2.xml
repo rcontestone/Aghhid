@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/sepbtn"
+        android:layout_height="@dimen/_15sdp"
+        android:background="@color/blue_color"
+        android:layout_below="@+id/callbutton"
+        ></Button>
+    <TextView
+        android:id="@+id/hh_textview_d_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/sepbtn"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text=""
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
+
+    <TextView
+        android:id="@+id/hh_textview_d_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hh_textview_d_1"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_2"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
+
+    <EditText
+        android:id="@+id/editTextd_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        android:layout_below="@id/hh_textview_d_2"
+        />
+    <TextView
+        android:id="@+id/hh_textview_d_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextd_2"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_3"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextd_2"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/q_3_rdg"
+
+        >
+
+        <RadioButton
+            android:id="@+id/q_3_rdg_op_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text="مرد"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration1"
+
+
+
+            />
+
+        <RadioButton
+            android:id="@+id/q_3_rdg_op_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" خاتون"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration2"
+
+            />
+
+
+
+
+    </RadioGroup>
+
+
+
+    <TextView
+        android:id="@+id/hh_textview_d_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hh_textview_d_3"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_4"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
+
+
+    <EditText
+        android:id="@+id/editTextField4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+
+        android:ems="10"
+
+        android:inputType="number"
+        android:layout_below="@id/hh_textview_d_4"
+        />
+
+
+
+    <TextView
+        android:id="@+id/hh_textview_d_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextField4"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_5"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+
+
+        />
+
+
+    <Spinner
+
+        android:id="@+id/relative_code_sp_d_5"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/hh_textview_d_5"
+        android:background="#e6e6e6"
+        android:entries="@array/array_relative_code_sp"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_13sdp"></Spinner>
+
+    <EditText
+        android:id="@+id/editTextField5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        android:layout_below="@id/relative_code_sp_d_5"
+        />
+
+
+
+    <TextView
+        android:id="@+id/hh_textview_d_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextField5"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_6"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:visibility="gone"
+
+
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hh_textview_d_6"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+
+        android:id="@+id/hh_textview_d_6_rgp"
+
+        >
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_6_rgp_op_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text="1 ہاں"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration3"
+
+
+
+            />
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_6_rgp_op_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text="  2 نہیں"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+
+
+
+    </RadioGroup>
+
+
+
+
+    <TextView
+        android:id="@+id/hh_textview_d_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hh_textview_d_6_rgp"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_7"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:visibility="gone"
+
+
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hh_textview_d_7"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/hh_textview_d_7_rgp"
+
+        android:visibility="gone"
+        >
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_7_rgp_op_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text="   1گورنمنٹ سکول"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration3"
+
+
+
+            />
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_7_rgp_op_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 2پرائیویٹ سکول"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_7_rgp_op_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 3فل ٹائم دینی مدرسہ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_7_rgp_op_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 4کسی میں بھی نہیں"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/hh_textview_d_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/hh_textview_d_7_rgp"
+        android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="right"
+        android:text="@string/hh_textview_d_8"
+        android:textColor="@color/OrangeRed"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:visibility="gone"
+
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hh_textview_d_8"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/hh_textview_d_8_rgp"
+
+        android:visibility="gone"
+        >
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_8_rgp_op_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text="   1گورنمنٹ سکول"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration3"
+
+
+
+            />
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_8_rgp_op_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 2پرائیویٹ سکول"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_8_rgp_op_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 3فل ٹائم دینی مدرسہ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+        <RadioButton
+            android:id="@+id/hh_textview_d_8_rgp_op_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/migration1"
+            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="right"
+            android:text=" 4کسی میں بھی نہیں"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="setMigration4"
+
+            />
+
+
+
+    </RadioGroup>
+
+
+
+
+
+    <EditText
+        android:id="@+id/phone1_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/hh_edtfield_q_5_rdg"
+        app:layout_constraintStart_toStartOf="@+id/hh_edtfield_q_5_rdg"
+        app:layout_constraintTop_toBottomOf="@+id/hh_edtfield_q_5_rdg" />
+
+    <Button
+        android:id="@+id/callbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dial Call"
+        android:visibility="invisible"
+        android:textColor="@color/blue_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+       />
+
+
+    <Button
+        android:id="@+id/removebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="@dimen/_20sdp"
+android:layout_below="@id/callbutton"
+        android:textColor="@color/OrangeRed"
+     />
+</RelativeLayout>
