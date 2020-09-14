@@ -78,6 +78,7 @@ public class DatabaseAdapter {
     public static final String aghhid_section_d_table = "aghhid_section_d";
     public static final String aghhid_section_e_table = "aghhid_section_e";
     public static final String aghhid_section_g_table = "aghhid_section_g";
+    public static final String aghhid_section_f_table = "aghhid_section_f";
 
     private Context context;
     public DataHelper database;
@@ -6032,7 +6033,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + aghhid_section_g_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+        str = "select Count(*) as count from " + aghhid_section_f_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -6067,7 +6068,7 @@ public class DatabaseAdapter {
                 contentValues.put("g_urdu_4", g_urdu_4);
 
 
-                db.insertOrThrow(aghhid_section_g_table, null, contentValues);
+                db.insertOrThrow(aghhid_section_f_table, null, contentValues);
 
             } else {
                 db = database.getWritableDatabase();
@@ -6098,12 +6099,235 @@ public class DatabaseAdapter {
                 contentValues.put("g_urdu_4", g_urdu_4);
 
 
+                db.update(aghhid_section_f_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
+
+    public Cursor savehh_Section_F_Data(String isSynced,
+                                        String isComplete,
+                                        String rcons_user,
+                                        String enum_code,
+                                        String enum_name,
+                                        String deviceid,
+                                        String insert_or_updated_in_phone_at,
+                                        String uploaded_time,
+                                        String build_no,
+                                        String village_id,
+                                        String hhid,
+                                        String f_1,
+                                        String f_2_1,
+                                        String f_2_2,
+                                        String f_2_3,
+                                        String f_2_4,
+                                        String f_2_5,
+                                        String f_2_6,
+                                        String f_2_7,
+                                        String f_2_8,
+                                        String f_2_9,
+                                        String f_2_10,
+                                        String f_2_11,
+                                        String f_2_12,
+                                        String f_2_13,
+                                        String f_2_14,
+                                        String f_2_15,
+                                        String f_2_15_other,
+                                        String f_2_16,
+                                        String f_2_17,
+                                        String f_2_18,
+                                        String f_2_19,
+                                        String f_3_0,
+                                        String f_3_1,
+                                        String f_3_2,
+                                        String f_3_3,
+                                        String f_3_4,
+                                        String f_3_5,
+                                        String f_3_6,
+                                        String f_3_7,
+                                        String f_3_8,
+                                        String f_3_9,
+                                        String f_3_10,
+                                        String f_3_11,
+                                        String f_3_12,
+                                        String f_3_13,
+                                        String f_3_14,
+                                        String f_3_15,
+                                        String f_3_16,
+                                        String f_3_17,
+                                        String f_3_18,
+                                        String f_3_19,
+                                        String f_3_20,
+                                        String f_3_21,
+                                        String f_3_22,
+                                        String f_3_23,
+                                        String f_3_23_other,
+                                        String f_3_24,
+                                        String f_3_25,
+                                        String f_3_26,
+                                        String f_4,
+                                        String f_5,
+                                        String f_6
+
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + aghhid_section_g_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("f_1", f_1);
+                contentValues.put("f_2_1", f_2_1);
+                contentValues.put("f_2_2", f_2_2);
+                contentValues.put("f_2_3", f_2_3);
+                contentValues.put("f_2_4", f_2_4);
+                contentValues.put("f_2_5", f_2_5);
+                contentValues.put("f_2_6", f_2_6);
+                contentValues.put("f_2_7", f_2_7);
+                contentValues.put("f_2_8", f_2_8);
+                contentValues.put("f_2_9", f_2_9);
+                contentValues.put("f_2_10", f_2_10);
+                contentValues.put("f_2_11", f_2_11);
+                contentValues.put("f_2_12", f_2_12);
+                contentValues.put("f_2_13", f_2_13);
+                contentValues.put("f_2_14", f_2_14);
+                contentValues.put("f_2_15", f_2_15);
+                contentValues.put("f_2_15_other", f_2_15_other);
+                contentValues.put("f_2_16", f_2_16);
+                contentValues.put("f_2_17", f_2_17);
+                contentValues.put("f_2_18", f_2_18);
+                contentValues.put("f_2_19", f_2_19);
+                contentValues.put("f_3_0", f_3_0);
+                contentValues.put("f_3_1", f_3_1);
+                contentValues.put("f_3_2", f_3_2);
+                contentValues.put("f_3_3", f_3_3);
+                contentValues.put("f_3_4", f_3_4);
+                contentValues.put("f_3_5", f_3_5);
+                contentValues.put("f_3_6", f_3_6);
+                contentValues.put("f_3_7", f_3_7);
+                contentValues.put("f_3_8", f_3_8);
+                contentValues.put("f_3_9", f_3_9);
+                contentValues.put("f_3_10", f_3_10);
+                contentValues.put("f_3_11", f_3_11);
+                contentValues.put("f_3_12", f_3_12);
+                contentValues.put("f_3_13", f_3_13);
+                contentValues.put("f_3_14", f_3_14);
+                contentValues.put("f_3_15", f_3_15);
+                contentValues.put("f_3_16", f_3_16);
+                contentValues.put("f_3_17", f_3_17);
+                contentValues.put("f_3_18", f_3_18);
+                contentValues.put("f_3_19", f_3_19);
+                contentValues.put("f_3_20", f_3_20);
+                contentValues.put("f_3_21", f_3_21);
+                contentValues.put("f_3_22", f_3_22);
+                contentValues.put("f_3_23", f_3_23);
+                contentValues.put("f_3_23_other", f_3_23_other);
+                contentValues.put("f_3_24", f_3_24);
+                contentValues.put("f_3_25", f_3_25);
+                contentValues.put("f_3_26", f_3_26);
+                contentValues.put("f_4", f_4);
+                contentValues.put("f_5", f_5);
+                contentValues.put("f_6", f_6);
+
+
+                db.insertOrThrow(aghhid_section_g_table, null, contentValues);
+
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("f_1", f_1);
+                contentValues.put("f_2_1", f_2_1);
+                contentValues.put("f_2_2", f_2_2);
+                contentValues.put("f_2_3", f_2_3);
+                contentValues.put("f_2_4", f_2_4);
+                contentValues.put("f_2_5", f_2_5);
+                contentValues.put("f_2_6", f_2_6);
+                contentValues.put("f_2_7", f_2_7);
+                contentValues.put("f_2_8", f_2_8);
+                contentValues.put("f_2_9", f_2_9);
+                contentValues.put("f_2_10", f_2_10);
+                contentValues.put("f_2_11", f_2_11);
+                contentValues.put("f_2_12", f_2_12);
+                contentValues.put("f_2_13", f_2_13);
+                contentValues.put("f_2_14", f_2_14);
+                contentValues.put("f_2_15", f_2_15);
+                contentValues.put("f_2_15_other", f_2_15_other);
+                contentValues.put("f_2_16", f_2_16);
+                contentValues.put("f_2_17", f_2_17);
+                contentValues.put("f_2_18", f_2_18);
+                contentValues.put("f_2_19", f_2_19);
+                contentValues.put("f_3_0", f_3_0);
+                contentValues.put("f_3_1", f_3_1);
+                contentValues.put("f_3_2", f_3_2);
+                contentValues.put("f_3_3", f_3_3);
+                contentValues.put("f_3_4", f_3_4);
+                contentValues.put("f_3_5", f_3_5);
+                contentValues.put("f_3_6", f_3_6);
+                contentValues.put("f_3_7", f_3_7);
+                contentValues.put("f_3_8", f_3_8);
+                contentValues.put("f_3_9", f_3_9);
+                contentValues.put("f_3_10", f_3_10);
+                contentValues.put("f_3_11", f_3_11);
+                contentValues.put("f_3_12", f_3_12);
+                contentValues.put("f_3_13", f_3_13);
+                contentValues.put("f_3_14", f_3_14);
+                contentValues.put("f_3_15", f_3_15);
+                contentValues.put("f_3_16", f_3_16);
+                contentValues.put("f_3_17", f_3_17);
+                contentValues.put("f_3_18", f_3_18);
+                contentValues.put("f_3_19", f_3_19);
+                contentValues.put("f_3_20", f_3_20);
+                contentValues.put("f_3_21", f_3_21);
+                contentValues.put("f_3_22", f_3_22);
+                contentValues.put("f_3_23", f_3_23);
+                contentValues.put("f_3_23_other", f_3_23_other);
+                contentValues.put("f_3_24", f_3_24);
+                contentValues.put("f_3_25", f_3_25);
+                contentValues.put("f_3_26", f_3_26);
+                contentValues.put("f_4", f_4);
+                contentValues.put("f_5", f_5);
+                contentValues.put("f_6", f_6);
+
+
                 db.update(aghhid_section_g_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
         return cursor;
     }
+
 
     public Cursor savepq_Section_C1_Data(String emp_id,
                                          String order_id,
@@ -7102,6 +7326,16 @@ public class DatabaseAdapter {
 
     public Cursor gethh_section_g_Data(String village_id, String hhid) {
         String query = "SELECT * from " + aghhid_section_g_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
+    public Cursor gethh_section_f_Data(String village_id, String hhid) {
+        String query = "SELECT * from " + aghhid_section_f_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
             return cursor;

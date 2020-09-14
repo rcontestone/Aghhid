@@ -25,7 +25,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:roundIcon">
-        <activity android:name=".Athreehhid.Ad_Section_G"></activity>
+        <activity android:name=".Athreehhid.Ad_Section_F"></activity>
+        <activity android:name=".Athreehhid.Ad_Section_G" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_A" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_C2" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_C1" />

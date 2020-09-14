@@ -841,6 +841,7 @@
 
     <!--  Adolscent Section C Strings -->
 
+    <string name="ad_section_c_question_q1_script"> سب سے  پہلے میں آپ سے کچھ مختصر سوالات پوچھوں گی تاکہ آپ کے بارے میں جان سکوں۔ اگر ممکن ہو تو کسی ایسی جگہ بیٹھ جائیں جہاں آپ آرام سے بات کرسکیں اور کوئی آپ کو پریشان نہ کرے </string>
     <string name="ad_section_c_question_q1"> کیا آپ فروری 2020میں  کسی پرائیویٹ یا سرکاری سکول میں داخل تھیں</string>
     <string name="ad_section_c_question_q1_option1">1~ ہاں </string>
     <string name="ad_section_c_question_q1_option2">2~ نہیں</string>
@@ -924,7 +925,8 @@
     <string name="ad_section_c_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_c_question_q6_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_c_question_q6a"> کیا آپ اپنے گاؤں کے اندر یا قریب کسی مارکیٹ یا بازار میں اکیلے یا اپنی سہیلیوں کے ساتھ(اپنے والدین، بڑوں یا سربراہ کے بغیر) خریداری کےلئے کبھی گئی ہیں </string>
+    <string name="ad_section_c_question_q6a_script">اب میں آپ سے حساب اور اردو کے کچھ سوالات پوچھوں گی۔آپ کو ایک بار پھر یاددہانی کروا دوں کہ آپ کے جوابات کسی اور کو بالکل نہیں بتائے جائیں گے۔</string>
+    <string name="ad_section_c_question_q6a">شمار کنندہ: کیا جوابدہندہ اس ٹیسٹ کےلئے رضامندی کا اظہار کیا؟ </string>
     <string name="ad_section_c_question_q6a_option1">1~ ہاں </string>
     <string name="ad_section_c_question_q6a_option2">2~ نہیں</string>
     <string name="ad_section_c_question_q6a_option777">777~ فون کاٹ دیا </string>
