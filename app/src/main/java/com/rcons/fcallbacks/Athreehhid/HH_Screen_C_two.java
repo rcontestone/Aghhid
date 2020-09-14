@@ -29,6 +29,7 @@ import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -39,6 +40,8 @@ import com.rcons.fcallbacks.http.ResponceVerifier;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import androidx.annotation.Nullable;
 
 
 public class HH_Screen_C_two extends Activity {
@@ -1417,25 +1420,36 @@ public class HH_Screen_C_two extends Activity {
 
 */
 
-                    if (aghhid_c_2.length()!=0){
-                        Intent returnIntent = new Intent();
-                        returnIntent.putExtra("isDataUpdated", false);
-                        setResult(Activity.RESULT_OK, returnIntent);
+                    if(aghhid_c_2.equalsIgnoreCase("-777")){
+                        Intent intent = new Intent(HH_Screen_C_two.this, AddReportActivity.class);
+                        intent.putExtra("emp_id", emp_id);
+                        intent.putExtra("order_id", order_id);
+                        intent.putExtra("id", id);
+                        intent.putExtra("farmer_cellphone", phone_number);
+                        intent.putExtra("school_code", school_code);
+                        intent.putExtra("student_id", student_id);
+                        startActivityForResult(intent, 88);
+                    }else {
 
-                        Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three.class);
+                        if (aghhid_c_2.length() != 0) {
+                            Intent returnIntent = new Intent();
+                            returnIntent.putExtra("isDataUpdated", false);
+                            setResult(Activity.RESULT_OK, returnIntent);
 
-                        intent.putExtra("m1b_parent_mobile",phone_number);
-                        intent.putExtra("scode",school_code);
-                        intent.putExtra("studentid",student_id);
-                        intent.putExtra("m1b_student_name",student_name);
-                        intent.putExtra("rcons_user",RConsUtils.getUserName());
-                        startActivity(intent);
-                        finish();
-                        return;
+                            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three.class);
+
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
+                            startActivity(intent);
+                            finish();
+                            return;
+
+                        }
 
                     }
-
-
 
 
 
@@ -1929,6 +1943,25 @@ public class HH_Screen_C_two extends Activity {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside gotohomeScreen() Exception is :"+e.toString());
         }
     }
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 88) {
+            boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
+            if (isDataUpdated) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("isDataUpdated", isDataUpdated);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
+            }
+
+        }
+    }
+
+
 
     public void setMigration1(View view) {
 

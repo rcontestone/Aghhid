@@ -32,6 +32,7 @@ import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -44,6 +45,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import androidx.annotation.Nullable;
 
 
 public class HH_Screen_two_Section_e extends Activity {
@@ -757,7 +760,7 @@ public class HH_Screen_two_Section_e extends Activity {
         try {
 
 
-            aghhid_c1_given_number = hh_edtfield_q_2.getText().toString();
+           // aghhid_c1_given_number = hh_edtfield_q_2.getText().toString();
             int rdg_checkedID = hh_edtfield_q_2_rdg.getCheckedRadioButtonId();
 
 
@@ -1430,26 +1433,33 @@ public class HH_Screen_two_Section_e extends Activity {
                 if (screen_two ) {
 
 
-                    if(aghhid_e_2.equalsIgnoreCase("1")){
+                    if(aghhid_e_2.equalsIgnoreCase("-777") || (aghhid_e_2.equalsIgnoreCase("-99"))){
+                        Intent intent = new Intent(HH_Screen_two_Section_e.this, AddReportActivity.class);
+                        intent.putExtra("emp_id", emp_id);
+                        intent.putExtra("order_id", order_id);
+                        intent.putExtra("id", id);
+                        intent.putExtra("farmer_cellphone", phone_number);
+                        intent.putExtra("school_code", school_code);
+                        intent.putExtra("student_id", student_id);
+                        startActivityForResult(intent, 88);
+                    } else {
 
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("isDataUpdated", false);
+                        setResult(Activity.RESULT_OK, returnIntent);
+
+                        Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three_Section_e.class);
+
+                        intent.putExtra("m1b_parent_mobile", phone_number);
+                        intent.putExtra("scode", school_code);
+                        intent.putExtra("studentid", student_id);
+                        intent.putExtra("m1b_student_name", student_name);
+                        intent.putExtra("rcons_user", RConsUtils.getUserName());
+                        startActivity(intent);
+                        finish();
+                        return;
                     }
-
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("isDataUpdated", false);
-                    setResult(Activity.RESULT_OK, returnIntent);
-
-                    Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three_Section_e.class);
-
-                    intent.putExtra("m1b_parent_mobile", phone_number);
-                    intent.putExtra("scode", school_code);
-                    intent.putExtra("studentid", student_id);
-                    intent.putExtra("m1b_student_name", student_name);
-                    intent.putExtra("rcons_user", RConsUtils.getUserName());
-                    startActivity(intent);
-                    finish();
                     return;
-
-
 //                    Intent backIntent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
 //                    backIntent.putExtra("launchActivity", "signup");
 ////                    startActivity(backIntent);
@@ -1821,7 +1831,7 @@ public class HH_Screen_two_Section_e extends Activity {
                     data.put("e_2","");
 
                 hh_edtfield_q_2.setText(data.getString("e_2"));
-                aghhid_c1_given_number=data.getString("e_2");
+                aghhid_c1_given_number="";//data.getString("e_2");
 
                 if(data.getString("e_2").equalsIgnoreCase("null"))
                     data.put("e_2","");
@@ -1832,9 +1842,9 @@ public class HH_Screen_two_Section_e extends Activity {
 
                 if(e_2.trim().equalsIgnoreCase("1")) {
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(0).getId());
-                    hh_edtfield_q_2.setVisibility(View.VISIBLE);
-                    numbers_sp_q_2.setVisibility(View.VISIBLE);
-                    hh_edtfield_q_2.setText(data.getString("c1_given_number"));
+                  //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
+                  //  numbers_sp_q_2.setVisibility(View.VISIBLE);
+                   // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
                 }
 
                 if(e_2.trim().equalsIgnoreCase("-111"))
@@ -2054,5 +2064,24 @@ public class HH_Screen_two_Section_e extends Activity {
         }
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 88) {
+            boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
+            if (isDataUpdated) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("isDataUpdated", isDataUpdated);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
+            }
+
+        }
+    }
+
+
+
+
 
 }

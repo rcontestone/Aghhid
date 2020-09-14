@@ -113,6 +113,13 @@
         <activity android:name=".Athreehhid.HH_Screen_one_section_e" />
         <activity android:name=".Athreehhid.HH_Screen_two_Section_e" />
         <activity android:name=".Athreehhid.HH_Screen_three_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_four_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_five_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_six_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_seven_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_nine_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_ten_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_eight_Section_e" />
     </application>
 
 </manifest>
