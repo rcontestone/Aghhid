@@ -77,6 +77,7 @@ public class DatabaseAdapter {
     public static final String aghhid_section_c_table = "aghhid_section_c";
     public static final String aghhid_section_d_table = "aghhid_section_d";
     public static final String aghhid_section_e_table = "aghhid_section_e";
+    public static final String aghhid_section_g_table = "aghhid_section_g";
 
     private Context context;
     public DataHelper database;
@@ -6003,6 +6004,110 @@ public class DatabaseAdapter {
         return cursor;
     }
 
+
+    public Cursor savehh_Section_G_Data(String isSynced,
+                                        String isComplete,
+                                        String rcons_user,
+                                        String enum_code,
+                                        String enum_name,
+                                        String deviceid,
+                                        String insert_or_updated_in_phone_at,
+                                        String uploaded_time,
+                                        String build_no,
+                                        String village_id,
+                                        String hhid,
+                                        String g_1,
+                                        String g_2,
+                                        String g_3,
+                                        String g_4,
+                                        String g_5,
+                                        String g_6,
+                                        String g_7,
+                                        String g_8,
+                                        String g_urdu_1,
+                                        String g_urdu_2_a,
+                                        String g_urdu_2_b,
+                                        String g_urdu_3,
+                                        String g_urdu_4
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + aghhid_section_g_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("g_1", g_1);
+                contentValues.put("g_2", g_2);
+                contentValues.put("g_3", g_3);
+                contentValues.put("g_4", g_4);
+                contentValues.put("g_5", g_5);
+                contentValues.put("g_6", g_6);
+                contentValues.put("g_7", g_7);
+                contentValues.put("g_8", g_8);
+                contentValues.put("g_urdu_1", g_urdu_1);
+                contentValues.put("g_urdu_2_a", g_urdu_2_a);
+                contentValues.put("g_urdu_2_b", g_urdu_2_b);
+                contentValues.put("g_urdu_3", g_urdu_3);
+                contentValues.put("g_urdu_4", g_urdu_4);
+
+
+                db.insertOrThrow(aghhid_section_g_table, null, contentValues);
+
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("g_1", g_1);
+                contentValues.put("g_2", g_2);
+                contentValues.put("g_3", g_3);
+                contentValues.put("g_4", g_4);
+                contentValues.put("g_5", g_5);
+                contentValues.put("g_6", g_6);
+                contentValues.put("g_7", g_7);
+                contentValues.put("g_8", g_8);
+                contentValues.put("g_urdu_1", g_urdu_1);
+                contentValues.put("g_urdu_2_a", g_urdu_2_a);
+                contentValues.put("g_urdu_2_b", g_urdu_2_b);
+                contentValues.put("g_urdu_3", g_urdu_3);
+                contentValues.put("g_urdu_4", g_urdu_4);
+
+
+                db.update(aghhid_section_g_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
     public Cursor savepq_Section_C1_Data(String emp_id,
                                          String order_id,
                                          String farmer_id,
@@ -6990,6 +7095,16 @@ public class DatabaseAdapter {
 
     public Cursor getpq_section_b_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_b_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
+    public Cursor gethh_section_g_Data(String village_id, String hhid) {
+        String query = "SELECT * from " + aghhid_section_g_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
             return cursor;

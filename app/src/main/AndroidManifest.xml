@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.rcons.fcallbacks">
 
+    <uses-sdk tools:overrideLibrary="com.mubashar.dateandtime,com.mubashar.mubchatheadservice" />
+
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -14,8 +16,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
-    <uses-sdk tools:overrideLibrary="com.mubashar.dateandtime,com.mubashar.mubchatheadservice"/>
-
     <application
         android:name=".Utilties.AppController"
         android:icon="@drawable/ic_launcher"
@@ -25,7 +25,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:roundIcon">
-        <activity android:name=".ParentalQuestionnaire.pq_Section_A"></activity>
+        <activity android:name=".Athreehhid.Ad_Section_G"></activity>
+        <activity android:name=".ParentalQuestionnaire.pq_Section_A" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_C2" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_C1" />
         <activity android:name=".ParentalQuestionnaire.pq_Section_C3" />

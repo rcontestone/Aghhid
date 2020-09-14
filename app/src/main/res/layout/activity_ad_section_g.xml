@@ -1,0 +1,2356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Athreehhid.Ad_Section_G">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/v_ic_app_name"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/app_name"
+                android:textColor="@color/color_white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp">
+
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow_left_white_24dp"
+                    android:visibility="visible" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_RedialCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/black_color"
+                    android:contentDescription="Call"
+                    android:src="@drawable/call_icon_foreground"
+                    android:tint="@color/white_color" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_AddReportQuestionnaire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btn_RedialCall"
+                    android:contentDescription="report"
+                    android:src="@drawable/img_register"
+                    android:tint="@color/white_color" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/btnBack"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Section G"
+                    android:textColor="@color/color_white"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/white_color"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/txt_School_Code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/white_color"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="Village Code"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txt_Student_id"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/white_color"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="4dp"
+                    android:text="HHID Id"
+                    android:textAllCaps="false"
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="60dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/qg1_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q1_script"
+                            android:textColor="@color/instructions_color"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 1"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q1"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q1_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q1_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q1_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q1_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q1_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g1_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q1_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg2_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 2"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q2"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q2_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q2_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q2_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q2_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q2_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g2_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q2_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/qg3_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 2"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q3"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q3_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q3_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q3_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q3_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q3_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g3_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q3_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/qg4_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 4"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q4"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q4_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q4_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q4_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q4_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q4_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g4_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q4_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/qg5_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 5"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q5"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q5_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q5_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q5_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q5_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q5_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g5_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q5_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg6_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 4"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q6"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q6_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q6_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q6_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q6_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q6_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g6_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q6_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg7_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 4"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q7"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q7_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q7_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q7_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q7_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q7_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g7_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q7_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg8_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G 8"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_d_question_q8"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_d_question_q8_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_d_question_q8_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_d_question_q8_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_d_question_q8_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_d_question_q8_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g8_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_d_question_q8_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg_urdu_1_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G_urdu_1"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_e_question_q1"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g_urdu_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_e_question_q1_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_e_question_q1_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_e_question_q1_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_e_question_q1_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_e_question_q1_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_1_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_e_question_q1_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg_urdu_2_a_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. g_urdu_2_a"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_e_question_q2a"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g_urdu_2_a"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_e_question_q2a_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_e_question_q2a_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_e_question_q2a_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_e_question_q2a_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_e_question_q2a_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_a_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_e_question_q2a_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg_urdu_2_b_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. g_urdu_2_b"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_e_question_q2b"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g_urdu_2_b"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_e_question_q2b_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_e_question_q2b_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_e_question_q2b_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_e_question_q2b_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_e_question_q2b_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_2_b_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_e_question_q2b_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg_urdu_3_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G_urdu_3"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_e_question_q3"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g_urdu_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_e_question_q3_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_e_question_q3_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_e_question_q3_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_e_question_q3_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_e_question_q3_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_3_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_e_question_q3_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/qg_urdu_4_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/view_background_3"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/v_rounder_button_"
+                            android:gravity="center"
+                            android:text="Question No. G_urdu_4"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urdu"
+                            android:layoutDirection="rtl"
+                            android:lineSpacingExtra="24sp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/ad_section_e_question_q4"
+                            android:textColor="#AD1457"
+                            android:textSize="30sp" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_g_urdu_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="1"
+                                android:text="@string/ad_section_e_question_q4_option1"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="2"
+                                android:text="@string/ad_section_e_question_q4_option2"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_88"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-88"
+                                android:text="@string/ad_section_e_question_q4_option88"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_98"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-98"
+                                android:text="@string/ad_section_e_question_q4_option98"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_99"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-99"
+                                android:text="@string/ad_section_e_question_q4_option99"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbtn_g_urdu_4_777"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/view_background_2"
+                                android:fontFamily="@font/urdu"
+                                android:layoutDirection="rtl"
+                                android:lineSpacingExtra="24sp"
+                                android:maxWidth="10dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:tag="-777"
+                                android:text="@string/ad_section_e_question_q4_option777"
+                                android:textColor="#0E0308"
+                                android:textSize="24sp" />
+
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:fontFamily="serif"
+            android:text="Back"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounder_edittext_2"
+            android:fontFamily="serif"
+            android:text="Next"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

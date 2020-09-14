@@ -30,6 +30,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitshekhar.BuildConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
@@ -45,7 +46,6 @@ import com.rcons.fcallbacks.Utilties.StringUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import com.rcons.fcallbacks.BuildConfig;
 
 import static com.rcons.fcallbacks.Utilties.RConsUtils.hideKeyboard;
 import static com.rcons.fcallbacks.Utilties.RConsUtils.hideView;

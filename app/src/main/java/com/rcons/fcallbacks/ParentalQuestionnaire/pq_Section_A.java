@@ -35,10 +35,10 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.amitshekhar.BuildConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
-import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Questionnaire.Q_sectionC;
