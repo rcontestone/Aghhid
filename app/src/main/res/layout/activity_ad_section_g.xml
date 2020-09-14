@@ -162,7 +162,7 @@
                         android:layout_marginRight="5dp"
                         android:background="@drawable/view_background_3"
                         android:orientation="vertical"
-                        android:visibility="gone">
+                        android:visibility="visible">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -514,7 +514,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 2"
+                            android:text="Question No. G 3"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1007,7 +1007,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 4"
+                            android:text="Question No. G 6"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1172,7 +1172,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 4"
+                            android:text="Question No. G 7"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />

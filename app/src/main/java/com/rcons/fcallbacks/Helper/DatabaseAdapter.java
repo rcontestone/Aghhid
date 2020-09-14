@@ -6006,7 +6006,6 @@ public class DatabaseAdapter {
 
 
     public Cursor savehh_Section_G_Data(String isSynced,
-                                        String isComplete,
                                         String rcons_user,
                                         String enum_code,
                                         String enum_name,
@@ -6044,7 +6043,6 @@ public class DatabaseAdapter {
                 ContentValues contentValues = new ContentValues();
 
                 contentValues.put("isSynced", isSynced);
-                contentValues.put("isComplete", isComplete);
                 contentValues.put("rcons_user", rcons_user);
                 contentValues.put("enum_code", enum_code);
                 contentValues.put("enum_name", enum_name);
@@ -6076,7 +6074,6 @@ public class DatabaseAdapter {
                 ContentValues contentValues = new ContentValues();
 
                 contentValues.put("isSynced", isSynced);
-                contentValues.put("isComplete", isComplete);
                 contentValues.put("rcons_user", rcons_user);
                 contentValues.put("enum_code", enum_code);
                 contentValues.put("enum_name", enum_name);
