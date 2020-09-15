@@ -6175,7 +6175,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + aghhid_section_g_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+        str = "select Count(*) as count from " + aghhid_section_f_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -6186,7 +6186,6 @@ public class DatabaseAdapter {
                 ContentValues contentValues = new ContentValues();
 
                 contentValues.put("isSynced", isSynced);
-                contentValues.put("isComplete", isComplete);
                 contentValues.put("rcons_user", rcons_user);
                 contentValues.put("enum_code", enum_code);
                 contentValues.put("enum_name", enum_name);
@@ -6250,14 +6249,13 @@ public class DatabaseAdapter {
                 contentValues.put("f_6", f_6);
 
 
-                db.insertOrThrow(aghhid_section_g_table, null, contentValues);
+                db.insertOrThrow(aghhid_section_f_table, null, contentValues);
 
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
 
                 contentValues.put("isSynced", isSynced);
-                contentValues.put("isComplete", isComplete);
                 contentValues.put("rcons_user", rcons_user);
                 contentValues.put("enum_code", enum_code);
                 contentValues.put("enum_name", enum_name);
@@ -6321,7 +6319,7 @@ public class DatabaseAdapter {
                 contentValues.put("f_6", f_6);
 
 
-                db.update(aghhid_section_g_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+                db.update(aghhid_section_f_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
