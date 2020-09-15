@@ -736,7 +736,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:text="@string/relative_layout_new_stid_btnthreenextbtn"
+                                android:text="Save And Next Question"
                                 android:textSize="17sp" />
                         </RelativeLayout>
 

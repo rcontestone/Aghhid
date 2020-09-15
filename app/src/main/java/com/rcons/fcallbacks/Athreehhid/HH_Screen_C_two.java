@@ -1350,7 +1350,7 @@ public class HH_Screen_C_two extends Activity {
 
 
 
-            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_c_2( school_code , student_id , aghhid_c_2,aghhid_c1_given_number,   rcons_user , start_date_time);
+            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_c_2( school_code , student_id , aghhid_c_2,   rcons_user , start_date_time);
             return dataSaved;
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDatainDataBase() Exception is :"+e.toString());
@@ -1966,7 +1966,7 @@ public class HH_Screen_C_two extends Activity {
     public void setMigration1(View view) {
 
         aghhid_c_2 = "1";
-        hh_edtfield_q_2.setVisibility(View.VISIBLE);
+      //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
     }
 
     public void setMigration2(View view) {

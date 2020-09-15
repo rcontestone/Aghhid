@@ -69,7 +69,7 @@ public class HH_Screen_two_Section_e extends Activity {
     String firstName = "";
     String lastName = "";
     String aghhid_e_2 = "";
-    
+
     String aghhid_c1_given_number = "";
     String reTypedEmailID = "";
     String password = "";
@@ -231,7 +231,10 @@ public class HH_Screen_two_Section_e extends Activity {
             hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
 
 
-
+            String selectedGirl = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e1(appContext,school_code,student_id);
+            TextView hh_textview_q_2 = findViewById(R.id.hh_textview_q_2);
+            String qtext = getResources().getString(R.string.section_e_question_q2,selectedGirl);
+            hh_textview_q_2.setText(qtext);
 
 
             sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
@@ -760,7 +763,7 @@ public class HH_Screen_two_Section_e extends Activity {
         try {
 
 
-           // aghhid_c1_given_number = hh_edtfield_q_2.getText().toString();
+            // aghhid_c1_given_number = hh_edtfield_q_2.getText().toString();
             int rdg_checkedID = hh_edtfield_q_2_rdg.getCheckedRadioButtonId();
 
 
@@ -770,11 +773,11 @@ public class HH_Screen_two_Section_e extends Activity {
             }else
 
 
-                if (aghhid_e_2.length()==0){
-                    error =  true;
-                    showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
-                   // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
-                }
+            if (aghhid_e_2.length()==0){
+                error =  true;
+                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
+                // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+            }
 
 
 
@@ -1652,43 +1655,15 @@ public class HH_Screen_two_Section_e extends Activity {
 
         try {
             DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
-//			if (HHIDConfigurations.getMappingId(appContext)==null &&  !HHIDConfigurations.getSignInUpShownOneTime(appContext)){
-//
-//				if(launchedActivityName.equalsIgnoreCase("signup_part_two")){
-//
-//					setContentView(R.layout.sign_up);
-//
-//					launchedActivityName = "signup";
-//					initializeReferenceOfViews();
-//				}else{
-//
-//					if (!HHIDConfigurations.getSignInUpShownOneTime(appContext)) {
-//						if ("HH_MainActivity".equalsIgnoreCase(calledFromView)) {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_MainActivity.class);
-//							startActivity(backIntent);
-//						} else {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, ChildRemoteMonitoringActivity.class);
-//							startActivity(backIntent);
-//						}
-//					}
-//					calledFromView="";
-//					selfClose =  true;
-//					finish();
-//				}
-//			}else{
-//				finish();
-//
-//			}
 
+            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
 
-
-
-            calledFromView="";
-            selfClose =  true;
-
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra("isDataUpdated", false);
-            setResult(Activity.RESULT_OK, returnIntent);
+            intent.putExtra("m1b_parent_mobile",phone_number);
+            intent.putExtra("scode",school_code);
+            intent.putExtra("studentid",student_id);
+            intent.putExtra("m1b_student_name",student_name);
+            intent.putExtra("rcons_user",RConsUtils.getUserName());
+            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -1713,57 +1688,15 @@ public class HH_Screen_two_Section_e extends Activity {
         // TODO Auto-generated method stub
         //super.onBackPressed();
         try {
-            DebugLog.console("[HH_Screen_One] Inside onBackPressed:" );
+            DebugLog.console("[HH_Screen_One] Inside onBackPressed:" );   Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
 
-//			if (HHIDConfigurations.getMappingId(appContext)==null){
-//
-//				if(launchedActivityName.equalsIgnoreCase("signup_part_two")){
-//
-//					setContentView(R.layout.sign_up);
-//					launchedActivityName = "signup";
-//					initializeReferenceOfViews();
-//				}else{
-//
-//					if(!HHIDConfigurations.getSignInUpShownOneTime(appContext)) {
-//						if ("HH_MainActivity".equalsIgnoreCase(calledFromView)) {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_MainActivity.class);
-//							startActivity(backIntent);
-//						} else {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, ParentSelectDeviceActivity.class);
-//							startActivity(backIntent);
-//						}
-//					}
-//					calledFromView="";
-//					selfClose =  true;
-//					finish();
-//
-//
-//				}
-//
-//			}
-            calledFromView="";
-            selfClose =  true;
-
-//            Intent backIntent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
-//            backIntent.putExtra("launchActivity", "signup");
-//            startActivity(backIntent);
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra("isDataUpdated", false);
-            setResult(Activity.RESULT_OK, returnIntent);
-
-
-
-
-//            Intent intent = MpcUtil.buildNewIntent(appContext, Call.class);
-//
-//            intent.putExtra("m1b_parent_mobile",phone_number);
-//            intent.putExtra("scode",school_code);
-//            intent.putExtra("studentid",student_id);
-//            intent.putExtra("m1b_student_name",student_name);
-//            intent.putExtra("rcons_user",RConsUtils.getUserName());
-//            startActivity(intent);
+            intent.putExtra("m1b_parent_mobile",phone_number);
+            intent.putExtra("scode",school_code);
+            intent.putExtra("studentid",student_id);
+            intent.putExtra("m1b_student_name",student_name);
+            intent.putExtra("rcons_user",RConsUtils.getUserName());
+            startActivity(intent);
             finish();
-
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");
             finish();
@@ -1842,9 +1775,9 @@ public class HH_Screen_two_Section_e extends Activity {
 
                 if(e_2.trim().equalsIgnoreCase("1")) {
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(0).getId());
-                  //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
-                  //  numbers_sp_q_2.setVisibility(View.VISIBLE);
-                   // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
+                    //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
+                    //  numbers_sp_q_2.setVisibility(View.VISIBLE);
+                    // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
                 }
 
                 if(e_2.trim().equalsIgnoreCase("-111"))

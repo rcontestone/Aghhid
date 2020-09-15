@@ -1444,7 +1444,7 @@ public class HH_Screen_two extends Activity {
 //                        HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext) +"_hhid", CURRENT_HHID + "");
 
 
-                    if(aghhid_c_1.equalsIgnoreCase("-99")||aghhid_c_1.equalsIgnoreCase("-777")){
+                    if(aghhid_c_1.equalsIgnoreCase("-88")||aghhid_c_1.equalsIgnoreCase("-98")||aghhid_c_1.equalsIgnoreCase("-99")||aghhid_c_1.equalsIgnoreCase("-777")){
                         Intent intent = new Intent(HH_Screen_two.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -2036,7 +2036,7 @@ public class HH_Screen_two extends Activity {
         numbers_sp_q_2.setVisibility(View.GONE);
     }
     public void setMigration3(View view) {
-        aghhid_c_1 = "-888";
+        aghhid_c_1 = "-88";
         hh_edtfield_q_2.setVisibility(View.GONE);
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);

@@ -264,6 +264,16 @@ public class HH_Screen_four_Section_e extends Activity {
             //hh_edtfield_q_2.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
 
 
+
+
+            String selectedGirl = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e1(appContext,school_code,student_id);
+            TextView hh_textview_q_4 = findViewById(R.id.hh_textview_q_2);
+            String qtext = getResources().getString(R.string.section_e_question_q4,selectedGirl);
+            hh_textview_q_4.setText(qtext);
+
+
+
+
             /**
              * Enabling TextChangedListener for  Email-ID field signup
              * */

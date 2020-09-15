@@ -807,39 +807,32 @@ public class HH_Screen_three extends Activity {
 		boolean error = false;
 		try {
 
-			sign_in_back_btn.setVisibility(View.GONE);
+			//sign_in_back_btn.setVisibility(View.GONE);
 
 
-			Question_5_1 = edt_Question_5_1 .getText().toString();
-			Question_5_2 = edt_Question_5_2 .getText().toString();
-			Question_5_3 = edt_Question_5_3 .getText().toString();
-			Question_5_4 = edt_Question_5_4 .getText().toString();
+//			Question_5_1 = edt_Question_5_1 .getText().toString();
+//			Question_5_2 = edt_Question_5_2 .getText().toString();
+//			Question_5_3 = edt_Question_5_3 .getText().toString();
+//			Question_5_4 = edt_Question_5_4 .getText().toString();
 
 
-			hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString();
-			hh_edtfield_q_4_edt_answer = hh_edtfield_q_4.getText().toString().trim();
-
-			DebugLog.console("[HH_Screen_two] inside grabEnteredTextForscreenthreenextbtn() hh_edtfield_q_5_edt_answer "+hh_edtfield_q_5_edt_answer);
-			reTypedEmailID = editTextReTypeEmailID.getText().toString();
-			password = editTextPassword.getText().toString();
-			//hh_edtfield_q_3_edt_answer = //editTextConfirmPassword.getText().toString();
-			//phone = editTextPhone.getText().toString();
-			//userName = editTextUserName.getText().toString();
-			firstName = editTextfirstName.getText().toString();
-			//lastName = editTextLastName.getText().toString();
+//			hh_edtfield_q_5_edt_answer = hh_edtfield_q_5.getText().toString();
+//			hh_edtfield_q_4_edt_answer = hh_edtfield_q_4.getText().toString().trim();
 
 
 
-			if(!hh_edtfield_q_5_edt_answer.equalsIgnoreCase("")){
-				if(hh_edtfield_q_5_edt_answer.equalsIgnoreCase("999") || hh_edtfield_q_5_edt_answer.equalsIgnoreCase("888")){
 
-				}else{
-					error = true;
-					showAlert(appContext.getResources().getString(R.string.app_name),"Only 999 & 888 allowed");
-				}
-
-
-			}else
+//
+//			if(!hh_edtfield_q_5_edt_answer.equalsIgnoreCase("")){
+//				if(hh_edtfield_q_5_edt_answer.equalsIgnoreCase("999") || hh_edtfield_q_5_edt_answer.equalsIgnoreCase("888")){
+//
+//				}else{
+//					error = true;
+//					showAlert(appContext.getResources().getString(R.string.app_name),"Only 999 & 888 allowed");
+//				}
+//
+//
+//			}else
 
 
 			if (!c05Next(null)){
@@ -1404,42 +1397,34 @@ public class HH_Screen_three extends Activity {
 		boolean dataSaved = false;
 		try {
 
-
-
-
 			dataSaved = true;//HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_screen_three(District_Code ,  District_Name , Tehsil_code , Tehsil_Name , PSU_code , PSU_name , Structure_id , HH_id ,hhid_q5);
-
 
 			if (dataSaved){
 
-//				if(hhid_q5.equalsIgnoreCase("999") || hhid_q5.equalsIgnoreCase("888")){
-//					//Todo delete code from phone tab;e
-//
-//
-//
-				dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_delete_hhid(school_code,student_id);
-//					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() datadeleted "+dataSaved);
-//				}else{
 
+				DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() "+numberList.size());
+
+
+				dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_delete_hhid(school_code,student_id,numberList.get(0));
 
 				for (int k=0; k<numberList.size(); k++){
 					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() number"+numberList.get(k).toString(0));
 					DebugLog.console("[HH_Screen_three] inside saveDatainDataBase()=================================== ");
-
 					dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_insert_member_list(school_code,student_id,numberList.get(k));
 
 
 				}
 
-//				}
 
 			}else{
-
-
 
 			}
 
 
+			if(dataSaved){
+				numberList = new ArrayList<JSONObject>();
+				DebugLog.console("[HH_Screen_three] inside saveDatainDataBase() numberList reinitilized ");
+			}
 
 			return dataSaved;
 		} catch (Exception e) {
@@ -1490,22 +1475,11 @@ public class HH_Screen_three extends Activity {
 				boolean screen_three = true;
 
 
-
-
-				//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
-
-
 				if (screen_three ) {
 
-				 Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
 
-            intent.putExtra("m1b_parent_mobile",phone_number);
-            intent.putExtra("scode",school_code);
-            intent.putExtra("studentid",student_id);
-            intent.putExtra("m1b_student_name",student_name);
-            intent.putExtra("rcons_user",RConsUtils.getUserName());
-            startActivity(intent);
-            finish();
+					askuserfornext();
+
 					return;
 				}
 
@@ -1628,8 +1602,32 @@ public class HH_Screen_three extends Activity {
 
 	}
 
+	private void askuserfornext() {
+
+		try {
 
 
+			JSONArray phonedataarray = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).agghhid_getDataFromMemberTable(appContext, school_code,student_id);
+
+			List<String > name =   new ArrayList<String>();
+			String hhidlisthaving_numbers ="";
+			if (phonedataarray != null) {
+				int len = phonedataarray.length();
+
+				for (int i=0;i<len;i++){
+					name.add(phonedataarray.getJSONObject(i).getString("d_2"));
+					DebugLog.console("[HH_Screen_three] inside askuserfornext() name "+name.get(i));
+				}
+				hhidlisthaving_numbers = android.text.TextUtils.join("\r\n", name);
+			}
+
+			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
+			showAlert("MemList","Total memcount : "+name.size()+"\r\n "+hhidlisthaving_numbers+"\r\nDo you want to add more");
+
+		} catch (Exception e) {
+		    EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside askuserfornext() Exception is :"+e.toString());
+		}
+	}
 
 
 	private void saveDataNow() {
@@ -1908,10 +1906,24 @@ public class HH_Screen_three extends Activity {
 		new AlertDialog.Builder(HH_Screen_three.this)
 				.setTitle(title)
 				.setMessage(message)
-				.setPositiveButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
+				.setPositiveButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener(){
 					public void onClick(DialogInterface dialog, int which){
+						setResult(RESULT_OK);
+						Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
+
+						intent.putExtra("m1b_parent_mobile",phone_number);
+						intent.putExtra("scode",school_code);
+						intent.putExtra("studentid",student_id);
+						intent.putExtra("m1b_student_name",student_name);
+						intent.putExtra("rcons_user",RConsUtils.getUserName());
+						startActivity(intent);
+						finish();
 					}
-				})
+				}).setNegativeButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int which){
+				setResult(RESULT_CANCELED);
+			}
+		})
 				.show();
 	}
 
@@ -2109,20 +2121,22 @@ public class HH_Screen_three extends Activity {
 			DebugLog.console("[HH_Screen_three] inside memberarray onStart() "+phonedataarray.toString());
 
 
-			if(numberList==null){
-				numberList = new ArrayList<JSONObject>();}else{
-				numberList.clear();
-			}
-
-			if (phonedataarray != null) {
-				int len = phonedataarray.length();
-				for (int i=0;i<len;i++){
-					numberList.add(phonedataarray.getJSONObject(i));
-				}
-			}
-
-
-			DebugLog.console("[HH_Screen_three] inside onStart() numberList "+numberList.size());
+//			if(numberList==null){
+//				numberList = new ArrayList<JSONObject>();
+//
+//			}else{
+//				numberList.clear();
+//			}
+//
+//			if (phonedataarray != null) {
+//				int len = phonedataarray.length();
+//				for (int i=0;i<len;i++){
+//					numberList.add(phonedataarray.getJSONObject(i));
+//				}
+//			}
+//
+//
+//			DebugLog.console("[HH_Screen_three] inside onStart() numberList "+numberList.size());
 
 
 
@@ -2631,7 +2645,7 @@ public class HH_Screen_three extends Activity {
 //
 //				hh_textview_d_1.setText(numberList.size()+"");
 //			}
-int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
+			int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
 			count = count+1;
 			hh_textview_d_1.setText(count+"");
 			Button callbutton =view.findViewById(R.id.callbutton);
@@ -2862,7 +2876,7 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 			if(main.getChildCount()==0){
 				//TODO store
 				//Toast.makeText(this, "Please add at least one r", Toast.LENGTH_SHORT).show();
-				return true;
+				//	return true;
 			}else{
 
 
@@ -2999,11 +3013,19 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 					}
 
 
-					if(numberList.size()==0) {
-						obj.put("d_1", i + 1);
-					}else{
-						obj.put("d_1", numberList.size());
-					}
+//					if(numberList.size()==0) {
+//						obj.put("d_1", i + 1);
+//					}else{
+//
+//						obj.put("d_1", numberList.size());
+//					}
+
+					int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
+					count = count+1;
+//					if(numberList.size()==0) {
+					obj.put("d_1", count);
+
+
 
 					obj.put("d_2",editTextd_2.getText().toString().trim());
 
@@ -3081,13 +3103,17 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 
 
 
-
+			if(main.getChildCount()==0){
+				askuserfornext();
+				return true;
+			}
 
 
 
 			if(!error) {
 
 				saveDataNowAndNext();
+				main.removeAllViews();
 				return true;
 
 			}
@@ -3263,7 +3289,7 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 					int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getmaxmemberindhhid(appContext,school_code,student_id);
 					count = count+1;
 //					if(numberList.size()==0) {
-						obj.put("d_1", count);
+					obj.put("d_1", count);
 //					}else{
 //						obj.put("d_1", count);
 //					}
@@ -3308,7 +3334,7 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 					}else if  (q_7_rdg_checkedID==R.id.hh_textview_d_7_rgp_op_4){
 						d_7="4";
 					}else{
-					//	error = true;
+						//	error = true;
 					}
 
 
@@ -3326,7 +3352,7 @@ int count = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getm
 					}else if  (q_8_rdg_checkedID==R.id.hh_textview_d_8_rgp_op_4){
 						d_8="4";
 					}else{
-					//	error = true;
+						//	error = true;
 					}
 
 

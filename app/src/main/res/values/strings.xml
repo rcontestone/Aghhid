@@ -704,7 +704,7 @@
 
 
     <string name="section_e_question_q1"> جوابدہندہ سے مت پوچھیں(روسٹر کے مطابق نوٹ کریں) روسٹر سے دیکھ کر 9سے19سال کے درمیان ایسی لڑکی کو منتخب کریں جو فروری 2020 میں سکول نہیں جاتی تھی اور /یا سکول کھلنے پر دوبارہ سکول نہیں جائے گی۔ اگر کوئی ایسی لڑکی نہ ہو تب کسی اور9سے 19سال کے درمیان والی  لڑکی کو منتخب کرلیں</string>
-    <string name="section_e_question_q2"> ہم آپ سے تعلیم کے مختلف مواقع کے بارے  میں  آپ کی رائے  جاننا چاہتے ہیں۔کیا آپ (E01والی لڑکی کا نام بولیں)کوخاص طور پر 9سے 19سال کی بچیوں  کےلئے پڑھنے کے پروگرام میں داخل کروا ئیں گے  اور یہ پیشکش آپ کے گاؤں ہی میں کی جائے اور پڑھانے کےلئے خاتون استاد ہوں؟ </string>
+    <string name="section_e_question_q2"> ہم آپ سے تعلیم کے مختلف مواقع کے بارے  میں  آپ کی رائے  جاننا چاہتے ہیں۔کیا آپ  \u0020  %1$s  کوخاص طور پر 9سے 19سال کی بچیوں  کےلئے پڑھنے کے پروگرام میں داخل کروا ئیں گے  اور یہ پیشکش آپ کے گاؤں ہی میں کی جائے اور پڑھانے کےلئے خاتون استاد ہوں؟ </string>
     <string name="section_e_question_q2_option1">1~ ہاں </string>
     <string name="section_e_question_q2_option2">2~ نہیں </string>
     <string name="section_e_question_q2_option88">88~ جواب نہیں دیا </string>
@@ -733,7 +733,7 @@
     <string name="section_e_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="section_e_question_q3_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_e_question_q4"> کیا آپ (E01والی لڑکی کا نام بولیں)کو اوپر بیان کردہ کسی  ایسے پروگرام میں داخل  کروائیں گے  جو اس کو  سکول جانے کی بجائے، آپ کے گھرانے کے موبائل فون اور گھرانے کے ٹی وی کو استعمال کرتے ہوئے پیش کیا جائے؟ </string>
+    <string name="section_e_question_q4"> کیا آپ  \u0020  %1$s کو اوپر بیان کردہ کسی  ایسے پروگرام میں داخل  کروائیں گے  جو اس کو  سکول جانے کی بجائے، آپ کے گھرانے کے موبائل فون اور گھرانے کے ٹی وی کو استعمال کرتے ہوئے پیش کیا جائے؟ </string>
     <string name="section_e_question_q4_option1"> ہاں </string>
     <string name="section_e_question_q4_option2"> نہیں </string>
     <string name="section_e_question_q4_option88">88~ جواب نہیں دیا </string>
@@ -741,7 +741,7 @@
     <string name="section_e_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="section_e_question_q4_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_e_question_q5"> کیا آپ (E01والی لڑکی کا نام بولیں)کو اوپر بیان کردہ کسی  ایسے پروگرام میں داخل  کروائیں گے  جو اس کو  سکول جانے کی بجائے، آپ کے گھرانے کے ٹی وی کو استعمال کرتے ہوئے پیش کیا جائے؟ </string>
+    <string name="section_e_question_q5"> کیا آپ \u0020  %1$s کو اوپر بیان کردہ کسی  ایسے پروگرام میں داخل  کروائیں گے  جو اس کو  سکول جانے کی بجائے، آپ کے گھرانے کے ٹی وی کو استعمال کرتے ہوئے پیش کیا جائے؟ </string>
     <string name="section_e_question_q5_option1"> ہاں </string>
     <string name="section_e_question_q5_option2"> نہیں </string>
     <string name="section_e_question_q5_option88">88~ جواب نہیں دیا </string>
@@ -757,12 +757,12 @@
     <string name="section_e_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="section_e_question_q6_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_e_question_q7"> ہم اس گاؤں کی بچیوں کی رائے بھی جاننے کی کوشش کر رہے ہیں۔کیا میں (E01والی لڑکی کا نام بولیں)سے کچھ سوالات ان کی پڑھائی ، آنے جانے، خواندگی اور حساب کتاب  کی مہارت کے متعلق  کر سکتی ہوں؟ </string>
+    <string name="section_e_question_q7"> ہم اس گاؤں کی بچیوں کی رائے بھی جاننے کی کوشش کر رہے ہیں۔کیا میں \u0020  %1$s سے کچھ سوالات ان کی پڑھائی ، آنے جانے، خواندگی اور حساب کتاب  کی مہارت کے متعلق  کر سکتی ہوں؟ </string>
     <string name="section_e_question_q7_option1">1~ ہاں </string>
     <string name="section_e_question_q7_option2">2~ نہیں، یہ ٹھیک نہیں </string>
     <string name="section_e_question_q7_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_e_question_q8"> برائے مہربانی نوٹ فرمالیں کہ اس سروے میں مہیا کی جانے والی کوئی بھی معلومات مکمل طور پر راز میں رکھی جائے گی اور آپ یا (E01والی لڑکی کا نام بولیں)بالکل بھی متاثر نہیں ہوں گے۔ کیاآپ بتاسکتے ہیں کہ آپ (E01والی لڑکی کا نام بولیں)کو اس سروے میں حصہ کیوں نہیں لینے دے رہے؟ </string>
+    <string name="section_e_question_q8"> برائے مہربانی نوٹ فرمالیں کہ اس سروے میں مہیا کی جانے والی کوئی بھی معلومات مکمل طور پر راز میں رکھی جائے گی اور آپ یا  \u0020  %1$s بالکل بھی متاثر نہیں ہوں گے۔ کیاآپ بتاسکتے ہیں کہ آپ (E01والی لڑکی کا نام بولیں)کو اس سروے میں حصہ کیوں نہیں لینے دے رہے؟ </string>
     <string name="section_e_question_q8_instructions"> کوڈز پڑھ کر مت سنائیں لاگو ہونے والے تمام جوابات نوٹ کریں</string>
     <string name="section_e_question_q8_option1">1~  اسے اجنبیوں سے بات کرنے کی اجازت نہیں ہے </string>
     <string name="section_e_question_q8_option2"> 2~ مذہبی وجوہات </string>
@@ -777,7 +777,7 @@
     <string name="section_e_question_q9_option1">1~ ہاں </string>
     <string name="section_e_question_q9_option2">2~ نہیں، کوئی سوال نہیں </string>
 
-    <string name="section_e_question_q10"> کیا آ پ (E01والی لڑکی کا نام بولیں) کو اپنے پاس بلا سکتے ہیں یا اسے فون دے سکتے ہیں </string>
+    <string name="section_e_question_q10"> کیا آ پ \u0020  %1$s کو اپنے پاس بلا سکتے ہیں یا اسے فون دے سکتے ہیں </string>
     <string name="section_e_question_q10_option1"> ہاں، (Adolescentسوالنامہ شروع کریں </string>
     <string name="section_e_question_q10_option2"> نہیں، ابھی وہ موجود نہیں </string>
     <string name="section_e_question_q10_option99">99~ مزید بات سے انکار کر دیا </string>
@@ -1059,5 +1059,6 @@
     <string name="ad_section_f_question_q2_option1">1~ ہاں سارا وقت </string>
     <string name="ad_section_f_question_q2_option2">2~ ہاں کچھ وقت </string>
     <string name="ad_section_f_question_q2_option3">3~ نہیں </string>
+    <string name="no">No</string>
 
 </resources>

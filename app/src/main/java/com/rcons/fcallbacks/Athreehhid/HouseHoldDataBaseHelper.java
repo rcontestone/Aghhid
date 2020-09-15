@@ -1812,7 +1812,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean hhid_insert_data_c_2(String village_id ,String hhid , String c2, String c1_given_number, String user_name , String start_date_time) {
+    public synchronized boolean hhid_insert_data_c_2(String village_id ,String hhid , String c2, String user_name , String start_date_time) {
         boolean updated =false;
         try {
 
@@ -2490,7 +2490,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean aghhid_delete_hhid(String village_id,String hhid) {
+    public synchronized boolean aghhid_delete_hhid(String village_id,String hhid,JSONObject member) {
         try {
 
 
@@ -2512,7 +2512,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 //            cv.put("user_name", HHIDConfigurations.getPeshawarCurrentLoggedInUser(mContext).toUpperCase());
 //            cv.put("device_id", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
 
-            int id =  db.delete(DatabaseAdapter.aghhid_section_d_table,  "hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"'",null);
+            int id =  db.delete(DatabaseAdapter.aghhid_section_d_table,  "hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"' AND d_1 = '"+member.getInt("d_1")+"".toUpperCase()+"'",null);
             DebugLog.console("[HouseHoldDataBaseHelper] HHID_Survey_PHONE_LIST aghhid_delete_hhid aghhid_delete_hhid  delete() "+id);
 
 
@@ -2586,7 +2586,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         try {
             openDB();
             JSONArray dataArray = new JSONArray();
-            JSONObject data =  new JSONObject();
+            JSONObject data =  null;
             Cursor curCSV = db.rawQuery("SELECT * FROM  "+ DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'",null);
             DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() village_id "+village_id);
             DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() hhid"+hhid);
@@ -2609,6 +2609,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 //curCSV.moveToFirst();
                 while (curCSV.moveToNext()) {
                     //Which column you want to exprort
+                    data =  new JSONObject();
                     int index = 0;
                     while (index < count) {
                         //  arrStr[index] = curCSV.getString(index);
@@ -2689,7 +2690,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             // JSONArray dataArray = new JSONArray();
             //JSONObject data =  new JSONObject();
 
-            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (10,11,12,13,14,15,16,17,18) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
+            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
             Cursor cursor = db.rawQuery(query,null);
 
@@ -2737,7 +2738,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             // JSONArray dataArray = new JSONArray();
             //JSONObject data =  new JSONObject();
 
-            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (10,11,12,13,14,15,16,17,18)";
+            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19)";
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
             Cursor cursor = db.rawQuery(query,null);
 
@@ -2774,6 +2775,48 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public synchronized  String  aghhid_get_member_selected_in_e1(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        //  ArrayList<String> spinnerArray = new ArrayList<String>();
+        // spinnerArray.add("Show Previous Numbers");
+        String name = "";
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+
+            String querry = "SELECT e_1  FROM  "+DatabaseAdapter.aghhid_section_e_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_get_member_selected_in_e1() querry "+querry);
+            Cursor cursor = db.rawQuery(querry,null);
+            int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_get_member_selected_in_e1() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    name = cursor.getString(cursor.getColumnIndex("e_1"));
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_get_member_selected_in_e1() hhid "+name);
+                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+count);
+            return name;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return "";
+        }
+    }
 
     public synchronized  int  aghhid_memberid_against_name(Context appContext, String village_id,String hhid, String name){
         long rowId = 1;
