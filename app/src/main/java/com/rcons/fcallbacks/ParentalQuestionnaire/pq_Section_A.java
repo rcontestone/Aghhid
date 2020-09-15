@@ -40,6 +40,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.Athreehhid.Ad_Section_G;
+import com.rcons.fcallbacks.Athreehhid.HH_Screen_two;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Questionnaire.Q_sectionC;
@@ -871,7 +872,7 @@ public class pq_Section_A extends AppCompatActivity {
 
                             } else {
                                 SaveData();
-                                Intent intent = new Intent(pq_Section_A.this, pq_Section_B.class);
+                                Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -884,7 +885,7 @@ public class pq_Section_A extends AppCompatActivity {
                             }
                         } else {
                             SaveData();
-                            Intent intent = new Intent(pq_Section_A.this, pq_Section_B.class);
+                            Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);

@@ -314,8 +314,8 @@ public class CallMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stopChatHeadService();
-//                Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
-                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
+                Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
+//                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
 //                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_one_section_e.class);
 
                 intent.putExtra("isPendingCall", isPendingCall);

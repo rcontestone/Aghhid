@@ -8,8 +8,8 @@ android {
         applicationId "com.rcons.aghhid"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1"
+        versionCode 2
+        versionName "2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -54,7 +54,6 @@ dependencies {
     implementation project(":mubchathead")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
     ////////////////////// Material Design Snack Bar  ///////////
 }
 
