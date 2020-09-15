@@ -66,6 +66,8 @@ public class DatabaseAdapter {
     public static final String pq_section_a2_table = "aghhid_section_a2";
     public static final String pq_section_a3_table = "aghhid_section_a3";
     public static final String pq_section_a4_table = "aghhid_section_a4";
+    public static final String pq_section_a5_table = "aghhid_section_a5";
+    public static final String pq_section_a6_table = "aghhid_section_a6";
     public static final String pq_section_b_table = "pq_section_b";
     public static final String pq_section_c1_table = "pq_section_c1";
     public static final String pq_section_c2_table = "pq_section_c2";
@@ -5263,6 +5265,7 @@ public class DatabaseAdapter {
                                         String build_no,
                                         String school_code,
                                         String student_id,
+                                        String phone_number,
                                         String a1,
                                         String a2,
                                         String a3,
@@ -5411,6 +5414,7 @@ public class DatabaseAdapter {
                                          String build_no,
                                          String school_code,
                                          String student_id,
+                                         String phone_number,
                                          String a1,
                                          String a2,
                                          String a3,
@@ -5560,6 +5564,7 @@ public class DatabaseAdapter {
                                          String build_no,
                                          String school_code,
                                          String student_id,
+                                         String phone_number,
                                          String a1,
                                          String a2,
                                          String a3,
@@ -5707,6 +5712,7 @@ public class DatabaseAdapter {
                                          String build_no,
                                          String school_code,
                                          String student_id,
+                                         String phone_number,
                                          String a1,
                                          String a2,
                                          String a3,
@@ -5835,6 +5841,302 @@ public class DatabaseAdapter {
 
 
                 db.update(pq_section_a4_table, contentValues, "school_code=" + school_code + " and student_id=" + student_id, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
+    public Cursor savepq_Section_A5_Data(String emp_id,
+                                         String order_id,
+                                         String farmer_id,
+                                         String rcons_user,
+                                         String enum_code,
+                                         String enum_name,
+                                         String isComplete,
+                                         String isSynced,
+                                         String insert_or_updated_in_phone_at,
+                                         String deviceid,
+                                         String build_no,
+                                         String school_code,
+                                         String student_id,
+                                         String phone_number,
+                                         String a1,
+                                         String a2,
+                                         String a3,
+                                         String a4,
+                                         String a4_a,
+                                         String a4_b,
+                                         String a4_c,
+                                         String a4_c_other,
+                                         String a4_d,
+                                         String a4_d_other,
+                                         String a4_day,
+                                         String a4_month,
+                                         String a4_year,
+                                         String a4_hh,
+                                         String a4_mm,
+                                         String a4_number,
+                                         String a5,
+                                         String a5_a,
+                                         String a6,
+                                         String a6_other,
+                                         String a6_day,
+                                         String a6_month,
+                                         String a6_year,
+                                         String a6_hh,
+                                         String a6_mm,
+                                         String a7) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + pq_section_a5_table + " where  school_code= " + school_code + " AND student_id= " + student_id + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("emp_id", emp_id);
+                contentValues.put("order_id", order_id);
+                contentValues.put("farmer_id", farmer_id);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("build_no", build_no);
+                contentValues.put("school_code", school_code);
+                contentValues.put("student_id", student_id);
+                contentValues.put("a1", a1);
+                contentValues.put("a2", a2);
+                contentValues.put("a3", a3);
+                contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
+                contentValues.put("a4_day", a4_day);
+                contentValues.put("a4_month", a4_month);
+                contentValues.put("a4_year", a4_year);
+                contentValues.put("a4_hh", a4_hh);
+                contentValues.put("a4_mm", a4_mm);
+                contentValues.put("a4_number", a4_number);
+                contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
+                contentValues.put("a6", a6);
+                contentValues.put("a6_other", a6_other);
+                contentValues.put("a6_day", a6_day);
+                contentValues.put("a6_month", a6_month);
+                contentValues.put("a6_year", a6_year);
+                contentValues.put("a6_hh", a6_hh);
+                contentValues.put("a6_mm", a6_mm);
+                contentValues.put("a7", a7);
+
+
+                db.insertOrThrow(pq_section_a5_table, null, contentValues);
+
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("emp_id", emp_id);
+                contentValues.put("order_id", order_id);
+                contentValues.put("farmer_id", farmer_id);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("build_no", build_no);
+                contentValues.put("school_code", school_code);
+                contentValues.put("student_id", student_id);
+                contentValues.put("a1", a1);
+                contentValues.put("a2", a2);
+                contentValues.put("a3", a3);
+                contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
+                contentValues.put("a4_day", a4_day);
+                contentValues.put("a4_month", a4_month);
+                contentValues.put("a4_year", a4_year);
+                contentValues.put("a4_hh", a4_hh);
+                contentValues.put("a4_mm", a4_mm);
+                contentValues.put("a4_number", a4_number);
+                contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
+                contentValues.put("a6", a6);
+                contentValues.put("a6_other", a6_other);
+                contentValues.put("a6_day", a6_day);
+                contentValues.put("a6_month", a6_month);
+                contentValues.put("a6_year", a6_year);
+                contentValues.put("a6_hh", a6_hh);
+                contentValues.put("a6_mm", a6_mm);
+                contentValues.put("a7", a7);
+
+
+                db.update(pq_section_a5_table, contentValues, "school_code=" + school_code + " and student_id=" + student_id, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
+    public Cursor savepq_Section_A6_Data(String emp_id,
+                                         String order_id,
+                                         String farmer_id,
+                                         String rcons_user,
+                                         String enum_code,
+                                         String enum_name,
+                                         String isComplete,
+                                         String isSynced,
+                                         String insert_or_updated_in_phone_at,
+                                         String deviceid,
+                                         String build_no,
+                                         String school_code,
+                                         String student_id,
+                                         String phone_number,
+                                         String a1,
+                                         String a2,
+                                         String a3,
+                                         String a4,
+                                         String a4_a,
+                                         String a4_b,
+                                         String a4_c,
+                                         String a4_c_other,
+                                         String a4_d,
+                                         String a4_d_other,
+                                         String a4_day,
+                                         String a4_month,
+                                         String a4_year,
+                                         String a4_hh,
+                                         String a4_mm,
+                                         String a4_number,
+                                         String a5,
+                                         String a5_a,
+                                         String a6,
+                                         String a6_other,
+                                         String a6_day,
+                                         String a6_month,
+                                         String a6_year,
+                                         String a6_hh,
+                                         String a6_mm,
+                                         String a7) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + pq_section_a6_table + " where  school_code= " + school_code + " AND student_id= " + student_id + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("emp_id", emp_id);
+                contentValues.put("order_id", order_id);
+                contentValues.put("farmer_id", farmer_id);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("build_no", build_no);
+                contentValues.put("school_code", school_code);
+                contentValues.put("student_id", student_id);
+                contentValues.put("a1", a1);
+                contentValues.put("a2", a2);
+                contentValues.put("a3", a3);
+                contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
+                contentValues.put("a4_day", a4_day);
+                contentValues.put("a4_month", a4_month);
+                contentValues.put("a4_year", a4_year);
+                contentValues.put("a4_hh", a4_hh);
+                contentValues.put("a4_mm", a4_mm);
+                contentValues.put("a4_number", a4_number);
+                contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
+                contentValues.put("a6", a6);
+                contentValues.put("a6_other", a6_other);
+                contentValues.put("a6_day", a6_day);
+                contentValues.put("a6_month", a6_month);
+                contentValues.put("a6_year", a6_year);
+                contentValues.put("a6_hh", a6_hh);
+                contentValues.put("a6_mm", a6_mm);
+                contentValues.put("a7", a7);
+
+
+                db.insertOrThrow(pq_section_a6_table, null, contentValues);
+
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("emp_id", emp_id);
+                contentValues.put("order_id", order_id);
+                contentValues.put("farmer_id", farmer_id);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("isComplete", isComplete);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("build_no", build_no);
+                contentValues.put("school_code", school_code);
+                contentValues.put("student_id", student_id);
+                contentValues.put("a1", a1);
+                contentValues.put("a2", a2);
+                contentValues.put("a3", a3);
+                contentValues.put("a4", a4);
+                contentValues.put("a4_a", a4_a);
+                contentValues.put("a4_b", a4_b);
+                contentValues.put("a4_c", a4_c);
+                contentValues.put("a4_c_other", a4_c_other);
+                contentValues.put("a4_d", a4_d);
+                contentValues.put("a4_d_other", a4_d_other);
+                contentValues.put("a4_day", a4_day);
+                contentValues.put("a4_month", a4_month);
+                contentValues.put("a4_year", a4_year);
+                contentValues.put("a4_hh", a4_hh);
+                contentValues.put("a4_mm", a4_mm);
+                contentValues.put("a4_number", a4_number);
+                contentValues.put("a5", a5);
+                contentValues.put("a5_a", a5_a);
+                contentValues.put("a6", a6);
+                contentValues.put("a6_other", a6_other);
+                contentValues.put("a6_day", a6_day);
+                contentValues.put("a6_month", a6_month);
+                contentValues.put("a6_year", a6_year);
+                contentValues.put("a6_hh", a6_hh);
+                contentValues.put("a6_mm", a6_mm);
+                contentValues.put("a7", a7);
+
+
+                db.update(pq_section_a6_table, contentValues, "school_code=" + school_code + " and student_id=" + student_id, null);
             }
         }
         cursor.close();
@@ -6034,7 +6336,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + aghhid_section_f_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+        str = "select Count(*) as count from " + aghhid_section_g_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -6069,7 +6371,7 @@ public class DatabaseAdapter {
                 contentValues.put("g_urdu_4", g_urdu_4);
 
 
-                db.insertOrThrow(aghhid_section_f_table, null, contentValues);
+                db.insertOrThrow(aghhid_section_g_table, null, contentValues);
 
             } else {
                 db = database.getWritableDatabase();
@@ -6100,7 +6402,7 @@ public class DatabaseAdapter {
                 contentValues.put("g_urdu_4", g_urdu_4);
 
 
-                db.update(aghhid_section_f_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+                db.update(aghhid_section_g_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -7313,6 +7615,26 @@ public class DatabaseAdapter {
         }
     }
 
+    public Cursor getpq_section_a5_Data(String school_code, String student_id) {
+        String query = "SELECT * from " + pq_section_a5_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
+    public Cursor getpq_section_a6_Data(String school_code, String student_id) {
+        String query = "SELECT * from " + pq_section_a6_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
     public Cursor getpq_section_b_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_b_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
@@ -7572,6 +7894,104 @@ public class DatabaseAdapter {
         cursor.close();
         return cursor;
     }
+
+    public Cursor savepq_interview_start_sc5(
+            String scode,
+            String studentid,
+            String sc5_start_year,
+            String sc5_start_month,
+            String sc5_start_day,
+            String sc5_start_hh,
+            String sc5_start_mm
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+                contentValues.put("sc5_start_year", sc5_start_year);
+                contentValues.put("sc5_start_month", sc5_start_month);
+                contentValues.put("sc5_start_day", sc5_start_day);
+                contentValues.put("sc5_start_hh", sc5_start_hh);
+                contentValues.put("sc5_start_mm", sc5_start_mm);
+
+                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+                contentValues.put("sc5_start_year", sc5_start_year);
+                contentValues.put("sc5_start_month", sc5_start_month);
+                contentValues.put("sc5_start_day", sc5_start_day);
+                contentValues.put("sc5_start_hh", sc5_start_hh);
+                contentValues.put("sc5_start_mm", sc5_start_mm);
+
+                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
+
+    public Cursor savepq_interview_start_sc6(
+            String scode,
+            String studentid,
+            String sc6_start_year,
+            String sc6_start_month,
+            String sc6_start_day,
+            String sc6_start_hh,
+            String sc6_start_mm
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+                contentValues.put("sc6_start_year", sc6_start_year);
+                contentValues.put("sc6_start_month", sc6_start_month);
+                contentValues.put("sc6_start_day", sc6_start_day);
+                contentValues.put("sc6_start_hh", sc6_start_hh);
+                contentValues.put("sc6_start_mm", sc6_start_mm);
+
+                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+                contentValues.put("sc6_start_year", sc6_start_year);
+                contentValues.put("sc6_start_month", sc6_start_month);
+                contentValues.put("sc6_start_day", sc6_start_day);
+                contentValues.put("sc6_start_hh", sc6_start_hh);
+                contentValues.put("sc6_start_mm", sc6_start_mm);
+
+                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
 
     public Cursor getpq_section_c1_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_c1_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
@@ -8543,8 +8963,6 @@ public class DatabaseAdapter {
             return new JSONArray();
         }
     }
-
-
 
 
 }

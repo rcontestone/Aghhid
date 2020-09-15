@@ -225,12 +225,12 @@ public class Ad_Section_F extends AppCompatActivity {
         databaseAccess.Open();
 
 
-        phone_number = getIntent().getStringExtra("farmer_cellphone");
-        id = getIntent().getStringExtra("id");
-        village_id = getIntent().getStringExtra("school_code");
-        hhid = getIntent().getStringExtra("student_id");
-        student_name = getIntent().getStringExtra("student_name");
-        school_name = getIntent().getStringExtra("school_name");
+        phone_number = getIntent().getStringExtra("m1b_parent_mobile");
+        village_id = getIntent().getStringExtra("scode");
+        hhid = getIntent().getStringExtra("studentid");
+        student_name = getIntent().getStringExtra("m1b_student_name");
+        school_name = "";//getIntent().getStringExtra("m2_school_name");
+        rcons_user = RConsUtils.getUserName();
 
         txt_School_Code.setText("Village Code : " + village_id);
         txt_Student_id.setText("HH Id : " + hhid);
@@ -276,10 +276,11 @@ public class Ad_Section_F extends AppCompatActivity {
                             RConsUtils.hideView(qf1_layout, qf3_layout);
                         } else if (f_1.equalsIgnoreCase("-99") || f_1.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else {
                             RConsUtils.hideView(qf1_layout, qf2_layout);
@@ -297,6 +298,7 @@ public class Ad_Section_F extends AppCompatActivity {
                             } else {
                                 f_2_15_other = otherText;
                                 if (questionf2CheckBoxTags != null && questionf2CheckBoxTags.size() > 0) {
+                                    MubLog.cpnsoleLog("questionf2CheckBoxTags : " + questionf2CheckBoxTags);
                                     if (questionf2CheckBoxTags.size() > 0) {
                                         f_2_1 = questionf2CheckBoxTags.get(0);
                                     }
@@ -343,11 +345,81 @@ public class Ad_Section_F extends AppCompatActivity {
                                     if (questionf2CheckBoxTags.size() > 14) {
                                         f_2_15 = questionf2CheckBoxTags.get(14);
                                     }
+                                }
+                                if (checkbox_f2_777.isChecked() || checkbox_f2_99.isChecked()) {
+                                    Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                                    intent.putExtra("m1b_parent_mobile", phone_number);
+                                    intent.putExtra("scode", village_id);
+                                    intent.putExtra("studentid", hhid);
+                                    intent.putExtra("m1b_student_name", student_name);
+                                    intent.putExtra("rcons_user", RConsUtils.getUserName());
+                                    startActivityForResult(intent, 88);
+                                } else {
                                     qf2_layout.setVisibility(View.GONE);
                                     qf3_layout.setVisibility(View.VISIBLE);
-
+                                }
+                            }
+                        } else {
+                            if (questionf2CheckBoxTags != null && questionf2CheckBoxTags.size() > 0) {
+                                MubLog.cpnsoleLog("questionf2CheckBoxTags : " + questionf2CheckBoxTags);
+                                if (questionf2CheckBoxTags.size() > 0) {
+                                    f_2_1 = questionf2CheckBoxTags.get(0);
+                                }
+                                if (questionf2CheckBoxTags.size() > 1) {
+                                    f_2_2 = questionf2CheckBoxTags.get(1);
+                                }
+                                if (questionf2CheckBoxTags.size() > 2) {
+                                    f_2_3 = questionf2CheckBoxTags.get(2);
+                                }
+                                if (questionf2CheckBoxTags.size() > 3) {
+                                    f_2_4 = questionf2CheckBoxTags.get(3);
                                 }
 
+                                if (questionf2CheckBoxTags.size() > 4) {
+                                    f_2_5 = questionf2CheckBoxTags.get(4);
+                                }
+                                if (questionf2CheckBoxTags.size() > 5) {
+                                    f_2_6 = questionf2CheckBoxTags.get(5);
+                                }
+                                if (questionf2CheckBoxTags.size() > 6) {
+                                    f_2_7 = questionf2CheckBoxTags.get(6);
+                                }
+                                if (questionf2CheckBoxTags.size() > 7) {
+                                    f_2_8 = questionf2CheckBoxTags.get(7);
+                                }
+                                if (questionf2CheckBoxTags.size() > 8) {
+                                    f_2_9 = questionf2CheckBoxTags.get(8);
+                                }
+                                if (questionf2CheckBoxTags.size() > 9) {
+                                    f_2_10 = questionf2CheckBoxTags.get(9);
+                                }
+                                if (questionf2CheckBoxTags.size() > 10) {
+                                    f_2_11 = questionf2CheckBoxTags.get(10);
+                                }
+                                if (questionf2CheckBoxTags.size() > 11) {
+                                    f_2_12 = questionf2CheckBoxTags.get(11);
+                                }
+                                if (questionf2CheckBoxTags.size() > 12) {
+                                    f_2_13 = questionf2CheckBoxTags.get(12);
+                                }
+                                if (questionf2CheckBoxTags.size() > 13) {
+                                    f_2_14 = questionf2CheckBoxTags.get(13);
+                                }
+                                if (questionf2CheckBoxTags.size() > 14) {
+                                    f_2_15 = questionf2CheckBoxTags.get(14);
+                                }
+                            }
+                            if (checkbox_f2_777.isChecked() || checkbox_f2_99.isChecked()) {
+                                Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                                intent.putExtra("m1b_parent_mobile", phone_number);
+                                intent.putExtra("scode", village_id);
+                                intent.putExtra("studentid", hhid);
+                                intent.putExtra("m1b_student_name", student_name);
+                                intent.putExtra("rcons_user", RConsUtils.getUserName());
+                                startActivityForResult(intent, 88);
+                            } else {
+                                qf2_layout.setVisibility(View.GONE);
+                                qf3_layout.setVisibility(View.VISIBLE);
                             }
 
                         }
@@ -361,10 +433,11 @@ public class Ad_Section_F extends AppCompatActivity {
                         f_3_0 = radioButton.getTag().toString();
                         if (f_3_0.equalsIgnoreCase("-99") || f_3_0.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else if (f_3_0.equalsIgnoreCase("23")) {
                             f_3_1 = edt_f3_other.getText().toString();
@@ -388,10 +461,11 @@ public class Ad_Section_F extends AppCompatActivity {
                         f_4 = radioButton.getTag().toString();
                         if (f_4.equalsIgnoreCase("-99") || f_4.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else {
                             RConsUtils.hideView(qf4_layout, qf5_layout);
@@ -405,10 +479,11 @@ public class Ad_Section_F extends AppCompatActivity {
                         f_5 = radioButton.getTag().toString();
                         if (f_5.equalsIgnoreCase("-99") || f_5.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else {
                             RConsUtils.hideView(qf5_layout, qf6a_layout);
@@ -427,19 +502,19 @@ public class Ad_Section_F extends AppCompatActivity {
                         f_6 = radioButton.getTag().toString();
                         if (f_6.equalsIgnoreCase("-99") || f_6.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else {
-                            Intent intent = new Intent(Ad_Section_F.this, pq_Section_A.class);
-                            intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", village_id);
-                            intent.putExtra("student_id", hhid);
-                            intent.putExtra("student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            Intent intent = new Intent(Ad_Section_F.this, Ad_Section_G.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -470,10 +545,11 @@ public class Ad_Section_F extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
-                intent.putExtra("id", id);
-                intent.putExtra("farmer_cellphone", phone_number);
-                intent.putExtra("school_code", village_id);
-                intent.putExtra("student_id", hhid);
+                intent.putExtra("m1b_parent_mobile", phone_number);
+                intent.putExtra("scode", village_id);
+                intent.putExtra("studentid", hhid);
+                intent.putExtra("m1b_student_name", student_name);
+                intent.putExtra("rcons_user", RConsUtils.getUserName());
                 startActivityForResult(intent, 88);
             }
         });
@@ -859,6 +935,11 @@ public class Ad_Section_F extends AppCompatActivity {
 
         checkbox_f2_15.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_15));
 
+        checkbox_f2_88.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_88));
+        checkbox_f2_98.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_98));
+        checkbox_f2_99.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_99));
+        checkbox_f2_777.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_777));
+
         checkbox_f2_88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -885,24 +966,29 @@ public class Ad_Section_F extends AppCompatActivity {
                     checkbox_f2_777.setEnabled(false);
 
 
-                    checkbox_f2_1.setChecked(true);
-                    checkbox_f2_2.setChecked(true);
-                    checkbox_f2_3.setChecked(true);
-                    checkbox_f2_4.setChecked(true);
-                    checkbox_f2_5.setChecked(true);
-                    checkbox_f2_6.setChecked(true);
-                    checkbox_f2_7.setChecked(true);
-                    checkbox_f2_8.setChecked(true);
-                    checkbox_f2_9.setChecked(true);
-                    checkbox_f2_10.setChecked(true);
-                    checkbox_f2_11.setChecked(true);
-                    checkbox_f2_12.setChecked(true);
-                    checkbox_f2_13.setChecked(true);
-                    checkbox_f2_14.setChecked(true);
-                    checkbox_f2_15.setChecked(true);
-                    checkbox_f2_98.setChecked(true);
-                    checkbox_f2_99.setChecked(true);
-                    checkbox_f2_777.setChecked(true);
+                    checkbox_f2_1.setChecked(false);
+                    checkbox_f2_2.setChecked(false);
+                    checkbox_f2_3.setChecked(false);
+                    checkbox_f2_4.setChecked(false);
+                    checkbox_f2_5.setChecked(false);
+                    checkbox_f2_6.setChecked(false);
+                    checkbox_f2_7.setChecked(false);
+                    checkbox_f2_8.setChecked(false);
+                    checkbox_f2_9.setChecked(false);
+                    checkbox_f2_10.setChecked(false);
+                    checkbox_f2_11.setChecked(false);
+                    checkbox_f2_12.setChecked(false);
+                    checkbox_f2_13.setChecked(false);
+                    checkbox_f2_14.setChecked(false);
+                    checkbox_f2_15.setChecked(false);
+                    checkbox_f2_98.setChecked(false);
+                    checkbox_f2_99.setChecked(false);
+                    checkbox_f2_777.setChecked(false);
+
+                    questionf2CheckBoxCounter = 0;
+                    questionf2CheckBoxTags.clear();
+
+                    edt_f2_other.setVisibility(View.GONE);
 
                 } else {
 
@@ -930,9 +1016,6 @@ public class Ad_Section_F extends AppCompatActivity {
 
             }
         });
-
-        checkbox_f2_88.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_88));
-
         checkbox_f2_98.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -957,6 +1040,27 @@ public class Ad_Section_F extends AppCompatActivity {
                     checkbox_f2_88.setEnabled(false);
                     checkbox_f2_99.setEnabled(false);
                     checkbox_f2_777.setEnabled(false);
+
+
+                    checkbox_f2_1.setChecked(false);
+                    checkbox_f2_2.setChecked(false);
+                    checkbox_f2_3.setChecked(false);
+                    checkbox_f2_4.setChecked(false);
+                    checkbox_f2_5.setChecked(false);
+                    checkbox_f2_6.setChecked(false);
+                    checkbox_f2_7.setChecked(false);
+                    checkbox_f2_8.setChecked(false);
+                    checkbox_f2_9.setChecked(false);
+                    checkbox_f2_10.setChecked(false);
+                    checkbox_f2_11.setChecked(false);
+                    checkbox_f2_12.setChecked(false);
+                    checkbox_f2_13.setChecked(false);
+                    checkbox_f2_14.setChecked(false);
+                    checkbox_f2_15.setChecked(false);
+                    checkbox_f2_99.setChecked(false);
+                    checkbox_f2_88.setChecked(false);
+
+                    edt_f2_other.setVisibility(View.GONE);
 
                     questionf2CheckBoxCounter = 0;
                     questionf2CheckBoxTags.clear();
@@ -990,11 +1094,6 @@ public class Ad_Section_F extends AppCompatActivity {
 
             }
         });
-
-
-        checkbox_f2_98.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_98));
-        checkbox_f2_99.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_99));
-
         checkbox_f2_99.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -1042,6 +1141,8 @@ public class Ad_Section_F extends AppCompatActivity {
                     questionf2CheckBoxCounter = 0;
                     questionf2CheckBoxTags.clear();
 
+                    edt_f2_other.setVisibility(View.GONE);
+
 
                 } else {
 
@@ -1072,7 +1173,6 @@ public class Ad_Section_F extends AppCompatActivity {
 
             }
         });
-
         checkbox_f2_777.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -1120,6 +1220,8 @@ public class Ad_Section_F extends AppCompatActivity {
                     questionf2CheckBoxCounter = 0;
                     questionf2CheckBoxTags.clear();
 
+                    edt_f2_other.setVisibility(View.GONE);
+
 
                 } else {
 
@@ -1150,9 +1252,6 @@ public class Ad_Section_F extends AppCompatActivity {
 
             }
         });
-
-        checkbox_f2_777.setOnClickListener(view -> SetQuestionf2CheckBoxItemClick(checkbox_f2_777));
-
 
     }
 

@@ -93,6 +93,8 @@ public class CallMenuActivity extends AppCompatActivity {
     String s2 = "";
     String s3 = "";
     String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,7 +180,7 @@ public class CallMenuActivity extends AppCompatActivity {
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             GetData();
-          //  Toast.makeText(this, "Fetch and show data enable code and line . 178", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(this, "Fetch and show data enable code and line . 178", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "No data found.", Toast.LENGTH_SHORT).show();
             finish();
@@ -353,6 +355,8 @@ public class CallMenuActivity extends AppCompatActivity {
                 intent.putExtra("sc2", s2);
                 intent.putExtra("sc3", s3);
                 intent.putExtra("sc4", s4);
+                intent.putExtra("sc5", s5);
+                intent.putExtra("sc6", s6);
 
 
                 btnAddReport.setEnabled(false);
@@ -499,6 +503,8 @@ public class CallMenuActivity extends AppCompatActivity {
             String sc2 = cursor.getString(cursor.getColumnIndex("sc2"));
             String sc3 = cursor.getString(cursor.getColumnIndex("sc3"));
             String sc4 = cursor.getString(cursor.getColumnIndex("sc4"));
+            String sc5 = cursor.getString(cursor.getColumnIndex("sc5"));
+            String sc6 = cursor.getString(cursor.getColumnIndex("sc6"));
             String reason = cursor.getString(cursor.getColumnIndex("reason"));
 
             String farmer_cellphone = cursor.getString(cursor.getColumnIndex("farmer_cellphone"));
@@ -529,6 +535,8 @@ public class CallMenuActivity extends AppCompatActivity {
             s2 = sc2;
             s3 = sc3;
             s4 = sc4;
+            s5 = sc5;
+            s6 = sc6;
             school_code = scode;
             student_id = studentid;
 
@@ -549,6 +557,14 @@ public class CallMenuActivity extends AppCompatActivity {
             }
             if (!StringUtils.isEmpty(sc4)) {
                 onorignal.setText("Tried  4");
+                orignal_tries_count++;
+            }
+            if (!StringUtils.isEmpty(sc5)) {
+                onorignal.setText("Tried  5");
+                orignal_tries_count++;
+            }
+            if (!StringUtils.isEmpty(sc6)) {
+                onorignal.setText("Tried  6");
                 orignal_tries_count++;
             }
 
@@ -940,6 +956,10 @@ public class CallMenuActivity extends AppCompatActivity {
             databaseAccess.savepq_interview_start_sc3(school_code, student_id, year, month, day, hh, mm);
         } else if (StringUtils.isEmpty(s4)) {
             databaseAccess.savepq_interview_start_sc4(school_code, student_id, year, month, day, hh, mm);
+        } else if (StringUtils.isEmpty(s5)) {
+            databaseAccess.savepq_interview_start_sc5(school_code, student_id, year, month, day, hh, mm);
+        } else if (StringUtils.isEmpty(s6)) {
+            databaseAccess.savepq_interview_start_sc6(school_code, student_id, year, month, day, hh, mm);
         }
     }
 

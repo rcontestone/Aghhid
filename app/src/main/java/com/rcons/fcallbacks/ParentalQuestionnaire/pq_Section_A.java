@@ -230,6 +230,8 @@ public class pq_Section_A extends AppCompatActivity {
     String s2 = "";
     String s3 = "";
     String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
 
     @Override
@@ -245,7 +247,6 @@ public class pq_Section_A extends AppCompatActivity {
         SetEnumState();
 
 
-
         phone_number = getIntent().getStringExtra("m1b_parent_mobile");
         emp_id = "1";//getIntent().getStringExtra("emp_id");
         order_id = getIntent().getStringExtra("phone_order");
@@ -256,13 +257,13 @@ public class pq_Section_A extends AppCompatActivity {
         school_name = "";//getIntent().getStringExtra("m2_school_name");
 
 
-
-
         id = getIntent().getStringExtra("id");
         s1 = getIntent().getStringExtra("sc1");
         s2 = getIntent().getStringExtra("sc2");
         s3 = getIntent().getStringExtra("sc3");
         s4 = getIntent().getStringExtra("sc4");
+        s5 = getIntent().getStringExtra("sc5");
+        s6 = getIntent().getStringExtra("sc6");
 
         txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
 
@@ -577,8 +578,6 @@ public class pq_Section_A extends AppCompatActivity {
                         intent.putExtra("student_id", student_id);
 
 
-
-
                         startActivityForResult(intent, 88);
                     } else {
                         toastMessage("Please Select Option");
@@ -827,7 +826,6 @@ public class pq_Section_A extends AppCompatActivity {
                                 intent.putExtra("studentid", student_id);
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
-
 
 
                                 startActivityForResult(intent, 88);
@@ -1102,7 +1100,12 @@ public class pq_Section_A extends AppCompatActivity {
             databaseAccess.savepq_interview_start_sc3(school_code, student_id, year, month, day, hh, mm);
         } else if (StringUtils.isEmpty(s4)) {
             databaseAccess.savepq_interview_start_sc4(school_code, student_id, year, month, day, hh, mm);
+        } else if (StringUtils.isEmpty(s5)) {
+            databaseAccess.savepq_interview_start_sc5(school_code, student_id, year, month, day, hh, mm);
+        } else if (StringUtils.isEmpty(s6)) {
+            databaseAccess.savepq_interview_start_sc6(school_code, student_id, year, month, day, hh, mm);
         }
+
     }
 
     private String getSimNetwork() {
@@ -1150,6 +1153,7 @@ public class pq_Section_A extends AppCompatActivity {
                         build_no,
                         school_code,
                         student_id,
+                        phone_number,
                         a1,
                         a2,
                         a3,
@@ -1191,6 +1195,7 @@ public class pq_Section_A extends AppCompatActivity {
                         build_no,
                         school_code,
                         student_id,
+                        phone_number,
                         a1,
                         a2,
                         a3,
@@ -1232,6 +1237,7 @@ public class pq_Section_A extends AppCompatActivity {
                         build_no,
                         school_code,
                         student_id,
+                        phone_number,
                         a1,
                         a2,
                         a3,
@@ -1273,6 +1279,7 @@ public class pq_Section_A extends AppCompatActivity {
                         build_no,
                         school_code,
                         student_id,
+                        phone_number,
                         a1,
                         a2,
                         a3,
@@ -1300,6 +1307,90 @@ public class pq_Section_A extends AppCompatActivity {
                         a6_mm,
                         a7);
                 MubLog.cpnsoleLog("SaveData Try 4");
+            } else if (StringUtils.isEmpty(s5)) {
+                databaseAccess.savepq_Section_A5_Data(emp_id,
+                        order_id,
+                        farmer_id,
+                        rcons_user,
+                        enum_code,
+                        enum_name,
+                        isComplete,
+                        isSynced,
+                        insert_or_updated_in_phone_at,
+                        deviceid,
+                        build_no,
+                        school_code,
+                        student_id,
+                        phone_number,
+                        a1,
+                        a2,
+                        a3,
+                        a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
+                        a4_day,
+                        a4_month,
+                        a4_year,
+                        a4_hh,
+                        a4_mm,
+                        a4_number,
+                        a5,
+                        a5_a,
+                        a6,
+                        a6_other,
+                        a6_day,
+                        a6_month,
+                        a6_year,
+                        a6_hh,
+                        a6_mm,
+                        a7);
+                MubLog.cpnsoleLog("SaveData Try 5");
+            } else if (StringUtils.isEmpty(s6)) {
+                databaseAccess.savepq_Section_A6_Data(emp_id,
+                        order_id,
+                        farmer_id,
+                        rcons_user,
+                        enum_code,
+                        enum_name,
+                        isComplete,
+                        isSynced,
+                        insert_or_updated_in_phone_at,
+                        deviceid,
+                        build_no,
+                        school_code,
+                        student_id,
+                        phone_number,
+                        a1,
+                        a2,
+                        a3,
+                        a4,
+                        a4_a,
+                        a4_b,
+                        a4_c,
+                        a4_c_other,
+                        a4_d,
+                        a4_d_other,
+                        a4_day,
+                        a4_month,
+                        a4_year,
+                        a4_hh,
+                        a4_mm,
+                        a4_number,
+                        a5,
+                        a5_a,
+                        a6,
+                        a6_other,
+                        a6_day,
+                        a6_month,
+                        a6_year,
+                        a6_hh,
+                        a6_mm,
+                        a7);
+                MubLog.cpnsoleLog("SaveData Try 6");
             }
 
 
@@ -1403,6 +1494,12 @@ public class pq_Section_A extends AppCompatActivity {
             } else if (StringUtils.isEmpty(s4)) {
                 cursor = databaseAccess.getpq_section_a4_Data(school_code, student_id);
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
+            } else if (StringUtils.isEmpty(s5)) {
+                cursor = databaseAccess.getpq_section_a5_Data(school_code, student_id);
+                MubLog.cpnsoleLog("readFromDataBase Try 5");
+            } else if (StringUtils.isEmpty(s6)) {
+                cursor = databaseAccess.getpq_section_a6_Data(school_code, student_id);
+                MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {
                 cursor.moveToFirst();
