@@ -1487,6 +1487,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                         intent.putExtra("studentid", student_id);
                         intent.putExtra("m1b_student_name", student_name);
                         intent.putExtra("rcons_user", RConsUtils.getUserName());
+                        intent.putExtra("onbackclick", "HH_Screen_three_Section_e");
                         startActivity(intent);
                         finish();
                         return;

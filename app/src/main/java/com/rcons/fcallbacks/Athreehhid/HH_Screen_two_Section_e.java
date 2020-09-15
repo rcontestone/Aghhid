@@ -1436,7 +1436,27 @@ public class HH_Screen_two_Section_e extends Activity {
                 if (screen_two ) {
 
 
-                    if(aghhid_e_2.equalsIgnoreCase("-777") || (aghhid_e_2.equalsIgnoreCase("-99"))){
+
+                    if(aghhid_e_2.equalsIgnoreCase("-777")) {
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("isDataUpdated", false);
+                        setResult(Activity.RESULT_OK, returnIntent);
+
+                        Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_Section_e.class);
+
+                        intent.putExtra("m1b_parent_mobile", phone_number);
+                        intent.putExtra("scode", school_code);
+                        intent.putExtra("studentid", student_id);
+                        intent.putExtra("m1b_student_name", student_name);
+                        intent.putExtra("rcons_user", RConsUtils.getUserName());
+                        intent.putExtra("onbackclick", "HH_Screen_two_Section_e");
+                        startActivity(intent);
+                        finish();
+                        return;
+
+
+
+                    }else if(aghhid_e_2.equalsIgnoreCase("-777") || (aghhid_e_2.equalsIgnoreCase("-99"))){
                         Intent intent = new Intent(HH_Screen_two_Section_e.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);

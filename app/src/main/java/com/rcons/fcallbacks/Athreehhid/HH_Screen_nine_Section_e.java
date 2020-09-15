@@ -1701,18 +1701,39 @@ public class HH_Screen_nine_Section_e extends Activity {
         try {
             DebugLog.console("[HH_Screen_One] Inside onBackPressed:" ); DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
 
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra("isDataUpdated", false);
-            setResult(Activity.RESULT_OK, returnIntent);
+            DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eight_Section_e.class);
 
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+            if(CALLED_FROM.equalsIgnoreCase("HH_Screen_eight_Section_e")){
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("isDataUpdated", false);
+                setResult(Activity.RESULT_OK, returnIntent);
+
+                Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eight_Section_e.class);
+
+                intent.putExtra("m1b_parent_mobile", phone_number);
+                intent.putExtra("scode", school_code);
+                intent.putExtra("studentid", student_id);
+                intent.putExtra("m1b_student_name", student_name);
+                intent.putExtra("rcons_user", RConsUtils.getUserName());
+                startActivity(intent);
+            }else {
+
+
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("isDataUpdated", false);
+                setResult(Activity.RESULT_OK, returnIntent);
+
+                Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_seven_Section_e.class);
+
+                intent.putExtra("m1b_parent_mobile", phone_number);
+                intent.putExtra("scode", school_code);
+                intent.putExtra("studentid", student_id);
+                intent.putExtra("m1b_student_name", student_name);
+                intent.putExtra("rcons_user", RConsUtils.getUserName());
+                startActivity(intent);
+
+            }
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");
