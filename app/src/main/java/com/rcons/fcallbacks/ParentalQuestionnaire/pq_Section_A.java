@@ -244,6 +244,8 @@ public class pq_Section_A extends AppCompatActivity {
 
         SetEnumState();
 
+
+
         phone_number = getIntent().getStringExtra("m1b_parent_mobile");
         emp_id = "1";//getIntent().getStringExtra("emp_id");
         order_id = getIntent().getStringExtra("phone_order");
@@ -252,6 +254,10 @@ public class pq_Section_A extends AppCompatActivity {
         student_id = getIntent().getStringExtra("studentid");
         student_name = getIntent().getStringExtra("m1b_student_name");
         school_name = "";//getIntent().getStringExtra("m2_school_name");
+
+
+
+
         id = getIntent().getStringExtra("id");
         s1 = getIntent().getStringExtra("sc1");
         s2 = getIntent().getStringExtra("sc2");
@@ -569,6 +575,10 @@ public class pq_Section_A extends AppCompatActivity {
                         intent.putExtra("farmer_cellphone", phone_number);
                         intent.putExtra("school_code", school_code);
                         intent.putExtra("student_id", student_id);
+
+
+
+
                         startActivityForResult(intent, 88);
                     } else {
                         toastMessage("Please Select Option");
@@ -800,15 +810,26 @@ public class pq_Section_A extends AppCompatActivity {
                                 startActivityForResult(intent, 88);
                             } else {
                                 SaveData();
-                                Intent intent = new Intent(pq_Section_A.this, Ad_Section_G.class);
+                                Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
-                                intent.putExtra("farmer_cellphone", phone_number);
-                                intent.putExtra("school_code", school_code);
-                                intent.putExtra("student_id", student_id);
-                                intent.putExtra("student_name", student_name);
-                                intent.putExtra("school_name", school_name);
+
+
+//                                intent.putExtra("farmer_cellphone", phone_number);
+//                                intent.putExtra("school_code", school_code);
+//                                intent.putExtra("student_id", student_id);
+//                                intent.putExtra("student_name", student_name);
+//                                intent.putExtra("school_name", school_name);
+
+                                intent.putExtra("m1b_parent_mobile", phone_number);
+                                intent.putExtra("scode", school_code);
+                                intent.putExtra("studentid", student_id);
+                                intent.putExtra("m1b_student_name", student_name);
+                                intent.putExtra("rcons_user", RConsUtils.getUserName());
+
+
+
                                 startActivityForResult(intent, 88);
                             }
                         } else {
@@ -876,11 +897,20 @@ public class pq_Section_A extends AppCompatActivity {
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
-                                intent.putExtra("farmer_cellphone", phone_number);
-                                intent.putExtra("school_code", school_code);
-                                intent.putExtra("student_id", student_id);
-                                intent.putExtra("student_name", student_name);
-                                intent.putExtra("school_name", school_name);
+
+
+//                                intent.putExtra("farmer_cellphone", phone_number);
+//                                intent.putExtra("school_code", school_code);
+//                                intent.putExtra("student_id", student_id);
+//                                intent.putExtra("student_name", student_name);
+//                                intent.putExtra("school_name", school_name);
+
+                                intent.putExtra("m1b_parent_mobile", phone_number);
+                                intent.putExtra("scode", school_code);
+                                intent.putExtra("studentid", student_id);
+                                intent.putExtra("m1b_student_name", student_name);
+                                intent.putExtra("rcons_user", RConsUtils.getUserName());
+
                                 startActivityForResult(intent, 88);
                             }
                         } else {
@@ -889,11 +919,20 @@ public class pq_Section_A extends AppCompatActivity {
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
-                            intent.putExtra("farmer_cellphone", phone_number);
-                            intent.putExtra("school_code", school_code);
-                            intent.putExtra("student_id", student_id);
-                            intent.putExtra("student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+
+
+//                            intent.putExtra("farmer_cellphone", phone_number);
+//                            intent.putExtra("school_code", school_code);
+//                            intent.putExtra("student_id", student_id);
+//                            intent.putExtra("student_name", student_name);
+//                            intent.putExtra("school_name", school_name);
+
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
+
                             startActivityForResult(intent, 88);
                         }
                     } else {
