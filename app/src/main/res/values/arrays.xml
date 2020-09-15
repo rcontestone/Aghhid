@@ -523,21 +523,21 @@
 
     <string-array name="array_relative_code_sp">
         <item>Select Code</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
+        <item>1 گھرانے کا سربراہ</item>
+        <item>2 گھرانے کے سربراہ کی شریک حیات</item>
+        <item>3 اپنی اولاد</item>
+        <item>  4 پوتا، پوتی، نواسہ، نواسی</item>
+        <item>5 لے پالک بچہ</item>
+        <item>6 بہن، بھائی </item>
+        <item>7 بھتیجا، بھتیجی، بھانجا، بھانجی</item>
+        <item>8 سالہ، سالی، بھابی، بہنوئی</item>
+        <item>9 بہو ، داماد </item>
+        <item>10 انکل، آنٹی</item>
+        <item>11  والدین</item>
+        <item>12 ساس، سسر</item>
+        <item>13 دیگر رشتہ دار</item>
+        <item>14 ملازم، نوکر</item>
+        <item>15 دیگر(وضاحت۔۔۔۔۔)</item>
 
 
     </string-array>

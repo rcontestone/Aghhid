@@ -1444,7 +1444,7 @@ public class HH_Screen_two extends Activity {
 //                        HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext) +"_hhid", CURRENT_HHID + "");
 
 
-                    if(aghhid_c_1.equalsIgnoreCase("-88")||aghhid_c_1.equalsIgnoreCase("-98")||aghhid_c_1.equalsIgnoreCase("-99")||aghhid_c_1.equalsIgnoreCase("-777")){
+                    if(aghhid_c_1.equalsIgnoreCase("-99")||aghhid_c_1.equalsIgnoreCase("-777")){
                         Intent intent = new Intent(HH_Screen_two.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -1663,17 +1663,24 @@ public class HH_Screen_two extends Activity {
 
     public void pressBackButton(View v){
 
-        try { Intent intent = MpcUtil.buildNewIntent(appContext, pq_Section_A.class);
+        try {
 
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            intent.putExtra("emp_id", school_code+student_id);
-            intent.putExtra("order_id",school_code+student_id);
-            intent.putExtra("id", school_code+student_id);
-            startActivity(intent);
+            Intent intent = MpcUtil.buildNewIntent(appContext, pq_Section_A.class);
+
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            intent.putExtra("emp_id", school_code+student_id);
+//            intent.putExtra("order_id",school_code+student_id);
+//            intent.putExtra("id", school_code+student_id);
+//            startActivity(intent);
+
+
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("isDataUpdated", false);
+            setResult(Activity.RESULT_OK, returnIntent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -1700,17 +1707,23 @@ public class HH_Screen_two extends Activity {
         try {
             DebugLog.console("[HH_Screen_One] Inside onBackPressed:" );
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, pq_Section_A.class);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, pq_Section_A.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            intent.putExtra("emp_id", school_code+student_id);
+//            intent.putExtra("order_id",school_code+student_id);
+//            intent.putExtra("id", school_code+student_id);
+//            startActivity(intent);
 
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            intent.putExtra("emp_id", school_code+student_id);
-            intent.putExtra("order_id",school_code+student_id);
-            intent.putExtra("id", school_code+student_id);
-            startActivity(intent);
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("isDataUpdated", false);
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+
             finish();
 
         }catch (Exception e) {

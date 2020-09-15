@@ -151,9 +151,8 @@
                             <requestFocus />
                         </EditText>
 
-
                         <TextView
-                            android:id="@+id/hh_textview_q_script"
+                            android:id="@+id/hh_textview_e_script"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/sign_up_first_name_textfield"
@@ -163,8 +162,51 @@
                             android:layout_marginRight="30dp"
                             android:gravity="center"
                             android:layout_centerHorizontal="true"
-                            android:text="Sectin E Q.9"
+                            android:text="@string/ad_section_e_script"
                             android:textColor="@color/Blue"
+                            android:textSize="@dimen/_18sdp"
+                            android:textStyle="bold"
+
+
+                            />
+
+
+
+
+
+                        <TextView
+                            android:id="@+id/hh_textview_q_script"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_textview_e_script"
+
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="27dp"
+                            android:layout_marginRight="30dp"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:text="Sectin H Q.1"
+                            android:textColor="@color/Blue"
+                            android:textSize="@dimen/_20sdp"
+                            android:textStyle="bold"
+
+
+                            />
+
+
+
+                        <TextView
+                            android:id="@+id/hh_textview_h_script"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_textview_q_script"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="37dp"
+                            android:layout_marginRight="30dp"
+                            android:gravity="right"
+                            android:text="@string/ad_section_f_script"
+                            android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"
 
@@ -176,13 +218,13 @@
                             android:id="@+id/hh_textview_q_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/hh_textview_q_script"
+                            android:layout_below="@+id/hh_textview_h_script"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="37dp"
                             android:layout_marginRight="30dp"
                             android:gravity="right"
-                            android:text="@string/section_e_question_q9"
+                            android:text="@string/ad_section_f_question_q1"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"
@@ -283,7 +325,7 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/section_e_question_q2_option1"
+                                android:text="@string/ad_section_f_question_q1_option1"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -307,7 +349,7 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/section_e_question_q2_option2"
+                                android:text="@string/ad_section_f_question_q1_option2"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -332,10 +374,9 @@
                                 android:gravity="right"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
-                                android:text="@string/section_e_question_q2_option88"
+                                android:text="@string/ad_section_f_question_q1_option3"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:visibility="gone"
                                 android:textStyle="bold"
                                 android:clickable="true"
                                 android:onClick="setMigration3"
@@ -402,10 +443,10 @@
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:visibility="gone"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
                                 android:text="@string/section_e_question_q2_option777"
-                                android:visibility="gone"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
@@ -518,7 +559,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_above="@+id/exit"
-        android:text="HH_Screen_nine_Section_e"
+        android:text="HH_Screen_one_Section_h"
         android:textSize="@dimen/_14sdp"
         />
 </RelativeLayout>

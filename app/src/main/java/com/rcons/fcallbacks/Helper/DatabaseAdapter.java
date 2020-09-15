@@ -79,6 +79,7 @@ public class DatabaseAdapter {
     public static final String aghhid_section_e_table = "aghhid_section_e";
     public static final String aghhid_section_g_table = "aghhid_section_g";
     public static final String aghhid_section_f_table = "aghhid_section_f";
+    public static final String aghhid_section_h_table = "aghhid_section_h";
 
     private Context context;
     public DataHelper database;
@@ -8510,6 +8511,40 @@ public class DatabaseAdapter {
         }
         return count;
     }
+
+
+    public Cursor aghhid_selectCompletedCalls(String userName) {
+        String query = "select * from " + AGHHID_SampleTable + " WHERE rcons_user = '" + userName + "' AND survey_status !=''  AND  isSynced != '2'";
+        DebugLog.console("[DatabaseAdapter] inside selectCompletedCalls() " + query);
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        return cursor;
+
+    }
+
+    public JSONArray aghhid_readReport(String userName) {
+        MubLog.cpnsoleLog("inside aghhid_readReport");
+
+        try {
+
+            String query = "select * from " + AGHHID_SampleTable + " WHERE rcons_user = '" + userName + "' AND survey_status !=''  AND  isSynced != '2'";
+
+            Cursor cursor2 = db.rawQuery(query, new String[0]);
+            if (cursor2 == null || cursor2.getCount() <= 0) {
+                MubLog.cpnsoleLog("no data aghhid_readReport");
+                return new JSONArray();
+            } else {
+                MubLog.cpnsoleLog("aghhid_readReport data found ");
+                return getSingleRow("", cursor2);
+            }
+
+
+        } catch (Exception e) {
+            MubLog.cpnsoleLog("inside aghhid_readReport" + e.toString());
+            return new JSONArray();
+        }
+    }
+
+
 
 
 }

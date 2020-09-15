@@ -102,7 +102,7 @@ public class SyncMainActivity extends Activity {
 
 				ArrayList<String> excude_farmerIDs = new ArrayList<>();
 				DebugLog.console("[MyTask1] inside doInBackground() "+whereQuery);
-				Cursor farmersCoursor =    adapter.baseline_selectCompletedCalls(userName);
+				Cursor farmersCoursor =    adapter.aghhid_selectCompletedCalls(userName);
 				if (farmersCoursor == null || farmersCoursor.getCount() == 0) {
 					//	Toast.makeText(StartUpMainActivity.this, "No completed  exist", Toast.LENGTH_SHORT).show();
 
@@ -115,8 +115,8 @@ public class SyncMainActivity extends Activity {
 					if (farmersCoursor.moveToFirst()) {
 						do {
 							//String id = farmersCoursor.getString(farmersCoursor.getColumnIndex("id"));
-							String scode = farmersCoursor.getString(farmersCoursor.getColumnIndex("scode"));
-							String studentid = farmersCoursor.getString(farmersCoursor.getColumnIndex("studentid"));
+							String scode = farmersCoursor.getString(farmersCoursor.getColumnIndex("village_id"));
+							String studentid = farmersCoursor.getString(farmersCoursor.getColumnIndex("hhid"));
 							if (!StringUtils.isEmpty(scode)) {
 
 
@@ -160,8 +160,8 @@ public class SyncMainActivity extends Activity {
 
 				subQuery = "( " + subQuery + " )";
 				schoolCodeSubQuery = "( " + schoolCodeSubQuery + " )";
-				MubLog.cpnsoleLog("subquery " + subQuery);
-				MubLog.cpnsoleLog("schoolCodeSubQuery " + schoolCodeSubQuery);
+				MubLog.cpnsoleLog("subquery  hhid" + subQuery);
+				MubLog.cpnsoleLog("subquery village_id " + schoolCodeSubQuery);
 
 
 if(farmersCoursor!=null){
@@ -172,24 +172,26 @@ if(farmersCoursor!=null){
 }
 				//int remaning = Totalcount/2;
 
-				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a2_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a2_table,whereQuery + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a3_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a3_table,whereQuery + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a4_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a4_table,whereQuery + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_a2_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a2_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_a3_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a3_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_a4_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a4_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 
 
-				JSONArray pq_section_b_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_b_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_c1_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_c1_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_c2_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_c2_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_c3_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_c3_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_d_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_e_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_e_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_c_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_c_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_d_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_e_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_e_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_f_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_f_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 
 
-				JSONArray baseLineSampleTable =adapter.baseline_readReport(userName);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_g_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_g_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_h_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_h_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 
-				if (baseLineSampleTable.length() > 0) {
+
+				JSONArray AGHHID_SampleTable =adapter.aghhid_readReport(userName);//adapter.getSectionBData_ALL();
+
+				if (AGHHID_SampleTable.length() > 0) {
 
 				} else {
 
@@ -201,7 +203,7 @@ if(farmersCoursor!=null){
 				if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))//check if sd card is mounted
 				{
 					//  exportDataonSdcard(dataToUploadB, dataToUploadC, dataToUploadD, dataToUploadE, readSectionFTable1ForDataSync, readSectionFTable2ForDataSync, readSectionFTable3ForDataSync, readSectionFTable4ForDataSync, readSectionFTable5ForDataSync, readSectionFTable6ForDataSync, readSectionGForDataSync, readSectionGBForDataSync, readSectionHForDataSync, readSectionOneForDataSync);
-					exportDataonSdcard(pq_section_a_table,pq_section_a2_table,pq_section_a3_table,pq_section_a4_table,pq_section_b_table,pq_section_c1_table,pq_section_c2_table,pq_section_c3_table,pq_section_d_table,pq_section_e_table,baseLineSampleTable);
+					exportDataonSdcard(pq_section_a_table,pq_section_a2_table,pq_section_a3_table,pq_section_a4_table,aghhid_section_c_table,aghhid_section_d_table,aghhid_section_e_table,aghhid_section_f_table,aghhid_section_g_table,aghhid_section_h_table,AGHHID_SampleTable);
 
 					//   adapter.deleteAllSectionData(userName,notinquerry);
 					publishProgress(Totalcount, Totalcount);
@@ -221,13 +223,15 @@ if(farmersCoursor!=null){
 					allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
 					allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
 
-					allSectiondata.put(DatabaseAdapter.pq_section_b_table, pq_section_b_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_c1_table, pq_section_c1_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_c2_table, pq_section_c2_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_c3_table, pq_section_c3_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_d_table, pq_section_d_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_e_table, pq_section_e_table);
-					allSectiondata.put(DatabaseAdapter.BaseLineSampleTable, baseLineSampleTable);
+					allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
+					allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
+					allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
+
+
+					allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
+					allSectiondata.put(DatabaseAdapter.aghhid_section_g_table, aghhid_section_g_table);
+					allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
+					allSectiondata.put(DatabaseAdapter.AGHHID_SampleTable, AGHHID_SampleTable);
 
 					String url = "http://rconsdb.org/devteam/general/services/ffbcsr/baseline_secdata.php";
 
@@ -729,7 +733,7 @@ if(farmersCoursor!=null){
 		}
 	}
 
-	private void exportDataonSdcard(JSONArray pq_section_a_table,JSONArray pq_section_a2_table,JSONArray pq_section_a3_table,JSONArray pq_section_a4_table ,JSONArray pq_section_b_table, JSONArray pq_section_c1_table, JSONArray pq_section_c2_table, JSONArray pq_section_c3_table, JSONArray pq_section_d_table, JSONArray pq_section_e_table, JSONArray baseLineSampleTable) {
+	private void exportDataonSdcard(JSONArray pq_section_a_table,JSONArray pq_section_a2_table,JSONArray pq_section_a3_table,JSONArray pq_section_a4_table ,JSONArray aghhid_section_c_table, JSONArray aghhid_section_d_table, JSONArray aghhid_section_e_table, JSONArray aghhid_section_f_table, JSONArray aghhid_section_g_table, JSONArray aghhid_section_h_table, JSONArray baseLineSampleTable) {
 		try {
 
 			JSONObject allSectiondata = new JSONObject();
@@ -741,12 +745,12 @@ if(farmersCoursor!=null){
 				allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
 				allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
 
-				allSectiondata.put(DatabaseAdapter.pq_section_b_table, pq_section_b_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_c1_table, pq_section_c1_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_c2_table, pq_section_c2_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_c3_table, pq_section_c3_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_d_table, pq_section_d_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_e_table, pq_section_e_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_g_table, aghhid_section_g_table);
+				allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
 				allSectiondata.put(DatabaseAdapter.BaseLineSampleTable, baseLineSampleTable);
 
 
