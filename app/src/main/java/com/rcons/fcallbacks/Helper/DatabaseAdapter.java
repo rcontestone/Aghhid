@@ -5318,6 +5318,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5365,6 +5366,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5467,6 +5469,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5514,6 +5517,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5617,6 +5621,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5664,6 +5669,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5765,6 +5771,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
@@ -5812,6 +5819,7 @@ public class DatabaseAdapter {
                 contentValues.put("build_no", build_no);
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
+                contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);

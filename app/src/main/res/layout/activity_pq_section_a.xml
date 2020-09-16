@@ -60,6 +60,7 @@
                     android:id="@+id/btn_AddReportQuestionnaire"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_toLeftOf="@id/btn_RedialCall"
                     android:contentDescription="report"
                     android:src="@drawable/img_register"
@@ -1204,7 +1205,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. A 5a"
+                            android:text="Question No. A 4b"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1340,7 +1341,7 @@
                                 android:paddingTop="8dp"
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
-                                android:tag="99"
+                                android:tag="-99"
                                 android:text="@string/section_b_question_q5_option99"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
@@ -1359,7 +1360,7 @@
                                 android:paddingTop="8dp"
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
-                                android:tag="777"
+                                android:tag="-777"
                                 android:text="@string/section_b_question_q5_option777"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
@@ -1385,7 +1386,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. A 6"
+                            android:text="Question No. A 4c"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1579,7 +1580,7 @@
                                 android:paddingTop="8dp"
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
-                                android:tag="99"
+                                android:tag="-99"
                                 android:text="@string/section_b_question_q6_option99"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
@@ -1598,7 +1599,7 @@
                                 android:paddingTop="8dp"
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
-                                android:tag="777"
+                                android:tag="-777"
                                 android:text="@string/section_b_question_q6_option777"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
@@ -1643,7 +1644,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. A 7"
+                            android:text="Question No. A 4d"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1766,6 +1767,7 @@
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
                         </RadioGroup>
+
                         <EditText
                             android:id="@+id/edt_a4d_other"
                             android:layout_width="match_parent"

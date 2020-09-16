@@ -750,7 +750,18 @@ public class pq_Section_A extends AppCompatActivity {
                     if (rg_a4b_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a4b_ID);
                         a4_b = radioButton.getTag().toString();
-                        RConsUtils.hideView(qa4b_layout, qa4c_layout);
+                        if (a4_b.equalsIgnoreCase("-777") || a4_b.equalsIgnoreCase("-99")) {
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qa4b_layout, qa4c_layout);
+                        }
                     } else {
                         toastMessage("Please Select Option");
                     }
@@ -765,6 +776,16 @@ public class pq_Section_A extends AppCompatActivity {
                             } else {
                                 toastMessage("Please specify other");
                             }
+                        } else if (a4_c.equalsIgnoreCase("0") || a4_c.equalsIgnoreCase("-99") || a4_c.equalsIgnoreCase("-777")) {
+                            a4_d_other = "";
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
                         } else {
                             a4_d_other = "";
                             RConsUtils.hideView(qa4c_layout, qa4d_layout);

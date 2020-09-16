@@ -75,6 +75,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String a4_mm = "";
     String a4_number = "";
     String a5 = "";
+    String a5_a = "";
     String a6 = "";
     String a6_other = "";
     String a6_day = "";
@@ -90,6 +91,15 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String sc2 = "";
     String sc3 = "";
     String sc4 = "";
+    String sc5 = "";
+    String sc6 = "";
+
+    String a4_a = "";
+    String a4_b = "";
+    String a4_c = "";
+    String a4_c_other = "";
+    String a4_d = "";
+    String a4_d_other = "";
 
     RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9;
 
@@ -926,6 +936,12 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                 cursor = databaseAccess.getpq_section_a3_Data(school_code, student_id);
             } else if (StringUtils.isEmpty(sc4)) {
                 cursor = databaseAccess.getpq_section_a4_Data(school_code, student_id);
+            } else if (StringUtils.isEmpty(sc5)) {
+                cursor = databaseAccess.getpq_section_a5_Data(school_code, student_id);
+                MubLog.cpnsoleLog("readFromDataBase Try 5");
+            } else if (StringUtils.isEmpty(sc6)) {
+                cursor = databaseAccess.getpq_section_a6_Data(school_code, student_id);
+                MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {
                 cursor.moveToFirst();
@@ -934,6 +950,12 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                 a2 = cursor.getString(cursor.getColumnIndex("a2"));
                 a3 = cursor.getString(cursor.getColumnIndex("a3"));
                 a4 = cursor.getString(cursor.getColumnIndex("a4"));
+                a4_a = cursor.getString(cursor.getColumnIndex("a4_a"));
+                a4_b = cursor.getString(cursor.getColumnIndex("a4_b"));
+                a4_c = cursor.getString(cursor.getColumnIndex("a4_c"));
+                a4_c_other = cursor.getString(cursor.getColumnIndex("a4_c_other"));
+                a4_d = cursor.getString(cursor.getColumnIndex("a4_d"));
+                a4_d_other = cursor.getString(cursor.getColumnIndex("a4_d_other"));
                 a4_day = cursor.getString(cursor.getColumnIndex("a4_day"));
                 a4_month = cursor.getString(cursor.getColumnIndex("a4_month"));
                 a4_year = cursor.getString(cursor.getColumnIndex("a4_year"));
@@ -941,6 +963,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                 a4_mm = cursor.getString(cursor.getColumnIndex("a4_mm"));
                 a4_number = cursor.getString(cursor.getColumnIndex("a4_number"));
                 a5 = cursor.getString(cursor.getColumnIndex("a5"));
+                a5_a = cursor.getString(cursor.getColumnIndex("a5_a"));
                 a6 = cursor.getString(cursor.getColumnIndex("a6"));
                 a6_other = cursor.getString(cursor.getColumnIndex("a6_other"));
                 a6_day = cursor.getString(cursor.getColumnIndex("a6_day"));
@@ -1112,35 +1135,32 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         } else if (a3.equalsIgnoreCase("0") && StringUtils.isEmpty(a4)) {
             txtErrorMessage.setText("Please Fill A4");
             txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a3.equalsIgnoreCase("1") && StringUtils.isEmpty(a5)) {
+        } else if (a3.equalsIgnoreCase("1") && StringUtils.isEmpty(a4_a)) {
+            txtErrorMessage.setText("Please Fill A4a");
+            txtErrorMessage.setVisibility(View.VISIBLE);
+        } else if (!StringUtils.isEmpty(a4_a) && StringUtils.isEmpty(a4_b)) {
+            txtErrorMessage.setText("Please Fill A4b");
+            txtErrorMessage.setVisibility(View.VISIBLE);
+        } else if ((a4_b.equalsIgnoreCase("1")
+                || a4_b.equalsIgnoreCase("2")
+                || a4_b.equalsIgnoreCase("3")
+                || a4_b.equalsIgnoreCase("-88")
+                || a4_b.equalsIgnoreCase("-98"))
+                && (StringUtils.isEmpty(a4_c))) {
+            txtErrorMessage.setText("Please Fill A4c");
+            txtErrorMessage.setVisibility(View.VISIBLE);
+        } else if ((a4_c.equalsIgnoreCase("1")
+                || a4_c.equalsIgnoreCase("2")
+                || a4_c.equalsIgnoreCase("3")
+                || a4_c.equalsIgnoreCase("4")
+                || a4_c.equalsIgnoreCase("5")
+                || a4_c.equalsIgnoreCase("-88")
+                || a4_c.equalsIgnoreCase("-98"))
+                && (StringUtils.isEmpty(a4_d))) {
+            txtErrorMessage.setText("Please Fill A4d");
+            txtErrorMessage.setVisibility(View.VISIBLE);
+        } else if (!StringUtils.isEmpty(a4_d) && StringUtils.isEmpty(a5)) {
             txtErrorMessage.setText("Please Fill A5");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a4.equalsIgnoreCase("1") && StringUtils.isEmpty(a5)) {
-            txtErrorMessage.setText("Please Fill A5");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a5.equalsIgnoreCase("1") && StringUtils.isEmpty(a7)) {
-            txtErrorMessage.setText("Please Fill A7");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a5.equalsIgnoreCase("0") && StringUtils.isEmpty(a6)) {
-            txtErrorMessage.setText("Please Fill A6");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a4.equalsIgnoreCase("2") && StringUtils.isEmpty(a4_day)) {
-            txtErrorMessage.setText("Please Fill A4 Date");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a4.equalsIgnoreCase("3") && StringUtils.isEmpty(a4_number)) {
-            txtErrorMessage.setText("Please Fill A4 Number");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("4") && StringUtils.isEmpty(a6_day)) {
-            txtErrorMessage.setText("Please Fill A6 Date");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("99") && StringUtils.isEmpty(a6_other)) {
-            txtErrorMessage.setText("Please Fill A6 other");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (!StringUtils.isEmpty(e8) && StringUtils.isEmpty(e9)) {
-            txtErrorMessage.setText("Please Fill E9");
-            txtErrorMessage.setVisibility(View.VISIBLE);
-        } else if (!StringUtils.isEmpty(e8) && StringUtils.isEmpty(e10)) {
-            txtErrorMessage.setText("Please Fill E10");
             txtErrorMessage.setVisibility(View.VISIBLE);
         } else if (a2.equalsIgnoreCase("1")) {
             code_4.setVisibility(View.VISIBLE);
@@ -1171,46 +1191,40 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             code_7.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a4.equalsIgnoreCase("5")) {
+        } else if (a4_b.equalsIgnoreCase("2")) {
             code_10_other.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("1")) {
+        } else if (a4_b.equalsIgnoreCase("-99")) {
             code_3.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("2")) {
+        } else if (a4_b.equalsIgnoreCase("-777")) {
             code_3.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("3")) {
+        } else if (a4_c.equalsIgnoreCase("0")) {
             code_10_other.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("4")) {
-            code_10_other.setVisibility(View.VISIBLE);
+        } else if (a4_c.equalsIgnoreCase("-99")) {
+            code_3.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
-        } else if (a6.equalsIgnoreCase("99")) {
-            code_10_other.setVisibility(View.VISIBLE);
+        } else if (a4_c.equalsIgnoreCase("-777")) {
+            code_3.setVisibility(View.VISIBLE);
+            group.setVisibility(View.VISIBLE);
+            SaveReport.setVisibility(View.VISIBLE);
+        } else if (a5.equalsIgnoreCase("0")) {
+            code_3.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
         } else {
-            if (!StringUtils.isEmpty(e10)) {
-                code_1.setVisibility(View.VISIBLE);
-                group.setVisibility(View.VISIBLE);
-                SaveReport.setVisibility(View.VISIBLE);
-            } else if (StringUtils.isEmpty(a1)) {
-                txtErrorMessage.setText("Please Fill Questionnaire");
-                txtErrorMessage.setVisibility(View.VISIBLE);
-            } else {
-                code_5.setVisibility(View.VISIBLE);
-                code_10_other.setVisibility(View.VISIBLE);
-                group.setVisibility(View.VISIBLE);
-                SaveReport.setVisibility(View.VISIBLE);
-
-
-            }
+            code_1.setVisibility(View.VISIBLE);
+            code_5.setVisibility(View.VISIBLE);
+            code_10_other.setVisibility(View.VISIBLE);
+            group.setVisibility(View.VISIBLE);
+            SaveReport.setVisibility(View.VISIBLE);
         }
     }
 
