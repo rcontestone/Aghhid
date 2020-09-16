@@ -5267,6 +5267,8 @@ public class DatabaseAdapter {
                                         String student_id,
                                         String phone_number,
                                         String a1,
+                                        String b1,
+                                        String b2,
                                         String a2,
                                         String a3,
                                         String a4,
@@ -5320,6 +5322,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5368,6 +5372,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5418,6 +5424,8 @@ public class DatabaseAdapter {
                                          String student_id,
                                          String phone_number,
                                          String a1,
+                                         String b1,
+                                         String b2,
                                          String a2,
                                          String a3,
                                          String a4,
@@ -5471,6 +5479,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5519,6 +5529,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5570,6 +5582,8 @@ public class DatabaseAdapter {
                                          String student_id,
                                          String phone_number,
                                          String a1,
+                                         String b1,
+                                         String b2,
                                          String a2,
                                          String a3,
                                          String a4,
@@ -5623,6 +5637,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5671,6 +5687,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5720,6 +5738,8 @@ public class DatabaseAdapter {
                                          String student_id,
                                          String phone_number,
                                          String a1,
+                                         String b1,
+                                         String b2,
                                          String a2,
                                          String a3,
                                          String a4,
@@ -5773,6 +5793,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5821,6 +5843,8 @@ public class DatabaseAdapter {
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5870,6 +5894,8 @@ public class DatabaseAdapter {
                                          String student_id,
                                          String phone_number,
                                          String a1,
+                                         String b1,
+                                         String b2,
                                          String a2,
                                          String a3,
                                          String a4,
@@ -5922,6 +5948,8 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -5969,6 +5997,8 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -6018,6 +6048,8 @@ public class DatabaseAdapter {
                                          String student_id,
                                          String phone_number,
                                          String a1,
+                                         String b1,
+                                         String b2,
                                          String a2,
                                          String a3,
                                          String a4,
@@ -6070,6 +6102,8 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);
@@ -6117,6 +6151,8 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("a1", a1);
+                contentValues.put("b1", b1);
+                contentValues.put("b2", b2);
                 contentValues.put("a2", a2);
                 contentValues.put("a3", a3);
                 contentValues.put("a4", a4);

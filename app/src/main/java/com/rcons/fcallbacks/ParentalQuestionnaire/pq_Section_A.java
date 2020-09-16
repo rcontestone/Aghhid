@@ -160,6 +160,18 @@ public class pq_Section_A extends AppCompatActivity {
     @BindView(R.id.edt_a4c_other)
     EditText edt_a4c_other;
 
+    @BindView(R.id.qb2_layout)
+    LinearLayout qb2_layout;
+
+    @BindView(R.id.qb1_layout)
+    LinearLayout qb1_layout;
+
+    @BindView(R.id.rg_b2)
+    RadioGroup rg_b2;
+
+    @BindView(R.id.rg_b1)
+    RadioGroup rg_b1;
+
     @BindView(R.id.btn_back)
     Button btn_back;
     @BindView(R.id.btn_next)
@@ -191,6 +203,9 @@ public class pq_Section_A extends AppCompatActivity {
     String a2 = "";
     String a3 = "";
     String a4 = "";
+
+    String b1 = "";
+    String b2 = "";
 
     String a4_a = "";
     String a4_b = "";
@@ -283,17 +298,23 @@ public class pq_Section_A extends AppCompatActivity {
         build_no = BuildConfig.VERSION_NAME;
 
         if (StringUtils.isEmpty(s1)) {
-            tvTitle.setText("Section A1");
+            tvTitle.setText("Section B1");
             MubLog.cpnsoleLog("tvTitle Try 1");
         } else if (StringUtils.isEmpty(s2)) {
-            tvTitle.setText("Section A2");
+            tvTitle.setText("Section B2");
             MubLog.cpnsoleLog("tvTitle Try 2");
         } else if (StringUtils.isEmpty(s3)) {
-            tvTitle.setText("Section A3");
+            tvTitle.setText("Section B3");
             MubLog.cpnsoleLog("tvTitle Try 3");
         } else if (StringUtils.isEmpty(s4)) {
-            tvTitle.setText("Section A4");
+            tvTitle.setText("Section B4");
             MubLog.cpnsoleLog("tvTitle Try 4");
+        } else if (StringUtils.isEmpty(s5)) {
+            tvTitle.setText("Section B5");
+            MubLog.cpnsoleLog("tvTitle Try 5");
+        } else if (StringUtils.isEmpty(s6)) {
+            tvTitle.setText("Section B6");
+            MubLog.cpnsoleLog("tvTitle Try 6");
         }
 
         txt_a6_date.setOnClickListener(new View.OnClickListener() {
@@ -548,6 +569,9 @@ public class pq_Section_A extends AppCompatActivity {
                 int rg_a4d_ID = rg_a4d.getCheckedRadioButtonId();
                 int rg_a5a_ID = rg_a5a.getCheckedRadioButtonId();
 
+                int rg_b1_ID = rg_b1.getCheckedRadioButtonId();
+                int rg_b2_ID = rg_b2.getCheckedRadioButtonId();
+
                 RConsUtils.hideKeyboard(pq_Section_A.this);
                 SaveData();
                 if (qa1_layout.getVisibility() == View.VISIBLE) {
@@ -557,7 +581,7 @@ public class pq_Section_A extends AppCompatActivity {
                         if (a1.equalsIgnoreCase("1")) {
                             a2 = "";
                             rg_a2.clearCheck();
-                            RConsUtils.hideView(qa1_layout, qa3_layout);
+                            RConsUtils.hideView(qa1_layout, qb1_layout);
                         } else {
                             RConsUtils.hideView(qa1_layout, qa2_layout);
                         }
@@ -579,6 +603,50 @@ public class pq_Section_A extends AppCompatActivity {
 
 
                         startActivityForResult(intent, 88);
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qb1_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_b1_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_b1_ID);
+                        b1 = radioButton.getTag().toString();
+                        if (b1.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qb1_layout, qa4a_layout);
+                        } else if (b1.equalsIgnoreCase("3") || (b1.equalsIgnoreCase("-777"))) {
+                            SaveData();
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qb1_layout, qb2_layout);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qb2_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_b2_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_b2_ID);
+                        b2 = radioButton.getTag().toString();
+                        if (b2.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qb2_layout, qa4a_layout);
+                        } else if (b2.equalsIgnoreCase("3") || b2.equalsIgnoreCase("-99") || (b2.equalsIgnoreCase("-777"))) {
+                            SaveData();
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qb2_layout, qa3_layout);
+                        }
                     } else {
                         toastMessage("Please Select Option");
                     }
@@ -1027,20 +1095,21 @@ public class pq_Section_A extends AppCompatActivity {
         } else if (qa4b_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4b_layout, qa4a_layout);
         } else if (qa4a_layout.getVisibility() == View.VISIBLE) {
-            if (a3.equalsIgnoreCase("1")) {
-                hideView(qa4a_layout, qa3_layout);
+            if (b1.equalsIgnoreCase("1")) {
+                hideView(qa4a_layout, qb1_layout);
+            } else if (b2.equalsIgnoreCase("1")) {
+                hideView(qa4a_layout, qb2_layout);
             } else {
                 hideView(qa4a_layout, qa4_layout);
             }
         } else if (qa4_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4_layout, qa3_layout);
         } else if (qa3_layout.getVisibility() == View.VISIBLE) {
-            if (a1.equalsIgnoreCase("1")) {
-                hideView(qa3_layout, qa1_layout);
-            } else {
-                hideView(qa3_layout, qa2_layout);
-            }
-
+            hideView(qa3_layout, qb2_layout);
+        } else if (qb2_layout.getVisibility() == View.VISIBLE) {
+            hideView(qb2_layout, qb1_layout);
+        } else if (qb1_layout.getVisibility() == View.VISIBLE) {
+            hideView(qb1_layout, qa1_layout);
         } else if (qa2_layout.getVisibility() == View.VISIBLE) {
             hideView(qa2_layout, qa1_layout);
         } else {
@@ -1176,6 +1245,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,
@@ -1218,6 +1289,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,
@@ -1260,6 +1333,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,
@@ -1302,6 +1377,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,
@@ -1344,6 +1421,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,
@@ -1386,6 +1465,8 @@ public class pq_Section_A extends AppCompatActivity {
                         student_id,
                         phone_number,
                         a1,
+                        b1,
+                        b2,
                         a2,
                         a3,
                         a4,

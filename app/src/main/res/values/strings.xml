@@ -253,10 +253,10 @@
     <!-- TODO: Section A Strings -->
     <string name="section_a_script_1">جواب دہندہ کو پڑھ کر سنائیں:</string>
     <string name="section_a_script_2">السلام علیکم/میرا نام__________,ہے  ۔میں آپ کو  سکولوں کے  ریسرچ پروجیکٹ  کے متعلق  کال کر رہی  ہوں  جو حکومت پنجاب  کے سکول ایجوکیشن ڈیپارٹمنٹ کی جانب سے کیا جا رہا ہے۔   ہم نے  دو سال قبل گورنمنٹ کے ایک ریسرچ پراجیکٹ کے لئے  آپ کے بچے/بچی کا انٹرویو لیا تھا جب وہ چوتھی  جماعت میں تھا/تھی۔   اس پراجیکٹ کے تحت ہم جاننا چاہتے ہیں کہ آپ کے بچے   کیسے پڑھ رہے ہیں جبکہ  کرونا وبا کی وجہ سے سکول بند  ہیں ۔</string>
-    <string name="section_a_question_1">   1.شمار کنندہ  :   کیا آپ کی کال سنی گئی؟</string>
+    <string name="section_a_question_1">   1.شمار کنندہ  :  کیا  رابطہ ہوا؟</string>
     <string name="section_a_question_1_option_1">1~  ہاں </string>
     <string name="section_a_question_1_option_0">0~  نہیں</string>
-    <string name="section_a_question_2">  آپ کی کال کیوں نہیں سنی گئی؟</string>
+    <string name="section_a_question_2">  آپ کا رابطہ کیوں نہیں ہوا؟ </string>
     <string name="section_a_question_2_option_1"> 1~ کال نہیں اٹھائی گئی  </string>
     <string name="section_a_question_2_option_2"> 2~  نمبر ایکٹیو نہیں/ نمبر درست  نہیں  </string>
     <string name="section_a_question_2_option_3"> 3~ رابطہ نہیں ہو سکا (نیٹ ورک دستیاب نہیں، موبائل بند ہے)</string>
