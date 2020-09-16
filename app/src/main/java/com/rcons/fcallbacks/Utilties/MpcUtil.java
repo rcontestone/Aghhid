@@ -1,13 +1,19 @@
 package com.rcons.fcallbacks.Utilties;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.EmailDebugLog;
+import com.rcons.fcallbacks.Main.CallMenuActivity;
 import com.rcons.fcallbacks.R;
 
 import java.text.DateFormat;
@@ -16,6 +22,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 
 /**
@@ -208,5 +217,15 @@ public class MpcUtil {
         DebugLog.console("[MpcUtil] inside getPassword() value "+value);
         return value;
     }
+
+
+
+
+
+
+
+
+
+
 
 }

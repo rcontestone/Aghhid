@@ -1,26 +1,34 @@
 package com.rcons.fcallbacks.Athreehhid;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -34,12 +42,15 @@ import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
+import com.rcons.fcallbacks.Main.CallMenuActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_A;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
 import com.rcons.fcallbacks.Utilties.MpcUtil;
+import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
+import com.rcons.fcallbacks.Utilties.StringUtils;
 import com.rcons.fcallbacks.http.ConnectionVerifier;
 import com.rcons.fcallbacks.http.ResponceVerifier;
 
@@ -49,6 +60,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 
 public class HH_Screen_two extends Activity {
@@ -2041,4 +2053,119 @@ public class HH_Screen_two extends Activity {
 
         }
     }
+
+
+
+
+
+
+    void DialUserNumber() {
+        if (ActivityCompat.checkSelfPermission(appContext,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+//        String phoneNumber =     txt_mobile_number.getText().toString().trim();
+
+
+        String phoneNumber =   phone_number;// numbers_sp_q_2.getSelectedItem().toString().trim();
+
+        String network = getSimNetwork();
+        MubLog.cpnsoleLog("getSimNetwork  " + network);
+        if (!StringUtils.isEmpty(network)) {
+            if (network.equalsIgnoreCase("Jazz")) {
+                phoneNumber = "660" + phoneNumber;
+            } else if (network.equalsIgnoreCase("Telenor")) {
+                //     phoneNumber = "880" + phoneNumber;
+            } else {
+                phoneNumber = "770" + phoneNumber;
+            }
+        } else {
+
+        }
+        //callIntent.setData(Uri.parse("tel:" + "03006982661"));
+
+//        SaveInterviewStart_time();
+        if (network.equalsIgnoreCase("Telenor")) {
+            ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
+        } else {
+            callIntent.setData(Uri.parse("tel:" + phoneNumber));
+            startActivity(callIntent);
+        }
+
+
+    }
+
+    public  String getSimNetwork() {
+        TelephonyManager phoneMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        return phoneMgr.getSimOperatorName();
+    }
+
+
+
+
+    void ShowDialMessage(final Context context, String title, String message, String str_btonok, String str_btnenum) {
+
+        LayoutInflater li = LayoutInflater.from(context);
+        View dialogView = li.inflate(R.layout.delete_dialog, null);
+        androidx.appcompat.app.AlertDialog.Builder alertDialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(context);
+        alertDialogBuilder.setView(dialogView);
+        TextView txtDialogTitle = dialogView.findViewById(R.id.txtDialogTitle);
+        ImageView imageView1 = dialogView.findViewById(R.id.imageView1);
+        imageView1.setVisibility(View.GONE);
+        txtDialogTitle.setText(title);
+        txtDialogTitle.setVisibility(View.GONE);
+        TextView txtErrorMessage = dialogView.findViewById(R.id.txtErrorMessage);
+        txtErrorMessage.setText(message);
+        txtErrorMessage.setVisibility(View.GONE);
+        Button btnCancel = dialogView.findViewById(R.id.btnCancel);
+        Button btnok = dialogView.findViewById(R.id.btnRconsUser);
+        Button btnenum = dialogView.findViewById(R.id.btnenum);
+        btnenum.setVisibility(View.VISIBLE);
+        btnok.setText("Dial " + str_btonok);
+        btnok.setTextSize(24);
+        btnenum.setText("Dial " + str_btnenum);
+        btnenum.setTextSize(24);
+        btnCancel.setText("Cancel");
+        btnCancel.setTextSize(24);
+        final androidx.appcompat.app.AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCancelable(false);
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        alertDialog.show();
+        btnok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+               // SaveInterviewStart_time();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + str_btonok));
+                startActivity(callIntent);
+
+            }
+        });
+        btnenum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+               // SaveInterviewStart_time();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + str_btnenum));
+                startActivity(callIntent);
+
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+
+            }
+        });
+    }
+
+
+
+
+
+
 }
