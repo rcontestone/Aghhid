@@ -2424,7 +2424,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         long rowId = 1;
         boolean result =false;
         ArrayList<String> spinnerArray = new ArrayList<String>();
-        spinnerArray.add("Show Previous Numbers");
+        spinnerArray.add("Select Number");
         try {
             openDB();
            // JSONArray dataArray = new JSONArray();

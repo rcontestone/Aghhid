@@ -12,14 +12,19 @@ import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
+import android.text.Html;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,12 +34,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.mubashar.mubchatheadservice.ChatHeadService;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_Section_h;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_section_e;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_two;
+import com.rcons.fcallbacks.Athreehhid.HouseHoldDataBaseHelper;
 import com.rcons.fcallbacks.EditForm.SectionsSelections;
+import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_A;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_B;
@@ -43,6 +51,8 @@ import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
+
+import java.util.ArrayList;
 
 
 public class CallMenuActivity extends AppCompatActivity {
@@ -67,7 +77,7 @@ public class CallMenuActivity extends AppCompatActivity {
     String region = "";
     String emp_id = "";
     String order_id = "";
-
+    Spinner numbers_sp_q_2 = null;
     boolean isFromEdit = false;
     boolean isPendingCall = false;
     boolean isAlternateFarmer = false;
@@ -234,7 +244,16 @@ public class CallMenuActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 0);
                 } else {
-                    DialUserNumber();
+
+                    if(!numberSelected()){
+                        return;
+                    }else {
+                        DialUserNumber();
+                    }
+
+
+
+
                 }
 
             }
@@ -317,6 +336,16 @@ public class CallMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stopChatHeadService();
+
+
+             if (!numberSelected()){
+
+
+                 return;
+             }
+
+
+
                 Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
 //                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
 //                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_one_Section_h.class);
@@ -337,7 +366,15 @@ public class CallMenuActivity extends AppCompatActivity {
                 intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("hhid")));
                 //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
                 intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
-                intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
+
+
+
+                //intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
+                intent.putExtra("m1b_parent_mobile", numbers_sp_q_2.getSelectedItem().toString());
+
+
+
+
                 intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
                 // intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
                 // intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
@@ -465,6 +502,67 @@ public class CallMenuActivity extends AppCompatActivity {
         });
 
 
+        numbers_sp_q_2 = (Spinner) findViewById(R.id.numbers_sp_q_2);
+        numbers_sp_q_2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+        ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this,school_code,student_id);
+
+
+        ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
+               R.layout.spinner_item,
+                spinnerArray);
+        numbers_sp_q_2.setAdapter(spinnerArrayAdapter);
+
+        numbers_sp_q_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
+                DebugLog.console("[CallMenuActivity] inside numbers onItemSelected() "+i);
+
+
+                try {
+                    if (i==0){
+                        //  hh_edtfield_q_2.setText(  "");
+
+                    }else{
+
+                        //   hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
+
+                    }
+                } catch (Exception e) {
+                    EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside on numbers() Exception is :"+e.toString());
+                }
+
+
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+    }
+
+    private boolean numberSelected() {
+        try {
+            if(numbers_sp_q_2.getSelectedItem().toString().equalsIgnoreCase(numbers_sp_q_2.getItemAtPosition(0).toString())){
+
+                Toast.makeText(CallMenuActivity.this, "Please select number first.", Toast.LENGTH_SHORT).show();
+
+
+                return false;
+            }
+
+            return true;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside numberSelected() Exception is :"+e.toString());
+            return false;
+        }
     }
 
     void SearchDataFromCursor(String scode) {
@@ -654,7 +752,24 @@ public class CallMenuActivity extends AppCompatActivity {
         txt_Student_id.setText("HH Id : " + studentid);
         txt_district.setText(m2_district);
         txt_Tehsil.setText(m2_tehsil);
-        txt_mobile_number.setText(m1b_parent_mobile);
+
+
+       // txt_mobile_number.setText(m1b_parent_mobile);
+
+        ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this,school_code,student_id);
+
+
+        spinnerArray.remove(0);
+        String hhidlisthaving_numbers = android.text.TextUtils.join("----  ", spinnerArray);
+
+
+        txt_mobile_number.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+        txt_mobile_number.setSingleLine(false);
+         txt_mobile_number.setText(Html.fromHtml(hhidlisthaving_numbers));
+
+
+
+
 
         school_code = scode;
         student_id = studentid;

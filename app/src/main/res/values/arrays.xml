@@ -542,6 +542,11 @@
 
     </string-array>
 
+    <string-array name="array_num">
+        <item>Select Number</item>
+
+
+    </string-array>
 
 
 </resources>

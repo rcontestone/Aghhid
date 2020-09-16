@@ -297,8 +297,7 @@ public class HH_Screen_two extends Activity {
             numbers_sp_q_2 = (Spinner) findViewById(R.id.numbers_sp_q_2);
 
             ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_two.this).aghhid_getNumbersDataagainstvillageAndhhid(appContext,school_code,student_id);
-//            spinnerArray.add("Show previous numbers");
-//            spinnerArray.add("3006854549");
+
 
             ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
                     android.R.layout.simple_spinner_dropdown_item,
