@@ -255,7 +255,7 @@
     <string name="section_a_script_2">السلام علیکم/میرا نام__________,ہے  ۔میں آپ کو  سکولوں کے  ریسرچ پروجیکٹ  کے متعلق  کال کر رہی  ہوں  جو حکومت پنجاب  کے سکول ایجوکیشن ڈیپارٹمنٹ کی جانب سے کیا جا رہا ہے۔   ہم نے  دو سال قبل گورنمنٹ کے ایک ریسرچ پراجیکٹ کے لئے  آپ کے بچے/بچی کا انٹرویو لیا تھا جب وہ چوتھی  جماعت میں تھا/تھی۔   اس پراجیکٹ کے تحت ہم جاننا چاہتے ہیں کہ آپ کے بچے   کیسے پڑھ رہے ہیں جبکہ  کرونا وبا کی وجہ سے سکول بند  ہیں ۔</string>
     <string name="section_a_question_1">   1.شمار کنندہ  :  کیا  رابطہ ہوا؟</string>
     <string name="section_a_question_1_option_1">1~  ہاں </string>
-    <string name="section_a_question_1_option_0">0~  نہیں</string>
+    <string name="section_a_question_1_option_0">2~  نہیں</string>
     <string name="section_a_question_2">  آپ کا رابطہ کیوں نہیں ہوا؟ </string>
     <string name="section_a_question_2_option_1"> 1~ کال نہیں اٹھائی گئی  </string>
     <string name="section_a_question_2_option_2"> 2~  نمبر ایکٹیو نہیں/ نمبر درست  نہیں  </string>
@@ -276,7 +276,7 @@
     <string name="section_a_question_5_script_2">زیادہ تر   سوالات   جو آپ سے پوچھوں گی وہ  آپ کے بچے  کے تعلیمی معیار ،  گھرانے میں موجود تعلیمی  وسائل  اور  تعلیمی سرگرمیوں  کے حوالے سے ہیں ۔ آپ کے جوابات  مکمل طور پر صیغہ راز میں  رکھیں جائیں گے ۔   یہ معلومات  صرف ریسرچ ٹیم کے استعمال میں ہوں گے آپ کے جوابات کسی دوسرے فرد کو نہیں بتائیں جا ئیں گے۔   آپ کو ریسرچ ٹیم کی جانب سے سروے میں شامل ہونے پر  آپ کی حوصلہ افزائی کےلیے 100  روپے کا بیلنس دیا جائے گا۔</string>
     <string name="section_a_question_5">کیا آپ اس سروے میں  شمو لیت کے لئے  رضا مند ہیں؟</string>
     <string name="section_a_question_5_option_1">1~ ہاں</string>
-    <string name="section_a_question_5_option_0">0~ نہیں</string>
+    <string name="section_a_question_5_option_2">2~ نہیں</string>
     <string name="section_a_question_6">انکار کی وجہ؟</string>
     <string name="section_a_question_6_reshedule">ری شیڈول  کا ٹائم اور تاریخ لکھیں</string>
     <string name="section_a_question_6_option_1">1~ وقت نہیں</string>
@@ -627,7 +627,8 @@
     <string name="section_b_question_q7_option4"> 4~ زونگ </string>
     <string name="section_b_question_q7_option5"> 5~ دیگر(وضاحت۔۔۔۔۔) </string>
 
-    <string name="section_b_question_q8"> کیا جوابدہندہ نے کوئی سوال پوچھا </string>
+    <string name="section_b_question_q8"> کیا آپ کے کوئی سوالات ہیں؟ (شمار کنندہ: کسی بھی سوال کا جواب دیں)۔ کیا آپ سروے میں شرکت کےلئے رضامند ہیں؟ </string>
+    <string name="section_b_question_q8_instructions"> کیا جوابدہندہ نے کوئی سوال پوچھا </string>
     <string name="section_b_question_q8_option1"> ہاں(تمام سوالات کے جواب دئے) </string>
     <string name="section_b_question_q8_option2"> نہیں </string>
 
@@ -815,6 +816,32 @@
     <string name="hh_textview_d_8">8. اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
 
 
+    <!--  Adolscent Section M Strings -->
+
+    <string name="section_m_question_q1"> سروے کا نتیجہ  </string>
+    <string name="section_m_question_q1_option1">1~ مکمل ہوگیا، آپ کے وقت اور تعاون کا شکریہ </string>
+    <string name="section_m_question_q1_option2">2~ دوبارہ کال کریں، دوبارہ کال کےلئے کون سا وقت بہتر ہوگا(M02) میں نوٹ کریں  </string>
+    <string name="section_m_question_q1_option3">3~  نامکمل سروے۔ جوابدہندہ نے فون کاٹ دیا اور بار بار کال کرنے پر بھی جواب نہیں دیا </string>
+    <string name="section_m_question_q1_option4">4~ نمبر سے رابطہ ممکن نہیں یا بزی ٹون آرہی ہے </string>
+    <string name="section_m_question_q1_option5">5~ جوابدہندہ کو نیٹورک کا ایشو آرہا ہے/اسے بیٹری لو کا مسئلہ ہے اس لئے دوبارہ کال کر ل </string>
+    <string name="section_m_question_q1_option6">6~ کسی بھی سوال کا جواب دینے سے انکار کر دیا </string>
+    <string name="section_m_question_q1_option7">7~ کچھ سوالات کا جواب دینے سے انکار کر دیا </string>
+
+    <string name="section_m_question_q2"> دوبارہ کال کا وقت ایک سے زیادہ وقت نوٹ کر سکتے ہیں </string>
+
+    <string name="section_m_question_q3"> کیا پوری کال کے دوران سپیکر آن تھا؟ </string>
+    <string name="section_m_question_q3_option1">1~ ہاں سارا وقت </string>
+    <string name="section_m_question_q3_option2">2~ ہاں کچھ وقت </string>
+    <string name="section_m_question_q3_option3">3~ نہیں </string>
+
+    <string name="section_m_question_q4"> سروے کے زیادہ تر سوالات کس زبان میں کئے گئے </string>
+    <string name="section_m_question_q4_option1">1~ سرائیکی  </string>
+    <string name="section_m_question_q4_option2">2~ پنجابی </string>
+    <string name="section_m_question_q4_option3">3~ اردو </string>
+    <string name="section_m_question_q4_option4">4~  انگریزی </string>
+    <string name="section_m_question_q4_option5">5~ دیگر(وضاحت۔۔۔۔۔۔) </string>
+
+
     <!--  Adolscent Section B Strings -->
 
 
@@ -934,8 +961,8 @@
     <!--  Adolscent Section D Strings -->
 
     <string name="ad_section_d_question_q1_script"> ہم حساب کے سوالات سے شروع کرتے ہیں </string>
-    <string name="ad_section_d_question_q1"> 7جمع 5کتنے ہوتے ہیں </string>
-    <string name="ad_section_d_question_q1_option1">1~ درست جواب دیا(12) </string>
+    <string name="ad_section_d_question_q1"> 9منفی 4کتنے ہوتے ہیں</string>
+    <string name="ad_section_d_question_q1_option1">1~ درست جواب دیا(5) </string>
     <string name="ad_section_d_question_q1_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q1_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q1_option98">98~ معلوم نہیں </string>
@@ -943,64 +970,96 @@
     <string name="ad_section_d_question_q1_option777">777~ فون کاٹ دیا </string>
 
 
-    <string name="ad_section_d_question_q2"> 9منفی 4کتنے ہوتے ہیں </string>
-    <string name="ad_section_d_question_q2_option1">1~ درست جواب دیا(5) </string>
+    <string name="ad_section_d_question_q2"> 3ضرب 6کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q2_option1">1~ درست جواب دیا(18) </string>
     <string name="ad_section_d_question_q2_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q2_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q2_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q2_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q2_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q3"> 3ضرب 6کتنے ہوتے ہیں </string>
-    <string name="ad_section_d_question_q3_option1">1~درست جواب دیا(18) </string>
+    <string name="ad_section_d_question_q3"> 8کو 2پر تقسیم کریں تو کیا جواب آتا ہے </string>
+    <string name="ad_section_d_question_q3_option1">1~درست جواب دیا(2) </string>
     <string name="ad_section_d_question_q3_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q3_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q3_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q3_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q4"> 56کو 8پر تقسیم کریں تو کیا جواب آتا ہے </string>
-    <string name="ad_section_d_question_q4_option1">1~ درست جواب دیا(7) </string>
+    <string name="ad_section_d_question_q4"> 75جمع 16کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q4_option1">1~ درست جواب دیا(91) </string>
     <string name="ad_section_d_question_q4_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q4_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q4_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q4_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q5"> 39جمع 16کتنے ہوتے ہیں</string>
-    <string name="ad_section_d_question_q5_option1">1~ درست جواب دیا(55) </string>
+    <string name="ad_section_d_question_q5"> 85منفی 67کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q5_option1">1~ درست جواب دیا(18) </string>
     <string name="ad_section_d_question_q5_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q5_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q5_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q5_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q6"> اب میں آپ کو3عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 3،1،8تو آپ نے بتانا ہے کہ یہ (تین سو اٹھارہ)318بنتا ہے۔آپ کا سوال یہ ہے 1،4،9</string>
-    <string name="ad_section_d_question_q6_option1">1~ درست جواب دیا </string>
+    <string name="ad_section_d_question_q6"> 32ضرب 6کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q6_option1">1~ درست جواب دی(192)ا </string>
     <string name="ad_section_d_question_q6_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q6_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q6_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q6_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q7"> اب میں آپ کو2عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 7, 2تو آپ نے بتانا ہے کہ یہ (بہتر )72بنتا ہے۔آپ کا سوال یہ ہے 5,3</string>
-    <string name="ad_section_d_question_q7_option1">1~ درست جواب دیا(53) </string>
+    <string name="ad_section_d_question_q7"> 72کو 6پر تقسیم کریں تو کیا جواب آتا ہے </string>
+    <string name="ad_section_d_question_q7_option1">1~ درست جواب دیا(12) </string>
     <string name="ad_section_d_question_q7_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q7_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q7_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q7_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q7_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q8">برائے مہربانی 1سے لے کر دس تک گنتی سنائیں</string>
-    <string name="ad_section_d_question_q8_option1">1~ درست جواب دیا(1سے 10تک مکمل گنتی سنادی) </string>
+    <string name="ad_section_d_question_q8"> 18ضرب 23کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q8_option1">1~ درست جواب دیا(414) </string>
     <string name="ad_section_d_question_q8_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q8_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q8_option98">98~ معلوم نہیں </string>
     <string name="ad_section_d_question_q8_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q8_option777">777~ فون کاٹ دیا </string>
 
+    <string name="ad_section_d_question_q9"> 7جمع 5کتنے ہوتے ہیں </string>
+    <string name="ad_section_d_question_q9_option1">1~ درست جواب دیا(12) </string>
+    <string name="ad_section_d_question_q9_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q9_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q9_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q9_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q9_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q10"> اب میں آپ کو3عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 3،1،8تو آپ نے بتانا ہے کہ یہ (تین سو اٹھارہ)318بنتا ہے۔ آپ کا سوال یہ ہے 1،4،9</string>
+    <string name="ad_section_d_question_q10_option1">1~ درست جواب دیا(149) </string>
+    <string name="ad_section_d_question_q10_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q10_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q10_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q10_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q10_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q11"> اب میں آپ کو2عدد بتاؤں گی ۔ اور میں چاہوں گی کہ آپ مجھے وہ نمبر بتائیں۔ مثال کے طور پر اگر میں کہوں کہ 7, 2تو آپ نے بتانا ہے کہ یہ (بہتر )72بنتا ہے۔ آپ کا سوال یہ ہے 5,3</string>
+    <string name="ad_section_d_question_q11_option1">1~ درست جواب دیا(149) </string>
+    <string name="ad_section_d_question_q11_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q11_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q11_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q11_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q11_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_d_question_q12">1~ درست جواب دیا(1سے 10تک مکمل گنتی سنادی) </string>
+    <string name="ad_section_d_question_q12_option1">1~ درست جواب دیا(149) </string>
+    <string name="ad_section_d_question_q12_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_d_question_q12_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_d_question_q12_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_d_question_q12_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_d_question_q12_option777">777~ فون کاٹ دیا </string>
+
     <string name="section_E">Section E</string>
-    <string name="ad_section_e_question_q1"> آپ لفظ  (رنگ ) کے کیا ہجے کریں گی</string>
+    <string name="ad_section_e_question_q1"> آپ لفظ  (استاد  ) کے کیا ہجے کریں گی </string>
     <string name="ad_section_e_question_q1_option1">1~ درست جواب دیا </string>
     <string name="ad_section_e_question_q1_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_e_question_q1_option88">88~ جواب نہیں دیا </string>
@@ -1009,7 +1068,7 @@
     <string name="ad_section_e_question_q1_option777">777~ فون کاٹ دیا </string>
 
 
-    <string name="ad_section_e_question_q2a"> میں آپ کے سامنے کچھ حروف پڑھوں گی ۔ آپ نے مجھے بتانا ہے کہ یہ کس لفظ  کے ہجے ہیں۔ مثال کے طور پر گ، ر ، م ، چھوٹی ی۔ یہ لفظ بنا “گرمی” آپ کا سوال یہ ہے۔ ش، ر ، م، ن،د،ہ۔ </string>
+    <string name="ad_section_e_question_q2a">میں آپ کے سامنے کچھ حروف پڑھوں گی ۔ آپ نے مجھے بتانا ہے کہ یہ کس لفظ  کے ہجے ہیں۔ مثال کے طور پر گ، ر ، م ، چھوٹی ی۔ یہ لفظ بنا “گرمی” آپ کا سوال یہ ہے۔ ش، ر ، م، ن،د،ہ۔ </string>
     <string name="ad_section_e_question_q2a_option1">1~ درست جواب دیا (درست لفظ”شرمندہ”بتا دیا) </string>
     <string name="ad_section_e_question_q2a_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_e_question_q2a_option88">88~ جواب نہیں دیا </string>
@@ -1017,7 +1076,7 @@
     <string name="ad_section_e_question_q2a_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_e_question_q2a_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_e_question_q2b"> یہ سوال صرف اس صورت میں پوچھیں جب  سوال نمبر 2-aکا جواب درست ہو کیا آپ بتاسکتی ہیں کہ جو لفظ آپ نے ابھی ہجے جوڑ کر ہمیں بتایا یعنی شرمندہ اس کے معنی کیا ہوتے ہیں</string>
+    <string name="ad_section_e_question_q2b"> یہ سوال صرف اس صورت میں پوچھیں جب  سوال نمبر 2-aکا جواب درست ہو کیا آپ بتاسکتی ہیں کہ جو لفظ آپ نے ابھی ہجے جوڑ کر ہمیں بتایا یعنی شرمندہ اس کے معنی کیا ہوتے ہیں </string>
     <string name="ad_section_e_question_q2b_option1">1~ درست جواب دیا(درست معنی بتایا جیسے، شرم محسوس کرنا، غلطی کا احساس ہونا وغیرہ) </string>
     <string name="ad_section_e_question_q2b_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_e_question_q2b_option88">88~ جواب نہیں دیا </string>
@@ -1025,7 +1084,7 @@
     <string name="ad_section_e_question_q2b_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_e_question_q2b_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_e_question_q3"> برائے مہربانی (ث) سے پیچھے کی طرف حروف تہجی پڑھ کر سنائیں </string>
+    <string name="ad_section_e_question_q3"> آپ لفظ (رنگ) کے کیا ہجے کریں گی </string>
     <string name="ad_section_e_question_q3_option1">1~ درست جواب دیا </string>
     <string name="ad_section_e_question_q3_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_e_question_q3_option88">88~ جواب نہیں دیا </string>
@@ -1033,13 +1092,21 @@
     <string name="ad_section_e_question_q3_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_e_question_q3_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_e_question_q4">برائے مہربانی شروع سے  آخر تک ا، ب سنائیں</string>
+    <string name="ad_section_e_question_q4"> برائے مہربانی (ث) سے پیچھے کی طرف حروف تہجی پڑھ کر سنائیں </string>
     <string name="ad_section_e_question_q4_option1">1~ درست جواب دیا </string>
     <string name="ad_section_e_question_q4_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_e_question_q4_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_e_question_q4_option98">98~ معلوم نہیں </string>
     <string name="ad_section_e_question_q4_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_e_question_q4_option777">777~ فون کاٹ دیا </string>
+
+    <string name="ad_section_e_question_q5"> برائے مہربانی شروع سے  آخر تک ا، ب سنائیں </string>
+    <string name="ad_section_e_question_q5_option1">1~ درست جواب دیا </string>
+    <string name="ad_section_e_question_q5_option2">2~ غلط جواب دیا </string>
+    <string name="ad_section_e_question_q5_option88">88~ جواب نہیں دیا </string>
+    <string name="ad_section_e_question_q5_option98">98~ معلوم نہیں </string>
+    <string name="ad_section_e_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
+    <string name="ad_section_e_question_q5_option777">777~ فون کاٹ دیا </string>
 
     <string name="ad_section_e_script"> آپ کا بہت شکریہ، میں ایک بار پھر (\u0020  %1$s) کاان کے وقت کےلئے  بھی شکریہ ادا کرنا چاہتی ہوں ۔اگر (\u0020  %2$s) قریب ہیں تو فون انہیں دے دیں۔ اگر وہ موجود نہیں ہیں تو کوئی بات نہیں۔
 اگر (\u0020  %3$s) سے بات ہوجائے:آپ کے گھرانے نے ہمارے ساتھ جو وقت گزارہ ہم اس کی بھرپور قدر کرتے ہیں۔  آپ کے نمبر پر اس فون کال کے48-24گھنٹے  کے اندر  100روپے کا بیلنس ٹرانسفر کر دیا جائے گا

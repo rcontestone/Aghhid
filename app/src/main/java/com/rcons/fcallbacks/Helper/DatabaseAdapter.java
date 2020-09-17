@@ -6371,11 +6371,16 @@ public class DatabaseAdapter {
                                         String g_6,
                                         String g_7,
                                         String g_8,
+                                        String g_9,
+                                        String g_10,
+                                        String g_11,
+                                        String g_12,
                                         String g_urdu_1,
                                         String g_urdu_2_a,
                                         String g_urdu_2_b,
                                         String g_urdu_3,
-                                        String g_urdu_4
+                                        String g_urdu_4,
+                                        String g_urdu_5
     ) {
 
         db = database.getReadableDatabase();
@@ -6408,11 +6413,19 @@ public class DatabaseAdapter {
                 contentValues.put("g_6", g_6);
                 contentValues.put("g_7", g_7);
                 contentValues.put("g_8", g_8);
+
+                contentValues.put("g_9", g_9);
+                contentValues.put("g_10", g_10);
+                contentValues.put("g_11", g_11);
+                contentValues.put("g_12", g_12);
+
                 contentValues.put("g_urdu_1", g_urdu_1);
                 contentValues.put("g_urdu_2_a", g_urdu_2_a);
                 contentValues.put("g_urdu_2_b", g_urdu_2_b);
                 contentValues.put("g_urdu_3", g_urdu_3);
                 contentValues.put("g_urdu_4", g_urdu_4);
+
+                contentValues.put("g_urdu_5", g_urdu_5);
 
 
                 db.insertOrThrow(aghhid_section_g_table, null, contentValues);
@@ -6439,11 +6452,19 @@ public class DatabaseAdapter {
                 contentValues.put("g_6", g_6);
                 contentValues.put("g_7", g_7);
                 contentValues.put("g_8", g_8);
+
+                contentValues.put("g_9", g_9);
+                contentValues.put("g_10", g_10);
+                contentValues.put("g_11", g_11);
+                contentValues.put("g_12", g_12);
+
                 contentValues.put("g_urdu_1", g_urdu_1);
                 contentValues.put("g_urdu_2_a", g_urdu_2_a);
                 contentValues.put("g_urdu_2_b", g_urdu_2_b);
                 contentValues.put("g_urdu_3", g_urdu_3);
                 contentValues.put("g_urdu_4", g_urdu_4);
+
+                contentValues.put("g_urdu_5", g_urdu_5);
 
 
                 db.update(aghhid_section_g_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);

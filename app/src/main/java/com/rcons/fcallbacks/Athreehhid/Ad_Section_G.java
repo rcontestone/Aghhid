@@ -55,8 +55,23 @@ public class Ad_Section_G extends AppCompatActivity {
     RadioGroup rg_g6;
     @BindView(R.id.rg_g7)
     RadioGroup rg_g7;
+
     @BindView(R.id.rg_g8)
     RadioGroup rg_g8;
+
+    @BindView(R.id.rg_g9)
+    RadioGroup rg_g9;
+
+    @BindView(R.id.rg_g10)
+    RadioGroup rg_g10;
+
+    @BindView(R.id.rg_g11)
+    RadioGroup rg_g11;
+
+    @BindView(R.id.rg_g12)
+    RadioGroup rg_g12;
+
+
     @BindView(R.id.rg_g_urdu_1)
     RadioGroup rg_g_urdu_1;
     @BindView(R.id.rg_g_urdu_2_a)
@@ -67,6 +82,9 @@ public class Ad_Section_G extends AppCompatActivity {
     RadioGroup rg_g_urdu_3;
     @BindView(R.id.rg_g_urdu_4)
     RadioGroup rg_g_urdu_4;
+
+    @BindView(R.id.rg_g_urdu_5)
+    RadioGroup rg_g_urdu_5;
 
 
     @BindView(R.id.txt_School_Code)
@@ -90,8 +108,23 @@ public class Ad_Section_G extends AppCompatActivity {
     LinearLayout qg6_layout;
     @BindView(R.id.qg7_layout)
     LinearLayout qg7_layout;
+
     @BindView(R.id.qg8_layout)
     LinearLayout qg8_layout;
+
+    @BindView(R.id.qg9_layout)
+    LinearLayout qg9_layout;
+
+    @BindView(R.id.qg10_layout)
+    LinearLayout qg10_layout;
+
+    @BindView(R.id.qg11_layout)
+    LinearLayout qg11_layout;
+
+    @BindView(R.id.qg12_layout)
+    LinearLayout qg12_layout;
+
+
     @BindView(R.id.qg_urdu_1_layout)
     LinearLayout qg_urdu_1_layout;
     @BindView(R.id.qg_urdu_2_a_layout)
@@ -102,6 +135,9 @@ public class Ad_Section_G extends AppCompatActivity {
     LinearLayout qg_urdu_3_layout;
     @BindView(R.id.qg_urdu_4_layout)
     LinearLayout qg_urdu_4_layout;
+
+    @BindView(R.id.qg_urdu_5_layout)
+    LinearLayout qg_urdu_5_layout;
 
     @BindView(R.id.btn_back)
     Button btn_back;
@@ -146,11 +182,16 @@ public class Ad_Section_G extends AppCompatActivity {
     String g_6 = "";
     String g_7 = "";
     String g_8 = "";
+    String g_9 = "";
+    String g_10 = "";
+    String g_11 = "";
+    String g_12 = "";
     String g_urdu_1 = "";
     String g_urdu_2_a = "";
     String g_urdu_2_b = "";
     String g_urdu_3 = "";
     String g_urdu_4 = "";
+    String g_urdu_5 = "";
 
 
     @Override
@@ -191,11 +232,19 @@ public class Ad_Section_G extends AppCompatActivity {
                 int rg_g6_ID = rg_g6.getCheckedRadioButtonId();
                 int rg_g7_ID = rg_g7.getCheckedRadioButtonId();
                 int rg_g8_ID = rg_g8.getCheckedRadioButtonId();
+
+                int rg_g9_ID = rg_g9.getCheckedRadioButtonId();
+                int rg_g10_ID = rg_g10.getCheckedRadioButtonId();
+                int rg_g11_ID = rg_g11.getCheckedRadioButtonId();
+                int rg_g12_ID = rg_g12.getCheckedRadioButtonId();
+
                 int rg_g_urdu_1_ID = rg_g_urdu_1.getCheckedRadioButtonId();
                 int rg_g_urdu_2_a_ID = rg_g_urdu_2_a.getCheckedRadioButtonId();
                 int rg_g_urdu_2_b_ID = rg_g_urdu_2_b.getCheckedRadioButtonId();
                 int rg_g_urdu_3_ID = rg_g_urdu_3.getCheckedRadioButtonId();
                 int rg_g_urdu_4_ID = rg_g_urdu_4.getCheckedRadioButtonId();
+
+                int rg_g_urdu_5_ID = rg_g_urdu_5.getCheckedRadioButtonId();
 
                 SaveData();
 
@@ -208,11 +257,17 @@ public class Ad_Section_G extends AppCompatActivity {
                             g_3 = "";
                             g_4 = "";
                             g_5 = "";
+                            g_6 = "";
+                            g_7 = "";
+                            g_8 = "";
                             rg_g2.clearCheck();
                             rg_g3.clearCheck();
                             rg_g4.clearCheck();
                             rg_g5.clearCheck();
-                            RConsUtils.hideView(qg1_layout, qg6_layout);
+                            rg_g6.clearCheck();
+                            rg_g7.clearCheck();
+                            rg_g8.clearCheck();
+                            RConsUtils.hideView(qg1_layout, qg9_layout);
                         } else if (g_1.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qg1_layout, qg2_layout);
                         } else {
@@ -232,19 +287,27 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g2_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g2_ID);
                         g_2 = radioButton.getTag().toString();
-                        if (g_2.equalsIgnoreCase("2") || g_2.equalsIgnoreCase("-88") || g_2.equalsIgnoreCase("-98")) {
+                        if (g_2.equalsIgnoreCase("2") || g_2.equalsIgnoreCase("-88") || g_2.equalsIgnoreCase("-98") || g_2.equalsIgnoreCase("-99")) {
                             g_3 = "";
                             g_4 = "";
                             g_5 = "";
                             g_6 = "";
                             g_7 = "";
                             g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
                             rg_g3.clearCheck();
                             rg_g4.clearCheck();
                             rg_g5.clearCheck();
                             rg_g6.clearCheck();
                             rg_g7.clearCheck();
                             rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
                             RConsUtils.hideView(qg2_layout, qg_urdu_1_layout);
                         } else if (g_2.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qg2_layout, qg3_layout);
@@ -265,17 +328,25 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g3_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g3_ID);
                         g_3 = radioButton.getTag().toString();
-                        if (g_3.equalsIgnoreCase("2") || g_3.equalsIgnoreCase("-88") || g_3.equalsIgnoreCase("-98")) {
+                        if (g_3.equalsIgnoreCase("2") || g_3.equalsIgnoreCase("-88") || g_3.equalsIgnoreCase("-98") || g_3.equalsIgnoreCase("-99")) {
                             g_4 = "";
                             g_5 = "";
                             g_6 = "";
                             g_7 = "";
                             g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
                             rg_g4.clearCheck();
                             rg_g5.clearCheck();
                             rg_g6.clearCheck();
                             rg_g7.clearCheck();
                             rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
                             RConsUtils.hideView(qg3_layout, qg_urdu_1_layout);
                         } else if (g_3.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qg3_layout, qg4_layout);
@@ -296,15 +367,23 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g4_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g4_ID);
                         g_4 = radioButton.getTag().toString();
-                        if (g_4.equalsIgnoreCase("2") || g_4.equalsIgnoreCase("-88") || g_4.equalsIgnoreCase("-98")) {
+                        if (g_4.equalsIgnoreCase("2") || g_4.equalsIgnoreCase("-88") || g_4.equalsIgnoreCase("-98") || g_4.equalsIgnoreCase("-99")) {
                             g_5 = "";
                             g_6 = "";
                             g_7 = "";
                             g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
                             rg_g5.clearCheck();
                             rg_g6.clearCheck();
                             rg_g7.clearCheck();
                             rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
                             RConsUtils.hideView(qg4_layout, qg_urdu_1_layout);
                         } else if (g_4.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qg4_layout, qg5_layout);
@@ -325,7 +404,25 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g5_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g5_ID);
                         g_5 = radioButton.getTag().toString();
-                        if (g_5.equalsIgnoreCase("-99") || g_5.equalsIgnoreCase("-777")) {
+                        if (g_5.equalsIgnoreCase("2") || g_5.equalsIgnoreCase("-88") || g_5.equalsIgnoreCase("-98") || g_5.equalsIgnoreCase("-99")) {
+                            g_6 = "";
+                            g_7 = "";
+                            g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
+                            rg_g6.clearCheck();
+                            rg_g7.clearCheck();
+                            rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg5_layout, qg_urdu_1_layout);
+                        } else if (g_5.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qg5_layout, qg6_layout);
+                        } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
                             intent.putExtra("m1b_parent_mobile", phone_number);
                             intent.putExtra("scode", school_code);
@@ -333,8 +430,6 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
-                        } else {
-                            RConsUtils.hideView(qg5_layout, qg6_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -343,7 +438,23 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g6_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g6_ID);
                         g_6 = radioButton.getTag().toString();
-                        if (g_6.equalsIgnoreCase("-99") || g_6.equalsIgnoreCase("-777")) {
+                        if (g_6.equalsIgnoreCase("2") || g_6.equalsIgnoreCase("-88") || g_6.equalsIgnoreCase("-98") || g_6.equalsIgnoreCase("-99")) {
+                            g_7 = "";
+                            g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
+                            rg_g7.clearCheck();
+                            rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg6_layout, qg_urdu_1_layout);
+                        } else if (g_5.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qg6_layout, qg7_layout);
+                        } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
                             intent.putExtra("m1b_parent_mobile", phone_number);
                             intent.putExtra("scode", school_code);
@@ -351,8 +462,6 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
-                        } else {
-                            RConsUtils.hideView(qg6_layout, qg7_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -362,7 +471,21 @@ public class Ad_Section_G extends AppCompatActivity {
                     if (rg_g7_ID > 0) {
                         RadioButton radioButton = findViewById(rg_g7_ID);
                         g_7 = radioButton.getTag().toString();
-                        if (g_7.equalsIgnoreCase("-99") || g_7.equalsIgnoreCase("-777")) {
+                        if (g_7.equalsIgnoreCase("2") || g_7.equalsIgnoreCase("-88") || g_7.equalsIgnoreCase("-98") || g_7.equalsIgnoreCase("-99")) {
+                            g_8 = "";
+                            g_9 = "";
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
+                            rg_g8.clearCheck();
+                            rg_g9.clearCheck();
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg7_layout, qg_urdu_1_layout);
+                        } else if (g_5.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qg7_layout, qg8_layout);
+                        } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
                             intent.putExtra("m1b_parent_mobile", phone_number);
                             intent.putExtra("scode", school_code);
@@ -370,8 +493,6 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
-                        } else {
-                            RConsUtils.hideView(qg7_layout, qg8_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -390,7 +511,100 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
                         } else {
-                            RConsUtils.hideView(qg8_layout, qg_urdu_1_layout);
+                            RConsUtils.hideView(qg8_layout, qg9_layout);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+
+                } else if (qg9_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_g9_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_g9_ID);
+                        g_9 = radioButton.getTag().toString();
+                        if (g_9.equalsIgnoreCase("2") || g_9.equalsIgnoreCase("-88") || g_9.equalsIgnoreCase("-98") || g_9.equalsIgnoreCase("-99")) {
+                            RConsUtils.hideView(qg9_layout, qg10_layout);
+                        } else if (g_9.equalsIgnoreCase("1")) {
+                            g_10 = "";
+                            g_11 = "";
+                            g_12 = "";
+                            rg_g10.clearCheck();
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg9_layout, qg_urdu_1_layout);
+                        } else {
+                            Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+
+                } else if (qg10_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_g10_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_g10_ID);
+                        g_10 = radioButton.getTag().toString();
+                        if (g_10.equalsIgnoreCase("2") || g_10.equalsIgnoreCase("-88") || g_10.equalsIgnoreCase("-98") || g_10.equalsIgnoreCase("-99")) {
+                            g_11 = "";
+                            g_12 = "";
+                            rg_g11.clearCheck();
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg10_layout, qg_urdu_1_layout);
+                        } else if (g_10.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qg10_layout, qg11_layout);
+                        } else {
+                            Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+
+                } else if (qg11_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_g11_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_g11_ID);
+                        g_11 = radioButton.getTag().toString();
+                        if (g_11.equalsIgnoreCase("2") || g_11.equalsIgnoreCase("-88") || g_11.equalsIgnoreCase("-98") || g_11.equalsIgnoreCase("-99")) {
+                            g_12 = "";
+                            rg_g12.clearCheck();
+                            RConsUtils.hideView(qg11_layout, qg_urdu_1_layout);
+                        } else if (g_10.equalsIgnoreCase("1")) {
+                            RConsUtils.hideView(qg11_layout, qg12_layout);
+                        } else {
+                            Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qg12_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_g12_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_g12_ID);
+                        g_12 = radioButton.getTag().toString();
+                        if (g_12.equalsIgnoreCase("-99") || g_12.equalsIgnoreCase("-777")) {
+                            Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qg12_layout, qg_urdu_1_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -408,7 +622,7 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
-                        } else if (g_urdu_1.equalsIgnoreCase("-98")) {
+                        } else if (g_urdu_1.equalsIgnoreCase("-98") || g_urdu_1.equalsIgnoreCase("3")) {
                             rg_g_urdu_2_a.clearCheck();
                             rg_g_urdu_2_b.clearCheck();
                             g_urdu_2_a = "";
@@ -512,6 +726,34 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivityForResult(intent, 88);
+                        } else if (g_urdu_4.equalsIgnoreCase("1")) {
+                            Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qg_urdu_4_layout, qg_urdu_5_layout);
+                        }
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+
+                } else if (qg_urdu_5_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_g_urdu_5_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_g_urdu_5_ID);
+                        g_urdu_5 = radioButton.getTag().toString();
+                        if (g_urdu_5.equalsIgnoreCase("-777") || g_urdu_5.equalsIgnoreCase("-99")) {
+                            Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("id", id);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", school_code);
+                            intent.putExtra("studentid", student_id);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("school_name", school_name);
+                            startActivityForResult(intent, 88);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
                             intent.putExtra("m1b_parent_mobile", phone_number);
@@ -546,7 +788,6 @@ public class Ad_Section_G extends AppCompatActivity {
         btn_AddReportQuestionnaire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
                 intent.putExtra("emp_id", emp_id);
                 intent.putExtra("id", id);
@@ -559,7 +800,6 @@ public class Ad_Section_G extends AppCompatActivity {
         btn_RedialCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 0);
                 } else {
@@ -569,7 +809,6 @@ public class Ad_Section_G extends AppCompatActivity {
                         toastMessage("Phone number is empty.");
                     }
                 }
-
             }
         });
     }
@@ -660,11 +899,16 @@ public class Ad_Section_G extends AppCompatActivity {
                     g_6,
                     g_7,
                     g_8,
+                    g_9,
+                    g_10,
+                    g_11,
+                    g_12,
                     g_urdu_1,
                     g_urdu_2_a,
                     g_urdu_2_b,
                     g_urdu_3,
-                    g_urdu_4
+                    g_urdu_4,
+                    g_urdu_5
             );
 //
         } catch (Exception e) {
@@ -688,13 +932,18 @@ public class Ad_Section_G extends AppCompatActivity {
                 g_6 = cursor.getString(cursor.getColumnIndex("g_6"));
                 g_7 = cursor.getString(cursor.getColumnIndex("g_7"));
                 g_8 = cursor.getString(cursor.getColumnIndex("g_8"));
+
+                g_9 = cursor.getString(cursor.getColumnIndex("g_9"));
+                g_10 = cursor.getString(cursor.getColumnIndex("g_10"));
+                g_11 = cursor.getString(cursor.getColumnIndex("g_11"));
+                g_12 = cursor.getString(cursor.getColumnIndex("g_12"));
+
                 g_urdu_1 = cursor.getString(cursor.getColumnIndex("g_urdu_1"));
                 g_urdu_2_a = cursor.getString(cursor.getColumnIndex("g_urdu_2_a"));
                 g_urdu_2_b = cursor.getString(cursor.getColumnIndex("g_urdu_2_b"));
                 g_urdu_3 = cursor.getString(cursor.getColumnIndex("g_urdu_3"));
                 g_urdu_4 = cursor.getString(cursor.getColumnIndex("g_urdu_4"));
-
-
+                g_urdu_5 = cursor.getString(cursor.getColumnIndex("g_urdu_5"));
             }
 
         } catch (Exception e) {
@@ -704,7 +953,9 @@ public class Ad_Section_G extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (qg_urdu_4_layout.getVisibility() == View.VISIBLE) {
+        if (qg_urdu_5_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qg_urdu_5_layout, qg_urdu_4_layout);
+        } else if (qg_urdu_4_layout.getVisibility() == View.VISIBLE) {
             RConsUtils.hideView(qg_urdu_4_layout, qg_urdu_3_layout);
         } else if (qg_urdu_3_layout.getVisibility() == View.VISIBLE) {
             RConsUtils.hideView(qg_urdu_3_layout, qg_urdu_1_layout);
@@ -713,14 +964,40 @@ public class Ad_Section_G extends AppCompatActivity {
         } else if (qg_urdu_2_a_layout.getVisibility() == View.VISIBLE) {
             RConsUtils.hideView(qg_urdu_2_a_layout, qg_urdu_1_layout);
         } else if (qg_urdu_1_layout.getVisibility() == View.VISIBLE) {
-            if (g_2.equalsIgnoreCase("2") || g_2.equalsIgnoreCase("-88") || g_2.equalsIgnoreCase("-98")) {
+            if (g_2.equalsIgnoreCase("2") || g_2.equalsIgnoreCase("-88") || g_2.equalsIgnoreCase("-98") || g_2.equalsIgnoreCase("-99")) {
                 RConsUtils.hideView(qg_urdu_1_layout, qg2_layout);
-            } else if (g_3.equalsIgnoreCase("2") || g_3.equalsIgnoreCase("-88") || g_3.equalsIgnoreCase("-98") || g_3.equalsIgnoreCase("-99")) {
+            } else if (g_3.equalsIgnoreCase("2") || g_3.equalsIgnoreCase("-88") || g_3.equalsIgnoreCase("-98")) {
                 RConsUtils.hideView(qg_urdu_1_layout, qg3_layout);
             } else if (g_4.equalsIgnoreCase("2") || g_4.equalsIgnoreCase("-88") || g_4.equalsIgnoreCase("-98") || g_3.equalsIgnoreCase("-99")) {
                 RConsUtils.hideView(qg_urdu_1_layout, qg4_layout);
-            } else {
+            } else if (g_5.equalsIgnoreCase("2") || g_5.equalsIgnoreCase("-88") || g_5.equalsIgnoreCase("-98") || g_5.equalsIgnoreCase("-99")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg5_layout);
+            } else if (g_6.equalsIgnoreCase("2") || g_6.equalsIgnoreCase("-88") || g_6.equalsIgnoreCase("-98") || g_6.equalsIgnoreCase("-99")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg6_layout);
+            } else if (g_7.equalsIgnoreCase("2") || g_7.equalsIgnoreCase("-88") || g_7.equalsIgnoreCase("-98") || g_7.equalsIgnoreCase("-99")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg7_layout);
+            } else if (g_8.equalsIgnoreCase("-99")) {
                 RConsUtils.hideView(qg_urdu_1_layout, qg8_layout);
+            } else if (g_9.equalsIgnoreCase("1")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg9_layout);
+            } else if (g_10.equalsIgnoreCase("1")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg10_layout);
+            } else if (g_11.equalsIgnoreCase("1")) {
+                RConsUtils.hideView(qg_urdu_1_layout, qg11_layout);
+            } else {
+                RConsUtils.hideView(qg_urdu_1_layout, qg12_layout);
+            }
+        } else if (qg12_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qg12_layout, qg11_layout);
+        } else if (qg11_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qg11_layout, qg10_layout);
+        } else if (qg10_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qg10_layout, qg9_layout);
+        } else if (qg9_layout.getVisibility() == View.VISIBLE) {
+            if (g_1.equalsIgnoreCase("2") || g_1.equalsIgnoreCase("-88") || g_1.equalsIgnoreCase("-98")) {
+                RConsUtils.hideView(qg9_layout, qg1_layout);
+            } else {
+                RConsUtils.hideView(qg9_layout, qg8_layout);
             }
         } else if (qg8_layout.getVisibility() == View.VISIBLE) {
             RConsUtils.hideView(qg8_layout, qg7_layout);
@@ -761,11 +1038,17 @@ public class Ad_Section_G extends AppCompatActivity {
             RConsUtils.setradiogroup(g_7, rg_g7);
             RConsUtils.setradiogroup(g_8, rg_g8);
 
+            RConsUtils.setradiogroup(g_9, rg_g9);
+            RConsUtils.setradiogroup(g_10, rg_g10);
+            RConsUtils.setradiogroup(g_11, rg_g11);
+            RConsUtils.setradiogroup(g_12, rg_g12);
+
             RConsUtils.setradiogroup(g_urdu_1, rg_g_urdu_1);
             RConsUtils.setradiogroup(g_urdu_2_a, rg_g_urdu_2_a);
             RConsUtils.setradiogroup(g_urdu_2_b, rg_g_urdu_2_b);
             RConsUtils.setradiogroup(g_urdu_3, rg_g_urdu_3);
             RConsUtils.setradiogroup(g_urdu_4, rg_g_urdu_4);
+            RConsUtils.setradiogroup(g_urdu_5, rg_g_urdu_5);
 
         } catch (Exception e) {
             toastMessage(e.getMessage());
