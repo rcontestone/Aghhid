@@ -75,6 +75,8 @@ public class CallMenuActivity extends AppCompatActivity {
     Button btnEditForm;
     Button btnQuestionnaire;
 
+    ArrayAdapter spinnerArrayAdapter =null;
+
     Button NextCall, PreviousCall, Main_Menu, btnCallNow;
     TextView txtOriginalFarmerName, txtAlternateFarmerName, FarmerMobile, Region, DistrictName, VillageName, UcName, TehsilName, MarkazName;
 
@@ -104,7 +106,9 @@ public class CallMenuActivity extends AppCompatActivity {
 
     String school_code, student_id;
 
-    String s1 = "";
+    ArrayList<String> spinnerArray =null;
+
+            String s1 = "";
     String s2 = "";
     String s3 = "";
     String s4 = "";
@@ -510,55 +514,10 @@ public class CallMenuActivity extends AppCompatActivity {
         numbers_sp_q_2 = (Spinner) findViewById(R.id.numbers_sp_q_2);
         numbers_sp_q_2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
-        ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this,school_code,student_id);
+
+        checkAndUpdateAdapter();
 
 
-        JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.aghhid_section_c_table, school_code, student_id);
-        DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
-
-        if (data.length() > 0) {
-
-            try {
-                if (data.getString("c1_given_number").equalsIgnoreCase("null")) {
-                    data.put("c1_given_number", "");
-                }
-                spinnerArray.add(spinnerArray.size(),"c1_given_number");
-                spinnerArray.add(data.getString("c1_given_number"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-
-        data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.AGHHID_SampleTable, school_code, student_id);
-        DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
-
-        if (data.length() > 0) {
-
-            try {
-                if (data.getString("given_number").equalsIgnoreCase("null")) {
-                    data.put("given_number", "");
-                }
-
-
-                if(data.getString("given_number").length()>0) {
-                    spinnerArray.add(spinnerArray.size(), "section_a_given_number");
-                    spinnerArray.add(data.getString("given_number"));
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-
-
-
-
-        ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
-                R.layout.spinner_item,
-                spinnerArray);
-        numbers_sp_q_2.setAdapter(spinnerArrayAdapter);
 
         numbers_sp_q_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -605,6 +564,72 @@ public class CallMenuActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    private void checkAndUpdateAdapter() {
+
+        try {
+
+            if(spinnerArray!=null){
+
+                spinnerArray.clear();
+            }
+
+            spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this,school_code,student_id);
+
+
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.aghhid_section_c_table, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
+
+            if (data.length() > 0) {
+
+                try {
+                    if (data.getString("c1_given_number").equalsIgnoreCase("null")) {
+                        data.put("c1_given_number", "");
+                    }
+                    spinnerArray.add(spinnerArray.size(),"c1_given_number");
+                    spinnerArray.add(data.getString("c1_given_number"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
+            data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.AGHHID_SampleTable, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
+
+            if (data.length() > 0) {
+
+                try {
+                    if (data.getString("given_number").equalsIgnoreCase("null")) {
+                        data.put("given_number", "");
+                    }
+
+
+                    if(data.getString("given_number").length()>0) {
+                        spinnerArray.add(spinnerArray.size(), "section_a_given_number");
+                        spinnerArray.add(data.getString("given_number"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
+
+
+            spinnerArrayAdapter = new ArrayAdapter(this,
+                    R.layout.spinner_item,
+                    spinnerArray);
+            numbers_sp_q_2.setAdapter(spinnerArrayAdapter);
+
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside checkAndUpdateAdapter() Exception is :"+e.toString());
+        }
 
     }
 
@@ -726,6 +751,8 @@ public class CallMenuActivity extends AppCompatActivity {
                 orignal_tries_count++;
             }
 
+
+            checkAndUpdateAdapter();
 
             if (!StringUtils.isEmpty(given_number)) {
                 hhid_phone_number = given_number;
