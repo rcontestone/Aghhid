@@ -221,6 +221,8 @@ public class HH_Screen_nine_Section_e extends Activity {
             initializeReferenceOfViews();
 
 //for class 9 only
+
+            if(getIntent().getStringExtra("onbackclick")!=null)
             CALLED_FROM = getIntent().getStringExtra("onbackclick");
 
         }catch (Exception e) {

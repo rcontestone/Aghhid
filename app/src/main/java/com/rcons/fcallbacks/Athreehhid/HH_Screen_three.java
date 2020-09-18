@@ -1626,7 +1626,7 @@ public class HH_Screen_three extends Activity {
 			String info = getString(R.string.popupinfo);
 
 			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
-			showAlert(info,"\r\nTotal mem count : "+name.size()+"\r\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
+			showAlert(info,info+"\r\n\nTotal mem count : "+name.size()+"\r\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
 
 		} catch (Exception e) {
 		    EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside askuserfornext() Exception is :"+e.toString());
