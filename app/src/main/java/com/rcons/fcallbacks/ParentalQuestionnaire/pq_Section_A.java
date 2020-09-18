@@ -35,7 +35,6 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.rcons.fcallbacks.Athreehhid.Ad_Section_F;
 import com.rcons.fcallbacks.BuildConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.EmailDebugLog;
@@ -917,7 +916,7 @@ public class pq_Section_A extends AppCompatActivity {
                                 startActivityForResult(intent, 88);
                             } else {
                                 SaveData();
-                                Intent intent = new Intent(pq_Section_A.this, Ad_Section_F.class);
+                                Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);

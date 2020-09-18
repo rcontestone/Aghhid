@@ -153,6 +153,8 @@ public class Ad_Section_G extends AppCompatActivity {
 
     DatabaseAdapter databaseAccess;
 
+
+    String order_id = "";
     String emp_id = "";
     String school_code = "";
     String student_id = "";
@@ -211,6 +213,8 @@ public class Ad_Section_G extends AppCompatActivity {
         school_name = "";//getIntent().getStringExtra("m2_school_name");
         rcons_user = RConsUtils.getUserName();
 
+        school_code = village_id;
+        student_id = hhid;
 
         txt_School_Code.setText("Village Code : " + village_id);
         txt_Student_id.setText("HH Id : " + hhid);
@@ -272,11 +276,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg1_layout, qg2_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -313,11 +318,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg2_layout, qg3_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
 
@@ -352,11 +358,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg3_layout, qg4_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -389,11 +396,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg4_layout, qg5_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -424,11 +432,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg5_layout, qg6_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -456,11 +465,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg6_layout, qg7_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -487,11 +497,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg7_layout, qg8_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -504,11 +515,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_8 = radioButton.getTag().toString();
                         if (g_8.equalsIgnoreCase("-99") || g_8.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else {
                             g_9 = "";
@@ -541,11 +553,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg9_layout, qg_urdu_1_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -565,11 +578,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg10_layout, qg_urdu_1_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -588,11 +602,12 @@ public class Ad_Section_G extends AppCompatActivity {
                             RConsUtils.hideView(qg11_layout, qg_urdu_1_layout);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         }
                     } else {
@@ -604,11 +619,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_12 = radioButton.getTag().toString();
                         if (g_12.equalsIgnoreCase("-99") || g_12.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else {
                             RConsUtils.hideView(qg12_layout, qg_urdu_1_layout);
@@ -623,11 +639,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_1 = radioButton.getTag().toString();
                         if (g_urdu_1.equalsIgnoreCase("-99") || g_urdu_1.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else if (g_urdu_1.equalsIgnoreCase("-98") || g_urdu_1.equalsIgnoreCase("2")) {
                             rg_g_urdu_2_a.clearCheck();
@@ -647,11 +664,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_2_a = radioButton.getTag().toString();
                         if (g_urdu_2_a.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else if (g_urdu_2_a.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qg_urdu_2_a_layout, qg_urdu_2_b_layout);
@@ -674,11 +692,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_2_b = radioButton.getTag().toString();
                         if (g_urdu_2_b.equalsIgnoreCase("-777") || g_urdu_2_b.equalsIgnoreCase("-99")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
@@ -699,11 +718,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_3 = radioButton.getTag().toString();
                         if (g_urdu_3.equalsIgnoreCase("-777") || g_urdu_3.equalsIgnoreCase("-99")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else if (g_urdu_3.equalsIgnoreCase("1")) {
                             Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
@@ -726,12 +746,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_4 = radioButton.getTag().toString();
                         if (g_urdu_4.equalsIgnoreCase("-777") || g_urdu_4.equalsIgnoreCase("-99")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else if (g_urdu_4.equalsIgnoreCase("1")) {
                             Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
@@ -754,12 +774,12 @@ public class Ad_Section_G extends AppCompatActivity {
                         g_urdu_5 = radioButton.getTag().toString();
                         if (g_urdu_5.equalsIgnoreCase("-777") || g_urdu_5.equalsIgnoreCase("-99")) {
                             Intent intent = new Intent(Ad_Section_G.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
-                            intent.putExtra("m1b_parent_mobile", phone_number);
-                            intent.putExtra("scode", school_code);
-                            intent.putExtra("studentid", student_id);
-                            intent.putExtra("m1b_student_name", student_name);
-                            intent.putExtra("school_name", school_name);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else {
                             Intent intent = new Intent(Ad_Section_G.this, HH_Screen_one_Section_h.class);
