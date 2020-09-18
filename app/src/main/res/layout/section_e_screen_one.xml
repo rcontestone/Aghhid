@@ -221,7 +221,7 @@
                         <Spinner
 
                             android:id="@+id/numbers_sp_q_2"
-                            android:layout_width="@dimen/_450sdp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/hh_edtfield_q_2"
                             android:layout_centerVertical="true"
@@ -237,7 +237,7 @@
                         <Spinner
 
                             android:id="@+id/numbers_sp_q_3"
-                            android:layout_width="@dimen/_450sdp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/numbers_sp_q_2"
                             android:layout_centerVertical="true"

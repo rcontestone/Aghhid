@@ -2717,7 +2717,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             // JSONArray dataArray = new JSONArray();
             //JSONObject data =  new JSONObject();
 
-            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
+            String query = "SELECT d_2,d_4,d_7,d_8 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
             Cursor cursor = db.rawQuery(query,null);
 
@@ -2729,9 +2729,12 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 result = true;
                 while (cursor.moveToNext()) {
 
-                    String id = cursor.getString(cursor.getColumnIndex("d_2"));
-                    spinnerArray.add( id );
-                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+id);
+                    String name = cursor.getString(cursor.getColumnIndex("d_2"));
+                    String age = cursor.getString(cursor.getColumnIndex("d_4"));
+                    String q7 = cursor.getString(cursor.getColumnIndex("d_7"));
+                    String q8 = cursor.getString(cursor.getColumnIndex("d_8"));
+                    spinnerArray.add( name +"  |  Age:  " +age+" |  Q7:  " +q7+" |  Q8:  " +q8);
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+name);
                 }
 
                 closeDB(cursor);
@@ -2765,7 +2768,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             // JSONArray dataArray = new JSONArray();
             //JSONObject data =  new JSONObject();
 
-            String query = "SELECT d_2 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19)";
+            String query = "SELECT d_2,d_4,d_7,d_8 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'   AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19)";
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
             Cursor cursor = db.rawQuery(query,null);
 
@@ -2776,10 +2779,12 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() count "+cursor.getCount());
                 result = true;
                 while (cursor.moveToNext()) {
-
-                    String id = cursor.getString(cursor.getColumnIndex("d_2"));
-                    spinnerArray.add( id );
-                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+id);
+                    String name = cursor.getString(cursor.getColumnIndex("d_2"));
+                    String age = cursor.getString(cursor.getColumnIndex("d_4"));
+                    String q7 = cursor.getString(cursor.getColumnIndex("d_7"));
+                    String q8 = cursor.getString(cursor.getColumnIndex("d_8"));
+                    spinnerArray.add( name +"  |  Age:  " +age+" |  Q7:  " +q7+" |  Q8:  " +q8);
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() hhid "+name);
                 }
 
                 closeDB(cursor);

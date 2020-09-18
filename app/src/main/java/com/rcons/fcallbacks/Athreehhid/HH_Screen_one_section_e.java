@@ -41,6 +41,7 @@ import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -328,12 +329,15 @@ public class HH_Screen_one_section_e extends Activity {
 
                     try {
                         if (i==0){
-                            //  hh_edtfield_q_2.setText(  "");
+                             hh_edtfield_q_2.setText(  "");
 
                         }else{
 
                             hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
-                            int memID  = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_memberid_against_name(appContext,school_code,student_id, parent.getSelectedItem().toString().trim());
+
+                            String name = parent.getSelectedItem().toString().trim().substring(0,parent.getSelectedItem().toString().indexOf("|")).trim();
+                                   DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() name "+name);
+                            int memID  = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_memberid_against_name(appContext,school_code,student_id, name);
                             DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() memID "+memID);
 
                             aghhid_e_1_other=memID+"";
@@ -393,9 +397,13 @@ public class HH_Screen_one_section_e extends Activity {
 
 
             if(spinnerArray.size()>1){
-                numbers_sp_q_3.setEnabled(false);
+               // numbers_sp_q_3.setEnabled(false);
             }
 
+
+                 if (spinnerArray3.size()<=1){
+                     showAlert2("No Girl Found","No girl found having age 9 to 19");
+                 }
 
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
@@ -2142,6 +2150,33 @@ public class HH_Screen_one_section_e extends Activity {
             }
         });
     }
+
+    public void showAlert2(String title, String message){
+        new AlertDialog.Builder(HH_Screen_one_section_e.this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(getResources().getString(R.string.proceed), new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which){
+                        setResult(RESULT_OK);
+
+                        Intent intent = new Intent(HH_Screen_one_section_e.this, AddReportActivity.class);
+                        intent.putExtra("emp_id", emp_id);
+                        intent.putExtra("order_id", order_id);
+                        intent.putExtra("id", id);
+                        intent.putExtra("farmer_cellphone", phone_number);
+                        intent.putExtra("school_code", school_code);
+                        intent.putExtra("student_id", student_id);
+                        startActivityForResult(intent, 88);
+//                        finish();
+                    }
+                }).setNegativeButton(getResources().getString(R.string.back), new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                setResult(RESULT_CANCELED);
+            }
+        })
+                .show();
+    }
+
 
 
 

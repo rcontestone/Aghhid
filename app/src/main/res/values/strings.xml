@@ -1131,5 +1131,8 @@
     <string name="section_D_conf">گھرانے کے افراد کی تصدیق اور جوابدہندہ کی نشاندہی</string>
     <string name="section_D_conf_1">جوابدہندہ سے تصدیق کر لیں  کہ سکرین پر موجود گھرانے کے تمام افراد یہی ہیں اور کوئی فرد  روسٹر میں شامل ہونے سے رہ تو نہیں گیا</string>
     <string name="section_D_conf_2">سکرین پر موجود گھرانے کے تمام افراد  کی لسٹ میں سے اس فرد کا نام SELECTکریں جو آپ کو اس انٹرویو کا جواب دے رہا /رہی ہے</string>
+    <string name="back">Back</string>
+    <string name="ok" />
+    <string name="proceed">Proceed</string>
 
 </resources>
