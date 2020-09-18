@@ -34,6 +34,7 @@ import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_A;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_B;
 import com.rcons.fcallbacks.R;
+import com.rcons.fcallbacks.Utilties.MpcUtil;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
@@ -816,7 +817,16 @@ public class Ad_Section_F extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
+            Intent intent = MpcUtil.buildNewIntent(Ad_Section_F.this, HH_Screen_ten_Section_e.class);
+
+            intent.putExtra("m1b_parent_mobile", phone_number);
+            intent.putExtra("scode", village_id);
+            intent.putExtra("studentid", hhid);
+            intent.putExtra("m1b_student_name", student_name);
+            intent.putExtra("rcons_user", RConsUtils.getUserName());
+            startActivity(intent);
             finish();
+
             super.onBackPressed();
         }
 
