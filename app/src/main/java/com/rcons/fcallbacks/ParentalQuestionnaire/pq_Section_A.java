@@ -1255,24 +1255,19 @@ public class pq_Section_A extends AppCompatActivity {
             if (StringUtils.isEmpty(s1)) {
                 try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 1");
-            }
-            if (StringUtils.isEmpty(s2)) {
+            } else if (StringUtils.isEmpty(s2)) {
                 try_no = "2";
                 MubLog.cpnsoleLog("SaveData Try 2");
-            }
-            if (StringUtils.isEmpty(s3)) {
+            } else if (StringUtils.isEmpty(s3)) {
                 try_no = "3";
                 MubLog.cpnsoleLog("SaveData Try 3");
-            }
-            if (StringUtils.isEmpty(s4)) {
+            } else if (StringUtils.isEmpty(s4)) {
                 try_no = "4";
                 MubLog.cpnsoleLog("SaveData Try 4");
-            }
-            if (StringUtils.isEmpty(s5)) {
+            } else if (StringUtils.isEmpty(s5)) {
                 try_no = "5";
                 MubLog.cpnsoleLog("SaveData Try 5");
-            }
-            if (StringUtils.isEmpty(s6)) {
+            } else if (StringUtils.isEmpty(s6)) {
                 try_no = "6";
                 MubLog.cpnsoleLog("SaveData Try 6");
             }
@@ -1321,6 +1316,7 @@ public class pq_Section_A extends AppCompatActivity {
                     a7);
 
         } catch (Exception e) {
+            MubLog.cpnsoleLog("Data Save Error :" + e.getMessage());
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
@@ -1545,6 +1541,7 @@ public class pq_Section_A extends AppCompatActivity {
 
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            MubLog.cpnsoleLog("Data Read Error :" + e.getMessage());
         }
     }
 

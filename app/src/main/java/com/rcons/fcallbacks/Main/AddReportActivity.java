@@ -939,18 +939,22 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
             Cursor cursor = null;
             if (StringUtils.isEmpty(sc1)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "1");
+                MubLog.cpnsoleLog("readFromDataBase Try 1");
             } else if (StringUtils.isEmpty(sc2)) {
-                cursor = databaseAccess.getpq_section_a2_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "2");
+                MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(sc3)) {
-                cursor = databaseAccess.getpq_section_a3_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "3");
+                MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(sc4)) {
-                cursor = databaseAccess.getpq_section_a4_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "4");
+                MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(sc5)) {
-                cursor = databaseAccess.getpq_section_a5_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "5");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(sc6)) {
-                cursor = databaseAccess.getpq_section_a6_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "6");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {

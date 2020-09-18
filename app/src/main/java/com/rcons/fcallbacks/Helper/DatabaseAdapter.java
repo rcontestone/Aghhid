@@ -5299,7 +5299,7 @@ public class DatabaseAdapter {
         db = database.getReadableDatabase();
         String str = "";
         str = "select Count(*) as count from " + pq_section_a_table + " where  school_code= " + school_code + " AND student_id= " + student_id + " AND phone_number= " + phone_number + " AND try_no= " + try_no + "";
-
+        MubLog.cpnsoleLog("Data Insert Count Query " + str);
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -7643,8 +7643,9 @@ public class DatabaseAdapter {
         }
     }
 
-    public Cursor getpq_section_a_Data(String school_code, String student_id,String phone_number,String try_no) {
-        String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + " AND phone_number= '" + phone_number + " AND try_no= '" + try_no + "'";
+    public Cursor getpq_section_a_Data(String school_code, String student_id, String phone_number, String try_no) {
+        String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "' AND phone_number= '" + phone_number + "' AND try_no= '" + try_no + "'";
+        MubLog.cpnsoleLog("Data Read Query " + query);
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
             return cursor;
