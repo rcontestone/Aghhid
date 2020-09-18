@@ -73,7 +73,7 @@
                     android:layout_toRightOf="@+id/btnBack"
                     android:fontFamily="serif"
                     android:gravity="center"
-                    android:text="Section G"
+                    android:text="Section F"
                     android:textColor="@color/color_white"
                     android:textSize="20sp"
                     android:textStyle="normal"

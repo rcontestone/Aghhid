@@ -830,6 +830,12 @@ public class HH_Screen_one_section_e extends Activity {
 
 
             aghhid_e_1 = hh_edtfield_q_2.getText().toString();
+
+
+            if(aghhid_e_1!=null && aghhid_e_1.length()>0)
+            aghhid_e_1 =   aghhid_e_1.substring(0,aghhid_e_1.indexOf("|")).trim();
+
+
             int rdg_checkedID = 1;
 
 //            if(numbers_sp_q_2.getSelectedItemPosition()==0 && numbers_sp_q_3.getSelectedItemPosition()==0){
