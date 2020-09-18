@@ -1623,7 +1623,7 @@ public class HH_Screen_three extends Activity {
 				hhidlisthaving_numbers = android.text.TextUtils.join("\r\n", name);
 			}
 
-			String info = getString(R.string.section_e_question_q1);
+			String info = getString(R.string.popupinfo);
 
 			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
 			showAlert(info,"\r\nTotal mem count : "+name.size()+"\r\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");

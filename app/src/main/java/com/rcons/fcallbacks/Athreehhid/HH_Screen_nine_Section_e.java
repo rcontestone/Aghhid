@@ -180,7 +180,7 @@ public class HH_Screen_nine_Section_e extends Activity {
 
 
     //for class nine only
-    String CALLED_FROM ="";
+    String CALLED_FROM ="HH_Screen_eight_Section_e";
 
 
     @Override
@@ -215,13 +215,13 @@ public class HH_Screen_nine_Section_e extends Activity {
             rcons_user = RConsUtils.getUserName();
 
 
-//for class 9 only
-            CALLED_FROM = getIntent().getStringExtra("onbackclick");
+
 
             // Get Refferences of Views
             initializeReferenceOfViews();
 
-
+//for class 9 only
+            CALLED_FROM = getIntent().getStringExtra("onbackclick");
 
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onCreate");
