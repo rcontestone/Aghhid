@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -29,6 +30,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -3449,5 +3451,113 @@ public class HH_Screen_three extends Activity {
 	public void setMigration4(View view) {
 //		hh_edtfield_q_3_edt_answer = "4";
 	}
+
+
+
+
+
+	public void DialUserNumber(View v) {
+
+		if (ActivityCompat.checkSelfPermission(appContext,
+				Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+			return;
+		}
+		Intent callIntent = new Intent(Intent.ACTION_CALL);
+//        String phoneNumber =     txt_mobile_number.getText().toString().trim();
+
+
+		String phoneNumber =   phone_number;// numbers_sp_q_2.getSelectedItem().toString().trim();
+
+		String network = getSimNetwork();
+		MubLog.cpnsoleLog("getSimNetwork  " + network);
+		if (!StringUtils.isEmpty(network)) {
+			if (network.equalsIgnoreCase("Jazz")) {
+				phoneNumber = "660" + phoneNumber;
+			} else if (network.equalsIgnoreCase("Telenor")) {
+				//     phoneNumber = "880" + phoneNumber;
+			} else {
+				phoneNumber = "770" + phoneNumber;
+			}
+		} else {
+
+		}
+		//callIntent.setData(Uri.parse("tel:" + "03006982661"));
+
+//        SaveInterviewStart_time();
+		if (network.equalsIgnoreCase("Telenor")) {
+			ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
+		} else {
+			callIntent.setData(Uri.parse("tel:" + phoneNumber));
+			startActivity(callIntent);
+		}
+
+
+	}
+
+
+
+
+
+
+	void ShowDialMessage(final Context context, String title, String message, String str_btonok, String str_btnenum) {
+
+		LayoutInflater li = LayoutInflater.from(context);
+		View dialogView = li.inflate(R.layout.delete_dialog, null);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setView(dialogView);
+		TextView txtDialogTitle = dialogView.findViewById(R.id.txtDialogTitle);
+		ImageView imageView1 = dialogView.findViewById(R.id.imageView1);
+		imageView1.setVisibility(View.GONE);
+		txtDialogTitle.setText(title);
+		txtDialogTitle.setVisibility(View.GONE);
+		TextView txtErrorMessage = dialogView.findViewById(R.id.txtErrorMessage);
+		txtErrorMessage.setText(message);
+		txtErrorMessage.setVisibility(View.GONE);
+		Button btnCancel = dialogView.findViewById(R.id.btnCancel);
+		Button btnok = dialogView.findViewById(R.id.btnRconsUser);
+		Button btnenum = dialogView.findViewById(R.id.btnenum);
+		btnenum.setVisibility(View.VISIBLE);
+		btnok.setText("Dial " + str_btonok);
+		btnok.setTextSize(24);
+		btnenum.setText("Dial " + str_btnenum);
+		btnenum.setTextSize(24);
+		btnCancel.setText("Cancel");
+		btnCancel.setTextSize(24);
+		final AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.setCancelable(false);
+		alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		alertDialog.show();
+		btnok.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				alertDialog.dismiss();
+				// SaveInterviewStart_time();
+				Intent callIntent = new Intent(Intent.ACTION_CALL);
+				callIntent.setData(Uri.parse("tel:" + str_btonok));
+				startActivity(callIntent);
+
+			}
+		});
+		btnenum.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				alertDialog.dismiss();
+				// SaveInterviewStart_time();
+				Intent callIntent = new Intent(Intent.ACTION_CALL);
+				callIntent.setData(Uri.parse("tel:" + str_btnenum));
+				startActivity(callIntent);
+
+			}
+		});
+		btnCancel.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				alertDialog.dismiss();
+
+			}
+		});
+	}
+
+
 
 }

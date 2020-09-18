@@ -150,7 +150,17 @@
 
                             <requestFocus />
                         </EditText>
-
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btn_RedialCall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:backgroundTint="@color/black_color"
+                            android:contentDescription="Call"
+                            android:onClick="DialUserNumber"
+                            android:clickable="true"
+                            android:src="@drawable/call_icon_foreground"
+                            android:tint="@color/white_color" />
 
                         <TextView
                             android:id="@+id/hh_textview_q_script"
@@ -279,6 +289,29 @@
                             android:textColorHint="@color/LightGrey"></EditText>
 
 
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="0"
+                            android:layout_below="@+id/hh_textview_q_3"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:gravity="right"
+                            android:text="@string/section_e_question_q8_option0"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
+                            android:clickable="true"
+                            android:layoutDirection="rtl"
+                            android:layout_gravity="start"
+                            android:onClick="setMigration"
+
+
+
+                            />
 
 
 
@@ -287,7 +320,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:tag="1"
-                                android:layout_below="@+id/hh_textview_q_3"
+                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_0"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"

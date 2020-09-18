@@ -2059,7 +2059,8 @@ public class HH_Screen_two extends Activity {
 
 
 
-    void DialUserNumber() {
+    public void DialUserNumber(View v) {
+
         if (ActivityCompat.checkSelfPermission(appContext,
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -2108,7 +2109,7 @@ public class HH_Screen_two extends Activity {
 
         LayoutInflater li = LayoutInflater.from(context);
         View dialogView = li.inflate(R.layout.delete_dialog, null);
-        androidx.appcompat.app.AlertDialog.Builder alertDialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(context);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setView(dialogView);
         TextView txtDialogTitle = dialogView.findViewById(R.id.txtDialogTitle);
         ImageView imageView1 = dialogView.findViewById(R.id.imageView1);
@@ -2128,7 +2129,7 @@ public class HH_Screen_two extends Activity {
         btnenum.setTextSize(24);
         btnCancel.setText("Cancel");
         btnCancel.setTextSize(24);
-        final androidx.appcompat.app.AlertDialog alertDialog = alertDialogBuilder.create();
+        final AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCancelable(false);
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         alertDialog.show();

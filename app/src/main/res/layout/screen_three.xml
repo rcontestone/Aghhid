@@ -151,13 +151,23 @@
                             <requestFocus />
                         </EditText>
 
-
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btn_RedialCall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:backgroundTint="@color/black_color"
+                            android:contentDescription="Call"
+                            android:onClick="DialUserNumber"
+                            android:clickable="true"
+                            android:src="@drawable/call_icon_foreground"
+                            android:tint="@color/white_color" />
                         <TextView
                             android:id="@+id/hh_textview_q_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:layout_below="@+id/sign_up_first_name_textfield"
+                            android:layout_below="@+id/btn_RedialCall"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_25sdp"

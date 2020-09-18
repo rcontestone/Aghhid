@@ -3538,7 +3538,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean hhid_insert_data_e8(String village_id ,String hhid , String aghhid_e_8,  String aghhid_e_8_2,  String aghhid_e_8_3,  String aghhid_e_8_4,  String aghhid_e_8_4_other,  String aghhid_e_8_15, String aghhid_e_8_16,  String aghhid_e_8_17, String  aghhid_e_8_18, String user_name , String start_date_time) {
+    public synchronized boolean hhid_insert_data_e8(String village_id ,String hhid ,  String aghhid_e_8,String aghhid_e_8_1,  String aghhid_e_8_2,  String aghhid_e_8_3,  String aghhid_e_8_4,  String aghhid_e_8_4_other,  String aghhid_e_8_15, String aghhid_e_8_16,  String aghhid_e_8_17, String  aghhid_e_8_18, String user_name , String start_date_time) {
         boolean updated =false;
         try {
 
@@ -3553,7 +3553,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
             ContentValues cv = new ContentValues();
 
-            cv.put("e_8_1",aghhid_e_8);
+            cv.put("e_8",aghhid_e_8);
+            cv.put("e_8_1",aghhid_e_8_1);
             cv.put("e_8_2",aghhid_e_8_2);
             cv.put("e_8_3",aghhid_e_8_3);
             cv.put("e_8_4",aghhid_e_8_4);

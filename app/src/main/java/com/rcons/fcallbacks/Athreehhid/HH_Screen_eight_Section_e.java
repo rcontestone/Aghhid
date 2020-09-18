@@ -1,26 +1,34 @@
 package com.rcons.fcallbacks.Athreehhid;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -37,7 +45,9 @@ import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
 import com.rcons.fcallbacks.Utilties.MpcUtil;
+import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
+import com.rcons.fcallbacks.Utilties.StringUtils;
 import com.rcons.fcallbacks.http.ConnectionVerifier;
 import com.rcons.fcallbacks.http.ResponceVerifier;
 
@@ -47,6 +57,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 
 public class HH_Screen_eight_Section_e extends Activity {
@@ -69,6 +80,7 @@ public class HH_Screen_eight_Section_e extends Activity {
     String firstName = "";
     String lastName = "";
     String aghhid_e_8 = "";
+    String aghhid_e_8_1 = "";
     String aghhid_e_8_2 = "";
     String aghhid_e_8_3 = "";
     String aghhid_e_8_4 = "";
@@ -187,6 +199,7 @@ EditText hh_edtfield_q_4 = null;
     String school_name = "";
     String student_name = "";
 
+RadioButton hh_edtfield_q_2_rdg_op_0 = null;
 RadioButton hh_edtfield_q_2_rdg_op_1 = null;
 RadioButton hh_edtfield_q_2_rdg_op_2 = null;
 RadioButton hh_edtfield_q_2_rdg_op_3 = null;
@@ -348,6 +361,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
             });
 
 
+            hh_edtfield_q_2_rdg_op_0 = (RadioButton)findViewById(R.id.hh_edtfield_q_2_rdg_op_0);
             hh_edtfield_q_2_rdg_op_1 = (RadioButton)findViewById(R.id.hh_edtfield_q_2_rdg_op_1);
             hh_edtfield_q_2_rdg_op_2 = (RadioButton)findViewById(R.id.hh_edtfield_q_2_rdg_op_2);
             hh_edtfield_q_2_rdg_op_3 = (RadioButton)findViewById(R.id.hh_edtfield_q_2_rdg_op_3);
@@ -674,7 +688,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 //				MpcUtil.restartInput(appContext, editTextfirstName);
 //				error = true;true
 
-            }else if (aghhid_e_8.trim().length() == 0 ){
+            }else if (aghhid_e_8_1.trim().length() == 0 ){
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
                 showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
                 hh_edtfield_q_2.requestFocus();
@@ -692,7 +706,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                 editTextReTypeEmailID.requestFocus();
                 MpcUtil.restartInput(appContext, editTextReTypeEmailID);
                 error = true;
-            }else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_e_8.trim())){
+            }else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_e_8_1.trim())){
                 MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
                 showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
                 editTextReTypeEmailID.requestFocus();
@@ -787,12 +801,12 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
     public void HandleNextButnClick(View v) {
 
-        boolean error = false;
+        boolean error = true;
         try {
             aghhid_e_8_4_other = hh_edtfield_q_4.getText().toString();
 
-            if ( aghhid_e_8.length()!=0  ||  aghhid_e_8_2.length()!=0  ||  aghhid_e_8_3.length()!=0  ||  aghhid_e_8_4.length()!=0   ||  aghhid_e_8_4_other.length()!=0  ||  aghhid_e_8_15.length()!=0  ||  aghhid_e_8_16.length()!=0  ||  aghhid_e_8_17.length()!=0  ||  aghhid_e_8_18.length()!=0  ){
-
+            if ( aghhid_e_8.length()!=0  || aghhid_e_8_1.length()!=0  ||  aghhid_e_8_2.length()!=0  ||  aghhid_e_8_3.length()!=0  ||  aghhid_e_8_4.length()!=0   ||  aghhid_e_8_4_other.length()!=0  ||  aghhid_e_8_15.length()!=0  ||  aghhid_e_8_16.length()!=0  ||  aghhid_e_8_17.length()!=0  ||  aghhid_e_8_18.length()!=0  ){
+error=false;
 
                 if (aghhid_e_8_4.length() != 0) {
                     if(aghhid_e_8_4_other.length()==0){
@@ -904,15 +918,15 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
             firstName = editTextfirstName.getText().toString();
 
-            if (aghhid_e_8.trim().length() == 0 ){
+            if (aghhid_e_8_1.trim().length() == 0 ){
                 //AnalyticsUtil.updateEventAction(appContext, " Email field empty");
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
                 showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 2");
                 hh_edtfield_q_2.requestFocus();
                 MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 error = true;
-//			}else if (!MpcUtil.isEmailValid(aghhid_e_8.trim())){
-//				//AnalyticsUtil.updateEventAction(appContext, "Invalid Email Address : "+aghhid_e_8.trim());
+//			}else if (!MpcUtil.isEmailValid(aghhid_e_8_1.trim())){
+//				//AnalyticsUtil.updateEventAction(appContext, "Invalid Email Address : "+aghhid_e_8_1.trim());
 //				MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
 //				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
 //				hh_edtfield_q_2.requestFocus();
@@ -925,13 +939,13 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 //				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
 //				error = true;
                 //AnalyticsUtil.updateEventAction(appContext, " Re-type Email field empty");
-//			}else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_e_8.trim())){
+//			}else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_e_8_1.trim())){
 //				MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
 //				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
 //				editTextReTypeEmailID.requestFocus();
 //				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
 //				error = true;
-//				//AnalyticsUtil.updateEventAction(appContext, " Re-type Email and email mismatch :"+reTypedEmailID.trim()+" email :"+aghhid_e_8.trim());
+//				//AnalyticsUtil.updateEventAction(appContext, " Re-type Email and email mismatch :"+reTypedEmailID.trim()+" email :"+aghhid_e_8_1.trim());
 //			}else
 //
 //			if(phone.trim().length() == 0)
@@ -1195,11 +1209,11 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 //
 //			MpcUtil.DEVICE_UNIQUE_ID = MpcUtil.getDeviceUniqueId(appContext);
 //			if (processType.equalsIgnoreCase("signup")){
-//				DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_e_8"+ aghhid_e_8+"\r\npassword"+ password);
-//				json = JsonHandler.createSIGNUPJsonObject(appContext, firstName, aghhid_e_8, phone,password, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
+//				DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_e_8_1"+ aghhid_e_8_1+"\r\npassword"+ password);
+//				json = JsonHandler.createSIGNUPJsonObject(appContext, firstName, aghhid_e_8_1, phone,password, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
 //				//EmailDebugLog.getInstance(appContext).writeLog(json.toString());
 //				MainUserInfo.devicesTempLockPassword = password;
-//				MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_e_8;
+//				MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_e_8_1;
 //			}else{
 //				DebugLog.console("\r\nuserNameToLogin"+userNameToLogin+ "\r\npasswordToLogin"+passwordToLogin);
 //				json = JsonHandler.createSIGNINJsonObjectFromChildAppWithoutCode(appContext,userNameToLogin, passwordToLogin, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
@@ -1232,9 +1246,9 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
 //		try{
 //
-//			DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_e_8"+ aghhid_e_8+"\r\npassword"+ password);
-//			MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_e_8;
-//			String url = MpcUtil.getBaseURL(appContext)+ MpcUtil.EMAIL_ID_VERIFICATION_URL + Uri.encode(aghhid_e_8);
+//			DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_e_8_1"+ aghhid_e_8_1+"\r\npassword"+ password);
+//			MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_e_8_1;
+//			String url = MpcUtil.getBaseURL(appContext)+ MpcUtil.EMAIL_ID_VERIFICATION_URL + Uri.encode(aghhid_e_8_1);
 //
 //			JSONObject result = HttpsClient.sendHttpsGetRequest(appContext, url);
 //			if(result != null){
@@ -1345,7 +1359,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                         pd.dismiss();
 
 
-                    DebugLog.console("[HH_Screen_two] inside run() Question_1 " + aghhid_e_8);
+                    DebugLog.console("[HH_Screen_two] inside run() Question_1 " + aghhid_e_8_1);
                     DebugLog.console("[HH_Screen_two] inside run() Question_2 " + reTypedEmailID);
                     DebugLog.console("[HH_Screen_two] inside run() Question_3 " + password);
                     DebugLog.console("[HH_Screen_two] inside run() Question_4 " + hh_edtfield_q_3_edt_answer);
@@ -1408,8 +1422,8 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
 
 
-            DebugLog.console("[HH_Screen_two] inside saveDatainDataBase() aghhid_e_8"+aghhid_e_8+"  aghhid_c1_given_number"+aghhid_c1_given_number);
-            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_e8( school_code , student_id ,aghhid_e_8,  aghhid_e_8_2,  aghhid_e_8_3,  aghhid_e_8_4,   aghhid_e_8_4_other,  aghhid_e_8_15,  aghhid_e_8_16,  aghhid_e_8_17,  aghhid_e_8_18,   rcons_user , start_date_time);
+            DebugLog.console("[HH_Screen_two] inside saveDatainDataBase() aghhid_e_8_1"+aghhid_e_8_1+"  aghhid_c1_given_number"+aghhid_c1_given_number);
+            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_e8( school_code , student_id ,aghhid_e_8,aghhid_e_8_1,  aghhid_e_8_2,  aghhid_e_8_3,  aghhid_e_8_4,   aghhid_e_8_4_other,  aghhid_e_8_15,  aghhid_e_8_16,  aghhid_e_8_17,  aghhid_e_8_18,   rcons_user , start_date_time);
             return dataSaved;
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDatainDataBase() Exception is :"+e.toString());
@@ -1799,6 +1813,9 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
             if (data.length()>0){
 
+                if(data.getString("e_8").equalsIgnoreCase("null"))
+                    data.put("e_8","");
+
                 if(data.getString("e_8_1").equalsIgnoreCase("null"))
                     data.put("e_8_1","");
 
@@ -1832,7 +1849,8 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                     data.put("e_8_777","");
 
 
-                aghhid_e_8 = data.getString("e_8_1");
+                aghhid_e_8 = data.getString("e_8");
+                aghhid_e_8_1 = data.getString("e_8_1");
                 aghhid_e_8_2 = data.getString("e_8_2");
                 aghhid_e_8_3 = data.getString("e_8_3");
                 aghhid_e_8_4 = data.getString("e_8_4");
@@ -1845,6 +1863,9 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
 
                 if ( aghhid_e_8.length() != 0 )
+                    hh_edtfield_q_2_rdg_op_0.setChecked(true);
+
+                if ( aghhid_e_8_1.length() != 0 )
                     hh_edtfield_q_2_rdg_op_1.setChecked(true);
 
                 if ( aghhid_e_8_2.length() != 0 )
@@ -2067,19 +2088,34 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
         RadioButton checkedRadioButton = (RadioButton)view;
 
 
+        if (view.getTag().equals("0")) {
 
+
+            if (aghhid_e_8.length() != 0) {
+                ((RadioButton) view).setChecked(false);
+                aghhid_e_8 = "";
+                
+                reenableAll();
+            } else {
+                ((RadioButton) view).setChecked(true);
+                aghhid_e_8 = "0";
+
+                resetallOther();
+
+            }
+        }
 
 
 
         if (view.getTag().equals("1")){
 
 
-            if(aghhid_e_8.length()!=0){
+            if(aghhid_e_8_1.length()!=0){
                 ((RadioButton) view).setChecked(false);
-                aghhid_e_8 = "";
+                aghhid_e_8_1 = "";
             }else{
                 ((RadioButton) view).setChecked(true);
-                aghhid_e_8 = "1";
+                aghhid_e_8_1 = "1";
             }
 
 
@@ -2276,6 +2312,89 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
     }
 
+    private void reenableAll() {
+        
+        try {
+
+            hh_edtfield_q_2_rdg_op_1.setChecked(false);
+            hh_edtfield_q_2_rdg_op_1.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_2.setChecked(false);
+            hh_edtfield_q_2_rdg_op_2.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_3.setChecked(false);
+            hh_edtfield_q_2_rdg_op_3.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_4.setChecked(false);
+            hh_edtfield_q_2_rdg_op_4.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_15.setChecked(false);
+            hh_edtfield_q_2_rdg_op_15.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_16.setChecked(false);
+            hh_edtfield_q_2_rdg_op_16.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_17.setChecked(false);
+            hh_edtfield_q_2_rdg_op_17.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_18.setChecked(false);
+            hh_edtfield_q_2_rdg_op_18.setEnabled(true);
+        
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside reenableAll() Exception is :"+e.toString());
+        }
+    }
+
+    private void resetallOther() {
+
+        try {
+
+//            hh_edtfield_q_2_rdg_op_0.setChecked(false);
+            hh_edtfield_q_2_rdg_op_1.setChecked(false);
+            hh_edtfield_q_2_rdg_op_1.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_2.setChecked(false);
+            hh_edtfield_q_2_rdg_op_2.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_3.setChecked(false);
+            hh_edtfield_q_2_rdg_op_3.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_4.setChecked(false);
+            hh_edtfield_q_2_rdg_op_4.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_15.setChecked(false);
+            hh_edtfield_q_2_rdg_op_15.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_16.setChecked(false);
+            hh_edtfield_q_2_rdg_op_16.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_17.setChecked(false);
+            hh_edtfield_q_2_rdg_op_17.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_18.setChecked(false);
+            hh_edtfield_q_2_rdg_op_18.setEnabled(false);
+            hh_edtfield_q_4.setText("");
+            hh_edtfield_q_4.setVisibility(View.GONE);
+
+
+//            aghhid_e_8 = "";
+            aghhid_e_8_1 = "";
+            aghhid_e_8_2 = "";
+            aghhid_e_8_3 = "";
+            aghhid_e_8_4 = "";
+            aghhid_e_8_5 = "";
+            aghhid_e_8_6 = "";
+            aghhid_e_8_7 = "";
+            aghhid_e_8_8 = "";
+            aghhid_e_8_9 = "";
+            aghhid_e_8_10 = "";
+            aghhid_e_8_11 = "";
+            aghhid_e_8_12 = "";
+            aghhid_e_8_13 = "";
+            aghhid_e_8_14 = "";
+            aghhid_e_8_4_other = "";
+            aghhid_e_8_15 = "";
+            aghhid_e_8_16 = "";
+            aghhid_e_8_17 = "";
+            aghhid_e_8_18 = "";
+
+
+
+
+
+
+        }catch
+         (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside resetallOther() Exception is :"+e.toString());
+        }
+    }
+
     public void setMigration2(View view) {
         aghhid_e_8 = "-111";
         hh_edtfield_q_2.setVisibility(View.GONE);
@@ -2338,4 +2457,112 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
         }
     }
+
+
+    public void DialUserNumber(View v) {
+
+        if (ActivityCompat.checkSelfPermission(appContext,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+//        String phoneNumber =     txt_mobile_number.getText().toString().trim();
+
+
+        String phoneNumber =   phone_number;// numbers_sp_q_2.getSelectedItem().toString().trim();
+
+        String network = getSimNetwork();
+        MubLog.cpnsoleLog("getSimNetwork  " + network);
+        if (!StringUtils.isEmpty(network)) {
+            if (network.equalsIgnoreCase("Jazz")) {
+                phoneNumber = "660" + phoneNumber;
+            } else if (network.equalsIgnoreCase("Telenor")) {
+                //     phoneNumber = "880" + phoneNumber;
+            } else {
+                phoneNumber = "770" + phoneNumber;
+            }
+        } else {
+
+        }
+        //callIntent.setData(Uri.parse("tel:" + "03006982661"));
+
+//        SaveInterviewStart_time();
+        if (network.equalsIgnoreCase("Telenor")) {
+            ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
+        } else {
+            callIntent.setData(Uri.parse("tel:" + phoneNumber));
+            startActivity(callIntent);
+        }
+
+
+    }
+
+    public  String getSimNetwork() {
+        TelephonyManager phoneMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        return phoneMgr.getSimOperatorName();
+    }
+
+
+
+
+    void ShowDialMessage(final Context context, String title, String message, String str_btonok, String str_btnenum) {
+
+        LayoutInflater li = LayoutInflater.from(context);
+        View dialogView = li.inflate(R.layout.delete_dialog, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setView(dialogView);
+        TextView txtDialogTitle = dialogView.findViewById(R.id.txtDialogTitle);
+        ImageView imageView1 = dialogView.findViewById(R.id.imageView1);
+        imageView1.setVisibility(View.GONE);
+        txtDialogTitle.setText(title);
+        txtDialogTitle.setVisibility(View.GONE);
+        TextView txtErrorMessage = dialogView.findViewById(R.id.txtErrorMessage);
+        txtErrorMessage.setText(message);
+        txtErrorMessage.setVisibility(View.GONE);
+        Button btnCancel = dialogView.findViewById(R.id.btnCancel);
+        Button btnok = dialogView.findViewById(R.id.btnRconsUser);
+        Button btnenum = dialogView.findViewById(R.id.btnenum);
+        btnenum.setVisibility(View.VISIBLE);
+        btnok.setText("Dial " + str_btonok);
+        btnok.setTextSize(24);
+        btnenum.setText("Dial " + str_btnenum);
+        btnenum.setTextSize(24);
+        btnCancel.setText("Cancel");
+        btnCancel.setTextSize(24);
+        final AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCancelable(false);
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        alertDialog.show();
+        btnok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                // SaveInterviewStart_time();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + str_btonok));
+                startActivity(callIntent);
+
+            }
+        });
+        btnenum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                // SaveInterviewStart_time();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + str_btnenum));
+                startActivity(callIntent);
+
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+
+            }
+        });
+    }
+
+
 }
