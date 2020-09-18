@@ -181,12 +181,31 @@
 
                             />
 
+                        <TextView
+                            android:id="@+id/hh_textview_q_script_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_textview_q_script"
+
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="27dp"
+                            android:layout_marginRight="30dp"
+                            android:gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/ad_section_e_question_inst"
+                            android:textColor="@color/Blue"
+                            android:textSize="@dimen/_20sdp"
+                            android:textStyle="bold"
+
+
+                            />
+
 
                         <TextView
                             android:id="@+id/hh_textview_q_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/hh_textview_q_script"
+                            android:layout_below="@+id/hh_textview_q_script_two"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="37dp"
@@ -199,6 +218,12 @@
 
 
                             />
+
+
+
+
+
+
 
                         <EditText
                             android:id="@+id/hh_edtfield_q_2"
@@ -229,7 +254,7 @@
                             android:background="#e6e6e6"
                             android:entries="@array/array_relative_code_sp"
                             android:padding="@dimen/_5sdp"
-
+                            android:visibility="gone"
                             android:textSize="@dimen/_13sdp"></Spinner>
 
 

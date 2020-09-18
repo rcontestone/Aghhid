@@ -371,7 +371,7 @@ public class HH_Screen_one_section_e extends Activity {
 
                     try {
                         if (i==0){
-                            //  hh_edtfield_q_2.setText(  "");
+                             hh_edtfield_q_2.setText(  "");
 
                         }else{
 

@@ -706,7 +706,7 @@
 
     <string name="section_e_question_q1"> جوابدہندہ سے مت پوچھیں(روسٹر کے مطابق نوٹ کریں) روسٹر سے دیکھ کر 9سے19سال کے درمیان ایسی لڑکی کو منتخب کریں جو فروری 2020 میں سکول نہیں جاتی تھی اور /یا سکول کھلنے پر دوبارہ سکول نہیں جائے گی۔ اگر کوئی ایسی لڑکی نہ ہو تب کسی اور9سے 19سال کے درمیان والی  لڑکی کو منتخب کرلیں</string>
     <string name="section_e_question_q2"> ہم آپ سے تعلیم کے مختلف مواقع کے بارے  میں  آپ کی رائے  جاننا چاہتے ہیں۔کیا آپ  \u0020  %1$s  کوخاص طور پر 9سے 19سال کی بچیوں  کےلئے پڑھنے کے پروگرام میں داخل کروا ئیں گے  اور یہ پیشکش آپ کے گاؤں ہی میں کی جائے اور پڑھانے کےلئے خاتون استاد ہوں؟ </string>
-    <string name="section_e_question_q2_option1">1~ ہاں </string>
+    <string name="section_e_question_q2_option1">1ہاں، (شمار کنندہ: سوالات کے جواب دیں اور پھر E10پر جائیں) </string>
     <string name="section_e_question_q2_option2">2~ نہیں </string>
     <string name="section_e_question_q2_option88">88~ جواب نہیں دیا </string>
     <string name="section_e_question_q2_option98">98~ معلوم نہیں </string>
@@ -1059,7 +1059,10 @@
     <string name="ad_section_d_question_q12_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q12_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_E">Section E</string>
+    <string name="section_E">سیکشن E: نوجوان بچی کی تعلیم</string>
+    <string name="ad_section_e_question_inst"> شمار کنندہ: سکرین پر موجود 9سے 19سال کی لڑکیوں میں سے کسی ایسی لڑکی کو منتخب کریں جس کےلئے سوال نمبر 7اور8 دونوں میں کوڈ 4ہے۔
+اگر ایسی کوئی لڑکی موجود نہیں ہے تب ایسی لڑکی کو منتخب کریں جس کےلئے سوال نمبر 7یا سوال نمبر 8  کسی ایک میں کوڈ 4ہے
+</string>
     <string name="ad_section_e_question_q1"> آپ لفظ  (استاد  ) کے کیا ہجے کریں گی </string>
     <string name="ad_section_e_question_q1_option1">1~ درست جواب دیا </string>
     <string name="ad_section_e_question_q1_option2">2~ غلط جواب دیا </string>

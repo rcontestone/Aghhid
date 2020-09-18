@@ -1623,8 +1623,10 @@ public class HH_Screen_three extends Activity {
 				hhidlisthaving_numbers = android.text.TextUtils.join("\r\n", name);
 			}
 
+			String info = getString(R.string.section_e_question_q1);
+
 			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
-			showAlert("MemList","Total memcount : "+name.size()+"\r\n "+hhidlisthaving_numbers+"\r\nDo you want to add more");
+			showAlert(info,"\r\nTotal mem count : "+name.size()+"\r\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
 
 		} catch (Exception e) {
 		    EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside askuserfornext() Exception is :"+e.toString());
