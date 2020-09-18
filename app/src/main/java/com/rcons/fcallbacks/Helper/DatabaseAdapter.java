@@ -6540,7 +6540,8 @@ public class DatabaseAdapter {
                                         String f_3_26,
                                         String f_4,
                                         String f_5,
-                                        String f_6
+                                        String f_6,
+                                        String f_7
 
     ) {
 
@@ -6618,6 +6619,7 @@ public class DatabaseAdapter {
                 contentValues.put("f_4", f_4);
                 contentValues.put("f_5", f_5);
                 contentValues.put("f_6", f_6);
+                contentValues.put("f_7", f_7);
 
 
                 db.insertOrThrow(aghhid_section_f_table, null, contentValues);
@@ -6688,6 +6690,7 @@ public class DatabaseAdapter {
                 contentValues.put("f_4", f_4);
                 contentValues.put("f_5", f_5);
                 contentValues.put("f_6", f_6);
+                contentValues.put("f_7", f_7);
 
 
                 db.update(aghhid_section_f_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);

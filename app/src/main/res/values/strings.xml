@@ -940,7 +940,7 @@
     <string name="ad_section_c_question_q5_option1">1~ منگنی </string>
     <string name="ad_section_c_question_q5_option2">2~ شادی </string>
     <string name="ad_section_c_question_q5_option3">3~ بیوہ/مطلقہ </string>
-    <string name="ad_section_c_question_q5_option4">2~ نہ منگنی ، نہ شادی </string>
+    <string name="ad_section_c_question_q5_option4">4~ نہ منگنی ، نہ شادی </string>
     <string name="ad_section_c_question_q5_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_c_question_q5_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_c_question_q5_option777">777~ فون کاٹ دیا </string>
@@ -953,11 +953,11 @@
     <string name="ad_section_c_question_q6_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_c_question_q6_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_c_question_q6a_script">اب میں آپ سے حساب اور اردو کے کچھ سوالات پوچھوں گی۔آپ کو ایک بار پھر یاددہانی کروا دوں کہ آپ کے جوابات کسی اور کو بالکل نہیں بتائے جائیں گے۔</string>
-    <string name="ad_section_c_question_q6a">شمار کنندہ: کیا جوابدہندہ اس ٹیسٹ کےلئے رضامندی کا اظہار کیا؟ </string>
-    <string name="ad_section_c_question_q6a_option1">1~ ہاں </string>
-    <string name="ad_section_c_question_q6a_option2">2~ نہیں</string>
-    <string name="ad_section_c_question_q6a_option777">777~ فون کاٹ دیا </string>
+    <string name="ad_section_c_question_q7_script">اب میں آپ سے حساب اور اردو کے کچھ سوالات پوچھوں گی۔آپ کو ایک بار پھر یاددہانی کروا دوں کہ آپ کے جوابات کسی اور کو بالکل نہیں بتائے جائیں گے۔</string>
+    <string name="ad_section_c_question_q7">شمار کنندہ: کیا جوابدہندہ اس ٹیسٹ کےلئے رضامندی کا اظہار کیا؟ </string>
+    <string name="ad_section_c_question_q7_option1">1~ ہاں </string>
+    <string name="ad_section_c_question_q7_option2">2~ نہیں</string>
+    <string name="ad_section_c_question_q7_option777">777~ فون کاٹ دیا </string>
 
     <!--  Adolscent Section D Strings -->
 
@@ -1004,7 +1004,7 @@
     <string name="ad_section_d_question_q5_option777">777~ فون کاٹ دیا </string>
 
     <string name="ad_section_d_question_q6"> 32ضرب 6کتنے ہوتے ہیں </string>
-    <string name="ad_section_d_question_q6_option1">1~ درست جواب دی(192)ا </string>
+    <string name="ad_section_d_question_q6_option1">1~ درست جواب دی(192) </string>
     <string name="ad_section_d_question_q6_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q6_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q6_option98">98~ معلوم نہیں </string>
@@ -1051,8 +1051,8 @@
     <string name="ad_section_d_question_q11_option99">99~ مزید بات سے انکار کر دیا </string>
     <string name="ad_section_d_question_q11_option777">777~ فون کاٹ دیا </string>
 
-    <string name="ad_section_d_question_q12">1~ درست جواب دیا(1سے 10تک مکمل گنتی سنادی) </string>
-    <string name="ad_section_d_question_q12_option1">1~ درست جواب دیا(149) </string>
+    <string name="ad_section_d_question_q12">1~ برائے مہربانی 1سے لے کر دس تک گنتی سنائیں </string>
+    <string name="ad_section_d_question_q12_option1">1~ درست جواب دیا(1سے 10تک مکمل گنتی سنادی) </string>
     <string name="ad_section_d_question_q12_option2">2~ غلط جواب دیا </string>
     <string name="ad_section_d_question_q12_option88">88~ جواب نہیں دیا </string>
     <string name="ad_section_d_question_q12_option98">98~ معلوم نہیں </string>

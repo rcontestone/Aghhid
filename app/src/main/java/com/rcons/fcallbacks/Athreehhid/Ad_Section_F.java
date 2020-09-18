@@ -60,8 +60,8 @@ public class Ad_Section_F extends AppCompatActivity {
     LinearLayout qf5_layout;
     @BindView(R.id.qf6_layout)
     LinearLayout qf6_layout;
-    @BindView(R.id.qf6a_layout)
-    LinearLayout qf6a_layout;
+    @BindView(R.id.qf7_layout)
+    LinearLayout qf7_layout;
 
     @BindView(R.id.rg_f1)
     RadioGroup rg_f1;
@@ -73,8 +73,8 @@ public class Ad_Section_F extends AppCompatActivity {
     RadioGroup rg_f5;
     @BindView(R.id.rg_f6)
     RadioGroup rg_f6;
-    @BindView(R.id.rg_f6a)
-    RadioGroup rg_f6a;
+    @BindView(R.id.rg_f7)
+    RadioGroup rg_f7;
 
     @BindView(R.id.checkbox_f2_1)
     CheckBox checkbox_f2_1;
@@ -211,6 +211,7 @@ public class Ad_Section_F extends AppCompatActivity {
     String f_4 = "";
     String f_5 = "";
     String f_6 = "";
+    String f_7 = "";
 
     int questionf2CheckBoxCounter = 0;
     ArrayList<String> questionf2CheckBoxTags = new ArrayList<>();
@@ -265,7 +266,7 @@ public class Ad_Section_F extends AppCompatActivity {
                 int rg_f4_ID = rg_f4.getCheckedRadioButtonId();
                 int rg_f5_ID = rg_f5.getCheckedRadioButtonId();
                 int rg_f6_ID = rg_f6.getCheckedRadioButtonId();
-                int rg_f6a_ID = rg_f6a.getCheckedRadioButtonId();
+                int rg_f7_ID = rg_f7.getCheckedRadioButtonId();
 
                 SaveData();
 
@@ -487,21 +488,34 @@ public class Ad_Section_F extends AppCompatActivity {
                             intent.putExtra("rcons_user", RConsUtils.getUserName());
                             startActivityForResult(intent, 88);
                         } else {
-                            RConsUtils.hideView(qf5_layout, qf6a_layout);
+                            RConsUtils.hideView(qf5_layout, qf6_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
                     }
                 } else if (qf6_layout.getVisibility() == View.VISIBLE) {
                     if (rg_f6_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_f6_ID);
+                        f_6 = radioButton.getTag().toString();
+                        if (f_6.equalsIgnoreCase("-99") || f_6.equalsIgnoreCase("-777")) {
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            intent.putExtra("m1b_parent_mobile", phone_number);
+                            intent.putExtra("scode", village_id);
+                            intent.putExtra("studentid", hhid);
+                            intent.putExtra("m1b_student_name", student_name);
+                            intent.putExtra("rcons_user", RConsUtils.getUserName());
+                            startActivityForResult(intent, 88);
+                        } else {
+                            RConsUtils.hideView(qf6_layout, qf7_layout);
+                        }
                     } else {
                         toastMessage("Please Select Option");
                     }
-                } else if (qf6a_layout.getVisibility() == View.VISIBLE) {
-                    if (rg_f6a_ID > 0) {
-                        RadioButton radioButton = findViewById(rg_f6a_ID);
-                        f_6 = radioButton.getTag().toString();
-                        if (f_6.equalsIgnoreCase("-99") || f_6.equalsIgnoreCase("-777")) {
+                } else if (qf7_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_f7_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_f7_ID);
+                        f_7 = radioButton.getTag().toString();
+                        if (f_7.equalsIgnoreCase("2") || f_7.equalsIgnoreCase("-777")) {
                             Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
                             intent.putExtra("m1b_parent_mobile", phone_number);
                             intent.putExtra("scode", village_id);
@@ -719,7 +733,8 @@ public class Ad_Section_F extends AppCompatActivity {
                     f_3_26,
                     f_4,
                     f_5,
-                    f_6
+                    f_6,
+                    f_7
             );
 //
         } catch (Exception e) {
@@ -788,6 +803,7 @@ public class Ad_Section_F extends AppCompatActivity {
                 f_4 = cursor.getString(cursor.getColumnIndex("f_4"));
                 f_5 = cursor.getString(cursor.getColumnIndex("f_5"));
                 f_6 = cursor.getString(cursor.getColumnIndex("f_6"));
+                f_7 = cursor.getString(cursor.getColumnIndex("f_7"));
 
 
             }
@@ -799,8 +815,10 @@ public class Ad_Section_F extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (qf6a_layout.getVisibility() == View.VISIBLE) {
-            RConsUtils.hideView(qf6a_layout, qf5_layout);
+        if (qf7_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qf7_layout, qf6_layout);
+        } else if (qf6_layout.getVisibility() == View.VISIBLE) {
+            RConsUtils.hideView(qf6_layout, qf5_layout);
         } else if (qf5_layout.getVisibility() == View.VISIBLE) {
             RConsUtils.hideView(qf5_layout, qf4_layout);
         } else if (qf4_layout.getVisibility() == View.VISIBLE) {
@@ -839,7 +857,8 @@ public class Ad_Section_F extends AppCompatActivity {
             RConsUtils.setradiogroup(f_3_0, rg_f3);
             RConsUtils.setradiogroup(f_4, rg_f4);
             RConsUtils.setradiogroup(f_5, rg_f5);
-            RConsUtils.setradiogroup(f_6, rg_f6a);
+            RConsUtils.setradiogroup(f_6, rg_f6);
+            RConsUtils.setradiogroup(f_7, rg_f7);
 
             RConsUtils.setotherEditText(edt_f2_other, f_2_15_other);
             RConsUtils.setotherEditText(edt_f3_other, f_3_1);

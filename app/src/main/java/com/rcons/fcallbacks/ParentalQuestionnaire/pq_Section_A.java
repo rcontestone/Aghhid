@@ -35,6 +35,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.rcons.fcallbacks.Athreehhid.Ad_Section_F;
 import com.rcons.fcallbacks.BuildConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.EmailDebugLog;
@@ -665,19 +666,18 @@ public class pq_Section_A extends AppCompatActivity {
                     if (rg_a3_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a3_ID);
                         a3 = radioButton.getTag().toString();
-                        if (a3.equalsIgnoreCase("1")) {
-                            a4 = "";
-                            a4_day = "";
-                            a4_month = "";
-                            a4_year = "";
-                            a4_hh = "";
-                            a4_mm = "";
-                            a4_number = "";
-                            rg_a4.clearCheck();
-
+                        if (a3.equalsIgnoreCase("1") || a3.equalsIgnoreCase("-88") || a3.equalsIgnoreCase("-98")) {
                             RConsUtils.hideView(qa3_layout, qa4a_layout);
                         } else {
-                            RConsUtils.hideView(qa3_layout, qa4_layout);
+                            SaveData();
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -917,7 +917,7 @@ public class pq_Section_A extends AppCompatActivity {
                                 startActivityForResult(intent, 88);
                             } else {
                                 SaveData();
-                                Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
+                                Intent intent = new Intent(pq_Section_A.this, Ad_Section_F.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -1123,7 +1123,7 @@ public class pq_Section_A extends AppCompatActivity {
             } else if (b2.equalsIgnoreCase("1")) {
                 hideView(qa4a_layout, qb2_layout);
             } else {
-                hideView(qa4a_layout, qa4_layout);
+                hideView(qa4a_layout, qa3_layout);
             }
         } else if (qa4_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4_layout, qa3_layout);
