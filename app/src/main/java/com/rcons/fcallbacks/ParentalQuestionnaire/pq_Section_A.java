@@ -237,6 +237,8 @@ public class pq_Section_A extends AppCompatActivity {
     String a6_mm = "";
     String a7 = "";
 
+    String try_no = "";
+
     String phone_number = "";
     String id = "";
     String school_name = "";
@@ -1251,271 +1253,72 @@ public class pq_Section_A extends AppCompatActivity {
             checkAndUpdateVariables();
 
             if (StringUtils.isEmpty(s1)) {
-                databaseAccess.savepq_Section_A_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 1");
-            } else if (StringUtils.isEmpty(s2)) {
-                databaseAccess.savepq_Section_A2_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+            }
+            if (StringUtils.isEmpty(s2)) {
+                try_no = "2";
                 MubLog.cpnsoleLog("SaveData Try 2");
-            } else if (StringUtils.isEmpty(s3)) {
-                databaseAccess.savepq_Section_A3_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+            }
+            if (StringUtils.isEmpty(s3)) {
+                try_no = "3";
                 MubLog.cpnsoleLog("SaveData Try 3");
-            } else if (StringUtils.isEmpty(s4)) {
-                databaseAccess.savepq_Section_A4_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+            }
+            if (StringUtils.isEmpty(s4)) {
+                try_no = "4";
                 MubLog.cpnsoleLog("SaveData Try 4");
-            } else if (StringUtils.isEmpty(s5)) {
-                databaseAccess.savepq_Section_A5_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+            }
+            if (StringUtils.isEmpty(s5)) {
+                try_no = "5";
                 MubLog.cpnsoleLog("SaveData Try 5");
-            } else if (StringUtils.isEmpty(s6)) {
-                databaseAccess.savepq_Section_A6_Data(emp_id,
-                        order_id,
-                        farmer_id,
-                        rcons_user,
-                        enum_code,
-                        enum_name,
-                        isComplete,
-                        isSynced,
-                        insert_or_updated_in_phone_at,
-                        deviceid,
-                        build_no,
-                        school_code,
-                        student_id,
-                        phone_number,
-                        a1,
-                        b1,
-                        b2,
-                        a2,
-                        a3,
-                        a4,
-                        a4_a,
-                        a4_b,
-                        a4_c,
-                        a4_c_other,
-                        a4_d,
-                        a4_d_other,
-                        a4_day,
-                        a4_month,
-                        a4_year,
-                        a4_hh,
-                        a4_mm,
-                        a4_number,
-                        a5,
-                        a5_a,
-                        a6,
-                        a6_other,
-                        a6_day,
-                        a6_month,
-                        a6_year,
-                        a6_hh,
-                        a6_mm,
-                        a7);
+            }
+            if (StringUtils.isEmpty(s6)) {
+                try_no = "6";
                 MubLog.cpnsoleLog("SaveData Try 6");
             }
-
+            databaseAccess.savepq_Section_A_Data(emp_id,
+                    order_id,
+                    farmer_id,
+                    rcons_user,
+                    enum_code,
+                    enum_name,
+                    isComplete,
+                    isSynced,
+                    insert_or_updated_in_phone_at,
+                    deviceid,
+                    build_no,
+                    school_code,
+                    student_id,
+                    phone_number,
+                    try_no,
+                    a1,
+                    b1,
+                    b2,
+                    a2,
+                    a3,
+                    a4,
+                    a4_a,
+                    a4_b,
+                    a4_c,
+                    a4_c_other,
+                    a4_d,
+                    a4_d_other,
+                    a4_day,
+                    a4_month,
+                    a4_year,
+                    a4_hh,
+                    a4_mm,
+                    a4_number,
+                    a5,
+                    a5_a,
+                    a6,
+                    a6_other,
+                    a6_day,
+                    a6_month,
+                    a6_year,
+                    a6_hh,
+                    a6_mm,
+                    a7);
 
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -1687,22 +1490,22 @@ public class pq_Section_A extends AppCompatActivity {
         try {
             Cursor cursor = null;
             if (StringUtils.isEmpty(s1)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 1");
             } else if (StringUtils.isEmpty(s2)) {
-                cursor = databaseAccess.getpq_section_a2_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "2");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(s3)) {
-                cursor = databaseAccess.getpq_section_a3_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "3");
                 MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(s4)) {
-                cursor = databaseAccess.getpq_section_a4_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "4");
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(s5)) {
-                cursor = databaseAccess.getpq_section_a5_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "5");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(s6)) {
-                cursor = databaseAccess.getpq_section_a6_Data(school_code, student_id);
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "6");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {

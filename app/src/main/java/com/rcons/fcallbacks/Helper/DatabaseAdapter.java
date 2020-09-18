@@ -5266,6 +5266,7 @@ public class DatabaseAdapter {
                                         String school_code,
                                         String student_id,
                                         String phone_number,
+                                        String try_no,
                                         String a1,
                                         String b1,
                                         String b2,
@@ -5297,7 +5298,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + pq_section_a_table + " where  school_code= " + school_code + " AND student_id= " + student_id + "";
+        str = "select Count(*) as count from " + pq_section_a_table + " where  school_code= " + school_code + " AND student_id= " + student_id + " AND phone_number= " + phone_number + " AND try_no= " + try_no + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -5321,6 +5322,7 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
+                contentValues.put("try_no", try_no);
                 contentValues.put("a1", a1);
                 contentValues.put("b1", b1);
                 contentValues.put("b2", b2);
@@ -5371,6 +5373,7 @@ public class DatabaseAdapter {
                 contentValues.put("school_code", school_code);
                 contentValues.put("student_id", student_id);
                 contentValues.put("phone_number", phone_number);
+                contentValues.put("try_no", try_no);
                 contentValues.put("a1", a1);
                 contentValues.put("b1", b1);
                 contentValues.put("b2", b2);
@@ -5401,7 +5404,7 @@ public class DatabaseAdapter {
                 contentValues.put("a7", a7);
 
 
-                db.update(pq_section_a_table, contentValues, "school_code=" + school_code + " and student_id=" + student_id, null);
+                db.update(pq_section_a_table, contentValues, "school_code=" + school_code + " and student_id=" + student_id + " and phone_number=" + phone_number + " and try_no=" + try_no, null);
             }
         }
         cursor.close();
@@ -7640,8 +7643,8 @@ public class DatabaseAdapter {
         }
     }
 
-    public Cursor getpq_section_a_Data(String school_code, String student_id) {
-        String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";
+    public Cursor getpq_section_a_Data(String school_code, String student_id,String phone_number,String try_no) {
+        String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + " AND phone_number= '" + phone_number + " AND try_no= '" + try_no + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
             return cursor;

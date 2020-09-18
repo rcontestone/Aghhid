@@ -40,7 +40,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     RadioButton radioButton;
     RadioButton code_10_other;
 
-    EditText other;
+    EditText other, m4_other;
     EditText callReasonEditText;
     String section;
     String school_code;
@@ -103,6 +103,11 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
     RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9;
 
+    LinearLayout qm3_layout;
+    LinearLayout qm4_layout;
+    RadioGroup rg_m3;
+    RadioGroup rg_m4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +118,11 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         databaseAccess.Open();
 
         txtErrorMessage = findViewById(R.id.txtErrorMessage);
+        qm3_layout = findViewById(R.id.qm3_layout);
+        qm4_layout = findViewById(R.id.qm4_layout);
+        rg_m3 = findViewById(R.id.rg_m3);
+        rg_m4 = findViewById(R.id.rg_m4);
+        m4_other = findViewById(R.id.m4_other);
 
         code_1 = findViewById(R.id.code_1);
         code_2 = findViewById(R.id.code_2);
@@ -157,7 +167,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         student_id = getIntent().getStringExtra("student_id");
 
         readFromDataBase_Basic();
-        setRadioButton();
+        //  setRadioButton();
         // ///    getSupportActionBar().setTitle("Add AddReportActivity");
 
 
