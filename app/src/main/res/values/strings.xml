@@ -1128,5 +1128,8 @@
     <string name="ad_section_f_question_q2_option2">2~ ہاں کچھ وقت </string>
     <string name="ad_section_f_question_q2_option3">3~ نہیں </string>
     <string name="no">No</string>
+    <string name="section_D_conf">گھرانے کے افراد کی تصدیق اور جوابدہندہ کی نشاندہی</string>
+    <string name="section_D_conf_1">جوابدہندہ سے تصدیق کر لیں  کہ سکرین پر موجود گھرانے کے تمام افراد یہی ہیں اور کوئی فرد  روسٹر میں شامل ہونے سے رہ تو نہیں گیا</string>
+    <string name="section_D_conf_2">سکرین پر موجود گھرانے کے تمام افراد  کی لسٹ میں سے اس فرد کا نام SELECTکریں جو آپ کو اس انٹرویو کا جواب دے رہا /رہی ہے</string>
 
 </resources>

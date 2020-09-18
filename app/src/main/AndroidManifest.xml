@@ -123,6 +123,7 @@
         <activity android:name=".Athreehhid.HH_Screen_eight_Section_e" />
         <activity android:name=".Athreehhid.HH_Screen_one_Section_h" />
         <activity android:name=".Athreehhid.HH_Screen_two_Section_h" />
+        <activity android:name=".Athreehhid.HH_Screen_four_section_d" />
     </application>
 
 </manifest>

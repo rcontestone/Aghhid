@@ -2933,6 +2933,72 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public synchronized boolean hhid_insert_data_d9(String village_id ,String hhid , String d_9_resp_name, String d_9_resp_id,String user_name , String start_date_time) {
+        boolean updated =false;
+        try {
+
+
+
+            boolean runUpdate_Querry = hhid_isHHCovered_for_e(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+            ContentValues cv = new ContentValues();
+
+            cv.put("d_9_resp_name", d_9_resp_name.toUpperCase());
+            cv.put("d_9_resp_id", d_9_resp_id.toUpperCase());
+//            cv.put("c1_given_number", c1_given_number.toUpperCase());
+//            cv.put("hhid_q3", hhid_q3.toUpperCase());
+//            cv.put("hhid_q4", hhid_q4.toUpperCase());
+//            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
+
+//            if (!hhid_q3.equalsIgnoreCase("1")){
+//
+//                cv.put("end_date_time", MpcUtil.getcurrentTime(14).toUpperCase());
+//
+//            }
+
+
+
+            long isInserted =0;
+            if(!runUpdate_Querry){
+
+                cv.put("village_id", village_id.toUpperCase());
+                cv.put("hhid", hhid.toUpperCase());
+                cv.put("build_no", BuildConfig.VERSION_NAME);
+                cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
+                cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+                cv.put("rcons_user", user_name.toUpperCase());
+                isInserted = db.insert(DatabaseAdapter.aghhid_section_d_table, null, cv);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
+
+            }else{
+                db.update(DatabaseAdapter.aghhid_section_d_table, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+" ", null);
+
+                DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() update");
+                updated = true;
+            }
+
+            closeDB();
+
+
+            if (isInserted != -1) {
+                updated =  true;
+            }
+
+            return  updated;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data() Exception is : " + e.toString());
+            closeDB();
+            return  updated;
+        }
+    }
+
+
+
     public synchronized boolean hhid_insert_data_e1(String village_id ,String hhid , String e_1,String e_1_other, String user_name , String start_date_time) {
         boolean updated =false;
         try {

@@ -1709,7 +1709,7 @@ public class HH_Screen_one_section_e extends Activity {
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three.class);
+            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_section_d.class);
 
             intent.putExtra("m1b_parent_mobile", phone_number);
             intent.putExtra("scode", school_code);
@@ -1746,7 +1746,7 @@ public class HH_Screen_one_section_e extends Activity {
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three.class);
+            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_section_d.class);
 
             intent.putExtra("m1b_parent_mobile", phone_number);
             intent.putExtra("scode", school_code);

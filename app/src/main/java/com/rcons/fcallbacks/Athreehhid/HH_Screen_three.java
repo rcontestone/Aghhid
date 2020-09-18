@@ -1911,7 +1911,7 @@ public class HH_Screen_three extends Activity {
 				.setPositiveButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener(){
 					public void onClick(DialogInterface dialog, int which){
 						setResult(RESULT_OK);
-						Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_one_section_e.class);
+						Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_section_d.class);
 
 						intent.putExtra("m1b_parent_mobile",phone_number);
 						intent.putExtra("scode",school_code);
