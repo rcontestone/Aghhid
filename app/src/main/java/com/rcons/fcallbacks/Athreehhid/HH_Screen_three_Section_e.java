@@ -1476,7 +1476,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                 if (screen_two ) {
 
 
-                    if(aghhid_e_3.equalsIgnoreCase("-777") || (aghhid_e_3.equalsIgnoreCase("-99"))){
+                    if(aghhid_e_3_18.length() > 0 || (aghhid_e_3_17.length()>0)){
                         Intent intent = new Intent(HH_Screen_three_Section_e.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);

@@ -118,7 +118,7 @@ public class HH_Screen_eight_Section_e extends Activity {
     RadioGroup hh_edtfield_q_2_rdg = null;
     Spinner numbers_sp_q_2 = null;
 
-EditText hh_edtfield_q_4 = null;
+    EditText hh_edtfield_q_4 = null;
 
     TextView house_address = null;
     TextView house_no = null;
@@ -199,25 +199,25 @@ EditText hh_edtfield_q_4 = null;
     String school_name = "";
     String student_name = "";
 
-RadioButton hh_edtfield_q_2_rdg_op_0 = null;
-RadioButton hh_edtfield_q_2_rdg_op_1 = null;
-RadioButton hh_edtfield_q_2_rdg_op_2 = null;
-RadioButton hh_edtfield_q_2_rdg_op_3 = null;
-RadioButton hh_edtfield_q_2_rdg_op_4 = null;
-RadioButton hh_edtfield_q_2_rdg_op_5 = null;
-RadioButton hh_edtfield_q_2_rdg_op_6 = null;
-RadioButton hh_edtfield_q_2_rdg_op_7 = null;
-RadioButton hh_edtfield_q_2_rdg_op_8 = null;
-RadioButton hh_edtfield_q_2_rdg_op_9 = null;
-RadioButton hh_edtfield_q_2_rdg_op_10 = null;
-RadioButton hh_edtfield_q_2_rdg_op_11 = null;
-RadioButton hh_edtfield_q_2_rdg_op_12 = null;
-RadioButton hh_edtfield_q_2_rdg_op_13 = null;
-RadioButton hh_edtfield_q_2_rdg_op_14 = null;
-RadioButton hh_edtfield_q_2_rdg_op_15 = null;
-RadioButton hh_edtfield_q_2_rdg_op_16 = null;
-RadioButton hh_edtfield_q_2_rdg_op_17 = null;
-RadioButton hh_edtfield_q_2_rdg_op_18 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_0 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_1 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_2 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_3 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_4 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_5 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_6 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_7 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_8 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_9 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_10 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_11 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_12 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_13 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_14 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_15 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_16 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_17 = null;
+    RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
 
     @Override
@@ -806,7 +806,7 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
             aghhid_e_8_4_other = hh_edtfield_q_4.getText().toString();
 
             if ( aghhid_e_8.length()!=0  || aghhid_e_8_1.length()!=0  ||  aghhid_e_8_2.length()!=0  ||  aghhid_e_8_3.length()!=0  ||  aghhid_e_8_4.length()!=0   ||  aghhid_e_8_4_other.length()!=0  ||  aghhid_e_8_15.length()!=0  ||  aghhid_e_8_16.length()!=0  ||  aghhid_e_8_17.length()!=0  ||  aghhid_e_8_18.length()!=0  ){
-error=false;
+                error=false;
 
                 if (aghhid_e_8_4.length() != 0) {
                     if(aghhid_e_8_4_other.length()==0){
@@ -1479,8 +1479,8 @@ error=false;
                 if (screen_two ) {
 
 
-                    if(aghhid_e_8.equalsIgnoreCase("1") ||aghhid_e_8.equalsIgnoreCase("-777") || (aghhid_e_8.equalsIgnoreCase("-99"))){
-                        Intent intent = new Intent(HH_Screen_eight_Section_e.this, AddReportActivity.class);
+                    if(!aghhid_e_8.equalsIgnoreCase("0")){
+                    Intent intent = new Intent(HH_Screen_eight_Section_e.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
                         intent.putExtra("id", id);
@@ -1862,9 +1862,10 @@ error=false;
 
 
 
-                if ( aghhid_e_8.length() != 0 )
+                if ( aghhid_e_8.length() != 0 ) {
                     hh_edtfield_q_2_rdg_op_0.setChecked(true);
-
+                    resetallOther();
+                }
                 if ( aghhid_e_8_1.length() != 0 )
                     hh_edtfield_q_2_rdg_op_1.setChecked(true);
 
@@ -2094,7 +2095,7 @@ error=false;
             if (aghhid_e_8.length() != 0) {
                 ((RadioButton) view).setChecked(false);
                 aghhid_e_8 = "";
-                
+
                 reenableAll();
             } else {
                 ((RadioButton) view).setChecked(true);
@@ -2298,22 +2299,22 @@ error=false;
 
 
 
-            if (aghhid_e_8_4.length() != 0) {
+        if (aghhid_e_8_4.length() != 0) {
 
 
-                hh_edtfield_q_4.setVisibility(View.VISIBLE);
-            } else {
+            hh_edtfield_q_4.setVisibility(View.VISIBLE);
+        } else {
 
-                hh_edtfield_q_4.setVisibility(View.GONE);
-                hh_edtfield_q_4.setText("");
+            hh_edtfield_q_4.setVisibility(View.GONE);
+            hh_edtfield_q_4.setText("");
 
-            }
+        }
 
 
     }
 
     private void reenableAll() {
-        
+
         try {
 
             hh_edtfield_q_2_rdg_op_1.setChecked(false);
@@ -2332,7 +2333,7 @@ error=false;
             hh_edtfield_q_2_rdg_op_17.setEnabled(true);
             hh_edtfield_q_2_rdg_op_18.setChecked(false);
             hh_edtfield_q_2_rdg_op_18.setEnabled(true);
-        
+
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside reenableAll() Exception is :"+e.toString());
         }
@@ -2390,7 +2391,7 @@ error=false;
 
 
         }catch
-         (Exception e) {
+        (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside resetallOther() Exception is :"+e.toString());
         }
     }

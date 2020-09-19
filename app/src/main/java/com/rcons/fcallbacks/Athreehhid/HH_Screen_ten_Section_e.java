@@ -1446,7 +1446,7 @@ public class HH_Screen_ten_Section_e extends Activity {
 
 
 
-                    if(aghhid_e_10.equalsIgnoreCase("-777") || (aghhid_e_10.equalsIgnoreCase("-99"))){
+                    if(aghhid_e_10.equalsIgnoreCase("2") ||aghhid_e_10.equalsIgnoreCase("-777") || (aghhid_e_10.equalsIgnoreCase("-99"))){
                         Intent intent = new Intent(HH_Screen_ten_Section_e.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -1971,7 +1971,7 @@ public class HH_Screen_ten_Section_e extends Activity {
     }
 
     public void setMigration2(View view) {
-        aghhid_e_10 = "-111";
+        aghhid_e_10 = "2";
         hh_edtfield_q_2.setVisibility(View.GONE);
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);

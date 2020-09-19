@@ -72,8 +72,9 @@
                     android:layout_centerInParent="true"
                     android:layout_toRightOf="@+id/btnBack"
                     android:fontFamily="serif"
-                    android:gravity="center"
-                    android:text="Section F"
+                    android:gravity="left"
+                    android:text="Adolescent Section C"
+                    android:layout_marginLeft="@dimen/_10sdp"
                     android:textColor="@color/color_white"
                     android:textSize="20sp"
                     android:textStyle="normal"
@@ -185,7 +186,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 1"
+                            android:text="Question No. C 1"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -328,7 +329,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 2"
+                            android:text="Question No. C 2"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -774,7 +775,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 3"
+                            android:text="Question No. C 3"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1301,7 +1302,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 4"
+                            android:text="Question No. C 4"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1445,7 +1446,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 5"
+                            android:text="Question No. C 5"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1626,7 +1627,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 6"
+                            android:text="Question No. C 6"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1770,7 +1771,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. F 7"
+                            android:text="Question No. C 7"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />

@@ -1839,7 +1839,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public synchronized boolean hhid_insert_data_c_2(String village_id ,String hhid , String c2, String user_name , String start_date_time) {
+    public synchronized boolean hhid_insert_data_c_2(String village_id ,String hhid ,  String aghhid_c_2_1,String aghhid_c_2_2,String aghhid_c_2_3,String aghhid_c_2_4,String aghhid_c_2_5,String aghhid_c_2_6,String aghhid_c_2_7,String aghhid_c_2_8,String aghhid_c_2_9,String user_name , String start_date_time) {
         boolean updated =false;
         try {
 
@@ -1854,7 +1854,15 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
             ContentValues cv = new ContentValues();
 
-            cv.put("c2", c2.toUpperCase());
+            cv.put("c2_1", aghhid_c_2_1.toUpperCase());
+            cv.put("c2_2", aghhid_c_2_2.toUpperCase());
+            cv.put("c2_3", aghhid_c_2_3.toUpperCase());
+            cv.put("c2_4", aghhid_c_2_4.toUpperCase());
+            cv.put("c2_5", aghhid_c_2_5.toUpperCase());
+            cv.put("c2_6", aghhid_c_2_6.toUpperCase());
+            cv.put("c2_7", aghhid_c_2_7.toUpperCase());
+            cv.put("c2_8", aghhid_c_2_8.toUpperCase());
+            cv.put("c2_9", aghhid_c_2_9.toUpperCase());
 //            cv.put("c1_given_number", c1_given_number.toUpperCase());
 //            cv.put("hhid_q3", hhid_q3.toUpperCase());
 //            cv.put("hhid_q4", hhid_q4.toUpperCase());

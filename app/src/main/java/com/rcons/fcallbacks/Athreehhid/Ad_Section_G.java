@@ -680,7 +680,9 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
-                            startActivityForResult(intent, 88);
+                            startActivity(intent);
+                          // startActivityForResult(intent, 88);
+                            finish();
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -706,7 +708,9 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
-                            startActivityForResult(intent, 88);
+                            // startActivityForResult(intent, 88);
+                            startActivity(intent);
+                            finish();
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -732,7 +736,9 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
-                            startActivityForResult(intent, 88);
+                            // startActivityForResult(intent, 88);
+                            startActivity(intent);
+                            finish();
                         } else {
                             RConsUtils.hideView(qg_urdu_3_layout, qg_urdu_4_layout);
                         }
@@ -760,7 +766,9 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
-                            startActivityForResult(intent, 88);
+                            startActivity(intent);
+                            // startActivityForResult(intent, 88);
+                            finish();
                         } else {
                             RConsUtils.hideView(qg_urdu_4_layout, qg_urdu_5_layout);
                         }
@@ -788,7 +796,9 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
-                            startActivityForResult(intent, 88);
+                            startActivity(intent);
+                            // startActivityForResult(intent, 88);
+                            finish();
                         }
                     } else {
                         toastMessage("Please Select Option");

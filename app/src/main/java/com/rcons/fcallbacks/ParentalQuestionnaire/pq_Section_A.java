@@ -47,6 +47,7 @@ import com.rcons.fcallbacks.Questionnaire.Q_sectionC;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.TRT.trt_Section_0;
 import com.rcons.fcallbacks.TRT.trt_Section_1;
+import com.rcons.fcallbacks.Utilties.MpcUtil;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
@@ -916,6 +917,12 @@ public class pq_Section_A extends AppCompatActivity {
                                 startActivityForResult(intent, 88);
                             } else {
                                 SaveData();
+
+//                                Intent returnIntent = new Intent();
+//                                returnIntent.putExtra("isDataUpdated", false);
+//                                setResult(Activity.RESULT_OK, returnIntent);
+
+
                                 Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
@@ -934,8 +941,9 @@ public class pq_Section_A extends AppCompatActivity {
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-
-                                startActivityForResult(intent, 88);
+                                startActivity(intent);
+                                //startActivityForResult(intent, 88);
+                                finish();
                             }
                         } else {
                             toastMessage("Please Select B9 Option");
@@ -998,6 +1006,10 @@ public class pq_Section_A extends AppCompatActivity {
 
                             } else {
                                 SaveData();
+//                                Intent returnIntent = new Intent();
+//                                returnIntent.putExtra("isDataUpdated", false);
+//                                setResult(Activity.RESULT_OK, returnIntent);
+
                                 Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
@@ -1016,10 +1028,16 @@ public class pq_Section_A extends AppCompatActivity {
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-                                startActivityForResult(intent, 88);
+startActivity(intent);
+                                //startActivityForResult(intent, 88);
+                                finish();
                             }
                         } else {
                             SaveData();
+//                            Intent returnIntent = new Intent();
+//                            returnIntent.putExtra("isDataUpdated", false);
+//                            setResult(Activity.RESULT_OK, returnIntent);
+
                             Intent intent = new Intent(pq_Section_A.this, HH_Screen_two.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
@@ -1038,7 +1056,9 @@ public class pq_Section_A extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-                            startActivityForResult(intent, 88);
+                            startActivity(intent);
+                            //startActivityForResult(intent, 88);
+                            finish();
                         }
                     } else {
                         toastMessage("Please Enter Required Data");

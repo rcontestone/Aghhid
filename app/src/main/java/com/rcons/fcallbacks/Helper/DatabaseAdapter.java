@@ -8884,7 +8884,7 @@ public class DatabaseAdapter {
          //   String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
             //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
             // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
-            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   ) ORDER BY  village_id,hhid,phone_order ASC";
+            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2'  AND survey_status = '' )   ) ORDER BY  phone_order ASC";
 
             MubLog.cpnsoleLog("inside aghhid_getNewCallsCursor " + querry);
             Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
@@ -8940,7 +8940,7 @@ public class DatabaseAdapter {
 
         //String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
         //  String getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid = getFarmerId_having_temp_2_in_emp_ID_exceptthat_farmerid(userName);
-        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (2,4,8,9,10) AND (id  NOT IN " + baseline_ThreeTries_Done + " AND id NOT IN " + baseline_no_call_again_ids + ")) ORDER BY  village_id,hhid,phone_order ASC  ";
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (2,4,8,9,10) AND (id  NOT IN " + baseline_ThreeTries_Done + " AND id NOT IN " + baseline_no_call_again_ids + ")) ORDER BY  phone_order ASC  ";
 
         MubLog.cpnsoleLog("inside aghhid_getPendingCallCursor " + querry);
         Cursor cursor2 = this.db.rawQuery(querry, new String[0]);

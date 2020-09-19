@@ -706,7 +706,10 @@
 
     <string name="section_e_question_q1"> جوابدہندہ سے مت پوچھیں(روسٹر کے مطابق نوٹ کریں) روسٹر سے دیکھ کر 9سے19سال کے درمیان ایسی لڑکی کو منتخب کریں جو فروری 2020 میں سکول نہیں جاتی تھی اور /یا سکول کھلنے پر دوبارہ سکول نہیں جائے گی۔ اگر کوئی ایسی لڑکی نہ ہو تب کسی اور9سے 19سال کے درمیان والی  لڑکی کو منتخب کرلیں</string>
     <string name="section_e_question_q2"> ہم آپ سے تعلیم کے مختلف مواقع کے بارے  میں  آپ کی رائے  جاننا چاہتے ہیں۔کیا آپ  \u0020  %1$s  کوخاص طور پر 9سے 19سال کی بچیوں  کےلئے پڑھنے کے پروگرام میں داخل کروا ئیں گے  اور یہ پیشکش آپ کے گاؤں ہی میں کی جائے اور پڑھانے کےلئے خاتون استاد ہوں؟ </string>
+    <string name="section_e_question_q2_option10_new">1ہاں، (Adolescentسوالنامہ شروع کریں) </string>
+    <string name="section_e_question_q2_option1_new">1ہاں،  </string>
     <string name="section_e_question_q2_option1">1ہاں، (شمار کنندہ: سوالات کے جواب دیں اور پھر E10پر جائیں) </string>
+    <string name="section_e_question_q10_option2_new">2~ نہیں، ابھی وہ موجود نہیں </string>
     <string name="section_e_question_q2_option2">2~ نہیں </string>
     <string name="section_e_question_q2_option88">88~ جواب نہیں دیا </string>
     <string name="section_e_question_q2_option98">98~ معلوم نہیں </string>
@@ -1131,12 +1134,13 @@
     <string name="ad_section_f_question_q2_option2">2~ ہاں کچھ وقت </string>
     <string name="ad_section_f_question_q2_option3">3~ نہیں </string>
     <string name="no">No</string>
-    <string name="section_D_conf">گھرانے کے افراد کی تصدیق اور جوابدہندہ کی نشاندہی</string>
+    <string name="section_D_conf"> جوابدہندہ کی نشاندہی</string>
     <string name="section_D_conf_1">جوابدہندہ سے تصدیق کر لیں  کہ سکرین پر موجود گھرانے کے تمام افراد یہی ہیں اور کوئی فرد  روسٹر میں شامل ہونے سے رہ تو نہیں گیا</string>
     <string name="section_D_conf_2">سکرین پر موجود گھرانے کے تمام افراد  کی لسٹ میں سے اس فرد کا نام SELECTکریں جو آپ کو اس انٹرویو کا جواب دے رہا /رہی ہے</string>
     <string name="back">Back</string>
     <string name="ok" />
     <string name="proceed">Proceed</string>
     <string name="popupinfo">شمار کنندہ: جوابدہندہ سے تصدیق کر لیں  کہ سکرین پر موجود گھرانے کے تمام افراد یہی ہیں اور کوئی فرد  روسٹر میں شامل ہونے سے رہ تو نہیں گیا</string>
+    <string name="titlepopup">گھرانے کے افراد کی تصدیق</string>
 
 </resources>

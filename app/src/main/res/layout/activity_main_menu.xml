@@ -112,6 +112,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:focusable="true"
+                    android:visibility="gone"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="2dp">
 
@@ -122,6 +123,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="8dp"
                         android:gravity="center"
+
                         android:id="@+id/select_village_code_rt"
                         android:orientation="horizontal">
 

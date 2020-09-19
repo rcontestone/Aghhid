@@ -192,6 +192,7 @@
                             android:layout_marginTop="37dp"
                             android:layout_marginRight="30dp"
                             android:gravity="right"
+                            android:visibility="gone"
                             android:text="@string/section_D_conf_1"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"

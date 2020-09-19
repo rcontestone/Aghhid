@@ -195,7 +195,7 @@
                             android:layout_marginRight="30dp"
                             android:gravity="center"
                             android:layout_centerHorizontal="true"
-                            android:text="Sectin H Q.1"
+                            android:text="Sectin F Q.1"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"

@@ -74,7 +74,20 @@ public class HH_Screen_C_two extends Activity {
     String userName = "";
     String firstName = "";
     String lastName = "";
-    String aghhid_c_2 = "";
+
+    String aghhid_c_2_1 = "";
+    String aghhid_c_2_2 = "";
+    String aghhid_c_2_3 = "";
+    String aghhid_c_2_4 = "";
+    String aghhid_c_2_5 = "";
+    String aghhid_c_2_6 = "";
+    String aghhid_c_2_7 = "";
+    String aghhid_c_2_8 = "";
+    String aghhid_c_2_9 = "";
+
+
+
+
     String aghhid_c1_given_number = "";
     String reTypedEmailID = "";
     String password = "";
@@ -90,9 +103,17 @@ public class HH_Screen_C_two extends Activity {
     RadioButton migration1 = null;
     RadioButton migration2 = null;
     RadioGroup sign_up_confirm_password_textfield_rb = null;
-    RadioGroup hh_edtfield_q_2_rdg = null;
 
 
+    RadioButton hh_edtfield_q_2_rdg_op_1_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_2_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_3_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_4_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_5_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_6_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_7_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_8_r = null;
+    RadioButton hh_edtfield_q_2_rdg_op_9_r = null;
 
     TextView house_address = null;
     TextView house_no = null;
@@ -221,7 +242,18 @@ public class HH_Screen_C_two extends Activity {
         // TODO Auto-generated method stub
         try {
 
-            hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
+
+
+            hh_edtfield_q_2_rdg_op_1_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_1_r);
+            hh_edtfield_q_2_rdg_op_2_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_2_r);
+            hh_edtfield_q_2_rdg_op_3_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_3_r);
+            hh_edtfield_q_2_rdg_op_4_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_4_r);
+            hh_edtfield_q_2_rdg_op_5_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_5_r);
+            hh_edtfield_q_2_rdg_op_6_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_6_r);
+            hh_edtfield_q_2_rdg_op_7_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_7_r);
+            hh_edtfield_q_2_rdg_op_8_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_8_r);
+            hh_edtfield_q_2_rdg_op_9_r = (RadioButton) findViewById(R.id.hh_edtfield_q_2_rdg_op_9_r);
+            
 
             sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
             screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
@@ -261,7 +293,7 @@ public class HH_Screen_C_two extends Activity {
                     // When user changed the Text
                     DebugLog.console("inside onTextChanged:" );
 
-                    aghhid_c_2 = hh_edtfield_q_2.getText().toString().trim();
+                    aghhid_c_2_1 = hh_edtfield_q_2.getText().toString().trim();
                     reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
 
                     if (reTypedEmailID.length()==0){
@@ -271,12 +303,12 @@ public class HH_Screen_C_two extends Activity {
 //							editTextReTypeEmailID.setCompoundDrawablePadding(8);
 
                     }else{
-                        if (aghhid_c_2.length() < reTypedEmailID.length() || aghhid_c_2.length() > reTypedEmailID.length()){
+                        if (aghhid_c_2_1.length() < reTypedEmailID.length() || aghhid_c_2_1.length() > reTypedEmailID.length()){
 //								hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
 //								hh_edtfield_q_2.setCompoundDrawablePadding(8);
 //								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-                        }else if (aghhid_c_2.equalsIgnoreCase(reTypedEmailID)) {
+                        }else if (aghhid_c_2_1.equalsIgnoreCase(reTypedEmailID)) {
 //								hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //								hh_edtfield_q_2.setCompoundDrawablePadding(8);
@@ -310,277 +342,6 @@ public class HH_Screen_C_two extends Activity {
     }
 
 
-
-    private void initializeReferenceOfViews_old() {
-        // TODO Auto-generated method stub
-        try {
-
-            if (launchedActivityName.equalsIgnoreCase("signup")) {
-
-
-                hh_textview_q_2 = (TextView)findViewById(R.id.hh_textview_q_2);
-                hh_textview_q_3 = (TextView)findViewById(R.id.hh_textview_q_3);
-
-                migration1 = (RadioButton)findViewById(R.id.migration1);
-
-                hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
-
-
-
-
-
-                sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
-
-                screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
-                relative_layout_sign_up_btn = (RelativeLayout) findViewById(R.id.relative_layout_sign_up_btn);
-
-                String stringToShow =getResources().getString(R.string.sign_up_eula_textview_label_line_two);
-
-                String stringToShowforSigninnavigation = getResources().getString(R.string.sign_up_eula_btn_label_below_btn_line_two);
-
-                sign_up_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-                top_bar = (TextView)findViewById(R.id.sign_in_top_bar_text_view);
-                sign_up_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
-
-                sign_up_eula_textview_label_line_two = (TextView)findViewById(R.id.sign_up_eula_textview_label_line_two);
-                sign_up_eula_textview_label_line_two.setText(Html.fromHtml(stringToShow));
-
-                String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
-                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode "+currentPSUCode);
-                String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext,currentPSUCode);
-
-                current_STID = Integer.parseInt(last_strict_id_against_psu)+1;
-
-                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu "+last_strict_id_against_psu);
-
-                String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext,currentPSUCode+"_hhid");
-                CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
-
-                //int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
-
-
-                String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
-
-                top_bar.setText(stringTopBar);
-
-                //sign_up_eula_btn_label_below_btn_line_one.setVisibility(View.GONE);
-                //sign_up_eula_textview_label_line_two.setVisibility(View.GONE);
-
-                editTextfirstName = (EditText)findViewById(R.id.sign_up_first_name_textfield);
-                editTextfirstName.setLines(1);
-                editTextfirstName.setInputType(InputType.TYPE_CLASS_TEXT);
-//				editTextfirstName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.user_icon, 0, 0, 0);
-//				editTextfirstName.setCompoundDrawablePadding(8);
-
-//				editTextfirstName.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_first_name_textfield_label) + "</font>" + "<small>"));
-
-                hh_edtfield_q_2 =  (EditText)findViewById(R.id.hh_edtfield_q_2);
-
-//				hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//				hh_edtfield_q_2.setCompoundDrawablePadding(8);
-                hh_edtfield_q_2.requestFocus();
-                MpcUtil.restartInput(appContext,hh_edtfield_q_2);
-                //hh_edtfield_q_2.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
-
-//                editTextReTypeEmailID = (EditText)findViewById(R.id.sign_up_confirm_email_textfield);
-//				editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//				editTextReTypeEmailID.setCompoundDrawablePadding(8);
-//
-//				editTextReTypeEmailID.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_confirm_email_name_textfield_label) + "</font>" + "<small>"));
-
-                //edt_Question_5 = (EditText)findViewById(R.id.sign_up_first_name_textfield);
-
-//				edt_Question_5_5 = (EditText)findViewById(R.id.sign_up_first_name_textfield);
-
-                //Handling back-navigation from signup_part_two screen
-                if(!firstName.equalsIgnoreCase("")){
-                    editTextfirstName.setText(firstName);
-                    hh_edtfield_q_2.setText(aghhid_c_2);
-                    editTextReTypeEmailID.setText(reTypedEmailID);
-                }
-                //manually filling firstName
-                editTextfirstName.setText("Parent");
-
-                /**
-                 * Enabling TextChangedListener for  Email-ID field signup
-                 * */
-                hh_edtfield_q_2.addTextChangedListener(new TextWatcher() {
-
-                    @Override
-                    public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                        // When user changed the Text
-                        DebugLog.console("inside onTextChanged:" );
-
-                        aghhid_c_2 = hh_edtfield_q_2.getText().toString().trim();
-                        reTypedEmailID = editTextReTypeEmailID.getText().toString().trim();
-
-                        if (reTypedEmailID.length()==0){
-//							hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//							editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//							hh_edtfield_q_2.setCompoundDrawablePadding(8);
-//							editTextReTypeEmailID.setCompoundDrawablePadding(8);
-
-                        }else{
-                            if (aghhid_c_2.length() < reTypedEmailID.length() || aghhid_c_2.length() > reTypedEmailID.length()){
-//								hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-//								hh_edtfield_q_2.setCompoundDrawablePadding(8);
-//								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-                            }else if (aghhid_c_2.equalsIgnoreCase(reTypedEmailID)) {
-//								hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//								editTextReTypeEmailID.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-//								hh_edtfield_q_2.setCompoundDrawablePadding(8);
-//								editTextReTypeEmailID.setCompoundDrawablePadding(8);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                                  int arg3) {
-                        // TODO Auto-generated method stub
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable arg0) {
-                        // TODO Auto-generated method stub
-                    }
-                });
-
-
-
-                String number = "";//MpcUtil.getPhoneNumber(appContext);
-                if (number.equalsIgnoreCase("")) {
-                    //	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
-                }else{
-                    //	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
-
-//					editTextPhone.setText(number);
-                }
-
-
-
-
-
-                btnHHNew.setOnClickListener(new View.OnClickListener() {
-
-                    public void onClick(View v) {
-                        // TODO Auto-generated method stub
-
-//						if(ConnectionVerifier.isInternetOn(appContext)){
-                        NEW_HH_IN_SAME_STRUCTURE = true;
-                        //AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
-                        grabEnteredTextForSignUpPartTwo();
-//						}else{
-//
-//							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
-//						}
-                    }
-                });
-
-
-
-
-
-                btnCreateAccount.setOnClickListener(new View.OnClickListener() {
-
-                    public void onClick(View v) {
-                        // TODO Auto-generated method stub
-                        NEW_HH_IN_SAME_STRUCTURE = false;
-//						if(ConnectionVerifier.isInternetOn(appContext)){
-
-                        //AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_register_create_acc));
-                        grabEnteredTextForSignUpPartTwo();
-//						}else{
-//
-//							showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
-//						}
-                    }
-                });
-
-
-            }if (launchedActivityName.equalsIgnoreCase("signin")) {
-
-                editTextUserNameToLogin = (EditText)findViewById(R.id.sign_in_email_textfield);
-                editTextPasswordToLogin = (EditText)findViewById(R.id.sign_in_password_textfield);
-                editTextUserNameToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-                editTextUserNameToLogin.setCompoundDrawablePadding(8);
-                editTextPasswordToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-                editTextPasswordToLogin.setCompoundDrawablePadding(8);
-
-
-
-                editTextUserNameToLogin.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_email_textfield_hint) + "</font>" + "<small>"));
-                editTextPasswordToLogin.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_password_textfield_hint) + "</font>" + "<small>"));
-//				editTextUserNameToLogin.setHintTextColor(colors);TextColor(R.color.LightGrey);
-//				editTextPasswordToLogin.setHintTextColor(R.color.LightGrey);
-
-
-                String stringToShowforSigninnavigation = getResources().getString(R.string.sign_in_eula_btn_label_below_btn_line_two);
-
-                sign_in_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-                if (HHIDConfigurations.getMappingId(getApplicationContext())!=null){
-                    sign_in_eula_btn_label_below_btn_line_one.setText("");
-                    sign_in_eula_btn_label_below_btn_line_one.setClickable(false);
-                }else{
-                    sign_in_eula_btn_label_below_btn_line_one.setClickable(true);
-                    sign_in_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
-                }
-
-
-//				editTextUserNameToLogin.setText("m@m.com");
-//				editTextPasswordToLogin.setText("test");
-
-
-                btnSignIn = (ImageButton)findViewById(R.id.sign_in_btn);
-                btnSignIn.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-
-                        //						if(ConnectionVerifier.isInternetOn(appContext)){
-                        //AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_signin_login));
-                        grabEnteredTextForSignIN();
-
-                        //						}else{
-                        //							showAlert(getResources().getString(R.string.connection_error_message_title),getResources().getString(R.string.connection_error_message));
-                        //						}
-                    }
-                });
-
-                //If device is already registered, automatically filling the username field and disabling editing
-                String registeredEmailAddress  = HHIDConfigurations.getRegisteredEmailAddress(getApplicationContext());
-
-
-
-
-                if(registeredEmailAddress.equalsIgnoreCase("")){
-
-                }else{
-
-                    if (HHIDConfigurations.getMappingId(appContext)!=null) {
-//							editTextUserNameToLogin.setEnabled(false);
-//							editTextUserNameToLogin.setText(registeredEmailAddress);
-
-                    }
-
-
-                    EmailDebugLog.getInstance(appContext).writeLog( "\r\n[HH_Screen_One]:starting SecureSecondService  ");
-
-                    //appContext.startService(new Intent(appContext,SecureSecondService.class));
-
-                }
-
-
-            }
-
-
-
-
-
-
-        } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
-        }
-    }
 
     public  boolean isInternetOn(Context ctx) {
 
@@ -616,9 +377,9 @@ public class HH_Screen_C_two extends Activity {
             //userName = editTextUserName.getText().toString();
             firstName = "Parent";// editTextfirstName.getText().toString();
             //lastName = editTextLastName.getText().toString();
-            aghhid_c_2 = hh_edtfield_q_2.getText().toString();
+            aghhid_c_2_1 = hh_edtfield_q_2.getText().toString();
             reTypedEmailID = editTextReTypeEmailID.getText().toString();
-            //AnalyticsUtil.updateEventAction(appContext, "Email Address : "+aghhid_c_2);
+            //AnalyticsUtil.updateEventAction(appContext, "Email Address : "+aghhid_c_2_1);
             //AnalyticsUtil.updateEventAction(appContext, "reTypedEmail Address : "+reTypedEmailID);
             if(firstName.trim().length() == 0)
             {
@@ -634,13 +395,13 @@ public class HH_Screen_C_two extends Activity {
 //				MpcUtil.restartInput(appContext, editTextfirstName);
 //				error = true;true
 
-            }else if (aghhid_c_2.trim().length() == 0 ){
+            }else if (aghhid_c_2_1.trim().length() == 0 ){
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
                 showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
                 hh_edtfield_q_2.requestFocus();
                 MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 error = true;
-//			}else if (!MpcUtil.isEmailValid(aghhid_c_2.trim())){
+//			}else if (!MpcUtil.isEmailValid(aghhid_c_2_1.trim())){
 //				MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
 //				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
 //				hh_edtfield_q_2.requestFocus();
@@ -652,7 +413,7 @@ public class HH_Screen_C_two extends Activity {
                 editTextReTypeEmailID.requestFocus();
                 MpcUtil.restartInput(appContext, editTextReTypeEmailID);
                 error = true;
-            }else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_c_2.trim())){
+            }else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_c_2_1.trim())){
                 MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
                 showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
                 editTextReTypeEmailID.requestFocus();
@@ -754,10 +515,13 @@ public class HH_Screen_C_two extends Activity {
 
 
 
-            if (aghhid_c_2.length()==0){
-                error =  true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value ");
-                //MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+            if (aghhid_c_2_1.length() !=0 ||aghhid_c_2_2.length() !=0 ||aghhid_c_2_3.length() !=0 ||aghhid_c_2_4.length() !=0 ||aghhid_c_2_5.length() !=0 ||aghhid_c_2_6.length() !=0 ||aghhid_c_2_7.length() !=0 ||aghhid_c_2_8.length() !=0 ||aghhid_c_2_9.length() !=0 ){
+                error =  false;
+             //MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+
+            }else{
+                error = true;
+                  showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value ");
 
             }
 
@@ -845,7 +609,7 @@ public class HH_Screen_C_two extends Activity {
             Question_5_4 = edt_Question_5_4 .getText().toString();
 
 
-            aghhid_c_2 = hh_edtfield_q_2.getText().toString();
+            aghhid_c_2_1 = hh_edtfield_q_2.getText().toString();
             reTypedEmailID = editTextReTypeEmailID.getText().toString();
             password = editTextPassword.getText().toString();
 
@@ -856,15 +620,15 @@ public class HH_Screen_C_two extends Activity {
 
             firstName = editTextfirstName.getText().toString();
 
-            if (aghhid_c_2.trim().length() == 0 ){
+            if (aghhid_c_2_1.trim().length() == 0 ){
                 //AnalyticsUtil.updateEventAction(appContext, " Email field empty");
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
                 showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 2");
                 hh_edtfield_q_2.requestFocus();
                 MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 error = true;
-//			}else if (!MpcUtil.isEmailValid(aghhid_c_2.trim())){
-//				//AnalyticsUtil.updateEventAction(appContext, "Invalid Email Address : "+aghhid_c_2.trim());
+//			}else if (!MpcUtil.isEmailValid(aghhid_c_2_1.trim())){
+//				//AnalyticsUtil.updateEventAction(appContext, "Invalid Email Address : "+aghhid_c_2_1.trim());
 //				MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
 //				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
 //				hh_edtfield_q_2.requestFocus();
@@ -877,13 +641,13 @@ public class HH_Screen_C_two extends Activity {
 //				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
 //				error = true;
                 //AnalyticsUtil.updateEventAction(appContext, " Re-type Email field empty");
-//			}else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_c_2.trim())){
+//			}else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_c_2_1.trim())){
 //				MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
 //				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
 //				editTextReTypeEmailID.requestFocus();
 //				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
 //				error = true;
-//				//AnalyticsUtil.updateEventAction(appContext, " Re-type Email and email mismatch :"+reTypedEmailID.trim()+" email :"+aghhid_c_2.trim());
+//				//AnalyticsUtil.updateEventAction(appContext, " Re-type Email and email mismatch :"+reTypedEmailID.trim()+" email :"+aghhid_c_2_1.trim());
 //			}else
 //
 //			if(phone.trim().length() == 0)
@@ -1147,11 +911,11 @@ public class HH_Screen_C_two extends Activity {
 //
 //			MpcUtil.DEVICE_UNIQUE_ID = MpcUtil.getDeviceUniqueId(appContext);
 //			if (processType.equalsIgnoreCase("signup")){
-//				DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_c_2"+ aghhid_c_2+"\r\npassword"+ password);
-//				json = JsonHandler.createSIGNUPJsonObject(appContext, firstName, aghhid_c_2, phone,password, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
+//				DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_c_2_1"+ aghhid_c_2_1+"\r\npassword"+ password);
+//				json = JsonHandler.createSIGNUPJsonObject(appContext, firstName, aghhid_c_2_1, phone,password, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
 //				//EmailDebugLog.getInstance(appContext).writeLog(json.toString());
 //				MainUserInfo.devicesTempLockPassword = password;
-//				MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_c_2;
+//				MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_c_2_1;
 //			}else{
 //				DebugLog.console("\r\nuserNameToLogin"+userNameToLogin+ "\r\npasswordToLogin"+passwordToLogin);
 //				json = JsonHandler.createSIGNINJsonObjectFromChildAppWithoutCode(appContext,userNameToLogin, passwordToLogin, "careteen", "android", MpcUtil.DEVICE_UNIQUE_ID,MpcUtil.BUILD_INFO);
@@ -1184,9 +948,9 @@ public class HH_Screen_C_two extends Activity {
 
 //		try{
 //
-//			DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_c_2"+ aghhid_c_2+"\r\npassword"+ password);
-//			MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_c_2;
-//			String url = MpcUtil.getBaseURL(appContext)+ MpcUtil.EMAIL_ID_VERIFICATION_URL + Uri.encode(aghhid_c_2);
+//			DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\naghhid_c_2_1"+ aghhid_c_2_1+"\r\npassword"+ password);
+//			MainUserInfo.REGISTERED_EMAIL_ADDRESS = aghhid_c_2_1;
+//			String url = MpcUtil.getBaseURL(appContext)+ MpcUtil.EMAIL_ID_VERIFICATION_URL + Uri.encode(aghhid_c_2_1);
 //
 //			JSONObject result = HttpsClient.sendHttpsGetRequest(appContext, url);
 //			if(result != null){
@@ -1297,7 +1061,7 @@ public class HH_Screen_C_two extends Activity {
                         pd.dismiss();
 
 
-                    DebugLog.console("[HH_Screen_two] inside run() Question_1 " + aghhid_c_2);
+                    DebugLog.console("[HH_Screen_two] inside run() Question_1 " + aghhid_c_2_1);
                     DebugLog.console("[HH_Screen_two] inside run() Question_2 " + reTypedEmailID);
                     DebugLog.console("[HH_Screen_two] inside run() Question_3 " + password);
                     DebugLog.console("[HH_Screen_two] inside run() Question_4 " + hh_edtfield_q_3_edt_answer);
@@ -1361,7 +1125,7 @@ public class HH_Screen_C_two extends Activity {
 
 
 
-            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_c_2( school_code , student_id , aghhid_c_2,   rcons_user , start_date_time);
+            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_c_2( school_code , student_id , aghhid_c_2_1,aghhid_c_2_2,aghhid_c_2_3,aghhid_c_2_4,aghhid_c_2_5,aghhid_c_2_6,aghhid_c_2_7,aghhid_c_2_8,aghhid_c_2_9,   rcons_user , start_date_time);
             return dataSaved;
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDatainDataBase() Exception is :"+e.toString());
@@ -1411,7 +1175,7 @@ public class HH_Screen_C_two extends Activity {
                 boolean screen_two = true;
 
 
-                HHIDConfigurations.setPeshawarLastHHIDQ2PSUAndHHID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext)+"_hhid_address" , aghhid_c_2 + "");
+              //  HHIDConfigurations.setPeshawarLastHHIDQ2PSUAndHHID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext)+"_hhid_address" , aghhid_c_2_1 + "");
 
 
 
@@ -1427,11 +1191,11 @@ public class HH_Screen_C_two extends Activity {
 					 hh_edtfield_q_3_edt_answer = "";
   				     hh_edtfield_q_4.setText("");
 					 hh_edtfield_q_4_edt_answer = "";
-					 hh_edtfield_q_2_rdg.clearCheck();
+					 hh_edtfield_q_2_rdg_op_1.clearCheck();
 
 */
 
-                    if(aghhid_c_2.equalsIgnoreCase("-777")){
+                    if(aghhid_c_2_9.equalsIgnoreCase("-777")){
                         Intent intent = new Intent(HH_Screen_C_two.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -1442,7 +1206,7 @@ public class HH_Screen_C_two extends Activity {
                         startActivityForResult(intent, 88);
                     }else {
 
-                        if (aghhid_c_2.length() != 0) {
+
                             Intent returnIntent = new Intent();
                             returnIntent.putExtra("isDataUpdated", false);
                             setResult(Activity.RESULT_OK, returnIntent);
@@ -1458,7 +1222,7 @@ public class HH_Screen_C_two extends Activity {
                             finish();
                             return;
 
-                        }
+
 
                     }
 
@@ -1778,43 +1542,92 @@ public class HH_Screen_C_two extends Activity {
 
             if (data.length()>0){
 
-                if(data.getString("c2").equalsIgnoreCase("null"))
-                    data.put("c2","");
+                if(data.getString("c2_1").equalsIgnoreCase("null"))
+                    data.put("c2_1","");
+
+                if(data.getString("c2_2").equalsIgnoreCase("null"))
+                    data.put("c2_2","");
+
+                if(data.getString("c2_3").equalsIgnoreCase("null"))
+                    data.put("c2_3","");
+
+                if(data.getString("c2_4").equalsIgnoreCase("null"))
+                    data.put("c2_4","");
+
+                if(data.getString("c2_5").equalsIgnoreCase("null"))
+                    data.put("c2_5","");
+
+                if(data.getString("c2_6").equalsIgnoreCase("null"))
+                    data.put("c2_6","");
+
+                if(data.getString("c2_7").equalsIgnoreCase("null"))
+                    data.put("c2_7","");
+
+                if(data.getString("c2_8").equalsIgnoreCase("null"))
+                    data.put("c2_8","");
+
+                if(data.getString("c2_9").equalsIgnoreCase("null"))
+                    data.put("c2_9","");
 
 
+                String c2_1= data.getString("c2_1");
+                aghhid_c_2_1 =c2_1;
 
+                String c2_2= data.getString("c2_2");
+                aghhid_c_2_2 =c2_2;
 
-                String c2= data.getString("c2");
-                aghhid_c_2 =c2;
+                String c2_3= data.getString("c2_3");
+                aghhid_c_2_3 =c2_3;
 
-                if(c2.trim().equalsIgnoreCase("1")) {
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(0).getId());
+                String c2_4= data.getString("c2_4");
+                aghhid_c_2_4 =c2_4;
+
+                String c2_5= data.getString("c2_5");
+                aghhid_c_2_5 =c2_5;
+
+                String c2_6= data.getString("c2_6");
+                aghhid_c_2_6 =c2_6;
+
+                String c2_7= data.getString("c2_7");
+                aghhid_c_2_7 =c2_7;
+
+                String c2_8= data.getString("c2_8");
+                aghhid_c_2_8 =c2_8;
+
+                String c2_9= data.getString("c2_9");
+                aghhid_c_2_9 =c2_9;
+
+                if(c2_1.trim().equalsIgnoreCase("1")) {
+                    hh_edtfield_q_2_rdg_op_1_r.setChecked(true);
 
                 }
 
-                if(c2.trim().equalsIgnoreCase("2"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(1).getId());
+                if(c2_2.trim().equalsIgnoreCase("2"))
+                    hh_edtfield_q_2_rdg_op_2_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("3"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(2).getId());
+                if(c2_3.trim().equalsIgnoreCase("3"))
+                    hh_edtfield_q_2_rdg_op_3_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("4"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(3).getId());
+                if(c2_4.trim().equalsIgnoreCase("4"))
+                    hh_edtfield_q_2_rdg_op_4_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("5"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(4).getId());
+                if(c2_5.trim().equalsIgnoreCase("5"))
+                    hh_edtfield_q_2_rdg_op_5_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("6"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(5).getId());
+                if(c2_6.trim().equalsIgnoreCase("6"))
+                   hh_edtfield_q_2_rdg_op_6_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("7"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(6).getId());
+                if(c2_7.trim().equalsIgnoreCase("7"))
+                    hh_edtfield_q_2_rdg_op_7_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("8"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(7).getId());
+                if(c2_8.trim().equalsIgnoreCase("8"))
+                    hh_edtfield_q_2_rdg_op_8_r.setChecked(true);
 
-                if(c2.trim().equalsIgnoreCase("-777"))
-                    hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(8).getId());
+                if(c2_9.trim().equalsIgnoreCase("-777")){
+                    hh_edtfield_q_2_rdg_op_9_r.setChecked(true);
+                    resetallOther();
+                }
+
 
             }
 
@@ -1976,46 +1789,132 @@ public class HH_Screen_C_two extends Activity {
 
     public void setMigration1(View view) {
 
-        aghhid_c_2 = "1";
+
+        if(aghhid_c_2_1.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_1 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_1 = "1";
+        }
+
+
       //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
     }
 
     public void setMigration2(View view) {
-        aghhid_c_2 = "2";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+
+        if(aghhid_c_2_2.length()!=0){
+            ((RadioButton) view).setChecked(false);
+
+            aghhid_c_2_2 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_2 = "2";
+        }
+
+
+
     }
     public void setMigration3(View view) {
-        aghhid_c_2 = "3";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+
+        if(aghhid_c_2_3.length()!=0){
+            ((RadioButton) view).setChecked(false);
+
+            aghhid_c_2_3 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_3 = "3";
+        }
+
     }
 
 
     public void setMigration4(View view) {
-        aghhid_c_2 = "4";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_4.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_4 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_4 = "4";
+        }
+
+
     }
 
     public void setMigration5(View view) {
-        aghhid_c_2 = "5";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_5.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_5 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_5 = "5";
+        }
+
+
     }
 
     public void setMigration6(View view) {
-        aghhid_c_2 = "6";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_6.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_6 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_6 = "6";
+        }
+
+
     }
 
     public void setMigration7(View view) {
-        aghhid_c_2 = "7";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_7.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_7 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_7 = "7";
+        }
+
+
     }
     public void setMigration8(View view) {
-        aghhid_c_2 = "8";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_8.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_8 = "";
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_8 = "8";
+        }
+
+
     }
     public void setMigration9(View view) {
-        aghhid_c_2 = "-777";
-        hh_edtfield_q_2.setVisibility(View.GONE);
+
+        if(aghhid_c_2_9.length()!=0){
+
+            ((RadioButton) view).setChecked(false);
+            aghhid_c_2_9 = "";
+            reenableAll();
+        }else{
+            ((RadioButton) view).setChecked(true);
+            aghhid_c_2_9 = "-777";
+            resetallOther();
+        }
+
+
     }
 
 
@@ -2124,5 +2023,74 @@ public class HH_Screen_C_two extends Activity {
         });
     }
 
+
+
+    private void reenableAll() {
+
+        try {
+
+            hh_edtfield_q_2_rdg_op_1_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_2_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_3_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_4_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_5_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_6_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_7_r.setEnabled(true);
+            hh_edtfield_q_2_rdg_op_8_r.setEnabled(true);
+            aghhid_c_2_9 = "";
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside reenableAll() Exception is :"+e.toString());
+        }
+    }
+
+
+
+
+
+
+    private void resetallOther() {
+
+        try {
+
+
+
+            hh_edtfield_q_2_rdg_op_1_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_2_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_3_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_4_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_5_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_6_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_7_r.setEnabled(false);
+            hh_edtfield_q_2_rdg_op_8_r.setEnabled(false);
+
+            hh_edtfield_q_2_rdg_op_1_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_2_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_3_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_4_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_5_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_6_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_7_r.setChecked(false);
+            hh_edtfield_q_2_rdg_op_8_r.setChecked(false);
+
+             aghhid_c_2_1 = "";
+             aghhid_c_2_2 = "";
+             aghhid_c_2_3 = "";
+             aghhid_c_2_4 = "";
+             aghhid_c_2_5 = "";
+             aghhid_c_2_6 = "";
+             aghhid_c_2_7 = "";
+             aghhid_c_2_8 = "";
+
+
+
+
+
+
+        }catch
+        (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_eight_Section_e] inside resetallOther() Exception is :"+e.toString());
+        }
+    }
 
 }

@@ -315,8 +315,14 @@ public class HH_Screen_four_section_d extends Activity {
                 int len = phonedataarray.length();
 
                 for (int i=0;i<len;i++){
-                    spinnerArray.add(phonedataarray.getJSONObject(i).getString("d_2"));
-                    DebugLog.console("[HH_Screen_three] inside HH_Screen_four_section_d() name "+spinnerArray.get(i));
+
+                    String value =phonedataarray.getJSONObject(i).getString("d_2");
+                    if(value.length()>0) {
+                        spinnerArray.add(phonedataarray.getJSONObject(i).getString("d_2"));
+                        DebugLog.console("[HH_Screen_three] inside HH_Screen_four_section_d() name "+spinnerArray.get(i));
+
+                    }
+
                 }
                 // hhidlisthaving_numbers = android.text.TextUtils.join("\r\n", name);
             }

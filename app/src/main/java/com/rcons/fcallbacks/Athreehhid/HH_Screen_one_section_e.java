@@ -329,7 +329,7 @@ public class HH_Screen_one_section_e extends Activity {
 
                     try {
                         if (i==0){
-                             hh_edtfield_q_2.setText(  "");
+                            // hh_edtfield_q_2.setText(  "");
 
                         }else{
 
@@ -371,13 +371,15 @@ public class HH_Screen_one_section_e extends Activity {
 
                     try {
                         if (i==0){
-                             hh_edtfield_q_2.setText(  "");
+                            // hh_edtfield_q_2.setText(  "");
 
                         }else{
-
                             hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
-                            int memID  = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_memberid_against_name(appContext,school_code,student_id, parent.getSelectedItem().toString().trim());
+                            String name = parent.getSelectedItem().toString().trim().substring(0,parent.getSelectedItem().toString().indexOf("|")).trim();
+                            DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() name "+name);
+                            int memID  = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_memberid_against_name(appContext,school_code,student_id, name);
                             DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() memID "+memID);
+
                             aghhid_e_1_other=memID+"";
                         }
                     } catch (Exception e) {
@@ -501,30 +503,6 @@ public class HH_Screen_one_section_e extends Activity {
 //                }
                 //manually filling firstName
                 editTextfirstName.setText("Parent");
-
-                /**
-                 * Enabling TextChangedListener for  Email-ID field signup
-                 * */
-                hh_edtfield_q_2.addTextChangedListener(new TextWatcher() {
-
-                    @Override
-                    public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                        // When user changed the Text
-                        DebugLog.console("inside onTextChanged:" );
-
-                    }
-
-                    @Override
-                    public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                                  int arg3) {
-                        // TODO Auto-generated method stub
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable arg0) {
-                        // TODO Auto-generated method stub
-                    }
-                });
 
 
 

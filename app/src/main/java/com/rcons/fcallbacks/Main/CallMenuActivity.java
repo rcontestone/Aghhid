@@ -1030,6 +1030,9 @@ public class CallMenuActivity extends AppCompatActivity {
         } else if (requestCode == 88) {
 
 
+if(data!=null)
+            if(data.hasExtra("isDataUpdated")){
+
             boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
             if (isDataUpdated) {
 
@@ -1046,9 +1049,9 @@ public class CallMenuActivity extends AppCompatActivity {
                 PreviousCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
 
                 if (isPendingCall) {
-                    cursor = databaseAccess.getFarmerPendingCalls(userName);
+                    cursor = databaseAccess.aghhid_getPendingCallCursor(userName);
                 } else {
-                    cursor = databaseAccess.getFarmerDistinctCallRecord(userName);
+                    cursor = databaseAccess.aghhid_getNewCallsCursor(userName);
                 }
 
 
@@ -1063,7 +1066,7 @@ public class CallMenuActivity extends AppCompatActivity {
                 }
 
             }
-
+        }
         }
     }
 

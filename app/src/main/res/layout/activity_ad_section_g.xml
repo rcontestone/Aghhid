@@ -72,8 +72,9 @@
                     android:layout_centerInParent="true"
                     android:layout_toRightOf="@+id/btnBack"
                     android:fontFamily="serif"
-                    android:gravity="center"
-                    android:text="Section G"
+                    android:gravity="left"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:text="Adolescent Section D"
                     android:textColor="@color/color_white"
                     android:textSize="20sp"
                     android:textStyle="normal"
@@ -185,7 +186,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 1"
+                            android:text="Question No. D 1"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -350,7 +351,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 2"
+                            android:text="Question No. D 2"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -514,7 +515,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 3"
+                            android:text="Question No. D 3"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -678,7 +679,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 4"
+                            android:text="Question No. D 4"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -842,7 +843,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 5"
+                            android:text="Question No. D 5"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1007,7 +1008,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 6"
+                            android:text="Question No. D 6"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1172,7 +1173,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 7"
+                            android:text="Question No. D 7"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1337,7 +1338,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 8"
+                            android:text="Question No. D 8"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1501,7 +1502,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 9"
+                            android:text="Question No. D 9"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1666,7 +1667,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 10"
+                            android:text="Question No. D 10"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -1831,7 +1832,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/v_rounder_button_"
                         android:gravity="center"
-                        android:text="Question No. G 11"
+                        android:text="Question No. D 11"
                         android:textColor="@color/text_white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -1996,7 +1997,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G 12"
+                            android:text="Question No. D 12"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2160,7 +2161,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G_urdu_1"
+                            android:text="Question No. D_urdu_1"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2325,7 +2326,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. g_urdu_2_a"
+                            android:text="Question No. D_urdu_2_a"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2490,7 +2491,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. g_urdu_2_b"
+                            android:text="Question No. D_urdu_2_b"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2655,7 +2656,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G_urdu_3"
+                            android:text="Question No. D_urdu_3"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2820,7 +2821,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G_urdu_4"
+                            android:text="Question No. D_urdu_4"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -2984,7 +2985,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. G_urdu_5"
+                            android:text="Question No. D_urdu_5"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />

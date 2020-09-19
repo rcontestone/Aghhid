@@ -220,10 +220,7 @@ public class HH_Screen_nine_Section_e extends Activity {
             // Get Refferences of Views
             initializeReferenceOfViews();
 
-//for class 9 only
 
-            if(getIntent().getStringExtra("onbackclick")!=null)
-            CALLED_FROM = getIntent().getStringExtra("onbackclick");
 
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onCreate");
@@ -1811,6 +1808,25 @@ public class HH_Screen_nine_Section_e extends Activity {
             DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());
 
             if (data.length()>0){
+
+
+                CALLED_FROM = "HH_Screen_three_Section_e";
+
+
+                    //for navigation
+                    if (data.getString("e_7").equalsIgnoreCase("null"))
+                        data.put("e_7", "");
+
+                    if (data.getString("e_7").equalsIgnoreCase("1")) {
+                        CALLED_FROM = "HH_Screen_seven_Section_e";
+                    }else{
+                        CALLED_FROM = "HH_Screen_eight_Section_e";
+                    }
+
+                    //naviagtion end
+
+
+
 
                 if(data.getString("e_9").equalsIgnoreCase("null"))
                     data.put("e_9","");

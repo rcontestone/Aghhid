@@ -233,7 +233,7 @@ if(farmersCoursor!=null){
 					allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
 					allSectiondata.put(DatabaseAdapter.AGHHID_SampleTable, AGHHID_SampleTable);
 
-					String url = "http://rconsdb.org/devteam/general/services/ffbcsr/baseline_secdata.php";
+					String url = "http://rconsdb.org/devteam/general/services/ffbcsr/bbaseline_secdata.php";
 
 					JSONObject dataUploaded = HttpsClient.sendNewHttpsPostRequest(SyncMainActivity.this,url,allSectiondata);
 					DebugLog.console("[MyTask1] inside doInBackground() "+dataUploaded.toString());

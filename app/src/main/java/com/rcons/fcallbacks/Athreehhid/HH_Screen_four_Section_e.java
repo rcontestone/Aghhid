@@ -214,7 +214,7 @@ public class HH_Screen_four_Section_e extends Activity {
             school_name = "";//getIntent().getStringExtra("m2_school_name");
             rcons_user = RConsUtils.getUserName();
 
-            CALLED_FROM = getIntent().getStringExtra("onbackclick");
+
 
 
             // Get Refferences of Views
@@ -1805,7 +1805,19 @@ public class HH_Screen_four_Section_e extends Activity {
             JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_e_table,school_code,student_id);
             DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());
 
+
+            CALLED_FROM = "HH_Screen_three_Section_e";
             if (data.length()>0){
+
+                //for navigation
+                if(data.getString("e_2").equalsIgnoreCase("null"))
+                    data.put("e_2","");
+
+                if (data.getString("e_2").equalsIgnoreCase("1")){
+                    CALLED_FROM = "HH_Screen_two_Section_e";
+                }
+
+                //naviagtion end
 
                 if(data.getString("e_4").equalsIgnoreCase("null"))
                     data.put("e_4","");

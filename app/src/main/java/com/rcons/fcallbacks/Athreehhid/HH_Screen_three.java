@@ -1617,16 +1617,24 @@ public class HH_Screen_three extends Activity {
 				int len = phonedataarray.length();
 
 				for (int i=0;i<len;i++){
-					name.add(phonedataarray.getJSONObject(i).getString("d_2"));
-					DebugLog.console("[HH_Screen_three] inside askuserfornext() name "+name.get(i));
+
+					String value =phonedataarray.getJSONObject(i).getString("d_2");
+					if(value.length()>0){
+						name.add(phonedataarray.getJSONObject(i).getString("d_2"));
+						DebugLog.console("[HH_Screen_three] inside askuserfornext() name "+name.get(i));
+					}
+
+
 				}
 				hhidlisthaving_numbers = android.text.TextUtils.join("\r\n", name);
 			}
 
+
+			String title_popup = getString(R.string.titlepopup);
 			String info = getString(R.string.popupinfo);
 
 			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
-			showAlert(info,info+"\r\n\nTotal mem count : "+name.size()+"\r\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
+			showAlert(title_popup,info+"\r\n\nTotal mem count : "+name.size()+"\r\n\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
 
 		} catch (Exception e) {
 		    EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside askuserfornext() Exception is :"+e.toString());
