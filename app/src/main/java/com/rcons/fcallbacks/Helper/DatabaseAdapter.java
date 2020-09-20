@@ -8442,7 +8442,7 @@ public class DatabaseAdapter {
             this.durationPopup = durationPopup;
             //CheckMissingColumnsList();
 
-            String checkedQuery = "Select sc1 as statusOne , sc2 as statusTwo, sc3 as statusThree, sc4 as statusFour , temp2 from " + AGHHID_SampleTable + " WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
+            String checkedQuery = "Select sc1 as statusOne , sc2 as statusTwo, sc3 as statusThree, sc4 as statusFour , sc5 as statusFive , sc6 as statusSix, temp2 from " + AGHHID_SampleTable + " WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
 
             String deviceID = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
             String current_year = RConsUtils.getcurrentTime(0);
