@@ -1008,6 +1008,8 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                 sc2 = cursor.getString(cursor.getColumnIndex("sc2"));
                 sc3 = cursor.getString(cursor.getColumnIndex("sc3"));
                 sc4 = cursor.getString(cursor.getColumnIndex("sc4"));
+                sc5 = cursor.getString(cursor.getColumnIndex("sc5"));
+                sc6 = cursor.getString(cursor.getColumnIndex("sc6"));
 
 
             }

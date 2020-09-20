@@ -8459,6 +8459,8 @@ public class DatabaseAdapter {
             String statusTwo = "";
             String statusThree = "";
             String statusFour = "";
+            String statusFive = "";
+            String statusSix = "";
 
             String updateQuery = "";
             DebugLog.console("[DatabaseAdapter] inside baseline_updateCallStatus() checkedQuery " + checkedQuery);
@@ -8469,6 +8471,8 @@ public class DatabaseAdapter {
                 statusTwo = cursor.getString(cursor.getColumnIndex("statusTwo"));
                 statusThree = cursor.getString(cursor.getColumnIndex("statusThree"));
                 statusFour = cursor.getString(cursor.getColumnIndex("statusFour"));
+                statusFive = cursor.getString(cursor.getColumnIndex("statusFive"));
+                statusSix = cursor.getString(cursor.getColumnIndex("statusSix"));
                 String temp2 = cursor.getString(cursor.getColumnIndex("temp2"));
 
                 if (StringUtils.isEmpty(statusOne)) {
@@ -8485,15 +8489,23 @@ public class DatabaseAdapter {
                         updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc3 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc3_end_year = '" + current_year + "', sc3_end_month = '" + current_month + "' , sc3_end_day = '" + current_day + "', sc3_end_hh = '" + current_hh + "' , sc3_end_mm = '" + current_mm + "',sc3_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
                     }
 
-                } else if (StringUtils.isEmpty(statusFour)) {  //disabled when 4447 issue occuered
+                } else if (StringUtils.isEmpty(statusFour)) {
                     //making call again false manually
 
                     updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc4 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc4_end_year = '" + current_year + "', sc4_end_month = '" + current_month + "' , sc4_end_day = '" + current_day + "', sc4_end_hh = '" + current_hh + "' , sc4_end_mm = '" + current_mm + "',sc4_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
 
 
-                } else {
-                    updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc3 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc3_end_year = '" + current_year + "', sc3_end_month = '" + current_month + "' , sc3_end_day = '" + current_day + "', sc3_end_hh = '" + current_hh + "' , sc3_end_mm = '" + current_mm + "',sc3_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
-                }
+                }  else if (StringUtils.isEmpty(statusFive)) {
+                    //making call again false manually
+
+                    updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc5 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc5_end_year = '" + current_year + "', sc5_end_month = '" + current_month + "' , sc5_end_day = '" + current_day + "', sc5_end_hh = '" + current_hh + "' , sc5_end_mm = '" + current_mm + "',sc5_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
+
+                }else if (StringUtils.isEmpty(statusSix)) {
+                    //making call again false manually
+
+                    updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc6 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc6_end_year = '" + current_year + "', sc6_end_month = '" + current_month + "' , sc6_end_day = '" + current_day + "', sc6_end_hh = '" + current_hh + "' , sc6_end_mm = '" + current_mm + "',sc6_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";
+                }else {
+                    updateQuery = "UPDATE " + AGHHID_SampleTable + " SET insert_or_updated_in_phone_at = '" + currentDate + "', survey_status = '" + survey_status + "', sc6 = '" + survey_status + "' , deviceID = '" + deviceID + "' , sc6_end_year = '" + current_year + "', sc6_end_month = '" + current_month + "' , sc6_end_day = '" + current_day + "', sc6_end_hh = '" + current_hh + "' , sc6_end_mm = '" + current_mm + "',sc6_reason = '" + reason + "' , reason = '" + reason + "', duration = '" + duration + "' , temp1 = '" + callAgain + "' ,  enum_code = '" + RConsUtils.getEnumCode() + "' ,  enum_name = '" + RConsUtils.getEnumName() + "' ,  build_no = '" + BuildConfig.VERSION_NAME + "' WHERE village_id = '" + scode + "' AND hhid = '" + studentid + "'";     }
 
 
                 MubLog.cpnsoleLog("updateQuery" + updateQuery);
@@ -8515,7 +8527,8 @@ public class DatabaseAdapter {
         String subQuery = "(0)";
         ArrayList<String> farmerIDs = new ArrayList<>();
         try {
-            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  rcons_user = '" + userName + "' AND isSynced != '2'  AND `sc1` != '' AND `sc2` != '' AND `sc3` !='' AND `sc4` !='' ; ";
+            //String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  rcons_user = '" + userName + "' AND isSynced != '2'  AND `sc1` != '' AND `sc2` != '' AND `sc3` !='' AND `sc4` !='' ; ";
+            String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  rcons_user = '" + userName + "' AND isSynced != '2'  AND sc6 !='' ; ";
 
             Cursor farmersCoursor = this.db.rawQuery(querry, new String[0]);
 
