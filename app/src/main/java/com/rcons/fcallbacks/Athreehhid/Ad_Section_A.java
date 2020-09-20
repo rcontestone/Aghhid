@@ -45,6 +45,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -542,7 +543,7 @@ public class Ad_Section_A extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int RGroup_ID = rg_a4d.getCheckedRadioButtonId();
-                if (RGroup_ID == R.id.rbtn_a4d_5) {
+                if (RGroup_ID == R.id.rbtn_a4d_1) {
                     edt_a4d_other.setVisibility(View.VISIBLE);
                     edt_a4d_other.requestFocus();
                 } else {
@@ -624,7 +625,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
                         } else {
-                            RConsUtils.hideView(qb1_layout, qb2_layout);
+                            // RConsUtils.hideView(qb1_layout, qb2_layout);
                         }
                     } else {
                         toastMessage("Please Select Option");
@@ -813,7 +814,12 @@ public class Ad_Section_A extends AppCompatActivity {
                     // B4
                     a4_a = edt_a4a.getText().toString();
                     if (!StringUtils.isEmpty(a4_a)) {
-                        RConsUtils.hideView(qa4a_layout, qa4b_layout);
+                        Integer age = Integer.parseInt("0" + a4_a);
+                        if (age > 5 && age < 50) {
+                            RConsUtils.hideView(qa4a_layout, qa4d_layout);
+                        } else {
+                            toastMessage("Age must be in 5-50");
+                        }
                     } else {
                         toastMessage("Please Enter Name");
                     }
@@ -873,12 +879,16 @@ public class Ad_Section_A extends AppCompatActivity {
                     if (rg_a4d_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a4d_ID);
                         a4_d = radioButton.getTag().toString();
-                        if (a4_d.equalsIgnoreCase("5")) {
+                        if (a4_d.equalsIgnoreCase("1")) {
                             a4_d_other = edt_a4d_other.getText().toString();
                             if (!StringUtils.isEmpty(a4_d_other)) {
-                                RConsUtils.hideView(qa4d_layout, qa5_layout);
+                                if (a4_d_other.length() == 10) {
+                                    RConsUtils.hideView(qa4d_layout, qa5_layout);
+                                } else {
+                                    toastMessage("Length must be 10-10");
+                                }
                             } else {
-                                toastMessage("Please specify other");
+                                toastMessage("Please Enter Number");
                             }
                         } else {
                             a4_d_other = "";
@@ -914,7 +924,7 @@ public class Ad_Section_A extends AppCompatActivity {
 //                                setResult(Activity.RESULT_OK, returnIntent);
 
 
-                                Intent intent = new Intent(Ad_Section_A.this, HH_Screen_two.class);
+                                Intent intent = new Intent(Ad_Section_A.this, Ad_Section_F.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -1019,7 +1029,7 @@ public class Ad_Section_A extends AppCompatActivity {
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-startActivity(intent);
+                                startActivity(intent);
                                 //startActivityForResult(intent, 88);
                                 finish();
                             }
@@ -1118,11 +1128,7 @@ startActivity(intent);
         } else if (qa5_layout.getVisibility() == View.VISIBLE) {
             hideView(qa5_layout, qa4d_layout);
         } else if (qa4d_layout.getVisibility() == View.VISIBLE) {
-            if (a4_b.equalsIgnoreCase("1")) {
-                hideView(qa4d_layout, qa4b_layout);
-            } else {
-                hideView(qa4d_layout, qa4c_layout);
-            }
+            hideView(qa4d_layout, qa4a_layout);
         } else if (qa4c_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4c_layout, qa4b_layout);
         } else if (qa4b_layout.getVisibility() == View.VISIBLE) {
@@ -1496,22 +1502,22 @@ startActivity(intent);
         try {
             Cursor cursor = null;
             if (StringUtils.isEmpty(s1)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 1");
             } else if (StringUtils.isEmpty(s2)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "2");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "2");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(s3)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "3");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "3");
                 MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(s4)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "4");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "4");
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(s5)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "5");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "5");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(s6)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "6");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "6");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {

@@ -1460,7 +1460,7 @@ public class HH_Screen_ten_Section_e extends Activity {
                         returnIntent.putExtra("isDataUpdated", false);
                         setResult(Activity.RESULT_OK, returnIntent);
 
-                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_F.class);
+                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
 
                         intent.putExtra("m1b_parent_mobile", phone_number);
                         intent.putExtra("scode", school_code);
