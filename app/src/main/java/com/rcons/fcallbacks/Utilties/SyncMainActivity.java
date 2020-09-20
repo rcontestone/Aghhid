@@ -164,12 +164,12 @@ public class SyncMainActivity extends Activity {
 				MubLog.cpnsoleLog("subquery village_id " + schoolCodeSubQuery);
 
 
-if(farmersCoursor!=null){
-	if(!farmersCoursor.isClosed()){
-		farmersCoursor.close();
-	}
+				if(farmersCoursor!=null){
+					if(!farmersCoursor.isClosed()){
+						farmersCoursor.close();
+					}
 
-}
+				}
 				//int remaning = Totalcount/2;
 
 				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
@@ -219,9 +219,9 @@ if(farmersCoursor!=null){
 
 					JSONObject allSectiondata = new JSONObject();
 					allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
-					allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
+					//allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
+					//allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
+					//allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
 
 					allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
 					allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
@@ -679,12 +679,12 @@ if(farmersCoursor!=null){
 
 		try{
 //			if(RConsUtils.isNetworkAvailable(SyncMainActivity.this)){
-				//DeviceRegisterActivity.callingObje =  Page2.this;
+			//DeviceRegisterActivity.callingObje =  Page2.this;
 
-				progressBar.setVisibility(View.VISIBLE);
-				//txt.setVisibility(View.VISIBLE);
-				progressBar.setProgress(0);
-				new MyTask1().execute(1);
+			progressBar.setVisibility(View.VISIBLE);
+			//txt.setVisibility(View.VISIBLE);
+			progressBar.setProgress(0);
+			new MyTask1().execute(1);
 
 
 
@@ -741,9 +741,9 @@ if(farmersCoursor!=null){
 
 
 				allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
-				allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
+				//allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
+				//allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
+				//allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
 
 				allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
