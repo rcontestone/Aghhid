@@ -1609,6 +1609,7 @@ public class HH_Screen_three extends Activity {
 		try {
 
 
+			boolean headofhouse_found = false;
 			JSONArray phonedataarray = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).agghhid_getDataFromMemberTable(appContext, school_code,student_id);
 
 			List<String > name =   new ArrayList<String>();
@@ -1622,6 +1623,11 @@ public class HH_Screen_three extends Activity {
 					if(value.length()>0){
 						name.add(phonedataarray.getJSONObject(i).getString("d_2"));
 						DebugLog.console("[HH_Screen_three] inside askuserfornext() name "+name.get(i));
+
+                     if(phonedataarray.getJSONObject(i).getString("d_5").equalsIgnoreCase("1")){
+						 headofhouse_found= true;
+					 }
+
 					}
 
 
@@ -1630,12 +1636,18 @@ public class HH_Screen_three extends Activity {
 			}
 
 
+//			String title_popup = getString(R.string.titlepopup);
 			String title_popup = getString(R.string.titlepopup);
 			String info = getString(R.string.popupinfo);
 
 			//	HH_Screen_three.START_TIME = MpcUtil.getcurrentTime(14);
-			showAlert(title_popup,info+"\r\n\nTotal mem count : "+name.size()+"\r\n\n "+hhidlisthaving_numbers.toUpperCase()+"\r\nDo you want to add more");
 
+			if(!headofhouse_found){
+				addHeadAlert("Head Of House","Please add/Select Head of House ");
+			}else {
+
+				showAlert(title_popup, info + "\r\n\nTotal mem count : " + name.size() + "\r\n\n " + hhidlisthaving_numbers.toUpperCase() + "\r\nDo you want to add more");
+			}
 		} catch (Exception e) {
 		    EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside askuserfornext() Exception is :"+e.toString());
 		}
@@ -1940,6 +1952,32 @@ public class HH_Screen_three extends Activity {
 	}
 
 
+	public void addHeadAlert(String title, String message){
+		new AlertDialog.Builder(HH_Screen_three.this)
+				.setTitle(title)
+				.setMessage(message)
+				.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener(){
+					public void onClick(DialogInterface dialog, int which){
+						setResult(RESULT_OK);
+//						Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_section_d.class);
+//
+//						intent.putExtra("m1b_parent_mobile",phone_number);
+//						intent.putExtra("scode",school_code);
+//						intent.putExtra("studentid",student_id);
+//						intent.putExtra("m1b_student_name",student_name);
+//						intent.putExtra("rcons_user",RConsUtils.getUserName());
+//						startActivity(intent);
+//						finish();
+					}
+				})
+
+////				.setNegativeButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
+////			public void onClick(DialogInterface dialog, int which){
+////				setResult(RESULT_CANCELED);
+////			}
+//		})
+				.show();
+	}
 
 
 
@@ -2715,6 +2753,17 @@ public class HH_Screen_three extends Activity {
 				@Override
 				public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
 					DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() "+i);
+
+					if (i==1){
+						if(HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_checkIfheadalreadydefined(appContext,school_code,student_id)){
+							parent.setSelection(0);
+
+							Toast.makeText(HH_Screen_three.this, "Head Already defined. Please select another ", Toast.LENGTH_SHORT).show();
+
+						}
+					}
+
+
 					if (i==15){
 						editTextField5.setVisibility(View.VISIBLE);
 						view.invalidate();

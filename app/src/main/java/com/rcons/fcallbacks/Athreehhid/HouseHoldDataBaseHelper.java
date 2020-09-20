@@ -2675,6 +2675,53 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
 
 
+
+
+    public synchronized  boolean  aghhid_checkIfheadalreadydefined(Context appContext, String village_id,String hhid){
+        long rowId = 1;
+        boolean result =false;
+        ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Show Previous Numbers");
+        int id =0;
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+            Cursor cursor = db.rawQuery("SELECT * FROM  "+DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"' AND d_5 = '1'",null);
+            int  count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() count "+cursor.getCount());
+                result = true;
+//                while (cursor.moveToNext()) {
+//
+//                    id = cursor.getInt(cursor.getColumnIndex("max"));
+//                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getmaxmemberindhhid() hhid "+id);
+//                }
+
+                closeDB(cursor);
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+spinnerArray.size());
+            return result;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return result;
+        }
+    }
+
+
+
+
+
+
     public synchronized  int  aghhid_getmaxmemberindhhid(Context appContext, String village_id,String hhid){
         long rowId = 1;
         boolean result =false;
