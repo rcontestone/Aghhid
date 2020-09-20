@@ -7637,7 +7637,7 @@ public class DatabaseAdapter {
     }
 
     public Cursor getpq_basic_Data(String scode, String studentid) {
-        String query = "SELECT * from " + BaseLineSampleTable + " where  scode= '" + scode + "' AND studentid= '" + studentid + "'";
+        String query = "SELECT * from " + AGHHID_SampleTable + " where  village_id= '" + scode + "' AND hhid= '" + studentid + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
         if (cursor != null && cursor.getCount() > 0) {
             return cursor;
