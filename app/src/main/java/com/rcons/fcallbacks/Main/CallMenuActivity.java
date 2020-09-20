@@ -38,6 +38,7 @@ import androidx.core.content.ContextCompat;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.mubashar.mubchatheadservice.ChatHeadService;
+import com.rcons.fcallbacks.Athreehhid.Ad_Section_A;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_eight_Section_e;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_Section_h;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_section_e;
@@ -108,7 +109,7 @@ public class CallMenuActivity extends AppCompatActivity {
 
     ArrayList<String> spinnerArray =null;
 
-            String s1 = "";
+    String s1 = "";
     String s2 = "";
     String s3 = "";
     String s4 = "";
@@ -355,36 +356,45 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
 
-                Intent intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
+
+                boolean goto_adolscent = checkAdolescent_q_ten();
+                Intent intent =  null;
+
+                if(goto_adolscent){
+                    intent = new Intent(CallMenuActivity.this, Ad_Section_A.class);
+                }else {
+                    intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
+                }
+
+
+
 //                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
 //                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_eight_Section_e.class);
 
                 intent.putExtra("isPendingCall", isPendingCall);
                 intent.putExtra("username", userName);
                 intent.putExtra("isFromEdit", isFromEdit);
+                intent.putExtra("scode", cursor.getString(cursor.getColumnIndex("village_id")));
+                intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("hhid")));
+                intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
+                intent.putExtra("m1b_parent_mobile", numbers_sp_q_2.getSelectedItem().toString());
+                intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
+
 
                 //intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
                 //intent.putExtra("strata", cursor.getString(cursor.getColumnIndex("strata")));
-                intent.putExtra("scode", cursor.getString(cursor.getColumnIndex("village_id")));
+
                 //  intent.putExtra("scode_original", cursor.getString(cursor.getColumnIndex("scode_original")));
                 //  intent.putExtra("m2_district", cursor.getString(cursor.getColumnIndex("m2_district")));
                 // intent.putExtra("m2_tehsil", cursor.getString(cursor.getColumnIndex("m2_tehsil")));
                 // intent.putExtra("m2_mauza", cursor.getString(cursor.getColumnIndex("m2_mauza")));
                 // intent.putExtra("m2_school_name", cursor.getString(cursor.getColumnIndex("m2_school_name")));
                 //intent.putExtra("studentnumber", cursor.getString(cursor.getColumnIndex("studentnumber")));
-                intent.putExtra("studentid", cursor.getString(cursor.getColumnIndex("hhid")));
-                //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
-                intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
 
+                //  intent.putExtra("m1b_student_sex", cursor.getString(cursor.getColumnIndex("m1b_student_sex")));
 
 
                 //intent.putExtra("m1b_parent_mobile", cursor.getString(cursor.getColumnIndex("hhid_phone_number")));
-                intent.putExtra("m1b_parent_mobile", numbers_sp_q_2.getSelectedItem().toString());
-
-
-
-
-                intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
                 // intent.putExtra("m5_studentassessment", cursor.getString(cursor.getColumnIndex("m5_studentassessment")));
                 // intent.putExtra("order_to_contact", cursor.getString(cursor.getColumnIndex("order_to_contact")));
 
@@ -565,6 +575,43 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private boolean checkAdolescent_q_ten() {
+
+        boolean go_to_adolscent = false;
+        Context appContext = CallMenuActivity.this;
+        try {
+
+
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_e_table,school_code,student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());
+
+            if (data.length()>0){
+
+                if(data.getString("e_10").equalsIgnoreCase("null"))
+                    data.put("e_10","");
+
+
+                if(data.getString("e_10").equalsIgnoreCase("1") || data.getString("e_10").equalsIgnoreCase("2")){
+                    go_to_adolscent = true;
+                }
+
+            }
+
+
+
+
+
+
+        } catch (Exception e) {
+            //  EmailDebugLog.getInstance(appContext).writeLog("[CallMenuActivity] inside checkAdolescent_q_ten() Exception is :"+e.toString());
+
+            return go_to_adolscent;
+        }
+
+
+        return go_to_adolscent;
     }
 
     private void checkAndUpdateAdapter() {
@@ -1030,43 +1077,43 @@ public class CallMenuActivity extends AppCompatActivity {
         } else if (requestCode == 88) {
 
 
-if(data!=null)
-            if(data.hasExtra("isDataUpdated")){
+            if(data!=null)
+                if(data.hasExtra("isDataUpdated")){
 
-            boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
-            if (isDataUpdated) {
-
-
-                btnAddReport.setEnabled(false);
-                btnAddReport.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_disable_button_bg));
+                    boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
+                    if (isDataUpdated) {
 
 
-                NextCall.setEnabled(true);
-                NextCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
+                        btnAddReport.setEnabled(false);
+                        btnAddReport.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_disable_button_bg));
 
 
-                PreviousCall.setEnabled(true);
-                PreviousCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
+                        NextCall.setEnabled(true);
+                        NextCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
 
-                if (isPendingCall) {
-                    cursor = databaseAccess.aghhid_getPendingCallCursor(userName);
-                } else {
-                    cursor = databaseAccess.aghhid_getNewCallsCursor(userName);
+
+                        PreviousCall.setEnabled(true);
+                        PreviousCall.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
+
+                        if (isPendingCall) {
+                            cursor = databaseAccess.aghhid_getPendingCallCursor(userName);
+                        } else {
+                            cursor = databaseAccess.aghhid_getNewCallsCursor(userName);
+                        }
+
+
+                        if (cursor != null && cursor.getCount() > 0) {
+                            MubLog.cpnsoleLog("Count - > " + cursor.getCount());
+                            cursor.moveToFirst();
+                            GetData();
+
+                        } else {
+                            Toast.makeText(this, "No data found.", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+
+                    }
                 }
-
-
-                if (cursor != null && cursor.getCount() > 0) {
-                    MubLog.cpnsoleLog("Count - > " + cursor.getCount());
-                    cursor.moveToFirst();
-                    GetData();
-
-                } else {
-                    Toast.makeText(this, "No data found.", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-
-            }
-        }
         }
     }
 
