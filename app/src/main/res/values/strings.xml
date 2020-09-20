@@ -798,15 +798,15 @@
     <string name="section_e_question_q12_option2">2~ نہیں </string>
 
     <string name="section_e_question_q13"> زبردست، وہ کون ہیں </string>
-    <string name="section_e_question_q13_instructions"> </string>
+    <string name="section_e_question_q13_instructions"> لڑکی کا نام اور ممبر ID </string>
 
-    <string name="section_e_question_q14"> </string>
-    <string name="section_e_question_q14_option1"> </string>
-    <string name="section_e_question_q14_option2"> </string>
+    <string name="section_e_question_q14"> کیا آ پ (E13 والی لڑکی کا نام بولیں) کو اپنے پاس بلا سکتے ہیں یا اسے فون دے سکتے ہیں </string>
+    <string name="section_e_question_q14_option1"> ہاں، (Adolescentسوالنامہ شروع کریں) </string>
+    <string name="section_e_question_q14_option2"> نہیں، ابھی وہ موجود نہیں </string>
 
-    <string name="section_e_question_q15"> </string>
-    <string name="section_e_question_q15_option1"> </string>
-    <string name="section_e_question_q15_option2"> </string>
+    <string name="section_e_question_q15"> کیا میں کسی  اور وقت (E13 والی لڑکی کا نام بولیں)سے بات کےلئے کال کر لوں </string>
+    <string name="section_e_question_q15_option1"> ہاں، دوبارہ کال کےلئے وقت نوٹ کر لیں </string>
+    <string name="section_e_question_q15_option2"> نہیں، کسی اور وقت بات کرنے کا امکان نہیں </string>
 
     <string name="HH_Screen_C_two">HH_Screen_C_two</string>
     <string name="tv_section_d_title">ہم گھرانے کے افراد کی لسٹنگ کر رہے ہیں، برائے مہربانی ان تمام افراد کے نام بتائیں جو اس گھرانے میں رہتے ہیں۔گھرانے سے مراد ایسے افراد کا مجموعہ ہے جو ایک ہی چولہے سے کھاتے پیتے ہوں۔ اپنے آپ سے شروع کرتے ہوئے بتائیں۔</string>
