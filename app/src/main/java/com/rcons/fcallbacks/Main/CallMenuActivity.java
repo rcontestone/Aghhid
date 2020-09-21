@@ -42,6 +42,7 @@ import com.rcons.fcallbacks.Athreehhid.Ad_Section_A;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_eight_Section_e;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_Section_h;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_one_section_e;
+import com.rcons.fcallbacks.Athreehhid.HH_Screen_seven_Section_e;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_thirteen_section_e;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_two;
 import com.rcons.fcallbacks.Athreehhid.HouseHoldDataBaseHelper;
@@ -368,7 +369,7 @@ public class CallMenuActivity extends AppCompatActivity {
                 }
 
 //             intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
-//             intent = new Intent(CallMenuActivity.this, HH_Screen_thirteen_section_e.class);
+             intent = new Intent(CallMenuActivity.this, HH_Screen_seven_Section_e.class);
                 intent.putExtra("isPendingCall", isPendingCall);
                 intent.putExtra("username", userName);
                 intent.putExtra("isFromEdit", isFromEdit);
