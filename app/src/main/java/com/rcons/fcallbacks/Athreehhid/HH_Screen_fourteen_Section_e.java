@@ -41,6 +41,7 @@ import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
+import com.rcons.fcallbacks.Main.AddReportActivityHH;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -1448,14 +1449,23 @@ public class HH_Screen_fourteen_Section_e extends Activity {
 //                        intent.putExtra("student_id", student_id);
 //                        startActivityForResult(intent, 88);
 
-                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
-
-                        intent.putExtra("m1b_parent_mobile", phone_number);
-                        intent.putExtra("scode", school_code);
-                        intent.putExtra("studentid", student_id);
+//                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
+//
+//                        intent.putExtra("m1b_parent_mobile", phone_number);
+//                        intent.putExtra("scode", school_code);
+//                        intent.putExtra("studentid", student_id);
+//                        intent.putExtra("m1b_student_name", student_name);
+//                        intent.putExtra("rcons_user", RConsUtils.getUserName());
+//                        startActivity(intent);
+                        Intent intent = new Intent(HH_Screen_fourteen_Section_e.this, AddReportActivityHH.class);
+                        intent.putExtra("emp_id", emp_id);
+                        intent.putExtra("order_id", order_id);
+                        intent.putExtra("id", id);
+                        intent.putExtra("farmer_cellphone", phone_number);
+                        intent.putExtra("school_code", school_code);
+                        intent.putExtra("student_id", student_id);
                         intent.putExtra("m1b_student_name", student_name);
-                        intent.putExtra("rcons_user", RConsUtils.getUserName());
-                        startActivity(intent);
+                        startActivityForResult(intent, 88);
 
 
                     } else {
