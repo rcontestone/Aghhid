@@ -1287,7 +1287,7 @@ public class Ad_Section_A extends AppCompatActivity {
                 try_no = "6";
                 MubLog.cpnsoleLog("SaveData Try 6");
             }
-            databaseAccess.savepq_Section_A_Data(emp_id,
+            databaseAccess.savead_Section_A_Data(emp_id,
                     order_id,
                     farmer_id,
                     rcons_user,
