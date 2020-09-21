@@ -1712,7 +1712,7 @@ public class Ad_Section_A extends AppCompatActivity {
         section_a_question_3.setText("کیا آپ   " + headName + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");
         section_a_question_4.setText("کیا  آپ    " + headName + " کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟");
 
-        section_b_question_q1.setText("کیا میں    " + headName + " سے بات کر رہی ہوں؟ ");
+        section_b_question_q1.setText("کیا  آپ     " + headName + " بات کر رہی ہیں ؟ ");
         section_b_question_q2.setText("کیا میں    " + headName + "سے بات کر سکتی ہوں؟ ");
 
     }
