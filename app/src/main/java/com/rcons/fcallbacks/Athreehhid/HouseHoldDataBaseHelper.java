@@ -2941,7 +2941,12 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 result =  false;
             }
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+count);
-            return name;
+
+         if(name==null)
+             name="";
+
+
+           return name;
         } catch (Exception e) {
             DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
             closeDB();
@@ -2985,6 +2990,10 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 result =  false;
             }
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+count);
+            if(name==null)
+                name="";
+
+
             return name;
         } catch (Exception e) {
             DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
