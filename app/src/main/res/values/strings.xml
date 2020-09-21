@@ -800,7 +800,7 @@
     <string name="section_e_question_q13"> زبردست، وہ کون ہیں </string>
     <string name="section_e_question_q13_instructions"> لڑکی کا نام اور ممبر ID </string>
 
-    <string name="section_e_question_q14"> کیا آ پ ( \ u0020  %1$s) کو اپنے پاس بلا سکتے ہیں یا اسے فون دے سکتے ہیں </string>
+    <string name="section_e_question_q14"> کیا آ پ ( \u0020  %1$s) کو اپنے پاس بلا سکتے ہیں یا اسے فون دے سکتے ہیں </string>
     <string name="section_e_question_q14_option1"> ہاں، (Adolescentسوالنامہ شروع کریں) </string>
     <string name="section_e_question_q14_option2"> نہیں، ابھی وہ موجود نہیں </string>
 
