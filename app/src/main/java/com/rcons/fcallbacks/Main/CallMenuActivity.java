@@ -369,7 +369,7 @@ public class CallMenuActivity extends AppCompatActivity {
                 }
 
 //             intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
-             intent = new Intent(CallMenuActivity.this, HH_Screen_seven_Section_e.class);
+//             intent = new Intent(CallMenuActivity.this, HH_Screen_seven_Section_e.class);
                 intent.putExtra("isPendingCall", isPendingCall);
                 intent.putExtra("username", userName);
                 intent.putExtra("isFromEdit", isFromEdit);
