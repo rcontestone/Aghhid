@@ -219,9 +219,6 @@ public class HH_Screen_one_section_e extends Activity {
 
 
 
-            // Get Refferences of Views
-            initializeReferenceOfViews();
-
 
 
         }catch (Exception e) {
@@ -336,7 +333,7 @@ public class HH_Screen_one_section_e extends Activity {
                             hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
 
                             String name = parent.getSelectedItem().toString().trim().substring(0,parent.getSelectedItem().toString().indexOf("|")).trim();
-                                   DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() name "+name);
+                            DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() name "+name);
                             int memID  = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_memberid_against_name(appContext,school_code,student_id, name);
                             DebugLog.console("[HH_Screen_one_section_e] inside onItemSelected() memID "+memID);
 
@@ -399,13 +396,13 @@ public class HH_Screen_one_section_e extends Activity {
 
 
             if(spinnerArray.size()>1){
-               // numbers_sp_q_3.setEnabled(false);
+                 numbers_sp_q_3.setEnabled(false);
             }
 
 
-                 if (spinnerArray3.size()<=1){
-                     showAlert2("No Girl Found","No girl found having age 9 to 19");
-                 }
+            if (spinnerArray3.size()<=1){
+                showAlert2("No Girl Found","No girl found having age 9 to 19");
+            }
 
         } catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
@@ -807,11 +804,23 @@ public class HH_Screen_one_section_e extends Activity {
         try {
 
 
+
+            ArrayList<String> spinnerArray3 = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_section_e.this).aghhid_getgirlsgainstvillageAndhhid_second_op(appContext,school_code,student_id);
+            if (spinnerArray3.size()<=1){
+                showAlert2("No Girl Found","No girl found having age 9 to 19");
+                return;
+            }
+
+
             aghhid_e_1 = hh_edtfield_q_2.getText().toString();
 
+            if(aghhid_e_1!=null && aghhid_e_1.length()>0){
 
-            if(aghhid_e_1!=null && aghhid_e_1.length()>0)
-            aghhid_e_1 =   aghhid_e_1.substring(0,aghhid_e_1.indexOf("|")).trim();
+                if(aghhid_e_1.contains("|"))
+                    aghhid_e_1 =   aghhid_e_1.substring(0,aghhid_e_1.indexOf("|")).trim();
+
+            }
+
 
 
             int rdg_checkedID = 1;
@@ -820,13 +829,13 @@ public class HH_Screen_one_section_e extends Activity {
 //                error =  true;
 //                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
 //            }else
-                if (aghhid_e_1.length()==0){
+            if (aghhid_e_1.length()==0){
 
 
-                    error =  true;
-                    showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Name ");
-                    MpcUtil.restartInput(appContext, hh_edtfield_q_2);
-                }
+                error =  true;
+                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Name ");
+                MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+            }
 
 
 
@@ -1806,6 +1815,9 @@ public class HH_Screen_one_section_e extends Activity {
 
 
         try {
+            // Get Refferences of Views
+            initializeReferenceOfViews();
+
 
             JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_e_table,school_code,student_id);
             DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());

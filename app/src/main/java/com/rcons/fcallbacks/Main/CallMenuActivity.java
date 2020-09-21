@@ -366,11 +366,8 @@ public class CallMenuActivity extends AppCompatActivity {
                     intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
                 }
 
-
-
-//                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
-//                Intent intent = new Intent(CallMenuActivity.this, HH_Screen_eight_Section_e.class);
-
+//             intent = new Intent(CallMenuActivity.this, HH_Screen_two.class);
+//             intent = new Intent(CallMenuActivity.this, HH_Screen_eight_Section_e.class);
                 intent.putExtra("isPendingCall", isPendingCall);
                 intent.putExtra("username", userName);
                 intent.putExtra("isFromEdit", isFromEdit);
@@ -379,6 +376,12 @@ public class CallMenuActivity extends AppCompatActivity {
                 intent.putExtra("m1b_student_name", cursor.getString(cursor.getColumnIndex("hhid_father_name")));
                 intent.putExtra("m1b_parent_mobile", numbers_sp_q_2.getSelectedItem().toString());
                 intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
+
+
+
+
+                //overriding name for
+
 
 
                 //intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
@@ -589,13 +592,16 @@ public class CallMenuActivity extends AppCompatActivity {
 
             if (data.length()>0){
 
-                if(data.getString("e_10").equalsIgnoreCase("null"))
+                               if(data.getString("e_10").equalsIgnoreCase("null"))
                     data.put("e_10","");
 
 
-                if(data.getString("e_10").equalsIgnoreCase("1") || data.getString("e_10").equalsIgnoreCase("2")){
+                if(data.getString("e14").equalsIgnoreCase("1") ||data.getString("e_15").equalsIgnoreCase("1") ||data.getString("e_10").equalsIgnoreCase("1") || data.getString("e_11").equalsIgnoreCase("1")){
                     go_to_adolscent = true;
                 }
+
+
+
 
             }
 

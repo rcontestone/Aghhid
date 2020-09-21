@@ -265,7 +265,22 @@ public class HH_Screen_two_Section_h extends Activity {
             // int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 
 
-            String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
+            String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e13(appContext,school_code,student_id);
+
+            if(headName!=null){
+
+                if(headName.length()>0){
+
+                }else{
+                    headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e1(appContext,school_code,student_id);
+                }
+
+            }
+
+
+
+
+            String stringTopBar = getResources().getString(R.string.screen_two_top_bar,headName,school_code, student_id+"");
 
             top_bar.setText(stringTopBar);
 

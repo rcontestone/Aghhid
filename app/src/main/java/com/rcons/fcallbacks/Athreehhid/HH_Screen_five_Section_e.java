@@ -1807,7 +1807,7 @@ public class HH_Screen_five_Section_e extends Activity {
                    // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
                 }
 
-                if(e_5.trim().equalsIgnoreCase("-111"))
+                if(e_5.trim().equalsIgnoreCase("2"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(1).getId());
 
                 if(e_5.trim().equalsIgnoreCase("-88"))
@@ -1977,7 +1977,7 @@ public class HH_Screen_five_Section_e extends Activity {
     }
 
     public void setMigration2(View view) {
-        aghhid_e_5 = "-111";
+        aghhid_e_5 = "2";
         hh_edtfield_q_2.setVisibility(View.GONE);
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);

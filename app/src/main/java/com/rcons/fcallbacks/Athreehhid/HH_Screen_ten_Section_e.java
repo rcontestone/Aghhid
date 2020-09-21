@@ -784,11 +784,11 @@ public class HH_Screen_ten_Section_e extends Activity {
             }else
 
 
-                if (aghhid_e_10.length()==0){
-                    error =  true;
-                    showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
-                   // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
-                }
+            if (aghhid_e_10.length()==0){
+                error =  true;
+                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
+                // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+            }
 
 
 
@@ -1446,7 +1446,7 @@ public class HH_Screen_ten_Section_e extends Activity {
 
 
 
-                    if(aghhid_e_10.equalsIgnoreCase("2") ||aghhid_e_10.equalsIgnoreCase("-777") || (aghhid_e_10.equalsIgnoreCase("-99"))){
+                    if(aghhid_e_10.equalsIgnoreCase("-777") || (aghhid_e_10.equalsIgnoreCase("-99"))){
                         Intent intent = new Intent(HH_Screen_ten_Section_e.this, AddReportActivity.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -1460,7 +1460,18 @@ public class HH_Screen_ten_Section_e extends Activity {
                         returnIntent.putExtra("isDataUpdated", false);
                         setResult(Activity.RESULT_OK, returnIntent);
 
-                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
+//                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
+//
+//                        intent.putExtra("m1b_parent_mobile", phone_number);
+//                        intent.putExtra("scode", school_code);
+//                        intent.putExtra("studentid", student_id);
+//                        intent.putExtra("m1b_student_name", student_name);
+//                        intent.putExtra("rcons_user", RConsUtils.getUserName());
+//                        startActivity(intent);
+
+
+
+                        Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eleven_Section_e.class);
 
                         intent.putExtra("m1b_parent_mobile", phone_number);
                         intent.putExtra("scode", school_code);
@@ -1468,7 +1479,14 @@ public class HH_Screen_ten_Section_e extends Activity {
                         intent.putExtra("m1b_student_name", student_name);
                         intent.putExtra("rcons_user", RConsUtils.getUserName());
                         startActivity(intent);
+
+
+
                         finish();
+
+
+
+
                         return;
                     }
 
@@ -1796,12 +1814,12 @@ public class HH_Screen_ten_Section_e extends Activity {
 
                 if(e_10.trim().equalsIgnoreCase("1")) {
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(0).getId());
-                  //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
+                    //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
                     //numbers_sp_q_2.setVisibility(View.VISIBLE);
-                   // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
+                    // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
                 }
 
-                if(e_10.trim().equalsIgnoreCase("-111"))
+                if(e_10.trim().equalsIgnoreCase("2"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(1).getId());
 
                 if(e_10.trim().equalsIgnoreCase("-88"))

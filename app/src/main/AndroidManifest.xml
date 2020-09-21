@@ -125,6 +125,11 @@
         <activity android:name=".Athreehhid.HH_Screen_two_Section_h" />
         <activity android:name=".Athreehhid.HH_Screen_four_section_d" />
         <activity android:name=".Athreehhid.Ad_Section_A" />
+        <activity android:name=".Athreehhid.HH_Screen_eleven_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_twelve_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_thirteen_section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_fourteen_Section_e" />
+        <activity android:name=".Athreehhid.HH_Screen_fifteen_Section_e" />
     </application>
 
 </manifest>

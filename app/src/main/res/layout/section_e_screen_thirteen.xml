@@ -173,7 +173,7 @@
                             android:layout_marginRight="30dp"
                             android:gravity="center"
                             android:layout_centerHorizontal="true"
-                            android:text="@string/section_E"
+                            android:text="Sectin E Q.13"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"
@@ -192,7 +192,7 @@
                             android:layout_marginRight="30dp"
                             android:gravity="center"
                             android:layout_centerHorizontal="true"
-                            android:text="@string/ad_section_e_question_inst"
+                            android:text="@string/section_e_question_q13"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"
@@ -214,6 +214,7 @@
                             android:text="@string/section_e_question_q1"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
+                            android:visibility="gone"
                             android:textStyle="bold"
 
 
@@ -254,7 +255,7 @@
                             android:background="#e6e6e6"
                             android:entries="@array/array_relative_code_sp"
                             android:padding="@dimen/_5sdp"
-
+                            android:visibility="gone"
                             android:textSize="@dimen/_13sdp"></Spinner>
 
 
@@ -565,7 +566,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_above="@+id/exit"
-        android:text="HH_Screen_one_section_e"
+        android:text="HH_Screen_thirteen_section_e"
         android:textSize="@dimen/_14sdp"
         />
 </RelativeLayout>
