@@ -196,6 +196,10 @@ public class Ad_Section_G extends AppCompatActivity {
     String g_urdu_5 = "";
 
 
+    @BindView(R.id.adol_name)
+    TextView adol_name;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -221,8 +225,7 @@ public class Ad_Section_G extends AppCompatActivity {
 
 
         SetEnumState();
-
-
+        displayHeaderName();
         LoadPreviousData();
 
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -681,7 +684,7 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("school_name", school_name);
                             startActivity(intent);
-                          // startActivityForResult(intent, 88);
+                            // startActivityForResult(intent, 88);
                             finish();
                         }
                     } else {
@@ -1107,5 +1110,21 @@ public class Ad_Section_G extends AppCompatActivity {
             }
 
         }
+    }
+
+    void displayHeaderName() {
+        String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_G.this).aghhid_get_member_selected_in_e13(Ad_Section_G.this, school_code, student_id);
+
+        if (headName != null) {
+
+            if (headName.length() > 0) {
+
+            } else {
+                headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_G.this).aghhid_get_member_selected_in_e1(Ad_Section_G.this, school_code, student_id);
+            }
+
+        }
+        adol_name.setText("Adolescent Name : " + headName);
+
     }
 }

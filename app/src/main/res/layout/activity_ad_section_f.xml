@@ -70,11 +70,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_toRightOf="@+id/btnBack"
                     android:fontFamily="serif"
                     android:gravity="left"
                     android:text="Adolescent Section C"
-                    android:layout_marginLeft="@dimen/_10sdp"
                     android:textColor="@color/color_white"
                     android:textSize="20sp"
                     android:textStyle="normal"
@@ -91,6 +91,20 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/adol_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_color"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="4dp"
+                android:text="Adolescent Name"
+                android:textAllCaps="false"
+                android:textColor="#030303"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"

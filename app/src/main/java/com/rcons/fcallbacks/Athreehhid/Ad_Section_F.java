@@ -128,6 +128,9 @@ public class Ad_Section_F extends AppCompatActivity {
     @BindView(R.id.txt_Student_id)
     TextView txt_Student_id;
 
+    @BindView(R.id.adol_name)
+    TextView adol_name;
+
 
     @BindView(R.id.btn_back)
     Button btn_back;
@@ -249,7 +252,7 @@ public class Ad_Section_F extends AppCompatActivity {
         SetQuestionf2CheckBoxListener();
         LoadPreviousData();
         SetEnumState();
-
+        displayHeaderName();
 
         rg_f3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -1331,5 +1334,21 @@ public class Ad_Section_F extends AppCompatActivity {
             questionf2CheckBoxTags.remove(checkBox.getTag().toString());
         }
         MubLog.cpnsoleLog("checkbox_f2_tag" + checkBox.getTag().toString());
+    }
+
+    void displayHeaderName() {
+        String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_F.this).aghhid_get_member_selected_in_e13(Ad_Section_F.this, school_code, student_id);
+
+        if (headName != null) {
+
+            if (headName.length() > 0) {
+
+            } else {
+                headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_F.this).aghhid_get_member_selected_in_e1(Ad_Section_F.this, school_code, student_id);
+            }
+
+        }
+        adol_name.setText("Adolescent Name : " + headName);
+
     }
 }

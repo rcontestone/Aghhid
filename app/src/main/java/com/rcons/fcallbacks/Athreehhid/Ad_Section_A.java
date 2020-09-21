@@ -249,6 +249,9 @@ public class Ad_Section_A extends AppCompatActivity {
     String s5 = "";
     String s6 = "";
 
+    @BindView(R.id.adol_name)
+    TextView adol_name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -294,6 +297,7 @@ public class Ad_Section_A extends AppCompatActivity {
 
 
         LoadPreviousData();
+        displayHeaderName();
 
         deviceid = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         build_no = BuildConfig.VERSION_NAME;
@@ -1689,5 +1693,27 @@ public class Ad_Section_A extends AppCompatActivity {
 
             }
         });
+    }
+
+    void displayHeaderName() {
+        String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_A.this).aghhid_get_member_selected_in_e13(Ad_Section_A.this, school_code, student_id);
+
+        if (headName != null) {
+
+            if (headName.length() > 0) {
+
+            } else {
+                headName = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_A.this).aghhid_get_member_selected_in_e1(Ad_Section_A.this, school_code, student_id);
+            }
+
+        }
+        adol_name.setText("Adolescent Name : " + headName);
+
+        section_a_question_3.setText("کیا آپ   " + adol_name + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");
+        section_a_question_4.setText("کیا  آپ    " + adol_name + " کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟");
+
+        section_b_question_q1.setText("کیا میں    " + adol_name + " سے بات کر رہی ہوں؟ ");
+        section_b_question_q2.setText("کیا میں    " + adol_name + "سے بات کر سکتی ہوں؟ ");
+
     }
 }
