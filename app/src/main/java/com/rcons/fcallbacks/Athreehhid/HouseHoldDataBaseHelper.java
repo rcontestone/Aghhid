@@ -3058,7 +3058,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
 
 
-            boolean runUpdate_Querry = hhid_isHHCovered_for_e(village_id,hhid);
+            boolean runUpdate_Querry = true;//hhid_isHHCovered_for_e(village_id,hhid);
 
             DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() runUpdate_Querry"+runUpdate_Querry);
 
