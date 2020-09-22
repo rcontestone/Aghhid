@@ -1207,9 +1207,9 @@ public class HH_Screen_C_two extends Activity {
                     }else {
 
 
-                            Intent returnIntent = new Intent();
-                            returnIntent.putExtra("isDataUpdated", false);
-                            setResult(Activity.RESULT_OK, returnIntent);
+//                            Intent returnIntent = new Intent();
+//                            returnIntent.putExtra("isDataUpdated", false);
+//                            setResult(Activity.RESULT_OK, returnIntent);
 
                             Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_three.class);
 
@@ -1218,8 +1218,9 @@ public class HH_Screen_C_two extends Activity {
                             intent.putExtra("studentid", student_id);
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("rcons_user", RConsUtils.getUserName());
-                            startActivity(intent);
-                            finish();
+                        startActivityForResult(intent, 88);
+//                            startActivity(intent);
+                           // finish();
                             return;
 
 
@@ -1428,14 +1429,18 @@ public class HH_Screen_C_two extends Activity {
             calledFromView="";
             selfClose =  true;
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
+//
+//            intent.putExtra("m1b_parent_mobile",phone_number);
+//            intent.putExtra("scode",school_code);
+//            intent.putExtra("studentid",student_id);
+//            intent.putExtra("m1b_student_name",student_name);
+//            intent.putExtra("rcons_user",RConsUtils.getUserName());
+//            startActivity(intent);
 
-            intent.putExtra("m1b_parent_mobile",phone_number);
-            intent.putExtra("scode",school_code);
-            intent.putExtra("studentid",student_id);
-            intent.putExtra("m1b_student_name",student_name);
-            intent.putExtra("rcons_user",RConsUtils.getUserName());
-            startActivity(intent);
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("isDataUpdated", false);
+            setResult(Activity.RESULT_OK, returnIntent);
             finish();
 
         }catch (Exception e) {
@@ -1466,17 +1471,20 @@ public class HH_Screen_C_two extends Activity {
             calledFromView="";
             selfClose =  true;
 
-//            Intent backIntent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
-//            backIntent.putExtra("launchActivity", "signup");
-//            startActivity(backIntent);
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
 
-            intent.putExtra("m1b_parent_mobile",phone_number);
-            intent.putExtra("scode",school_code);
-            intent.putExtra("studentid",student_id);
-            intent.putExtra("m1b_student_name",student_name);
-            intent.putExtra("rcons_user",RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two.class);
+//
+//            intent.putExtra("m1b_parent_mobile",phone_number);
+//            intent.putExtra("scode",school_code);
+//            intent.putExtra("studentid",student_id);
+//            intent.putExtra("m1b_student_name",student_name);
+//            intent.putExtra("rcons_user",RConsUtils.getUserName());
+//            startActivity(intent);
+
+
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("isDataUpdated", false);
+            setResult(Activity.RESULT_OK, returnIntent);
             finish();
 
         }catch (Exception e) {

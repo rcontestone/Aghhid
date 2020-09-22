@@ -1476,9 +1476,6 @@ public class HH_Screen_twelve_Section_e extends Activity {
                         intent.putExtra("student_id", student_id);
                         startActivityForResult(intent, 88);
                     } else {
-                        Intent returnIntent = new Intent();
-                        returnIntent.putExtra("isDataUpdated", false);
-                        setResult(Activity.RESULT_OK, returnIntent);
 
 //                        Intent intent = MpcUtil.buildNewIntent(appContext, Ad_Section_A.class);
                         Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_thirteen_section_e.class);
@@ -1488,8 +1485,7 @@ public class HH_Screen_twelve_Section_e extends Activity {
                         intent.putExtra("studentid", student_id);
                         intent.putExtra("m1b_student_name", student_name);
                         intent.putExtra("rcons_user", RConsUtils.getUserName());
-                        startActivity(intent);
-                        finish();
+                        startActivityForResult(intent, 88);
                         return;
                     }
 
@@ -1691,14 +1687,14 @@ public class HH_Screen_twelve_Section_e extends Activity {
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eleven_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eleven_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -1729,14 +1725,14 @@ public class HH_Screen_twelve_Section_e extends Activity {
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eleven_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_eleven_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");

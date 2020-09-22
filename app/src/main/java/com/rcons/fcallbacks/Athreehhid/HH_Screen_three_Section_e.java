@@ -1487,9 +1487,6 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                         startActivityForResult(intent, 88);
                     } else {
 
-                        Intent returnIntent = new Intent();
-                        returnIntent.putExtra("isDataUpdated", false);
-                        setResult(Activity.RESULT_OK, returnIntent);
 
                         Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_four_Section_e.class);
 
@@ -1499,8 +1496,9 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
                         intent.putExtra("m1b_student_name", student_name);
                         intent.putExtra("rcons_user", RConsUtils.getUserName());
                         intent.putExtra("onbackclick", "HH_Screen_three_Section_e");
-                        startActivity(intent);
-                        finish();
+//                        startActivity(intent);
+//                        finish();
+                        startActivityForResult(intent, 88);
                         return;
                     }
 
@@ -1700,14 +1698,14 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
             return;
         }catch (Exception e) {
@@ -1738,14 +1736,14 @@ RadioButton hh_edtfield_q_2_rdg_op_18 = null;
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");

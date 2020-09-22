@@ -1736,14 +1736,14 @@ public class HH_Screen_fifteen_Section_e extends Activity {
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_fourteen_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_fourteen_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -1773,15 +1773,15 @@ public class HH_Screen_fifteen_Section_e extends Activity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
-
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_fourteen_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_fourteen_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
         }catch (Exception e) {
             EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");

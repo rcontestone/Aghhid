@@ -1940,8 +1940,9 @@ public class HH_Screen_three extends Activity {
 						intent.putExtra("studentid",student_id);
 						intent.putExtra("m1b_student_name",student_name);
 						intent.putExtra("rcons_user",RConsUtils.getUserName());
-						startActivity(intent);
-						finish();
+						startActivityForResult(intent, 88);
+//						startActivity(intent);
+//						finish();
 					}
 				}).setNegativeButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
 			public void onClick(DialogInterface dialog, int which){
@@ -2002,33 +2003,6 @@ public class HH_Screen_three extends Activity {
 
 		try {
 			DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
-//			if (HHIDConfigurations.getMappingId(appContext)==null &&  !HHIDConfigurations.getSignInUpShownOneTime(appContext)){
-//
-//				if(launchedActivityName.equalsIgnoreCase("signup_part_two")){
-//
-//					setContentView(R.layout.sign_up);
-//
-//					launchedActivityName = "signup";
-//					initializeReferenceOfViews();
-//				}else{
-//
-//					if (!HHIDConfigurations.getSignInUpShownOneTime(appContext)) {
-//						if ("HH_MainActivity".equalsIgnoreCase(calledFromView)) {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_MainActivity.class);
-//							startActivity(backIntent);
-//						} else {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, ChildRemoteMonitoringActivity.class);
-//							startActivity(backIntent);
-//						}
-//					}
-//					calledFromView="";
-//					selfClose =  true;
-//					finish();
-//				}
-//			}else{
-//				finish();
-//
-//			}
 
 
 
@@ -2037,13 +2011,16 @@ public class HH_Screen_three extends Activity {
 			selfClose =  true;
 
 
-			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
-			intent.putExtra("m1b_parent_mobile",phone_number);
-			intent.putExtra("scode",school_code);
-			intent.putExtra("studentid",student_id);
-			intent.putExtra("m1b_student_name",student_name);
-			intent.putExtra("rcons_user",RConsUtils.getUserName());
-			startActivity(intent);
+//			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
+//			intent.putExtra("m1b_parent_mobile",phone_number);
+//			intent.putExtra("scode",school_code);
+//			intent.putExtra("studentid",student_id);
+//			intent.putExtra("m1b_student_name",student_name);
+//			intent.putExtra("rcons_user",RConsUtils.getUserName());
+//			startActivity(intent);
+			Intent returnIntent = new Intent();
+			returnIntent.putExtra("isDataUpdated", false);
+			setResult(Activity.RESULT_OK, returnIntent);
 			finish();
 		}catch (Exception e) {
 			EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
@@ -2070,42 +2047,21 @@ public class HH_Screen_three extends Activity {
 		try {
 			DebugLog.console("[HH_Screen_One] Inside onBackPressed:" );
 
-//			if (HHIDConfigurations.getMappingId(appContext)==null){
-//
-//				if(launchedActivityName.equalsIgnoreCase("signup_part_two")){
-//
-//					setContentView(R.layout.sign_up);
-//					launchedActivityName = "signup";
-//					initializeReferenceOfViews();
-//				}else{
-//
-//					if(!HHIDConfigurations.getSignInUpShownOneTime(appContext)) {
-//						if ("HH_MainActivity".equalsIgnoreCase(calledFromView)) {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, HH_MainActivity.class);
-//							startActivity(backIntent);
-//						} else {
-//							Intent backIntent = MpcUtil.buildNewIntent(appContext, ParentSelectDeviceActivity.class);
-//							startActivity(backIntent);
-//						}
-//					}
-//					calledFromView="";
-//					selfClose =  true;
-//					finish();
-//
-//
-//				}
-//
-//			}
+
 			calledFromView="";
 			selfClose =  true;
 
-			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
-			intent.putExtra("m1b_parent_mobile",phone_number);
-			intent.putExtra("scode",school_code);
-			intent.putExtra("studentid",student_id);
-			intent.putExtra("m1b_student_name",student_name);
-			intent.putExtra("rcons_user",RConsUtils.getUserName());
-			startActivity(intent);
+//			Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_C_two.class);
+//			intent.putExtra("m1b_parent_mobile",phone_number);
+//			intent.putExtra("scode",school_code);
+//			intent.putExtra("studentid",student_id);
+//			intent.putExtra("m1b_student_name",student_name);
+//			intent.putExtra("rcons_user",RConsUtils.getUserName());
+//			startActivity(intent);
+
+			Intent returnIntent = new Intent();
+			returnIntent.putExtra("isDataUpdated", false);
+			setResult(Activity.RESULT_OK, returnIntent);
 			finish();
 
 		}catch (Exception e) {

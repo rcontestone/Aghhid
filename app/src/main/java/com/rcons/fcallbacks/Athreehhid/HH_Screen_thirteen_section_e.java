@@ -1468,9 +1468,7 @@ if(aghhid_e_1.contains("|"))
 //                        HHIDConfigurations.setPeshawarLastHHIDagainstPSUAndStructID(appContext, HHIDConfigurations.getPeshawarCurrentPSU(appContext) +"_hhid", CURRENT_HHID + "");
 
 
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("isDataUpdated", false);
-                    setResult(Activity.RESULT_OK, returnIntent);
+
 
                     Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_fourteen_Section_e.class);
 
@@ -1479,8 +1477,7 @@ if(aghhid_e_1.contains("|"))
                     intent.putExtra("studentid", student_id);
                     intent.putExtra("m1b_student_name", student_name);
                     intent.putExtra("rcons_user", RConsUtils.getUserName());
-                    startActivity(intent);
-                    finish();
+                    startActivityForResult(intent, 88);
                     return;
 
 
@@ -1680,14 +1677,14 @@ if(aghhid_e_1.contains("|"))
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_twelve_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_twelve_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
             return;
         }catch (Exception e) {
@@ -1717,14 +1714,14 @@ if(aghhid_e_1.contains("|"))
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
-            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_twelve_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", school_code);
-            intent.putExtra("studentid", student_id);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
+//            Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_twelve_Section_e.class);
+//
+//            intent.putExtra("m1b_parent_mobile", phone_number);
+//            intent.putExtra("scode", school_code);
+//            intent.putExtra("studentid", student_id);
+//            intent.putExtra("m1b_student_name", student_name);
+//            intent.putExtra("rcons_user", RConsUtils.getUserName());
+//            startActivity(intent);
             finish();
             return;
 
