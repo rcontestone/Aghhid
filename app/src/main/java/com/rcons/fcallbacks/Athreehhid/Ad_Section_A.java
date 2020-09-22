@@ -1033,9 +1033,9 @@ public class Ad_Section_A extends AppCompatActivity {
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-                                startActivity(intent);
-                                //startActivityForResult(intent, 88);
-                                finish();
+//                                startActivity(intent);
+                                startActivityForResult(intent, 88);
+//                                finish();
                             }
                         } else {
                             SaveData();
@@ -1061,9 +1061,9 @@ public class Ad_Section_A extends AppCompatActivity {
                             intent.putExtra("m1b_student_name", student_name);
                             intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-                            startActivity(intent);
-                            //startActivityForResult(intent, 88);
-                            finish();
+//                            startActivity(intent);
+                            startActivityForResult(intent, 88);
+//                            finish();
                         }
                     } else {
                         toastMessage("Please Enter Required Data");
