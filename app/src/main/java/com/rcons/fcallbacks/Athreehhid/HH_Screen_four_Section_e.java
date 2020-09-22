@@ -1728,7 +1728,9 @@ public class HH_Screen_four_Section_e extends Activity {
         // TODO Auto-generated method stub
         //super.onBackPressed();
         try {
-            DebugLog.console("[HH_Screen_One] Inside onBackPressed:" ); DebugLog.console("[HH_Screen_One] BackButton is pressed:" );   Intent returnIntent = new Intent();
+            DebugLog.console("[HH_Screen_One] Inside onBackPressed:" ); DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
+
+            Intent returnIntent = new Intent();
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
 
