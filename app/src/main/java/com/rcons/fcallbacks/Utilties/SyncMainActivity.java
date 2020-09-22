@@ -174,20 +174,20 @@ public class SyncMainActivity extends Activity {
 				}
 				//int remaning = Totalcount/2;
 
-				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_m_table = adapter.baseline_readSection_pq(aghhid_section_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table," WHERE student_id IN " + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_m_table = adapter.baseline_readSection_pq(aghhid_section_m_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
-				JSONArray aghhid_section_c_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_c_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray aghhid_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_d_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray aghhid_section_e_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_e_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_c_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_c_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_d_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_e_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_e_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 
-				JSONArray aghad_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghad_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghad_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghad_section_a_table," WHERE student_id IN " + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_ad_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_ad_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
-				JSONArray aghhid_section_f_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_f_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray aghhid_section_g_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_g_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-				JSONArray aghhid_section_h_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_h_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_f_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_f_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_g_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_g_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_h_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_h_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 
 				JSONArray AGHHID_SampleTable =adapter.aghhid_readReport(userName);//adapter.getSectionBData_ALL();
@@ -236,7 +236,7 @@ public class SyncMainActivity extends Activity {
 
 
 
-                    String url = "http://rconsdb.org/devteam/general/services/ffbcsr/bbaseline_secdata.php";
+                    String url = "http://rconsdb.org/devteam/general/services/ffbcsr/aghhid_secdata.php";
 
 					JSONObject dataUploaded = HttpsClient.sendNewHttpsPostRequest(SyncMainActivity.this,url,allSectiondata);
 					DebugLog.console("[MyTask1] inside doInBackground() "+dataUploaded.toString());
