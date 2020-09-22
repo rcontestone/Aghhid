@@ -1833,7 +1833,7 @@ public class HH_Screen_one_Section_h extends Activity {
                 if(h_1.trim().equalsIgnoreCase("3"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(2).getId());
 
-                if(h_1.trim().equalsIgnoreCase("-98"))
+                if(h_1.trim().equalsIgnoreCase("4"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(3).getId());
 
                 if(h_1.trim().equalsIgnoreCase("-99"))
