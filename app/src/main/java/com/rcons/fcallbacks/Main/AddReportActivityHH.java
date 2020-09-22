@@ -243,10 +243,14 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
         }
 
         if(m4_answered.length()>0){
-            if(m4_answered.equalsIgnoreCase("4")){
+            if(m4_answered.equalsIgnoreCase("5")){
                 m4_answered_other = m4_other.getText().toString();
 
-                if(m4_answered.length()>0){
+                if(m4_answered_other.length()>0){
+
+
+
+
 
                 }else{
                     Toast.makeText(AddReportActivityHH.this, "Please ADD M4 explaination.", Toast.LENGTH_LONG).show();
@@ -289,7 +293,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
         } else {
 
 
-            databaseAccess.aghh_updateCallStatus(AddReportActivityHH.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivityHH.this,m3_answered,m4_answered);
+            databaseAccess.aghh_updateCallStatus(AddReportActivityHH.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivityHH.this,m3_answered,m4_answered,m4_answered_other,"","","","");
             isDataUpdated = true;
             Toast.makeText(AddReportActivityHH.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();

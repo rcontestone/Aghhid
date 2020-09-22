@@ -1793,6 +1793,13 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
             cv.put("c1", c1.toUpperCase());
             cv.put("c1_given_number", c1_given_number.toUpperCase());
+
+            if(c1.equalsIgnoreCase("1")|| c1.equalsIgnoreCase("111") ){
+
+            }else{
+
+            }
+
 //            cv.put("hhid_q3", hhid_q3.toUpperCase());
 //            cv.put("hhid_q4", hhid_q4.toUpperCase());
 //            cv.put("hhid_q4_a", hhid_q4_a.toUpperCase());
@@ -4266,7 +4273,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public synchronized boolean hhid_insert_data_section_m(String village_id, String hhid, String phoneNumber, String survey_status) {
+    public synchronized boolean hhid_insert_data_section_m(String village_id, String hhid, String phoneNumber, String survey_status,String m3_answered, String m4_answered, String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber) {
         boolean updated =false;
         try {
 
@@ -4302,8 +4309,16 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("village_id", village_id.toUpperCase());
                 cv.put("hhid", hhid.toUpperCase());
                 cv.put("phone_number", phoneNumber.toUpperCase());
-                cv.put("try_no", hhid.toUpperCase());
+                cv.put("try_no", tryNumber.toUpperCase());
                 cv.put("m1", survey_status.toUpperCase());
+                cv.put("m2_day", e11_day);
+                cv.put("m2_month", e11_month.toUpperCase());
+                cv.put("m2_hh", e11_hh.toUpperCase());
+                cv.put("m2_mm", e11_mm.toUpperCase());
+                cv.put("m3", m3_answered.toUpperCase());
+                cv.put("m4", m4_answered.toUpperCase());
+                cv.put("m4_other", m4_answered_other.toUpperCase());
+
                 cv.put("build_no", BuildConfig.VERSION_NAME);
                 cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14).toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());

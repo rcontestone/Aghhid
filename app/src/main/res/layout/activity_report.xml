@@ -96,7 +96,7 @@
                     android:id="@+id/code_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Completed Call"
+                    android:text="1. Completed HH And Adolescent Pending( مکمل ہوگیا، آپ کے وقت اور تعاون کا شکریہ)"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
                     android:visibility="visible" />
@@ -105,16 +105,18 @@
                     android:id="@+id/code_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2. Number Busy"
+                    android:text="2. Call Again and note time ( دوبارہ کال کریں، دوبارہ کال کےلئے کون سا وقت بہتر ہوگا(M02) میں نوٹ کریں )"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3. Refusal "
+                    android:text="3. InComplete/Partialy Complete survey ( نامکمل سروے۔ جوابدہندہ نے فون کاٹ دیا اور بار بار کال کرنے پر بھی جواب نہیں دیا)  "
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
                     android:visibility="visible" />
@@ -123,45 +125,55 @@
                     android:id="@+id/code_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="4. No Answer (Person does not pick up call)"
+                    android:text="4. No Answer/Busy/Power Off ( نمبر سے رابطہ ممکن نہیں یا بزی ٹون آرہی ہے )"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="5. Respondent Not Willing to Continue"
+                    android:text="5. Network/Battery Issue Note Down time and call again ( نیٹورک کا ایشو آرہا ہے/اسے بیٹری لو کا مسئلہ ہے اس لئے دوبارہ کال کر ل )"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="6. Invalid Number "
+                    android:text="6. Refusal ( کسی بھی سوال کا جواب دینے سے انکار کر دیا )"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="7. Wrong Person"
+                    android:text="7. Partially Refusal (  کچھ سوالات کا جواب دینے سے انکار کر دیا )"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="8. Number not responding "
+                    android:text="8. Survey Completed but girl not willing to answer  ( سروے مکمل ہوا، مگر بچی کا سروے نہیں ہوا(کیونکہ بچی نے اظہار رضامندی نہیں کیا ) "
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
 
                 <RadioButton
@@ -171,7 +183,9 @@
                     android:text="9. Powered Off"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:visibility="visible" />
+                    android:layout_marginTop="@dimen/_20sdp"
+
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/code_10_other"
@@ -180,6 +194,8 @@
                     android:text="10. Other…"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
                     android:visibility="visible" />
             </RadioGroup>
 
@@ -255,7 +271,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -293,6 +309,8 @@
                         android:paddingRight="8dp"
                         android:paddingBottom="8dp"
                         android:tag="1"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
                         android:text="@string/section_m_question_q3_option1"
                         android:textColor="#0E0308"
                         android:textSize="24sp" />
@@ -313,6 +331,8 @@
                         android:tag="2"
                         android:text="@string/section_m_question_q3_option2"
                         android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
                         android:textSize="24sp" />
 
                     <RadioButton
@@ -328,9 +348,11 @@
                         android:paddingTop="8dp"
                         android:paddingRight="8dp"
                         android:paddingBottom="8dp"
-                        android:tag="2"
+                        android:tag="3"
                         android:text="@string/section_m_question_q3_option3"
                         android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
                         android:textSize="24sp" />
 
                 </RadioGroup>
@@ -344,7 +366,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -384,6 +406,8 @@
                         android:tag="1"
                         android:text="@string/section_m_question_q4_option1"
                         android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
                         android:textSize="24sp" />
 
                     <RadioButton
@@ -402,6 +426,8 @@
                         android:tag="2"
                         android:text="@string/section_m_question_q4_option2"
                         android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
                         android:textSize="24sp" />
 
                     <RadioButton
@@ -420,6 +446,8 @@
                         android:tag="3"
                         android:text="@string/section_m_question_q4_option3"
                         android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
                         android:textSize="24sp" />
 
                     <RadioButton
@@ -436,6 +464,7 @@
                         android:paddingRight="8dp"
                         android:paddingBottom="8dp"
                         android:tag="4"
+                        android:onClick="setMigrationM4"
                         android:text="@string/section_m_question_q4_option4"
                         android:textColor="#0E0308"
                         android:textSize="24sp" />
@@ -453,6 +482,7 @@
                         android:paddingTop="8dp"
                         android:paddingRight="8dp"
                         android:paddingBottom="8dp"
+                        android:onClick="setMigrationM4"
                         android:tag="5"
                         android:text="@string/section_m_question_q4_option5"
                         android:textColor="#0E0308"
@@ -472,6 +502,186 @@
                     android:textSize="18sp"
                     android:visibility="visible" />
             </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/day_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/hh_edtfield_q_2_rdg"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_days"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/month_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/day_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_month"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/hour_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/month_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_hours"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/minutes_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/hour_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_mins"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
 
             <Button
                 android:id="@+id/save_report"

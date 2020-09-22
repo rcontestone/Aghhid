@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 
+import com.mubashar.dateandtime.DebugLog;
+import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
@@ -108,10 +111,27 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     RadioGroup rg_m3;
     RadioGroup rg_m4;
 
+    String m3_answered = "";
+    String m4_answered = "";
+    String m4_answered_other = "";
+
+    public Spinner spiiner_hour,spiiner_min,spiiner_day,spiiner_month;
+    String e11_day = "";
+    String e11_month = "";
+    String e11_hh = "";
+    String e11_mm = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+
+        spiiner_day = (Spinner) findViewById(R.id.spiiner_day);
+        spiiner_month = (Spinner) findViewById(R.id.spiiner_month);
+        spiiner_hour = (Spinner) findViewById(R.id.spiiner_hour);
+        spiiner_min = (Spinner) findViewById(R.id.spiiner_min);
+
 
         calldurationReason = "";
         databaseAccess = new DatabaseAdapter(AddReportActivity.this);
@@ -156,9 +176,42 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                 } else {
                     qm3_layout.setVisibility(View.GONE);
                     qm4_layout.setVisibility(View.GONE);
+                    m3_answered="";
+                    m4_answered="";
+                    m4_answered_other="";
                 }
             }
         });
+
+
+        code_2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spiiner_day.setVisibility(View.VISIBLE);
+                    spiiner_month.setVisibility(View.VISIBLE);
+                    spiiner_hour.setVisibility(View.VISIBLE);
+                    spiiner_min.setVisibility(View.VISIBLE);
+                } else {
+                    spiiner_day.setVisibility(View.GONE);
+                    spiiner_month.setVisibility(View.GONE);
+                    spiiner_hour.setVisibility(View.GONE);
+                    spiiner_min.setVisibility(View.GONE);
+
+                    spiiner_day.setSelection(0);
+                    spiiner_month.setSelection(0);
+                    spiiner_hour.setSelection(0);
+                    spiiner_min.setSelection(0);
+                     e11_day = "";
+                     e11_month = "";
+                     e11_hh = "";
+                     e11_mm = "";
+                }
+            }
+        });
+
+
+
         otherReasonLayout = findViewById(R.id.otherReasonLayout);
         callReasonLayout = findViewById(R.id.callReasonLayout);
         other = findViewById(R.id.other);
@@ -244,13 +297,26 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 //
 
 
+
+
+        boolean any_error_foud = checkForMandatoryOptions(surveyStatus);
+
+        if(any_error_foud){
+            DebugLog.console("[AddReportActivity] inside addReportData() any_error_foud after "+any_error_foud);
+            return;
+        }
+
+        DebugLog.console("[AddReportActivity] inside addReportData() any_error_foud after if ");
         if (selectedID == R.id.code_10_other) {
 
             NeedCallDialog(AddReportActivity.this, "Call Again", "Do you need to call again on this number ?", surveyStatus, reason, isAlternateFarmer);
         } else {
 
+            DebugLog.console("[AddReportActivity] inside addReportData() surveyStatus "+surveyStatus);
+           // databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this);
 
-            databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this);
+
+            databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this,m3_answered,m4_answered,m4_answered_other,e11_day,e11_month,e11_hh,e11_mm);
             isDataUpdated = true;
             Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();
@@ -260,6 +326,58 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
         }
 
+    }
+
+    private boolean checkForMandatoryOptions(String surveyStatus) {
+        boolean error = false;
+        try {
+
+            if(surveyStatus.equalsIgnoreCase("1")){
+
+                if(!(m3_answered.length()>0)){
+                    Toast.makeText(AddReportActivity.this, "Please select M3.", Toast.LENGTH_LONG).show();
+                    return error = true;
+                }
+
+                if(!(m4_answered.length()>0)){
+                    Toast.makeText(AddReportActivity.this, "Please select M4.", Toast.LENGTH_LONG).show();
+                    return error = true;
+                }
+
+                if(m4_answered.length()>0){
+                    if(m4_answered.equalsIgnoreCase("5")){
+                        m4_answered_other = m4_other.getText().toString();
+
+                        if(m4_answered_other.length()>0){
+
+                        }else{
+                            Toast.makeText(AddReportActivity.this, "Please ADD M4 explaination.", Toast.LENGTH_LONG).show();
+                            return error = true;
+                        }
+                    }
+                }
+
+            }else if (surveyStatus.equalsIgnoreCase("2")) {
+
+
+                if(spiiner_day.getSelectedItemPosition() == 0 || spiiner_month.getSelectedItemPosition() == 0|| spiiner_hour.getSelectedItemPosition() == 0|| spiiner_min.getSelectedItemPosition() == 0){
+
+                    Toast.makeText(AddReportActivity.this, "Please Select call time .", Toast.LENGTH_LONG).show();
+                    return error = true;
+                }else {
+                    e11_day=spiiner_day.getSelectedItem().toString();
+                    e11_month=spiiner_month.getSelectedItem().toString();
+                    e11_hh=spiiner_hour.getSelectedItem().toString();
+                    e11_mm=spiiner_min.getSelectedItem().toString();
+                }
+
+            }
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(AddReportActivity.this).writeLog("[AddReportActivity] inside checkForMandatoryOptions() Exception is :"+e.toString());
+            return error=true;
+        }
+        return  error;
     }
 
 
@@ -286,7 +404,8 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             public void onClick(View view) {
 
                 alertDialog.dismiss();
-                boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
+              //  boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
+                boolean callagain_flag_manual_set =  databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this,m3_answered,m4_answered,m4_answered_other,e11_day,e11_month,e11_hh,e11_mm);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -313,7 +432,11 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-                databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
+              //  databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
+                databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this,m3_answered,m4_answered,m4_answered_other,e11_day,e11_month,e11_hh,e11_mm);
+
+
+
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
                 Intent returnIntent = new Intent();
@@ -1256,4 +1379,18 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         }
     }
 
+
+
+
+    public void setMigrationM3(View view) {
+
+        m3_answered=view.getTag().toString();
+
+    }
+
+    public void setMigrationM4(View view) {
+
+        m4_answered=view.getTag().toString();
+
+    }
 }

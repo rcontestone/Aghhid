@@ -55,7 +55,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
-
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
     ////////////////////// Material Design Snack Bar  ///////////
 }
 

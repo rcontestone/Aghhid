@@ -2111,6 +2111,8 @@ public class HH_Screen_eleven_Section_e extends Activity {
         spiiner_hour.setVisibility(View.GONE);
         spiiner_min.setVisibility(View.GONE);
 
+        spiiner_day.setSelection(0);
+        spiiner_month.setSelection(0);
         spiiner_hour.setSelection(0);
         spiiner_min.setSelection(0);
 
