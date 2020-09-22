@@ -340,7 +340,7 @@ public class RConsUtils {
 
     public static int GetEnumState() {
 
-        int registrationState = AppController.Enum_appSharedPrefs.getInt(Enum_prefRegistrationState, 1);
+        int registrationState = AppController.Enum_appSharedPrefs.getInt(Enum_prefRegistrationState, 0);
         return registrationState;
     }
 

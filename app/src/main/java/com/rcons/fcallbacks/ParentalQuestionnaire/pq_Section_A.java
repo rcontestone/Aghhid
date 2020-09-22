@@ -621,6 +621,7 @@ public class pq_Section_A extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_b1_ID);
                         b1 = radioButton.getTag().toString();
                         if (b1.equalsIgnoreCase("1")) {
+                            edt_a4a.setText(student_name);
                             RConsUtils.hideView(qb1_layout, qa4a_layout);
                         } else if (b1.equalsIgnoreCase("3") || (b1.equalsIgnoreCase("-777"))) {
                             SaveData();
@@ -1028,7 +1029,7 @@ public class pq_Section_A extends AppCompatActivity {
                                 intent.putExtra("m1b_student_name", student_name);
                                 intent.putExtra("rcons_user", RConsUtils.getUserName());
 
-startActivity(intent);
+                                startActivity(intent);
                                 //startActivityForResult(intent, 88);
                                 finish();
                             }
@@ -1434,6 +1435,7 @@ startActivity(intent);
             }
 
             if (b2.equalsIgnoreCase("3") || b2.equalsIgnoreCase("-99") || b2.equalsIgnoreCase("-777")) {
+                a3 = "";
                 rg_a3.clearCheck();
                 a4_a = "";
                 edt_a4a.setText("");

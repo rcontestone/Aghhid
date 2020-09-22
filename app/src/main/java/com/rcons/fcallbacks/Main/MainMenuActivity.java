@@ -160,8 +160,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
         screensize();
         SetEnumState();
-       // tvTitle.setText("RconsUser " + userName + " & Enum " + enum_name);
-        tvTitle.setText("RconsUser " + userName);
+        tvTitle.setText("RconsUser " + userName + " & Enum " + enum_name);
+//        tvTitle.setText("RconsUser " + userName);
         btnSelectEnumName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -253,13 +253,12 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-              //  ShowExitMessage(MainMenuActivity.this, "Alert", "Are you sure you want to exit ?", true);
+                //  ShowExitMessage(MainMenuActivity.this, "Alert", "Are you sure you want to exit ?", true);
                 Intent intent = MpcUtil.buildNewIntent(MainMenuActivity.this, HH_Screen_One.class);
-                intent.putExtra("launchActivity","signup");
+                intent.putExtra("launchActivity", "signup");
                 startActivity(intent);
             }
         });
-
 
 
         btnSyncSectionData.setOnClickListener(new View.OnClickListener() {
@@ -287,7 +286,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               // adapter.CheckMissingColumnsList();
+                // adapter.CheckMissingColumnsList();
 
                 if (adapter.aghhid_getSampleDataCount() > 0) {
                     ShowErrorMessage(MainMenuActivity.this, "Alert", "Data  already Imported.All data changes will be lost. Do you want to do it again?", true);
@@ -295,10 +294,9 @@ public class MainMenuActivity extends AppCompatActivity {
                     if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
 
 
-                       // FetchData("Fetching Data...");
+                        // FetchData("Fetching Data...");
                         Intent intent = new Intent(MainMenuActivity.this, StartUpMainActivity.class);
                         startActivity(intent);
-
 
 
                     } else {
@@ -406,7 +404,7 @@ public class MainMenuActivity extends AppCompatActivity {
         Button btnCancel = dialogView.findViewById(R.id.btnCancel);
         Button btnRconsUser = dialogView.findViewById(R.id.btnRconsUser);
         Button btnenum = dialogView.findViewById(R.id.btnenum);
-
+        btnenum.setVisibility(View.VISIBLE);
         final AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCancelable(false);
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -416,6 +414,7 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 alertDialog.dismiss();
                 RConsUtils.LogoutUser();
+                RConsUtils.LogoutEnum();
                 Intent intent = new Intent(MainMenuActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -459,7 +458,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         completedCallCounter = adapter.aghhid_getCompletedCallCounter(userName);
         MubLog.cpnsoleLog("FetchCallsCounters completedCallCounter" + completedCallCounter);
-
 
 
         SyncCompleteQuestionnaireCounter = adapter.baseline_GetSyncCompleteQuestionnaireCounter(userName);
@@ -604,7 +602,7 @@ public class MainMenuActivity extends AppCompatActivity {
                                 // MubLog.cpnsoleLog("onResponse"+s);
                                 //JSONArray result = resultObject.getJSONArray("FarmerCallbackData");
                                 //s =s.replaceAll("NULL","\"\"");
-                              //  s =s.replaceAll("null","\"\"");
+                                //  s =s.replaceAll("null","\"\"");
 
                                 JSONArray result = new JSONArray(s);
                                 MubLog.cpnsoleLog("onResponse" + result.length());
@@ -614,7 +612,7 @@ public class MainMenuActivity extends AppCompatActivity {
                                     for (int x = 0; x < result.length(); x++) {
                                         JSONObject jsonObject = result.getJSONObject(x);
 
-                                        jsonObject = new JSONObject(  jsonObject.toString().replaceAll("null","\"\""));
+                                        jsonObject = new JSONObject(jsonObject.toString().replaceAll("null", "\"\""));
                                         String id = jsonObject.getString("id");
                                         String farmer_id = jsonObject.getString("farmer_id");
                                         String region = jsonObject.getString("region");
@@ -680,16 +678,16 @@ public class MainMenuActivity extends AppCompatActivity {
                                         String call_duration_reason = jsonObject.getString("call_duration_reason");
                                         //String uploaded_time = jsonObject.getString("uploaded_time");
 
-                                        String survey_status_org_call_on=    jsonObject.getString("survey_status_org_call_on");
-                                        String survey_status_org =   jsonObject.getString("survey_status_org");
-                                        String survey_status_org_reason =   jsonObject.getString("survey_status_org_reason");
+                                        String survey_status_org_call_on = jsonObject.getString("survey_status_org_call_on");
+                                        String survey_status_org = jsonObject.getString("survey_status_org");
+                                        String survey_status_org_reason = jsonObject.getString("survey_status_org_reason");
 
-                                        String survey_status_alt_call_on =  jsonObject.getString("survey_status_alt_call_on");
-                                        String survey_status_alt =  jsonObject.getString("survey_status_alt");
-                                        String survey_status_alt_reason =  jsonObject.getString("survey_status_alt_reason");
+                                        String survey_status_alt_call_on = jsonObject.getString("survey_status_alt_call_on");
+                                        String survey_status_alt = jsonObject.getString("survey_status_alt");
+                                        String survey_status_alt_reason = jsonObject.getString("survey_status_alt_reason");
 
 
-                                        String enum_code =jsonObject.getString("enum_code");
+                                        String enum_code = jsonObject.getString("enum_code");
                                         String enum_name = jsonObject.getString("enum_name");
                                         String build_no = jsonObject.getString("build_no");
 
@@ -761,22 +759,21 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
                                         values.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
-                                        values.put("call_duration_reason",call_duration_reason);
+                                        values.put("call_duration_reason", call_duration_reason);
                                         // values.put("uploaded_time",uploaded_time);
 
 
+                                        values.put("survey_status_org_call_on", survey_status_org_call_on);
+                                        values.put("survey_status_org", survey_status_org);
+                                        values.put("survey_status_org_reason", survey_status_org_reason);
+                                        values.put("survey_status_alt_call_on", survey_status_alt_call_on);
+                                        values.put("survey_status_alt", survey_status_alt);
+                                        values.put("survey_status_alt_reason", survey_status_alt_reason);
 
-                                        values.put("survey_status_org_call_on",survey_status_org_call_on);
-                                        values.put("survey_status_org",survey_status_org);
-                                        values.put("survey_status_org_reason",survey_status_org_reason);
-                                        values.put("survey_status_alt_call_on",survey_status_alt_call_on);
-                                        values.put("survey_status_alt",survey_status_alt);
-                                        values.put("survey_status_alt_reason",survey_status_alt_reason);
 
-
-                                        values.put("enum_code",enum_code);
-                                        values.put("enum_name",enum_name);
-                                        values.put("build_no",build_no);
+                                        values.put("enum_code", enum_code);
+                                        values.put("enum_name", enum_name);
+                                        values.put("build_no", build_no);
 
 
                                         adapter.AddFarmerData(values);
@@ -957,7 +954,7 @@ public class MainMenuActivity extends AppCompatActivity {
                         values.put("insert_or_updated_in_phone_at", cursor.getString(cursor.getColumnIndex("insert_or_updated_in_phone_at")));
                         values.put("call_duration_reason", cursor.getString(cursor.getColumnIndex("call_duration_reason")));
 
-                        values.put("build_no",cursor.getString( cursor.getColumnIndex("build_no")));
+                        values.put("build_no", cursor.getString(cursor.getColumnIndex("build_no")));
                         values.put("uploaded_time", uploaded_time);
 
                         values.put("enum_code", cursor.getString(cursor.getColumnIndex("enum_code")));
@@ -1200,11 +1197,6 @@ public class MainMenuActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(sr);
 
 
-
-
-
-
-
     }
 
     void blinkng_logo() {
@@ -1325,7 +1317,7 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
-   // private void exportDataonSdcard(JSONArray dataToUploadB, JSONArray dataToUploadC, JSONArray dataToUploadD, JSONArray dataToUploadE, JSONArray readSectionFTable1ForDataSync, JSONArray readSectionFTable2ForDataSync, JSONArray readSectionFTable3ForDataSync, JSONArray readSectionFTable4ForDataSync, JSONArray readSectionFTable5ForDataSync, JSONArray readSectionFTable6ForDataSync, JSONArray readSectionGForDataSync, JSONArray readSectionGBForDataSync, JSONArray readSectionHForDataSync, JSONArray readSectionOneForDataSync) {
+    // private void exportDataonSdcard(JSONArray dataToUploadB, JSONArray dataToUploadC, JSONArray dataToUploadD, JSONArray dataToUploadE, JSONArray readSectionFTable1ForDataSync, JSONArray readSectionFTable2ForDataSync, JSONArray readSectionFTable3ForDataSync, JSONArray readSectionFTable4ForDataSync, JSONArray readSectionFTable5ForDataSync, JSONArray readSectionFTable6ForDataSync, JSONArray readSectionGForDataSync, JSONArray readSectionGBForDataSync, JSONArray readSectionHForDataSync, JSONArray readSectionOneForDataSync) {
     private void exportDataonSdcard(JSONArray dataToUploadA) {
         try {
 
@@ -1497,7 +1489,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
                 if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))//check if sd card is mounted
                 {
-                  //  exportDataonSdcard(dataToUploadB, dataToUploadC, dataToUploadD, dataToUploadE, readSectionFTable1ForDataSync, readSectionFTable2ForDataSync, readSectionFTable3ForDataSync, readSectionFTable4ForDataSync, readSectionFTable5ForDataSync, readSectionFTable6ForDataSync, readSectionGForDataSync, readSectionGBForDataSync, readSectionHForDataSync, readSectionOneForDataSync);
+                    //  exportDataonSdcard(dataToUploadB, dataToUploadC, dataToUploadD, dataToUploadE, readSectionFTable1ForDataSync, readSectionFTable2ForDataSync, readSectionFTable3ForDataSync, readSectionFTable4ForDataSync, readSectionFTable5ForDataSync, readSectionFTable6ForDataSync, readSectionGForDataSync, readSectionGBForDataSync, readSectionHForDataSync, readSectionOneForDataSync);
                     exportDataonSdcard(dataToUploadA);
 
                     //   adapter.deleteAllSectionData(userName,notinquerry);
@@ -1767,17 +1759,16 @@ public class MainMenuActivity extends AppCompatActivity {
         try {
             //updating Question table question no 37
             MubLog.cpnsoleLog("inside onStart");
-           // databaseAccess.update_Question_table_q_no_37();
+            // databaseAccess.update_Question_table_q_no_37();
 
             TextView tv_selectvillage_now = findViewById(R.id.tv_selectvillage_now);
-            tv_selectvillage_now.setText("Select Village Code: \r\n Current Selected Code : "+ HHIDConfigurations.getPeshawarCurrentPSU(MainMenuActivity.this));
+            tv_selectvillage_now.setText("Select Village Code: \r\n Current Selected Code : " + HHIDConfigurations.getPeshawarCurrentPSU(MainMenuActivity.this));
 
-            String  enum_code = "ALTER TABLE `"+DatabaseAdapter.FarmerCallBackTable+"` ADD `enum_code` TEXT DEFAULT '' ";
+            String enum_code = "ALTER TABLE `" + DatabaseAdapter.FarmerCallBackTable + "` ADD `enum_code` TEXT DEFAULT '' ";
             //databaseAccess. createMissingColumn(enum_code);
 
-            String  enum_name = "ALTER TABLE `"+DatabaseAdapter.FarmerCallBackTable+"` ADD `enum_name` TEXT DEFAULT '' ";
+            String enum_name = "ALTER TABLE `" + DatabaseAdapter.FarmerCallBackTable + "` ADD `enum_name` TEXT DEFAULT '' ";
             //databaseAccess. createMissingColumn(enum_name);
-
 
 
         } catch (Exception e) {
@@ -1803,10 +1794,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
 
 
     void SetEnumState() {

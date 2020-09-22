@@ -649,7 +649,7 @@ public class Ad_Section_G extends AppCompatActivity {
                             intent.putExtra("school_code", school_code);
                             intent.putExtra("student_id", student_id);
                             startActivityForResult(intent, 88);
-                        } else if (g_urdu_1.equalsIgnoreCase("-98") || g_urdu_1.equalsIgnoreCase("2")) {
+                        } else if (g_urdu_1.equalsIgnoreCase("-98") || g_urdu_1.equalsIgnoreCase("-88") || g_urdu_1.equalsIgnoreCase("2")) {
                             rg_g_urdu_2_a.clearCheck();
                             rg_g_urdu_2_b.clearCheck();
                             g_urdu_2_a = "";
