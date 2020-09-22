@@ -407,11 +407,11 @@
                                 android:layout_marginTop="@dimen/_15sdp"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:gravity="right"
-                                android:text="@string/section_e_question_q2_option98"
+                                android:text="@string/ad_section_f_question_q1_option4"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
-                                android:visibility="gone"
+
                                 android:clickable="true"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
