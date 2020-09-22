@@ -38,6 +38,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import static com.rcons.fcallbacks.Helper.DatabaseAdapter.aghhid_section_m_table;
+
 
 public class SyncMainActivity extends Activity {
 
@@ -173,7 +175,7 @@ public class SyncMainActivity extends Activity {
 				//int remaning = Totalcount/2;
 
 				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray pq_section_m_table = adapter.baseline_readSection_pq(aghhid_section_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 				JSONArray aghhid_section_c_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_c_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_d_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
@@ -202,8 +204,7 @@ public class SyncMainActivity extends Activity {
 				if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))//check if sd card is mounted
 				{
 					//  exportDataonSdcard(dataToUploadB, dataToUploadC, dataToUploadD, dataToUploadE, readSectionFTable1ForDataSync, readSectionFTable2ForDataSync, readSectionFTable3ForDataSync, readSectionFTable4ForDataSync, readSectionFTable5ForDataSync, readSectionFTable6ForDataSync, readSectionGForDataSync, readSectionGBForDataSync, readSectionHForDataSync, readSectionOneForDataSync);
-					exportDataonSdcard(pq_section_a_table,aghad_section_a_table,aghhid_section_c_table,aghhid_section_d_table,aghhid_section_e_table,aghhid_section_f_table,aghhid_section_g_table,aghhid_section_h_table,AGHHID_SampleTable);
-
+                    exportDataonSdcard(pq_section_a_table,aghhid_section_c_table,aghhid_section_d_table,aghhid_section_e_table,pq_section_m_table,aghad_section_a_table,aghhid_section_f_table,aghhid_section_g_table,aghhid_section_h_table,aghhid_section_ad_m_table,AGHHID_SampleTable);
 					//   adapter.deleteAllSectionData(userName,notinquerry);
 					publishProgress(Totalcount, Totalcount);
 
@@ -217,25 +218,25 @@ public class SyncMainActivity extends Activity {
 				if (RConsUtils.isNetworkAvailable(SyncMainActivity.this)) {
 
 					JSONObject allSectiondata = new JSONObject();
-					allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-					allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
-					allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
-					allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
+                    allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
+                    allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
+                    allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
+                    allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
+                    allSectiondata.put(aghhid_section_m_table, pq_section_m_table);
+
+
+                    allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
+                    allSectiondata.put("aghhid_ad_section_c", aghhid_section_f_table);
+                    allSectiondata.put("aghhid_ad_section_d", aghhid_section_g_table);
+                    allSectiondata.put("aghhid_ad_section_f", aghhid_section_h_table);
+                    allSectiondata.put("aghhid_ad_section_m", aghhid_section_ad_m_table);
+
+
+                    allSectiondata.put(DatabaseAdapter.AGHHID_SampleTable, AGHHID_SampleTable);
 
 
 
-					allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
-
-
-
-
-
-					allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
-					allSectiondata.put(DatabaseAdapter.aghhid_section_g_table, aghhid_section_g_table);
-					allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
-					allSectiondata.put(DatabaseAdapter.AGHHID_SampleTable, AGHHID_SampleTable);
-
-					String url = "http://rconsdb.org/devteam/general/services/ffbcsr/bbaseline_secdata.php";
+                    String url = "http://rconsdb.org/devteam/general/services/ffbcsr/bbaseline_secdata.php";
 
 					JSONObject dataUploaded = HttpsClient.sendNewHttpsPostRequest(SyncMainActivity.this,url,allSectiondata);
 					DebugLog.console("[MyTask1] inside doInBackground() "+dataUploaded.toString());
@@ -735,7 +736,7 @@ public class SyncMainActivity extends Activity {
 		}
 	}
 
-	private void exportDataonSdcard(JSONArray pq_section_a_table,JSONArray aghad_section_a_table,JSONArray aghhid_section_c_table, JSONArray aghhid_section_d_table, JSONArray aghhid_section_e_table, JSONArray aghhid_section_f_table, JSONArray aghhid_section_g_table, JSONArray aghhid_section_h_table, JSONArray baseLineSampleTable) {
+	private void exportDataonSdcard(JSONArray pq_section_a_table, JSONArray aghhid_section_c_table, JSONArray aghhid_section_d_table, JSONArray aghhid_section_e_table, JSONArray pq_section_m_table, JSONArray aghad_section_a_table, JSONArray aghhid_section_f_table, JSONArray aghhid_section_g_table, JSONArray aghhid_section_h_table, JSONArray aghhid_section_ad_m_table, JSONArray AGHHID_SampleTable){
 		try {
 
 			JSONObject allSectiondata = new JSONObject();
@@ -743,20 +744,24 @@ public class SyncMainActivity extends Activity {
 
 
 				allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-				allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
-
 				allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
-				allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
-				allSectiondata.put(DatabaseAdapter.aghhid_section_g_table, aghhid_section_g_table);
-				allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
-
-				allSectiondata.put(DatabaseAdapter.BaseLineSampleTable, baseLineSampleTable);
+				allSectiondata.put(aghhid_section_m_table, pq_section_m_table);
 
 
+                allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
+                allSectiondata.put("aghhid_ad_section_c", aghhid_section_f_table);
+                allSectiondata.put("aghhid_ad_section_d", aghhid_section_g_table);
+                allSectiondata.put("aghhid_ad_section_f", aghhid_section_h_table);
+                allSectiondata.put("aghhid_ad_section_m", aghhid_section_ad_m_table);
 
-				String fileName = com.mubashar.dateandtime.filemanager.FileManager.createFileName(SyncMainActivity.this.getApplicationContext(), "baseline_Section_and_Report", "Rcons");
+
+                allSectiondata.put(DatabaseAdapter.AGHHID_SampleTable, AGHHID_SampleTable);
+
+
+
+				String fileName = com.mubashar.dateandtime.filemanager.FileManager.createFileName(SyncMainActivity.this.getApplicationContext(), "aghhid_Section_and_Report", "Rcons");
 
 
 				//  File directory = new File(MainMenuActivity.this.getApplicationContext().getExternalFilesDir(null),MainMenuActivity.this.getApplicationContext().getString(R.string.app_name));
