@@ -60,7 +60,7 @@
                         android:layout_centerInParent="true"
                         android:ellipsize="end"
                         android:gravity="center"
-                        android:text="Welcome to AG HHID Survey"
+                        android:text=" AG HHID Survey (Section M)"
                         android:textColor="@color/color_white"
                         android:textStyle="normal"
                         tools:ignore="MissingPrefix" />
@@ -96,73 +96,76 @@
                     android:id="@+id/code_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Completed HH And Adolescent Pending( مکمل ہوگیا، آپ کے وقت اور تعاون کا شکریہ)"
+                    android:text="1.مکمل ہوگیا، آپ کے وقت اور تعاون کا شکریہ "
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2. Call Again and note time ( دوبارہ کال کریں، دوبارہ کال کےلئے کون سا وقت بہتر ہوگا(M02) میں نوٹ کریں )"
+                    android:text="2. دوبارہ کال کریں، دوبارہ کال کےلئے کون سا وقت بہتر ہوگا(M02) میں نوٹ کریں"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3. InComplete/Partialy Complete survey ( نامکمل سروے۔ جوابدہندہ نے فون کاٹ دیا اور بار بار کال کرنے پر بھی جواب نہیں دیا)  "
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="3. نامکمل سروے۔ جوابدہندہ نے فون کاٹ دیا اور بار بار کال کرنے پر بھی جواب نہیں دیا "
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="4. No Answer/Busy/Power Off ( نمبر سے رابطہ ممکن نہیں یا بزی ٹون آرہی ہے )"
+                    android:text="4. نمبر سے رابطہ ممکن نہیں یا بزی ٹون آرہی ہے"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
-
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="5. Network/Battery Issue Note Down time and call again ( نیٹورک کا ایشو آرہا ہے/اسے بیٹری لو کا مسئلہ ہے اس لئے دوبارہ کال کر ل )"
+                    android:text="5. جوابدہندہ کو نیٹورک کا ایشو آرہا ہے اسے بیٹری لو کا مسئلہ ہے اس لئے دوبارہ کال کر لیں(M02) میں نوٹ کریں "
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
-
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="6. Refusal ( کسی بھی سوال کا جواب دینے سے انکار کر دیا )"
+                    android:text="6. کسی بھی سوال کا جواب دینے سے انکار کر دیا"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
-
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
                     android:id="@+id/code_7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="7. Partially Refusal (  کچھ سوالات کا جواب دینے سے انکار کر دیا )"
+                    android:text="7. کچھ سوالات کا جواب دینے سے انکار کر دیا "
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
-
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
                     android:visibility="visible" />
 
                 <RadioButton
@@ -172,9 +175,9 @@
                     android:text="8. Survey Completed but girl not willing to answer  ( سروے مکمل ہوا، مگر بچی کا سروے نہیں ہوا(کیونکہ بچی نے اظہار رضامندی نہیں کیا ) "
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
 
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/code_9"
@@ -196,7 +199,7 @@
                     android:textSize="18sp"
                     android:layout_marginTop="@dimen/_10sdp"
 
-                    android:visibility="visible" />
+                    android:visibility="gone" />
             </RadioGroup>
 
 

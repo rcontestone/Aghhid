@@ -193,6 +193,18 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                     spiiner_hour.setVisibility(View.VISIBLE);
                     spiiner_min.setVisibility(View.VISIBLE);
                 } else {
+
+                }
+            }
+        });
+
+
+
+        code_3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
                     spiiner_day.setVisibility(View.GONE);
                     spiiner_month.setVisibility(View.GONE);
                     spiiner_hour.setVisibility(View.GONE);
@@ -202,15 +214,102 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                     spiiner_month.setSelection(0);
                     spiiner_hour.setSelection(0);
                     spiiner_min.setSelection(0);
-                     e11_day = "";
-                     e11_month = "";
-                     e11_hh = "";
-                     e11_mm = "";
+                    e11_day = "";
+                    e11_month = "";
+                    e11_hh = "";
+                    e11_mm = "";
                 }
             }
         });
 
 
+
+        code_4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    spiiner_day.setVisibility(View.GONE);
+                    spiiner_month.setVisibility(View.GONE);
+                    spiiner_hour.setVisibility(View.GONE);
+                    spiiner_min.setVisibility(View.GONE);
+
+                    spiiner_day.setSelection(0);
+                    spiiner_month.setSelection(0);
+                    spiiner_hour.setSelection(0);
+                    spiiner_min.setSelection(0);
+                    e11_day = "";
+                    e11_month = "";
+                    e11_hh = "";
+                    e11_mm = "";
+                }
+            }
+        });
+
+
+
+
+        code_5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    spiiner_day.setVisibility(View.VISIBLE);
+                    spiiner_month.setVisibility(View.VISIBLE);
+                    spiiner_hour.setVisibility(View.VISIBLE);
+                    spiiner_min.setVisibility(View.VISIBLE);
+                } else {
+
+                }
+            }
+        });
+
+
+
+        code_6.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    spiiner_day.setVisibility(View.GONE);
+                    spiiner_month.setVisibility(View.GONE);
+                    spiiner_hour.setVisibility(View.GONE);
+                    spiiner_min.setVisibility(View.GONE);
+
+                    spiiner_day.setSelection(0);
+                    spiiner_month.setSelection(0);
+                    spiiner_hour.setSelection(0);
+                    spiiner_min.setSelection(0);
+                    e11_day = "";
+                    e11_month = "";
+                    e11_hh = "";
+                    e11_mm = "";
+                }
+            }
+        });
+
+
+
+        code_7.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    spiiner_day.setVisibility(View.GONE);
+                    spiiner_month.setVisibility(View.GONE);
+                    spiiner_hour.setVisibility(View.GONE);
+                    spiiner_min.setVisibility(View.GONE);
+
+                    spiiner_day.setSelection(0);
+                    spiiner_month.setSelection(0);
+                    spiiner_hour.setSelection(0);
+                    spiiner_min.setSelection(0);
+                    e11_day = "";
+                    e11_month = "";
+                    e11_hh = "";
+                    e11_mm = "";
+                }
+            }
+        });
 
         otherReasonLayout = findViewById(R.id.otherReasonLayout);
         callReasonLayout = findViewById(R.id.callReasonLayout);
@@ -357,7 +456,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                     }
                 }
 
-            }else if (surveyStatus.equalsIgnoreCase("2")) {
+            }else if (surveyStatus.equalsIgnoreCase("2") || surveyStatus.equalsIgnoreCase("5")) {
 
 
                 if(spiiner_day.getSelectedItemPosition() == 0 || spiiner_month.getSelectedItemPosition() == 0|| spiiner_hour.getSelectedItemPosition() == 0|| spiiner_min.getSelectedItemPosition() == 0){

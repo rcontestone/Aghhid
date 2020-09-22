@@ -49,14 +49,13 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     ///////////
 
+    ////////////////////// Material Design Snack Bar  ///////////
     implementation project(path: ':searchablespinnerlibrary')
     implementation project(":mubdateandtime-debug")
     implementation project(":mubchathead")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
-    ////////////////////// Material Design Snack Bar  ///////////
 }
 
 repositories {
