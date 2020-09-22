@@ -173,18 +173,17 @@ public class SyncMainActivity extends Activity {
 				//int remaning = Totalcount/2;
 
 				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a2_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a2_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a3_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a3_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray pq_section_a4_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a4_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-
-
+				JSONArray pq_section_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 				JSONArray aghhid_section_c_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_c_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_d_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_d_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_e_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_e_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
+
+
+				JSONArray aghad_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghad_section_a_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_ad_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_ad_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+
 				JSONArray aghhid_section_f_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_f_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
-
-
 				JSONArray aghhid_section_g_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_g_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_h_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_h_table,whereQuery + subQuery);//adapter.getSectionBData_ALL();
 
@@ -203,7 +202,7 @@ public class SyncMainActivity extends Activity {
 				if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))//check if sd card is mounted
 				{
 					//  exportDataonSdcard(dataToUploadB, dataToUploadC, dataToUploadD, dataToUploadE, readSectionFTable1ForDataSync, readSectionFTable2ForDataSync, readSectionFTable3ForDataSync, readSectionFTable4ForDataSync, readSectionFTable5ForDataSync, readSectionFTable6ForDataSync, readSectionGForDataSync, readSectionGBForDataSync, readSectionHForDataSync, readSectionOneForDataSync);
-					exportDataonSdcard(pq_section_a_table,pq_section_a2_table,pq_section_a3_table,pq_section_a4_table,aghhid_section_c_table,aghhid_section_d_table,aghhid_section_e_table,aghhid_section_f_table,aghhid_section_g_table,aghhid_section_h_table,AGHHID_SampleTable);
+					exportDataonSdcard(pq_section_a_table,aghad_section_a_table,aghhid_section_c_table,aghhid_section_d_table,aghhid_section_e_table,aghhid_section_f_table,aghhid_section_g_table,aghhid_section_h_table,AGHHID_SampleTable);
 
 					//   adapter.deleteAllSectionData(userName,notinquerry);
 					publishProgress(Totalcount, Totalcount);
@@ -219,13 +218,16 @@ public class SyncMainActivity extends Activity {
 
 					JSONObject allSectiondata = new JSONObject();
 					allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-					//allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
-					//allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
-					//allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
-
 					allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
 					allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
 					allSectiondata.put(DatabaseAdapter.aghhid_section_e_table, aghhid_section_e_table);
+
+
+
+					allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
+
+
+
 
 
 					allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
@@ -733,7 +735,7 @@ public class SyncMainActivity extends Activity {
 		}
 	}
 
-	private void exportDataonSdcard(JSONArray pq_section_a_table,JSONArray pq_section_a2_table,JSONArray pq_section_a3_table,JSONArray pq_section_a4_table ,JSONArray aghhid_section_c_table, JSONArray aghhid_section_d_table, JSONArray aghhid_section_e_table, JSONArray aghhid_section_f_table, JSONArray aghhid_section_g_table, JSONArray aghhid_section_h_table, JSONArray baseLineSampleTable) {
+	private void exportDataonSdcard(JSONArray pq_section_a_table,JSONArray aghad_section_a_table,JSONArray aghhid_section_c_table, JSONArray aghhid_section_d_table, JSONArray aghhid_section_e_table, JSONArray aghhid_section_f_table, JSONArray aghhid_section_g_table, JSONArray aghhid_section_h_table, JSONArray baseLineSampleTable) {
 		try {
 
 			JSONObject allSectiondata = new JSONObject();
@@ -741,9 +743,7 @@ public class SyncMainActivity extends Activity {
 
 
 				allSectiondata.put(DatabaseAdapter.pq_section_a_table, pq_section_a_table);
-				//allSectiondata.put(DatabaseAdapter.pq_section_a2_table, pq_section_a2_table);
-				//allSectiondata.put(DatabaseAdapter.pq_section_a3_table, pq_section_a3_table);
-				//allSectiondata.put(DatabaseAdapter.pq_section_a4_table, pq_section_a4_table);
+				allSectiondata.put(DatabaseAdapter.aghad_section_a_table, aghad_section_a_table);
 
 				allSectiondata.put(DatabaseAdapter.aghhid_section_c_table, aghhid_section_c_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_d_table, aghhid_section_d_table);
@@ -751,6 +751,7 @@ public class SyncMainActivity extends Activity {
 				allSectiondata.put(DatabaseAdapter.aghhid_section_f_table, aghhid_section_f_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_g_table, aghhid_section_g_table);
 				allSectiondata.put(DatabaseAdapter.aghhid_section_h_table, aghhid_section_h_table);
+
 				allSectiondata.put(DatabaseAdapter.BaseLineSampleTable, baseLineSampleTable);
 
 
