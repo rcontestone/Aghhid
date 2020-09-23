@@ -44,6 +44,7 @@ import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -3506,22 +3507,15 @@ public class HH_Screen_three extends Activity {
 			if (network.equalsIgnoreCase("Jazz")) {
 				phoneNumber = "660" + phoneNumber;
 			} else if (network.equalsIgnoreCase("Telenor")) {
-				//     phoneNumber = "880" + phoneNumber;
+				phoneNumber = "880" + phoneNumber;
 			} else {
 				phoneNumber = "770" + phoneNumber;
 			}
 		} else {
 
 		}
-		//callIntent.setData(Uri.parse("tel:" + "03006982661"));
-
-//        SaveInterviewStart_time();
-		if (network.equalsIgnoreCase("Telenor")) {
-			ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
-		} else {
-			callIntent.setData(Uri.parse("tel:" + phoneNumber));
-			startActivity(callIntent);
-		}
+		callIntent.setData(Uri.parse("tel:" + phoneNumber));
+		startActivity(callIntent);
 
 
 	}
@@ -3590,6 +3584,27 @@ public class HH_Screen_three extends Activity {
 		});
 	}
 
+	public void launchReport(View v) {
+
+		try {
+
+
+			Intent intent = new Intent(HH_Screen_three.this, AddReportActivity.class);
+
+			intent.putExtra("emp_id", emp_id);
+			intent.putExtra("order_id", order_id);
+			intent.putExtra("id", id);
+			intent.putExtra("farmer_cellphone", phone_number);
+			intent.putExtra("school_code", school_code);
+			intent.putExtra("student_id", student_id);
+			startActivityForResult(intent, 88);
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_three] inside launchReport() Exception is :" + e.toString());
+		}
+
+	}
 
 
 }

@@ -165,6 +165,8 @@
                             android:id="@+id/btn_AddReportQuestionnaire"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="launchReport"
+                            android:clickable="true"
                             android:layout_toLeftOf="@id/btn_RedialCall"
                             android:contentDescription="report"
                             android:src="@drawable/img_register"

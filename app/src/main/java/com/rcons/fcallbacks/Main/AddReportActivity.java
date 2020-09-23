@@ -1385,9 +1385,6 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             code_5.setVisibility(View.GONE);
             code_6.setVisibility(View.GONE);
             code_7.setVisibility(View.GONE);
-            code_8.setVisibility(View.GONE);
-            code_9.setVisibility(View.GONE);
-            code_10_other.setVisibility(View.GONE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.GONE);
@@ -1402,9 +1399,6 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             code_5.setVisibility(View.VISIBLE);
             code_6.setVisibility(View.GONE);
             code_7.setVisibility(View.GONE);
-            code_8.setVisibility(View.GONE);
-            code_9.setVisibility(View.GONE);
-            code_10_other.setVisibility(View.GONE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.VISIBLE);
@@ -1419,9 +1413,6 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             code_5.setVisibility(View.VISIBLE);
             code_6.setVisibility(View.VISIBLE);
             code_7.setVisibility(View.VISIBLE);
-            code_8.setVisibility(View.VISIBLE);
-            code_9.setVisibility(View.VISIBLE);
-            code_10_other.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.VISIBLE);

@@ -31,6 +31,7 @@ import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -1807,6 +1808,28 @@ public class HH_SECTION_E_ONE extends Activity {
 		}).show();
 	}
 
+
+	public void launchReport(View v) {
+
+		try {
+
+
+			Intent intent = new Intent(HH_SECTION_E_ONE.this, AddReportActivity.class);
+
+			intent.putExtra("emp_id", emp_id);
+			intent.putExtra("order_id", order_id);
+			intent.putExtra("id", id);
+			intent.putExtra("farmer_cellphone", phone_number);
+			intent.putExtra("school_code", school_code);
+			intent.putExtra("student_id", student_id);
+			startActivityForResult(intent, 88);
+
+
+		} catch (Exception e) {
+			EmailDebugLog.getInstance(appContext).writeLog("[HH_SECTION_E_ONE] inside launchReport() Exception is :" + e.toString());
+		}
+
+	}
 
 
 

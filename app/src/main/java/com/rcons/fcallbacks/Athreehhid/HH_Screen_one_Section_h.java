@@ -42,6 +42,7 @@ import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 
+import com.rcons.fcallbacks.Main.AddReportActivity;
 import com.rcons.fcallbacks.Main.AddReportActivity_AD;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
@@ -77,7 +78,7 @@ public class HH_Screen_one_Section_h extends Activity {
     EditText editTextPhone;
     EditText editTextPassword;
     EditText editTextConfirmPassword;
-    ImageButton btnCreateAccount,btnHHNew;
+    ImageButton btnCreateAccount, btnHHNew;
     ImageButton nextbtn;
     String phone = "";
     String userName = "";
@@ -104,16 +105,11 @@ public class HH_Screen_one_Section_h extends Activity {
     Spinner numbers_sp_q_2 = null;
 
 
-
     TextView house_address = null;
     TextView house_no = null;
     TextView block_no = null;
-    TextView area_no =null;
-    TextView landmark =null;
-
-
-
-
+    TextView area_no = null;
+    TextView landmark = null;
 
 
     String Question_5 = "";
@@ -144,26 +140,25 @@ public class HH_Screen_one_Section_h extends Activity {
     RelativeLayout relative_layout_new_hh_in_same_stid_btn = null;
 
 
-    TextView sign_up_eula_textview_label_line_two,sign_up_eula_btn_label_below_btn_line_one,sign_in_eula_btn_label_below_btn_line_one, top_bar = null;
+    TextView sign_up_eula_textview_label_line_two, sign_up_eula_btn_label_below_btn_line_one, sign_in_eula_btn_label_below_btn_line_one, top_bar = null;
 
     JSONObject result = null;
     static String[] licenseLabels = null;
     public static JSONArray licenseList = null;
     private ProgressDialog pd = null;
-    Context appContext =  null;
+    Context appContext = null;
     boolean selfClose = false;
     public static String calledFromView = ""; //Use by m_handler to show responce to user in case of request from forgot-password view or from signup-in view
 
-    static boolean  NEW_HH_IN_SAME_STRUCTURE = false;
+    static boolean NEW_HH_IN_SAME_STRUCTURE = false;
     static int current_STID = -1;
     static int CURRENT_HHID = -1;
-    static  boolean USER_CONFIRMATION = false;
+    static boolean USER_CONFIRMATION = false;
 
-    private static String START_TIME  = "";
+    private static String START_TIME = "";
 
 
-
-    String CALLED_FROM ="";
+    String CALLED_FROM = "";
 
     //for agapp
     String emp_id = "";
@@ -185,8 +180,6 @@ public class HH_Screen_one_Section_h extends Activity {
     String student_name = "";
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -206,7 +199,6 @@ public class HH_Screen_one_Section_h extends Activity {
             HH_Screen_one_Section_h.START_TIME = MpcUtil.getcurrentTime(14);
 
 
-
             setContentView(R.layout.section_h_screen_one);
             //AnalyticsUtil.updateScreen(this, getResources().getString(R.string.sign_up_screen_top_bar_text_view));
 
@@ -218,21 +210,21 @@ public class HH_Screen_one_Section_h extends Activity {
             school_name = "";//getIntent().getStringExtra("m2_school_name");
             rcons_user = RConsUtils.getUserName();
 
-           // CALLED_FROM = getIntent().getStringExtra("onbackclick");
+            // CALLED_FROM = getIntent().getStringExtra("onbackclick");
 
 
             // Get Refferences of Views
             initializeReferenceOfViews();
 
 
-
-        }catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onCreate");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside onCreate");
         }
-    }public HH_Screen_one_Section_h() {
-        // TODO Auto-generated constructor stub
     }
 
+    public HH_Screen_one_Section_h() {
+        // TODO Auto-generated constructor stub
+    }
 
 
     private void initializeReferenceOfViews() {
@@ -240,66 +232,56 @@ public class HH_Screen_one_Section_h extends Activity {
         try {
 
 
-
-
             btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
             hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
-
-
-
 
 
             sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
 
             screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
 
-            top_bar = (TextView)findViewById(R.id.sign_in_top_bar_text_view);
+            top_bar = (TextView) findViewById(R.id.sign_in_top_bar_text_view);
 
             String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
-            DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode "+currentPSUCode);
-            String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext,currentPSUCode);
+            DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode " + currentPSUCode);
+            String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext, currentPSUCode);
 
-            current_STID = Integer.parseInt(last_strict_id_against_psu)+1;
+            current_STID = Integer.parseInt(last_strict_id_against_psu) + 1;
 
-            DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu "+last_strict_id_against_psu);
+            DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu " + last_strict_id_against_psu);
 
-            String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext,currentPSUCode+"_hhid");
-            CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
+            String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext, currentPSUCode + "_hhid");
+            CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
 
             // int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 
 
-            String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e13(appContext,school_code,student_id);
+            String headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e13(appContext, school_code, student_id);
 
-            if(headName!=null){
+            if (headName != null) {
 
-                if(headName.length()>0){
+                if (headName.length() > 0) {
 
-                }else{
-                    headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e1(appContext,school_code,student_id);
+                } else {
+                    headName = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_get_member_selected_in_e1(appContext, school_code, student_id);
                 }
 
             }
 
 
-            String stringTopBar = getResources().getString(R.string.screen_two_top_bar,headName,school_code, student_id+"");
+            String stringTopBar = getResources().getString(R.string.screen_two_top_bar, headName, school_code, student_id + "");
 
             top_bar.setText(stringTopBar);
 
-            hh_edtfield_q_2 =  (EditText)findViewById(R.id.hh_edtfield_q_2);
+            hh_edtfield_q_2 = (EditText) findViewById(R.id.hh_edtfield_q_2);
 
-            MpcUtil.restartInput(appContext,hh_edtfield_q_2);
+            MpcUtil.restartInput(appContext, hh_edtfield_q_2);
             //hh_edtfield_q_2.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
 
 
-
-
-
             TextView hh_textview_q_4 = findViewById(R.id.hh_textview_e_script);
-            String qtext = getResources().getString(R.string.ad_section_e_script,headName,headName,headName);
+            String qtext = getResources().getString(R.string.ad_section_e_script, headName, headName, headName);
             hh_textview_q_4.setText(qtext);
-
-
 
 
             /**
@@ -310,7 +292,7 @@ public class HH_Screen_one_Section_h extends Activity {
                 @Override
                 public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                     // When user changed the Text
-                    DebugLog.console("inside onTextChanged:" );
+                    DebugLog.console("inside onTextChanged:");
 
                     // aghhid_h_1 = hh_edtfield_q_2.getText().toString().trim();
 
@@ -330,10 +312,9 @@ public class HH_Screen_one_Section_h extends Activity {
             });
 
 
-
             numbers_sp_q_2 = (Spinner) findViewById(R.id.numbers_sp_q_2);
 
-            ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_Section_h.this).aghhid_getNumbersDataagainstvillageAndhhid(appContext,school_code,student_id);
+            ArrayList<String> spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_one_Section_h.this).aghhid_getNumbersDataagainstvillageAndhhid(appContext, school_code, student_id);
 //            spinnerArray.add("Show previous numbers");
 //            spinnerArray.add("3006854549");
 
@@ -347,20 +328,20 @@ public class HH_Screen_one_Section_h extends Activity {
 
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
-                    DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() "+i);
+                    DebugLog.console("[HH_Screen_three] inside relative_code_sp_d_5 onItemSelected() " + i);
 
 
                     try {
-                        if (i==0){
+                        if (i == 0) {
                             //  hh_edtfield_q_2.setText(  "");
 
-                        }else{
+                        } else {
 
-                            hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
+                            hh_edtfield_q_2.setText(parent.getSelectedItem().toString().trim());
 
                         }
                     } catch (Exception e) {
-                        EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside onItemSelected() Exception is :"+e.toString());
+                        EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside onItemSelected() Exception is :" + e.toString());
                     }
 
 
@@ -375,10 +356,9 @@ public class HH_Screen_one_Section_h extends Activity {
 
 
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
         }
     }
-
 
 
     private void initializeReferenceOfViews_old() {
@@ -388,15 +368,12 @@ public class HH_Screen_one_Section_h extends Activity {
             if (launchedActivityName.equalsIgnoreCase("signup")) {
 
 
-                hh_textview_q_2 = (TextView)findViewById(R.id.hh_textview_q_2);
-                hh_textview_q_3 = (TextView)findViewById(R.id.hh_textview_q_3);
+                hh_textview_q_2 = (TextView) findViewById(R.id.hh_textview_q_2);
+                hh_textview_q_3 = (TextView) findViewById(R.id.hh_textview_q_3);
 
-                migration1 = (RadioButton)findViewById(R.id.migration1);
+                migration1 = (RadioButton) findViewById(R.id.migration1);
 
                 hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
-
-
-
 
 
                 sign_in_back_btn = (RelativeLayout) findViewById(R.id.sign_in_back_btn);
@@ -404,39 +381,39 @@ public class HH_Screen_one_Section_h extends Activity {
                 screenthreenextbtnonerl = (RelativeLayout) findViewById(R.id.screenthreenextbtnonerl);
                 relative_layout_sign_up_btn = (RelativeLayout) findViewById(R.id.relative_layout_sign_up_btn);
 
-                String stringToShow =getResources().getString(R.string.sign_up_eula_textview_label_line_two);
+                String stringToShow = getResources().getString(R.string.sign_up_eula_textview_label_line_two);
 
                 String stringToShowforSigninnavigation = getResources().getString(R.string.sign_up_eula_btn_label_below_btn_line_two);
 
-                sign_up_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-                top_bar = (TextView)findViewById(R.id.sign_in_top_bar_text_view);
+                sign_up_eula_btn_label_below_btn_line_one = (TextView) findViewById(R.id.textViewbelowbtn);
+                top_bar = (TextView) findViewById(R.id.sign_in_top_bar_text_view);
                 sign_up_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
 
-                sign_up_eula_textview_label_line_two = (TextView)findViewById(R.id.sign_up_eula_textview_label_line_two);
+                sign_up_eula_textview_label_line_two = (TextView) findViewById(R.id.sign_up_eula_textview_label_line_two);
                 sign_up_eula_textview_label_line_two.setText(Html.fromHtml(stringToShow));
 
                 String currentPSUCode = HHIDConfigurations.getPeshawarCurrentPSU(appContext);
-                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode "+currentPSUCode);
-                String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext,currentPSUCode);
+                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() currentPSUCode " + currentPSUCode);
+                String last_strict_id_against_psu = HHIDConfigurations.getPeshawarLastStructerIDagainstPSU(appContext, currentPSUCode);
 
-                current_STID = Integer.parseInt(last_strict_id_against_psu)+1;
+                current_STID = Integer.parseInt(last_strict_id_against_psu) + 1;
 
-                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu "+last_strict_id_against_psu);
+                DebugLog.console("[HH_Screen_two] inside initializeReferenceOfViews() last_strict_id_against_psu " + last_strict_id_against_psu);
 
-                String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext,currentPSUCode+"_hhid");
-                CURRENT_HHID = Integer.parseInt(lastHHIID)+1;
+                String lastHHIID = HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(appContext, currentPSUCode + "_hhid");
+                CURRENT_HHID = Integer.parseInt(lastHHIID) + 1;
 
                 //int count =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_getCountOfhhid_having_phoneNumber(HHIDConfigurations.getPeshawarCurrentPSU(appContext),"");
 
 
-                String stringTopBar = getResources().getString(R.string.screen_two_top_bar,student_name,school_code, student_id+"");
+                String stringTopBar = getResources().getString(R.string.screen_two_top_bar, student_name, school_code, student_id + "");
 
                 top_bar.setText(stringTopBar);
 
                 //sign_up_eula_btn_label_below_btn_line_one.setVisibility(View.GONE);
                 //sign_up_eula_textview_label_line_two.setVisibility(View.GONE);
 
-                editTextfirstName = (EditText)findViewById(R.id.sign_up_first_name_textfield);
+                editTextfirstName = (EditText) findViewById(R.id.sign_up_first_name_textfield);
                 editTextfirstName.setLines(1);
                 editTextfirstName.setInputType(InputType.TYPE_CLASS_TEXT);
 //				editTextfirstName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.user_icon, 0, 0, 0);
@@ -444,12 +421,12 @@ public class HH_Screen_one_Section_h extends Activity {
 
 //				editTextfirstName.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_first_name_textfield_label) + "</font>" + "<small>"));
 
-                hh_edtfield_q_2 =  (EditText)findViewById(R.id.hh_edtfield_q_2);
+                hh_edtfield_q_2 = (EditText) findViewById(R.id.hh_edtfield_q_2);
 
 //				hh_edtfield_q_2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
 //				hh_edtfield_q_2.setCompoundDrawablePadding(8);
                 hh_edtfield_q_2.requestFocus();
-                MpcUtil.restartInput(appContext,hh_edtfield_q_2);
+                MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 //hh_edtfield_q_2.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_up_email_name_textfield_label) + "</font>" + "<small>"));
 
 //                editTextReTypeEmailID = (EditText)findViewById(R.id.sign_up_confirm_email_textfield);
@@ -479,7 +456,7 @@ public class HH_Screen_one_Section_h extends Activity {
                     @Override
                     public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                         // When user changed the Text
-                        DebugLog.console("inside onTextChanged:" );
+                        DebugLog.console("inside onTextChanged:");
 
                     }
 
@@ -496,18 +473,14 @@ public class HH_Screen_one_Section_h extends Activity {
                 });
 
 
-
                 String number = "";//MpcUtil.getPhoneNumber(appContext);
                 if (number.equalsIgnoreCase("")) {
                     //	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
-                }else{
+                } else {
                     //	editTextPhone.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_phone_textfield_label) + "</font>" + "<small>"));
 
 //					editTextPhone.setText(number);
                 }
-
-
-
 
 
                 btnHHNew.setOnClickListener(new View.OnClickListener() {
@@ -527,9 +500,6 @@ public class HH_Screen_one_Section_h extends Activity {
                 });
 
 
-
-
-
                 btnCreateAccount.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
@@ -547,15 +517,15 @@ public class HH_Screen_one_Section_h extends Activity {
                 });
 
 
-            }if (launchedActivityName.equalsIgnoreCase("signin")) {
+            }
+            if (launchedActivityName.equalsIgnoreCase("signin")) {
 
-                editTextUserNameToLogin = (EditText)findViewById(R.id.sign_in_email_textfield);
-                editTextPasswordToLogin = (EditText)findViewById(R.id.sign_in_password_textfield);
+                editTextUserNameToLogin = (EditText) findViewById(R.id.sign_in_email_textfield);
+                editTextPasswordToLogin = (EditText) findViewById(R.id.sign_in_password_textfield);
                 editTextUserNameToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
                 editTextUserNameToLogin.setCompoundDrawablePadding(8);
                 editTextPasswordToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
                 editTextPasswordToLogin.setCompoundDrawablePadding(8);
-
 
 
                 editTextUserNameToLogin.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_email_textfield_hint) + "</font>" + "<small>"));
@@ -566,11 +536,11 @@ public class HH_Screen_one_Section_h extends Activity {
 
                 String stringToShowforSigninnavigation = getResources().getString(R.string.sign_in_eula_btn_label_below_btn_line_two);
 
-                sign_in_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-                if (HHIDConfigurations.getMappingId(getApplicationContext())!=null){
+                sign_in_eula_btn_label_below_btn_line_one = (TextView) findViewById(R.id.textViewbelowbtn);
+                if (HHIDConfigurations.getMappingId(getApplicationContext()) != null) {
                     sign_in_eula_btn_label_below_btn_line_one.setText("");
                     sign_in_eula_btn_label_below_btn_line_one.setClickable(false);
-                }else{
+                } else {
                     sign_in_eula_btn_label_below_btn_line_one.setClickable(true);
                     sign_in_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
                 }
@@ -580,7 +550,7 @@ public class HH_Screen_one_Section_h extends Activity {
 //				editTextPasswordToLogin.setText("test");
 
 
-                btnSignIn = (ImageButton)findViewById(R.id.sign_in_btn);
+                btnSignIn = (ImageButton) findViewById(R.id.sign_in_btn);
                 btnSignIn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
 
@@ -595,23 +565,21 @@ public class HH_Screen_one_Section_h extends Activity {
                 });
 
                 //If device is already registered, automatically filling the username field and disabling editing
-                String registeredEmailAddress  = HHIDConfigurations.getRegisteredEmailAddress(getApplicationContext());
+                String registeredEmailAddress = HHIDConfigurations.getRegisteredEmailAddress(getApplicationContext());
 
 
+                if (registeredEmailAddress.equalsIgnoreCase("")) {
 
+                } else {
 
-                if(registeredEmailAddress.equalsIgnoreCase("")){
-
-                }else{
-
-                    if (HHIDConfigurations.getMappingId(appContext)!=null) {
+                    if (HHIDConfigurations.getMappingId(appContext) != null) {
 //							editTextUserNameToLogin.setEnabled(false);
 //							editTextUserNameToLogin.setText(registeredEmailAddress);
 
                     }
 
 
-                    EmailDebugLog.getInstance(appContext).writeLog( "\r\n[HH_Screen_One]:starting SecureSecondService  ");
+                    EmailDebugLog.getInstance(appContext).writeLog("\r\n[HH_Screen_One]:starting SecureSecondService  ");
 
                     //appContext.startService(new Intent(appContext,SecureSecondService.class));
 
@@ -621,34 +589,29 @@ public class HH_Screen_one_Section_h extends Activity {
             }
 
 
-
-
-
-
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
         }
     }
 
-    public  boolean isInternetOn(Context ctx) {
+    public boolean isInternetOn(Context ctx) {
 
-        boolean isConnected =false;
+        boolean isConnected = false;
 
-        try{
-            ConnectivityManager connec =  (ConnectivityManager)ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
-            if ( connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED &&  connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED  ){
-                isConnected=false;
-            }else{
-                isConnected=true;
+        try {
+            ConnectivityManager connec = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (connec.getNetworkInfo(0).getState() == NetworkInfo.State.DISCONNECTED && connec.getNetworkInfo(1).getState() == NetworkInfo.State.DISCONNECTED) {
+                isConnected = false;
+            } else {
+                isConnected = true;
             }
             return isConnected;
-        }catch(Exception e){
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside isInternetOn");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside isInternetOn");
             //FileManager.exportLogFile(appContext);
-            return isConnected=true;
+            return isConnected = true;
         }
     }
-
 
 
     public void grabEnteredTextForSignUp(View v) {
@@ -658,8 +621,6 @@ public class HH_Screen_one_Section_h extends Activity {
         try {
 
 
-
-
             //editTextfirstName.setText("Parent");
             //userName = editTextUserName.getText().toString();
             firstName = "Parent";// editTextfirstName.getText().toString();
@@ -667,10 +628,9 @@ public class HH_Screen_one_Section_h extends Activity {
             reTypedEmailID = editTextReTypeEmailID.getText().toString();
             //AnalyticsUtil.updateEventAction(appContext, "Email Address : "+aghhid_h_1);
             //AnalyticsUtil.updateEventAction(appContext, "reTypedEmail Address : "+reTypedEmailID);
-            if(firstName.trim().length() == 0)
-            {
+            if (firstName.trim().length() == 0) {
                 MpcUtil.hideSoftKeyBoard(appContext, editTextfirstName);
-                showAlert(getResources().getString(R.string.signup_activity_firstname_field_empty_message_title),getResources().getString(R.string.signup_activity_firstname_field_empty_message_body));
+                showAlert(getResources().getString(R.string.signup_activity_firstname_field_empty_message_title), getResources().getString(R.string.signup_activity_firstname_field_empty_message_body));
                 editTextfirstName.requestFocus();
                 MpcUtil.restartInput(appContext, editTextfirstName);
                 error = true;
@@ -681,9 +641,9 @@ public class HH_Screen_one_Section_h extends Activity {
 //				MpcUtil.restartInput(appContext, editTextfirstName);
 //				error = true;true
 
-            }else if (aghhid_h_1.trim().length() == 0 ){
+            } else if (aghhid_h_1.trim().length() == 0) {
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
-                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
+                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title), getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
                 hh_edtfield_q_2.requestFocus();
                 MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 error = true;
@@ -693,47 +653,44 @@ public class HH_Screen_one_Section_h extends Activity {
 //				hh_edtfield_q_2.requestFocus();
 //				MpcUtil.restartInput(appContext, hh_edtfield_q_2);
 //				error = true;
-            }else if (reTypedEmailID.trim().length()==0){
+            } else if (reTypedEmailID.trim().length() == 0) {
                 MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
-                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
+                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title), getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
                 editTextReTypeEmailID.requestFocus();
                 MpcUtil.restartInput(appContext, editTextReTypeEmailID);
                 error = true;
-            }else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_h_1.trim())){
+            } else if (!reTypedEmailID.trim().equalsIgnoreCase(aghhid_h_1.trim())) {
                 MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
-                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
+                showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title), getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
                 editTextReTypeEmailID.requestFocus();
                 MpcUtil.restartInput(appContext, editTextReTypeEmailID);
                 error = true;
             }
-            if(!error){
+            if (!error) {
                 pd = ProgressDialog.show(this, getResources().getString(R.string.signup_activity__progress_bar_title), getResources().getString(R.string.signup_activity__progress_bar_body_text), true, false);
                 new Thread() {
                     public void run() {
-                        try{
+                        try {
                             // complete registration from server
                             validateEmailAddress();
 
-                        } catch (Exception e) {  }
+                        } catch (Exception e) {
+                        }
                         // Dismiss the Dialog
                         // myProgressDialog.dismiss();
                     }
                 }.start();
             }
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignUp");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignUp");
         }
     }
-
-
 
 
     public void grabEnteredTextForscreenthreeBackbtn(View v) {
 
         boolean error = false;
         try {
-
-
 
 
             sign_in_back_btn.setVisibility(View.VISIBLE);
@@ -765,11 +722,10 @@ public class HH_Screen_one_Section_h extends Activity {
             //migration1.setChecked(false);
             //migration2.setChecked(false);
 
-            edt_Question_5_1 .setVisibility(View.GONE);
-            edt_Question_5_2 .setVisibility(View.GONE);
-            edt_Question_5_3 .setVisibility(View.GONE);
-            edt_Question_5_4 .setVisibility(View.GONE);
-
+            edt_Question_5_1.setVisibility(View.GONE);
+            edt_Question_5_2.setVisibility(View.GONE);
+            edt_Question_5_3.setVisibility(View.GONE);
+            edt_Question_5_4.setVisibility(View.GONE);
 
 
             screenthreeBackbtnonerl.setVisibility(View.GONE);
@@ -778,18 +734,9 @@ public class HH_Screen_one_Section_h extends Activity {
             screenthreenextbtnonerl.setVisibility(View.VISIBLE);
 
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForscreenthreeBackbtn");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForscreenthreeBackbtn");
         }
     }
-
-
-
-
-
-
-
-
-
 
 
     public void HandleNextButnClick(View v) {
@@ -802,33 +749,26 @@ public class HH_Screen_one_Section_h extends Activity {
             int rdg_checkedID = hh_edtfield_q_2_rdg.getCheckedRadioButtonId();
 
 
-            if(rdg_checkedID==-1){
-                error =  true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
-            }else
+            if (rdg_checkedID == -1) {
+                error = true;
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please Select Some value");
+            } else if (aghhid_h_1.length() == 0) {
+                error = true;
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please Select Some value");
+                // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
+            }
 
 
-                if (aghhid_h_1.length()==0){
-                    error =  true;
-                    showAlert(appContext.getResources().getString(R.string.app_name),"Please Select Some value");
-                   // MpcUtil.restartInput(appContext, hh_edtfield_q_2);
-                }
-
-
-
-
-            if(!error){
-
+            if (!error) {
 
 
                 boolean screen_two = true;
-                if (screen_two){
+                if (screen_two) {
 
 
                     saveDataNow();
-                    return ;
+                    return;
                 }
-
 
 
                 house_address.setVisibility(View.VISIBLE);
@@ -837,17 +777,15 @@ public class HH_Screen_one_Section_h extends Activity {
                 area_no.setVisibility(View.VISIBLE);
                 landmark.setVisibility(View.VISIBLE);
 
-                edt_Question_5_1 .setVisibility(View.VISIBLE);
-                edt_Question_5_2 .setVisibility(View.VISIBLE);
-                edt_Question_5_3 .setVisibility(View.VISIBLE);
-                edt_Question_5_4 .setVisibility(View.VISIBLE);
-
+                edt_Question_5_1.setVisibility(View.VISIBLE);
+                edt_Question_5_2.setVisibility(View.VISIBLE);
+                edt_Question_5_3.setVisibility(View.VISIBLE);
+                edt_Question_5_4.setVisibility(View.VISIBLE);
 
 
                 screenthreeBackbtnonerl.setVisibility(View.VISIBLE);
                 relative_layout_sign_up_btn.setVisibility(View.VISIBLE);
                 relative_layout_new_hh_in_same_stid_btn.setVisibility(View.VISIBLE);
-
 
 
                 screenthreenextbtnonerl.setVisibility(View.GONE);
@@ -878,12 +816,12 @@ public class HH_Screen_one_Section_h extends Activity {
 
                 View view = this.getCurrentFocus();
                 if (view != null) {
-                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
             }
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForscreenthreenextbtn");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForscreenthreenextbtn");
         }
     }
 
@@ -893,27 +831,26 @@ public class HH_Screen_one_Section_h extends Activity {
         boolean error = false;
         try {
 
-            Question_5_1 = edt_Question_5_1 .getText().toString();
-            Question_5_2 = edt_Question_5_2 .getText().toString();
-            Question_5_3 = edt_Question_5_3 .getText().toString();
-            Question_5_4 = edt_Question_5_4 .getText().toString();
-
+            Question_5_1 = edt_Question_5_1.getText().toString();
+            Question_5_2 = edt_Question_5_2.getText().toString();
+            Question_5_3 = edt_Question_5_3.getText().toString();
+            Question_5_4 = edt_Question_5_4.getText().toString();
 
 
             reTypedEmailID = editTextReTypeEmailID.getText().toString();
             password = editTextPassword.getText().toString();
 
 
-            String selectedRadio = ""+ sign_up_confirm_password_textfield_rb.getCheckedRadioButtonId();//editTextConfirmPassword.getText().toString();
+            String selectedRadio = "" + sign_up_confirm_password_textfield_rb.getCheckedRadioButtonId();//editTextConfirmPassword.getText().toString();
 
             hh_edtfield_q_3_edt_answer = selectedRadio;
 
             firstName = editTextfirstName.getText().toString();
 
-            if (aghhid_h_1.trim().length() == 0 ){
+            if (aghhid_h_1.trim().length() == 0) {
                 //AnalyticsUtil.updateEventAction(appContext, " Email field empty");
                 MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 2");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 2");
                 hh_edtfield_q_2.requestFocus();
                 MpcUtil.restartInput(appContext, hh_edtfield_q_2);
                 error = true;
@@ -987,67 +924,60 @@ public class HH_Screen_one_Section_h extends Activity {
 //				editTextPassword.requestFocus();
 //				MpcUtil.restartInput(appContext, editTextPassword);
 //				error = true;
-            }
-            else if(hh_edtfield_q_3_edt_answer.trim().length()==0)
-            {
+            } else if (hh_edtfield_q_3_edt_answer.trim().length() == 0) {
 //				MpcUtil.hideSoftKeyBoard(appContext, editTextConfirmPassword);
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 4");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 4");
 //				editTextConfirmPassword.requestFocus();
 //				MpcUtil.restartInput(appContext, editTextConfirmPassword);
                 error = true;
                 //AnalyticsUtil.updateEventAction(appContext, " ReType Password field empty");
-            }  else 	if (  Question_5_1.trim().length() == 0 ){
+            } else if (Question_5_1.trim().length() == 0) {
 
                 MpcUtil.hideSoftKeyBoard(appContext, edt_Question_5_1);
                 error = true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 5.1");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 5.1");
                 MpcUtil.restartInput(appContext, edt_Question_5_1);
-            }else if (  Question_5_2.trim().length() == 0 ){
+            } else if (Question_5_2.trim().length() == 0) {
 
                 MpcUtil.hideSoftKeyBoard(appContext, edt_Question_5_2);
                 error = true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 5.2");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 5.2");
                 MpcUtil.restartInput(appContext, edt_Question_5_2);
-            }else if (  Question_5_3.trim().length() == 0 ){
+            } else if (Question_5_3.trim().length() == 0) {
 
                 MpcUtil.hideSoftKeyBoard(appContext, edt_Question_5_3);
                 error = true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 5.3");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 5.3");
                 MpcUtil.restartInput(appContext, edt_Question_5_3);
-            }else if (  Question_5_4.trim().length() == 0 ){
+            } else if (Question_5_4.trim().length() == 0) {
 
                 MpcUtil.hideSoftKeyBoard(appContext, edt_Question_5_4);
                 error = true;
-                showAlert(appContext.getResources().getString(R.string.app_name),"Please fill Question 5.4");
+                showAlert(appContext.getResources().getString(R.string.app_name), "Please fill Question 5.4");
                 MpcUtil.restartInput(appContext, edt_Question_5_4);
             }
 
 
-
-
-            if(!error){
+            if (!error) {
 
                 pd = ProgressDialog.show(this, getResources().getString(R.string.signup_activity__progress_bar_title), getResources().getString(R.string.signup_activity__progress_bar_body_text), true, false);
                 new Thread() {
                     public void run() {
-                        try{
-
-
-
-
+                        try {
 
 
                             // complete registration from server
                             completeProcess("signup", MpcUtil.SIGNUP_URL);
 
-                        } catch (Exception e) {  }
+                        } catch (Exception e) {
+                        }
                         // Dismiss the Dialog
                         // myProgressDialog.dismiss();
                     }
                 }.start();
             }
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignUp");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignUp");
         }
     }
 
@@ -1062,10 +992,9 @@ public class HH_Screen_one_Section_h extends Activity {
             passwordToLogin = editTextPasswordToLogin.getText().toString();
             //AnalyticsUtil.updateEventAction(appContext, "Email Address : "+userNameToLogin);
 
-            if (userNameToLogin.trim().length() == 0 )
-            {
+            if (userNameToLogin.trim().length() == 0) {
                 MpcUtil.hideSoftKeyBoard(appContext, editTextUserNameToLogin);
-                showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_body));
+                showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title), getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_body));
                 editTextUserNameToLogin.requestFocus();
                 MpcUtil.restartInput(appContext, editTextUserNameToLogin);
                 error = true;
@@ -1079,31 +1008,26 @@ public class HH_Screen_one_Section_h extends Activity {
 //				MpcUtil.restartInput(appContext, editTextUserNameToLogin);
 //				error = true;
 //			}
-            else  if (passwordToLogin.trim().length() == 0 )
-            {
+            else if (passwordToLogin.trim().length() == 0) {
                 //AnalyticsUtil.updateEventAction(appContext, "Login Button: Password field empty");
                 MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
-                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signin_activity_password_field_empty_message_body));
+                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title), getResources().getString(R.string.signin_activity_password_field_empty_message_body));
                 editTextPasswordToLogin.requestFocus();
                 MpcUtil.restartInput(appContext, editTextPasswordToLogin);
                 error = true;
-            }
-            else  if (passwordToLogin.trim().length() < MpcUtil.DEFAULT_MINNIMUM_PASSWORD_LENGTH )
-            {
+            } else if (passwordToLogin.trim().length() < MpcUtil.DEFAULT_MINNIMUM_PASSWORD_LENGTH) {
                 //AnalyticsUtil.updateEventAction(appContext, "Login Button: Password length less than 4 characters");
                 MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
                 //showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signup_activity_password_field_error_message_for_minimum_length,MpcUtil.DEFAULT_MINNIMUM_PASSWORD_LENGTH));
-                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.invalid_password_error_message_via_server_code));
+                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title), getResources().getString(R.string.invalid_password_error_message_via_server_code));
                 editTextPasswordToLogin.requestFocus();
                 MpcUtil.restartInput(appContext, editTextPasswordToLogin);
                 error = true;
-            }
-            else  if (passwordToLogin.trim().length() > MpcUtil.DEFAULT_MAX_PASSWORD_LENGTH )
-            {
+            } else if (passwordToLogin.trim().length() > MpcUtil.DEFAULT_MAX_PASSWORD_LENGTH) {
                 //AnalyticsUtil.updateEventAction(appContext, "Login Button: Password length greater than 50 characters");
                 MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
                 //showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signup_activity_password_field_error_message_for_maximum_length,MpcUtil.DEFAULT_MAX_PASSWORD_LENGTH));
-                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.invalid_password_error_message_via_server_code));
+                showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title), getResources().getString(R.string.invalid_password_error_message_via_server_code));
                 editTextPasswordToLogin.requestFocus();
                 MpcUtil.restartInput(appContext, editTextPasswordToLogin);
                 error = true;
@@ -1187,14 +1111,14 @@ public class HH_Screen_one_Section_h extends Activity {
 //				}
 //			}
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignIN");
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignIN");
         }
     }
 
-    private void completeProcess(String processType, String url){
+    private void completeProcess(String processType, String url) {
 
         JSONObject json = null;
-        try{
+        try {
 
             // to show in device-register screen (default-name )
 //			HHIDConfigurations.setConfiguration(appContext, HHIDConfigurations.APP_PHONE_MODEL, HHIDConfigurations.getPhoneModelForPref(appContext).trim());
@@ -1222,19 +1146,18 @@ public class HH_Screen_one_Section_h extends Activity {
             m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
 //				}
 //			}
-        }catch(Exception e){
+        } catch (Exception e) {
 
-            if (pd!=null)
+            if (pd != null)
                 pd.dismiss();
-            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside completeProcess");
+            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside completeProcess");
             m_Handler.sendEmptyMessage(
                     ResponceVerifier.GENERAL_ERROR);
         }
     }
 
 
-
-    private void validateEmailAddress(){
+    private void validateEmailAddress() {
 
 //		try{
 //
@@ -1290,11 +1213,9 @@ public class HH_Screen_one_Section_h extends Activity {
     }
 
 
+    private JSONObject registerOnServer(Context appContext, JSONObject json, String url) {
 
-
-    private JSONObject registerOnServer(Context appContext, JSONObject json, String url){
-
-        try{
+        try {
 //			DebugLog.console("[HH_Screen_One]: inside registerOnServer");
 //			url = MpcUtil.getBaseURL(appContext) +url ;
 //			int retry = 0;
@@ -1307,44 +1228,45 @@ public class HH_Screen_one_Section_h extends Activity {
 //				}
 //			}
             return result;
-        }catch(Exception e){
-            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside registerOnServer");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside registerOnServer");
             return null;
         }
     }
 
-    private void parseResultReceivedFromServer(JSONObject json){
+    private void parseResultReceivedFromServer(JSONObject json) {
 
-        try{
+        try {
 
             FileManager.exportLogFile(appContext);
-            if (!json.isNull("code")){
+            if (!json.isNull("code")) {
                 String status = json.get("code").toString();
                 //AnalyticsUtil.updateEventAction(getApplicationContext(),"Server Response " +status);
                 m_Handler.sendEmptyMessage(Integer.parseInt(status));
-            }else{
+            } else {
                 //AnalyticsUtil.updateEventAction(getApplicationContext(),"Server Response code object not found");
                 m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
                 EmailDebugLog.getInstance(getApplicationContext()).writeLog("Inside parseResultReceivedFromServer code object not found ");
             }
-        }catch(Exception e){
-            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside parseResultReceivedFromServer");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside parseResultReceivedFromServer");
         }
     }
 
     private Handler m_Handler = new Handler() {
 
         boolean success = false;
+
         @Override
         public void handleMessage(Message msg) {
 
-            try{
+            try {
                 DebugLog.console("code is :" + msg.what);
 
-                DebugLog.console("\r\n[HH_Screen_One]: Class name "+this.getClass().getName().toString());
+                DebugLog.console("\r\n[HH_Screen_One]: Class name " + this.getClass().getName().toString());
                 success = true;//ResponceVerifier.verifyReceievedResponce(HH_Screen_two.this,msg.what);
 
-                if(success) {
+                if (success) {
 
 
                     if (pd != null)
@@ -1366,57 +1288,47 @@ public class HH_Screen_one_Section_h extends Activity {
                     }
 
 
+                    if (NEW_HH_IN_SAME_STRUCTURE) {
+                        showPermanentExpiredAlert(AppController.getInstance().getResources().getString(R.string.app_name), top_bar.getText().toString() + getResources().getString(R.string.hh_in_structure_id_save_popup_text));
 
-
-                    if(NEW_HH_IN_SAME_STRUCTURE){
-                        showPermanentExpiredAlert(AppController.getInstance().getResources().getString(R.string.app_name),top_bar.getText().toString()+getResources().getString(R.string.hh_in_structure_id_save_popup_text));
-
-                    }else{
-                        showPermanentExpiredAlert(AppController.getInstance().getResources().getString(R.string.app_name),top_bar.getText().toString()+getResources().getString(R.string.structure_id_save_popup_text));
+                    } else {
+                        showPermanentExpiredAlert(AppController.getInstance().getResources().getString(R.string.app_name), top_bar.getText().toString() + getResources().getString(R.string.structure_id_save_popup_text));
 
                     }
 
 
-
-
-
-
-
-
-
-                    if(success){
+                    if (success) {
                         return;
 
                     }
 
                     boolean found = false;
 
-                    if (pd!=null){
+                    if (pd != null) {
                         pd.dismiss();
                     }
 
 
-
                 }
 
-            }catch(Exception e){
-                if (pd!=null)
+            } catch (Exception e) {
+                if (pd != null)
                     pd.dismiss();
-                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside Handler");
+                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside Handler");
             }
         }
 
     };
 
-    private boolean saveDatainDataBase(  String user_name , String start_date_time) {
+    private boolean saveDatainDataBase(String user_name, String start_date_time) {
         boolean dataSaved = false;
         try {
 
-            DebugLog.console("[HH_Screen_two] inside saveDatainDataBase() aghhid_h_1"+aghhid_h_1);
-            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_h1( school_code , student_id ,aghhid_h_1,   rcons_user , start_date_time);
+            DebugLog.console("[HH_Screen_two] inside saveDatainDataBase() aghhid_h_1" + aghhid_h_1);
+            dataSaved = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).hhid_insert_data_h1(school_code, student_id, aghhid_h_1, rcons_user, start_date_time);
             return dataSaved;
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDatainDataBase() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDatainDataBase() Exception is :" + e.toString());
             return dataSaved;
         }
     }
@@ -1424,7 +1336,7 @@ public class HH_Screen_one_Section_h extends Activity {
 
     private boolean isListOfDevicesNull() {
         // TODO Auto-generated method stub
-        boolean isListOfDevicesNull =  true;
+        boolean isListOfDevicesNull = true;
 //		try{
 //			JSONObject jsonObject = (JSONObject)MainUserInfo.licenseList.get(MainUserInfo.selectedLicensePosition);
 //			if (!jsonObject.isNull("devices")){
@@ -1443,35 +1355,24 @@ public class HH_Screen_one_Section_h extends Activity {
     }
 
 
-
     private void saveDataNow() {
-
 
 
         try {
 
 
-
             boolean dataSaved = saveDatainDataBase(RConsUtils.getUserName(), HH_Screen_one_Section_h.START_TIME);
 
 
-
-
-
-            if (dataSaved){
+            if (dataSaved) {
 
                 boolean screen_two = true;
 
 
+                if (screen_two) {
 
 
-
-                if (screen_two ) {
-
-
-
-
-                    if(aghhid_h_1.equalsIgnoreCase("-777") || (aghhid_h_1.equalsIgnoreCase("-99"))){
+                    if (aghhid_h_1.equalsIgnoreCase("-777") || (aghhid_h_1.equalsIgnoreCase("-99"))) {
                         Intent intent = new Intent(HH_Screen_one_Section_h.this, AddReportActivity_AD.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
@@ -1481,8 +1382,6 @@ public class HH_Screen_one_Section_h extends Activity {
                         intent.putExtra("student_id", student_id);
                         startActivityForResult(intent, 88);
                     } else {
-
-
 
 
                         Intent intent = MpcUtil.buildNewIntent(appContext, HH_Screen_two_Section_h.class);
@@ -1508,50 +1407,29 @@ public class HH_Screen_one_Section_h extends Activity {
                 }
 
 
-
-
-
-            }else{
-                showAlert("Erro" , "\nPlease Contact Admin");
+            } else {
+                showAlert("Erro", "\nPlease Contact Admin");
 
             }
 
 
-
-
-
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDataNow() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside saveDataNow() Exception is :" + e.toString());
         }
-
-
-
-
-
-
-
-
-
 
 
     }
 
 
+    public void sendForgotPasswordRequest(View v) {
 
-
-
-
-
-
-    public  void sendForgotPasswordRequest(View v) {
-
-        try{
+        try {
             //AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_sigin_forgot_pass));
-            if(ConnectionVerifier.isInternetOn(appContext)){
+            if (ConnectionVerifier.isInternetOn(appContext)) {
                 userNameToLogin = editTextUserNameToLogin.getText().toString();
-                if (userNameToLogin.trim().length() == 0 ){
+                if (userNameToLogin.trim().length() == 0) {
                     MpcUtil.hideSoftKeyBoard(appContext, editTextUserNameToLogin);
-                    showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signin_activity_forgot_password_emailaddress_field_empty_message_body));
+                    showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title), getResources().getString(R.string.signin_activity_forgot_password_emailaddress_field_empty_message_body));
                     editTextUserNameToLogin.requestFocus();
                     MpcUtil.restartInput(appContext, editTextUserNameToLogin);
 //				}else if (!MpcUtil.isEmailValid(userNameToLogin)) {
@@ -1561,21 +1439,21 @@ public class HH_Screen_one_Section_h extends Activity {
 //					editTextUserNameToLogin.selectAll();
 //					MpcUtil.restartInput(appContext, editTextUserNameToLogin);
                     //editTextUserNameToLogin.setTextColor(getResources().getColorStateList(R.color.selected_effect));
-                }else{
+                } else {
 
                     showWarningAlert("Warning", "Instructions to change password will be emailed to address registered with this account. Are you sure you want to continue?");
                 }
-            }else{
-                showAlert( getResources().getString(R.string.app_name),getResources().getString(R.string.connection_error_message));
+            } else {
+                showAlert(getResources().getString(R.string.app_name), getResources().getString(R.string.connection_error_message));
             }
-        }catch(Exception e){
-            EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside sendForgotPasswordRequest");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]:Exception occured inside sendForgotPasswordRequest");
         }
     }
 
-    private JSONObject sendForgotPasswordRequestToServer(){
+    private JSONObject sendForgotPasswordRequestToServer() {
 
-        try{
+        try {
 //			DebugLog.console("[HH_Screen_One]: inside sendForgotPasswordRequestToServer");
 //			String url = MpcUtil.getBaseURL(appContext) +MpcUtil.PASSWORD_RESET_URL+userNameToLogin +"&resellerId=careteen";
 //			EmailDebugLog.getInstance(getApplicationContext()).writeLog("[HH_Screen_One]: inside sendForgotPasswordRequestToServer"+url);
@@ -1589,8 +1467,8 @@ public class HH_Screen_one_Section_h extends Activity {
 //				}
 //			}
             return result;
-        }catch(Exception e){
-            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside sendForgotPasswordRequestToServer");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside sendForgotPasswordRequestToServer");
             return null;
         }
     }
@@ -1602,10 +1480,10 @@ public class HH_Screen_one_Section_h extends Activity {
         @Override
         public void handleMessage(Message msg) {
 
-            try{
+            try {
                 DebugLog.console("code is :" + msg.what);
 
-                if (pd!=null){
+                if (pd != null) {
                     pd.dismiss();
                 }
 
@@ -1614,11 +1492,11 @@ public class HH_Screen_one_Section_h extends Activity {
                 initializeReferenceOfViews();
 
 
-            }catch(Exception e){
-                if (pd!=null){
+            } catch (Exception e) {
+                if (pd != null) {
                     pd.dismiss();
                 }
-                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside Handler");
+                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside Handler");
             }
         }
     };
@@ -1627,67 +1505,65 @@ public class HH_Screen_one_Section_h extends Activity {
     private Handler forgot_password_Handler = new Handler() {
 
         boolean success = false;
+
         @Override
         public void handleMessage(Message msg) {
 
-            try{
+            try {
                 DebugLog.console("code is :" + msg.what);
-                success = ResponceVerifier.verifyReceievedResponce(HH_Screen_one_Section_h.this,msg.what);
-                if(success){
-                    if (pd!=null){
+                success = ResponceVerifier.verifyReceievedResponce(HH_Screen_one_Section_h.this, msg.what);
+                if (success) {
+                    if (pd != null) {
                         pd.dismiss();
                     }
-                    showAlert(getResources().getString(R.string.signin_activity_forgot_password_email_sent_message_title),getResources().getString(R.string.signin_activity_forgot_password_email_sent_message_body));
-                }else {
-                    if (pd!=null){
+                    showAlert(getResources().getString(R.string.signin_activity_forgot_password_email_sent_message_title), getResources().getString(R.string.signin_activity_forgot_password_email_sent_message_body));
+                } else {
+                    if (pd != null) {
                         pd.dismiss();
                     }
                     showAlert(ResponceVerifier.TitleToShow, ResponceVerifier.messageToShow);
                 }
 
-            }catch(Exception e){
+            } catch (Exception e) {
                 pd.dismiss();
-                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside Handler");
+                EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside Handler");
             }
         }
     };
 
-    public void showAlert(String title, String message){
+    public void showAlert(String title, String message) {
         new AlertDialog.Builder(HH_Screen_one_Section_h.this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog, int which){
+                .setPositiveButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
                     }
                 })
                 .show();
     }
 
 
-
-
-
-    public void showPermanentExpiredAlert(String title, String message){
+    public void showPermanentExpiredAlert(String title, String message) {
         new AlertDialog.Builder(HH_Screen_one_Section_h.this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog, int which){
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
 
                         saveDataNow();
                     }
-                }).setNegativeButton("Cancel",new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int which){
+                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
                 //	USER_CONFIRMATION = false;
             }
         })
                 .show();
     }
 
-    public void pressBackButton(View v){
+    public void pressBackButton(View v) {
 
         try {
-            DebugLog.console("[HH_Screen_One] BackButton is pressed:" );
+            DebugLog.console("[HH_Screen_One] BackButton is pressed:");
 
 
 //            if(CALLED_FROM.equalsIgnoreCase("HH_Screen_three_Section_e")) {
@@ -1707,16 +1583,16 @@ public class HH_Screen_one_Section_h extends Activity {
 //                finish();
 
 //            }else {
-                Intent returnIntent = new Intent();
-                returnIntent.putExtra("isDataUpdated", false);
-                setResult(Activity.RESULT_OK, returnIntent);
-                finish();
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("isDataUpdated", false);
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
 //
 //            }
 
 
-        }catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside pressBackButton");
             finish();
         }
     }
@@ -1725,12 +1601,12 @@ public class HH_Screen_one_Section_h extends Activity {
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        if (pd!=null){
+        if (pd != null) {
             pd.dismiss();
         }
 
 
-        DebugLog.console("[HH_Screen_One] Inside onDestroy:" );
+        DebugLog.console("[HH_Screen_One] Inside onDestroy:");
     }
 
     @Override
@@ -1747,52 +1623,53 @@ public class HH_Screen_one_Section_h extends Activity {
             setResult(Activity.RESULT_OK, returnIntent);
 
             finish();
-        }catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onBackPressed");
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog(e.toString() + "\r\n[HH_Screen_One]: Exception occured inside onBackPressed");
             finish();
         }
     }
 
-    public void showWarningAlert(String title, String message){
+    public void showWarningAlert(String title, String message) {
         new AlertDialog.Builder(HH_Screen_one_Section_h.this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog, int which){
+                .setPositiveButton(getResources().getString(R.string.registration_screen_alert_box_btn), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
 
                         pd = ProgressDialog.show(HH_Screen_one_Section_h.this, getResources().getString(R.string.signin_activity_forgot_password_progress_bar_title), getResources().getString(R.string.signup_activity_forgot_password_text), true, false);
                         new Thread() {
                             public void run() {
-                                try{
+                                try {
                                     Thread.sleep(200);
                                     JSONObject json = sendForgotPasswordRequestToServer();
-                                    if (json!=null){
+                                    if (json != null) {
 
-                                        if (!json.isNull("code")){
+                                        if (!json.isNull("code")) {
                                             String status = json.get("code").toString();
-                                            if (status.equalsIgnoreCase("100")){
+                                            if (status.equalsIgnoreCase("100")) {
                                                 forgot_password_Handler.sendEmptyMessage(Integer.parseInt(json.get("code").toString()));
-                                                EmailDebugLog.getInstance(appContext).writeLog("[Forgot password]: Email Sent Successfully on id :"+editTextUserNameToLogin );
-                                            }else{
+                                                EmailDebugLog.getInstance(appContext).writeLog("[Forgot password]: Email Sent Successfully on id :" + editTextUserNameToLogin);
+                                            } else {
                                                 forgot_password_Handler.sendEmptyMessage(Integer.parseInt(json.get("code").toString()));
                                             }
-                                        }else{
+                                        } else {
                                             EmailDebugLog.getInstance(getApplicationContext()).writeLog("Inside sendForgotPasswordRequest code object not found ");
                                             forgot_password_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
                                         }
-                                    }else{
+                                    } else {
                                         EmailDebugLog.getInstance(getApplicationContext()).writeLog("Inside sendForgotPasswordRequest json object is null");
                                         forgot_password_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
 
                                     }
-                                } catch (Exception e) {  }
+                                } catch (Exception e) {
+                                }
                                 // Dismiss the Dialog
                             }
                         }.start();
 
                     }
-                }).setNegativeButton(getResources().getString(R.string.registration_screen_alert_box_cancel_btn), new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int which){
+                }).setNegativeButton(getResources().getString(R.string.registration_screen_alert_box_cancel_btn), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
 
             }
         }).show();
@@ -1805,65 +1682,53 @@ public class HH_Screen_one_Section_h extends Activity {
 
         try {
 
-            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_h_table,school_code,student_id);
-            DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_h_table, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
 
-            if (data.length()>0){
+            if (data.length() > 0) {
 
-                if(data.getString("h_1").equalsIgnoreCase("null"))
-                    data.put("h_1","");
+                if (data.getString("h_1").equalsIgnoreCase("null"))
+                    data.put("h_1", "");
 
                 hh_edtfield_q_2.setText(data.getString("h_1"));
 
-                aghhid_c1_given_number="";//data.getString("e_4");
+                aghhid_c1_given_number = "";//data.getString("e_4");
 
-                if(data.getString("h_1").equalsIgnoreCase("null"))
-                    data.put("h_1","");
+                if (data.getString("h_1").equalsIgnoreCase("null"))
+                    data.put("h_1", "");
 
 
-                String h_1= data.getString("h_1");
-                aghhid_h_1 =h_1;
+                String h_1 = data.getString("h_1");
+                aghhid_h_1 = h_1;
 
-                if(h_1.trim().equalsIgnoreCase("1")) {
+                if (h_1.trim().equalsIgnoreCase("1")) {
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(0).getId());
-                  //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
+                    //  hh_edtfield_q_2.setVisibility(View.VISIBLE);
                     //numbers_sp_q_2.setVisibility(View.VISIBLE);
-                   // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
+                    // hh_edtfield_q_2.setText(data.getString("c1_given_number"));
                 }
 
-                if(h_1.trim().equalsIgnoreCase("2"))
+                if (h_1.trim().equalsIgnoreCase("2"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(1).getId());
 
-                if(h_1.trim().equalsIgnoreCase("3"))
+                if (h_1.trim().equalsIgnoreCase("3"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(2).getId());
 
-                if(h_1.trim().equalsIgnoreCase("4"))
+                if (h_1.trim().equalsIgnoreCase("4"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(3).getId());
 
-                if(h_1.trim().equalsIgnoreCase("-99"))
+                if (h_1.trim().equalsIgnoreCase("-99"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(4).getId());
 
-                if(h_1.trim().equalsIgnoreCase("-777"))
+                if (h_1.trim().equalsIgnoreCase("-777"))
                     hh_edtfield_q_2_rdg.check(hh_edtfield_q_2_rdg.getChildAt(5).getId());
 
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside onStart() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside onStart() Exception is :" + e.toString());
         }
-
 
 
     }
@@ -1877,8 +1742,8 @@ public class HH_Screen_one_Section_h extends Activity {
 //					Uri.parse("http://www.secureteen.com/privacy-policy?ln="+MpcUtil.getLanguageCode(appContext)));
 //			startActivity(intent);
 
-        } catch (Exception ex){
-            EmailDebugLog.getInstance(appContext).writeLog(ex.toString()+"\r\n[HH_Screen_One]: Exception occured inside onTermsPolicyClick");
+        } catch (Exception ex) {
+            EmailDebugLog.getInstance(appContext).writeLog(ex.toString() + "\r\n[HH_Screen_One]: Exception occured inside onTermsPolicyClick");
 
         }
 
@@ -1900,8 +1765,8 @@ public class HH_Screen_one_Section_h extends Activity {
             //AnalyticsUtil.updateEventAction(appContext, getResources().getString(R.string.sign_up_eula_btn_label_below_btn_line_one));
 
             DebugLog.console("inside gotoSigninScreen done");
-        } catch (Exception ex){
-            EmailDebugLog.getInstance(appContext).writeLog(ex.toString()+"\r\n[HH_Screen_One]: Exception occured inside gotoSigninScreen");
+        } catch (Exception ex) {
+            EmailDebugLog.getInstance(appContext).writeLog(ex.toString() + "\r\n[HH_Screen_One]: Exception occured inside gotoSigninScreen");
 
         }
 
@@ -1923,13 +1788,12 @@ public class HH_Screen_one_Section_h extends Activity {
             //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             //startActivity(intent);
             DebugLog.console("inside gotoSignupScreen done");
-        } catch (Exception ex){
-            EmailDebugLog.getInstance(appContext).writeLog(ex.toString()+"\r\n[HH_Screen_One]: Exception occured inside gotoSignupScreen");
+        } catch (Exception ex) {
+            EmailDebugLog.getInstance(appContext).writeLog(ex.toString() + "\r\n[HH_Screen_One]: Exception occured inside gotoSignupScreen");
 
         }
 
     }
-
 
 
     @Override
@@ -1939,7 +1803,7 @@ public class HH_Screen_one_Section_h extends Activity {
         try {
             finish();
 
-        }catch (Exception ex) {
+        } catch (Exception ex) {
 
         }
 
@@ -1949,11 +1813,11 @@ public class HH_Screen_one_Section_h extends Activity {
     protected void onPause() {
         // TODO Auto-generated method stub
         super.onPause();
-        if(selfClose){
+        if (selfClose) {
 
             //finish();
 
-        }else {
+        } else {
 //			Intent startMain = new Intent(Intent.ACTION_MAIN);
 //			startMain.addCategory(Intent.CATEGORY_HOME);
 //			startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1973,7 +1837,6 @@ public class HH_Screen_one_Section_h extends Activity {
 //		}
 
 
-
     }
 
     public void gotohomeScreen(View view) {
@@ -1987,7 +1850,7 @@ public class HH_Screen_one_Section_h extends Activity {
             finish();
 
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside gotohomeScreen() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside gotohomeScreen() Exception is :" + e.toString());
         }
     }
 
@@ -2006,6 +1869,7 @@ public class HH_Screen_one_Section_h extends Activity {
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);
     }
+
     public void setMigration3(View view) {
         aghhid_h_1 = "3";
         hh_edtfield_q_2.setVisibility(View.GONE);
@@ -2036,18 +1900,18 @@ public class HH_Screen_one_Section_h extends Activity {
     }
 
 
-    public void enableRadio(String value){
+    public void enableRadio(String value) {
 
 
         try {
 
 
-
         } catch (Exception e) {
-            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside enableRadio() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside enableRadio() Exception is :" + e.toString());
         }
 
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -2073,7 +1937,7 @@ public class HH_Screen_one_Section_h extends Activity {
 //        String phoneNumber =     txt_mobile_number.getText().toString().trim();
 
 
-        String phoneNumber =   phone_number;// numbers_sp_q_2.getSelectedItem().toString().trim();
+        String phoneNumber = phone_number;// numbers_sp_q_2.getSelectedItem().toString().trim();
 
         String network = getSimNetwork();
         MubLog.cpnsoleLog("getSimNetwork  " + network);
@@ -2081,32 +1945,22 @@ public class HH_Screen_one_Section_h extends Activity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                //     phoneNumber = "880" + phoneNumber;
+                phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
         } else {
 
         }
-        //callIntent.setData(Uri.parse("tel:" + "03006982661"));
-
-//        SaveInterviewStart_time();
-        if (network.equalsIgnoreCase("Telenor")) {
-            ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
-        } else {
-            callIntent.setData(Uri.parse("tel:" + phoneNumber));
-            startActivity(callIntent);
-        }
-
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(callIntent);
 
     }
 
-    public  String getSimNetwork() {
+    public String getSimNetwork() {
         TelephonyManager phoneMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         return phoneMgr.getSimOperatorName();
     }
-
-
 
 
     void ShowDialMessage(final Context context, String title, String message, String str_btonok, String str_btnenum) {
@@ -2168,5 +2022,26 @@ public class HH_Screen_one_Section_h extends Activity {
         });
     }
 
+    public void launchReport(View v) {
+
+        try {
+
+
+            Intent intent = new Intent(HH_Screen_one_Section_h.this, AddReportActivity_AD.class);
+
+            intent.putExtra("emp_id", emp_id);
+            intent.putExtra("order_id", order_id);
+            intent.putExtra("id", id);
+            intent.putExtra("farmer_cellphone", phone_number);
+            intent.putExtra("school_code", school_code);
+            intent.putExtra("student_id", student_id);
+            startActivityForResult(intent, 88);
+
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_one_Section_h] inside launchReport() Exception is :" + e.toString());
+        }
+
+    }
 
 }

@@ -170,6 +170,8 @@
                             android:layout_toLeftOf="@id/btn_RedialCall"
                             android:contentDescription="report"
                             android:src="@drawable/img_register"
+                            android:onClick="launchReport"
+                            android:clickable="true"
                             android:tint="@color/white_color" />
 
                         <TextView

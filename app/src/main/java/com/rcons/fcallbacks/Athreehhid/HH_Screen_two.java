@@ -2087,24 +2087,15 @@ public class HH_Screen_two extends Activity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                //     phoneNumber = "880" + phoneNumber;
+                phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
         } else {
 
         }
-        //callIntent.setData(Uri.parse("tel:" + "03006982661"));
-
-//        SaveInterviewStart_time();
-        if (network.equalsIgnoreCase("Telenor")) {
-            ShowDialMessage(appContext, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
-        } else {
-            callIntent.setData(Uri.parse("tel:" + phoneNumber));
-            startActivity(callIntent);
-        }
-
-
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(callIntent);
     }
 
     public  String getSimNetwork() {
