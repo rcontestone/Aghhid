@@ -1488,7 +1488,7 @@ public class HH_Screen_two extends Activity {
                         intent.putExtra("rcons_user", RConsUtils.getUserName());
                         startActivityForResult(intent, 88);
 //                        startActivity(intent);
-                       // finish();
+                        // finish();
                     }
                     return;
 
@@ -2147,7 +2147,7 @@ public class HH_Screen_two extends Activity {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-               // SaveInterviewStart_time();
+                // SaveInterviewStart_time();
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + str_btonok));
                 startActivity(callIntent);
@@ -2158,7 +2158,7 @@ public class HH_Screen_two extends Activity {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-               // SaveInterviewStart_time();
+                // SaveInterviewStart_time();
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:" + str_btnenum));
                 startActivity(callIntent);
@@ -2175,7 +2175,29 @@ public class HH_Screen_two extends Activity {
     }
 
 
+    public void launchReport(View v){
 
+        try {
+
+
+            Intent intent = new Intent(HH_Screen_two.this, AddReportActivity.class);
+
+            intent.putExtra("emp_id", emp_id);
+            intent.putExtra("order_id", order_id);
+            intent.putExtra("id", id);
+            intent.putExtra("farmer_cellphone", phone_number);
+            intent.putExtra("school_code", school_code);
+            intent.putExtra("student_id", student_id);
+            startActivityForResult(intent, 88);
+
+
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside launchReport() Exception is :"+e.toString());
+        }
+
+
+    }
 
 
 
