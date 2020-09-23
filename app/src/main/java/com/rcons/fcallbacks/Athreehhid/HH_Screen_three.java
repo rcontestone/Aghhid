@@ -2450,6 +2450,7 @@ public class HH_Screen_three extends Activity {
 		TextView hh_textview_d_1 =null;
 		try {
 
+			HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_delete_hhids_withempty_member(school_code,student_id);
 
 
 			if(main.getChildCount()==0){
@@ -2885,8 +2886,16 @@ public class HH_Screen_three extends Activity {
 		boolean error = false;
 
 
-		if(numberList==null)
+
+		HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_delete_hhids_withempty_member(school_code,student_id);
+
+
+
+		if(numberList==null) {
 			numberList = new ArrayList<JSONObject>();
+		}else{
+			numberList.clear();
+		}
 
 
 		try {
@@ -3159,8 +3168,12 @@ public class HH_Screen_three extends Activity {
 		boolean error = false;
 
 
-		if(numberList==null)
+		if(numberList==null) {
 			numberList = new ArrayList<JSONObject>();
+		}else{
+			numberList.clear();
+		}
+
 
 
 		try {

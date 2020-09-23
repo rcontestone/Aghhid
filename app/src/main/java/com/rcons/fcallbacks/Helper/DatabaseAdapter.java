@@ -8605,7 +8605,7 @@ public class DatabaseAdapter {
 
 
 
-    public boolean aghh_updateCallStatus(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered,String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm) {
+    public boolean aghh_updateCallStatus(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered,String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String call_from) {
 
 
         boolean callagain_flag_manual_set = false;
@@ -8615,10 +8615,12 @@ public class DatabaseAdapter {
 
 
             //handling HH id survey for code 1 for both survey apps
-            if(survey_status.equalsIgnoreCase("1")){
-                survey_status="9";
-            }
 
+            if(call_from.equalsIgnoreCase("HHID_MAIN")) {
+                if (survey_status.equalsIgnoreCase("1")) {
+                    survey_status = "9";
+                }
+            }
 
 
             this.durationPopup = durationPopup;
@@ -8703,8 +8705,13 @@ public class DatabaseAdapter {
             }
 
 
-            storeInfoInSection_M( context,  survey_status,  scode,  studentid,  id,  farmer_id,  phoneNumber,  reason,  isAlterNameFarmer,  callAgain,  empID,  calldurationReason,  durationPopup, m3_answered,  m4_answered,m4_answered_other,e11_day,e11_month,e11_hh,e11_mm,tryNumber);
 
+            if(call_from.equalsIgnoreCase("HHID_MAIN")) {
+                storeInfoInSection_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+            }else{
+                storeInfoInSection_AD_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+
+            }
             return callagain_flag_manual_set;
         } catch (Exception e) {
             Log.e("updateCallStatus", e.toString());
@@ -8728,6 +8735,26 @@ public class DatabaseAdapter {
             EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside storeInfoInSection_M() Exception is :"+e.toString());
         }
     }
+
+
+
+    private void storeInfoInSection_AD_M(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup,String m3_answered, String m4_answered,String m4_answered_other ,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber) {
+
+
+
+        try {
+
+            //handling HH id survey for code 1 for both survey apps
+//            if(survey_status.equalsIgnoreCase("9")){
+//                survey_status="1";
+//            }
+
+            HouseHoldDataBaseHelper.getDataBaseProcessor(context).hhid_insert_data_section_ad_m(scode,studentid,phoneNumber,survey_status,m3_answered,m4_answered,m4_answered_other,e11_day,e11_month,e11_hh,e11_mm,tryNumber);
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside storeInfoInSection_AD_M() Exception is :"+e.toString());
+        }
+    }
+
 
 
     public boolean baseline_updateCallStatus(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup) {

@@ -40,7 +40,8 @@ import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
-import com.rcons.fcallbacks.Main.AddReportActivity;
+
+import com.rcons.fcallbacks.Main.AddReportActivity_AD;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.AppController;
@@ -1470,7 +1471,7 @@ public class HH_Screen_two_Section_h extends Activity {
 
 
 //                    if(aghhid_h_2.equalsIgnoreCase("-777") || (aghhid_h_2.equalsIgnoreCase("-99"))){
-                        Intent intent = new Intent(HH_Screen_two_Section_h.this, AddReportActivity.class);
+                        Intent intent = new Intent(HH_Screen_two_Section_h.this, AddReportActivity_AD.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
                         intent.putExtra("id", id);

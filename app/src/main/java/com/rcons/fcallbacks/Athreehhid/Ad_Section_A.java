@@ -33,7 +33,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
-import com.rcons.fcallbacks.Main.AddReportActivity;
+
+import com.rcons.fcallbacks.Main.AddReportActivity_AD;
 import com.rcons.fcallbacks.Questionnaire.Q_sectionB_a_b;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
@@ -601,7 +602,7 @@ public class Ad_Section_A extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_a2_ID);
                         a2 = radioButton.getTag().toString();
                         SaveData();
-                        Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                        Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
                         intent.putExtra("id", id);
@@ -621,7 +622,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             RConsUtils.hideView(qb1_layout, qa4a_layout);
                         } else if (b1.equalsIgnoreCase("3") || (b1.equalsIgnoreCase("-777"))) {
                             SaveData();
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -644,7 +645,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             RConsUtils.hideView(qb2_layout, qa4a_layout);
                         } else if (b2.equalsIgnoreCase("3") || b2.equalsIgnoreCase("-99") || (b2.equalsIgnoreCase("-777"))) {
                             SaveData();
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -667,7 +668,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             RConsUtils.hideView(qa3_layout, qa4a_layout);
                         } else {
                             SaveData();
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -720,7 +721,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             if (!StringUtils.isEmpty(txt_a4_time.getText().toString())
                                     && !StringUtils.isEmpty(txt_a4_date.getText().toString())) {
                                 SaveData();
-                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -768,7 +769,7 @@ public class Ad_Section_A extends AppCompatActivity {
                                 toastMessage("Number updated ~ " + a4_number);
                                 phone_number = a4_number;
                                 //  RConsUtils.hideView(qa4_layout, qa5_layout);
-                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -803,7 +804,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             txt_a6_time.setText("");
                             edt_a7.setText("");
 
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -834,7 +835,7 @@ public class Ad_Section_A extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_a4b_ID);
                         a4_b = radioButton.getTag().toString();
                         if (a4_b.equalsIgnoreCase("-777") || a4_b.equalsIgnoreCase("-99")) {
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -864,7 +865,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             }
                         } else if (a4_c.equalsIgnoreCase("0") || a4_c.equalsIgnoreCase("-99") || a4_c.equalsIgnoreCase("-777")) {
                             a4_d_other = "";
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -913,7 +914,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             a5_a = radioButton_a5a.getTag().toString();
                             if (a5_a.equalsIgnoreCase("2") || a5_a.equalsIgnoreCase("-777")) {
                                 SaveData();
-                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -964,7 +965,7 @@ public class Ad_Section_A extends AppCompatActivity {
                         if (a6.equalsIgnoreCase("4")) {
                             if (!StringUtils.isEmpty(txt_a6_time.getText().toString())
                                     && !StringUtils.isEmpty(txt_a6_date.getText().toString())) {
-                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -978,7 +979,7 @@ public class Ad_Section_A extends AppCompatActivity {
                         } else if (a6.equalsIgnoreCase("99")) {
                             a6_other = edt_a6_other.getText().toString();
                             if (!StringUtils.isEmpty(a6_other)) {
-                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -991,7 +992,7 @@ public class Ad_Section_A extends AppCompatActivity {
                             }
 
                         } else {
-                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -1092,7 +1093,7 @@ public class Ad_Section_A extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity.class);
+                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
                 intent.putExtra("emp_id", emp_id);
                 intent.putExtra("order_id", order_id);
                 intent.putExtra("id", id);

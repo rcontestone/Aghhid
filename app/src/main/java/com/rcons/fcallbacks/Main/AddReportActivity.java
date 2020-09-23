@@ -124,6 +124,8 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String e11_hh = "";
     String e11_mm = "";
 
+    String call_from = "HHID_MAIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -416,7 +418,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             // databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this);
 
 
-            databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
+            databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
             isDataUpdated = true;
             Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();
@@ -451,7 +453,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
                         if (m4_answered_other.length() > 0) {
 
                         } else {
-                            Toast.makeText(AddReportActivity.this, "Please ADD M4 explaination.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AddReportActivity.this, "Please ADD M4 explanation.", Toast.LENGTH_LONG).show();
                             return error = true;
                         }
                     }
@@ -505,7 +507,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
                 alertDialog.dismiss();
                 //  boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
-                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
+                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -533,8 +535,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             public void onClick(View view) {
                 alertDialog.dismiss();
                 //  databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
-                databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
-
+                databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();

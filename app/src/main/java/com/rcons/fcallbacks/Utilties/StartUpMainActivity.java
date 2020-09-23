@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
+import com.rcons.fcallbacks.Athreehhid.HouseHoldDataBaseHelper;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.R;
@@ -85,6 +86,12 @@ public class StartUpMainActivity extends Activity {
 		protected String doInBackground(Integer... params) {
 
 			try {
+
+
+				HouseHoldDataBaseHelper.getDataBaseProcessor(AppController.getInstance().getApplicationContext()).exportDB(AppController.getInstance().getApplicationContext());
+
+
+
 				adapter = new DatabaseAdapter(StartUpMainActivity.this);
 				adapter.Open();
 				String userName =RConsUtils.getUserName();

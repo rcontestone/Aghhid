@@ -123,6 +123,9 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
     String e11_hh = "";
     String e11_mm = "";
 
+
+    String call_from = "HHID_ADOLESCENT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,7 +181,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    qm3_layout.setVisibility(View.VISIBLE);
+                    //qm3_layout.setVisibility(View.VISIBLE);
                     qm4_layout.setVisibility(View.VISIBLE);
                 } else {
                     qm3_layout.setVisibility(View.GONE);
@@ -312,6 +315,29 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             }
         });
 
+
+        code_8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    spiiner_day.setVisibility(View.GONE);
+                    spiiner_month.setVisibility(View.GONE);
+                    spiiner_hour.setVisibility(View.GONE);
+                    spiiner_min.setVisibility(View.GONE);
+
+                    spiiner_day.setSelection(0);
+                    spiiner_month.setSelection(0);
+                    spiiner_hour.setSelection(0);
+                    spiiner_min.setSelection(0);
+                    e11_day = "";
+                    e11_month = "";
+                    e11_hh = "";
+                    e11_mm = "";
+                }
+            }
+        });
+
         otherReasonLayout = findViewById(R.id.otherReasonLayout);
         callReasonLayout = findViewById(R.id.callReasonLayout);
         other = findViewById(R.id.other);
@@ -414,7 +440,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             // databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this);
 
 
-            databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
+            databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
             isDataUpdated = true;
             Toast.makeText(AddReportActivity_AD.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();
@@ -432,13 +458,15 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
 
             if (surveyStatus.equalsIgnoreCase("1")) {
 
+                m3_answered = m4_answered;
+
                 if (!(m3_answered.length() > 0)) {
                     Toast.makeText(AddReportActivity_AD.this, "Please select M3.", Toast.LENGTH_LONG).show();
                     return error = true;
                 }
 
                 if (!(m4_answered.length() > 0)) {
-                    Toast.makeText(AddReportActivity_AD.this, "Please select M4.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddReportActivity_AD.this, "Please select M3.", Toast.LENGTH_LONG).show();
                     return error = true;
                 }
 
@@ -449,7 +477,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
                         if (m4_answered_other.length() > 0) {
 
                         } else {
-                            Toast.makeText(AddReportActivity_AD.this, "Please ADD M4 explaination.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AddReportActivity_AD.this, "Please ADD M3 explanation.", Toast.LENGTH_LONG).show();
                             return error = true;
                         }
                     }
@@ -503,7 +531,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
 
                 alertDialog.dismiss();
                 //  boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
-                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
+                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity_AD.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -531,7 +559,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             public void onClick(View view) {
                 alertDialog.dismiss();
                 //  databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
-                databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm);
+                databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
 
 
                 isDataUpdated = true;

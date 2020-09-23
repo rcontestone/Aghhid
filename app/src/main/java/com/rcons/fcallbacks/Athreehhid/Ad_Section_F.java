@@ -30,7 +30,8 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
-import com.rcons.fcallbacks.Main.AddReportActivity;
+
+import com.rcons.fcallbacks.Main.AddReportActivity_AD;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_A;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_B;
 import com.rcons.fcallbacks.R;
@@ -289,7 +290,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         if (f_1.equalsIgnoreCase("1")) {
                             RConsUtils.hideView(qf1_layout, qf3_layout);
                         } else if (f_1.equalsIgnoreCase("-99") || f_1.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -362,7 +363,7 @@ public class Ad_Section_F extends AppCompatActivity {
                                     }
                                 }
                                 if (checkbox_f2_777.isChecked() || checkbox_f2_99.isChecked()) {
-                                    Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                                    Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                                     intent.putExtra("emp_id", emp_id);
                                     intent.putExtra("order_id", order_id);
                                     intent.putExtra("id", id);
@@ -426,7 +427,7 @@ public class Ad_Section_F extends AppCompatActivity {
                                 }
                             }
                             if (checkbox_f2_777.isChecked() || checkbox_f2_99.isChecked()) {
-                                Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                                Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                                 intent.putExtra("emp_id", emp_id);
                                 intent.putExtra("order_id", order_id);
                                 intent.putExtra("id", id);
@@ -449,7 +450,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_f3_ID);
                         f_3_0 = radioButton.getTag().toString();
                         if (f_3_0.equalsIgnoreCase("-99") || f_3_0.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -478,7 +479,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_f4_ID);
                         f_4 = radioButton.getTag().toString();
                         if (f_4.equalsIgnoreCase("-99") || f_4.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -497,7 +498,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_f5_ID);
                         f_5 = radioButton.getTag().toString();
                         if (f_5.equalsIgnoreCase("-99") || f_5.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -516,7 +517,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_f6_ID);
                         f_6 = radioButton.getTag().toString();
                         if (f_6.equalsIgnoreCase("-99") || f_6.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -535,7 +536,7 @@ public class Ad_Section_F extends AppCompatActivity {
                         RadioButton radioButton = findViewById(rg_f7_ID);
                         f_7 = radioButton.getTag().toString();
                         if (f_7.equalsIgnoreCase("2") || f_7.equalsIgnoreCase("-777")) {
-                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                            Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                             intent.putExtra("emp_id", emp_id);
                             intent.putExtra("order_id", order_id);
                             intent.putExtra("id", id);
@@ -579,7 +580,7 @@ public class Ad_Section_F extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Ad_Section_F.this, AddReportActivity.class);
+                Intent intent = new Intent(Ad_Section_F.this, AddReportActivity_AD.class);
                 intent.putExtra("emp_id", emp_id);
                 intent.putExtra("order_id", order_id);
                 intent.putExtra("id", id);

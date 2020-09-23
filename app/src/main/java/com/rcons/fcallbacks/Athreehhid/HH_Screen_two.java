@@ -42,6 +42,7 @@ import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.HHIDConfigurations;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
+import com.rcons.fcallbacks.Main.AddReportActivity_AD;
 import com.rcons.fcallbacks.Main.CallMenuActivity;
 import com.rcons.fcallbacks.Main.MainMenuActivity;
 import com.rcons.fcallbacks.ParentalQuestionnaire.pq_Section_A;
@@ -1456,7 +1457,10 @@ public class HH_Screen_two extends Activity {
 
 
                     if(aghhid_c_1.equalsIgnoreCase("-99")||aghhid_c_1.equalsIgnoreCase("-777")){
+
+
                         Intent intent = new Intent(HH_Screen_two.this, AddReportActivity.class);
+
                         intent.putExtra("emp_id", emp_id);
                         intent.putExtra("order_id", order_id);
                         intent.putExtra("id", id);
