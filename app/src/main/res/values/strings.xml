@@ -766,7 +766,7 @@
     <string name="section_e_question_q7_option2">2~ نہیں، یہ ٹھیک نہیں </string>
     <string name="section_e_question_q7_option777">777~ فون کاٹ دیا </string>
 
-    <string name="section_e_question_q8"> برائے مہربانی نوٹ فرمالیں کہ اس سروے میں مہیا کی جانے والی کوئی بھی معلومات مکمل طور پر راز میں رکھی جائے گی اور آپ یا  \u0020  %1$s بالکل بھی متاثر نہیں ہوں گے۔ کیاآپ بتاسکتے ہیں کہ آپ (E01والی لڑکی کا نام بولیں)کو اس سروے میں حصہ کیوں نہیں لینے دے رہے؟ </string>
+    <string name="section_e_question_q8"> برائے مہربانی نوٹ فرمالیں کہ اس سروے میں مہیا کی جانے والی کوئی بھی معلومات مکمل طور پر راز میں رکھی جائے گی اور آپ یا (  \u0020  %1$s ) بالکل بھی متاثر نہیں ہوں گے۔ کیاآپ بتاسکتے ہیں کہ آپ ( \u0020  %1$s ) کو اس سروے میں حصہ کیوں نہیں لینے دے رہے؟ </string>
     <string name="section_e_question_q8_instructions"> کوڈز پڑھ کر مت سنائیں لاگو ہونے والے تمام جوابات نوٹ کریں</string>
     <string name="section_e_question_q8_option0">0~ بچی سے بات کرنے کی اجاز ت دیدی </string>
     <string name="section_e_question_q8_option1">1~  اسے اجنبیوں سے بات کرنے کی اجازت نہیں ہے </string>

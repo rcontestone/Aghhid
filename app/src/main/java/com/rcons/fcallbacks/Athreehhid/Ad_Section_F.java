@@ -856,18 +856,8 @@ public class Ad_Section_F extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("isDataUpdated", false);
             setResult(Activity.RESULT_OK, returnIntent);
-            Intent intent = MpcUtil.buildNewIntent(Ad_Section_F.this, HH_Screen_ten_Section_e.class);
-
-            intent.putExtra("m1b_parent_mobile", phone_number);
-            intent.putExtra("scode", village_id);
-            intent.putExtra("studentid", hhid);
-            intent.putExtra("m1b_student_name", student_name);
-            intent.putExtra("rcons_user", RConsUtils.getUserName());
-            startActivity(intent);
             finish();
-
-            super.onBackPressed();
-        }
+            super.onBackPressed();}
 
     }
 
