@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Main.AddReportActivity_AD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/v_ic_app_name"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/application_name"
+                    android:textColor="@color/color_white"
+                    android:textSize="10sp" />
+
+                <RelativeLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp">
+
+
+                    <ImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_arrow_left_white_24dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        fontPath="fonts/Montserrat-Regular.otf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text=" AG HHID Survey (Adolescent Section M  )"
+                        android:textColor="@color/color_white"
+                        android:textStyle="normal"
+                        tools:ignore="MissingPrefix" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txtErrorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="200dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Message"
+                android:textColor="@color/black_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@+id/report"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:visibility="visible">
+
+                <RadioButton
+                    android:id="@+id/code_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1.مکمل ہوگیا، آپ کے وقت اور تعاون کا شکریہ "
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. دوبارہ کال کریں، دوبارہ کال کےلئے کون سا وقت بہتر ہوگا(M02) میں نوٹ کریں"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. نامکمل سروے۔ جوابدہندہ نے فون کاٹ دیا اور بار بار کال کرنے پر بھی جواب نہیں دیا "
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. نمبر سے رابطہ ممکن نہیں یا بزی ٹون آرہی ہے"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. جوابدہندہ کو نیٹورک کا ایشو آرہا ہے اسے بیٹری لو کا مسئلہ ہے اس لئے دوبارہ کال کر لیں(M02) میں نوٹ کریں "
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6. کسی بھی سوال کا جواب دینے سے انکار کر دیا"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. کچھ سوالات کا جواب دینے سے انکار کر دیا "
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible" />
+
+                <RadioButton
+                    android:id="@+id/code_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8. Survey Completed but girl not willing to answer  ( سروے مکمل ہوا، مگر بچی کا سروے نہیں ہوا(کیونکہ بچی نے اظہار رضامندی نہیں کیا ) "
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/code_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9. Powered Off"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_20sdp"
+
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/code_10_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10. Other…"
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+
+                    android:visibility="gone" />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:id="@+id/callReasonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Reason for Call Duration less than 8 min"
+                    android:textColor="@color/navy_color" />
+
+                <EditText
+                    android:id="@+id/callReasonEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounder_edittext"
+                    android:ems="10"
+                    android:hint="Specify the Reason"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="8dp"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/otherReasonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Specify the Reason"
+                    android:textColor="@color/navy_color" />
+
+                <EditText
+                    android:id="@+id/other"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounder_edittext"
+                    android:ems="10"
+                    android:hint="Specify the Reason"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="8dp"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qm3_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urdu"
+                    android:layoutDirection="rtl"
+                    android:lineSpacingExtra="24sp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/section_m_question_q3"
+                    android:textColor="#AD1457"
+                    android:textSize="30sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_m3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m3_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="1"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
+                        android:text="@string/section_m_question_q3_option1"
+                        android:textColor="#0E0308"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m3_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="2"
+                        android:text="@string/section_m_question_q3_option2"
+                        android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m3_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="3"
+                        android:text="@string/section_m_question_q3_option3"
+                        android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM3"
+                        android:textSize="24sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qm4_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urdu"
+                    android:layoutDirection="rtl"
+                    android:lineSpacingExtra="24sp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/section_m_question_q4"
+                    android:textColor="#AD1457"
+                    android:textSize="30sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_m4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m4_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="1"
+                        android:text="@string/section_m_question_q4_option1"
+                        android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m4_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="2"
+                        android:text="@string/section_m_question_q4_option2"
+                        android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m4_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="3"
+                        android:text="@string/section_m_question_q4_option3"
+                        android:textColor="#0E0308"
+                        android:clickable="true"
+                        android:onClick="setMigrationM4"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m4_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:tag="4"
+                        android:onClick="setMigrationM4"
+                        android:text="@string/section_m_question_q4_option4"
+                        android:textColor="#0E0308"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_m4_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/urdu"
+                        android:layoutDirection="rtl"
+                        android:lineSpacingExtra="24sp"
+                        android:maxWidth="10dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"
+                        android:onClick="setMigrationM4"
+                        android:tag="5"
+                        android:text="@string/section_m_question_q4_option5"
+                        android:textColor="#0E0308"
+                        android:textSize="24sp" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/m4_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounder_edittext"
+                    android:ems="10"
+                    android:hint="Specify the Reason"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="8dp"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/day_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/hh_edtfield_q_2_rdg"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_days"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/month_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/day_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_month"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/hour_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/month_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_hours"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/minutes_spinner_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_below="@+id/hour_spinner_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:background="#e6e6e6">
+
+                <Spinner
+
+                    android:id="@+id/spiiner_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="#e6e6e6"
+                    android:entries="@array/array_mins"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_13sdp"></Spinner>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/Gray"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="58dp"
+                    android:text="@string/psu_code_digit"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/save_report"
+                android:layout_width="202dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_button"
+                android:text="Save Report"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="202dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_button"
+                android:text="Back"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

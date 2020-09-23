@@ -131,6 +131,7 @@
         <activity android:name=".Athreehhid.HH_Screen_fourteen_Section_e" />
         <activity android:name=".Athreehhid.HH_Screen_fifteen_Section_e" />
         <activity android:name=".Main.AddReportActivityHH" />
+        <activity android:name=".Main.AddReportActivity_AD" />
     </application>
 
 </manifest>
