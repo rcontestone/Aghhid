@@ -126,8 +126,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report);
-
+        setContentView(R.layout.activity_report_ad);
 
         spiiner_day = (Spinner) findViewById(R.id.spiiner_day);
         spiiner_month = (Spinner) findViewById(R.id.spiiner_month);
