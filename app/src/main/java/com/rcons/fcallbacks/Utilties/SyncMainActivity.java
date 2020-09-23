@@ -193,7 +193,7 @@ public class SyncMainActivity extends Activity {
 
 
 				JSONArray aghad_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghad_section_a_table," WHERE student_id IN " + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
-				JSONArray aghhid_section_ad_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_ad_m_table,whereQuery + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
+				JSONArray aghhid_section_ad_m_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_ad_m_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 
 				JSONArray aghhid_section_f_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_f_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
 				JSONArray aghhid_section_g_table = adapter.baseline_readSection_pq(DatabaseAdapter.aghhid_section_g_table," WHERE hhid IN " + subQuery + " AND village_id IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
