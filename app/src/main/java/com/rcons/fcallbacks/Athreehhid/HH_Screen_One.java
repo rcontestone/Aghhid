@@ -25,6 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
@@ -42,9 +43,12 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
 
+import butterknife.BindView;
+
 
 public class HH_Screen_One extends Activity {
 
+	FloatingActionButton btn_AddReportQuestionnaire;
 	//Use For sign-up
 	EditText editTextfirstName;
 	//	EditText editTextLastName;
@@ -148,7 +152,7 @@ public class HH_Screen_One extends Activity {
 				sign_up_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
 				sign_up_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
 
-
+				btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
 				sign_up_eula_textview_label_line_two = (TextView)findViewById(R.id.sign_up_eula_textview_label_line_two);
 				sign_up_eula_textview_label_line_two.setText(Html.fromHtml(stringToShow));
 

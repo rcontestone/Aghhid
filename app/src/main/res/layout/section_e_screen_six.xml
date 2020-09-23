@@ -162,6 +162,14 @@
                             android:clickable="true"
                             android:src="@drawable/call_icon_foreground"
                             android:tint="@color/white_color" />
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btn_AddReportQuestionnaire"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/btn_RedialCall"
+                            android:contentDescription="report"
+                            android:src="@drawable/img_register"
+                            android:tint="@color/white_color" />
                         <TextView
                             android:id="@+id/hh_textview_q_script"
                             android:layout_width="wrap_content"

@@ -35,6 +35,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
@@ -61,9 +62,12 @@ import java.util.List;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
+import butterknife.BindView;
+
 
 public class HH_Screen_fifteen_Section_e extends Activity {
 
+    FloatingActionButton btn_AddReportQuestionnaire;
     //Use For sign-up
     EditText editTextfirstName;
     //	EditText editTextLastName;
@@ -252,7 +256,7 @@ public class HH_Screen_fifteen_Section_e extends Activity {
         try {
 
 
-
+            btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
 
 
             hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);

@@ -36,6 +36,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
@@ -59,9 +60,12 @@ import java.util.ArrayList;
 
 import androidx.core.app.ActivityCompat;
 
+import butterknife.BindView;
+
 
 public class HH_Screen_one_section_e extends Activity {
 
+    FloatingActionButton btn_AddReportQuestionnaire;
     //Use For sign-up
     EditText editTextfirstName;
     //	EditText editTextLastName;
@@ -234,7 +238,7 @@ public class HH_Screen_one_section_e extends Activity {
         // TODO Auto-generated method stub
         try {
 
-
+            btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
 
 
 

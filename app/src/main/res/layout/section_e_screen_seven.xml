@@ -102,8 +102,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:scrollbarFadeDuration="60000"
             android:scrollbars="vertical">
@@ -125,8 +125,8 @@
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
 
                         android:orientation="vertical"
                         android:scaleType="fitXY">
@@ -137,8 +137,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbg"
                             android:hint="@string/sign_up_first_name_textfield_label"
                             android:inputType="textPersonName"
@@ -157,22 +157,32 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:backgroundTint="@color/black_color"
+                            android:clickable="true"
                             android:contentDescription="Call"
                             android:onClick="DialUserNumber"
-                            android:clickable="true"
                             android:src="@drawable/call_icon_foreground"
                             android:tint="@color/white_color" />
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btn_AddReportQuestionnaire"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/btn_RedialCall"
+                            android:contentDescription="report"
+                            android:src="@drawable/img_register"
+                            android:tint="@color/white_color" />
+
                         <TextView
                             android:id="@+id/hh_textview_q_script"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/sign_up_first_name_textfield"
 
+                            android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="27dp"
                             android:layout_marginRight="30dp"
                             android:gravity="center"
-                            android:layout_centerHorizontal="true"
                             android:text="Sectin E Q.7"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
@@ -207,16 +217,15 @@
                             android:layout_below="@+id/hh_textview_q_2"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbgwhitecolor"
-                            android:visibility="gone"
                             android:inputType="phone"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
-                            android:textColorHint="@color/LightGrey"></EditText>
-
+                            android:textColorHint="@color/LightGrey"
+                            android:visibility="gone"></EditText>
 
 
                         <Spinner
@@ -224,31 +233,31 @@
                             android:id="@+id/numbers_sp_q_2"
                             android:layout_width="@dimen/_250sdp"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/hh_edtfield_q_2"
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
-                            android:layout_below="@id/hh_edtfield_q_2"
                             android:background="#e6e6e6"
                             android:entries="@array/array_relative_code_sp"
                             android:padding="@dimen/_5sdp"
-                            android:visibility="gone"
-                            android:textSize="@dimen/_13sdp"></Spinner>
+                            android:textSize="@dimen/_13sdp"
+                            android:visibility="gone"></Spinner>
 
 
                         <TextView
                             android:id="@+id/hh_textview_q_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2"
+                            android:layout_alignParentRight="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_25sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:gravity="right"
                             android:text="@string/aghhid_tv_c_2"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
-                            android:visibility="gone"
                             android:textStyle="bold"
+                            android:visibility="gone"
 
 
                             />
@@ -260,25 +269,23 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/hh_textview_q_3"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbgwhitecolor"
                             android:inputType="text"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
-                            android:visibility="gone"
-                            android:textColorHint="@color/LightGrey"></EditText>
-
-
+                            android:textColorHint="@color/LightGrey"
+                            android:visibility="gone"></EditText>
 
 
                         <RadioGroup
+                            android:id="@+id/hh_edtfield_q_2_rdg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/hh_textview_q_3"
                             android:layout_marginTop="@dimen/_8sdp"
-                            android:id="@+id/hh_edtfield_q_2_rdg"
 
                             >
 
@@ -288,20 +295,19 @@
                                 android:layout_height="wrap_content"
 
                                 android:layout_below="@+id/migration1"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
+                                android:layoutDirection="rtl"
+                                android:onClick="setMigration1"
                                 android:text="@string/section_e_question_q2_option1_new"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration1"
-
 
 
                                 />
@@ -310,21 +316,21 @@
                                 android:id="@+id/hh_edtfield_q_2_rdg_op_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/migration1"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
+                                android:layoutDirection="rtl"
+                                android:onClick="setMigration2"
                                 android:text="@string/section_e_question_q2_option2"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration2"
 
                                 />
 
@@ -333,48 +339,46 @@
                                 android:id="@+id/hh_edtfield_q_2_rdg_op_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/migration1"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
                                 android:layoutDirection="rtl"
-                                android:layout_gravity="start"
+                                android:onClick="setMigration3"
                                 android:text="@string/section_e_question_q2_option88"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
-                                android:visibility="gone"
                                 android:textStyle="bold"
-                                android:clickable="true"
-                                android:onClick="setMigration3"
+                                android:visibility="gone"
 
                                 />
-
-
 
 
                             <RadioButton
                                 android:id="@+id/hh_edtfield_q_2_rdg_op_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/migration1"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
+                                android:layoutDirection="rtl"
+                                android:onClick="setMigration4"
                                 android:text="@string/section_e_question_q2_option98"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
                                 android:visibility="gone"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration4"
 
                                 />
 
@@ -383,22 +387,22 @@
                                 android:id="@+id/hh_edtfield_q_2_rdg_op_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/migration1"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
-                                android:visibility="gone"
+                                android:layoutDirection="rtl"
+                                android:onClick="setMigration5"
                                 android:text="@string/section_e_question_q2_option99"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration5"
+                                android:visibility="gone"
 
                                 />
 
@@ -407,33 +411,26 @@
                                 android:id="@+id/hh_edtfield_q_2_rdg_op_6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
                                 android:layout_below="@+id/migration1"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="start"
                                 android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
+                                android:clickable="true"
                                 android:gravity="right"
+                                android:layoutDirection="rtl"
+                                android:onClick="setMigration6"
                                 android:text="@string/section_e_question_q2_option777"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration6"
 
                                 />
 
 
                         </RadioGroup>
-
-
-
-
-
-
-
 
 
                         <RelativeLayout
@@ -443,8 +440,8 @@
                             android:layout_below="@+id/hh_edtfield_q_2_rdg"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin_xhdpi"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin_xhdpi"
                             android:layout_marginTop="40dp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin_xhdpi"
                             android:background="@drawable/option_one"
                             android:clickable="true"
                             android:onClick="HandleNextButnClick"
@@ -467,10 +464,6 @@
                                 android:text="@string/relative_layout_new_stid_btnthreenextbtn"
                                 android:textSize="17sp" />
                         </RelativeLayout>
-
-
-
-
 
 
                         <TextView
@@ -521,13 +514,13 @@
                 android:textSize="12sp" />
         </RelativeLayout>
     </LinearLayout>
+
     <TextView
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_above="@+id/exit"
+        android:layout_alignParentBottom="true"
         android:text="HH_Screen_seven_Section_e"
-        android:textSize="@dimen/_14sdp"
-        />
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp" />
 </RelativeLayout>

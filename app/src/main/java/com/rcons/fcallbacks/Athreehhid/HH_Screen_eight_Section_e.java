@@ -35,6 +35,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
@@ -58,6 +59,8 @@ import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+
+import butterknife.BindView;
 
 
 public class HH_Screen_eight_Section_e extends Activity {
@@ -177,7 +180,7 @@ public class HH_Screen_eight_Section_e extends Activity {
     private static String START_TIME  = "";
 
 
-
+    FloatingActionButton btn_AddReportQuestionnaire;
 
 
     //for agapp
@@ -278,7 +281,7 @@ public class HH_Screen_eight_Section_e extends Activity {
 
             hh_edtfield_q_2_rdg = (RadioGroup) findViewById(R.id.hh_edtfield_q_2_rdg);
 
-
+            btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
 
 
 

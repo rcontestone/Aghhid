@@ -39,6 +39,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.filemanager.FileManager;
 import com.rcons.fcallbacks.EmailDebugLog;
@@ -62,9 +63,12 @@ import java.util.List;
 
 import androidx.core.app.ActivityCompat;
 
+import butterknife.BindView;
+
 
 public class HH_Screen_three extends Activity {
 
+	FloatingActionButton btn_AddReportQuestionnaire;
 	//Use For sign-up
 	EditText editTextfirstName;
 	//	EditText editTextLastName;   String stringTopBar = getResources().getString(R.string.screen_two_top_bar,currentPSUCode,count+"",CURRENT_HHID+"", current_STID+"");
@@ -221,7 +225,7 @@ public class HH_Screen_three extends Activity {
 		// TODO Auto-generated method stub
 		try {
 
-
+			btn_AddReportQuestionnaire = (FloatingActionButton) findViewById(R.id.btn_AddReportQuestionnaire);
 
 			hh_textview_q_2 = (TextView)findViewById(R.id.hh_textview_q_2);
 			hh_textview_q_3 = (TextView)findViewById(R.id.hh_textview_q_3);

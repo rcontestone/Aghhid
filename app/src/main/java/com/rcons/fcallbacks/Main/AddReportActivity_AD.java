@@ -68,6 +68,9 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
     String c3a_hh = "";
     String e10 = "";
 
+    String h_1 = "";
+    String h_2 = "";
+
     String a1 = "";
     String a2 = "";
     String a3 = "";
@@ -440,7 +443,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             // databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this);
 
 
-            databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
+            databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, call_from);
             isDataUpdated = true;
             Toast.makeText(AddReportActivity_AD.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();
@@ -531,7 +534,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
 
                 alertDialog.dismiss();
                 //  boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
-                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
+                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity_AD.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -559,7 +562,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             public void onClick(View view) {
                 alertDialog.dismiss();
                 //  databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
-                databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,call_from);
+                databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, call_from);
 
 
                 isDataUpdated = true;
@@ -1199,22 +1202,22 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
 
             Cursor cursor = null;
             if (StringUtils.isEmpty(sc1)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "1");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 1");
             } else if (StringUtils.isEmpty(sc2)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "2");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "2");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(sc3)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "3");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "3");
                 MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(sc4)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "4");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "4");
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(sc5)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "5");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "5");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(sc6)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, farmer_cellphone, "6");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, farmer_cellphone, "6");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {
@@ -1248,6 +1251,25 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
                 a6_hh = cursor.getString(cursor.getColumnIndex("a6_hh"));
                 a6_mm = cursor.getString(cursor.getColumnIndex("a6_mm"));
                 a7 = cursor.getString(cursor.getColumnIndex("a7"));
+
+
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    void readFromDataBase_Section_h() {
+        try {
+
+            Cursor cursor = databaseAccess.getad_section_f_Data(school_code, student_id);
+
+            if (cursor != null && cursor.getCount() > 0) {
+                cursor.moveToFirst();
+
+                h_1 = cursor.getString(cursor.getColumnIndex("h_1"));
+                h_2 = cursor.getString(cursor.getColumnIndex("h_2"));
 
 
             }
@@ -1403,6 +1425,7 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
 
     void setRadioButton() {
         readFromDataBase_Section_a();
+        readFromDataBase_Section_h();
         if (!StringUtils.isEmpty(a2)) {
             code_1.setVisibility(View.GONE);
             code_2.setVisibility(View.GONE);
@@ -1420,8 +1443,44 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             day_spinner_name.setVisibility(View.GONE);
             hour_spinner_name.setVisibility(View.GONE);
             minutes_spinner_name.setVisibility(View.GONE);
-        }else if (!StringUtils.isEmpty(e10)){
-
+        } else if (!StringUtils.isEmpty(h_1) && StringUtils.isEmpty(h_2)) {
+            code_1.setVisibility(View.GONE);
+            code_2.setVisibility(View.GONE);
+            code_3.setVisibility(View.GONE);
+            code_4.setVisibility(View.GONE);
+            code_5.setVisibility(View.GONE);
+            code_6.setVisibility(View.GONE);
+            code_7.setVisibility(View.GONE);
+            code_8.setVisibility(View.GONE);
+            code_9.setVisibility(View.GONE);
+            code_10_other.setVisibility(View.GONE);
+            group.setVisibility(View.GONE);
+            SaveReport.setVisibility(View.GONE);
+            month_spinner_name.setVisibility(View.GONE);
+            day_spinner_name.setVisibility(View.GONE);
+            hour_spinner_name.setVisibility(View.GONE);
+            minutes_spinner_name.setVisibility(View.GONE);
+            txtErrorMessage.setText("Kindly fill section_f question f2");
+            txtErrorMessage.setVisibility(View.VISIBLE);
+        } else if (!StringUtils.isEmpty(h_2)) {
+            code_1.setVisibility(View.VISIBLE);
+            code_2.setVisibility(View.GONE);
+            code_3.setVisibility(View.GONE);
+            code_4.setVisibility(View.GONE);
+            code_5.setVisibility(View.GONE);
+            code_6.setVisibility(View.GONE);
+            code_7.setVisibility(View.GONE);
+            code_8.setVisibility(View.GONE);
+            code_9.setVisibility(View.GONE);
+            code_10_other.setVisibility(View.GONE);
+            group.setVisibility(View.VISIBLE);
+            SaveReport.setVisibility(View.VISIBLE);
+            month_spinner_name.setVisibility(View.GONE);
+            day_spinner_name.setVisibility(View.GONE);
+            hour_spinner_name.setVisibility(View.GONE);
+            minutes_spinner_name.setVisibility(View.GONE);
+        } else {
+            code_1.setVisibility(View.GONE);
         }
     }
 
