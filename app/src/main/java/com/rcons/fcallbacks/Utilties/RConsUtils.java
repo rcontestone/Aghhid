@@ -329,6 +329,7 @@ public class RConsUtils {
 
         if(customerID.equalsIgnoreCase(""))
             customerID = RConsUtils.getUserName();
+
         return customerID;
     }
 

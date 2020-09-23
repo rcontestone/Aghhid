@@ -1794,9 +1794,21 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             cv.put("c1", c1.toUpperCase());
             cv.put("c1_given_number", c1_given_number.toUpperCase());
 
-            if(c1.equalsIgnoreCase("1")|| c1.equalsIgnoreCase("111") ){
-
+            if(c1.equalsIgnoreCase("-777")|| c1.equalsIgnoreCase("-99") ){
+                cv.put("c2_1", "");
+                cv.put("c2_2", "");
+                cv.put("c2_3", "");
+                cv.put("c2_4", "");
+                cv.put("c2_5", "");
+                cv.put("c2_6", "");
+                cv.put("c2_7", "");
+                cv.put("c2_8", "");
+                cv.put("c2_9", "");
             }else{
+
+
+
+
 
             }
 
@@ -1821,6 +1833,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
                 cv.put("rcons_user", user_name.toUpperCase());
+                cv.put("enum_name", RConsUtils.getEnumName().toUpperCase());
+                cv.put("enum_code", RConsUtils.getEnumCode().toUpperCase());
                 isInserted = db.insert(DatabaseAdapter.aghhid_section_c_table, null, cv);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
 
@@ -1893,6 +1907,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
                 cv.put("rcons_user", user_name.toUpperCase());
+                cv.put("enum_name", RConsUtils.getEnumName().toUpperCase());
+                cv.put("enum_code", RConsUtils.getEnumCode().toUpperCase());
                 isInserted = db.insert(DatabaseAdapter.aghhid_section_c_table, null, cv);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data_c_2() isInserted"+isInserted);
 
@@ -3069,6 +3085,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
             cv.put("d_9_resp_name", d_9_resp_name.toUpperCase());
             cv.put("d_9_resp_id", d_9_resp_id.toUpperCase());
+            cv.put("enum_name", RConsUtils.getEnumName().toUpperCase());
+            cv.put("enum_code", RConsUtils.getEnumCode().toUpperCase());
 //            cv.put("c1_given_number", c1_given_number.toUpperCase());
 //            cv.put("hhid_q3", hhid_q3.toUpperCase());
 //            cv.put("hhid_q4", hhid_q4.toUpperCase());
@@ -3157,6 +3175,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
                 cv.put("rcons_user", user_name.toUpperCase());
+                cv.put("enum_name", RConsUtils.getEnumName().toUpperCase());
+                cv.put("enum_code", RConsUtils.getEnumCode().toUpperCase());
                 isInserted = db.insert(DatabaseAdapter.aghhid_section_e_table, null, cv);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
 
@@ -4183,6 +4203,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("insert_or_updated_in_phone_at", start_date_time.toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
                 cv.put("rcons_user", user_name.toUpperCase());
+                cv.put("enum_name", RConsUtils.getEnumName().toUpperCase());
+                cv.put("enum_code", RConsUtils.getEnumCode().toUpperCase());
                 isInserted = db.insert(DatabaseAdapter.aghhid_section_h_table, null, cv);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside hhid_insert_data() isInserted"+isInserted);
 
