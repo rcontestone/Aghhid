@@ -1198,22 +1198,16 @@ public class pq_Section_A extends AppCompatActivity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                //  phoneNumber = "880" + phoneNumber;
+                 phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
         } else {
 
         }
-        if (network.equalsIgnoreCase("Telenor")) {
-            ShowDialMessage(pq_Section_A.this, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
-        } else {
-            if (qa1_layout.getVisibility() == View.VISIBLE) {
-                SaveInterviewStart_time();
-            }
-            callIntent.setData(Uri.parse("tel:" + phoneNumber));
-            startActivity(callIntent);
-        }
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(callIntent);
+
     }
 
     void SaveInterviewStart_time() {

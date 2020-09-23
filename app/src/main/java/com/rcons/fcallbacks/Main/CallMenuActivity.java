@@ -1012,22 +1012,15 @@ public class CallMenuActivity extends AppCompatActivity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                //     phoneNumber = "880" + phoneNumber;
+                    phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
         } else {
 
         }
-        //callIntent.setData(Uri.parse("tel:" + "03006982661"));
-
-//        SaveInterviewStart_time();
-        if (network.equalsIgnoreCase("Telenor")) {
-            ShowDialMessage(CallMenuActivity.this, "Dial with", "", "880" + phoneNumber, "0" + phoneNumber);
-        } else {
-            callIntent.setData(Uri.parse("tel:" + phoneNumber));
-            startActivity(callIntent);
-        }
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(callIntent);
 
         btnAddReport.setEnabled(true);
         btnAddReport.setBackground(ContextCompat.getDrawable(CallMenuActivity.this, R.drawable.rounder_button_bg));
