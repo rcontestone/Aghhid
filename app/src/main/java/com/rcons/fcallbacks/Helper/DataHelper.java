@@ -141,54 +141,15 @@ public class DataHelper extends SQLiteOpenHelper {
             if (newVersion > oldVersion) {
 
 
-                String querry = "ALTER TABLE "+DatabaseAdapter.pq_section_e_table+" ADD COLUMN e6_other TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
 
+                String comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_m_table+"` ADD `comments` TEXT DEFAULT '' ";
+                db.execSQL(comment_add);
+                checkAndCreatecolumn(db,comment_add);
 
-                querry = "ALTER TABLE "+DatabaseAdapter.pq_section_c3_table+" ADD COLUMN refused TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);
 
-
-                querry = "ALTER TABLE "+DatabaseAdapter.pq_section_e_table+" ADD COLUMN refused TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-
-                         querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4 TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_reason TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_start_year TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_start_month TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_start_day TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_start_hh TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_start_mm TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_end_year TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_end_month TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_end_day TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_end_hh TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
-
-                querry = "ALTER TABLE "+DatabaseAdapter.BaseLineSampleTable+" ADD COLUMN sc4_end_mm TEXT DEFAULT ''";
-                checkAndCreatecolumn(db,querry);
+                comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_ad_m_table+"` ADD `comments` TEXT DEFAULT '' ";
+                checkAndCreatecolumn(db,comment_add);
 
 
             }

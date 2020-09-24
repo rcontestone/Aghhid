@@ -258,17 +258,15 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 //
 //                createMissingTable();
 
-                String CREATE_TABLE_HHID_SURVEY_DETAILS = "CREATE TABLE IF NOT EXISTS " + MpcUtil.HHID_survey_details + "(" + "id integer primary key autoincrement, PSU_code text,total_hhid_covered text,eligible_hhid text,user_name text, insert_or_updated_in_phone_at text ,build_no text,  device_id text);";
-                db.execSQL(CREATE_TABLE_HHID_SURVEY_DETAILS);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() HHID_survey_details"+CREATE_TABLE_HHID_SURVEY_DETAILS);
 
 
                 String comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_m_table+"` ADD `comments` TEXT DEFAULT '' ";
                 db.execSQL(comment_add);
+                checkAndCreatecolumn(db,comment_add);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);
 
                 comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_ad_m_table+"` ADD `comments` TEXT DEFAULT '' ";
-                db.execSQL(comment_add);
+                checkAndCreatecolumn(db,comment_add);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);
 
 
@@ -283,6 +281,23 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             EmailDebugLog.getInstance(AppController.getInstance()).writeLog("[HouseHoldDataBaseHelper] inside onUpgrade() Exception is :"+e.toString());
         }
     }
+
+
+
+    private void checkAndCreatecolumn(SQLiteDatabase db,String querry) {
+        try {
+
+
+            DebugLog.console("[DataHelper] inside checkAndCreatecolumn() querry "+querry);
+            db.execSQL(querry);
+
+
+        } catch (Exception e) {
+
+            //com.mubashar.dateandtime.EmailDebugLog.getInstance().writeLog("[DataHelper] inside checkAndCreatecolumn() Exception is :"+e.toString());
+        }
+    }
+
 
     private void dropTable(String tableName) {
 
