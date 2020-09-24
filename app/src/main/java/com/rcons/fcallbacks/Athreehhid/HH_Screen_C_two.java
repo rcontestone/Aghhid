@@ -188,6 +188,14 @@ public class HH_Screen_C_two extends Activity {
     String school_name = "";
     String student_name = "";
 
+
+    String s1 = "";
+    String s2 = "";
+    String s3 = "";
+    String s4 = "";
+    String s5 = "";
+    String s6 = "";
+
     @BindView(R.id.btn_AddReportQuestionnaire)
     FloatingActionButton btn_AddReportQuestionnaire;
 

@@ -218,6 +218,12 @@ public class HH_Screen_eight_Section_e extends Activity {
     RadioButton hh_edtfield_q_2_rdg_op_17 = null;
     RadioButton hh_edtfield_q_2_rdg_op_18 = null;
 
+    String s1 = "";
+    String s2 = "";
+    String s3 = "";
+    String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

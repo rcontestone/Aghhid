@@ -113,6 +113,12 @@ public class HH_Screen_four_section_d extends Activity {
     TextView area_no =null;
     TextView landmark =null;
 
+    String s1 = "";
+    String s2 = "";
+    String s3 = "";
+    String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
 
 

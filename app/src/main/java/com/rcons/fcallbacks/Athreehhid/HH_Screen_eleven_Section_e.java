@@ -93,6 +93,12 @@ public class HH_Screen_eleven_Section_e extends Activity {
     String e11_hh = "";
     String e11_mm = "";
 
+    String s1 = "";
+    String s2 = "";
+    String s3 = "";
+    String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
 
     String aghhid_c1_given_number = "";

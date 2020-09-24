@@ -102,6 +102,12 @@ public class HH_Screen_five_Section_e extends Activity {
     RadioGroup sign_up_confirm_password_textfield_rb = null;
     RadioGroup hh_edtfield_q_2_rdg = null;
     Spinner numbers_sp_q_2 = null;
+    String s1 = "";
+    String s2 = "";
+    String s3 = "";
+    String s4 = "";
+    String s5 = "";
+    String s6 = "";
 
 
 
