@@ -46,6 +46,7 @@ import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_One;
+import com.rcons.fcallbacks.Athreehhid.HouseHoldDataBaseHelper;
 import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.EditForm.EditFormActivity;
 import com.rcons.fcallbacks.HHIDConfigurations;
@@ -90,6 +91,7 @@ public class MainMenuActivity extends AppCompatActivity {
     TextView txtSyncCompleteQuestionnaireCounter;
     TextView txtLogout;
     TextView tvTitle;
+    TextView e_count;
     TextView txtAppVersion;
     String userName = "";
     int newCallCounter = 0;
@@ -136,6 +138,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         txtLogout = findViewById(R.id.txtLogout);
         tvTitle = findViewById(R.id.tvTitle);
+        e_count = findViewById(R.id.e_count);
         txtSuccessfullCallCounter = findViewById(R.id.txtSuccessfullCallCounter);
         txtCompletedCallCounter = findViewById(R.id.txtCompletedCallCounter);
         txtSyncCompleteQuestionnaireCounter = findViewById(R.id.txtSyncCompleteQuestionnaireCounter);
@@ -468,6 +471,11 @@ public class MainMenuActivity extends AppCompatActivity {
         txtCompletedCallCounter.setText("" + completedCallCounter);
         txtSuccessfullCallCounter.setText("" + SuccessfullCallCounter);
         txtSyncCompleteQuestionnaireCounter.setText("" + SyncCompleteQuestionnaireCounter);
+
+
+        e_count.setText(HouseHoldDataBaseHelper.getDataBaseProcessor(MainMenuActivity.this).aghhid_getgirlscountgainst(MainMenuActivity.this,RConsUtils.getUserName())+"");
+
+
     }
 
 

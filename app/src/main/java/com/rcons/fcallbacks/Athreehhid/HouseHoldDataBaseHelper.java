@@ -4610,6 +4610,45 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public synchronized int aghhid_getgirlscountgainst(Context appContext, String rcons_user){
+        long rowId = 1;
+        boolean result =false;
+        int  count =0;
+                ArrayList<String> spinnerArray = new ArrayList<String>();
+        spinnerArray.add("Select child not went to school");
+        try {
+            openDB();
+            // JSONArray dataArray = new JSONArray();
+            //JSONObject data =  new JSONObject();
+
+            String query = "SELECT d_2,d_4,d_7,d_8 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where rcons_user = '"+rcons_user+"'  AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
+            Cursor cursor = db.rawQuery(query,null);
+
+
+
+              count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_getNumbersDataagainstvillageAndhhid() count "+cursor.getCount());
+
+
+
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_getNumbersDataagainstvillageAndhhid() new hhid");
+
+            }
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getNumbersDataagainstvillageAndhhid() size "+count);
+            closeDB(cursor);
+            return count;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getNumbersDataagainstvillageAndhhid");
+            closeDB();
+            return count;
+        }
+    }
 
 
 }

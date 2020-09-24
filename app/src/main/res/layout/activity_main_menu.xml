@@ -97,7 +97,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-               android:id="@+id/selectvillage"
+                android:id="@+id/selectvillage"
                 android:layout_gravity="center"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="0dp"
@@ -146,6 +146,35 @@
 
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eligibility count    :  "
+                    android:textStyle="bold|italic"
+                    android:textSize="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    ></TextView>
+
+                <TextView
+                    android:id="@+id/e_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/OrangeRed"
+                    ></TextView>
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -158,6 +187,8 @@
                 android:background="@color/white_color"
                 android:orientation="horizontal"
                 android:weightSum="3">
+
+
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="180dp"
