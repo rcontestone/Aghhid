@@ -1377,6 +1377,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
     void setRadioButton() {
         readFromDataBase_Section_a();
+        readFromDataBase_Section_e();
         if (!StringUtils.isEmpty(a2)) {
             code_1.setVisibility(View.GONE);
             code_2.setVisibility(View.GONE);

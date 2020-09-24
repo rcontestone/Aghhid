@@ -430,7 +430,7 @@
                             android:paddingRight="8dp"
                             android:paddingBottom="8dp"
                             android:tag="3"
-                            android:text="@string/ad_section_c_question_q2_option2"
+                            android:text="@string/ad_section_c_question_q2_option3"
                             android:textColor="#0E0308"
                             android:textSize="24sp" />
 
@@ -529,7 +529,7 @@
                             android:paddingRight="8dp"
                             android:paddingBottom="8dp"
                             android:tag="8"
-                            android:text="@string/ad_section_c_question_q2_option2"
+                            android:text="@string/ad_section_c_question_q2_option8"
                             android:textColor="#0E0308"
                             android:textSize="24sp" />
 

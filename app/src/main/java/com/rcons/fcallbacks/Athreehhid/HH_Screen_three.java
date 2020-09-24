@@ -62,6 +62,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import butterknife.BindView;
@@ -3434,7 +3435,20 @@ public class HH_Screen_three extends Activity {
 
 
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == 88) {
+			boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
+			if (isDataUpdated) {
+				Intent returnIntent = new Intent();
+				returnIntent.putExtra("isDataUpdated", isDataUpdated);
+				setResult(Activity.RESULT_OK, returnIntent);
+				finish();
+			}
 
+		}
+	}
 	void DialUserNumber(String number) {
 		if (ActivityCompat.checkSelfPermission(HH_Screen_three.this,
 				Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

@@ -57,6 +57,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import butterknife.BindView;
@@ -2075,6 +2076,20 @@ public class HH_Screen_four_section_d extends Activity {
             EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_two] inside enableRadio() Exception is :"+e.toString());
         }
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 88) {
+            boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
+            if (isDataUpdated) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("isDataUpdated", isDataUpdated);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
+            }
+
+        }
     }
 
     public void DialUserNumber(View v) {
