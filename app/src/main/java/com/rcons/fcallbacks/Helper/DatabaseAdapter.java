@@ -7957,8 +7957,8 @@ public class DatabaseAdapter {
     }
 
     public Cursor savepq_interview_start_sc1(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc1_start_year,
             String sc1_start_month,
             String sc1_start_day,
@@ -7968,7 +7968,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -7985,7 +7985,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc1_start_hh", sc1_start_hh);
                 contentValues.put("sc1_start_mm", sc1_start_mm);
 
-                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+                db.insertOrThrow(AGHHID_SampleTable, null, contentValues);
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
@@ -7997,7 +7997,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc1_start_hh", sc1_start_hh);
                 contentValues.put("sc1_start_mm", sc1_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -8006,8 +8006,8 @@ public class DatabaseAdapter {
 
 
     public Cursor savepq_interview_start_sc2(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc2_start_year,
             String sc2_start_month,
             String sc2_start_day,
@@ -8017,7 +8017,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -8046,7 +8046,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc2_start_hh", sc2_start_hh);
                 contentValues.put("sc2_start_mm", sc2_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -8055,8 +8055,8 @@ public class DatabaseAdapter {
 
 
     public Cursor savepq_interview_start_sc3(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc3_start_year,
             String sc3_start_month,
             String sc3_start_day,
@@ -8066,7 +8066,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -8083,7 +8083,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc3_start_hh", sc3_start_hh);
                 contentValues.put("sc3_start_mm", sc3_start_mm);
 
-                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+                db.insertOrThrow(AGHHID_SampleTable, null, contentValues);
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
@@ -8095,7 +8095,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc3_start_hh", sc3_start_hh);
                 contentValues.put("sc3_start_mm", sc3_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -8103,8 +8103,8 @@ public class DatabaseAdapter {
     }
 
     public Cursor savepq_interview_start_sc4(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc4_start_year,
             String sc4_start_month,
             String sc4_start_day,
@@ -8114,7 +8114,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -8131,7 +8131,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc4_start_hh", sc4_start_hh);
                 contentValues.put("sc4_start_mm", sc4_start_mm);
 
-                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+                db.insertOrThrow(AGHHID_SampleTable, null, contentValues);
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
@@ -8143,7 +8143,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc4_start_hh", sc4_start_hh);
                 contentValues.put("sc4_start_mm", sc4_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -8151,8 +8151,8 @@ public class DatabaseAdapter {
     }
 
     public Cursor savepq_interview_start_sc5(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc5_start_year,
             String sc5_start_month,
             String sc5_start_day,
@@ -8162,7 +8162,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -8179,7 +8179,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc5_start_hh", sc5_start_hh);
                 contentValues.put("sc5_start_mm", sc5_start_mm);
 
-                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+                db.insertOrThrow(AGHHID_SampleTable, null, contentValues);
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
@@ -8191,7 +8191,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc5_start_hh", sc5_start_hh);
                 contentValues.put("sc5_start_mm", sc5_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();
@@ -8200,8 +8200,8 @@ public class DatabaseAdapter {
 
 
     public Cursor savepq_interview_start_sc6(
-            String scode,
-            String studentid,
+            String village_id,
+            String hhid,
             String sc6_start_year,
             String sc6_start_month,
             String sc6_start_day,
@@ -8211,7 +8211,7 @@ public class DatabaseAdapter {
 
         db = database.getReadableDatabase();
         String str = "";
-        str = "select Count(*) as count from " + BaseLineSampleTable + " where  scode= " + scode + " AND studentid= " + studentid + "";
+        str = "select Count(*) as count from " + AGHHID_SampleTable + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
 
         cursor = db.rawQuery(str, null);
         if (cursor.getCount() > 0) {
@@ -8228,7 +8228,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc6_start_hh", sc6_start_hh);
                 contentValues.put("sc6_start_mm", sc6_start_mm);
 
-                db.insertOrThrow(BaseLineSampleTable, null, contentValues);
+                db.insertOrThrow(AGHHID_SampleTable, null, contentValues);
             } else {
                 db = database.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
@@ -8240,7 +8240,7 @@ public class DatabaseAdapter {
                 contentValues.put("sc6_start_hh", sc6_start_hh);
                 contentValues.put("sc6_start_mm", sc6_start_mm);
 
-                db.update(BaseLineSampleTable, contentValues, "scode=" + scode + " and studentid=" + studentid, null);
+                db.update(AGHHID_SampleTable, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
             }
         }
         cursor.close();

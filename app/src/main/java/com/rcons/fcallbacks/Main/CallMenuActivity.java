@@ -1019,6 +1019,7 @@ public class CallMenuActivity extends AppCompatActivity {
         } else {
 
         }
+        SaveInterviewStart_time();
         callIntent.setData(Uri.parse("tel:" + phoneNumber));
         startActivity(callIntent);
 
