@@ -29,24 +29,22 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
-
 import com.rcons.fcallbacks.Main.AddReportActivity_AD;
-import com.rcons.fcallbacks.Questionnaire.Q_sectionB_a_b;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
 
 import java.util.Calendar;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -285,6 +283,8 @@ public class Ad_Section_A extends AppCompatActivity {
         s4 = getIntent().getStringExtra("sc4");
         s5 = getIntent().getStringExtra("sc5");
         s6 = getIntent().getStringExtra("sc6");
+
+        readFromDataBasic();
 
         txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
 
@@ -1255,7 +1255,7 @@ public class Ad_Section_A extends AppCompatActivity {
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();
             }
-
+            readFromDataBasic();
         }
     }
 
@@ -1713,4 +1713,28 @@ public class Ad_Section_A extends AppCompatActivity {
         section_b_question_q2.setText("کیا میں    " + headName + "سے بات کر سکتی ہوں؟ ");
 
     }
+
+    void readFromDataBasic() {
+        try {
+            Cursor cursor = databaseAccess.getBasic_Data(school_code, student_id);
+
+            if (cursor != null && cursor.getCount() > 0) {
+                cursor.moveToFirst();
+
+                s1 = cursor.getString(cursor.getColumnIndex("sc1"));
+                s2 = cursor.getString(cursor.getColumnIndex("sc2"));
+                s3 = cursor.getString(cursor.getColumnIndex("sc3"));
+                s4 = cursor.getString(cursor.getColumnIndex("sc4"));
+                s5 = cursor.getString(cursor.getColumnIndex("sc5"));
+                s6 = cursor.getString(cursor.getColumnIndex("sc6"));
+
+
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            MubLog.cpnsoleLog("Data Read Error :" + e.getMessage());
+        }
+    }
+
 }

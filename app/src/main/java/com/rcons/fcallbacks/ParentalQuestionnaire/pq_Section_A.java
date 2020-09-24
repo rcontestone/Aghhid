@@ -289,6 +289,8 @@ public class pq_Section_A extends AppCompatActivity {
         s5 = getIntent().getStringExtra("sc5");
         s6 = getIntent().getStringExtra("sc6");
 
+        readFromDataBasic();
+
         txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
 
         section_a_question_3.setText("کیا آپ   " + student_name + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");
@@ -1255,6 +1257,7 @@ public class pq_Section_A extends AppCompatActivity {
             }
 
         }
+        readFromDataBasic();
     }
 
 
@@ -1503,7 +1506,7 @@ public class pq_Section_A extends AppCompatActivity {
             Cursor cursor = null;
             if (StringUtils.isEmpty(s1)) {
                 cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
-                MubLog.cpnsoleLog("readFromDataBase Try 1");
+                MubLog.cpnsoleLog("readFromDataBasestudent_id1");
             } else if (StringUtils.isEmpty(s2)) {
                 cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "2");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
@@ -1689,5 +1692,27 @@ public class pq_Section_A extends AppCompatActivity {
 
             }
         });
+    }
+    void readFromDataBasic() {
+        try {
+            Cursor cursor = databaseAccess.getBasic_Data(school_code, student_id);
+
+            if (cursor != null && cursor.getCount() > 0) {
+                cursor.moveToFirst();
+
+                s1 = cursor.getString(cursor.getColumnIndex("sc1"));
+                s2 = cursor.getString(cursor.getColumnIndex("sc2"));
+                s3 = cursor.getString(cursor.getColumnIndex("sc3"));
+                s4 = cursor.getString(cursor.getColumnIndex("sc4"));
+                s5 = cursor.getString(cursor.getColumnIndex("sc5"));
+                s6 = cursor.getString(cursor.getColumnIndex("sc6"));
+
+
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            MubLog.cpnsoleLog("Data Read Error :" + e.getMessage());
+        }
     }
 }
