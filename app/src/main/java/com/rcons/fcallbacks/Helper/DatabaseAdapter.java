@@ -8627,7 +8627,7 @@ public class DatabaseAdapter {
     }
 
 
-    public boolean aghh_updateCallStatus(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm, String call_from) {
+    public boolean aghh_updateCallStatus(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm,String reportComments, String call_from) {
 
 
         boolean callagain_flag_manual_set = false;
@@ -8728,9 +8728,9 @@ public class DatabaseAdapter {
 
 
             if (call_from.equalsIgnoreCase("HHID_MAIN")) {
-                storeInfoInSection_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+                storeInfoInSection_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber,reportComments);
             } else {
-                storeInfoInSection_AD_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+                storeInfoInSection_AD_M(context, survey_status, scode, studentid, id, farmer_id, phoneNumber, reason, isAlterNameFarmer, callAgain, empID, calldurationReason, durationPopup, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber,reportComments);
 
             }
             return callagain_flag_manual_set;
@@ -8740,7 +8740,7 @@ public class DatabaseAdapter {
         }
     }
 
-    private void storeInfoInSection_M(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm, String tryNumber) {
+    private void storeInfoInSection_M(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm, String tryNumber,String reportComments) {
 
 
         try {
@@ -8750,14 +8750,14 @@ public class DatabaseAdapter {
                 survey_status = "1";
             }
 
-            HouseHoldDataBaseHelper.getDataBaseProcessor(context).hhid_insert_data_section_m(scode, studentid, phoneNumber, survey_status, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+            HouseHoldDataBaseHelper.getDataBaseProcessor(context).hhid_insert_data_section_m(scode, studentid, phoneNumber, survey_status, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber,reportComments);
         } catch (Exception e) {
             EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside storeInfoInSection_M() Exception is :" + e.toString());
         }
     }
 
 
-    private void storeInfoInSection_AD_M(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm, String tryNumber) {
+    private void storeInfoInSection_AD_M(Context context, String survey_status, String scode, String studentid, String id, String farmer_id, String phoneNumber, String reason, boolean isAlterNameFarmer, String callAgain, String empID, String calldurationReason, DurationPopup durationPopup, String m3_answered, String m4_answered, String m4_answered_other, String e11_day, String e11_month, String e11_hh, String e11_mm, String tryNumber,String reportComments) {
 
 
         try {
@@ -8767,7 +8767,7 @@ public class DatabaseAdapter {
 //                survey_status="1";
 //            }
 
-            HouseHoldDataBaseHelper.getDataBaseProcessor(context).hhid_insert_data_section_ad_m(scode, studentid, phoneNumber, survey_status, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber);
+            HouseHoldDataBaseHelper.getDataBaseProcessor(context).hhid_insert_data_section_ad_m(scode, studentid, phoneNumber, survey_status, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, tryNumber,reportComments);
         } catch (Exception e) {
             EmailDebugLog.getInstance(context).writeLog("[DatabaseAdapter] inside storeInfoInSection_AD_M() Exception is :" + e.toString());
         }
@@ -9338,7 +9338,7 @@ public class DatabaseAdapter {
 
         String baseline_no_call_again_ids = getbaseline_no_call_again_ids(userName);
         String baseline_ThreeTries_Done = getbaseline_ThreeTries_Done(userName);
-        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (1,3,6,7,8) OR ( id  IN " + baseline_ThreeTries_Done + " OR id  IN " + baseline_no_call_again_ids + "))   ";
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' ) AND  (survey_status  IN (1,3,6,7,8,11) OR ( id  IN " + baseline_ThreeTries_Done + " OR id  IN " + baseline_no_call_again_ids + "))   ";
 
 
         MubLog.cpnsoleLog("inside aghhid_getCompletedCallCounter " + querry);

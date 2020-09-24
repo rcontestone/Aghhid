@@ -43,7 +43,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
     RadioButton radioButton;
     RadioButton code_10_other;
 
-    EditText other, m4_other;
+    EditText other, m4_other,anyComments;
     EditText callReasonEditText;
     String section;
     String school_code;
@@ -119,6 +119,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
     String m4_answered_other = "";
 
     String call_from = "HHID_MAIN";
+    private String reportComments="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +136,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
         rg_m3 = findViewById(R.id.rg_m3);
         rg_m4 = findViewById(R.id.rg_m4);
         m4_other = findViewById(R.id.m4_other);
+        anyComments = findViewById(R.id.anyComments);
 
         code_1 = findViewById(R.id.code_1);
         code_2 = findViewById(R.id.code_2);
@@ -294,8 +296,8 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
             NeedCallDialog(AddReportActivityHH.this, "Call Again", "Do you need to call again on this number ?", surveyStatus, reason, isAlternateFarmer);
         } else {
 
-
-            databaseAccess.aghh_updateCallStatus(AddReportActivityHH.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivityHH.this,m3_answered,m4_answered,m4_answered_other,"","","","",call_from);
+            reportComments = anyComments.getText().toString();
+            databaseAccess.aghh_updateCallStatus(AddReportActivityHH.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivityHH.this,m3_answered,m4_answered,m4_answered_other,"","","","",reportComments,call_from);
             isDataUpdated = true;
             Toast.makeText(AddReportActivityHH.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();

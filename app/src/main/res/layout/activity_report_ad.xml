@@ -505,8 +505,30 @@
                     android:textSize="18sp"
                     android:visibility="visible" />
             </LinearLayout>
-
-
+            <EditText
+                android:id="@+id/newNUmber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounder_edittext"
+                android:ems="10"
+                android:hint="Any New Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingLeft="8dp"
+                android:textSize="18sp"
+                android:visibility="visible" />
+            <EditText
+                android:id="@+id/anyComments"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounder_edittext"
+                android:ems="10"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:hint="Any Comments"
+                android:inputType="textPersonName"
+                android:paddingLeft="8dp"
+                android:textSize="18sp"
+                android:visibility="visible" />
 
             <RelativeLayout
                 android:id="@+id/day_spinner_name"

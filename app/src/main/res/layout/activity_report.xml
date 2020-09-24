@@ -172,12 +172,12 @@
                     android:id="@+id/code_8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="8. Survey Completed but girl not willing to answer  ( سروے مکمل ہوا، مگر بچی کا سروے نہیں ہوا(کیونکہ بچی نے اظہار رضامندی نہیں کیا ) "
+                    android:text="8. ہیڈ کا سروے مکمل ہو گیا لیکن اڈولسنٹ کا سروے نہیں ہو سکتا"
                     android:textColor="@color/navy_color"
                     android:textSize="18sp"
                     android:layout_marginTop="@dimen/_20sdp"
-
-                    android:visibility="gone" />
+                    android:layoutDirection="rtl"
+                    />
 
                 <RadioButton
                     android:id="@+id/code_9"
@@ -191,6 +191,18 @@
                     android:visibility="gone" />
 
                 <RadioButton
+                    android:id="@+id/code_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11. نو سے 19 سال کی    کوئی  بچی موجود  نہیں  سروے ،مکمل  نہیں ہو سکتا "
+                    android:textColor="@color/navy_color"
+                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layoutDirection="rtl"
+                     />
+
+
+                <RadioButton
                     android:id="@+id/code_10_other"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -200,6 +212,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
 
                     android:visibility="gone" />
+
             </RadioGroup>
 
 
@@ -221,19 +234,32 @@
                     android:text="Reason for Call Duration less than 8 min"
                     android:textColor="@color/navy_color" />
 
-                <EditText
-                    android:id="@+id/callReasonEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/rounder_edittext"
-                    android:ems="10"
-                    android:hint="Specify the Reason"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="8dp"
-                    android:textSize="18sp"
-                    android:visibility="visible" />
-            </LinearLayout>
 
+            </LinearLayout>
+            <EditText
+                android:id="@+id/newNUmber"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounder_edittext"
+                android:ems="10"
+                android:hint="Any New Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingLeft="8dp"
+                android:textSize="18sp"
+                android:visibility="visible" />
+            <EditText
+                android:id="@+id/anyComments"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounder_edittext"
+                android:ems="10"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:hint="Any Comments"
+                android:inputType="textPersonName"
+                android:paddingLeft="8dp"
+                android:textSize="18sp"
+                android:visibility="visible" />
 
             <LinearLayout
                 android:id="@+id/otherReasonLayout"

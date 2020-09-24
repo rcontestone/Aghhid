@@ -262,6 +262,16 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 db.execSQL(CREATE_TABLE_HHID_SURVEY_DETAILS);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() HHID_survey_details"+CREATE_TABLE_HHID_SURVEY_DETAILS);
 
+
+                String comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_m_table+"` ADD `comments` TEXT DEFAULT '' ";
+                db.execSQL(comment_add);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);
+
+                comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_ad_m_table+"` ADD `comments` TEXT DEFAULT '' ";
+                db.execSQL(comment_add);
+                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);
+
+
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onUpgrade() going to export database");
                 exportDB(AppController.getInstance());
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onUpgrade() going to export database done");
@@ -1774,6 +1784,46 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
+
+
+    public synchronized boolean aghhid_update_given_nummber(String village_id ,String hhid ,String given_number) {
+        boolean updated =false;
+        try {
+
+
+
+            boolean runUpdate_Querry = true;//hhid_isHHCovered(village_id,hhid);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_update_given_nummber() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+            ContentValues cv = new ContentValues();
+            cv.put("given_number", given_number.toUpperCase());
+            db.update(DatabaseAdapter.AGHHID_SampleTable, cv, "hhid =" + hhid.toUpperCase()+ " AND village_id = "+village_id.toUpperCase()+"", null);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_update_given_nummber() update");
+            updated = true;
+
+
+            closeDB();
+
+
+            updated =  true;
+
+
+            return  updated;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data() Exception is : " + e.toString());
+            closeDB();
+            return  updated;
+        }
+    }
+
+
 
 
     public synchronized boolean hhid_insert_data(String village_id ,String hhid , String c1, String c1_given_number, String user_name , String start_date_time) {
@@ -4403,7 +4453,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public synchronized boolean hhid_insert_data_section_m(String village_id, String hhid, String phoneNumber, String survey_status,String m3_answered, String m4_answered, String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber) {
+    public synchronized boolean hhid_insert_data_section_m(String village_id, String hhid, String phoneNumber, String survey_status,String m3_answered, String m4_answered, String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber,String reportComments) {
         boolean updated =false;
         try {
 
@@ -4448,6 +4498,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 cv.put("m3", m3_answered.toUpperCase());
                 cv.put("m4", m4_answered.toUpperCase());
                 cv.put("m4_other", m4_answered_other.toUpperCase());
+                cv.put("comments", reportComments.toUpperCase());
                 cv.put("build_no", BuildConfig.VERSION_NAME);
                 cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14).toUpperCase());
                 cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
@@ -4481,7 +4532,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public synchronized boolean hhid_insert_data_section_ad_m(String village_id, String hhid, String phoneNumber, String survey_status,String m3_answered, String m4_answered, String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber) {
+    public synchronized boolean hhid_insert_data_section_ad_m(String village_id, String hhid, String phoneNumber, String survey_status,String m3_answered, String m4_answered, String m4_answered_other,String e11_day,String e11_month,String e11_hh,String e11_mm,String tryNumber,String reportComments) {
         boolean updated =false;
         try {
 
@@ -4526,6 +4577,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 //  cv.put("m3", m3_answered.toUpperCase());
                 cv.put("m3", m4_answered.toUpperCase());
                 cv.put("m3_other", m4_answered_other.toUpperCase());
+                cv.put("comments", reportComments.toUpperCase());
 
                 cv.put("build_no", BuildConfig.VERSION_NAME);
                 cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14).toUpperCase());
