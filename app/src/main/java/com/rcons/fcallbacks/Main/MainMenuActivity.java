@@ -473,7 +473,7 @@ public class MainMenuActivity extends AppCompatActivity {
         txtSyncCompleteQuestionnaireCounter.setText("" + SyncCompleteQuestionnaireCounter);
 
 
-        e_count.setText(HouseHoldDataBaseHelper.getDataBaseProcessor(MainMenuActivity.this).aghhid_getgirlscountgainst(MainMenuActivity.this,RConsUtils.getUserName())+"");
+        e_count.setText(HouseHoldDataBaseHelper.getDataBaseProcessor(MainMenuActivity.this).aghhid_gethhid_having_successful_status(MainMenuActivity.this,RConsUtils.getUserName())+"");
 
 
     }

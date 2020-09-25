@@ -4625,7 +4625,63 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public synchronized int aghhid_getgirlscountgainst(Context appContext, String rcons_user){
+
+
+
+    public synchronized int aghhid_gethhid_having_successful_status(Context appContext,String rcons_user) {
+        Cursor cursor = null;
+        boolean  result = false;
+        int count = 0;
+        ArrayList<String> hhid_list = new ArrayList<>();
+        try {
+            openDB();
+            String query = "Select hhid from "+ DatabaseAdapter.aghhid_section_ad_m_table+" where m1 = '"+"1"+ "' AND rcons_user = '"+rcons_user.toUpperCase()+"'";
+            DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_gethhid_having_successful_status() "+query);
+            cursor = db.rawQuery(query, null);
+            count = cursor.getCount();
+            if (count !=0) {
+                DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_gethhid_having_successful_status() count "+cursor.getCount());
+                result = true;
+                while (cursor.moveToNext()) {
+
+                    String id = cursor.getString(cursor.getColumnIndex("hhid"));
+                    hhid_list.add( id );
+                    DebugLog.console("[HouseHoldDataBaseHelper] inside stat aghhid_gethhid_having_successful_status() hhid "+id);
+                }
+
+                closeDB(cursor);
+                if (count !=0) {
+                    String hhidlisthaving_success = android.text.TextUtils.join(",", hhid_list);
+                    count = aghhid_getgirlscountgainst(rcons_user,hhidlisthaving_success);
+
+                }
+
+
+            } else {
+                count = 0;
+                DebugLog.console("[DataBaseProcessor] inside stat aghhid_gethhid_having_successful_status() new hhid");
+                closeDB(cursor);
+                result =  false;
+            }
+
+
+           // update_survey_details(PSU_code,HHIDConfigurations.getPeshawarLastHHIDagainstPSUAndStructID(mContext,PSU_code+"_hhid"),count);
+
+
+            return count;
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside aghhid_gethhid_having_successful_status hhid_isHHCovered() Exception is : " + e.toString());
+            closeDB(cursor);
+            return count;
+        }
+    }
+
+
+
+
+
+
+    public synchronized int aghhid_getgirlscountgainst( String rcons_user,String hhidlisthaving_success){
         long rowId = 1;
         boolean result =false;
         int  count =0;
@@ -4636,7 +4692,7 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
             // JSONArray dataArray = new JSONArray();
             //JSONObject data =  new JSONObject();
 
-            String query = "SELECT d_2,d_4,d_7,d_8 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where rcons_user = '"+rcons_user+"'  AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND ( d_7 IN (3,4) OR d_8 IN (3,4))  ";
+            String query = "SELECT d_2,d_4,d_7,d_8 FROM  "+DatabaseAdapter.aghhid_section_d_table +" where rcons_user = '"+rcons_user+"'  AND d_3 = '2' AND d_4 IN (9,10,11,12,13,14,15,16,17,18,19) AND hhid IN ("+hhidlisthaving_success+") AND ( d_7 IN (3,4) OR d_8 IN (3,4)) group by hhid ";
             DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getgirlsgainstvillageAndhhid() query "+query);
             Cursor cursor = db.rawQuery(query,null);
 
