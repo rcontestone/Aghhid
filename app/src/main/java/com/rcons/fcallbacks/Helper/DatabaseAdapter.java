@@ -7808,6 +7808,36 @@ public class DatabaseAdapter {
         }
     }
 
+    public Cursor getad_section_m(String village_id, String hhid) {
+        String query = "SELECT * from " + aghhid_section_ad_m_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
+    public Cursor gethead_section_e(String village_id, String hhid) {
+        String query = "SELECT * from " + aghhid_section_e_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
+    public Cursor gethead_section_m(String village_id, String hhid, String try_no) {
+        String query = "SELECT * from " + aghhid_section_m_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "' AND try_no= '" + try_no + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
     public Cursor getpq_section_a_Data(String school_code, String student_id, String phone_number, String try_no) {
         String query = "SELECT * from " + pq_section_a_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "' AND phone_number= '" + phone_number + "' AND try_no= '" + try_no + "'";
         MubLog.cpnsoleLog("Data Read Query " + query);

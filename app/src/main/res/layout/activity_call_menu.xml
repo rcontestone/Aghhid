@@ -1142,7 +1142,7 @@
                         android:background="@drawable/view_background"
                         android:orientation="vertical"
                         android:padding="8dp"
-                        android:visibility="gone">
+                        android:visibility="visible">
 
                         <TextView
 

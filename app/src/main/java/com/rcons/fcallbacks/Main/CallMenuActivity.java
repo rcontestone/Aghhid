@@ -78,7 +78,7 @@ public class CallMenuActivity extends AppCompatActivity {
     Button btnEditForm;
     Button btnQuestionnaire;
 
-    ArrayAdapter spinnerArrayAdapter =null;
+    ArrayAdapter spinnerArrayAdapter = null;
 
     Button NextCall, PreviousCall, Main_Menu, btnCallNow;
     TextView txtOriginalFarmerName, txtAlternateFarmerName, FarmerMobile, Region, DistrictName, VillageName, UcName, TehsilName, MarkazName;
@@ -109,7 +109,7 @@ public class CallMenuActivity extends AppCompatActivity {
 
     String school_code, student_id;
 
-    ArrayList<String> spinnerArray =null;
+    ArrayList<String> spinnerArray = null;
 
     String s1 = "";
     String s2 = "";
@@ -257,13 +257,11 @@ public class CallMenuActivity extends AppCompatActivity {
                     requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 0);
                 } else {
 
-                    if(!numberSelected()){
+                    if (!numberSelected()) {
                         return;
-                    }else {
+                    } else {
                         DialUserNumber();
                     }
-
-
 
 
                 }
@@ -350,21 +348,19 @@ public class CallMenuActivity extends AppCompatActivity {
                 stopChatHeadService();
 
 
-                if (!numberSelected()){
+                if (!numberSelected()) {
 
 
                     return;
                 }
 
 
-
-
                 boolean goto_adolscent = checkAdolescent_q_ten();
-                Intent intent =  null;
+                Intent intent = null;
 
-                if(goto_adolscent){
+                if (goto_adolscent) {
                     intent = new Intent(CallMenuActivity.this, Ad_Section_A.class);
-                }else {
+                } else {
                     intent = new Intent(CallMenuActivity.this, pq_Section_A.class);
                 }
 
@@ -380,10 +376,7 @@ public class CallMenuActivity extends AppCompatActivity {
                 intent.putExtra("phone_order", cursor.getString(cursor.getColumnIndex("phone_order")));
 
 
-
-
                 //overriding name for
-
 
 
                 //intent.putExtra("farmer_cellphone", cursor.getString(cursor.getColumnIndex("farmer_cellphone")));
@@ -533,39 +526,36 @@ public class CallMenuActivity extends AppCompatActivity {
         checkAndUpdateAdapter();
 
 
-
         numbers_sp_q_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
-                DebugLog.console("[CallMenuActivity] inside numbers onItemSelected() "+i);
+                DebugLog.console("[CallMenuActivity] inside numbers onItemSelected() " + i);
 
 
                 try {
-                    if (i==0){
+                    if (i == 0) {
                         //  hh_edtfield_q_2.setText(  "");
 
-                    }else{
+                    } else {
 
                         //   hh_edtfield_q_2.setText(  parent.getSelectedItem().toString().trim());
 
                     }
 
 
-                    if (parent.getSelectedItem().toString().trim().equalsIgnoreCase("c1_given_number")){
+                    if (parent.getSelectedItem().toString().trim().equalsIgnoreCase("c1_given_number")) {
                         parent.setSelection(0);
                     }
 
-                    if (parent.getSelectedItem().toString().trim().equalsIgnoreCase("section_a_given_number")){
+                    if (parent.getSelectedItem().toString().trim().equalsIgnoreCase("section_a_given_number")) {
                         parent.setSelection(0);
                     }
-
-
 
 
                 } catch (Exception e) {
-                    EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside on numbers() Exception is :"+e.toString());
+                    EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside on numbers() Exception is :" + e.toString());
                 }
 
 
@@ -579,7 +569,6 @@ public class CallMenuActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     private boolean checkAdolescent_q_ten() {
@@ -589,27 +578,21 @@ public class CallMenuActivity extends AppCompatActivity {
         try {
 
 
-            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_e_table,school_code,student_id);
-            DebugLog.console("[HH_Screen_two] inside onStart() "+data.toString());
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_section_e_table, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
 
-            if (data.length()>0){
+            if (data.length() > 0) {
 
-                               if(data.getString("e_10").equalsIgnoreCase("null"))
-                    data.put("e_10","");
+                if (data.getString("e_10").equalsIgnoreCase("null"))
+                    data.put("e_10", "");
 
 
-                if(data.getString("e14").equalsIgnoreCase("1") ||data.getString("e_15").equalsIgnoreCase("1") ||data.getString("e_10").equalsIgnoreCase("1") || data.getString("e_11").equalsIgnoreCase("1")){
+                if (data.getString("e14").equalsIgnoreCase("1") || data.getString("e_15").equalsIgnoreCase("1") || data.getString("e_10").equalsIgnoreCase("1") || data.getString("e_11").equalsIgnoreCase("1")) {
                     go_to_adolscent = true;
                 }
 
 
-
-
             }
-
-
-
-
 
 
         } catch (Exception e) {
@@ -626,12 +609,12 @@ public class CallMenuActivity extends AppCompatActivity {
 
         try {
 
-            if(spinnerArray!=null){
+            if (spinnerArray != null) {
 
                 spinnerArray.clear();
             }
 
-            spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this,school_code,student_id);
+            spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getNumbersDataagainstvillageAndhhid(CallMenuActivity.this, school_code, student_id);
 
 
             JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.aghhid_section_c_table, school_code, student_id);
@@ -643,7 +626,7 @@ public class CallMenuActivity extends AppCompatActivity {
                     if (data.getString("c1_given_number").equalsIgnoreCase("null")) {
                         data.put("c1_given_number", "");
                     }
-                    spinnerArray.add(spinnerArray.size(),"c1_given_number");
+                    spinnerArray.add(spinnerArray.size(), "c1_given_number");
                     spinnerArray.add(data.getString("c1_given_number"));
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -663,7 +646,7 @@ public class CallMenuActivity extends AppCompatActivity {
                     }
 
 
-                    if(data.getString("given_number").length()>0) {
+                    if (data.getString("given_number").length() > 0) {
                         spinnerArray.add(spinnerArray.size(), "section_a_given_number");
                         spinnerArray.add(data.getString("given_number"));
                     }
@@ -674,8 +657,6 @@ public class CallMenuActivity extends AppCompatActivity {
             }
 
 
-
-
             spinnerArrayAdapter = new ArrayAdapter(this,
                     R.layout.spinner_item,
                     spinnerArray);
@@ -683,14 +664,14 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
         } catch (Exception e) {
-            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside checkAndUpdateAdapter() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside checkAndUpdateAdapter() Exception is :" + e.toString());
         }
 
     }
 
     private boolean numberSelected() {
         try {
-            if(numbers_sp_q_2.getSelectedItem().toString().equalsIgnoreCase(numbers_sp_q_2.getItemAtPosition(0).toString())){
+            if (numbers_sp_q_2.getSelectedItem().toString().equalsIgnoreCase(numbers_sp_q_2.getItemAtPosition(0).toString())) {
 
                 Toast.makeText(CallMenuActivity.this, "Please select number first.", Toast.LENGTH_SHORT).show();
 
@@ -700,7 +681,7 @@ public class CallMenuActivity extends AppCompatActivity {
 
             return true;
         } catch (Exception e) {
-            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside numberSelected() Exception is :"+e.toString());
+            EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside numberSelected() Exception is :" + e.toString());
             return false;
         }
     }
@@ -777,6 +758,7 @@ public class CallMenuActivity extends AppCompatActivity {
             s6 = sc6;
             school_code = scode;
             student_id = studentid;
+            SetReasonLayout(school_code, student_id, s1, s2, s3, s4, s5, s6);
 
             int orignal_tries_count = 0;
             int alternate_tries_count = 0;
@@ -885,7 +867,7 @@ public class CallMenuActivity extends AppCompatActivity {
                  String sc1,
                  String sc2,
                  String sc3) {
-        try{
+        try {
             txt_village_name.setText(m2_school_name);
 //        txt_school_emis_code.setText(scode);
             txt_school_code.setText("Village Code : " + scode);
@@ -914,15 +896,13 @@ public class CallMenuActivity extends AppCompatActivity {
                     }
 
 
-
-                    spinnerArray.add(spinnerArray.size(),"---(c1_given_number: ");
-                    spinnerArray.add(data.getString("c1_given_number")+")");
+                    spinnerArray.add(spinnerArray.size(), "---(c1_given_number: ");
+                    spinnerArray.add(data.getString("c1_given_number") + ")");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
             }
-
 
 
             data = HouseHoldDataBaseHelper.getDataBaseProcessor(CallMenuActivity.this).aghhid_getDataFromtable(CallMenuActivity.this, DatabaseAdapter.AGHHID_SampleTable, school_code, student_id);
@@ -936,8 +916,8 @@ public class CallMenuActivity extends AppCompatActivity {
                     }
 
 
-                    if(data.getString("given_number").length()>0) {
-                        spinnerArray.add(spinnerArray.size(),"section_a_given_number");
+                    if (data.getString("given_number").length() > 0) {
+                        spinnerArray.add(spinnerArray.size(), "section_a_given_number");
                         spinnerArray.add(data.getString("given_number"));
                     }
 
@@ -949,10 +929,6 @@ public class CallMenuActivity extends AppCompatActivity {
             }
 
 
-
-
-
-
             String hhidlisthaving_numbers = android.text.TextUtils.join("----  ", spinnerArray);
             txt_mobile_number.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
             txt_mobile_number.setSingleLine(false);
@@ -962,14 +938,14 @@ public class CallMenuActivity extends AppCompatActivity {
             school_code = scode;
             student_id = studentid;
             if (!StringUtils.isEmpty(reason)) {
-                txtReason.setText(reason);
-                reasonLayout.setVisibility(View.VISIBLE);
+//                txtReason.setText(reason);
+//                reasonLayout.setVisibility(View.VISIBLE);
             } else {
-                reasonLayout.setVisibility(View.GONE);
+//                reasonLayout.setVisibility(View.GONE);
             }
 
 
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             EmailDebugLog.getInstance(CallMenuActivity.this).writeLog("[CallMenuActivity] inside SetData() ");
         }
     }
@@ -1000,11 +976,11 @@ public class CallMenuActivity extends AppCompatActivity {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
 //        String phoneNumber =     txt_mobile_number.getText().toString().trim();
 
-        if(numbers_sp_q_2.getSelectedItemPosition()==0){
+        if (numbers_sp_q_2.getSelectedItemPosition() == 0) {
             Toast.makeText(this, "Please select number before pressing DIAL.", Toast.LENGTH_SHORT).show();
             return;
         }
-        String phoneNumber =    numbers_sp_q_2.getSelectedItem().toString().trim();
+        String phoneNumber = numbers_sp_q_2.getSelectedItem().toString().trim();
 
         String network = getSimNetwork();
         MubLog.cpnsoleLog("getSimNetwork  " + network);
@@ -1012,7 +988,7 @@ public class CallMenuActivity extends AppCompatActivity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                    phoneNumber = "880" + phoneNumber;
+                phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
@@ -1079,8 +1055,8 @@ public class CallMenuActivity extends AppCompatActivity {
         } else if (requestCode == 88) {
 
 
-            if(data!=null)
-                if(data.hasExtra("isDataUpdated")){
+            if (data != null)
+                if (data.hasExtra("isDataUpdated")) {
 
                     boolean isDataUpdated = data.getBooleanExtra("isDataUpdated", false);
                     if (isDataUpdated) {
@@ -1329,6 +1305,89 @@ public class CallMenuActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    void SetReasonLayout(String Village_id, String hh_id, String s1, String s2, String s3, String s4, String s5, String s6) {
+        Cursor cursor_m1 = databaseAccess.getad_section_m(Village_id, hh_id);
+        String m2_day = "";
+        String m2_month = "";
+        String m2_hh = "";
+        String m2_mm = "";
+
+        if (cursor_m1 != null && cursor.getCount() > 0) {
+            cursor_m1.moveToLast();
+            try {
+                m2_day = cursor_m1.getString(cursor_m1.getColumnIndex("m2_day"));
+                m2_month = cursor_m1.getString(cursor_m1.getColumnIndex("m2_month"));
+                m2_hh = cursor_m1.getString(cursor_m1.getColumnIndex("m2_hh"));
+                m2_mm = cursor_m1.getString(cursor_m1.getColumnIndex("m2_mm"));
+
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                MubLog.cpnsoleLog("Data Read Error Adolscent Section_M:" + e.getMessage());
+            }
+        }
+
+        MubLog.cpnsoleLog("Days : " + m2_day);
+        if (!StringUtils.isEmpty(m2_day)) {
+            reasonLayout.setVisibility(View.VISIBLE);
+            MubLog.cpnsoleLog("reasonLayout  : ");
+            txtReason.setText("Adolscent Given Date : " + m2_month + "/" + m2_day + " Time : " + m2_hh + " : " + m2_mm);
+        } else {
+            Cursor cursor_m2 = databaseAccess.getad_section_m(Village_id, hh_id);
+            String m2_day_m2 = "";
+            String m2_month_m2 = "";
+            String m2_hh_m2 = "";
+            String m2_mm_m2 = "";
+
+            if (cursor_m2 != null && cursor.getCount() > 0) {
+                cursor_m2.moveToLast();
+                try {
+                    m2_day = cursor_m2.getString(cursor_m2.getColumnIndex("m2_day"));
+                    m2_month = cursor_m2.getString(cursor_m2.getColumnIndex("m2_month"));
+                    m2_hh = cursor_m2.getString(cursor_m2.getColumnIndex("m2_hh"));
+                    m2_mm = cursor_m2.getString(cursor_m2.getColumnIndex("m2_mm"));
+
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    MubLog.cpnsoleLog("Data Read Error Adolscent Section_M:" + e.getMessage());
+                }
+            }
+            MubLog.cpnsoleLog("Days : m2_day " + m2_day);
+            if (!StringUtils.isEmpty(m2_day)) {
+                reasonLayout.setVisibility(View.VISIBLE);
+                MubLog.cpnsoleLog("reasonLayout  : ");
+                txtReason.setText("Head Given Date : " + m2_month + "/" + m2_day + " Time : " + m2_hh + " : " + m2_mm);
+            } else {
+                Cursor cursor_se = databaseAccess.gethead_section_e(Village_id, hh_id);
+                String e11_day = "";
+                String e11_month = "";
+                String e11_hh = "";
+                String e11_mm = "";
+
+                if (cursor_se != null && cursor.getCount() > 0) {
+                    cursor_se.moveToFirst();
+                    try {
+                        e11_day = cursor_se.getString(cursor_se.getColumnIndex("e11_day"));
+                        e11_month = cursor_se.getString(cursor_se.getColumnIndex("e11_month"));
+                        e11_hh = cursor_se.getString(cursor_se.getColumnIndex("e11_hh"));
+                        e11_mm = cursor_se.getString(cursor_se.getColumnIndex("e11_mm"));
+
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                        MubLog.cpnsoleLog("Data Read Error Adolscent Section_M:" + e.getMessage());
+                    }
+                }
+                MubLog.cpnsoleLog("Days : e11_day " + e11_day);
+                if (!StringUtils.isEmpty(e11_day)) {
+                    reasonLayout.setVisibility(View.VISIBLE);
+                    MubLog.cpnsoleLog("reasonLayout  : ");
+                    txtReason.setText("Section E Given Date : " + e11_month + "/" + e11_day + " Time : " + e11_hh + " : " + e11_mm);
+                } else {
+                    reasonLayout.setVisibility(View.GONE);
+                }
+            }
+        }
     }
 }
 
