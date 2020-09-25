@@ -108,7 +108,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String a4_d = "";
     String a4_d_other = "";
 
-    RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9;
+    RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9,code_11;
 
     LinearLayout qm3_layout;
     RelativeLayout month_spinner_name, day_spinner_name, hour_spinner_name, minutes_spinner_name;
@@ -169,6 +169,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         code_7 = findViewById(R.id.code_7);
         code_8 = findViewById(R.id.code_8);
         code_9 = findViewById(R.id.code_9);
+        code_11 = findViewById(R.id.code_11);
 
         btnBack = findViewById(R.id.btnBack);
         code_10_other = findViewById(R.id.code_10_other);
@@ -1403,6 +1404,8 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             code_5.setVisibility(View.GONE);
             code_6.setVisibility(View.GONE);
             code_7.setVisibility(View.GONE);
+            code_8.setVisibility(View.GONE);
+            code_11.setVisibility(View.GONE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.GONE);
