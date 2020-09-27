@@ -9431,5 +9431,24 @@ public class DatabaseAdapter {
         }
     }
 
+    public boolean enum_new(String sql) {
+
+        MubLog.cpnsoleLog("inside enum_new");
+
+
+        try {
+            //when change in this also make change in delete section data querry and getFarmerPendingCalls
+            Cursor cursor2 = this.db.rawQuery(sql, new String[0]);
+            if (cursor2 == null || cursor2.getCount() <= 0) {
+                return false;
+            }
+        } catch (Exception ex) {
+            MubLog.cpnsoleLog("inside enum_new" + ex.toString());
+            return true;
+        }
+
+
+        return true;
+    }
 
 }

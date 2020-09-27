@@ -473,7 +473,7 @@ public class MainMenuActivity extends AppCompatActivity {
         txtSyncCompleteQuestionnaireCounter.setText("" + SyncCompleteQuestionnaireCounter);
 
 
-        e_count.setText(HouseHoldDataBaseHelper.getDataBaseProcessor(MainMenuActivity.this).aghhid_gethhid_having_successful_status(MainMenuActivity.this,RConsUtils.getUserName())+"");
+        e_count.setText(HouseHoldDataBaseHelper.getDataBaseProcessor(MainMenuActivity.this).aghhid_gethhid_having_successful_status(MainMenuActivity.this, RConsUtils.getUserName()) + "");
 
 
     }
@@ -1765,18 +1765,17 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
         try {
-            //updating Question table question no 37
-            MubLog.cpnsoleLog("inside onStart");
-            // databaseAccess.update_Question_table_q_no_37();
 
-            TextView tv_selectvillage_now = findViewById(R.id.tv_selectvillage_now);
-            tv_selectvillage_now.setText("Select Village Code: \r\n Current Selected Code : " + HHIDConfigurations.getPeshawarCurrentPSU(MainMenuActivity.this));
+            String sql3 = "Select * from Enum_Name WHERE id IN ('12') ";
+            boolean alreadycreated = databaseAccess.enum_new(sql3);
 
-            String enum_code = "ALTER TABLE `" + DatabaseAdapter.FarmerCallBackTable + "` ADD `enum_code` TEXT DEFAULT '' ";
-            //databaseAccess. createMissingColumn(enum_code);
+            if (alreadycreated) {
+                MubLog.cpnsoleLog("onStart already created 12");
+            } else {
+                String sql4 = "INSERT INTO Enum_Name (id,enum_code,enum_name) VALUES ( '12', '12', 'Khalida Basheer');";
+                databaseAccess.createMissingColumn(sql4);
 
-            String enum_name = "ALTER TABLE `" + DatabaseAdapter.FarmerCallBackTable + "` ADD `enum_name` TEXT DEFAULT '' ";
-            //databaseAccess. createMissingColumn(enum_name);
+            }
 
 
         } catch (Exception e) {
