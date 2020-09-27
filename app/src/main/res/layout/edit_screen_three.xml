@@ -182,15 +182,13 @@
                             android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_25sdp"
                             android:gravity="right"
-                            android:text="@string/tv_section_d_title"
+                            android:text="ترمیم کرنے کیلئے ممبر منتخب کریں "
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
                             android:textStyle="bold"
 
 
                             />
-
-
 
 
 
@@ -214,11 +212,44 @@
 
 
 
+                        <EditText
+                            android:id="@+id/hh_edtfield_q_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_textview_q_5"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:background="@drawable/edittextbgwhitecolor"
+                            android:enabled="false"
+                            android:inputType="textPersonName"
+                            android:maxLength="500"
+                            android:paddingLeft="10dp"
+                            android:scaleType="fitXY"
+                            android:textColorHint="@color/LightGrey"></EditText>
+
+
+                        <Spinner
+
+                            android:id="@+id/numbers_sp_q_2"
+                            android:layout_width="@dimen/_450sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hh_edtfield_q_2"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:background="#e6e6e6"
+                            android:entries="@array/array_relative_code_sp"
+                            android:padding="@dimen/_5sdp"
+
+                            android:textSize="@dimen/_13sdp"></Spinner>
+
+
                         <LinearLayout
                             android:id="@+id/phone_number_ll"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/hh_edtfield_q_5"
+                            android:layout_below="@+id/numbers_sp_q_2"
                             android:layout_marginTop="10dp"
                             android:orientation="vertical">
 
@@ -707,6 +738,7 @@
                             android:layout_marginTop="40dp"
                             android:background="@drawable/option_one"
                             android:clickable="true"
+                            android:visibility="gone"
                             android:onClick="grabEnteredTextForscreenthreenextbtn"
                             android:scaleType="fitXY">
 
@@ -732,7 +764,7 @@
                             android:id="@+id/screenthreenextbtnonerl"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_below="@+id/hhid_addnumber"
+                            android:layout_below="@+id/phone_number_ll"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin_xhdpi"
                             android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin_xhdpi"
@@ -756,7 +788,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:text="Save And Next Question"
+                                android:text="Update Member"
                                 android:textSize="17sp" />
                         </RelativeLayout>
 
@@ -776,6 +808,7 @@
                             android:background="@drawable/option_one"
                             android:clickable="true"
                             android:onClick="editMember"
+                            android:visibility="gone"
                             android:scaleType="fitXY"
                            >
 
@@ -913,7 +946,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_above="@+id/exit"
-        android:text="@string/HH_Screen_three"
+        android:text="Edit_HH_Screen_three"
         android:textSize="@dimen/_14sdp"
         />
 </RelativeLayout>

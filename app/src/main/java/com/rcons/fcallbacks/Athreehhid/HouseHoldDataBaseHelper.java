@@ -2551,6 +2551,65 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    public synchronized JSONObject aghhid_getDataFromtable_memwith_id(Context appContext,String tableName , String village_id,String hhid,String memID){
+        long rowId = 1;
+        try {
+            openDB();
+            JSONArray dataArray = new JSONArray();
+            JSONObject data =  new JSONObject();
+            Cursor curCSV = db.rawQuery("SELECT * FROM  "+ tableName +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"'  AND  d_1 =  '"+memID+"'",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable_memwith_id() village_id "+village_id);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable_memwith_id() hhid"+hhid);
+            if(curCSV.getCount()!=0) {
+
+                //file.createNewFile();
+//                String fileName = FileManager.createFileName(appContext, "csv" + "", HHIDConfigurations.getPeshawarCurrentLoggedInUser(appContext)+"_PSU_DATA");
+//                FileManager.createNewFile(appContext, fileName, "");
+
+
+//                CSVWriter csvWrite = new CSVWriter(new FileWriter(appContext.getFileStreamPath(fileName)));
+
+
+//                csvWrite.writeNext(curCSV.getColumnNames());
+                String columnNames[] = curCSV.getColumnNames();
+                DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable_memwith_id() columnNames"+columnNames.length);
+
+                int count = curCSV.getColumnCount();
+                String arrStr[] = new String[count];
+                //curCSV.moveToFirst();
+                while (curCSV.moveToNext()) {
+                    //Which column you want to exprort
+                    int index = 0;
+                    while (index < count) {
+                        //  arrStr[index] = curCSV.getString(index);
+                        DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_getDataFromtable_memwith_id() "+columnNames[index]);
+
+                        data.put(columnNames[index],curCSV.getString(index)+"");
+//DebugLog.console("[HouseHoldDataBaseHelper] inside getDataFromtable() "+data.toString());
+                        index++;
+                    }
+                    //  arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2)};
+//                    csvWrite.writeNext(arrStr);
+
+
+                }
+//                csvWrite.close();
+
+            }
+            curCSV.close();
+            DebugLog.console(" executed successfully");
+            closeDB();
+            return data;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside aghhid_getDataFromtable_memwith_id");
+            closeDB();
+            return new JSONObject();
+        }
+    }
+
+
+
     public synchronized JSONObject aghhid_getDataFromtable(Context appContext,String tableName , String village_id,String hhid){
         long rowId = 1;
         try {
@@ -2687,6 +2746,54 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+  public synchronized boolean aghhid_update_member_list(String village_id,String hhid, JSONObject member) {
+        try {
+
+
+
+            boolean runUpdate_Querry = true;//hhid_isHHCovered(PSU_code,HH_id);
+
+            DebugLog.console("[HouseHoldDataBaseHelper] inside aghhid_update_member_list() runUpdate_Querry"+runUpdate_Querry);
+
+
+            openDB();
+
+
+            ContentValues cv = new ContentValues();
+            cv.put("village_id", village_id.toUpperCase());
+            cv.put("hhid", hhid.toUpperCase());
+            cv.put("d_1", member.getInt("d_1")+"".toUpperCase());
+            cv.put("d_2", member.getString("d_2").toUpperCase());
+            cv.put("d_3", member.getString("d_3").toUpperCase());
+            cv.put("d_4", member.getInt("d_4")+"".toUpperCase());
+            cv.put("d_5", member.getString("d_5").toUpperCase());
+            cv.put("d_5_other",member.getString("d_5_other").toUpperCase());
+            cv.put("d_6",member.getString("d_6").toUpperCase());
+            cv.put("d_7", member.getString("d_7").toUpperCase());
+            cv.put("d_8", member.getString("d_8").toUpperCase());
+            cv.put("build_no", BuildConfig.VERSION_NAME);
+            cv.put("insert_or_updated_in_phone_at", MpcUtil.getcurrentTime(14));
+            cv.put("rcons_user", HHIDConfigurations.getPeshawarCurrentLoggedInUser(mContext).toUpperCase());
+            cv.put("deviceid", MpcUtil.getMAC(AppController.getInstance()).toUpperCase());
+
+
+            long  isInserted =  db.update(DatabaseAdapter.aghhid_section_d_table,  cv,"hhid=" + hhid.toUpperCase()+ " AND village_id = '"+village_id.toUpperCase()+"' AND d_1 = '"+member.getInt("d_1")+"".toUpperCase()+"'",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] HHID_Survey_PHONE_LIST aghhid_update_member_list aghhid_update_member_list  aghhid_update_member_list() "+isInserted);
+
+
+            closeDB();
+            if (isInserted != -1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(mContext).writeLog("[" + this.getClass().getSimpleName() + "] inside hhid_insert_data_screen_six() Exception is : " + e.toString());
+            closeDB();
+            return false;
+        }
+    }
 
 
     public synchronized boolean aghhid_insert_member_list(String village_id,String hhid, JSONObject member) {
