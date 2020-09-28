@@ -236,7 +236,7 @@ public class Ad_Section_A extends AppCompatActivity {
     String id = "";
     String school_name = "";
     String student_name = "";
-
+    String adolescent_name = "";
 
     private DatePickerDialog.OnDateSetListener mDateSetListener_a4;
     private DatePickerDialog.OnDateSetListener mDateSetListener_a6;
@@ -1268,7 +1268,7 @@ public class Ad_Section_A extends AppCompatActivity {
 
 
             checkAndUpdateVariables();
-
+            a4 = adolescent_name;
             if (StringUtils.isEmpty(s1)) {
                 try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 1");
@@ -1711,7 +1711,7 @@ public class Ad_Section_A extends AppCompatActivity {
 
         section_b_question_q1.setText("کیا  آپ     " + headName + " بات کر رہی ہیں ؟ ");
         section_b_question_q2.setText("کیا میں    " + headName + "سے بات کر سکتی ہوں؟ ");
-
+        adolescent_name = headName;
     }
 
     void readFromDataBasic() {
