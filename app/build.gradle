@@ -8,8 +8,8 @@ android {
         applicationId "com.rcons.aghhid"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 25
-        versionName "2.5"
+        versionCode 26
+        versionName "26"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

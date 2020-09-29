@@ -1987,13 +1987,13 @@ public class HH_Screen_two_Section_e extends Activity {
     }
 
     public void setMigration2(View view) {
-        aghhid_e_2 = "-111";
+        aghhid_e_2 = "2";
         hh_edtfield_q_2.setVisibility(View.GONE);
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);
     }
     public void setMigration3(View view) {
-        aghhid_e_2 = "-888";
+        aghhid_e_2 = "-88";
         hh_edtfield_q_2.setVisibility(View.GONE);
         hh_edtfield_q_2.setText("");
         numbers_sp_q_2.setVisibility(View.GONE);

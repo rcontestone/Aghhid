@@ -322,7 +322,7 @@ public class HH_Screen_four_section_d extends Activity {
             ArrayList<String> spinnerArray  = new ArrayList<String>(); //HouseHoldDataBaseHelper.getDataBaseProcessor(HH_Screen_four_section_d.this).aghhid_getgirlsgainstvillageAndhhid(appContext,school_code,student_id);
             spinnerArray.add("Please Select Name ");
 //            spinnerArray.clear();
-            JSONArray phonedataarray =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).agghhid_getDataFromMemberTable(appContext, school_code,student_id);
+            JSONArray phonedataarray =  HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).agghhid_getDataFromMemberTableAgeGreatethen17(appContext, school_code,student_id);
             if (phonedataarray != null) {
                 int len = phonedataarray.length();
 

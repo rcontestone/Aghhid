@@ -2845,6 +2845,63 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public synchronized JSONArray agghhid_getDataFromMemberTableAgeGreatethen17(Context appContext,String village_id,String hhid){
+        long rowId = 1;
+        try {
+            openDB();
+            JSONArray dataArray = new JSONArray();
+            JSONObject data =  null;
+            Cursor curCSV = db.rawQuery("SELECT * FROM  "+ DatabaseAdapter.aghhid_section_d_table +" where village_id = '"+village_id+"' AND hhid = '"+hhid+"' AND  d_4 > 17 ",null);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() village_id "+village_id);
+            DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() hhid"+hhid);
+            if(curCSV.getCount()!=0) {
+
+                //file.createNewFile();
+//                String fileName = FileManager.createFileName(appContext, "csv" + "", HHIDConfigurations.getPeshawarCurrentLoggedInUser(appContext)+"_PSU_DATA");
+//                FileManager.createNewFile(appContext, fileName, "");
+
+
+//                CSVWriter csvWrite = new CSVWriter(new FileWriter(appContext.getFileStreamPath(fileName)));
+
+
+//                csvWrite.writeNext(curCSV.getColumnNames());
+                String columnNames[] = curCSV.getColumnNames();
+                DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() columnNames"+columnNames.length);
+
+                int count = curCSV.getColumnCount();
+                String arrStr[] = new String[count];
+                //curCSV.moveToFirst();
+                while (curCSV.moveToNext()) {
+                    //Which column you want to exprort
+                    data =  new JSONObject();
+                    int index = 0;
+                    while (index < count) {
+                        //  arrStr[index] = curCSV.getString(index);
+                        DebugLog.console("[HouseHoldDataBaseHelper] inside agghhid_getDataFromMemberTable() "+columnNames[index]);
+
+                        data.put(columnNames[index],curCSV.getString(index)+"");
+//DebugLog.console("[HouseHoldDataBaseHelper] inside getDataFromtable() "+data.toString());
+                        index++;
+                    }
+                    //  arrStr[] ={curCSV.getString(0),curCSV.getString(1), curCSV.getString(2)};
+//                    csvWrite.writeNext(arrStr);
+                    dataArray.put(data);
+
+                }
+//                csvWrite.close();
+
+            }
+            curCSV.close();
+            DebugLog.console(" created successfully");
+            closeDB();
+            return dataArray;
+        } catch (Exception e) {
+            DebugLog.console( e.toString()+"[DatabaseProcessor]: exception inside agghhid_getDataFromMemberTable");
+            closeDB();
+            return new JSONArray();
+        }
+    }
+
 
 
     public synchronized JSONArray agghhid_getDataFromMemberTable(Context appContext,String village_id,String hhid){
