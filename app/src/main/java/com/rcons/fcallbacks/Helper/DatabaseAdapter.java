@@ -5390,11 +5390,6 @@ public class DatabaseAdapter {
                 contentValues.put("a4_c_other", a4_c_other);
                 contentValues.put("a4_d", a4_d);
                 contentValues.put("a4_d_other", a4_d_other);
-                contentValues.put("a4_day", a4_day);
-                contentValues.put("a4_month", a4_month);
-                contentValues.put("a4_year", a4_year);
-                contentValues.put("a4_hh", a4_hh);
-                contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
                 contentValues.put("a5_a", a5_a);
@@ -5549,11 +5544,6 @@ public class DatabaseAdapter {
                 contentValues.put("a4_c_other", a4_c_other);
                 contentValues.put("a4_d", a4_d);
                 contentValues.put("a4_d_other", a4_d_other);
-                contentValues.put("a4_day", a4_day);
-                contentValues.put("a4_month", a4_month);
-                contentValues.put("a4_year", a4_year);
-                contentValues.put("a4_hh", a4_hh);
-                contentValues.put("a4_mm", a4_mm);
                 contentValues.put("a4_number", a4_number);
                 contentValues.put("a5", a5);
                 contentValues.put("a5_a", a5_a);

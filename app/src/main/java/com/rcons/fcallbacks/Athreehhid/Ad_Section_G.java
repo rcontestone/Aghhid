@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.view.Gravity;
 import android.view.View;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.MubDateAndTime;
+import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 
 import com.rcons.fcallbacks.Main.AddReportActivity_AD;
@@ -223,6 +225,8 @@ public class Ad_Section_G extends AppCompatActivity {
 
         txt_School_Code.setText("Village Code : " + village_id);
         txt_Student_id.setText("HH Id : " + hhid);
+        deviceid = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        build_no = BuildConfig.VERSION_NAME;
 
 
         SetEnumState();

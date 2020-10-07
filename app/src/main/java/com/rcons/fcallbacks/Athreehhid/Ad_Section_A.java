@@ -1266,7 +1266,13 @@ public class Ad_Section_A extends AppCompatActivity {
             insert_or_updated_in_phone_at = MubDateAndTime.INSTANCE.getcurrentTime(0) + "-" + MubDateAndTime.INSTANCE.getcurrentTime(1) + "-" + MubDateAndTime.INSTANCE.getcurrentTime(2) + " " + MubDateAndTime.INSTANCE.getcurrentTime(3) + ":" + MubDateAndTime.INSTANCE.getcurrentTime(4) + ":" + MubDateAndTime.INSTANCE.getcurrentTime(5);
             MubLog.cpnsoleLog("build_no " + build_no);
 
+            a4_year = MubDateAndTime.INSTANCE.getcurrentTime(0);
+            a4_month = MubDateAndTime.INSTANCE.getcurrentTime(1);
+            a4_day = MubDateAndTime.INSTANCE.getcurrentTime(2);
+            a4_hh = MubDateAndTime.INSTANCE.getcurrentTime(3);
+            a4_mm = MubDateAndTime.INSTANCE.getcurrentTime(4);
 
+            isSynced = "99";
             checkAndUpdateVariables();
             a4 = adolescent_name;
             if (StringUtils.isEmpty(s1)) {
