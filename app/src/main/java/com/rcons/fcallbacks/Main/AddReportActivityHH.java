@@ -236,10 +236,6 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
         int selectedID = group.getCheckedRadioButtonId();
 
 
-        if(!(m3_answered.length()>0)){
-            Toast.makeText(AddReportActivityHH.this, "Please select M3.", Toast.LENGTH_LONG).show();
-            return;
-        }
 
         if(!(m4_answered.length()>0)){
             Toast.makeText(AddReportActivityHH.this, "Please select M4.", Toast.LENGTH_LONG).show();

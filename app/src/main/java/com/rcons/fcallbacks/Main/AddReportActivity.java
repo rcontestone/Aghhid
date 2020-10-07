@@ -446,10 +446,6 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
             if (surveyStatus.equalsIgnoreCase("1")) {
 
-                if (!(m3_answered.length() > 0)) {
-                    Toast.makeText(AddReportActivity.this, "Please select M3.", Toast.LENGTH_LONG).show();
-                    return error = true;
-                }
 
                 if (!(m4_answered.length() > 0)) {
                     Toast.makeText(AddReportActivity.this, "Please select M4.", Toast.LENGTH_LONG).show();
