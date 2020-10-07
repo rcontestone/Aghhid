@@ -8515,6 +8515,28 @@ public class DatabaseAdapter {
     }
 
 
+
+    public Cursor aghh_getHHIDCursor(String userName,String hhid) {
+
+        //removed 8 when 4447 issue
+        String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
+        //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
+        // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  (  rcons_user = '" + userName + "'  AND survey_status = '' AND  village_id = '"+userName+"' AND hhid = '"+hhid+"'    ) ORDER BY  hhid ASC";
+
+        MubLog.cpnsoleLog("inside baseline_getNewCallsCount " + querry);
+        Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
+        MubLog.cpnsoleLog("inside getFarmerDistinctCallRecord " + querry);
+        if (cursor2 == null || cursor2.getCount() <= 0) {
+            return null;
+        }
+        return cursor2;
+    }
+
+
+
+
+
     public Cursor baseline_getNewCallsCursor(String userName) {
 
         //removed 8 when 4447 issue

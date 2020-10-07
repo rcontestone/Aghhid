@@ -193,7 +193,7 @@ public class CallMenuActivity extends AppCompatActivity {
             cursor = databaseAccess.aghhid_getPendingCallCursor(userName);
         } else {
             triesLayout.setVisibility(View.GONE);
-            edtSearchBar.setVisibility(View.GONE);
+          //  edtSearchBar.setVisibility(View.GONE);
             reasonLayout.setVisibility(View.GONE);
             cursor = databaseAccess.aghhid_getNewCallsCursor(userName);
         }
@@ -495,7 +495,15 @@ public class CallMenuActivity extends AppCompatActivity {
                 try {
                     String text = edtSearchBar.getText().toString().toLowerCase();
                     if (text.length() > 0) {
-                        SearchDataFromCursor(text);
+
+                          cursor = databaseAccess.aghh_getHHIDCursor(userName,text);
+                      //  SearchDataFromCursor(text);
+                        if (cursor != null && cursor.getCount() > 0) {
+                            cursor.moveToFirst();
+                            GetData();
+                        }
+
+
                     } else {
                         if (isPendingCall) {
                             cursor = databaseAccess.baseline_getPendingCallCursor(userName);
