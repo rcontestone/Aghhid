@@ -45,7 +45,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     RadioButton radioButton;
     RadioButton code_10_other;
 
-    EditText other, m4_other,newNUmber,anyComments;
+    EditText other, m4_other, newNUmber, anyComments;
     EditText callReasonEditText;
     String section;
     String school_code;
@@ -108,7 +108,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String a4_d = "";
     String a4_d_other = "";
 
-    RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9,code_11;
+    RadioButton code_1, code_2, code_3, code_4, code_5, code_6, code_7, code_8, code_9, code_11;
 
     LinearLayout qm3_layout;
     RelativeLayout month_spinner_name, day_spinner_name, hour_spinner_name, minutes_spinner_name;
@@ -127,7 +127,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     String e11_mm = "";
 
     String call_from = "HHID_MAIN";
-    private String reportComments="";
+    private String reportComments = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -425,10 +425,10 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             reportComments = anyComments.getText().toString();
 
 
-            if(newNUmber.getText().toString().length()>0)
-                HouseHoldDataBaseHelper.getDataBaseProcessor(AddReportActivity.this).aghhid_update_given_nummber(school_code, student_id,newNUmber.getText().toString());
+            if (newNUmber.getText().toString().length() > 0)
+                HouseHoldDataBaseHelper.getDataBaseProcessor(AddReportActivity.this).aghhid_update_given_nummber(school_code, student_id, newNUmber.getText().toString());
 
-            databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments,call_from);
+            databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments, call_from);
             isDataUpdated = true;
             Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
             Intent returnIntent = new Intent();
@@ -486,7 +486,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             }
 
 
-            if(newNUmber.getText().toString().length()>0 && newNUmber.getText().toString().length()<10){
+            if (newNUmber.getText().toString().length() > 0 && newNUmber.getText().toString().length() < 10) {
                 Toast.makeText(AddReportActivity.this, "Please Enter valid phone number ", Toast.LENGTH_LONG).show();
                 newNUmber.requestFocus();
 
@@ -526,7 +526,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
                 alertDialog.dismiss();
                 //  boolean callagain_flag_manual_set = databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this);
-                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,reportComments, call_from);
+                boolean callagain_flag_manual_set = databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "2", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments, call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -554,7 +554,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             public void onClick(View view) {
                 alertDialog.dismiss();
                 //  databaseAccess.baseline_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this);
-                databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm,reportComments, call_from);
+                databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, "1", empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments, call_from);
 
                 isDataUpdated = true;
                 Toast.makeText(AddReportActivity.this, "Data updated Successfully.", Toast.LENGTH_SHORT).show();
@@ -1397,15 +1397,15 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         readFromDataBase_Section_a();
         readFromDataBase_Section_e();
         if (!StringUtils.isEmpty(a2)) {
-            code_1.setVisibility(View.GONE);
-            code_2.setVisibility(View.GONE);
-            code_3.setVisibility(View.GONE);
+            code_1.setVisibility(View.VISIBLE);
+            code_2.setVisibility(View.VISIBLE);
+            code_3.setVisibility(View.VISIBLE);
             code_4.setVisibility(View.VISIBLE);
-            code_5.setVisibility(View.GONE);
-            code_6.setVisibility(View.GONE);
-            code_7.setVisibility(View.GONE);
-            code_8.setVisibility(View.GONE);
-            code_11.setVisibility(View.GONE);
+            code_5.setVisibility(View.VISIBLE);
+            code_6.setVisibility(View.VISIBLE);
+            code_7.setVisibility(View.VISIBLE);
+            code_8.setVisibility(View.VISIBLE);
+            code_11.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.GONE);
@@ -1441,6 +1441,8 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             hour_spinner_name.setVisibility(View.VISIBLE);
             minutes_spinner_name.setVisibility(View.VISIBLE);
         }
+        code_4.setVisibility(View.GONE);
+        code_5.setVisibility(View.GONE);
     }
 
 

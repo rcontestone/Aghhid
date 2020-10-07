@@ -422,6 +422,7 @@
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:clickable="true"
                                 android:gravity="right"
+                                android:visibility="gone"
                                 android:layoutDirection="rtl"
                                 android:onClick="setMigration6"
                                 android:text="@string/section_e_question_q2_option777"

@@ -168,9 +168,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@id/btn_RedialCall"
+                            android:clickable="true"
                             android:contentDescription="report"
                             android:onClick="launchReport"
-                            android:clickable="true"
                             android:src="@drawable/img_register"
                             android:tint="@color/white_color" />
 
@@ -428,6 +428,7 @@
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
+                                android:visibility="gone"
 
                                 />
 

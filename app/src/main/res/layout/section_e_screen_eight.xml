@@ -790,6 +790,7 @@
                             android:layout_marginBottom="@dimen/_10sdp"
                             android:gravity="right"
                             android:tag="-777"
+                            android:visibility="gone"
                             android:text="@string/section_e_question_q8_option777"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"

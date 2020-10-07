@@ -418,6 +418,7 @@
                                 android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:clickable="true"
+                                android:visibility="gone"
                                 android:gravity="right"
                                 android:layoutDirection="rtl"
                                 android:onClick="setMigration6"

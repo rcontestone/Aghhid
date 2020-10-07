@@ -594,7 +594,7 @@
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/v_rounder_button_"
                             android:gravity="center"
-                            android:text="Question No. A 15"
+                            android:text="Question No. A 13.a"
                             android:textColor="@color/text_white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -636,7 +636,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="1"
-                                android:text="1~ نمبر مصروف ہے "
+                                android:text="@string/section_a_question_2_option_1"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -655,7 +655,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="2"
-                                android:text="2~ رابطہ ممکن نہیں"
+                                android:text="@string/section_a_question_2_option_2"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -674,7 +674,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="3"
-                                android:text="3~ نمبر کسی کو ایشو نہیں "
+                                android:text="@string/section_a_question_2_option_3"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -693,7 +693,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="4"
-                                android:text="4~ کال نہیں اٹھائی "
+                                android:text="@string/section_a_question_2_option_4"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -717,8 +717,25 @@
                                 android:textSize="24sp"
                                 android:visibility="gone" />
 
-
                         </RadioGroup>
+                        <EditText
+                            android:id="@+id/edt_a6_other"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/rounder_edittext"
+                            android:hint="Specify other"
+                            android:inputType="textCapCharacters"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="12dp"
+                            android:textColor="#0E0308"
+                            android:textSize="24sp"
+                            android:visibility="gone" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1240,25 +1257,6 @@
                             android:textColorHint="@color/navy_blue"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:visibility="gone" />
-
-                        <EditText
-                            android:id="@+id/edt_a6_other"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginBottom="20dp"
-                            android:background="@drawable/rounder_edittext"
-                            android:hint="Specify other"
-                            android:inputType="textCapCharacters"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="8dp"
-                            android:paddingRight="10dp"
-                            android:paddingBottom="12dp"
-                            android:textColor="#0E0308"
-                            android:textSize="24sp"
                             android:visibility="gone" />
 
                     </LinearLayout>
@@ -2167,7 +2165,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="1"
-                                android:text="@string/section_b_question_q9_option1"
+                                android:text="@string/section_a_question_5a_option_1"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -2186,7 +2184,7 @@
                                 android:paddingRight="8dp"
                                 android:paddingBottom="8dp"
                                 android:tag="2"
-                                android:text="@string/section_b_question_q9_option2"
+                                android:text="@string/section_a_question_5a_option_2"
                                 android:textColor="#0E0308"
                                 android:textSize="24sp" />
 
@@ -2207,7 +2205,8 @@
                                 android:tag="-777"
                                 android:text="@string/section_b_question_q9_option777"
                                 android:textColor="#0E0308"
-                                android:textSize="24sp" />
+                                android:textSize="24sp"
+                                android:visibility="gone" />
 
                         </RadioGroup>
                     </LinearLayout>

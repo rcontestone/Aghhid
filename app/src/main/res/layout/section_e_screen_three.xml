@@ -102,8 +102,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:scrollbarFadeDuration="60000"
             android:scrollbars="vertical">
@@ -125,8 +125,8 @@
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
 
                         android:orientation="vertical"
                         android:scaleType="fitXY">
@@ -137,8 +137,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbg"
                             android:hint="@string/sign_up_first_name_textfield_label"
                             android:inputType="textPersonName"
@@ -157,32 +157,34 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:backgroundTint="@color/black_color"
+                            android:clickable="true"
                             android:contentDescription="Call"
                             android:onClick="DialUserNumber"
-                            android:clickable="true"
                             android:src="@drawable/call_icon_foreground"
                             android:tint="@color/white_color" />
+
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
                             android:id="@+id/btn_AddReportQuestionnaire"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toLeftOf="@id/btn_RedialCall"
+                            android:clickable="true"
                             android:contentDescription="report"
                             android:onClick="launchReport"
-                            android:clickable="true"
                             android:src="@drawable/img_register"
                             android:tint="@color/white_color" />
+
                         <TextView
                             android:id="@+id/hh_textview_q_script"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/sign_up_first_name_textfield"
 
+                            android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="27dp"
                             android:layout_marginRight="30dp"
                             android:gravity="center"
-                            android:layout_centerHorizontal="true"
                             android:text="Sectin E Q.3"
                             android:textColor="@color/Blue"
                             android:textSize="@dimen/_20sdp"
@@ -235,16 +237,15 @@
                             android:layout_below="@+id/hh_textview_q_2_2"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbgwhitecolor"
-                         android:visibility="gone"
                             android:inputType="text"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
-                            android:textColorHint="@color/LightGrey"></EditText>
-
+                            android:textColorHint="@color/LightGrey"
+                            android:visibility="gone"></EditText>
 
 
                         <Spinner
@@ -252,31 +253,31 @@
                             android:id="@+id/numbers_sp_q_2"
                             android:layout_width="@dimen/_250sdp"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/hh_edtfield_q_3"
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
-                            android:layout_below="@id/hh_edtfield_q_3"
                             android:background="#e6e6e6"
                             android:entries="@array/array_relative_code_sp"
                             android:padding="@dimen/_5sdp"
-                          android:visibility="gone"
-                            android:textSize="@dimen/_13sdp"></Spinner>
+                            android:textSize="@dimen/_13sdp"
+                            android:visibility="gone"></Spinner>
 
 
                         <TextView
                             android:id="@+id/hh_textview_q_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_3"
+                            android:layout_alignParentRight="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_25sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:gravity="right"
                             android:text="@string/aghhid_tv_c_2"
                             android:textColor="@color/OrangeRed"
                             android:textSize="@dimen/_20sdp"
-                            android:visibility="gone"
                             android:textStyle="bold"
+                            android:visibility="gone"
 
 
                             />
@@ -288,186 +289,180 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/hh_textview_q_3"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbgwhitecolor"
                             android:inputType="text"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
-                            android:visibility="gone"
-                            android:textColorHint="@color/LightGrey"></EditText>
+                            android:textColorHint="@color/LightGrey"
+                            android:visibility="gone"></EditText>
 
 
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_textview_q_3"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="1"
+                            android:text="@string/section_e_question_q3_option1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
 
 
+                            />
 
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:tag="1"
-                                android:layout_below="@+id/hh_textview_q_3"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:text="@string/section_e_question_q3_option1"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration"
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_edtfield_q_2_rdg_op_1"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="2"
+                            android:text="@string/section_e_question_q3_option2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
 
-
-
-                                />
-
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:tag="2"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_1"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:text="@string/section_e_question_q3_option2"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration"
-
-                                />
+                            />
 
 
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:tag="3"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_2"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:text="@string/section_e_question_q3_option3"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:onClick="setMigration"
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_edtfield_q_2_rdg_op_2"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="3"
+                            android:text="@string/section_e_question_q3_option3"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
 
-                                />
-
-
+                            />
 
 
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_3"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:tag="4"
-                                android:text="@string/section_e_question_q3_option4"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration"
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_edtfield_q_2_rdg_op_3"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="4"
+                            android:text="@string/section_e_question_q3_option4"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
 
-                                />
-
-
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_4"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:tag="5"
-                                android:text="@string/section_e_question_q3_option5"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration"
-
-                                />
+                            />
 
 
-                            <RadioButton
-                                android:id="@+id/hh_edtfield_q_2_rdg_op_6"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/hh_edtfield_q_2_rdg_op_5"
-                                android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
-                                android:layout_marginTop="@dimen/_15sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:gravity="right"
-                                android:tag="6"
-                                android:text="@string/section_e_question_q3_option6"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_14sdp"
-                                android:textStyle="bold"
-                                android:clickable="true"
-                                android:layoutDirection="rtl"
-                                android:layout_gravity="start"
-                                android:onClick="setMigration"
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_edtfield_q_2_rdg_op_4"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="5"
+                            android:text="@string/section_e_question_q3_option5"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
 
-                                />
+                            />
+
+
+                        <RadioButton
+                            android:id="@+id/hh_edtfield_q_2_rdg_op_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hh_edtfield_q_2_rdg_op_5"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
+                            android:tag="6"
+                            android:text="@string/section_e_question_q3_option6"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp"
+                            android:textStyle="bold"
+
+                            />
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_6"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="7"
                             android:text="@string/section_e_question_q3_option7"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
 
@@ -475,47 +470,46 @@
                             android:id="@+id/hh_edtfield_q_2_rdg_op_8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_7"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="8"
                             android:text="@string/section_e_question_q3_option8"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_8"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="9"
                             android:text="@string/section_e_question_q3_option9"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
 
@@ -524,129 +518,118 @@
                             android:id="@+id/hh_edtfield_q_2_rdg_op_10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_9"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="10"
                             android:text="@string/section_e_question_q3_option10"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
-
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_10"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="11"
                             android:text="@string/section_e_question_q3_option11"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
-
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_11"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="12"
                             android:text="@string/section_e_question_q3_option12"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_12"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="13"
                             android:text="@string/section_e_question_q3_option13"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
-
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_13"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="14"
                             android:text="@string/section_e_question_q3_option14"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
 
@@ -657,114 +640,110 @@
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_14"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:background="@drawable/edittextbgwhitecolor"
-                            android:visibility="gone"
                             android:inputType="text"
                             android:maxLength="150"
                             android:paddingLeft="10dp"
                             android:scaleType="fitXY"
-                            android:textColorHint="@color/LightGrey"></EditText>
-
+                            android:textColorHint="@color/LightGrey"
+                            android:visibility="gone"></EditText>
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_14"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="-88"
                             android:text="@string/section_e_question_q3_option88"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_15"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="-98"
                             android:text="@string/section_e_question_q3_option98"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_17"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_16"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="-99"
                             android:text="@string/section_e_question_q3_option99"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
 
                             />
-
 
 
                         <RadioButton
                             android:id="@+id/hh_edtfield_q_2_rdg_op_18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_17"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="start"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin"
                             android:layout_marginBottom="@dimen/_10sdp"
+                            android:clickable="true"
                             android:gravity="right"
+                            android:layoutDirection="rtl"
+                            android:onClick="setMigration"
                             android:tag="-777"
                             android:text="@string/section_e_question_q3_option777"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp"
                             android:textStyle="bold"
-                            android:clickable="true"
-                            android:layoutDirection="rtl"
-                            android:layout_gravity="start"
-                            android:onClick="setMigration"
+                            android:visibility="gone"
 
                             />
 
@@ -775,8 +754,8 @@
                             android:layout_below="@+id/hh_edtfield_q_2_rdg_op_18"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="@dimen/sign_in_textfield_right_left_margin_xhdpi"
-                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin_xhdpi"
                             android:layout_marginTop="40dp"
+                            android:layout_marginRight="@dimen/sign_in_textfield_right_left_margin_xhdpi"
                             android:background="@drawable/option_one"
                             android:clickable="true"
                             android:onClick="HandleNextButnClick"
@@ -799,10 +778,6 @@
                                 android:text="@string/relative_layout_new_stid_btnthreenextbtn"
                                 android:textSize="17sp" />
                         </RelativeLayout>
-
-
-
-
 
 
                         <TextView
@@ -853,13 +828,13 @@
                 android:textSize="12sp" />
         </RelativeLayout>
     </LinearLayout>
+
     <TextView
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_above="@+id/exit"
+        android:layout_alignParentBottom="true"
         android:text="HH_Screen_three_Section_e"
-        android:textSize="@dimen/_14sdp"
-        />
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp" />
 </RelativeLayout>

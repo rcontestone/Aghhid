@@ -253,14 +253,14 @@
     <!-- TODO: Section A Strings -->
     <string name="section_a_script_1">جواب دہندہ کو پڑھ کر سنائیں:</string>
     <string name="section_a_script_2">السلام علیکم/میرا نام__________,ہے  ۔میں آپ کو  سکولوں کے  ریسرچ پروجیکٹ  کے متعلق  کال کر رہی  ہوں  جو حکومت پنجاب  کے سکول ایجوکیشن ڈیپارٹمنٹ کی جانب سے کیا جا رہا ہے۔   ہم نے  دو سال قبل گورنمنٹ کے ایک ریسرچ پراجیکٹ کے لئے  آپ کے بچے/بچی کا انٹرویو لیا تھا جب وہ چوتھی  جماعت میں تھا/تھی۔   اس پراجیکٹ کے تحت ہم جاننا چاہتے ہیں کہ آپ کے بچے   کیسے پڑھ رہے ہیں جبکہ  کرونا وبا کی وجہ سے سکول بند  ہیں ۔</string>
-    <string name="section_a_question_1">   1.شمار کنندہ  :  کیا  رابطہ ہوا؟</string>
+    <string name="section_a_question_1">   1.شمار کنندہ  :  کیا  انٹرویو ہوا؟</string>
     <string name="section_a_question_1_option_1">1~  ہاں </string>
     <string name="section_a_question_1_option_0">2~  نہیں</string>
-    <string name="section_a_question_2">  آپ کا رابطہ کیوں نہیں ہوا؟ </string>
-    <string name="section_a_question_2_option_1"> 1~ کال نہیں اٹھائی گئی  </string>
-    <string name="section_a_question_2_option_2"> 2~  نمبر ایکٹیو نہیں/ نمبر درست  نہیں  </string>
-    <string name="section_a_question_2_option_3"> 3~ رابطہ نہیں ہو سکا (نیٹ ورک دستیاب نہیں، موبائل بند ہے)</string>
-    <string name="section_a_question_2_option_4"> 4~ نمبر کا مصروف ملنا </string>
+    <string name="section_a_question_2"> انٹرویو  کیوں نہیں ہوا</string>
+    <string name="section_a_question_2_option_1"> 1~ 1گھر لاکڈ ہے  </string>
+    <string name="section_a_question_2_option_2">2~ کوئی بالغ فرد گھر پر موجود نہیں  </string>
+    <string name="section_a_question_2_option_3">3~ انٹرویو نہیں دیا</string>
+    <string name="section_a_question_2_option_4"> 4~ دیگر(وضاحت۔۔۔۔)  </string>
     <string name="section_a_question_2_option_5"> 5~ تین بار  کوشش کے باوجود کال نہیں  سنی گئی</string>
     <string name="section_a_question_3">کیا میں ۔۔۔۔۔۔۔   کے  والد / والدہ  یا  سرپرست سے بات کر رہا ہوں؟</string>
     <string name="section_a_question_3_option_1">1~ ہاں</string>
@@ -275,8 +275,10 @@
     <string name="section_a_question_5_script_1">سکرپٹ جواب دہندہ کو پڑھ کر سنائیں:</string>
     <string name="section_a_question_5_script_2">زیادہ تر   سوالات   جو آپ سے پوچھوں گی وہ  آپ کے بچے  کے تعلیمی معیار ،  گھرانے میں موجود تعلیمی  وسائل  اور  تعلیمی سرگرمیوں  کے حوالے سے ہیں ۔ آپ کے جوابات  مکمل طور پر صیغہ راز میں  رکھیں جائیں گے ۔   یہ معلومات  صرف ریسرچ ٹیم کے استعمال میں ہوں گے آپ کے جوابات کسی دوسرے فرد کو نہیں بتائیں جا ئیں گے۔   آپ کو ریسرچ ٹیم کی جانب سے سروے میں شامل ہونے پر  آپ کی حوصلہ افزائی کےلیے 100  روپے کا بیلنس دیا جائے گا۔</string>
     <string name="section_a_question_5">کیا آپ اس سروے میں  شمو لیت کے لئے  رضا مند ہیں؟</string>
-    <string name="section_a_question_5_option_1">1~ ہاں</string>
+    <string name="section_a_question_5_option_1">1~ ہاں(تمام سوالات کے جواب دئے)</string>>
     <string name="section_a_question_5_option_2">2~ نہیں</string>
+    <string name="section_a_question_5a_option_1">1~ ہاں</string>
+    <string name="section_a_question_5a_option_2">2~ نہیں سیکشن M01  (سروے کو مکمل مارک کریں اگر چہ  نوجوان بچی کا انکار ہے۔ مگر گھرانہ پھر بھی 100روپے  نقد کےلئے کوالی فائی کرتا ہے)سیکشن M01(یہ M01کی آپشن 8ہے)</string>
     <string name="section_a_question_6">انکار کی وجہ؟</string>
     <string name="section_a_question_6_reshedule">ری شیڈول  کا ٹائم اور تاریخ لکھیں</string>
     <string name="section_a_question_6_option_1">1~ وقت نہیں</string>
@@ -551,7 +553,7 @@
 
 
     <string name="aghhid_tv_c">سیکشن C: گھرانے میں سہولیات</string>
-    <string name="aghhid_tv_c_1">1. اگر ہمارا اس نمبر پر رابطہ ٹوٹ جائے تو کیا آپ کے پاس کوئی نمبر ہے جس پر رابطہ کیا جاسکے؟ </string>
+    <string name="aghhid_tv_c_1">1.اگر آپ کے گھر  سے رابطے کےلئے کوئی اور فون نمبر موجود ہے تو کیا آپ ہمیں وہ دے  سکتے ہیں </string>
     <string name="aghhid_tv_c_1_op_1">1. 1ہاں، نمبر نوٹ کریں</string>
     <string name="aghhid_tv_c_1_op_2">  -111 کوئی اور نمبر نہیں ہے</string>
     <string name="aghhid_tv_c_1_op_3">  88- جواب نہیں دیا</string>
@@ -576,7 +578,7 @@
     <string name="section_b_question_q1_script"> السلامُ علیکم، میرا نام۔۔۔۔۔۔۔ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں </string>
     <string name="section_b_question_q1"> کیا میں ۔۔۔۔۔۔۔ (A06  میں موجود نام بولیں) سے بات کر رہی ہوں؟ </string>
     <string name="section_b_question_q1_option1">1~ ہاں </string>
-    <string name="section_b_question_q1_option2"> 2~ نہیں، کسی اور نے فون اٹھایا </string>
+    <string name="section_b_question_q1_option2"> 2~ نہیں، کوئی اور فرد گھر میں ملا </string>
     <string name="section_b_question_q1_option3"> 3~ رانگ نمبر </string>
     <string name="section_b_question_q1_option777"> 777~ فون کاٹ دیا </string>
 
@@ -697,7 +699,7 @@
     <string name="section_d_question_q7_option3">3~ فل ٹائم دینی مدرسہ </string>
     <string name="section_d_question_q7_option4">4~ کسی میں بھی نہیں </string>
 
-    <string name="section_d_question_q8"> 5سے 19سال کے تمام افراد کےلئے پوچھیں اگر اس تعلیمی سال میں سکول دوبارہ کھلتے ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جائے گا/داخل ہوگا، ہوگی</string>
+    <string name="section_d_question_q8"> 5سے 19سال کے تمام افراد کےلئے پوچھیں اب سکول دوبارہ کھل چکے  ہیں تو کیا نام کسی گورنمنٹ/پرائیویٹ  سکول یا فل ٹائم کےلئے کسی دینی مدرسہ میں جاتا /جاتی ہے جائے گا/داخل ہوگا، ہوگی</string>
     <string name="section_d_question_q8_option1">1~ گورنمنٹ سکول </string>
     <string name="section_d_question_q8_option2">2~  پرائیویٹ سکول </string>
     <string name="section_d_question_q8_option3">3~ فل ٹائم دینی مدرسہ </string>
@@ -831,8 +833,7 @@
     <string name="section_m_question_q1_option6">6~ کسی بھی سوال کا جواب دینے سے انکار کر دیا </string>
     <string name="section_m_question_q1_option7">7~ کچھ سوالات کا جواب دینے سے انکار کر دیا </string>
 
-    <string name="section_m_question_q2"> دوبارہ کال کا وقت ایک سے زیادہ وقت نوٹ کر سکتے ہیں </string>
-
+    <string name="section_m_question_q2"> دوبارہ انٹرویو  کا وقت ایک سے زیادہ وقت نوٹ کر سکتے ہیں </string>
     <string name="section_m_question_q3"> کیا پوری کال کے دوران سپیکر آن تھا؟ </string>
     <string name="section_m_question_q3_option1">1~ ہاں سارا وقت </string>
     <string name="section_m_question_q3_option2">2~ ہاں کچھ وقت </string>

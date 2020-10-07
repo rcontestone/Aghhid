@@ -1444,14 +1444,14 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
         readFromDataBase_Section_a();
         readFromDataBase_Section_h();
         if (!StringUtils.isEmpty(a2)) {
-            code_1.setVisibility(View.GONE);
-            code_2.setVisibility(View.GONE);
-            code_3.setVisibility(View.GONE);
+            code_1.setVisibility(View.VISIBLE);
+            code_2.setVisibility(View.VISIBLE);
+            code_3.setVisibility(View.VISIBLE);
             code_4.setVisibility(View.VISIBLE);
-            code_5.setVisibility(View.GONE);
-            code_6.setVisibility(View.GONE);
-            code_7.setVisibility(View.GONE);
-            code_8.setVisibility(View.GONE);
+            code_5.setVisibility(View.VISIBLE);
+            code_6.setVisibility(View.VISIBLE);
+            code_7.setVisibility(View.VISIBLE);
+            code_8.setVisibility(View.VISIBLE);
             group.setVisibility(View.VISIBLE);
             SaveReport.setVisibility(View.VISIBLE);
             month_spinner_name.setVisibility(View.GONE);
@@ -1493,6 +1493,8 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
         } else {
             code_1.setVisibility(View.GONE);
         }
+        code_4.setVisibility(View.GONE);
+        code_5.setVisibility(View.GONE);
     }
 
 

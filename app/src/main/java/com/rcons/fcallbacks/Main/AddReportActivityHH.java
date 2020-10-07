@@ -165,7 +165,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    qm3_layout.setVisibility(View.VISIBLE);
+                    qm3_layout.setVisibility(View.GONE);
                     qm4_layout.setVisibility(View.VISIBLE);
                 } else {
                     qm3_layout.setVisibility(View.GONE);

@@ -435,6 +435,20 @@ public class Ad_Section_A extends AppCompatActivity {
             }
         });
 
+        rg_a2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int RGroup_ID = rg_a2.getCheckedRadioButtonId();
+                if (RGroup_ID == R.id.rbtn_a2_4) {
+                    edt_a6_other.setVisibility(View.VISIBLE);
+                    edt_a6_other.requestFocus();
+                } else {
+                    edt_a6_other.setVisibility(View.GONE);
+                    hideKeyboard(Ad_Section_A.this);
+                    edt_a6_other.setText("");
+                }
+            }
+        });
 
         rg_a6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -601,15 +615,33 @@ public class Ad_Section_A extends AppCompatActivity {
                     if (rg_a2_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a2_ID);
                         a2 = radioButton.getTag().toString();
-                        SaveData();
-                        Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
-                        intent.putExtra("emp_id", emp_id);
-                        intent.putExtra("order_id", order_id);
-                        intent.putExtra("id", id);
-                        intent.putExtra("farmer_cellphone", phone_number);
-                        intent.putExtra("school_code", school_code);
-                        intent.putExtra("student_id", student_id);
-                        startActivityForResult(intent, 88);
+                        if (a2.equalsIgnoreCase("4")) {
+                            a6_other = edt_a6_other.getText().toString();
+                            if (!StringUtils.isEmpty(a6_other)) {
+                                SaveData();
+                                Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
+                                intent.putExtra("emp_id", emp_id);
+                                intent.putExtra("order_id", order_id);
+                                intent.putExtra("id", id);
+                                intent.putExtra("farmer_cellphone", phone_number);
+                                intent.putExtra("school_code", school_code);
+                                intent.putExtra("student_id", student_id);
+                                startActivityForResult(intent, 88);
+                            } else {
+                                toastMessage("Please Specify other");
+                            }
+                        } else {
+                            SaveData();
+                            Intent intent = new Intent(Ad_Section_A.this, AddReportActivity_AD.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
+                        }
+
                     } else {
                         toastMessage("Please Select Option");
                     }
@@ -822,7 +854,7 @@ public class Ad_Section_A extends AppCompatActivity {
                     if (!StringUtils.isEmpty(a4_a)) {
                         Integer age = Integer.parseInt("0" + a4_a);
                         if (age > 5 && age < 50) {
-                            RConsUtils.hideView(qa4a_layout, qa4d_layout);
+                            RConsUtils.hideView(qa4a_layout, qa5_layout);
                         } else {
                             toastMessage("Age must be in 5-50");
                         }
@@ -1132,7 +1164,7 @@ public class Ad_Section_A extends AppCompatActivity {
         } else if (qa6_layout.getVisibility() == View.VISIBLE) {
             hideView(qa6_layout, qa5_layout);
         } else if (qa5_layout.getVisibility() == View.VISIBLE) {
-            hideView(qa5_layout, qa4d_layout);
+            hideView(qa5_layout, qa4a_layout);
         } else if (qa4d_layout.getVisibility() == View.VISIBLE) {
             hideView(qa4d_layout, qa4a_layout);
         } else if (qa4c_layout.getVisibility() == View.VISIBLE) {

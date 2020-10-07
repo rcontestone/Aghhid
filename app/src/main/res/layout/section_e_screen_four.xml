@@ -426,6 +426,7 @@
                                 android:textSize="@dimen/_14sdp"
                                 android:textStyle="bold"
                                 android:clickable="true"
+                                android:visibility="gone"
                                 android:layoutDirection="rtl"
                                 android:layout_gravity="start"
                                 android:onClick="setMigration6"

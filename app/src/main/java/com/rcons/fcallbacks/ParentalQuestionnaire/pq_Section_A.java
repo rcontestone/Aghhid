@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -31,18 +32,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.mubashar.dateandtime.DebugLog;
+import com.rcons.fcallbacks.Athreehhid.Ad_Section_A;
+import com.rcons.fcallbacks.Athreehhid.HouseHoldDataBaseHelper;
 import com.rcons.fcallbacks.BuildConfig;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.mubashar.dateandtime.EmailDebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.Athreehhid.Ad_Section_G;
 import com.rcons.fcallbacks.Athreehhid.HH_Screen_two;
+import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.Main.AddReportActivity;
+import com.rcons.fcallbacks.Main.AddReportActivity_AD;
+import com.rcons.fcallbacks.Main.CallMenuActivity;
 import com.rcons.fcallbacks.Questionnaire.Q_sectionC;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.TRT.trt_Section_0;
@@ -52,6 +59,10 @@ import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import butterknife.BindView;
@@ -77,6 +88,9 @@ public class pq_Section_A extends AppCompatActivity {
     @BindView(R.id.qa7_layout)
     LinearLayout qa7_layout;
 
+    @BindView(R.id.q0_layout)
+    LinearLayout q0_layout;
+
     @BindView(R.id.qa4a_layout)
     LinearLayout qa4a_layout;
 
@@ -91,6 +105,9 @@ public class pq_Section_A extends AppCompatActivity {
 
     @BindView(R.id.edt_a4a)
     EditText edt_a4a;
+
+    @BindView(R.id.rg_a0)
+    RadioGroup rg_a0;
 
     @BindView(R.id.rg_a4b)
     RadioGroup rg_a4b;
@@ -179,6 +196,9 @@ public class pq_Section_A extends AppCompatActivity {
     @BindView(R.id.section_b_question_q2)
     TextView section_b_question_q2;
 
+    @BindView(R.id.numbers_sp_q_2)
+    Spinner numbers_sp_q_2;
+
     @BindView(R.id.btn_back)
     Button btn_back;
     @BindView(R.id.btn_next)
@@ -250,6 +270,10 @@ public class pq_Section_A extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateSetListener_a6;
 
 
+    ArrayList<String> spinnerArray = null;
+    ArrayAdapter spinnerArrayAdapter = null;
+
+
     String s1 = "";
     String s2 = "";
     String s3 = "";
@@ -291,12 +315,12 @@ public class pq_Section_A extends AppCompatActivity {
 
         readFromDataBasic();
 
-        txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + ")  ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے کال کررہی ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے فون نمبرز اکٹھے کئے جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔");
+        txt_section_a_script_2.setText("السلام علیکم/میرا نام (" + enum_name + " ہے۔ میں آپ کو آرکونز اور ادارہ تعلیم و آگہی کی جانب سے  جو کہ پاکستان میں  تعلیم پر کام  کرنے والا ایک ادارہ ہے اور پنجاب حکومت کے ساتھ مل کر مختلف پروگرام مہیا کرتا ہے   کی جانب سے آئی  ہوں۔کچھ دن پہلے ہم آپ کے گاوں میں آئے اور ایسے گھرانوں سے رابطہ کیا  جہاں سکول جانے کی عمر والی (9سے19سال)کی لڑکیاں  یا لڑکے موجود ہیں۔ہم آپ سے آپ کے علاقے میں تعلیم کے بارے میں مزید جاننا چاہتے ہیں۔ ");
 
         section_a_question_3.setText("کیا آپ   " + student_name + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");
         section_a_question_4.setText("کیا  آپ    " + student_name + " کے    والد / والدہ  یا  سرپرست سے میر ی   بات  کروا سکتے ہیں ؟");
 
-        section_b_question_q1.setText("کیا میں    " + student_name + " سے بات کر رہی ہوں؟ ");
+        section_b_question_q1.setText("کیا میں    " + student_name + "سے بات کر سکتی ہوں؟ ");
         section_b_question_q2.setText("کیا میں    " + student_name + "سے بات کر سکتی ہوں؟ ");
 
         txt_School_Code.setText("Village Code : " + school_code);
@@ -304,6 +328,7 @@ public class pq_Section_A extends AppCompatActivity {
 
 
         LoadPreviousData();
+        checkAndUpdateAdapter();
 
         deviceid = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         build_no = BuildConfig.VERSION_NAME;
@@ -564,10 +589,24 @@ public class pq_Section_A extends AppCompatActivity {
                 }
             }
         });
-
+        rg_a2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int RGroup_ID = rg_a2.getCheckedRadioButtonId();
+                if (RGroup_ID == R.id.rbtn_a2_4) {
+                    edt_a6_other.setVisibility(View.VISIBLE);
+                    edt_a6_other.requestFocus();
+                } else {
+                    edt_a6_other.setVisibility(View.GONE);
+                    hideKeyboard(pq_Section_A.this);
+                    edt_a6_other.setText("");
+                }
+            }
+        });
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int rg_a0_ID = rg_a0.getCheckedRadioButtonId();
                 int rg_a1_ID = rg_a1.getCheckedRadioButtonId();
                 int rg_a2_ID = rg_a2.getCheckedRadioButtonId();
                 int rg_a3_ID = rg_a3.getCheckedRadioButtonId();
@@ -586,7 +625,15 @@ public class pq_Section_A extends AppCompatActivity {
                 RConsUtils.hideKeyboard(pq_Section_A.this);
                 SaveData();
                 // A14
-                if (qa1_layout.getVisibility() == View.VISIBLE) {
+                if (q0_layout.getVisibility() == View.VISIBLE) {
+                    if (rg_a0_ID > 0) {
+                        RadioButton radioButton = findViewById(rg_a0_ID);
+                        a7 = radioButton.getTag().toString();
+                        RConsUtils.hideView(q0_layout, qa1_layout);
+                    } else {
+                        toastMessage("Please Select Option");
+                    }
+                } else if (qa1_layout.getVisibility() == View.VISIBLE) {
                     if (rg_a1_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a1_ID);
                         a1 = radioButton.getTag().toString();
@@ -605,15 +652,33 @@ public class pq_Section_A extends AppCompatActivity {
                     if (rg_a2_ID > 0) {
                         RadioButton radioButton = findViewById(rg_a2_ID);
                         a2 = radioButton.getTag().toString();
-                        SaveData();
-                        Intent intent = new Intent(pq_Section_A.this, AddReportActivity.class);
-                        intent.putExtra("emp_id", emp_id);
-                        intent.putExtra("order_id", order_id);
-                        intent.putExtra("id", id);
-                        intent.putExtra("farmer_cellphone", phone_number);
-                        intent.putExtra("school_code", school_code);
-                        intent.putExtra("student_id", student_id);
-                        startActivityForResult(intent, 88);
+                        if (a2.equalsIgnoreCase("4")) {
+                            a6_other = edt_a6_other.getText().toString();
+                            if (!StringUtils.isEmpty(a6_other)) {
+                                SaveData();
+                                Intent intent = new Intent(pq_Section_A.this, AddReportActivity_AD.class);
+                                intent.putExtra("emp_id", emp_id);
+                                intent.putExtra("order_id", order_id);
+                                intent.putExtra("id", id);
+                                intent.putExtra("farmer_cellphone", phone_number);
+                                intent.putExtra("school_code", school_code);
+                                intent.putExtra("student_id", student_id);
+                                startActivityForResult(intent, 88);
+                            } else {
+                                toastMessage("Please Specify other");
+                            }
+                        } else {
+                            SaveData();
+                            Intent intent = new Intent(pq_Section_A.this, AddReportActivity_AD.class);
+                            intent.putExtra("emp_id", emp_id);
+                            intent.putExtra("order_id", order_id);
+                            intent.putExtra("id", id);
+                            intent.putExtra("farmer_cellphone", phone_number);
+                            intent.putExtra("school_code", school_code);
+                            intent.putExtra("student_id", student_id);
+                            startActivityForResult(intent, 88);
+                        }
+
                     } else {
                         toastMessage("Please Select Option");
                     }
@@ -1157,6 +1222,8 @@ public class pq_Section_A extends AppCompatActivity {
             hideView(qb1_layout, qa1_layout);
         } else if (qa2_layout.getVisibility() == View.VISIBLE) {
             hideView(qa2_layout, qa1_layout);
+        } else if (qa1_layout.getVisibility() == View.VISIBLE) {
+            hideView(qa1_layout, q0_layout);
         } else {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("isDataUpdated", false);
@@ -1200,7 +1267,7 @@ public class pq_Section_A extends AppCompatActivity {
             if (network.equalsIgnoreCase("Jazz")) {
                 phoneNumber = "660" + phoneNumber;
             } else if (network.equalsIgnoreCase("Telenor")) {
-                 phoneNumber = "880" + phoneNumber;
+                phoneNumber = "880" + phoneNumber;
             } else {
                 phoneNumber = "770" + phoneNumber;
             }
@@ -1268,11 +1335,11 @@ public class pq_Section_A extends AppCompatActivity {
             MubLog.cpnsoleLog("build_no " + build_no);
 
 
-          a4_year = MubDateAndTime.INSTANCE.getcurrentTime(0);
-          a4_month = MubDateAndTime.INSTANCE.getcurrentTime(1);
-          a4_day = MubDateAndTime.INSTANCE.getcurrentTime(2);
-          a4_hh = MubDateAndTime.INSTANCE.getcurrentTime(3);
-          a4_mm = MubDateAndTime.INSTANCE.getcurrentTime(4);
+            a4_year = MubDateAndTime.INSTANCE.getcurrentTime(0);
+            a4_month = MubDateAndTime.INSTANCE.getcurrentTime(1);
+            a4_day = MubDateAndTime.INSTANCE.getcurrentTime(2);
+            a4_hh = MubDateAndTime.INSTANCE.getcurrentTime(3);
+            a4_mm = MubDateAndTime.INSTANCE.getcurrentTime(4);
 
 
             isSynced = "99";
@@ -1589,9 +1656,9 @@ public class pq_Section_A extends AppCompatActivity {
             RConsUtils.setradiogroup(a5, rg_a5);
             RConsUtils.setradiogroup(a5_a, rg_a5a);
             RConsUtils.setradiogroup(a6, rg_a6);
+            RConsUtils.setradiogroup(a7, rg_a0);
             RConsUtils.setotherEditText(edt_a6_other, a6_other);
             RConsUtils.setotherEditText(edt_a4_alt_number, a4_number);
-            RConsUtils.setEditText(edt_a7, a7);
             RConsUtils.setEditText(edt_a4a, a4_a);
 
             RConsUtils.setotherEditText(edt_a4c_other, a4_c_other);
@@ -1701,6 +1768,7 @@ public class pq_Section_A extends AppCompatActivity {
             }
         });
     }
+
     void readFromDataBasic() {
         try {
             Cursor cursor = databaseAccess.getBasic_Data(school_code, student_id);
@@ -1722,5 +1790,69 @@ public class pq_Section_A extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
             MubLog.cpnsoleLog("Data Read Error :" + e.getMessage());
         }
+    }
+
+    private void checkAndUpdateAdapter() {
+
+        try {
+
+            if (spinnerArray != null) {
+
+                spinnerArray.clear();
+            }
+
+            spinnerArray = HouseHoldDataBaseHelper.getDataBaseProcessor(pq_Section_A.this).aghhid_getNumbersDataagainstvillageAndhhid(pq_Section_A.this, school_code, student_id);
+
+
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(pq_Section_A.this).aghhid_getDataFromtable(pq_Section_A.this, DatabaseAdapter.aghhid_section_c_table, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
+
+            if (data.length() > 0) {
+
+                try {
+                    if (data.getString("c1_given_number").equalsIgnoreCase("null")) {
+                        data.put("c1_given_number", "");
+                    }
+                    spinnerArray.add(spinnerArray.size(), "c1_given_number");
+                    spinnerArray.add(data.getString("c1_given_number"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
+            data = HouseHoldDataBaseHelper.getDataBaseProcessor(pq_Section_A.this).aghhid_getDataFromtable(pq_Section_A.this, DatabaseAdapter.AGHHID_SampleTable, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
+
+            if (data.length() > 0) {
+
+                try {
+                    if (data.getString("given_number").equalsIgnoreCase("null")) {
+                        data.put("given_number", "");
+                    }
+
+
+                    if (data.getString("given_number").length() > 0) {
+                        spinnerArray.add(spinnerArray.size(), "section_a_given_number");
+                        spinnerArray.add(data.getString("given_number"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
+            spinnerArrayAdapter = new ArrayAdapter(this,
+                    R.layout.spinner_item,
+                    spinnerArray);
+            numbers_sp_q_2.setAdapter(spinnerArrayAdapter);
+
+
+        } catch (Exception e) {
+            EmailDebugLog.getInstance(pq_Section_A.this).writeLog("[CallMenuActivity] inside checkAndUpdateAdapter() Exception is :" + e.toString());
+        }
+
     }
 }
