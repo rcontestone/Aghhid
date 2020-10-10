@@ -35,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.mubashar.dateandtime.DebugLog;
 import com.mubashar.dateandtime.MubDateAndTime;
 import com.rcons.fcallbacks.BuildConfig;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
@@ -43,6 +44,9 @@ import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
 import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Calendar;
 
@@ -1742,6 +1746,36 @@ public class Ad_Section_A extends AppCompatActivity {
             }
 
         }
+
+
+
+//if adolesecent name exists then it will be upadted in varaiable headName
+        JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(Ad_Section_A.this).aghhid_getDataFromtable(Ad_Section_A.this, DatabaseAdapter.aghhid_pending_adolescent, school_code, student_id);
+        DebugLog.console("[Ad_Section_A] inside onStart() " + data.toString());
+
+        if (data.length() > 0) {
+
+            try {
+                if (data.getString("adolescent_name").equalsIgnoreCase("null"))
+                    data.put("adolescent_name", "");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+            try {
+                headName =   data.getString("adolescent_name");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+
+
+
         adol_name.setText("Adolescent Name : " + headName);
 
         section_a_question_3.setText("کیا آپ   " + headName + " کے گھرانے سے ہیں، آپ کی عمر 18سال سے اوپر ہے اور اپنے گھرانے کی فیصلہ سازی کرتے ہیں۔ ");

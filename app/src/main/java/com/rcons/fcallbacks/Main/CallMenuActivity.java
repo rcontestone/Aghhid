@@ -356,6 +356,12 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
                 boolean goto_adolscent = checkAdolescent_q_ten();
+
+
+                if(!goto_adolscent)
+                    goto_adolscent =  checkHHID_Completed();
+
+
                 Intent intent = null;
 
                 if (goto_adolscent) {
@@ -578,6 +584,39 @@ public class CallMenuActivity extends AppCompatActivity {
 
 
     }
+
+
+
+    private boolean checkHHID_Completed() {
+
+        boolean go_to_adolscent = false;
+        Context appContext = CallMenuActivity.this;
+        try {
+
+
+            JSONObject data = HouseHoldDataBaseHelper.getDataBaseProcessor(appContext).aghhid_getDataFromtable(appContext, DatabaseAdapter.aghhid_pending_adolescent, school_code, student_id);
+            DebugLog.console("[HH_Screen_two] inside onStart() " + data.toString());
+
+            if (data.length() > 0) {
+
+                 go_to_adolscent = true;
+
+
+
+            }
+
+
+        } catch (Exception e) {
+            //  EmailDebugLog.getInstance(appContext).writeLog("[CallMenuActivity] inside checkAdolescent_q_ten() Exception is :"+e.toString());
+
+            return go_to_adolscent;
+        }
+
+
+        return go_to_adolscent;
+    }
+
+
 
     private boolean checkAdolescent_q_ten() {
 
