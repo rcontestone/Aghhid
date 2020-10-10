@@ -188,7 +188,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    qm3_layout.setVisibility(View.VISIBLE);
+               //     qm3_layout.setVisibility(View.VISIBLE);
                     qm4_layout.setVisibility(View.VISIBLE);
                 } else {
                     qm3_layout.setVisibility(View.GONE);
@@ -444,7 +444,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         boolean error = false;
         try {
 
-            if (surveyStatus.equalsIgnoreCase("1")) {
+            if (surveyStatus.equalsIgnoreCase("1") || surveyStatus.equalsIgnoreCase("3")  || surveyStatus.equalsIgnoreCase("8")) {
 
 
                 if (!(m4_answered.length() > 0)) {
