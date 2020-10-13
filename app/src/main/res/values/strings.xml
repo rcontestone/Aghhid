@@ -43,6 +43,7 @@
 
     <!-- Sign-up screen varaiables -->
 
+    <string name="village_select">Select Village</string>
     <string name="sign_up_screen_top_bar_text_view">Add New Record</string>
     <string name="sign_up_screen_top_bar_text_view_sign_in">Sign In</string>
     <string name="screen_three_top_bar"> Village_id: %1$s  \t HHID:\u0020  %2$s \n\tHHID :\u0020 %3$s</string>

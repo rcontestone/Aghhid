@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
-                    android:text="@string/sign_up_screen_top_bar_text_view"
+                    android:text="@string/village_select"
                     android:textSize="@dimen/_18sdp"
                     />
 

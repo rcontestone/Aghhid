@@ -24,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mubashar.dateandtime.DebugLog;
@@ -49,6 +50,7 @@ import butterknife.BindView;
 public class HH_Screen_One extends Activity {
 
 	FloatingActionButton btn_AddReportQuestionnaire;
+
 	//Use For sign-up
 	EditText editTextfirstName;
 	//	EditText editTextLastName;
@@ -110,16 +112,11 @@ public class HH_Screen_One extends Activity {
 			Bundle bundle = getIntent().getExtras();
 			launchedActivityName = bundle.getString("launchActivity");
 
-			if (launchedActivityName != null ) {
 
-				if (launchedActivityName.equalsIgnoreCase("signup")) {
 					setContentView(R.layout.sign_up);
 					//AnalyticsUtil.updateScreen(this, getResources().getString(R.string.sign_up_screen_top_bar_text_view));
-				}
-				if (launchedActivityName.equalsIgnoreCase("signin")) {
-					setContentView(R.layout.sign_in);
-					//AnalyticsUtil.updateScreen(this,getResources().getString(R.string.sign_in_screen_top_bar_text_view));
-				}
+
+
 
 				// Get Refferences of Views
 				initializeReferenceOfViews();
@@ -127,9 +124,6 @@ public class HH_Screen_One extends Activity {
 
 
 
-			} else {
-				EmailDebugLog.getInstance(appContext).writeLog("[HH_Screen_One]:Key to  launch Activity is null ");
-			}
 		}catch (Exception e) {
 			EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside onCreate");
 		}
@@ -142,7 +136,7 @@ public class HH_Screen_One extends Activity {
 		// TODO Auto-generated method stub
 		try {
 
-			if (launchedActivityName.equalsIgnoreCase("signup")) {
+
 
 				String stringToShow =getResources().getString(R.string.sign_up_eula_textview_label_line_two);
 
@@ -347,7 +341,7 @@ public class HH_Screen_One extends Activity {
 						if(actionId== EditorInfo.IME_ACTION_DONE){
 							//do something
 							if(ConnectionVerifier.isInternetOn(appContext)){
-								grabEnteredTextForSignUp(editTextReTypeEmailID);
+
 							}else{
 
 								showAlert( getResources().getString(R.string.signup_activity_alert_box_title),getResources().getString(R.string.connection_error_message));
@@ -531,93 +525,6 @@ public class HH_Screen_One extends Activity {
 
 
 
-			}if (launchedActivityName.equalsIgnoreCase("signin")) {
-
-				editTextUserNameToLogin = (EditText)findViewById(R.id.sign_in_email_textfield);
-				editTextPasswordToLogin = (EditText)findViewById(R.id.sign_in_password_textfield);
-				editTextUserNameToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.email_icon, 0, 0, 0);
-				editTextUserNameToLogin.setCompoundDrawablePadding(8);
-				editTextPasswordToLogin.setCompoundDrawablesWithIntrinsicBounds(R.drawable.key, 0, 0, 0);
-				editTextPasswordToLogin.setCompoundDrawablePadding(8);
-
-
-
-				editTextUserNameToLogin.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_email_textfield_hint) + "</font>" + "<small>"));
-				editTextPasswordToLogin.setHint(Html.fromHtml("<small><font>" + getResources().getString(R.string.sign_in_password_textfield_hint) + "</font>" + "<small>"));
-//				editTextUserNameToLogin.setHintTextColor(colors);TextColor(R.color.LightGrey);
-//				editTextPasswordToLogin.setHintTextColor(R.color.LightGrey);
-
-
-				String stringToShowforSigninnavigation = getResources().getString(R.string.sign_in_eula_btn_label_below_btn_line_two);
-
-				sign_in_eula_btn_label_below_btn_line_one = (TextView)findViewById(R.id.textViewbelowbtn);
-				if (HHIDConfigurations.getMappingId(getApplicationContext())!=null){
-					sign_in_eula_btn_label_below_btn_line_one.setText("");
-					sign_in_eula_btn_label_below_btn_line_one.setClickable(false);
-				}else{
-					sign_in_eula_btn_label_below_btn_line_one.setClickable(true);
-					sign_in_eula_btn_label_below_btn_line_one.setText(Html.fromHtml(stringToShowforSigninnavigation));
-				}
-
-
-//				editTextUserNameToLogin.setText("m@m.com");
-//				editTextPasswordToLogin.setText("test");
-
-				editTextPasswordToLogin.setOnEditorActionListener(new OnEditorActionListener() {
-					@Override
-					public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-						if(actionId== EditorInfo.IME_ACTION_DONE){
-							//do something
-							grabEnteredTextForSignIN();
-
-
-							return true;
-						}
-						return false;
-					}
-				});
-
-
-
-				btnSignIn = (ImageButton)findViewById(R.id.sign_in_btn);
-				btnSignIn.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-
-						//						if(ConnectionVerifier.isInternetOn(appContext)){
-						//AnalyticsUtil.updateEventAction(appContext,getResources().getString(R.string.event_signin_login));
-						grabEnteredTextForSignIN();
-
-						//						}else{
-						//							showAlert(getResources().getString(R.string.connection_error_message_title),getResources().getString(R.string.connection_error_message));
-						//						}
-					}
-				});
-
-				//If device is already registered, automatically filling the username field and disabling editing
-				String registeredEmailAddress  = HHIDConfigurations.getRegisteredEmailAddress(getApplicationContext());
-
-
-
-
-				if(registeredEmailAddress.equalsIgnoreCase("")){
-
-				}else{
-
-					if (HHIDConfigurations.getMappingId(appContext)!=null) {
-//							editTextUserNameToLogin.setEnabled(false);
-//							editTextUserNameToLogin.setText(registeredEmailAddress);
-
-					}
-
-
-					EmailDebugLog.getInstance(appContext).writeLog( "\r\n[HH_Screen_One]:starting SecureSecondService  ");
-
-					//appContext.startService(new Intent(appContext,SecureSecondService.class));
-
-				}
-
-
-			}
 
 		} catch (Exception e) {
 			EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]: Exception occured inside initializeReferenceOfViews");
@@ -645,99 +552,6 @@ public class HH_Screen_One extends Activity {
 
 
 
-	public void grabEnteredTextForSignUp(View v) {
-
-		boolean error = false;
-
-		try {
-
-//			Intent intent = MpcUtil.buildNewIntent(appContext,  HH_Screen_two.class);
-//			intent.putExtra("launchActivity","signup");
-//			startActivity(intent);
-//			selfClose =  true;
-//			finish();
-
-
-			//editTextfirstName.setText("Parent");
-			//userName = editTextUserName.getText().toString();
-			firstName = "Parent";// editTextfirstName.getText().toString();
-			//lastName = editTextLastName.getText().toString();
-			emailID = hh_edtfield_q_2_field.getText().toString();
-			reTypedEmailID = editTextReTypeEmailID.getText().toString();
-			////AnalyticsUtil.updateEventAction(appContext, "Email Address : "+emailID);
-			//	//AnalyticsUtil.updateEventAction(appContext, "reTypedEmail Address : "+reTypedEmailID);
-
-			if(SELECTED_SPINNER_VALUE_INDEX==0) {
-				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_d_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_d_body));
-				error = true;
-			}else
-
-
-			if(SELECTED_USER_SPINNER_VALUE_INDEX==0) {
-				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
-				error = true;
-			}else
-
-
-			if(firstName.trim().length() == 0)
-			{
-				MpcUtil.hideSoftKeyBoard(appContext, editTextfirstName);
-				showAlert(getResources().getString(R.string.signup_activity_firstname_field_empty_message_title),getResources().getString(R.string.signup_activity_firstname_field_empty_message_body));
-				editTextfirstName.requestFocus();
-				MpcUtil.restartInput(appContext, editTextfirstName);
-				error = true;
-//			}else if (!MpcUtil.isValidFullName(appContext, firstName.trim() )){
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextfirstName);
-//				showAlert(getResources().getString(R.string.signup_activity_firstname_field_invalid_charc_message_title),getResources().getString(R.string.signup_activity_firstname_field_invalid_charc_message_body));
-//				editTextfirstName.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextfirstName);
-//				error = true;
-
-			}else if (emailID.trim().length() == 0 ){
-				MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2_field);
-				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
-				hh_edtfield_q_2_field.requestFocus();
-				MpcUtil.restartInput(appContext, hh_edtfield_q_2_field);
-				error = true;
-//			}
-//			else if (!MpcUtil.isEmailValid(emailID.trim())){
-//				MpcUtil.hideSoftKeyBoard(appContext, hh_edtfield_q_2);
-//				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_body));
-//				hh_edtfield_q_2.requestFocus();
-//				MpcUtil.restartInput(appContext, hh_edtfield_q_2);
-//				error = true;
-			}else if (reTypedEmailID.trim().length()==0){
-				MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
-				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_psu_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
-				editTextReTypeEmailID.requestFocus();
-				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
-				error = true;
-//			}else if (!reTypedEmailID.trim().equalsIgnoreCase(emailID.trim())){
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextReTypeEmailID);
-//				showAlert(getResources().getString(R.string.signup_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signup_activity_retyped_email_id_error_message_body));
-//				editTextReTypeEmailID.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextReTypeEmailID);
-//				error = true;
-			}
-			if(!error){
-				pd = ProgressDialog.show(this, getResources().getString(R.string.signup_activity__progress_bar_title), getResources().getString(R.string.signup_activity__progress_bar_body_text), true, false);
-				new Thread() {
-					public void run() {
-						try{
-							// complete registration from server
-							validateEmailAddress();
-
-						} catch (Exception e) {  }
-						// Dismiss the Dialog
-						// myProgressDialog.dismiss();
-					}
-				}.start();
-			}
-		} catch (Exception e) {
-			EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignUp");
-		}
-	}
-
 	public void grabEnteredTextForSignUpPartTwo() {
 
 
@@ -752,8 +566,7 @@ public class HH_Screen_One extends Activity {
 
 			password = "1234";//editTextPassword.getText().toString();
 			confirmPassword = "1234";//MpcUtil.getPassword(MyApplication.getAppContext().getResources().getStringArray(R.array.array_name_enumerator),SELECTED_USER_SPINNER_VALUE);
-			//phone = editTextPhone.getText().toString();
-			//userName = editTextUserName.getText().toString();
+
 			firstName = editTextfirstName.getText().toString();
 			//lastName = editTextLastName.getText().toString();
 			emailID = hh_edtfield_q_2_field.getText().toString();
@@ -937,155 +750,6 @@ public class HH_Screen_One extends Activity {
 	}
 
 
-	public void grabEnteredTextForSignIN() {
-		boolean error = false;
-
-		try {
-			//startService(new Intent(appContext,ApplicationsListProvider.class));
-
-
-
-
-//			Intent intent = MpcUtil.buildNewIntent(appContext,  HH_Screen_two.class);
-//			intent.putExtra("launchActivity","signup");
-//			startActivity(intent);
-//			selfClose =  true;
-//			finish();
-
-
-//			userNameToLogin = editTextUserNameToLogin.getText().toString();
-//			passwordToLogin = editTextPasswordToLogin.getText().toString();
-//			//AnalyticsUtil.updateEventAction(appContext, "Email Address : "+userNameToLogin);
-//
-//			if (userNameToLogin.trim().length() == 0 )
-//			{
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextUserNameToLogin);
-//				showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_body));
-//				editTextUserNameToLogin.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextUserNameToLogin);
-//				error = true;
-//				//AnalyticsUtil.updateEventAction(appContext, "Login Button: Email field empty");
-//			}
-//			else if (!MpcUtil.isEmailValid(userNameToLogin)) {
-//				//AnalyticsUtil.updateEventAction(appContext, "Login Button: Invalid Email Address : "+userNameToLogin);
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextUserNameToLogin);
-//				showAlert(getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_title),getResources().getString(R.string.signin_activity_emailaddress_field_empty_message_body));
-//				editTextUserNameToLogin.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextUserNameToLogin);
-//				error = true;
-//			}
-//			else  if (passwordToLogin.trim().length() == 0 )
-//			{
-//				//AnalyticsUtil.updateEventAction(appContext, "Login Button: Password field empty");
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
-//				showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signin_activity_password_field_empty_message_body));
-//				editTextPasswordToLogin.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextPasswordToLogin);
-//				error = true;
-//			}
-//			else  if (passwordToLogin.trim().length() < MpcUtil.DEFAULT_MINNIMUM_PASSWORD_LENGTH )
-//			{
-//				//AnalyticsUtil.updateEventAction(appContext, "Login Button: Password length less than 4 characters");
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
-//				//showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signup_activity_password_field_error_message_for_minimum_length,MpcUtil.DEFAULT_MINNIMUM_PASSWORD_LENGTH));
-//				showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.invalid_password_error_message_via_server_code));
-//				editTextPasswordToLogin.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextPasswordToLogin);
-//				error = true;
-//			}
-//			else  if (passwordToLogin.trim().length() > MpcUtil.DEFAULT_MAX_PASSWORD_LENGTH )
-//			{
-//				//AnalyticsUtil.updateEventAction(appContext, "Login Button: Password length greater than 50 characters");
-//				MpcUtil.hideSoftKeyBoard(appContext, editTextPasswordToLogin);
-//				//showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.signup_activity_password_field_error_message_for_maximum_length,MpcUtil.DEFAULT_MAX_PASSWORD_LENGTH));
-//				showAlert(getResources().getString(R.string.signin_activity_password_field_empty_message_title),getResources().getString(R.string.invalid_password_error_message_via_server_code));
-//				editTextPasswordToLogin.requestFocus();
-//				MpcUtil.restartInput(appContext, editTextPasswordToLogin);
-//				error = true;
-//			}
-//
-//			if(!error){
-//
-//				MpcUtil.APP_STATUS =  HHIDConfigurations.getAPPFunctionalityStatus(appContext);
-//				DebugLog.console("	HH_Screen_One:  MpcUtil.APP_STATUS"+MpcUtil.APP_STATUS );
-//
-//				if (MpcUtil.APP_STATUS.equalsIgnoreCase(MpcUtil.APP_PERMANENTLY_STOP_WORKING_STATUS) ) {
-//					showPermanentExpiredAlert("SecureTeen deactivated","SecureTeen has been disabled on this device. Please contact technical support.");
-//
-//					//finish();
-//				}else{
-//
-//					String mappingId = null;//HHIDConfigurations.getMappingId(appContext);
-//					if(mappingId!=null){
-//						String storedPasswrd = HHIDConfigurations.getDeviceLockPassword(appContext);
-//						if((!storedPasswrd.equalsIgnoreCase("")) && (storedPasswrd.equalsIgnoreCase(passwordToLogin))){
-//							EmailDebugLog.getInstance(appContext).writeLog("\r\n[HH_Screen_One]: Matched with local password" );
-//							MpcUtil.APP_STATUS =  HHIDConfigurations.getAPPFunctionalityStatus(appContext);
-//							DebugLog.console("	HH_Screen_One:  MpcUtil.APP_STATUS"+MpcUtil.APP_STATUS );
-//							if (MpcUtil.APP_STATUS.equalsIgnoreCase(MpcUtil.APP_STOP_DATA_UPLOADING_STATUS) ) {
-//								Intent i = new Intent(appContext,ExpiredLicenceActivity.class);
-//								i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TOP| Intent.FLAG_ACTIVITY_NO_HISTORY);
-//								appContext.startActivity(i);
-//								selfClose =  true;
-//								finish();
-//							}else {
-//								Intent intent = MpcUtil.buildNewIntent(appContext,  SettingsActivity.class);
-//								startActivity(intent);
-//								selfClose =  true;
-//								finish();
-//							}
-//						}else{
-//							DebugLog.console("	HH_Screen_One: Going to get from server");
-//							if(ConnectionVerifier.isInternetOn(appContext)){
-//
-//								pd = ProgressDialog.show(this, getResources().getString(R.string.signin_activity__progress_bar_title), getResources().getString(R.string.signin_activity__progress_bar_body_text), true, false);
-//
-//								new Thread() {
-//									public void run() {
-//										try{
-//											// complete registration from server
-//											completeProcess("signin",MpcUtil.SIGNIN_URL);
-//
-//										} catch (Exception e) {  }
-//
-//									}
-//								}.start();
-//							}else{
-//								showAlert(getResources().getString(R.string.connection_error_message_title),getResources().getString(R.string.connection_error_message));
-//							}
-//						}
-//					}else{
-//
-//
-//
-//						if(ConnectionVerifier.isInternetOn(appContext)){
-//
-//
-//
-//
-//							pd = ProgressDialog.show(this, getResources().getString(R.string.signin_activity__progress_bar_title), getResources().getString(R.string.signin_activity__progress_bar_body_text), true, false);
-//
-//							new Thread() {
-//								public void run() {
-//									try{
-//										// complete registration from server
-//										completeProcess("signin",MpcUtil.SIGNIN_URL);
-//
-//									} catch (Exception e) {  }
-//
-//								}
-//							}.start();
-//						}else{
-//							showAlert(getResources().getString(R.string.connection_error_message_title),getResources().getString(R.string.connection_error_message));
-//						}
-//					}
-//				}
-//			}
-		} catch (Exception e) {
-			EmailDebugLog.getInstance(appContext).writeLog( e.toString()+"\r\n[HH_Screen_One]:Exception occured inside grabEnteredTextForSignIN");
-		}
-	}
-
 	private void completeProcess(String processType, String url){
 
 		JSONObject json = null;
@@ -1129,103 +793,7 @@ public class HH_Screen_One extends Activity {
 
 
 
-	private void validateEmailAddress(){
 
-//		try{
-//
-//			DebugLog.console("userName: "+userName+"\r\nfirstName"+ firstName+ "\r\nlastName"+lastName+"\r\nemailID"+ emailID+"\r\npassword"+ password);
-//			MainUserInfo.REGISTERED_EMAIL_ADDRESS = emailID;
-//			String url = MpcUtil.getBaseURL(appContext)+ MpcUtil.EMAIL_ID_VERIFICATION_URL + Uri.encode(emailID);
-//
-//			JSONObject result = HttpsClient.sendHttpsGetRequest(appContext, url);
-//			if(result != null){
-//				if(result.has("code")){
-//					if (!result.isNull("code")){
-//						if (result.get("code").toString().equalsIgnoreCase("100")){
-//
-//							if(result.has("status")){
-//								if (!result.isNull("status")){
-//
-//									if(result.getString("status").equalsIgnoreCase("true")){
-//										sign_up_screen_navigation_Handler.sendEmptyMessage(1);
-//
-//									}else{
-//										m_Handler.sendEmptyMessage(ResponceVerifier.STATUS_USER_ALREADY_EXSIST);
-//									}
-//
-//								}else{
-//									m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//
-//								}
-//
-//							}else{
-//								m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//							}
-//
-//
-//						}else{
-//							m_Handler.sendEmptyMessage(Integer.parseInt(result.get("code").toString()));
-//						}
-//					}else{
-//						m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//					}
-//				}else{
-//					m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//				}
-//
-//			}else{
-//				EmailDebugLog.getInstance(getApplicationContext()).writeLog("returned json is null");
-//				m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//			}
-//
-//		}catch(Exception e){
-//			EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside validateEmailAddress");
-//			m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-//		}
-	}
-
-
-
-
-	private JSONObject registerOnServer(Context appContext, JSONObject json, String url){
-
-		try{
-//			DebugLog.console("[HH_Screen_One]: inside registerOnServer");
-//			url = MpcUtil.getBaseURL(appContext) +url ;
-//			int retry = 0;
-//			while(retry < MpcUtil.RETRY_COUNT_FOR_SIGIN_UP_IN_SERVER_REQUEST){
-//				result = HttpsClient.sendNewHttpsPostRequest(appContext,url,json);
-//				if(result != null){
-//					break;
-//				}else{
-//					retry++;
-//				}
-//			}
-			return result;
-		}catch(Exception e){
-			EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside registerOnServer");
-			return null;
-		}
-	}
-
-	private void parseResultReceivedFromServer(JSONObject json){
-
-		try{
-
-			FileManager.exportLogFile(appContext);
-			if (!json.isNull("code")){
-				String status = json.get("code").toString();
-				//AnalyticsUtil.updateEventAction(getApplicationContext(),"Server Response " +status);
-				m_Handler.sendEmptyMessage(Integer.parseInt(status));
-			}else{
-				//AnalyticsUtil.updateEventAction(getApplicationContext(),"Server Response code object not found");
-				m_Handler.sendEmptyMessage(ResponceVerifier.GENERAL_ERROR);
-				EmailDebugLog.getInstance(getApplicationContext()).writeLog("Inside parseResultReceivedFromServer code object not found ");
-			}
-		}catch(Exception e){
-			EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside parseResultReceivedFromServer");
-		}
-	}
 
 	private Handler m_Handler = new Handler() {
 
@@ -1249,7 +817,8 @@ public class HH_Screen_One extends Activity {
 					HHIDConfigurations.setPeshawarCurrentPSU(appContext,emailID);
 					HHIDConfigurations.setPeshawarCurrentPSUName(appContext,reTypedEmailID);
 					HHIDConfigurations.setPeshawarCurrentDistrict(appContext,SELECTED_USER_SPINNER_VALUE);
-				//	HHIDConfigurations.setPeshawarCurrentLoggedInUser(appContext,SELECTED_USER_SPINNER_VALUE);
+
+					//	HHIDConfigurations.setPeshawarCurrentLoggedInUser(appContext,SELECTED_USER_SPINNER_VALUE);
 
 //					HH_Screen_two.START_TIME = MpcUtil.getcurrentTime(14);
 
@@ -1258,8 +827,16 @@ public class HH_Screen_One extends Activity {
 //					Intent intent = MpcUtil.buildNewIntent(appContext, MainMenuActivity.class);
 //					intent.putExtra("launchActivity","signup");
 //					startActivity(intent);
-					selfClose = true;
-					finish();
+
+
+					       String villageID =  emailID;
+							String Village_name = reTypedEmailID;
+							DebugLog.console("[HH_Screen_One] inside handleMessage() villageID "+villageID);
+							DebugLog.console("[HH_Screen_One] inside handleMessage() Village_name "+Village_name);
+					         Toast.makeText(HH_Screen_One.this, "Selected Village ID "+villageID, Toast.LENGTH_SHORT).show();
+					         Toast.makeText(HH_Screen_One.this, "Selected Village_name ID "+Village_name, Toast.LENGTH_SHORT).show();
+					         selfClose = true;
+					              // finish();
 
 
 
@@ -1335,27 +912,6 @@ public class HH_Screen_One extends Activity {
 //		}
 	}
 
-	private JSONObject sendForgotPasswordRequestToServer(){
-
-		try{
-			DebugLog.console("[HH_Screen_One]: inside sendForgotPasswordRequestToServer");
-//			String url = MpcUtil.getBaseURL(appContext) +MpcUtil.PASSWORD_RESET_URL+userNameToLogin +"&resellerId=careteen";
-//			EmailDebugLog.getInstance(getApplicationContext()).writeLog("[HH_Screen_One]: inside sendForgotPasswordRequestToServer"+url);
-//			int retry = 0;
-//			while(retry < MpcUtil.RETRY_COUNT_FOR_SIGIN_UP_IN_SERVER_REQUEST){
-//				result = HttpsClient.sendHttpsGetRequest(appContext, url);
-//				if(result != null){
-//					break;
-//				}else{
-//					retry++;
-//				}
-//			}
-			return result;
-		}catch(Exception e){
-			EmailDebugLog.getInstance(getApplicationContext()).writeLog(e.toString()+"\r\n[HH_Screen_One]: Exception occured inside sendForgotPasswordRequestToServer");
-			return null;
-		}
-	}
 
 
 	private Handler sign_up_screen_navigation_Handler = new Handler() {
@@ -1561,7 +1117,7 @@ public class HH_Screen_One extends Activity {
 							public void run() {
 								try{
 									Thread.sleep(200);
-									JSONObject json = sendForgotPasswordRequestToServer();
+									JSONObject json = null;//sendForgotPasswordRequestToServer();
 									if (json!=null){
 
 										if (!json.isNull("code")){

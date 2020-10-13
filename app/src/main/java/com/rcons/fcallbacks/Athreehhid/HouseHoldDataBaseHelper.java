@@ -258,6 +258,8 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
 //
 //                createMissingTable();
 
+              //    String querry = create_pending_adolescent();
+
 
 
                 String comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_m_table+"` ADD `comments` TEXT DEFAULT '' ";
@@ -282,6 +284,822 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    private void create_pending_adolescent() {
+
+        try {
+
+
+            String querry = "INSERT INTO pending_adolescent(village_id, hhid, hh_status, adolescent_id, adolescent_name)\n" +
+                    "VALUES\n" +
+                    "(\n" +
+                    "797, 111, 1, 3, 'REHANA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "798, 30, 1, 7, 'MARYAM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "798, 103, 1, 4, 'NISHAT SHABER'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "798, 123, 1, 5, 'SHEZA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "798, 153, 1, 6, 'ANILA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "798, 162, 1, 8, 'NAGEEN BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "800, 86, 1, 4, 'ALEENA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "800, 185, 1, 4, 'MARIYA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "803, 141, 1, 3, 'AREEBA BATOOL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "803, 203, 1, 3, 'RIDA BTOOL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "803, 224, 1, 9, 'SHAHNAZ'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "803, 304, 1, 3, 'HUMAIRA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 1, 1, 3, 'TEHMINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 5, 1, 2, 'NAGEENA BATOOL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 20, 1, 3, 'SHAZMO MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 23, 1, 3, 'UMMY SALMA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 26, 1, 3, 'RIMSHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 41, 1, 3, 'SAMIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 76, 1, 3, 'AFEERA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 77, 1, 3, 'NAYAB BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 102, 1, 3, 'SADAF BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 108, 1, 6, 'NAFEESA SAJJAD'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 127, 1, 3, 'ASMA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 130, 1, 6, 'SHAKEELA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 135, 1, 5, 'ANEEQA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 139, 1, 4, 'TAHIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 142, 1, 5, 'GURIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 183, 1, 4, 'MAHNOOR BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "804, 185, 1, 4, 'AREESHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "807, 143, 1, 3, 'RASHDA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "807, 157, 1, 5, 'HASEENA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "818, 17, 1, 6, 'SANIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "818, 46, 1, 3, 'SAMRENA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "818, 85, 1, 9, 'RIFFAT BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 20, 1, 4, 'RABIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 29, 1, 8, 'AFSANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 40, 1, 7, 'MISBAH MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 52, 1, 4, 'RUKHSANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 53, 1, 7, 'SHABANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 60, 1, 4, 'ANISHA AJMAL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 148, 1, 4, 'KIRAN BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 151, 1, 8, 'SUMAIRA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 206, 1, 6, 'AQILA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 219, 1, 5, 'KOUSAR'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 222, 1, 6, 'RABIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 247, 1, 8, 'KALSOOM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 260, 1, 3, 'FIZA BATOOL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "827, 262, 1, 4, 'SUMAIRA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 19, 1, 5, 'SONIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 42, 1, 6, 'ALIZA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 46, 1, 3, 'UZMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 85, 1, 5, 'SHADO MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 130, 1, 7, 'ZUBADA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 170, 1, 4, 'TAHREEM'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 174, 1, 11, 'NADIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 191, 1, 3, 'MUMNA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 229, 1, 5, 'LAL MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 237, 1, 3, 'ABIDA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 238, 1, 3, 'SHUMILA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 243, 1, 4, 'NASREEM MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 245, 1, 4, 'SANIA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "830, 272, 1, 3, 'KOSAR MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "846, 92, 1, 4, 'ASIMA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "847, 107, 1, 4, 'KOMAL BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "847, 163, 1, 5, 'SIDRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 39, 1, 5, 'ABIDA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 52, 1, 3, 'ZAHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 56, 1, 5, 'DAUGTER'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 57, 1, 8, 'RUKHSANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 74, 1, 4, 'SIDRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 84, 1, 4, 'TANZEELA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 89, 1, 6, 'ISHRET FATIMA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 129, 1, 5, 'JAWERIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 141, 1, 3, 'MISBA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 191, 1, 2, 'SHABANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 235, 1, 3, 'KOUSER BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 256, 1, 7, 'NASREEN BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "850, 316, 1, 3, 'ZAHIDA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "856, 6, 1, 6, 'MAWISH MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "856, 69, 1, 3, 'SARA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "856, 83, 1, 8, 'NADIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "856, 124, 1, 8, 'FATIMA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "857, 38, 1, 3, 'ESHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "858, 36, 1, 4, 'ASLA KHALIL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "858, 61, 1, 3, 'MISBHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "858, 265, 1, 3, 'ALIZA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 4, 1, 3, 'SALEENA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 12, 1, 3, 'KIRAN SHABEER'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 13, 1, 3, 'AYSHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 37, 1, 9, 'ASMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 100, 1, 9, 'FARHANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 116, 1, 5, 'ASMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 174, 1, 4, 'SUMAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "866, 186, 1, 3, 'NADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "871, 71, 1, 6, 'PARWEEN MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "871, 73, 1, 3, 'REHANA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "871, 104, 1, 5, 'NAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "871, 120, 1, 4, 'SUMAIRA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "876, 34, 1, 3, 'HUMAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "876, 51, 1, 4, 'MISBAH'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "876, 59, 1, 3, 'UZWA SAJJAD'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "878, 24, 1, 3, 'MOMAL MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "878, 117, 1, 4, 'SUMERA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "878, 129, 1, 3, 'NOREEN MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "878, 130, 1, 3, 'ASMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "878, 155, 1, 3, 'SHAZIA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 2, 1, 4, 'FOUZIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 11, 1, 3, 'AMINA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 25, 1, 3, 'SAFIA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 64, 1, 5, 'BEBUL'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 119, 1, 6, 'SADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 124, 1, 7, 'UZMA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 154, 1, 6, 'SALMA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 157, 1, 6, 'SHEHREEN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 170, 1, 3, 'TAHIRA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 177, 1, 4, 'RABIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 185, 1, 14, 'SHAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 211, 1, 5, 'ZAHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 217, 1, 3, 'SHAHNAZ'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "879, 220, 1, 4, 'IQRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "882, 19, 1, 9, 'FAKHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "882, 81, 1, 8, 'RUBINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "882, 117, 1, 4, 'ASIYA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 40, 1, 10, 'ASFA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 73, 1, 8, 'NOREEN BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 77, 1, 4, 'FOZIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 95, 1, 9, 'SAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 106, 1, 5, 'ZOYA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 115, 1, 6, 'SHUMAILA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 118, 1, 4, 'SHABAN A BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 120, 1, 6, 'TANIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 122, 1, 3, 'RABIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 125, 1, 3, 'SHAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 133, 1, 4, 'TAHIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 136, 1, 12, 'LAILA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 137, 1, 8, 'MEHWISH BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 148, 1, 6, 'RIMSHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "891, 151, 1, 11, 'SADIA FIDA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "912, 19, 1, 3, 'HIFZA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "912, 26, 1, 3, 'RABIA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "934, 14, 1, 3, 'SHAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "934, 30, 1, 3, 'SHABANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "934, 104, 1, 7, 'SHAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "934, 132, 1, 3, 'GULL JUMA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "943, 95, 1, 3, 'FARZANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "955, 114, 1, 3, 'IRUM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 24, 1, 6, 'SADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 48, 1, 3, 'NADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 68, 1, 4, 'SUMAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 129, 1, 3, 'SURAIYA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 140, 1, 4, 'SADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1124, 145, 1, 5, 'MAQADAS BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 11, 1, 4, 'SHAHANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 16, 1, 4, 'KIRAN BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 21, 1, 4, 'EYMAN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 35, 1, 3, 'ROBINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 84, 1, 4, 'SIDRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1131, 155, 1, 4, 'BUSHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 20, 1, 4, 'ALISHBA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 23, 1, 4, 'KANWAL BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 72, 1, 5, 'SAIMA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 88, 1, 3, 'MEHREEN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 96, 1, 5, 'FAZEELA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 107, 1, 6, 'SABA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 139, 1, 5, 'THAMINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 155, 1, 3, 'AFSANA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1277, 160, 1, 4, 'SHAHIDA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1279, 5, 1, 4, 'BEBO MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1279, 47, 1, 3, 'HUSNA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1279, 66, 1, 3, 'TEHMINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1279, 70, 1, 3, 'SHAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 7, 1, 3, 'MISBAH BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 8, 1, 4, 'IQRA SHAFI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 39, 1, 7, 'GURYA RANI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 50, 1, 3, 'SHAMEELA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 75, 1, 4, 'ZUBIDA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 147, 1, 3, 'MISBAH NAZIR'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 236, 1, 4, 'HUSSNA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1317, 264, 1, 3, 'SADIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1397, 5, 1, 3, 'SOFIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1410, 93, 1, 5, 'BILKEES BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1410, 130, 1, 4, 'SAMINA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1410, 174, 1, 3, 'IQRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1410, 182, 1, 3, 'HASEENA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 2, 1, 3, 'ASMS BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 6, 1, 5, 'MEHNAZ MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 38, 1, 5, 'ABIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 81, 1, 4, 'NAHEED MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 83, 1, 3, 'MUMTAZ MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 84, 1, 5, 'SOBIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 85, 1, 6, 'ARSHAD MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 115, 1, 7, 'MISBAH'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 130, 1, 5, 'TAHIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 131, 1, 4, 'SOBIA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 134, 1, 3, 'KALSOOM MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1436, 147, 1, 2, 'SAIMA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1441, 87, 1, 4, 'SHAHEENA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 14, 1, 5, 'BUSHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 27, 1, 5, 'SOBIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 30, 1, 4, 'BUSHRA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 52, 1, 5, 'SHAISTA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 67, 1, 3, 'MARIAM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 98, 1, 4, 'SUMAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 106, 1, 6, 'IRAM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 120, 1, 3, 'SALMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 132, 1, 5, 'ASMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 157, 1, 3, 'NAJMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 181, 1, 6, 'ZAKIA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1475, 197, 1, 3, 'SUMAIRA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 3, 1, 4, 'SAMINA MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 32, 1, 5, 'NAZIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 47, 1, 7, 'NUSRAT'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 56, 1, 5, 'AFSHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 68, 1, 3, 'SAMREEN MAY'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 82, 1, 21, 'FOZIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 113, 1, 4, 'KHALDA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 115, 1, 5, 'NAGINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 122, 1, 6, 'WAISA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 126, 1, 3, 'KALSOOM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 131, 1, 3, 'ZULAKHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 140, 1, 6, 'ZATOON BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 146, 1, 8, 'SAHNAZ BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 154, 1, 4, 'SHAZIA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 166, 1, 3, 'TAHREEM BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1484, 197, 1, 5, 'SAMIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1497, 47, 1, 7, 'SAWERA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1514, 25, 1, 3, 'SHAMIM MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 1, 1, 7, 'MISBAH MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 26, 1, 4, 'NASEEM MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 54, 1, 3, 'HUMAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 67, 1, 3, 'BALQEES BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 71, 1, 3, 'FOZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 72, 1, 3, 'RABIA NAWAZ'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 98, 1, 4, 'SHAHEEN MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 140, 1, 3, 'SHIZA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 145, 1, 4, 'ALISHBA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 149, 1, 4, 'SHAHEENA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 159, 1, 5, 'SHAZIA MAI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1523, 238, 1, 3, 'NAMREEN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1553, 39, 1, 6, 'FIZA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1553, 43, 1, 3, 'SIDRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1553, 83, 1, 3, 'MEHMONA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1553, 169, 1, 3, 'MUQADAS BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1553, 189, 1, 3, 'MEHMONA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 39, 1, 3, 'ROBINA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 44, 1, 8, 'RAFIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 67, 1, 4, 'ZAHRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 84, 1, 4, 'NASREEN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 86, 1, 4, 'SAMINA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 135, 1, 3, 'YASMEEN'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 213, 1, 3, 'SAIMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 216, 1, 3, 'SHADO BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 245, 1, 5, 'SHEHLA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 259, 1, 3, 'NAJMA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1569, 260, 1, 3, 'SAIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 114, 1, 4, 'ASIA BABI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 170, 1, 4, 'RAZIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 241, 1, 3, 'SAWERA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 247, 1, 3, 'SONIA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 266, 1, 3, 'RISHBA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 306, 1, 3, 'TAHIRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1584, 365, 1, 3, 'AYESHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1615, 11, 1, 8, 'SONIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1615, 15, 1, 4, 'RAMSHA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1615, 25, 1, 5, 'KUBRA BIBI'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1615, 32, 1, 3, 'NADIA'\n" +
+                    "),\n" +
+                    "(\n" +
+                    "1615, 37, 1, 3, 'RAMSHA BIBI'\n" +
+                    ");";
+
+
+
+        } catch (Exception e) {
+           // EmailDebugLog.getInstance(appContext).writeLog("[HouseHoldDataBaseHelper] inside create_pending_adolescent() Exception is :"+e.toString());
+        }
+
+    }
 
 
     private void checkAndCreatecolumn(SQLiteDatabase db,String querry) {
