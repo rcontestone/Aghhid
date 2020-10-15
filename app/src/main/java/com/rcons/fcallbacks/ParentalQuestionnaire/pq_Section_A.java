@@ -1364,6 +1364,8 @@ public class pq_Section_A extends AppCompatActivity {
                 try_no = "6";
                 MubLog.cpnsoleLog("SaveData Try 6");
             }
+
+            try_no = "1";
             databaseAccess.savepq_Section_A_Data(emp_id,
                     order_id,
                     farmer_id,
@@ -1583,19 +1585,19 @@ public class pq_Section_A extends AppCompatActivity {
                 cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBasestudent_id1");
             } else if (StringUtils.isEmpty(s2)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "2");
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(s3)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "3");
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(s4)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "4");
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(s5)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "5");
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(s6)) {
-                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "6");
+                cursor = databaseAccess.getpq_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {
@@ -1855,4 +1857,5 @@ public class pq_Section_A extends AppCompatActivity {
         }
 
     }
+
 }
