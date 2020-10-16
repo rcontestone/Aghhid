@@ -1147,5 +1147,6 @@
     <string name="proceed">Proceed</string>
     <string name="popupinfo">شمار کنندہ: جوابدہندہ سے تصدیق کر لیں  کہ سکرین پر موجود گھرانے کے تمام افراد یہی ہیں اور کوئی فرد  روسٹر میں شامل ہونے سے رہ تو نہیں گیا</string>
     <string name="titlepopup">گھرانے کے افراد کی تصدیق</string>
-
+    <string name="hhـrdg_op_1">  نمبر کی تصدیق بذریعہ کال، میسج کی گئ</string>
+    <string name="hh_rdg_op_2">نمبر کی تصدیق زبانی کی گئی</string>
 </resources>

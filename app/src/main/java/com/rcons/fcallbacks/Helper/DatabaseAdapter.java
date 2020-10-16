@@ -86,7 +86,7 @@ public class DatabaseAdapter {
     public static final String aghhid_section_h_table = "aghhid_section_h";
     public static final String aghhid_section_m_table = "aghhid_section_m";
     public static final String aghhid_section_ad_m_table = "aghhid_ad_section_m";
-
+    public static final String aghhid_title_table = "aghhid_title";
 
 
     public static final String aghhid_pending_adolescent = "pending_adolescent";
@@ -5414,6 +5414,96 @@ public class DatabaseAdapter {
         return cursor;
     }
 
+
+    public Cursor saveTitle_Data(String village_id,
+                                 String hhid,
+                                 String start_day,
+                                 String start_month,
+                                 String start_year,
+                                 String start_hh,
+                                 String start_mm,
+                                 String head_name,
+                                 String phone_number_1,
+                                 String phone_1_v,
+                                 String phone_number_2,
+                                 String phone_2_v,
+                                 String isSynced,
+                                 String rcons_user,
+                                 String enum_code,
+                                 String enum_name,
+                                 String deviceid,
+                                 String insert_or_updated_in_phone_at,
+                                 String uploaded_time,
+                                 String build_no
+
+
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + aghhid_title_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+        MubLog.cpnsoleLog("Data Insert Count Query " + str);
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("start_day", start_day);
+                contentValues.put("start_month", start_month);
+                contentValues.put("start_year", start_year);
+                contentValues.put("start_hh", start_hh);
+                contentValues.put("start_mm", start_mm);
+                contentValues.put("head_name", head_name);
+                contentValues.put("phone_number_1", phone_number_1);
+                contentValues.put("phone_1_v", phone_1_v);
+                contentValues.put("phone_number_2", phone_number_2);
+                contentValues.put("phone_2_v", phone_2_v);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+
+
+                db.insertOrThrow(aghhid_title_table, null, contentValues);
+
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+                contentValues.put("village_id", village_id);
+                contentValues.put("hhid", hhid);
+                contentValues.put("head_name", head_name);
+                contentValues.put("phone_number_1", phone_number_1);
+                contentValues.put("phone_1_v", phone_1_v);
+                contentValues.put("phone_number_2", phone_number_2);
+                contentValues.put("phone_2_v", phone_2_v);
+                contentValues.put("isSynced", isSynced);
+                contentValues.put("rcons_user", rcons_user);
+                contentValues.put("enum_code", enum_code);
+                contentValues.put("enum_name", enum_name);
+                contentValues.put("deviceid", deviceid);
+                contentValues.put("insert_or_updated_in_phone_at", insert_or_updated_in_phone_at);
+                contentValues.put("uploaded_time", uploaded_time);
+                contentValues.put("build_no", build_no);
+
+
+                db.update(aghhid_title_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
+
+
     public Cursor savead_Section_A_Data(String emp_id,
                                         String order_id,
                                         String farmer_id,
@@ -7935,6 +8025,16 @@ public class DatabaseAdapter {
         }
     }
 
+    public Cursor getTitleData(String village_id, String hhid) {
+        String query = "SELECT * from " + aghhid_title_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        if (cursor != null && cursor.getCount() > 0) {
+            return cursor;
+        } else {
+            return null;
+        }
+    }
+
     public Cursor gethh_section_g_Data(String village_id, String hhid) {
         String query = "SELECT * from " + aghhid_section_g_table + " where  village_id= '" + village_id + "' AND hhid= '" + hhid + "'";
         Cursor cursor = db.rawQuery(query, new String[]{});
@@ -8519,14 +8619,13 @@ public class DatabaseAdapter {
     }
 
 
-
-    public Cursor aghh_getHHIDCursor(String userName,String hhid) {
+    public Cursor aghh_getHHIDCursor(String userName, String hhid) {
 
         //removed 8 when 4447 issue
         String getFarmerId_sixTries_Done = getFarmerId_sixTries_Done(userName);
         //  String getFarmerId_sc1_alt_Done = getFarmerId_sc1_alt_Done(userName);
         // String querry = "SELECT * FROM   "+BaseLineSampleTable+" WHERE  ( ( rcons_user = '" + userName + "' AND isSynced != '2' )  AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  survey_status IN (1)  ) AND farmer_id NOT IN (SELECT farmer_id  FROM   farmercallbacktable    WHERE  survey_status IN (3,5,10) ) AND farmer_id NOT IN " + getFarmerId_sixTries_Done + " AND farmer_id NOT IN " + getFarmerId_sc1_alt_Done + "AND emp_id NOT IN (SELECT emp_id  FROM   farmercallbacktable    WHERE  temp1 IN (2)  ) )";
-        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  (  rcons_user = '" + userName + "'  AND survey_status = '' AND  village_id = '"+userName+"' AND hhid = '"+hhid+"'    ) ORDER BY  hhid ASC";
+        String querry = "SELECT * FROM   " + AGHHID_SampleTable + " WHERE  (  rcons_user = '" + userName + "'  AND survey_status = '' AND  village_id = '" + userName + "' AND hhid = '" + hhid + "'    ) ORDER BY  hhid ASC";
 
         MubLog.cpnsoleLog("inside baseline_getNewCallsCount " + querry);
         Cursor cursor2 = this.db.rawQuery(querry, new String[0]);
@@ -8536,9 +8635,6 @@ public class DatabaseAdapter {
         }
         return cursor2;
     }
-
-
-
 
 
     public Cursor baseline_getNewCallsCursor(String userName) {
