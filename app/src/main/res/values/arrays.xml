@@ -450,6 +450,21 @@
         <item>984</item>
         <item>991</item>
         <item>993</item>
+        <item>1077</item>
+        <item>901</item>
+        <item>1110</item>
+        <item>998</item>
+        <item>1518</item>
+        <item>1577</item>
+        <item>1245</item>
+        <item>1236</item>
+        <item>1368</item>
+        <item>1616</item>
+        <item>1287</item>
+        <item>1254</item>
+        <item>1439</item>
+        <item>1258</item>
+
 
     </string-array>
 
@@ -565,8 +580,23 @@
         <item>PATTI SULTAN MEHMUD G</item>
         <item>GURMANI SHARQI</item>
         <item>BAIT HESAR</item>
+        <item>CHAK NO 617/T.D.A</item>
+        <item>PATTAL MUNDA DRAMIAN</item>
+        <item>CHAK NO 559/T.D.A</item>
+        <item>CHAK NO 537/T.D.A</item>
+        <item>TIBBI BURA SHARKI</item>
+        <item>MEHR SHAH</item>
+        <item>BAGHWALI CHOLISTAN</item>
+        <item>RODANWALA</item>
+        <item>BET RAILI</item>
+        <item>ALUDE WALI</item>
+        <item>CHAK CHHAJRAH</item>
+        <item>WAFADAR PUR</item>
+        <item>PACCA SANDILA</item>
+        <item>KHANGAN SHUMALI</item>
 
-     </string-array>
+
+    </string-array>
 
 
     <string-array name="array_relative_code_sp">

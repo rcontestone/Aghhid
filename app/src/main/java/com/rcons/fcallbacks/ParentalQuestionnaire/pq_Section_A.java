@@ -295,7 +295,8 @@ public class pq_Section_A extends AppCompatActivity {
         SetEnumState();
 
 
-        phone_number = getIntent().getStringExtra("m1b_parent_mobile");
+//        phone_number = getIntent().getStringExtra("m1b_parent_mobile");
+        phone_number = "999";
         emp_id = "1";//getIntent().getStringExtra("emp_id");
         order_id = getIntent().getStringExtra("phone_order");
         farmer_id = "1";//getIntent().getStringExtra("farmerID");
