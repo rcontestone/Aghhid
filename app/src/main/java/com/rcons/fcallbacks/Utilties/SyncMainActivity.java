@@ -84,7 +84,8 @@ public class SyncMainActivity extends Activity {
 		int count = 0;
 		int Totalcount = 0;
 		DatabaseAdapter adapter;
-
+        ArrayList<String> schoolCodeIDsToUpload = null;
+        ArrayList<String> StudentCodeIDsToUpload = null;
 		@Override
 		protected String doInBackground(Integer... params) {
 
@@ -109,8 +110,8 @@ public class SyncMainActivity extends Activity {
 
 				String nowhereQuery = " WHERE id NOT IN ";
 				//ArrayList<String> IDsToUpload = new ArrayList<>();
-				ArrayList<String> schoolCodeIDsToUpload = new ArrayList<>();
-				ArrayList<String> StudentCodeIDsToUpload = new ArrayList<>();
+			     schoolCodeIDsToUpload = new ArrayList<>();
+				 StudentCodeIDsToUpload = new ArrayList<>();
 
 				ArrayList<String> excude_farmerIDs = new ArrayList<>();
 				DebugLog.console("[MyTask1] inside doInBackground() "+whereQuery);
@@ -118,7 +119,7 @@ public class SyncMainActivity extends Activity {
 				if (farmersCoursor == null || farmersCoursor.getCount() == 0) {
 					//	Toast.makeText(StartUpMainActivity.this, "No completed  exist", Toast.LENGTH_SHORT).show();
 
-					return  SyncMainActivity.this.getString(R.string.Already_synced);
+					//return  SyncMainActivity.this.getString(R.string.Already_synced);
 
 				} else {
 					DebugLog.console("[MyTask1] inside doInBackground() "+farmersCoursor.getCount());
@@ -154,7 +155,20 @@ public class SyncMainActivity extends Activity {
 
 					}
 				}
+
+
+                if(farmersCoursor!=null){
+                    if(!farmersCoursor.isClosed()){
+                        farmersCoursor.close();
+                    }
+
+                }
+
+
+                addPatchForManualentries(userName);
+
 				String subQuery = "";
+
 				String schoolCodeSubQuery = "";
 				for (int i = 0; i < StudentCodeIDsToUpload.size(); i++) {
 					if (i == 0) {
@@ -176,12 +190,7 @@ public class SyncMainActivity extends Activity {
 				MubLog.cpnsoleLog("subquery village_id " + schoolCodeSubQuery);
 
 
-				if(farmersCoursor!=null){
-					if(!farmersCoursor.isClosed()){
-						farmersCoursor.close();
-					}
 
-				}
 				//int remaning = Totalcount/2;
 
 				JSONArray pq_section_a_table = adapter.baseline_readSection_pq(DatabaseAdapter.pq_section_a_table," WHERE student_id IN " + subQuery + " AND school_code IN "+schoolCodeSubQuery);//adapter.getSectionBData_ALL();
@@ -310,9 +319,67 @@ public class SyncMainActivity extends Activity {
 
 		}
 
+        private void addPatchForManualentries(String userName) {
+		    try {
+                DebugLog.console("[MyTask1] inside doInBackground() schoolCodeIDsToUpload"+schoolCodeIDsToUpload.size());
+                DebugLog.console("[MyTask1] inside doInBackground() studentCodeIDsToUpload"+StudentCodeIDsToUpload.size());
+                Cursor farmersCoursor =    adapter.aghhid_selectfromagg_title(userName);
+                if (farmersCoursor == null || farmersCoursor.getCount() == 0) {
+                    //	Toast.makeText(StartUpMainActivity.this, "No completed  exist", Toast.LENGTH_SHORT).show();
+
+                  //  return  SyncMainActivity.this.getString(R.string.Already_synced);
+
+                } else {
+                    DebugLog.console("[MyTask1] inside doInBackground() "+farmersCoursor.getCount());
+                    Totalcount=farmersCoursor.getCount();
+                    publishProgress(0, Totalcount);
+                    if (farmersCoursor.moveToFirst()) {
+                        do {
+                            //String id = farmersCoursor.getString(farmersCoursor.getColumnIndex("id"));
+                            String scode = farmersCoursor.getString(farmersCoursor.getColumnIndex("village_id"));
+                            String studentid = farmersCoursor.getString(farmersCoursor.getColumnIndex("hhid"));
+                            if (!StringUtils.isEmpty(scode)) {
 
 
-		private void readCountFromAsset() {
+                                String userName_against_farmer_id = RConsUtils.getUserName();//adapter.getUserNameagainstFarmerID(id);
+//adding in farmerIDs.add(formerID); for upload all adding in this excude_farmerIDs.add(formerID); to exclude from deletion
+
+                                //Todo //check it later for userbase
+                                userName= userName_against_farmer_id;
+                                if (userName.equalsIgnoreCase(userName_against_farmer_id)) {
+                                    //IDsToUpload.add(id);
+                                    schoolCodeIDsToUpload.add(scode);
+                                    StudentCodeIDsToUpload.add(studentid);
+                                } else {
+
+//									IDsToUpload.add(id);
+//									excude_farmerIDs.add(id);
+                                    MubLog.cpnsoleLog("inside userName" + userName + "is not equal to " + userName_against_farmer_id);
+                                }
+
+                            }
+
+                        } while (farmersCoursor.moveToNext());
+
+                    }
+                }
+
+
+                if(farmersCoursor!=null){
+                    if(!farmersCoursor.isClosed()){
+                        farmersCoursor.close();
+                    }
+
+                }
+
+		    } catch (Exception e) {
+		        EmailDebugLog.getInstance(appContext).writeLog("[MyTask1] inside addPatchForManualentries() Exception is :"+e.toString());
+		    }
+
+        }
+
+
+        private void readCountFromAsset() {
 			// TODO Auto-generated method stub
 			InputStream fIn =  null;
 			try {

@@ -269,13 +269,13 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
 
-                    if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
+                   // if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
                         ShowSyncMessage(MainMenuActivity.this, "Alert", "Are you sure Sync Questionnaire?");
 
-                    } else {
-                        Toast.makeText(MainMenuActivity.this, "No internet.", Toast.LENGTH_SHORT).show();
-
-                    }
+//                    } else {
+//                        Toast.makeText(MainMenuActivity.this, "No internet.", Toast.LENGTH_SHORT).show();
+//
+//                    }
 
                 } catch (Exception e) {
                     Log.e("TAG", e.toString());
@@ -360,13 +360,13 @@ public class MainMenuActivity extends AppCompatActivity {
                 alertDialog.dismiss();
 
                 try {
-                    if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
+//                    if (RConsUtils.isNetworkAvailable(MainMenuActivity.this)) {
                         //sectiondataManualClick("Syncing");
                         Intent intent = new Intent(MainMenuActivity.this, SyncMainActivity.class);
                         startActivity(intent);
-                    } else {
-                        Toast.makeText(MainMenuActivity.this, "No internet.", Toast.LENGTH_SHORT).show();
-                    }
+//                    } else {
+//                        Toast.makeText(MainMenuActivity.this, "No internet.", Toast.LENGTH_SHORT).show();
+//                    }
                 } catch (Exception e) {
                     Log.e("TAG", e.toString());
                 }

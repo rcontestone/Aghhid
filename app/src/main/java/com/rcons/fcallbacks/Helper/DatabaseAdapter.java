@@ -9256,7 +9256,7 @@ public class DatabaseAdapter {
                     cursor.close();
                 }
             }
-            return count;
+
         } else {
 
             if (cursor != null) {
@@ -9266,10 +9266,55 @@ public class DatabaseAdapter {
                 }
             }
 
-            return count;
+
 
         }
 
+
+
+        return count+get_aghhTitile_Count(userName);
+    }
+
+    private int get_aghhTitile_Count(String userName) {
+
+        int count = 0;
+
+        try {
+            SQLiteDatabase db = database.getReadableDatabase();
+            Cursor cursor = db.rawQuery("select * from " + aghhid_title_table + " WHERE   ( rcons_user = '" + userName + "' AND isSynced != '2' )", new String[]{});
+
+            if (cursor != null && cursor.getCount() > 0) {
+
+                count = cursor.getCount();
+
+                if (cursor != null) {
+
+                    if (!cursor.isClosed()) {
+                        cursor.close();
+                    }
+                }
+
+            } else {
+
+                if (cursor != null) {
+
+                    if (!cursor.isClosed()) {
+                        cursor.close();
+                    }
+                }
+
+
+
+            }
+
+
+            return count;
+
+
+        } catch (Exception e) {
+            MubLog.cpnsoleLog("[DatabaseAdapter] inside get_aghhTitile_Count() Exception is :"+e.toString());
+            return count;
+        }
     }
 
 
@@ -9514,6 +9559,14 @@ public class DatabaseAdapter {
 
     public Cursor aghhid_selectCompletedCalls(String userName) {
         String query = "select * from " + AGHHID_SampleTable + " WHERE rcons_user = '" + userName + "' AND survey_status !=''  AND  isSynced != '2'";
+        DebugLog.console("[DatabaseAdapter] inside selectCompletedCalls() " + query);
+        Cursor cursor = db.rawQuery(query, new String[]{});
+        return cursor;
+
+    }
+
+    public Cursor aghhid_selectfromagg_title(String userName) {
+        String query = "select * from " + aghhid_title_table + " WHERE rcons_user = '" + userName + "'  AND  isSynced != '2'";
         DebugLog.console("[DatabaseAdapter] inside selectCompletedCalls() " + query);
         Cursor cursor = db.rawQuery(query, new String[]{});
         return cursor;
