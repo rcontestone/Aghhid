@@ -405,6 +405,13 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
     void addReportData() {
         String reason = "";
         String needCallAgain = "0";
+
+        String year = RConsUtils.getcurrentTime(0);
+        String month = RConsUtils.getcurrentTime(1);
+        String day = RConsUtils.getcurrentTime(2);
+        String hh = RConsUtils.getcurrentTime(3);
+        String mm = RConsUtils.getcurrentTime(4);
+
         int selectedID = group.getCheckedRadioButtonId();
         if (selectedID == -1) {
             Toast.makeText(AddReportActivity_AD.this, "Please select from given choices.", Toast.LENGTH_LONG).show();
@@ -451,7 +458,9 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
             if(newNUmber.getText().toString().length()>0)
                 HouseHoldDataBaseHelper.getDataBaseProcessor(AddReportActivity_AD.this).aghhid_update_given_nummber(school_code, student_id,newNUmber.getText().toString());
 
-            SaveInterviewEnd_time();
+
+            databaseAccess.savetitle_interview_end_time(school_code, student_id, year, month, day, hh, mm);
+
 
             databaseAccess.aghh_updateCallStatus(AddReportActivity_AD.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity_AD.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments,call_from);
             isDataUpdated = true;
@@ -1505,16 +1514,5 @@ public class AddReportActivity_AD extends AppCompatActivity implements DatabaseA
         m4_answered = view.getTag().toString();
 
     }
-    void SaveInterviewEnd_time() {
 
-        String year = RConsUtils.getcurrentTime(0);
-        String month = RConsUtils.getcurrentTime(1);
-        String day = RConsUtils.getcurrentTime(2);
-        String hh = RConsUtils.getcurrentTime(3);
-        String mm = RConsUtils.getcurrentTime(4);
-
-
-        databaseAccess.savetitle_interview_end_time(school_code, student_id, year, month, day, hh, mm);
-
-    }
 }

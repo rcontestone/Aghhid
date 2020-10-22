@@ -261,26 +261,6 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
               //    String querry = create_pending_adolescent();
 
 
-                String end_day = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_day` TEXT DEFAULT '' ";
-                checkAndCreatecolumn(db,end_day);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_day"+end_day);
-
-                String end_month = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_month` TEXT DEFAULT '' ";
-                checkAndCreatecolumn(db,end_month);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_month"+end_month);
-
-                String end_year = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_year` TEXT DEFAULT '' ";
-                checkAndCreatecolumn(db,end_year);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_month"+end_year);
-
-                String end_hh = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_hh` TEXT DEFAULT '' ";
-                checkAndCreatecolumn(db,end_hh);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_month"+end_hh);
-
-                String end_mm = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_mm` TEXT DEFAULT '' ";
-                checkAndCreatecolumn(db,end_mm);
-                DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_month"+end_mm);
-
                 String comment_add = "ALTER TABLE `"+DatabaseAdapter.aghhid_section_m_table+"` ADD `comments` TEXT DEFAULT '' ";
                 checkAndCreatecolumn(db,comment_add);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() comment_add"+comment_add);

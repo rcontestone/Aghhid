@@ -235,6 +235,12 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
         String needCallAgain = "0";
         int selectedID = group.getCheckedRadioButtonId();
 
+        String year = RConsUtils.getcurrentTime(0);
+        String month = RConsUtils.getcurrentTime(1);
+        String day = RConsUtils.getcurrentTime(2);
+        String hh = RConsUtils.getcurrentTime(3);
+        String mm = RConsUtils.getcurrentTime(4);
+
 
 
         if(!(m4_answered.length()>0)){
@@ -291,7 +297,8 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
 
             NeedCallDialog(AddReportActivityHH.this, "Call Again", "Do you need to call again on this number ?", surveyStatus, reason, isAlternateFarmer);
         } else {
-            SaveInterviewEnd_time();
+
+
             reportComments = anyComments.getText().toString();
             databaseAccess.aghh_updateCallStatus(AddReportActivityHH.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivityHH.this,m3_answered,m4_answered,m4_answered_other,"","","","",reportComments,call_from);
             isDataUpdated = true;
@@ -300,6 +307,7 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
             returnIntent.putExtra("isDataUpdated", isDataUpdated);
             setResult(Activity.RESULT_OK, returnIntent);
 
+            databaseAccess.savetitle_interview_end_time(school_code, student_id, year, month, day, hh, mm);
 
             Intent intent = MpcUtil.buildNewIntent(AddReportActivityHH.this, Ad_Section_A.class);
 
@@ -1330,17 +1338,6 @@ public class AddReportActivityHH extends AppCompatActivity implements DatabaseAd
 
     }
 
-    void SaveInterviewEnd_time() {
 
-        String year = RConsUtils.getcurrentTime(0);
-        String month = RConsUtils.getcurrentTime(1);
-        String day = RConsUtils.getcurrentTime(2);
-        String hh = RConsUtils.getcurrentTime(3);
-        String mm = RConsUtils.getcurrentTime(4);
-
-
-        databaseAccess.savetitle_interview_end_time(school_code, student_id, year, month, day, hh, mm);
-
-    }
 
 }
