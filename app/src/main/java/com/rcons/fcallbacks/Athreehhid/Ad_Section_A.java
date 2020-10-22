@@ -1315,21 +1315,22 @@ public class Ad_Section_A extends AppCompatActivity {
                 try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 1");
             } else if (StringUtils.isEmpty(s2)) {
-                try_no = "2";
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 2");
             } else if (StringUtils.isEmpty(s3)) {
-                try_no = "3";
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 3");
             } else if (StringUtils.isEmpty(s4)) {
-                try_no = "4";
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 4");
             } else if (StringUtils.isEmpty(s5)) {
-                try_no = "5";
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 5");
             } else if (StringUtils.isEmpty(s6)) {
-                try_no = "6";
+                try_no = "1";
                 MubLog.cpnsoleLog("SaveData Try 6");
             }
+            try_no = "1";
             databaseAccess.savead_Section_A_Data(emp_id,
                     order_id,
                     farmer_id,
@@ -1548,19 +1549,19 @@ public class Ad_Section_A extends AppCompatActivity {
                 cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 1");
             } else if (StringUtils.isEmpty(s2)) {
-                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "2");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 2");
             } else if (StringUtils.isEmpty(s3)) {
-                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "3");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 3");
             } else if (StringUtils.isEmpty(s4)) {
-                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "4");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 4");
             } else if (StringUtils.isEmpty(s5)) {
-                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "5");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 5");
             } else if (StringUtils.isEmpty(s6)) {
-                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "6");
+                cursor = databaseAccess.getad_section_a_Data(school_code, student_id, phone_number, "1");
                 MubLog.cpnsoleLog("readFromDataBase Try 6");
             }
             if (cursor != null && cursor.getCount() > 0) {
