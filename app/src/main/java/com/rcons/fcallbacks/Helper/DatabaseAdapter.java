@@ -8382,6 +8382,54 @@ public class DatabaseAdapter {
         return cursor;
     }
 
+    public Cursor savetitle_interview_end_time(
+            String village_id,
+            String hhid,
+            String end_day,
+            String end_month,
+            String end_year,
+            String end_hh,
+            String end_mm
+    ) {
+
+        db = database.getReadableDatabase();
+        String str = "";
+        str = "select Count(*) as count from " + aghhid_title_table + " where  village_id= " + village_id + " AND hhid= " + hhid + "";
+
+        cursor = db.rawQuery(str, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            int ifExits = cursor.getInt(cursor.getColumnIndex("count"));
+            if (ifExits == 0) {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+                contentValues.put("end_day", end_day);
+                contentValues.put("end_month", end_month);
+                contentValues.put("end_year", end_year);
+                contentValues.put("end_hh", end_hh);
+                contentValues.put("end_mm", end_mm);
+
+                db.insertOrThrow(aghhid_title_table, null, contentValues);
+            } else {
+                db = database.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+
+
+
+                contentValues.put("end_day", end_day);
+                contentValues.put("end_month", end_month);
+                contentValues.put("end_year", end_year);
+                contentValues.put("end_hh", end_hh);
+                contentValues.put("end_mm", end_mm);
+
+                db.update(aghhid_title_table, contentValues, "village_id=" + village_id + " and hhid=" + hhid, null);
+            }
+        }
+        cursor.close();
+        return cursor;
+    }
 
     public Cursor getpq_section_c1_Data(String school_code, String student_id) {
         String query = "SELECT * from " + pq_section_c1_table + " where  school_code= '" + school_code + "' AND student_id= '" + student_id + "'";

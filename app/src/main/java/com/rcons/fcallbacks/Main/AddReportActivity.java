@@ -34,6 +34,7 @@ import com.rcons.fcallbacks.EmailDebugLog;
 import com.rcons.fcallbacks.Helper.DatabaseAdapter;
 import com.rcons.fcallbacks.R;
 import com.rcons.fcallbacks.Utilties.MubLog;
+import com.rcons.fcallbacks.Utilties.RConsUtils;
 import com.rcons.fcallbacks.Utilties.StringUtils;
 
 import java.util.regex.Pattern;
@@ -188,7 +189,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-               //     qm3_layout.setVisibility(View.VISIBLE);
+                    //     qm3_layout.setVisibility(View.VISIBLE);
                     qm4_layout.setVisibility(View.VISIBLE);
                 } else {
                     qm3_layout.setVisibility(View.GONE);
@@ -426,7 +427,9 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
 
 
             if (newNUmber.getText().toString().length() > 0)
-                HouseHoldDataBaseHelper.getDataBaseProcessor(AddReportActivity.this).aghhid_update_given_nummber(school_code, student_id, newNUmber.getText().toString());
+
+                SaveInterviewEnd_time();
+            HouseHoldDataBaseHelper.getDataBaseProcessor(AddReportActivity.this).aghhid_update_given_nummber(school_code, student_id, newNUmber.getText().toString());
 
             databaseAccess.aghh_updateCallStatus(AddReportActivity.this, surveyStatus, school_code, student_id, id, farmer_id, farmer_cellphone, reason, isAlternateFarmer, needCallAgain, empID, calldurationReason, AddReportActivity.this, m3_answered, m4_answered, m4_answered_other, e11_day, e11_month, e11_hh, e11_mm, reportComments, call_from);
             isDataUpdated = true;
@@ -444,7 +447,7 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
         boolean error = false;
         try {
 
-            if (surveyStatus.equalsIgnoreCase("1") || surveyStatus.equalsIgnoreCase("3")  || surveyStatus.equalsIgnoreCase("8")) {
+            if (surveyStatus.equalsIgnoreCase("1") || surveyStatus.equalsIgnoreCase("3") || surveyStatus.equalsIgnoreCase("8")) {
 
 
                 if (!(m4_answered.length() > 0)) {
@@ -1451,6 +1454,19 @@ public class AddReportActivity extends AppCompatActivity implements DatabaseAdap
     public void setMigrationM4(View view) {
 
         m4_answered = view.getTag().toString();
+
+    }
+
+    void SaveInterviewEnd_time() {
+
+        String year = RConsUtils.getcurrentTime(0);
+        String month = RConsUtils.getcurrentTime(1);
+        String day = RConsUtils.getcurrentTime(2);
+        String hh = RConsUtils.getcurrentTime(3);
+        String mm = RConsUtils.getcurrentTime(4);
+
+
+        databaseAccess.savetitle_interview_end_time(school_code, student_id, year, month, day, hh, mm);
 
     }
 }
