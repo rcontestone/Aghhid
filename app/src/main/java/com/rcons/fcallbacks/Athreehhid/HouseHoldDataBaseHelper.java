@@ -265,7 +265,6 @@ public class HouseHoldDataBaseHelper extends SQLiteOpenHelper {
                 checkAndCreatecolumn(db,end_day);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_day"+end_day);
 
-
                 String end_month = "ALTER TABLE `"+DatabaseAdapter.aghhid_title_table+"` ADD `end_month` TEXT DEFAULT '' ";
                 checkAndCreatecolumn(db,end_month);
                 DebugLog.console("[HouseHoldDataBaseHelper] inside onCreate() end_month"+end_month);
